@@ -137,8 +137,8 @@
     <h1>Loden palette lab</h1>
     <p class="lede" id="lede">Warm olive-black foundations, brushed ivory text, restrained syntax, and diff colors designed for sustained review.</p>
     <div class="variant-switch" aria-label="Theme variant">
-      <button type="button" data-variant="dark" aria-pressed="true">Night</button>
-      <button type="button" data-variant="light" aria-pressed="false">Day</button>
+      <button type="button" data-variant="night" aria-pressed="true">Night</button>
+      <button type="button" data-variant="day" aria-pressed="false">Day</button>
     </div>
 
     <section>
@@ -296,7 +296,7 @@
         element.querySelector("code").textContent = color;
       });
       document.querySelectorAll("[data-variant]").forEach(button => button.setAttribute("aria-pressed", button.dataset.variant === variant));
-      document.getElementById("lede").textContent = variant === "dark"
+      document.getElementById("lede").textContent = variant === "night"
         ? "Warm olive-black foundations, softened cream text, restrained syntax, and diff colors designed for sustained review."
         : "Warm-neutral daylight foundations, crisp olive-brown text, and polarity-tuned diff colors for bright offices.";
       document.getElementById("contrast-title").textContent = `WCAG contrast against ${palette.backgrounds.base}`;
@@ -341,7 +341,7 @@
       });
     }
     document.querySelectorAll("[data-variant]").forEach(button => button.addEventListener("click", () => render(button.dataset.variant)));
-    render("dark");
+    render("night");
   </script>
 </body>
 </html>
