@@ -1,0 +1,17 @@
+{
+  "base": "#F0E9D2",
+  "neutralTextContrast": 17.291,
+  "syntaxRange": [
+    5.177,
+    7.373
+  ],
+  "changedLineTextContrast": 7.85,
+  "diffTextBoundary": 3.088,
+  "changedLineCanvasDeltaEOK": {
+    "normal": 0.044,
+    "protan": 0.0473,
+    "deutan": 0.0432,
+    "tritan": 0.0282,
+    "grayscale": 0.0166
+  }
+}

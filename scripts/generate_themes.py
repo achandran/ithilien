@@ -114,20 +114,22 @@ def generate_codex_theme(palette: dict) -> None:
             settings["fontStyle"] = font_style
         return {"name": name, "scope": scope, "settings": settings}
 
+    day = palette["polarity"] == "light"
     settings = [
         {"settings": {"background": bg["base"], "foreground": fg["text"],
                       "caret": palette["highlight"]["background"],
                       "selection": palette["highlight"]["background"],
-                      "invisibles": fg["muted"], "lineHighlight": bg["surface0"]}},
+                      "invisibles": fg["muted"], "lineHighlight": bg["surface1"] if day else bg["surface0"],
+                      **({"selectionForeground": palette["highlight"]["foreground"]} if day else {})}},
         rule("Comments", "comment, punctuation.definition.comment", fg["comment"], font_style="italic"),
         rule("Strings", "string", accent["sage"]),
         rule("Numbers and constants", "constant.numeric, constant.language, constant.character", accent["ochre"]),
-        rule("Keywords", "keyword, storage.type, storage.modifier", accent["mauve"]),
-        rule("Types", "entity.name.type, entity.name.class, support.type, support.class", accent["gold"]),
-        rule("Functions", "entity.name.function, support.function, meta.function-call", accent["blue"]),
+        rule("Keywords", "keyword, storage.type, storage.modifier", accent["clay"] if day else accent["mauve"], font_style="bold" if day else None),
+        rule("Types", "entity.name.type, entity.name.class, support.type, support.class", accent["aqua"] if day else accent["gold"]),
+        rule("Functions", "entity.name.function, support.function, meta.function-call", accent["gold"] if day else accent["blue"]),
         rule("Variables", "variable, support.variable", fg["text"]),
         rule("Properties", "variable.other.property, support.constant", accent["aqua"]),
-        rule("Operators", "keyword.operator", accent["clay"]),
+        rule("Operators", "keyword.operator", accent["olive"] if day else accent["clay"]),
         rule("Punctuation", "punctuation", fg["subtext"]),
         rule("Headings", "markup.heading", accent["gold"], font_style="bold"),
         rule("Links", "markup.underline.link", accent["blue"], font_style="underline"),

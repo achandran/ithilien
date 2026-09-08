@@ -28,7 +28,7 @@ function M.load(variant)
       bg = bg.base,
       bg_p1 = bg.surface0,
       bg_p2 = bg.surface1,
-      special = fg.muted,
+      special = is_light and fg.subtext or fg.muted,
       indent_line = bg.surface1,
       active_indent_line = bg.surface2,
       whitespace = bg.surface2,
@@ -50,7 +50,7 @@ function M.load(variant)
       float = {
         fg = fg.text,
         bg = bg.surface0,
-        fg_border = bg.surface2,
+        fg_border = is_light and fg.muted or bg.surface2,
         bg_border = bg.surface0,
       },
     },
@@ -105,9 +105,9 @@ function M.load(variant)
     dimInactive = false,
     terminalColors = true,
     commentStyle = M.config.italics and { italic = true } or {},
-    keywordStyle = {},
+    keywordStyle = is_light and { bold = M.config.bold } or {},
     functionStyle = {},
-    statementStyle = {},
+    statementStyle = is_light and { bold = M.config.bold } or {},
     typeStyle = {},
     background = { dark = "ink", light = "pearl" },
     theme = is_light and "pearl" or "ink",
@@ -116,7 +116,7 @@ function M.load(variant)
       theme = { all = theme, ink = {}, zen = {}, pearl = {} },
     },
     overrides = function()
-      return {
+      local overrides = {
         Visual = { fg = highlight.foreground, bg = highlight.background },
         DiffAdd = { fg = diff.addForeground, bg = diff.addBackground },
         DiffDelete = { fg = diff.deleteForeground, bg = diff.deleteBackground },
@@ -128,12 +128,12 @@ function M.load(variant)
         GitSignsAdd = { fg = diff.addForeground },
         GitSignsDelete = { fg = diff.deleteForeground },
         GitSignsChange = { fg = diff.changeForeground },
-        GitSignsAddInline = { fg = diff.inlineForeground, bg = diff.addEmphasis, bold = true },
-        GitSignsDeleteInline = { fg = diff.inlineForeground, bg = diff.deleteEmphasis, bold = true },
-        GitSignsChangeInline = { fg = diff.inlineForeground, bg = diff.changeEmphasis, bold = true },
-        GitSignsAddLnInline = { fg = diff.inlineForeground, bg = diff.addEmphasis, bold = true },
-        GitSignsDeleteLnInline = { fg = diff.inlineForeground, bg = diff.deleteEmphasis, bold = true },
-        GitSignsChangeLnInline = { fg = diff.inlineForeground, bg = diff.changeEmphasis, bold = true },
+        GitSignsAddInline = { fg = diff.inlineForeground, bg = diff.addEmphasis, bold = true, underline = is_light or nil },
+        GitSignsDeleteInline = { fg = diff.inlineForeground, bg = diff.deleteEmphasis, bold = true, underline = is_light or nil },
+        GitSignsChangeInline = { fg = diff.inlineForeground, bg = diff.changeEmphasis, bold = true, underline = is_light or nil },
+        GitSignsAddLnInline = { fg = diff.inlineForeground, bg = diff.addEmphasis, bold = true, underline = is_light or nil },
+        GitSignsDeleteLnInline = { fg = diff.inlineForeground, bg = diff.deleteEmphasis, bold = true, underline = is_light or nil },
+        GitSignsChangeLnInline = { fg = diff.inlineForeground, bg = diff.changeEmphasis, bold = true, underline = is_light or nil },
         GitConflictCurrent = { fg = diff.conflictForeground, bg = diff.conflictBackground },
         GitConflictIncoming = { fg = diff.conflictForeground, bg = diff.conflictBackground },
         GitConflictAncestor = { fg = diff.hunkForeground, bg = diff.hunkBackground },
@@ -142,6 +142,27 @@ function M.load(variant)
         DiagnosticVirtualTextInfo = { fg = accent.blue, bg = bg.surface0 },
         DiagnosticVirtualTextHint = { fg = accent.aqua, bg = bg.surface0 },
       }
+      if is_light then
+        -- Explicit pairs avoid inherited reverse/search foregrounds and pale borders.
+        overrides.PmenuKindSel = { fg = highlight.foreground, bg = highlight.background }
+        overrides.PmenuExtraSel = { fg = highlight.foreground, bg = highlight.background }
+        overrides.SnacksPickerSelected = { fg = accent.olive, bold = true }
+        overrides.Substitute = { fg = highlight.foreground, bg = highlight.background }
+        overrides["@comment.error"] = { fg = bg.base, bg = accent.coral, bold = M.config.bold }
+        overrides.MiniTablineTabpagesection = { fg = highlight.foreground, bg = highlight.background, bold = true }
+        overrides.SnacksPickerPickWin = { fg = highlight.foreground, bg = highlight.background, bold = true }
+        overrides.Search = { fg = highlight.foreground, bg = highlight.background }
+        overrides.IncSearch = { fg = highlight.foreground, bg = highlight.background }
+        overrides.CurSearch = overrides.IncSearch
+        overrides.FloatBorder = { fg = fg.muted, bg = bg.surface0 }
+        overrides.CmpCompletionBorder = { link = "FloatBorder" }
+        overrides.BlinkCmpMenuBorder = { link = "FloatBorder" }
+        overrides.WinSeparator = { fg = fg.muted }
+        overrides.CursorLine = { bg = bg.surface1 }
+        overrides.PmenuMatch = { fg = accent.clay, bg = bg.surface0, bold = true }
+        overrides.PmenuMatchSel = { fg = highlight.foreground, bg = highlight.background, bold = true }
+      end
+      return overrides
     end,
   })
 

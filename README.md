@@ -1,13 +1,20 @@
 # Loden
 
-A warm theme family inspired by the olive-green dial, brushed steel, and cream markings of a Formex Reef watch. Loden is designed for sustained software-engineering work, with particular attention to readable syntax and high-information diffs in Neovim, Ghostty, Codex, and Claude Code.
+A restrained earthy theme family. Night draws on the olive-green dial, brushed steel, and cream markings of a Formex Reef watch; Day pairs warm parchment with black neutral text and restrained colored syntax, informed by the Citizen AQ4100-57C and a preference for Gruvbox Light Soft. Loden is designed for sustained software-engineering work, with particular attention to readable syntax and high-information diffs in Neovim, Ghostty, Codex, and Claude Code.
 
-Loden includes equal Day and Night variants. Both are authored from one canonical palette and share the ochre interaction color `#B17232` with black selected text.
+Loden includes equal Day and Night variants. Both are authored from canonical JSON palettes and share the ochre interaction color `#B17232` with black selected text.
+
+## Guiding principles
+
+1. **Excellent diffs.** Make additions, deletions, and changed lines easy to scan, and make the specifically changed characters within a line unmistakable—including single digits, punctuation, operators, and whitespace. Inline emphasis must remain distinct from its surrounding line treatment, with readable text and non-color markers.
+2. **Warmth for long sessions.** Preserve warm, restrained surfaces and readable text throughout sustained coding and review, including long Codex and Claude Code conversations, terminal output, and agent-generated diffs. Evaluate complete workflows, not just syntax swatches.
+
+Watch inspiration, contrast measurements, and color-distance metrics serve these principles. Day highlighted selections, search matches, Neovim DiffText, and GitSigns inline diff characters preserve black foreground text; choose their backgrounds accordingly. Every port should carry the same diff clarity and warmth into the surfaces its host actually renders.
 
 | Variant | Background | Foreground | Intended use |
 | --- | --- | --- | --- |
 | Loden Night | `#171812` | `#C9BA99` | Low-light and evening work |
-| Loden Day | `#EAE4D5` | `#34362C` | Bright offices and daytime work |
+| Loden Day | `#F0E9D2` | `#000000` | Bright offices and daytime work |
 
 ## Supported applications
 
@@ -43,7 +50,7 @@ The preview includes:
 - terminal output for Git and AI coding tools;
 - calculated WCAG contrast against the primary background.
 
-The palette is authored in sRGB. The primary background is `#171812`.
+The palette is authored in sRGB. The canvases are `#171812` (Night) and `#F0E9D2` (Day).
 
 ## Palette and validation
 
@@ -65,6 +72,8 @@ Generated artifacts:
 - `claude-code/themes/loden-night.json` and `claude-code/themes/loden-day.json`
 - `slack/loden-night.txt` and `slack/loden-day.txt`
 - `linear/loden-night.txt` and `linear/loden-day.txt`
+
+Day’s surface contract, matched previews, comparison palettes, simulation trade-offs, and validation commands are in the [Day design review](reports/day-review/README.md). Day uses black neutral text, colored syntax with bold keywords, black-on-ochre selection and DiffText, and black underlined GitSigns inline characters; informational muted text is held to 4.5:1 on its supported surfaces. Night remains unchanged.
 
 The shared interaction pair is ochre `#B17232` with pure black text `#000000`. It drives Neovim Visual mode, Ghostty selections and cursor, Zsh selections, the macOS system highlight, and Firefox URL-bar selection.
 
@@ -117,7 +126,7 @@ Generated files should not be edited directly. Change the canonical palette or g
 
 ## Dynamic macOS wallpaper
 
-`wallpapers/loden.heic` contains two 6016×3760 sRGB frames and Apple's appearance metadata. macOS displays the warm `#EAE4D5` Day frame in Light appearance and the olive-black `#171812` Night frame in Dark appearance.
+`wallpapers/loden.heic` contains two 6016×3760 sRGB frames and Apple's appearance metadata. macOS displays the warm parchment `#F0E9D2` Day frame in Light appearance and the olive-black `#171812` Night frame in Dark appearance.
 
 To regenerate and inspect it on macOS:
 

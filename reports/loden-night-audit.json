@@ -435,6 +435,748 @@
       "passed": true
     }
   ],
+  "inlineEmphasisReview": [
+    {
+      "state": "add",
+      "lineContrast": 1.408,
+      "lineDeltaEOK": {
+        "normal": 0.0938,
+        "protan": 0.0961,
+        "deutan": 0.0924,
+        "tritan": 0.0909,
+        "grayscale": 0.0923
+      }
+    },
+    {
+      "state": "delete",
+      "lineContrast": 1.39,
+      "lineDeltaEOK": {
+        "normal": 0.0997,
+        "protan": 0.0899,
+        "deutan": 0.1001,
+        "tritan": 0.1017,
+        "grayscale": 0.0959
+      }
+    },
+    {
+      "state": "change",
+      "lineContrast": 1.196,
+      "lineDeltaEOK": {
+        "normal": 0.0483,
+        "protan": 0.0451,
+        "deutan": 0.0491,
+        "tritan": 0.0486,
+        "grayscale": 0.0465
+      }
+    }
+  ],
+  "changedLineCanvasReview": {
+    "normal": 0.112,
+    "protan": 0.1042,
+    "deutan": 0.1138,
+    "tritan": 0.1129,
+    "grayscale": 0.1077
+  },
+  "surfaceObservations": [
+    {
+      "name": "muted on base",
+      "foreground": "#777264",
+      "background": "#171812",
+      "wcag": 3.72,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "comment on base",
+      "foreground": "#A09880",
+      "background": "#171812",
+      "wcag": 6.21,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "subtext on base",
+      "foreground": "#B9AD91",
+      "background": "#171812",
+      "wcag": 8.04,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "text on base",
+      "foreground": "#C9BA99",
+      "background": "#171812",
+      "wcag": 9.33,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "bright on base",
+      "foreground": "#E4D3AD",
+      "background": "#171812",
+      "wcag": 12.09,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "olive on base",
+      "foreground": "#A6AD7C",
+      "background": "#171812",
+      "wcag": 7.56,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "sage on base",
+      "foreground": "#9FB483",
+      "background": "#171812",
+      "wcag": 7.94,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "gold on base",
+      "foreground": "#D1B56F",
+      "background": "#171812",
+      "wcag": 8.97,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "ochre on base",
+      "foreground": "#C99B62",
+      "background": "#171812",
+      "wcag": 7.1,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "clay on base",
+      "foreground": "#CC8668",
+      "background": "#171812",
+      "wcag": 6.1,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "coral on base",
+      "foreground": "#DA8075",
+      "background": "#171812",
+      "wcag": 6.23,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "aqua on base",
+      "foreground": "#82AAA0",
+      "background": "#171812",
+      "wcag": 6.98,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "blue on base",
+      "foreground": "#94B0BA",
+      "background": "#171812",
+      "wcag": 7.81,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "mauve on base",
+      "foreground": "#B09BA9",
+      "background": "#171812",
+      "wcag": 6.9,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "muted on mantle",
+      "foreground": "#777264",
+      "background": "#13140F",
+      "wcag": 3.86,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "comment on mantle",
+      "foreground": "#A09880",
+      "background": "#13140F",
+      "wcag": 6.43,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "subtext on mantle",
+      "foreground": "#B9AD91",
+      "background": "#13140F",
+      "wcag": 8.33,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "text on mantle",
+      "foreground": "#C9BA99",
+      "background": "#13140F",
+      "wcag": 9.67,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "bright on mantle",
+      "foreground": "#E4D3AD",
+      "background": "#13140F",
+      "wcag": 12.53,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "olive on mantle",
+      "foreground": "#A6AD7C",
+      "background": "#13140F",
+      "wcag": 7.83,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "sage on mantle",
+      "foreground": "#9FB483",
+      "background": "#13140F",
+      "wcag": 8.22,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "gold on mantle",
+      "foreground": "#D1B56F",
+      "background": "#13140F",
+      "wcag": 9.3,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "ochre on mantle",
+      "foreground": "#C99B62",
+      "background": "#13140F",
+      "wcag": 7.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "clay on mantle",
+      "foreground": "#CC8668",
+      "background": "#13140F",
+      "wcag": 6.33,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "coral on mantle",
+      "foreground": "#DA8075",
+      "background": "#13140F",
+      "wcag": 6.46,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "aqua on mantle",
+      "foreground": "#82AAA0",
+      "background": "#13140F",
+      "wcag": 7.23,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "blue on mantle",
+      "foreground": "#94B0BA",
+      "background": "#13140F",
+      "wcag": 8.09,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "mauve on mantle",
+      "foreground": "#B09BA9",
+      "background": "#13140F",
+      "wcag": 7.15,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "muted on surface0",
+      "foreground": "#777264",
+      "background": "#202219",
+      "wcag": 3.35,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "comment on surface0",
+      "foreground": "#A09880",
+      "background": "#202219",
+      "wcag": 5.6,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "subtext on surface0",
+      "foreground": "#B9AD91",
+      "background": "#202219",
+      "wcag": 7.24,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "text on surface0",
+      "foreground": "#C9BA99",
+      "background": "#202219",
+      "wcag": 8.41,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "bright on surface0",
+      "foreground": "#E4D3AD",
+      "background": "#202219",
+      "wcag": 10.9,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "olive on surface0",
+      "foreground": "#A6AD7C",
+      "background": "#202219",
+      "wcag": 6.82,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "sage on surface0",
+      "foreground": "#9FB483",
+      "background": "#202219",
+      "wcag": 7.15,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "gold on surface0",
+      "foreground": "#D1B56F",
+      "background": "#202219",
+      "wcag": 8.09,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "ochre on surface0",
+      "foreground": "#C99B62",
+      "background": "#202219",
+      "wcag": 6.4,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "clay on surface0",
+      "foreground": "#CC8668",
+      "background": "#202219",
+      "wcag": 5.5,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "coral on surface0",
+      "foreground": "#DA8075",
+      "background": "#202219",
+      "wcag": 5.62,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "aqua on surface0",
+      "foreground": "#82AAA0",
+      "background": "#202219",
+      "wcag": 6.29,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "blue on surface0",
+      "foreground": "#94B0BA",
+      "background": "#202219",
+      "wcag": 7.04,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "mauve on surface0",
+      "foreground": "#B09BA9",
+      "background": "#202219",
+      "wcag": 6.22,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "muted on surface1",
+      "foreground": "#777264",
+      "background": "#292C20",
+      "wcag": 2.97,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "comment on surface1",
+      "foreground": "#A09880",
+      "background": "#292C20",
+      "wcag": 4.95,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "subtext on surface1",
+      "foreground": "#B9AD91",
+      "background": "#292C20",
+      "wcag": 6.4,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "text on surface1",
+      "foreground": "#C9BA99",
+      "background": "#292C20",
+      "wcag": 7.43,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "bright on surface1",
+      "foreground": "#E4D3AD",
+      "background": "#292C20",
+      "wcag": 9.64,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "olive on surface1",
+      "foreground": "#A6AD7C",
+      "background": "#292C20",
+      "wcag": 6.03,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "sage on surface1",
+      "foreground": "#9FB483",
+      "background": "#292C20",
+      "wcag": 6.32,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "gold on surface1",
+      "foreground": "#D1B56F",
+      "background": "#292C20",
+      "wcag": 7.15,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "ochre on surface1",
+      "foreground": "#C99B62",
+      "background": "#292C20",
+      "wcag": 5.66,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "clay on surface1",
+      "foreground": "#CC8668",
+      "background": "#292C20",
+      "wcag": 4.86,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "coral on surface1",
+      "foreground": "#DA8075",
+      "background": "#292C20",
+      "wcag": 4.97,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "aqua on surface1",
+      "foreground": "#82AAA0",
+      "background": "#292C20",
+      "wcag": 5.56,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "blue on surface1",
+      "foreground": "#94B0BA",
+      "background": "#292C20",
+      "wcag": 6.22,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "mauve on surface1",
+      "foreground": "#B09BA9",
+      "background": "#292C20",
+      "wcag": 5.5,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "chrome text on crust",
+      "foreground": "#C9BA99",
+      "background": "#10110D",
+      "wcag": 9.9,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "chrome subtext on crust",
+      "foreground": "#B9AD91",
+      "background": "#10110D",
+      "wcag": 8.53,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "chrome bright on crust",
+      "foreground": "#E4D3AD",
+      "background": "#10110D",
+      "wcag": 12.83,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "chrome text on surface2",
+      "foreground": "#C9BA99",
+      "background": "#35392A",
+      "wcag": 6.2,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "chrome subtext on surface2",
+      "foreground": "#B9AD91",
+      "background": "#35392A",
+      "wcag": 5.34,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "chrome bright on surface2",
+      "foreground": "#E4D3AD",
+      "background": "#35392A",
+      "wcag": 8.03,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "inactive status label",
+      "foreground": "#777264",
+      "background": "#13140F",
+      "wcag": 3.86,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "popup border",
+      "foreground": "#35392A",
+      "background": "#202219",
+      "wcag": 1.36,
+      "target": 3.0,
+      "passed": false
+    },
+    {
+      "name": "search result",
+      "foreground": "#C9BA99",
+      "background": "#4A3B20",
+      "wcag": 5.66,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "selected popup kind",
+      "foreground": "#B9AD91",
+      "background": "#B17232",
+      "wcag": 1.78,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "selected popup extra",
+      "foreground": "#777264",
+      "background": "#B17232",
+      "wcag": 1.22,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "substitution",
+      "foreground": "#C9BA99",
+      "background": "#EEAAA1",
+      "wcag": 1.01,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "error annotation",
+      "foreground": "#C9BA99",
+      "background": "#DA8075",
+      "wcag": 1.5,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "tab label on crust",
+      "foreground": "#777264",
+      "background": "#10110D",
+      "wcag": 3.95,
+      "target": 4.5,
+      "passed": false
+    },
+    {
+      "name": "Neovim DiffText",
+      "foreground": "#000000",
+      "background": "#B17232",
+      "wcag": 5.32,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "selection edge on mantle",
+      "foreground": "#B17232",
+      "background": "#13140F",
+      "wcag": 4.69,
+      "target": 3.0,
+      "passed": true
+    },
+    {
+      "name": "selection edge on surface0",
+      "foreground": "#B17232",
+      "background": "#202219",
+      "wcag": 4.08,
+      "target": 3.0,
+      "passed": true
+    },
+    {
+      "name": "selection edge on surface1",
+      "foreground": "#B17232",
+      "background": "#292C20",
+      "wcag": 3.61,
+      "target": 3.0,
+      "passed": true
+    },
+    {
+      "name": "git add sign",
+      "foreground": "#C4DCA9",
+      "background": "#171812",
+      "wcag": 12.04,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "git delete sign",
+      "foreground": "#EEAAA1",
+      "background": "#171812",
+      "wcag": 9.27,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "git change sign",
+      "foreground": "#E2C77E",
+      "background": "#171812",
+      "wcag": 10.8,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "status olive",
+      "foreground": "#171812",
+      "background": "#A6AD7C",
+      "wcag": 7.56,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "status sage",
+      "foreground": "#171812",
+      "background": "#9FB483",
+      "wcag": 7.94,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "status mauve",
+      "foreground": "#171812",
+      "background": "#B09BA9",
+      "wcag": 6.9,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "status coral",
+      "foreground": "#171812",
+      "background": "#DA8075",
+      "wcag": 6.23,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "status gold",
+      "foreground": "#171812",
+      "background": "#D1B56F",
+      "wcag": 8.97,
+      "target": 4.5,
+      "passed": true
+    }
+  ],
+  "semanticRoleReview": [
+    {
+      "name": "numbers/keywords",
+      "deltaEOK": {
+        "normal": 0.0572,
+        "protan": 0.056,
+        "deutan": 0.0389,
+        "tritan": 0.0486,
+        "grayscale": 0.0403
+      }
+    },
+    {
+      "name": "information/hints",
+      "deltaEOK": {
+        "normal": 0.0461,
+        "protan": 0.0399,
+        "deutan": 0.0396,
+        "tritan": 0.0349,
+        "grayscale": 0.0306
+      }
+    },
+    {
+      "name": "operators/strings",
+      "deltaEOK": {
+        "normal": 0.0192,
+        "protan": 0.0177,
+        "deutan": 0.0119,
+        "tritan": 0.0231,
+        "grayscale": 0.0134
+      }
+    },
+    {
+      "name": "keywords/errors",
+      "deltaEOK": {
+        "normal": 0.0352,
+        "protan": 0.0202,
+        "deutan": 0.0152,
+        "tritan": 0.0286,
+        "grayscale": 0.0054
+      }
+    }
+  ],
   "colors": {
     "backgrounds.crust": {
       "hex": "#10110D",

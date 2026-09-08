@@ -1,0 +1,7 @@
+[
+  {"name":"Modus Operandi", "source":"https://github.com/protesilaos/modus-themes/blob/main/modus-themes.el", "background":"#FFFFFF", "text":"#000000", "comment":"#595959", "string":"#3548CF", "keyword":"#531AB6", "function":"#721045", "type":"#005F5F", "number":"#000000"},
+  {"name":"Ef Day", "source":"https://github.com/protesilaos/ef-themes/blob/e1f617607a5f0692b398365dcd8412ba1e98ccb3/ef-day-theme.el", "background":"#FFF5EA", "text":"#584141", "comment":"#527545", "string":"#5F7200", "keyword":"#A45A22", "function":"#CA3E54", "type":"#0F7F5F", "number":"#584141"},
+  {"name":"Solarized Light", "source":"https://github.com/altercation/solarized", "background":"#FDF6E3", "text":"#657B83", "comment":"#93A1A1", "string":"#2AA198", "keyword":"#859900", "function":"#268BD2", "type":"#B58900", "number":"#D33682"},
+  {"name":"Catppuccin Latte", "source":"https://github.com/catppuccin/palette/blob/main/palette.json", "background":"#EFF1F5", "text":"#4C4F69", "comment":"#9CA0B0", "string":"#40A02B", "keyword":"#8839EF", "function":"#1E66F5", "type":"#DF8E1D", "number":"#FE640B"},
+  {"name":"Everforest Light (medium)", "source":"https://github.com/sainnhe/everforest/blob/master/autoload/everforest.vim", "background":"#FDF6E3", "text":"#5C6A72", "comment":"#939F91", "string":"#8DA101", "keyword":"#F85552", "function":"#8DA101", "type":"#DFA000", "number":"#DF69BA"}
+]

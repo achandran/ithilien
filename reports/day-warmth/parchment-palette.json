@@ -1,0 +1,73 @@
+{
+  "colorSpace": "sRGB",
+  "highlight": {
+    "background": "#B17232",
+    "foreground": "#000000"
+  },
+  "name": "B / Parchment",
+  "slug": "loden-day",
+  "polarity": "light",
+  "backgrounds": {
+    "crust": "#D8D2BE",
+    "mantle": "#E8E1CD",
+    "base": "#F0E9D2",
+    "surface0": "#F7F0DF",
+    "surface1": "#ECE5D2",
+    "surface2": "#C1BEAC"
+  },
+  "foregrounds": {
+    "muted": "#5C6358",
+    "comment": "#596153",
+    "subtext": "#484E43",
+    "text": "#34382F",
+    "bright": "#242820"
+  },
+  "accents": {
+    "olive": "#64602F",
+    "sage": "#456344",
+    "gold": "#5C4619",
+    "ochre": "#795B28",
+    "clay": "#88483E",
+    "coral": "#A03440",
+    "aqua": "#28665F",
+    "blue": "#405B80",
+    "mauve": "#75516F"
+  },
+  "ansi": {
+    "black": "#242820",
+    "red": "#84342F",
+    "green": "#405A34",
+    "yellow": "#5A4006",
+    "blue": "#304564",
+    "magenta": "#67475C",
+    "cyan": "#204F49",
+    "white": "#484E43",
+    "brightBlack": "#5C6358",
+    "brightRed": "#A03440",
+    "brightGreen": "#456344",
+    "brightYellow": "#5C4619",
+    "brightBlue": "#405B80",
+    "brightMagenta": "#75516F",
+    "brightCyan": "#28665F",
+    "brightWhite": "#34382F",
+    "extendedOchre": "#795B28",
+    "extendedClay": "#88483E"
+  },
+  "diff": {
+    "contextForeground": "#484E43",
+    "inlineForeground": "#000000",
+    "addForeground": "#1F3518",
+    "addBackground": "#B2CCA4",
+    "addEmphasis": "#A1BA77",
+    "deleteForeground": "#602C28",
+    "deleteBackground": "#E8D3CD",
+    "deleteEmphasis": "#E2A69B",
+    "changeForeground": "#514015",
+    "changeBackground": "#F2E8C9",
+    "changeEmphasis": "#D2B16B",
+    "hunkForeground": "#25443F",
+    "hunkBackground": "#D5E1DE",
+    "conflictForeground": "#503348",
+    "conflictBackground": "#E2D3DE"
+  }
+}

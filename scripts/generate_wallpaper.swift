@@ -4,8 +4,15 @@ import ImageIO
 
 let width = 6016
 let height = 3760
-let dayHex = "EAE4D5"
-let nightHex = "171812"
+// Read canonical palettes; never duplicate Day/Night colors in this generator.
+let paletteDirectory = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("palette")
+func canvas(_ variant: String) throws -> String {
+  let data = try Data(contentsOf: paletteDirectory.appendingPathComponent("loden-\(variant).json"))
+  let palette = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+  return (palette["backgrounds"] as! [String: String])["base"]!.replacingOccurrences(of: "#", with: "")
+}
+let dayHex = try canvas("day")
+let nightHex = try canvas("night")
 
 enum WallpaperError: Error, CustomStringConvertible {
   case invalidHex(String)

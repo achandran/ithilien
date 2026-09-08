@@ -1,27 +1,27 @@
 # Loden Day — generated from palette/loden-day.json; do not edit by hand.
 # Warm, readability-first foundations and diff-aware ANSI colors.
 
-palette = 0=#24251E
+palette = 0=#000000
 palette = 1=#84342F
 palette = 2=#405A34
 palette = 3=#5A4006
-palette = 4=#345663
+palette = 4=#304564
 palette = 5=#67475C
-palette = 6=#2F5D55
-palette = 7=#484A3D
-palette = 8=#7B7A6B
-palette = 9=#A13F3B
-palette = 10=#4F693D
-palette = 11=#684C0A
-palette = 12=#3E6270
-palette = 13=#765369
-palette = 14=#37685F
-palette = 15=#34362C
-palette = 16=#87541F
-palette = 17=#924A2F
+palette = 6=#204F49
+palette = 7=#000000
+palette = 8=#000000
+palette = 9=#A03440
+palette = 10=#456344
+palette = 11=#5C4619
+palette = 12=#405B80
+palette = 13=#75516F
+palette = 14=#28665F
+palette = 15=#000000
+palette = 16=#795B28
+palette = 17=#88483E
 
-background = #EAE4D5
-foreground = #34362C
+background = #F0E9D2
+foreground = #000000
 cursor-color = #B17232
 cursor-text = #000000
 selection-background = #B17232

@@ -1,0 +1,376 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1540" height="1080" viewBox="0 0 1540 1080">
+<style>text{font-family:"Berkeley Mono",monospace;font-size:15px}</style>
+<rect x="0" y="0" width="1540" height="1080" fill="#D0CEC5"/>
+<rect x="0" y="0" width="760" height="1080" fill="#EEECE1"/>
+<rect x="0" y="0" width="760" height="42" fill="#D5D6CD"/>
+<text x="18" y="27" fill="#34382F" font-weight="700">Current Day / normal</text>
+<rect x="0" y="42" width="760" height="32" fill="#E2E1D7"/>
+<text x="18" y="64" fill="#484E43" >src/retry.ts   |   main   |   UTF-8</text>
+<text x="15" y="101" fill="#5C6358" > 1</text>
+<text x="52" y="101" fill="#596153" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="15" y="124" fill="#5C6358" > 2</text>
+<text x="52" y="124" fill="#88483E" font-weight="700">export type </text>
+<text x="160" y="124" fill="#28665F" >RetryPolicy</text>
+<text x="259" y="124" fill="#34382F" > = { limit: </text>
+<text x="367" y="124" fill="#28665F" >number</text>
+<text x="421" y="124" fill="#34382F" >; delay: </text>
+<text x="502" y="124" fill="#28665F" >number</text>
+<text x="556" y="124" fill="#34382F" > }</text>
+<text x="15" y="147" fill="#5C6358" > 3</text>
+<text x="52" y="147" fill="#88483E" font-weight="700">const </text>
+<text x="106" y="147" fill="#34382F" >policy: </text>
+<text x="178" y="147" fill="#28665F" >RetryPolicy</text>
+<text x="277" y="147" fill="#34382F" > = { limit: </text>
+<text x="385" y="147" fill="#795B28" >3</text>
+<text x="394" y="147" fill="#34382F" >, delay: </text>
+<text x="475" y="147" fill="#795B28" >250</text>
+<text x="502" y="147" fill="#34382F" > }</text>
+<text x="15" y="170" fill="#5C6358" > 4</text>
+<text x="52" y="170" fill="#88483E" font-weight="700">export async function </text>
+<text x="250" y="170" fill="#5C4619" >fetchWithRetry</text>
+<text x="376" y="170" fill="#34382F" >(url: </text>
+<text x="430" y="170" fill="#28665F" >string</text>
+<text x="484" y="170" fill="#34382F" >) {</text>
+<text x="15" y="193" fill="#5C6358" > 5</text>
+<text x="52" y="193" fill="#34382F" >  </text>
+<text x="70" y="193" fill="#88483E" font-weight="700">for </text>
+<text x="106" y="193" fill="#34382F" >(</text>
+<text x="115" y="193" fill="#88483E" font-weight="700">let </text>
+<text x="151" y="193" fill="#34382F" >attempt = </text>
+<text x="241" y="193" fill="#795B28" >0</text>
+<text x="250" y="193" fill="#34382F" >; attempt </text>
+<text x="340" y="193" fill="#64602F" >&lt; </text>
+<text x="358" y="193" fill="#34382F" >policy.limit; attempt</text>
+<text x="547" y="193" fill="#64602F" >++</text>
+<text x="565" y="193" fill="#34382F" >) {</text>
+<text x="15" y="216" fill="#5C6358" > 6</text>
+<text x="52" y="216" fill="#34382F" >    </text>
+<text x="88" y="216" fill="#88483E" font-weight="700">const </text>
+<text x="142" y="216" fill="#34382F" >response = </text>
+<text x="241" y="216" fill="#88483E" font-weight="700">await </text>
+<text x="295" y="216" fill="#5C4619" >fetch</text>
+<text x="340" y="216" fill="#34382F" >(url, { cache: </text>
+<text x="475" y="216" fill="#456344" >&quot;no-store&quot;</text>
+<text x="565" y="216" fill="#34382F" > })</text>
+<text x="15" y="239" fill="#5C6358" > 7</text>
+<text x="52" y="239" fill="#34382F" >    </text>
+<text x="88" y="239" fill="#88483E" font-weight="700">if </text>
+<text x="115" y="239" fill="#34382F" >(response.status </text>
+<text x="268" y="239" fill="#64602F" >=== </text>
+<text x="304" y="239" fill="#795B28" >429</text>
+<text x="331" y="239" fill="#34382F" >) {</text>
+<rect x="0" y="246" width="760" height="23" fill="#E8E8DE"/>
+<text x="15" y="262" fill="#5C6358" > 8</text>
+<text x="52" y="262" fill="#34382F" >      </text>
+<text x="106" y="262" fill="#88483E" font-weight="700">await </text>
+<text x="160" y="262" fill="#5C4619" >sleep</text>
+<text x="205" y="262" fill="#34382F" >(policy.delay </text>
+<text x="331" y="262" fill="#64602F" >* </text>
+<text x="349" y="262" fill="#34382F" >(attempt </text>
+<text x="430" y="262" fill="#64602F" >+ </text>
+<text x="448" y="262" fill="#795B28" >1</text>
+<text x="457" y="262" fill="#34382F" >))</text>
+<text x="15" y="285" fill="#5C6358" > 9</text>
+<text x="52" y="285" fill="#34382F" >      </text>
+<text x="106" y="285" fill="#88483E" font-weight="700">continue</text>
+<text x="15" y="308" fill="#5C6358" >10</text>
+<text x="52" y="308" fill="#34382F" >    }</text>
+<text x="15" y="331" fill="#5C6358" >11</text>
+<text x="52" y="331" fill="#34382F" >    </text>
+<text x="88" y="331" fill="#88483E" font-weight="700">if </text>
+<text x="115" y="331" fill="#34382F" >(</text>
+<text x="124" y="331" fill="#64602F" >!</text>
+<text x="133" y="331" fill="#34382F" >response.ok) </text>
+<text x="250" y="331" fill="#88483E" font-weight="700">throw new </text>
+<text x="340" y="331" fill="#28665F" >Error</text>
+<text x="385" y="331" fill="#34382F" >(</text>
+<text x="394" y="331" fill="#456344" >&quot;request failed&quot;</text>
+<text x="538" y="331" fill="#34382F" >)</text>
+<text x="15" y="354" fill="#5C6358" >12</text>
+<text x="52" y="354" fill="#34382F" >    </text>
+<text x="88" y="354" fill="#88483E" font-weight="700">return </text>
+<text x="151" y="354" fill="#34382F" >response.</text>
+<text x="232" y="354" fill="#5C4619" >json</text>
+<text x="268" y="354" fill="#34382F" >() </text>
+<text x="295" y="354" fill="#88483E" font-weight="700">as </text>
+<text x="322" y="354" fill="#28665F" >Promise&lt;Result&gt;</text>
+<text x="15" y="377" fill="#5C6358" >13</text>
+<text x="52" y="377" fill="#34382F" >  }</text>
+<text x="15" y="400" fill="#5C6358" >14</text>
+<text x="52" y="400" fill="#34382F" >  </text>
+<text x="70" y="400" fill="#88483E" font-weight="700">throw new </text>
+<text x="160" y="400" fill="#28665F" >Error</text>
+<text x="205" y="400" fill="#34382F" >(</text>
+<text x="214" y="400" fill="#456344" >&quot;retry budget exhausted&quot;</text>
+<text x="430" y="400" fill="#34382F" >)</text>
+<text x="15" y="423" fill="#5C6358" >15</text>
+<text x="52" y="423" fill="#34382F" >}</text>
+<text x="15" y="446" fill="#5C6358" >16</text>
+<text x="52" y="446" fill="#75516F" >describe</text>
+<text x="124" y="446" fill="#34382F" >(</text>
+<text x="133" y="446" fill="#456344" >&quot;retries&quot;</text>
+<text x="214" y="446" fill="#34382F" >, () </text>
+<text x="259" y="446" fill="#64602F" >=&gt; </text>
+<text x="286" y="446" fill="#5C4619" >expect</text>
+<text x="340" y="446" fill="#34382F" >(policy.limit).</text>
+<text x="475" y="446" fill="#5C4619" >toBe</text>
+<text x="511" y="446" fill="#34382F" >(</text>
+<text x="520" y="446" fill="#795B28" >3</text>
+<text x="529" y="446" fill="#34382F" >))</text>
+<rect x="12" y="466" width="736" height="24" fill="#F5F3EA"/>
+<text x="22" y="483" fill="#A03440" >E  Error: Result is not defined</text>
+<rect x="12" y="490" width="736" height="24" fill="#F5F3EA"/>
+<text x="22" y="507" fill="#5C4619" >W  Warning: retry may repeat a side effect</text>
+<rect x="12" y="514" width="736" height="24" fill="#F5F3EA"/>
+<text x="22" y="531" fill="#405B80" >I  Info: response body is parsed as JSON</text>
+<rect x="12" y="538" width="736" height="24" fill="#F5F3EA"/>
+<text x="22" y="555" fill="#28665F" >H  Hint: extract a named delay constant</text>
+<rect x="16" y="578" width="360" height="114" fill="#5C6358"/>
+<rect x="17" y="579" width="358" height="112" fill="#F5F3EA"/>
+<text x="28" y="599" fill="#484E43" >Completion / documentation</text>
+<text x="28" y="625" fill="#5C4619" >fetchWithRetry    (function)</text>
+<rect x="18" y="636" width="356" height="25" fill="#B17232"/>
+<text x="28" y="654" fill="#000000" >fetch</text>
+<text x="181" y="654" fill="#000000" >[web]</text>
+<text x="28" y="683" fill="#596153" font-style="italic">// Returns a parsed response</text>
+<text x="398" y="595" fill="#484E43" >Interaction comparison</text>
+<rect x="398" y="609" width="344" height="26" fill="#B17232"/>
+<text x="405" y="628" fill="#000000" > selected text: 5.32:1 </text>
+<rect x="398" y="647" width="344" height="26" fill="#B17232"/>
+<text x="405" y="666" fill="#000000" > search match </text>
+<rect x="0" y="711" width="760" height="31" fill="#E2E1D7"/>
+<text x="18" y="732" fill="#484E43" >diff --git a/retry.ts b/retry.ts</text>
+<rect x="0" y="750" width="760" height="26" fill="#D5E1DE"/>
+<text x="18" y="768" fill="#25443F" >@@ -3,4 +3,4 @@ retry policy</text>
+<rect x="0" y="776" width="760" height="26" fill="#E8D3CD"/>
+<text x="18" y="794" fill="#602C28" >- const limit = 2</text>
+<rect x="162" y="776" width="9" height="26" fill="#E2A69B"/>
+<text x="162" y="794" fill="#000000" font-weight="700">2</text>
+<rect x="162" y="799" width="9" height="1" fill="#000000"/>
+<rect x="0" y="802" width="760" height="26" fill="#B2CCA4"/>
+<text x="18" y="820" fill="#1F3518" >+ const limit = 3</text>
+<rect x="162" y="802" width="9" height="26" fill="#A1BA77"/>
+<text x="162" y="820" fill="#000000" font-weight="700">3</text>
+<rect x="162" y="825" width="9" height="1" fill="#000000"/>
+<rect x="0" y="828" width="760" height="26" fill="#E8D3CD"/>
+<text x="18" y="846" fill="#602C28" >- if (ready &amp;&amp; valid) {</text>
+<rect x="126" y="828" width="18" height="26" fill="#E2A69B"/>
+<text x="126" y="846" fill="#000000" font-weight="700">&amp;&amp;</text>
+<rect x="126" y="851" width="18" height="1" fill="#000000"/>
+<rect x="0" y="854" width="760" height="26" fill="#B2CCA4"/>
+<text x="18" y="872" fill="#1F3518" >+ if (ready || valid) {</text>
+<rect x="126" y="854" width="18" height="26" fill="#A1BA77"/>
+<text x="126" y="872" fill="#000000" font-weight="700">||</text>
+<rect x="126" y="877" width="18" height="1" fill="#000000"/>
+<rect x="0" y="880" width="760" height="26" fill="#F2E8C9"/>
+<text x="18" y="898" fill="#514015" >~ // Preserve partial failures</text>
+<rect x="144" y="880" width="144" height="26" fill="#B17232"/>
+<text x="144" y="898" fill="#000000" font-weight="700">partial failures</text>
+<rect x="0" y="906" width="760" height="26" fill="#E2D3DE"/>
+<text x="18" y="924" fill="#503348" >! &lt;&lt;&lt;&lt;&lt;&lt;&lt; current / incoming</text>
+<text x="18" y="966" fill="#484E43" >Terminal: all 16 ANSI foregrounds on the canvas</text>
+<text x="18" y="993" fill="#242820" >00 Aa1</text>
+<text x="110" y="993" fill="#84342F" >01 Aa1</text>
+<text x="202" y="993" fill="#405A34" >02 Aa1</text>
+<text x="294" y="993" fill="#5A4006" >03 Aa1</text>
+<text x="386" y="993" fill="#304564" >04 Aa1</text>
+<text x="478" y="993" fill="#67475C" >05 Aa1</text>
+<text x="570" y="993" fill="#204F49" >06 Aa1</text>
+<text x="662" y="993" fill="#484E43" >07 Aa1</text>
+<text x="18" y="1017" fill="#5C6358" >08 Aa1</text>
+<text x="110" y="1017" fill="#A03440" >09 Aa1</text>
+<text x="202" y="1017" fill="#456344" >10 Aa1</text>
+<text x="294" y="1017" fill="#5C4619" >11 Aa1</text>
+<text x="386" y="1017" fill="#405B80" >12 Aa1</text>
+<text x="478" y="1017" fill="#75516F" >13 Aa1</text>
+<text x="570" y="1017" fill="#28665F" >14 Aa1</text>
+<text x="662" y="1017" fill="#34382F" >15 Aa1</text>
+<rect x="0" y="1039" width="760" height="41" fill="#E2E1D7"/>
+<text x="18" y="1065" fill="#5C6358" >inactive: retry.ts   16 lines   no pending changes</text>
+<rect x="780" y="0" width="760" height="1080" fill="#EEE9D9"/>
+<rect x="780" y="0" width="760" height="42" fill="#D5D2C5"/>
+<text x="798" y="27" fill="#34382F" font-weight="700">A / Warm ivory / normal</text>
+<rect x="780" y="42" width="760" height="32" fill="#E6E1D2"/>
+<text x="798" y="64" fill="#484E43" >src/retry.ts   |   main   |   UTF-8</text>
+<text x="795" y="101" fill="#5C6358" > 1</text>
+<text x="832" y="101" fill="#596153" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="795" y="124" fill="#5C6358" > 2</text>
+<text x="832" y="124" fill="#88483E" font-weight="700">export type </text>
+<text x="940" y="124" fill="#28665F" >RetryPolicy</text>
+<text x="1039" y="124" fill="#34382F" > = { limit: </text>
+<text x="1147" y="124" fill="#28665F" >number</text>
+<text x="1201" y="124" fill="#34382F" >; delay: </text>
+<text x="1282" y="124" fill="#28665F" >number</text>
+<text x="1336" y="124" fill="#34382F" > }</text>
+<text x="795" y="147" fill="#5C6358" > 3</text>
+<text x="832" y="147" fill="#88483E" font-weight="700">const </text>
+<text x="886" y="147" fill="#34382F" >policy: </text>
+<text x="958" y="147" fill="#28665F" >RetryPolicy</text>
+<text x="1057" y="147" fill="#34382F" > = { limit: </text>
+<text x="1165" y="147" fill="#795B28" >3</text>
+<text x="1174" y="147" fill="#34382F" >, delay: </text>
+<text x="1255" y="147" fill="#795B28" >250</text>
+<text x="1282" y="147" fill="#34382F" > }</text>
+<text x="795" y="170" fill="#5C6358" > 4</text>
+<text x="832" y="170" fill="#88483E" font-weight="700">export async function </text>
+<text x="1030" y="170" fill="#5C4619" >fetchWithRetry</text>
+<text x="1156" y="170" fill="#34382F" >(url: </text>
+<text x="1210" y="170" fill="#28665F" >string</text>
+<text x="1264" y="170" fill="#34382F" >) {</text>
+<text x="795" y="193" fill="#5C6358" > 5</text>
+<text x="832" y="193" fill="#34382F" >  </text>
+<text x="850" y="193" fill="#88483E" font-weight="700">for </text>
+<text x="886" y="193" fill="#34382F" >(</text>
+<text x="895" y="193" fill="#88483E" font-weight="700">let </text>
+<text x="931" y="193" fill="#34382F" >attempt = </text>
+<text x="1021" y="193" fill="#795B28" >0</text>
+<text x="1030" y="193" fill="#34382F" >; attempt </text>
+<text x="1120" y="193" fill="#64602F" >&lt; </text>
+<text x="1138" y="193" fill="#34382F" >policy.limit; attempt</text>
+<text x="1327" y="193" fill="#64602F" >++</text>
+<text x="1345" y="193" fill="#34382F" >) {</text>
+<text x="795" y="216" fill="#5C6358" > 6</text>
+<text x="832" y="216" fill="#34382F" >    </text>
+<text x="868" y="216" fill="#88483E" font-weight="700">const </text>
+<text x="922" y="216" fill="#34382F" >response = </text>
+<text x="1021" y="216" fill="#88483E" font-weight="700">await </text>
+<text x="1075" y="216" fill="#5C4619" >fetch</text>
+<text x="1120" y="216" fill="#34382F" >(url, { cache: </text>
+<text x="1255" y="216" fill="#456344" >&quot;no-store&quot;</text>
+<text x="1345" y="216" fill="#34382F" > })</text>
+<text x="795" y="239" fill="#5C6358" > 7</text>
+<text x="832" y="239" fill="#34382F" >    </text>
+<text x="868" y="239" fill="#88483E" font-weight="700">if </text>
+<text x="895" y="239" fill="#34382F" >(response.status </text>
+<text x="1048" y="239" fill="#64602F" >=== </text>
+<text x="1084" y="239" fill="#795B28" >429</text>
+<text x="1111" y="239" fill="#34382F" >) {</text>
+<rect x="780" y="246" width="760" height="23" fill="#E9E5D7"/>
+<text x="795" y="262" fill="#5C6358" > 8</text>
+<text x="832" y="262" fill="#34382F" >      </text>
+<text x="886" y="262" fill="#88483E" font-weight="700">await </text>
+<text x="940" y="262" fill="#5C4619" >sleep</text>
+<text x="985" y="262" fill="#34382F" >(policy.delay </text>
+<text x="1111" y="262" fill="#64602F" >* </text>
+<text x="1129" y="262" fill="#34382F" >(attempt </text>
+<text x="1210" y="262" fill="#64602F" >+ </text>
+<text x="1228" y="262" fill="#795B28" >1</text>
+<text x="1237" y="262" fill="#34382F" >))</text>
+<text x="795" y="285" fill="#5C6358" > 9</text>
+<text x="832" y="285" fill="#34382F" >      </text>
+<text x="886" y="285" fill="#88483E" font-weight="700">continue</text>
+<text x="795" y="308" fill="#5C6358" >10</text>
+<text x="832" y="308" fill="#34382F" >    }</text>
+<text x="795" y="331" fill="#5C6358" >11</text>
+<text x="832" y="331" fill="#34382F" >    </text>
+<text x="868" y="331" fill="#88483E" font-weight="700">if </text>
+<text x="895" y="331" fill="#34382F" >(</text>
+<text x="904" y="331" fill="#64602F" >!</text>
+<text x="913" y="331" fill="#34382F" >response.ok) </text>
+<text x="1030" y="331" fill="#88483E" font-weight="700">throw new </text>
+<text x="1120" y="331" fill="#28665F" >Error</text>
+<text x="1165" y="331" fill="#34382F" >(</text>
+<text x="1174" y="331" fill="#456344" >&quot;request failed&quot;</text>
+<text x="1318" y="331" fill="#34382F" >)</text>
+<text x="795" y="354" fill="#5C6358" >12</text>
+<text x="832" y="354" fill="#34382F" >    </text>
+<text x="868" y="354" fill="#88483E" font-weight="700">return </text>
+<text x="931" y="354" fill="#34382F" >response.</text>
+<text x="1012" y="354" fill="#5C4619" >json</text>
+<text x="1048" y="354" fill="#34382F" >() </text>
+<text x="1075" y="354" fill="#88483E" font-weight="700">as </text>
+<text x="1102" y="354" fill="#28665F" >Promise&lt;Result&gt;</text>
+<text x="795" y="377" fill="#5C6358" >13</text>
+<text x="832" y="377" fill="#34382F" >  }</text>
+<text x="795" y="400" fill="#5C6358" >14</text>
+<text x="832" y="400" fill="#34382F" >  </text>
+<text x="850" y="400" fill="#88483E" font-weight="700">throw new </text>
+<text x="940" y="400" fill="#28665F" >Error</text>
+<text x="985" y="400" fill="#34382F" >(</text>
+<text x="994" y="400" fill="#456344" >&quot;retry budget exhausted&quot;</text>
+<text x="1210" y="400" fill="#34382F" >)</text>
+<text x="795" y="423" fill="#5C6358" >15</text>
+<text x="832" y="423" fill="#34382F" >}</text>
+<text x="795" y="446" fill="#5C6358" >16</text>
+<text x="832" y="446" fill="#75516F" >describe</text>
+<text x="904" y="446" fill="#34382F" >(</text>
+<text x="913" y="446" fill="#456344" >&quot;retries&quot;</text>
+<text x="994" y="446" fill="#34382F" >, () </text>
+<text x="1039" y="446" fill="#64602F" >=&gt; </text>
+<text x="1066" y="446" fill="#5C4619" >expect</text>
+<text x="1120" y="446" fill="#34382F" >(policy.limit).</text>
+<text x="1255" y="446" fill="#5C4619" >toBe</text>
+<text x="1291" y="446" fill="#34382F" >(</text>
+<text x="1300" y="446" fill="#795B28" >3</text>
+<text x="1309" y="446" fill="#34382F" >))</text>
+<rect x="792" y="466" width="736" height="24" fill="#F5F0E4"/>
+<text x="802" y="483" fill="#A03440" >E  Error: Result is not defined</text>
+<rect x="792" y="490" width="736" height="24" fill="#F5F0E4"/>
+<text x="802" y="507" fill="#5C4619" >W  Warning: retry may repeat a side effect</text>
+<rect x="792" y="514" width="736" height="24" fill="#F5F0E4"/>
+<text x="802" y="531" fill="#405B80" >I  Info: response body is parsed as JSON</text>
+<rect x="792" y="538" width="736" height="24" fill="#F5F0E4"/>
+<text x="802" y="555" fill="#28665F" >H  Hint: extract a named delay constant</text>
+<rect x="796" y="578" width="360" height="114" fill="#5C6358"/>
+<rect x="797" y="579" width="358" height="112" fill="#F5F0E4"/>
+<text x="808" y="599" fill="#484E43" >Completion / documentation</text>
+<text x="808" y="625" fill="#5C4619" >fetchWithRetry    (function)</text>
+<rect x="798" y="636" width="356" height="25" fill="#B17232"/>
+<text x="808" y="654" fill="#000000" >fetch</text>
+<text x="961" y="654" fill="#000000" >[web]</text>
+<text x="808" y="683" fill="#596153" font-style="italic">// Returns a parsed response</text>
+<text x="1178" y="595" fill="#484E43" >Interaction comparison</text>
+<rect x="1178" y="609" width="344" height="26" fill="#B17232"/>
+<text x="1185" y="628" fill="#000000" > selected text: 5.32:1 </text>
+<rect x="1178" y="647" width="344" height="26" fill="#B17232"/>
+<text x="1185" y="666" fill="#000000" > search match </text>
+<rect x="780" y="711" width="760" height="31" fill="#E6E1D2"/>
+<text x="798" y="732" fill="#484E43" >diff --git a/retry.ts b/retry.ts</text>
+<rect x="780" y="750" width="760" height="26" fill="#D5E1DE"/>
+<text x="798" y="768" fill="#25443F" >@@ -3,4 +3,4 @@ retry policy</text>
+<rect x="780" y="776" width="760" height="26" fill="#E8D3CD"/>
+<text x="798" y="794" fill="#602C28" >- const limit = 2</text>
+<rect x="942" y="776" width="9" height="26" fill="#E2A69B"/>
+<text x="942" y="794" fill="#000000" font-weight="700">2</text>
+<rect x="942" y="799" width="9" height="1" fill="#000000"/>
+<rect x="780" y="802" width="760" height="26" fill="#B2CCA4"/>
+<text x="798" y="820" fill="#1F3518" >+ const limit = 3</text>
+<rect x="942" y="802" width="9" height="26" fill="#A1BA77"/>
+<text x="942" y="820" fill="#000000" font-weight="700">3</text>
+<rect x="942" y="825" width="9" height="1" fill="#000000"/>
+<rect x="780" y="828" width="760" height="26" fill="#E8D3CD"/>
+<text x="798" y="846" fill="#602C28" >- if (ready &amp;&amp; valid) {</text>
+<rect x="906" y="828" width="18" height="26" fill="#E2A69B"/>
+<text x="906" y="846" fill="#000000" font-weight="700">&amp;&amp;</text>
+<rect x="906" y="851" width="18" height="1" fill="#000000"/>
+<rect x="780" y="854" width="760" height="26" fill="#B2CCA4"/>
+<text x="798" y="872" fill="#1F3518" >+ if (ready || valid) {</text>
+<rect x="906" y="854" width="18" height="26" fill="#A1BA77"/>
+<text x="906" y="872" fill="#000000" font-weight="700">||</text>
+<rect x="906" y="877" width="18" height="1" fill="#000000"/>
+<rect x="780" y="880" width="760" height="26" fill="#F2E8C9"/>
+<text x="798" y="898" fill="#514015" >~ // Preserve partial failures</text>
+<rect x="924" y="880" width="144" height="26" fill="#B17232"/>
+<text x="924" y="898" fill="#000000" font-weight="700">partial failures</text>
+<rect x="780" y="906" width="760" height="26" fill="#E2D3DE"/>
+<text x="798" y="924" fill="#503348" >! &lt;&lt;&lt;&lt;&lt;&lt;&lt; current / incoming</text>
+<text x="798" y="966" fill="#484E43" >Terminal: all 16 ANSI foregrounds on the canvas</text>
+<text x="798" y="993" fill="#242820" >00 Aa1</text>
+<text x="890" y="993" fill="#84342F" >01 Aa1</text>
+<text x="982" y="993" fill="#405A34" >02 Aa1</text>
+<text x="1074" y="993" fill="#5A4006" >03 Aa1</text>
+<text x="1166" y="993" fill="#304564" >04 Aa1</text>
+<text x="1258" y="993" fill="#67475C" >05 Aa1</text>
+<text x="1350" y="993" fill="#204F49" >06 Aa1</text>
+<text x="1442" y="993" fill="#484E43" >07 Aa1</text>
+<text x="798" y="1017" fill="#5C6358" >08 Aa1</text>
+<text x="890" y="1017" fill="#A03440" >09 Aa1</text>
+<text x="982" y="1017" fill="#456344" >10 Aa1</text>
+<text x="1074" y="1017" fill="#5C4619" >11 Aa1</text>
+<text x="1166" y="1017" fill="#405B80" >12 Aa1</text>
+<text x="1258" y="1017" fill="#75516F" >13 Aa1</text>
+<text x="1350" y="1017" fill="#28665F" >14 Aa1</text>
+<text x="1442" y="1017" fill="#34382F" >15 Aa1</text>
+<rect x="780" y="1039" width="760" height="41" fill="#E6E1D2"/>
+<text x="798" y="1065" fill="#5C6358" >inactive: retry.ts   16 lines   no pending changes</text>
+</svg>
