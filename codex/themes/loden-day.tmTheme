@@ -208,6 +208,85 @@
 				<string>#F4E3AD</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>name</key>
+			<string>Python variables</string>
+			<key>scope</key>
+			<string>source.python variable.other, meta.generic-name.python</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Python calls and definitions</string>
+			<key>scope</key>
+			<string>variable.function.python meta.generic-name.python, variable.function.python, entity.name.function.python meta.generic-name.python</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#5C4619</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Python class definitions</string>
+			<key>scope</key>
+			<string>entity.name.class.python meta.generic-name.python</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#28665F</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Python type annotations</string>
+			<key>scope</key>
+			<string>meta.type.python variable.other, meta.function.parameters.annotation.python meta.generic-name.python, meta.function.annotation.return.python meta.generic-name.python</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#28665F</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Python constants</string>
+			<key>scope</key>
+			<string>source.python variable.other.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#795B28</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Python decorators</string>
+			<key>scope</key>
+			<string>variable.annotation.python meta.generic-name.python, variable.annotation.function.python meta.generic-name.python, entity.name.function.decorator.python, punctuation.definition.annotation.python</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#795B28</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Python operators</string>
+			<key>scope</key>
+			<string>source.python keyword.operator, keyword.control.loop.for.in.python</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#64602F</string>
+				<key>fontStyle</key>
+				<string></string>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>

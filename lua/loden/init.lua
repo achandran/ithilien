@@ -105,9 +105,9 @@ function M.load(variant)
     dimInactive = false,
     terminalColors = true,
     commentStyle = M.config.italics and { italic = true } or {},
-    keywordStyle = is_light and { bold = M.config.bold } or {},
+    keywordStyle = { bold = is_light and M.config.bold or false, italic = true },
     functionStyle = {},
-    statementStyle = is_light and { bold = M.config.bold } or {},
+    statementStyle = { bold = is_light and M.config.bold or false },
     typeStyle = {},
     background = { dark = "ink", light = "pearl" },
     theme = is_light and "pearl" or "ink",
@@ -143,6 +143,17 @@ function M.load(variant)
         DiagnosticVirtualTextHint = { fg = accent.aqua, bg = bg.surface0 },
       }
       if is_light then
+        -- Python's explicit Kanso subclasses otherwise bypass the keyword role.
+        for _, capture in ipairs({
+          "keyword", "keyword.function", "keyword.coroutine", "keyword.conditional",
+          "keyword.repeat", "keyword.return", "keyword.exception", "keyword.import",
+          "keyword.type", "keyword.modifier", "keyword.directive", "keyword.debug",
+        }) do
+          overrides["@" .. capture .. ".python"] = { fg = accent.clay, bold = M.config.bold, italic = false }
+        end
+        overrides["@keyword.operator.python"] = { fg = accent.olive, bold = false, italic = false }
+        overrides["@constant.builtin.python"] = { fg = accent.ochre, bold = false, italic = false }
+        overrides["@string.documentation.python"] = { fg = fg.comment, italic = M.config.italics }
         -- Explicit pairs avoid inherited reverse/search foregrounds and pale borders.
         overrides.PmenuKindSel = { fg = highlight.foreground, bg = highlight.background }
         overrides.PmenuExtraSel = { fg = highlight.foreground, bg = highlight.background }
@@ -177,7 +188,12 @@ function M.load(variant)
     end,
   })
 
+  -- Changing 'background' can reload the previous colorscheme recursively.
+  -- Keep its name for Kanso's highlight clear, but suppress that reload here.
+  local previous_colors_name = vim.g.colors_name
+  vim.g.colors_name = nil
   vim.o.background = is_light and "light" or "dark"
+  vim.g.colors_name = previous_colors_name
   require("kanso").load(is_light and "pearl" or "ink")
   vim.g.colors_name = is_light and "loden-day" or "loden-night"
 

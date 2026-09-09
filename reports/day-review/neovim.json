@@ -2,6 +2,7 @@
   "kansoCommit": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
   "passed": true,
   "nightIdentical": true,
+  "nightSwitchIdentical": true,
   "checks": [
     {
       "group": "@attribute",
@@ -96,6 +97,14 @@
       "foreground": "#5C4619",
       "background": "#F0E9D2",
       "ratio": 7.373,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@constant.builtin.python",
+      "foreground": "#795B28",
+      "background": "#F0E9D2",
+      "ratio": 5.177,
       "target": 4.5,
       "passed": true
     },
@@ -196,7 +205,39 @@
       "passed": true
     },
     {
+      "group": "@keyword.conditional.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
       "group": "@keyword.coroutine",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.coroutine.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.debug.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.directive.python",
       "foreground": "#88483E",
       "background": "#F0E9D2",
       "ratio": 5.681,
@@ -212,7 +253,23 @@
       "passed": true
     },
     {
+      "group": "@keyword.exception.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
       "group": "@keyword.function",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.function.python",
       "foreground": "#88483E",
       "background": "#F0E9D2",
       "ratio": 5.681,
@@ -224,6 +281,14 @@
       "foreground": "#75516F",
       "background": "#F0E9D2",
       "ratio": 5.467,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.import.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
       "target": 4.5,
       "passed": true
     },
@@ -260,6 +325,14 @@
       "passed": true
     },
     {
+      "group": "@keyword.modifier.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
       "group": "@keyword.operator",
       "foreground": "#64602F",
       "background": "#F0E9D2",
@@ -268,10 +341,42 @@
       "passed": true
     },
     {
+      "group": "@keyword.operator.python",
+      "foreground": "#64602F",
+      "background": "#F0E9D2",
+      "ratio": 5.31,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.repeat.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
       "group": "@keyword.return",
       "foreground": "#405B80",
       "background": "#F0E9D2",
       "ratio": 5.714,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.return.python",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
       "target": 4.5,
       "passed": true
     },
@@ -285,6 +390,14 @@
     },
     {
       "group": "@keyword.tsx",
+      "foreground": "#88483E",
+      "background": "#F0E9D2",
+      "ratio": 5.681,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@keyword.type.python",
       "foreground": "#88483E",
       "background": "#F0E9D2",
       "ratio": 5.681,
@@ -808,6 +921,14 @@
       "foreground": "#456344",
       "background": "#F0E9D2",
       "ratio": 5.54,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "group": "@string.documentation.python",
+      "foreground": "#53594E",
+      "background": "#F0E9D2",
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },

@@ -112,7 +112,7 @@ def generate_codex_theme(palette: dict) -> None:
             settings["foreground"] = foreground
         if background:
             settings["background"] = background
-        if font_style:
+        if font_style is not None:
             settings["fontStyle"] = font_style
         return {"name": name, "scope": scope, "settings": settings}
 
@@ -139,6 +139,18 @@ def generate_codex_theme(palette: dict) -> None:
         rule("Deleted diff", "markup.deleted, diff.deleted", diff["deleteForeground"], diff["deleteBackground"]),
         rule("Changed diff", "markup.changed, diff.changed", diff["changeForeground"], diff["changeBackground"]),
     ]
+    if day:
+        # Use identifier scopes, not whole call/annotation expressions: arguments,
+        # literals and punctuation must retain their own roles.
+        settings.extend([
+            rule("Python variables", "source.python variable.other, meta.generic-name.python", fg["text"]),
+            rule("Python calls and definitions", "variable.function.python meta.generic-name.python, variable.function.python, entity.name.function.python meta.generic-name.python", accent["gold"]),
+            rule("Python class definitions", "entity.name.class.python meta.generic-name.python", accent["aqua"]),
+            rule("Python type annotations", "meta.type.python variable.other, meta.function.parameters.annotation.python meta.generic-name.python, meta.function.annotation.return.python meta.generic-name.python", accent["aqua"]),
+            rule("Python constants", "source.python variable.other.constant", accent["ochre"]),
+            rule("Python decorators", "variable.annotation.python meta.generic-name.python, variable.annotation.function.python meta.generic-name.python, entity.name.function.decorator.python, punctuation.definition.annotation.python", accent["ochre"]),
+            rule("Python operators", "source.python keyword.operator, keyword.control.loop.for.in.python", accent["olive"], font_style=""),
+        ])
     theme = {"name": palette["name"], "author": "Loden theme generator",
              "semanticClass": f"theme.{palette['slug']}", "settings": settings}
     destination = ROOT / "codex" / "themes" / f"{palette['slug']}.tmTheme"

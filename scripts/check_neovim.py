@@ -14,6 +14,28 @@ LUA = '''
 vim.opt.rtp:prepend(vim.env.KANSO_ROOT)
 vim.opt.rtp:prepend(vim.env.LODEN_ROOT)
 require('loden').load(vim.env.LODEN_VARIANT)
+if vim.env.LODEN_SWITCH_CHECK == '1' then
+  local before = {}
+  for name,_ in pairs(vim.api.nvim_get_hl(0, {})) do
+    before[name] = vim.api.nvim_get_hl(0, {name=name,link=false})
+  end
+  local loden = require('loden')
+  loden.setup({bold=false,italics=false})
+  loden.load('day')
+  for _,group in ipairs({'@keyword.return.python','@keyword.exception.python','@string.documentation.python'}) do
+    local h = vim.api.nvim_get_hl(0, {name=group,link=false})
+    assert(not h.bold and not h.italic, 'Python typography options: '..group)
+  end
+  loden.setup({bold=true,italics=true})
+  loden.load('night')
+  for name,h in pairs(before) do
+    assert(vim.deep_equal(h, vim.api.nvim_get_hl(0, {name=name,link=false})), 'Night after switching: '..name)
+  end
+  for _,group in ipairs({'@keyword.return','@keyword.exception','@constant.builtin','@string.documentation'}) do
+    assert(vim.deep_equal(vim.api.nvim_get_hl(0, {name=group..'.python',link=false}),
+                         vim.api.nvim_get_hl(0, {name=group,link=false})), 'Day override leaked into Night: '..group)
+  end
+end
 local resolved = {}
 for name,_ in pairs(vim.api.nvim_get_hl(0, {})) do
   resolved[name] = vim.api.nvim_get_hl(0, {name=name,link=false})
@@ -32,12 +54,12 @@ DECORATIVE = {'@ibl.indent.char.1', '@ibl.scope.char.1', '@ibl.whitespace.char.1
               'IndentBlanklineSpaceChar', 'IndentBlanklineSpaceCharBlankline',
               'IblIndent', 'IblWhitespace', 'IblScope', 'EndOfBuffer'}
 
-def capture(root, kanso, variant, temp):
+def capture(root, kanso, variant, temp, switch_check=False):
     script = temp / 'capture.lua'
     script.write_text(LUA)
     output = temp / 'highlights.json'
     env = dict(os.environ, KANSO_ROOT=str(kanso), LODEN_ROOT=str(root),
-               LODEN_VARIANT=variant, LODEN_OUTPUT=str(output))
+               LODEN_VARIANT=variant, LODEN_OUTPUT=str(output), LODEN_SWITCH_CHECK='1' if switch_check else '0')
     subprocess.run(['nvim','--headless','-u','NONE','-i','NONE','-l',str(script)], env=env, check=True)
     return json.loads(output.read_text())
 
@@ -80,10 +102,11 @@ def main():
         if args.baseline:
             night_equal = capture(ROOT,args.kanso.resolve(),'night',temp) == capture(args.baseline.resolve(),args.kanso.resolve(),'night',temp)
             assert night_equal, 'Night resolved highlights changed'
+        capture(ROOT, args.kanso.resolve(), 'night', temp, switch_check=True)
         report = dict(kansoCommit=subprocess.check_output(['git','-C',str(args.kanso),'rev-parse','HEAD'],text=True).strip(),
-                      passed=not failures,nightIdentical=night_equal,checks=checks,excluded=sorted(EXCLUDED),decorative=sorted(DECORATIVE))
+                      passed=not failures,nightIdentical=night_equal,nightSwitchIdentical=True,checks=checks,excluded=sorted(EXCLUDED),decorative=sorted(DECORATIVE))
         (ROOT/'reports/day-review/neovim.json').write_text(json.dumps(report,indent=2)+'\n')
-        print(f'{len(checks)} resolved highlight checks; {len(failures)} failures; Night identical: {night_equal}')
+        print(f'{len(checks)} resolved highlight checks; {len(failures)} failures; Night identical: {night_equal}; Night switching: PASS')
         for c in failures: print(c)
         assert not failures
 

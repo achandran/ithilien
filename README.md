@@ -56,6 +56,8 @@ The palette is authored in sRGB. The canvases are `#171812` (Night) and `#F0E9D2
 
 The audit writes [the Night report](reports/loden-night-audit.md), [the Day report](reports/loden-day-audit.md), and machine-readable JSON covering WCAG, APCA, OKLCH, ΔEOK, and Machado color-vision simulations. Generation updates every integration from the same canonical JSON.
 
+Day's Python mappings use bold clay for declarations and control flow, regular olive for operators, gold for functions, aqua for types, ochre for literals and decorators, and olive-gray for documentation. Ordinary variables remain black. The [parsed Python review](reports/python-review/README.md) includes before/after previews, executable role checks, and documented differences between Neovim and TextMate grammars.
+
 Generated artifacts:
 
 - `ghostty/themes/loden-night`

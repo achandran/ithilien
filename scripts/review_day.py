@@ -40,7 +40,7 @@ class Drawing:
         svg=[f'<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="{width}" height="{height}" viewBox="0 0 {width} {height}">', '<style>text{font-family:"Berkeley Mono",monospace;font-size:15px}</style>']
         for c in self.commands:
             if 'text' in c:
-                style='font-weight="700"' if c['style']=='bold' else 'font-style="italic"' if c['style']=='italic' else ''
+                style='font-weight="700" font-style="italic"' if c['style']=='bold-italic' else 'font-weight="700"' if c['style']=='bold' else 'font-style="italic"' if c['style']=='italic' else ''
                 svg.append(f'<text x="{c["x"]}" y="{c["y"]+15}" fill="{c["color"]}" {style}>{html.escape(c["text"])}</text>')
             else: svg.append(f'<rect x="{c["x"]}" y="{c["y"]}" width="{c["w"]}" height="{c["h"]}" fill="{c["color"]}"/>')
         (OUT/f'{stem}.svg').write_text('\n'.join(svg+['</svg>']))

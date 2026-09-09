@@ -17,7 +17,7 @@ for c in data["commands"] as! [[String: Any]] {
   let ink = color(c["color"] as! String)
   if let text = c["text"] as? String {
     let style = c["style"] as? String ?? "regular"
-    let fontName = style == "bold" ? "BerkeleyMono-Bold" : style == "italic" ? "BerkeleyMono-Oblique" : "BerkeleyMono-Regular"
+    let fontName = style == "bold-italic" ? "BerkeleyMono-Bold-Oblique" : style == "bold" ? "BerkeleyMono-Bold" : style == "italic" ? "BerkeleyMono-Oblique" : "BerkeleyMono-Regular"
     let fontURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Fonts/\(fontName).otf")
     guard let provider = CGDataProvider(url: fontURL as CFURL), let cgFont = CGFont(provider) else { fatalError("Install Berkeley Mono for matched review rendering") }
     let font = CTFontCreateWithGraphicsFont(cgFont, 15, nil, nil) as NSFont
