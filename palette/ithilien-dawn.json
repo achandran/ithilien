@@ -2,67 +2,265 @@
   "name": "Ithilien Dawn",
   "slug": "ithilien-dawn",
   "polarity": "light",
+  "colors": {
+    "Osgiliath": "#D8D2BE",
+    "Gondor": "#E8E1CD",
+    "Asphodel": "#F0E9D2",
+    "Lily": "#F7F0DF",
+    "Anemone": "#ECE5D2",
+    "Stonecrop": "#C1BEAC",
+    "Ash": "#53594E",
+    "Faramir": "#484E43",
+    "Lebethron": "#000000",
+    "Ithilien": "#64602F",
+    "Sage": "#456344",
+    "Cormallen": "#5C4619",
+    "Broom": "#795B28",
+    "Terebinth": "#88483E",
+    "Rosehip": "#A03440",
+    "Poros": "#28665F",
+    "Anduin": "#405B80",
+    "Thyme": "#75516F",
+    "Briar": "#84342F",
+    "Fir": "#405A34",
+    "Filbert": "#5A4006",
+    "Harlond": "#304564",
+    "Hyacinth": "#67475C",
+    "Morgulduin": "#204F49",
+    "Cypress": "#1F3518",
+    "Pelennor": "#D5E1CA",
+    "Ilex": "#A1BA77",
+    "Cedar": "#6B322E",
+    "Eglantine": "#F0DCD6",
+    "Rose": "#E2A69B",
+    "Oak": "#453510",
+    "Celandine": "#F4E3AD",
+    "Culumalda": "#D2B16B",
+    "Juniper": "#25443F",
+    "Spray": "#D5E1DE",
+    "Myrtle": "#503348",
+    "Clematis": "#E2D3DE",
+    "Resin": "#B17232"
+  },
+  "colorNotes": {
+    "Osgiliath": {
+      "meaning": "City straddling Anduin at Ithilien’s western edge; weathered stone.",
+      "source": "https://tolkiengateway.net/wiki/Osgiliath"
+    },
+    "Gondor": {
+      "meaning": "Ithilien is a province of Gondor; pale neighbouring city stone.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Asphodel": {
+      "meaning": "Pale flowers encountered by Frodo and Sam in Ithilien.",
+      "source": "https://encyclopedia-of-arda.com/a/asphodel.php"
+    },
+    "Lily": {
+      "meaning": "Lilies in Ithilien; pale petals.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Anemone": {
+      "meaning": "White anemones in Ithilien; warm off-white.",
+      "source": "https://tolkiengateway.net/wiki/Anemones"
+    },
+    "Stonecrop": {
+      "meaning": "Ithilien stonecrops; muted grey-green foliage.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Ash": {
+      "meaning": "Ithilien ash trees; grey bark.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Faramir": {
+      "meaning": "Captain of Ithilien’s Rangers and later its prince; green clothing.",
+      "source": "https://tolkiengateway.net/wiki/Faramir"
+    },
+    "Lebethron": {
+      "meaning": "Black wood used for the casket holding the Crown of Gondor.",
+      "source": "https://tolkiengateway.net/wiki/Lebethron"
+    },
+    "Ithilien": {
+      "meaning": "Ithilien’s olive groves; olive green.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Sage": {
+      "meaning": "Sages of Ithilien; green foliage.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Cormallen": {
+      "meaning": "The golden associations of Ithilien's Field of Cormallen.",
+      "source": "https://tolkiengateway.net/wiki/Cormallen"
+    },
+    "Broom": {
+      "meaning": "Broom on the approach to Ithilien; ochre-yellow flowers.",
+      "source": "https://lentenlordoftherings.wordpress.com/2017/03/25/on-long-descriptions-of-nature/"
+    },
+    "Terebinth": {
+      "meaning": "Ithilien terebinths; warm bark and resin tones.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Rosehip": {
+      "meaning": "Fruit of Ithilien’s wild roses; deep red.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Poros": {
+      "meaning": "River marking Ithilien’s southern boundary; blue-green water.",
+      "source": "https://www.encyclopedia-of-arda.com/p/poros.html"
+    },
+    "Anduin": {
+      "meaning": "The Great River along Ithilien; interpreted as river blue.",
+      "source": "https://tolkiengateway.net/wiki/Anduin"
+    },
+    "Thyme": {
+      "meaning": "Thyme in Ithilien; muted purple flowers.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Briar": {
+      "meaning": "Briars in Ithilien; dark red fruit and stems.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Fir": {
+      "meaning": "Firs in Ithilien; evergreen green.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Filbert": {
+      "meaning": "Filbert thickets in Ithilien; warm brown nuts.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Harlond": {
+      "meaning": "The harbour on the opposite bank of Anduin from Ithilien; deep river blue.",
+      "source": "https://tolkiengateway.net/wiki/Harlond_(Gondor)"
+    },
+    "Hyacinth": {
+      "meaning": "Woodland hyacinths in Ithilien; violet flowers.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Morgulduin": {
+      "meaning": "River through Ithilien’s Morgul valley; dark water.",
+      "source": "https://tolkiengateway.net/wiki/Morgulduin"
+    },
+    "Cypress": {
+      "meaning": "Cypresses in Ithilien; deep evergreen foliage.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Pelennor": {
+      "meaning": "Fields across Anduin from Ithilien; pale field green.",
+      "source": "https://tolkiengateway.net/wiki/Pelennor_Fields"
+    },
+    "Ilex": {
+      "meaning": "Holm-oaks in Ithilien; sunlit foliage.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Cedar": {
+      "meaning": "Cedars in Ithilien; reddish brown wood.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Eglantine": {
+      "meaning": "Wild roses in Ithilien; pale pink petals.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Rose": {
+      "meaning": "Roses in Ithilien; stronger pink petals.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Oak": {
+      "meaning": "Great oaks in Ithilien; dark brown wood.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Celandine": {
+      "meaning": "Celandines in Ithilien; pale golden flowers.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Culumalda": {
+      "meaning": "The yellow-blossomed trees around Cormallen.",
+      "source": "https://tolkiengateway.net/wiki/Culumalda"
+    },
+    "Juniper": {
+      "meaning": "Junipers in Ithilien; dark evergreen foliage.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Spray": {
+      "meaning": "Waterfall spray at Henneth Annûn in Ithilien; pale water.",
+      "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+    },
+    "Myrtle": {
+      "meaning": "Myrtles in Ithilien; dark purple berries.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Clematis": {
+      "meaning": "Trailing clematis in Ithilien; pale floral lilac.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Resin": {
+      "meaning": "Ithilien’s resinous trees; warm amber resin.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    }
+  },
+  "highlight": {
+    "background": "Resin",
+    "foreground": "Lebethron"
+  },
   "backgrounds": {
-    "crust": "#D8D2BE",
-    "mantle": "#E8E1CD",
-    "base": "#F0E9D2",
-    "surface0": "#F7F0DF",
-    "surface1": "#ECE5D2",
-    "surface2": "#C1BEAC"
+    "crust": "Osgiliath",
+    "mantle": "Gondor",
+    "base": "Asphodel",
+    "surface0": "Lily",
+    "surface1": "Anemone",
+    "surface2": "Stonecrop"
   },
   "foregrounds": {
-    "muted": "#53594E",
-    "comment": "#53594E",
-    "subtext": "#484E43",
-    "text": "#000000",
-    "bright": "#000000"
+    "muted": "Ash",
+    "comment": "Ash",
+    "subtext": "Faramir",
+    "text": "Lebethron",
+    "bright": "Lebethron"
   },
   "accents": {
-    "olive": "#64602F",
-    "sage": "#456344",
-    "gold": "#5C4619",
-    "ochre": "#795B28",
-    "clay": "#88483E",
-    "coral": "#A03440",
-    "aqua": "#28665F",
-    "blue": "#405B80",
-    "mauve": "#75516F"
+    "olive": "Ithilien",
+    "sage": "Sage",
+    "gold": "Cormallen",
+    "ochre": "Broom",
+    "clay": "Terebinth",
+    "coral": "Rosehip",
+    "aqua": "Poros",
+    "blue": "Anduin",
+    "mauve": "Thyme"
   },
   "ansi": {
-    "black": "#000000",
-    "red": "#84342F",
-    "green": "#405A34",
-    "yellow": "#5A4006",
-    "blue": "#304564",
-    "magenta": "#67475C",
-    "cyan": "#204F49",
-    "white": "#F0E9D2",
-    "brightBlack": "#53594E",
-    "brightRed": "#A03440",
-    "brightGreen": "#456344",
-    "brightYellow": "#5C4619",
-    "brightBlue": "#405B80",
-    "brightMagenta": "#75516F",
-    "brightCyan": "#28665F",
-    "brightWhite": "#F7F0DF",
-    "extendedOchre": "#795B28",
-    "extendedClay": "#88483E"
+    "black": "Lebethron",
+    "red": "Briar",
+    "green": "Fir",
+    "yellow": "Filbert",
+    "blue": "Harlond",
+    "magenta": "Hyacinth",
+    "cyan": "Morgulduin",
+    "white": "Asphodel",
+    "brightBlack": "Ash",
+    "brightRed": "Rosehip",
+    "brightGreen": "Sage",
+    "brightYellow": "Cormallen",
+    "brightBlue": "Anduin",
+    "brightMagenta": "Thyme",
+    "brightCyan": "Poros",
+    "brightWhite": "Lily",
+    "extendedOchre": "Broom",
+    "extendedClay": "Terebinth"
   },
   "diff": {
-    "contextForeground": "#000000",
-    "inlineForeground": "#000000",
-    "addForeground": "#1F3518",
-    "addBackground": "#D5E1CA",
-    "addEmphasis": "#A1BA77",
-    "deleteForeground": "#6B322E",
-    "deleteBackground": "#F0DCD6",
-    "deleteEmphasis": "#E2A69B",
-    "changeForeground": "#453510",
-    "changeBackground": "#F4E3AD",
-    "changeEmphasis": "#D2B16B",
-    "hunkForeground": "#25443F",
-    "hunkBackground": "#D5E1DE",
-    "conflictForeground": "#503348",
-    "conflictBackground": "#E2D3DE"
+    "contextForeground": "Lebethron",
+    "inlineForeground": "Lebethron",
+    "addForeground": "Cypress",
+    "addBackground": "Pelennor",
+    "addEmphasis": "Ilex",
+    "deleteForeground": "Cedar",
+    "deleteBackground": "Eglantine",
+    "deleteEmphasis": "Rose",
+    "changeForeground": "Oak",
+    "changeBackground": "Celandine",
+    "changeEmphasis": "Culumalda",
+    "hunkForeground": "Juniper",
+    "hunkBackground": "Spray",
+    "conflictForeground": "Myrtle",
+    "conflictBackground": "Clematis"
   }
 }

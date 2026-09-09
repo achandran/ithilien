@@ -6,7 +6,7 @@ import json
 import plistlib
 import re
 
-from ithilienlib import ROOT, load_palette
+from ithilienlib import ROOT, load_palette, load_palette_source, ROLE_FAMILIES
 
 
 def lua_table(value, indent: int = 0) -> str:
@@ -79,10 +79,12 @@ def generate_neovim_palette(palette: dict) -> None:
         "gray5": fg["muted"],
     }
     term = list(palette["ansi"].values())
+    named_colors = load_palette_source(palette["slug"]).get("colors", {})
     rendered = (
         f"-- Generated from palette/{palette['slug']}.json; do not edit by hand.\n"
         "return {\n"
-        f"  raw = {lua_table(palette, 2)},\n"
+        + (f"  colors = {lua_table(named_colors, 2)},\n" if named_colors else "")
+        + f"  raw = {lua_table(palette, 2)},\n"
         f"  kanso = {lua_table(kanso, 2)},\n"
         f"  terminal = {lua_table(term, 2)},\n"
         "}\n"
@@ -269,9 +271,14 @@ def generate_preview(palettes: dict[str, dict]) -> None:
         "night": json.loads((ROOT / "reports" / "ithilien-dusk-audit.json").read_text()),
         "day": json.loads((ROOT / "reports" / "ithilien-dawn-audit.json").read_text()),
     }
+    preview_palettes = {
+        variant: {**palette, "colorNames": {
+            color: name for name, color in load_palette_source(palette['slug']).get('colors', {}).items()
+        }} for variant, palette in palettes.items()
+    }
     data = (
         "/* GENERATED_DATA_START */\n"
-        f"    const generatedPalettes = {json.dumps(palettes, separators=(',', ':'))};\n"
+        f"    const generatedPalettes = {json.dumps(preview_palettes, separators=(',', ':'))};\n"
         f"    const generatedAudits = {json.dumps(audits, separators=(',', ':'))};\n"
         "    /* GENERATED_DATA_END */"
     )
@@ -288,6 +295,41 @@ def generate_preview(palettes: dict[str, dict]) -> None:
     destination.write_text(html)
 
 
+def generate_color_reference() -> None:
+    source = load_palette_source('ithilien-dawn')
+    roles = {name: [] for name in source['colors']}
+    for family in ROLE_FAMILIES:
+        for role, name in source[family].items():
+            roles[name].append(f'`{family}.{role}`')
+    lines = [
+        '# Ithilien Dawn: named colors', '',
+        '<!-- Generated from palette/ithilien-dawn.json; do not edit by hand. -->', '',
+        'All **38 distinct sRGB colors** are preserved from Loden Day at `2ec16c0`. '
+        'Each color has one single-word name and a documented connection to Tolkien’s work. '
+        'The exact shades are design interpretations, not colors measured from the books.', '',
+        'Names are limited to Ithilien’s plants, waters, materials and people, plus its '
+        'immediate Gondorian neighbours. Gondor is its realm; Osgiliath, Pelennor and Harlond '
+        'are directly connected across Anduin. Plant names refer to species mentioned in '
+        'Ithilien; material names describe its local landscape. The sources establish those '
+        'connections; botanical shades and the exact hex values are our interpretation.', '',
+        '| Name | Exact hex | Tolkien connection / color association | Roles |',
+        '| --- | --- | --- | --- |',
+    ]
+    for name, color in source['colors'].items():
+        note = source['colorNotes'][name]
+        lines.append(f"| {name} | `{color}` | {note['meaning']} [Source]({note['source']}) | {', '.join(roles[name])} |")
+    lines.extend(['', '## Authoring and integration', '',
+        'Edit hex values only in `colors`. Functional roles reference those names: '
+        '`backgrounds.base` → `Asphodel`, `foregrounds.text` → `Lebethron`, '
+        '`accents.blue` → `Anduin`. The loader resolves those references to the same '
+        'role-to-hex mappings used by existing ports and audits.', '',
+        'Neovim also exposes the named palette through '
+        '`require("ithilien.ithilien-dawn").colors.Anduin`. '
+        'Dusk and the shared interaction source remain unchanged. Dawn names the shared selection '
+        'Resin/Lebethron while preserving its exact hex pair.', ''])
+    (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
+
+
 def main() -> None:
     palettes = {"night": load_palette("ithilien-dusk"), "day": load_palette("ithilien-dawn")}
     for palette in palettes.values():
@@ -299,6 +341,9 @@ def main() -> None:
     generate_neovim_default()
     generate_shared_highlights(palettes["night"])
     generate_preview(palettes)
+    generate_color_reference()
+    from palette_chart import generate_chart
+    generate_chart()
     print("Generated Ithilien Dawn and Ithilien Dusk themes for all supported applications")
 
 

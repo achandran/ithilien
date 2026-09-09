@@ -9,10 +9,12 @@ let paletteDirectory = URL(fileURLWithPath: #filePath).deletingLastPathComponent
 func canvas(_ variant: String) throws -> String {
   let data = try Data(contentsOf: paletteDirectory.appendingPathComponent("ithilien-\(variant).json"))
   let palette = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-  return (palette["backgrounds"] as! [String: String])["base"]!.replacingOccurrences(of: "#", with: "")
+  let base = (palette["backgrounds"] as! [String: String])["base"]!
+  let colors = palette["colors"] as? [String: String] ?? [:]
+  return (colors[base] ?? base).replacingOccurrences(of: "#", with: "")
 }
-let dayHex = try canvas("day")
-let nightHex = try canvas("night")
+let dayHex = try canvas("dawn")
+let nightHex = try canvas("dusk")
 
 enum WallpaperError: Error, CustomStringConvertible {
   case invalidHex(String)
