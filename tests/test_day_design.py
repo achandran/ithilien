@@ -51,13 +51,23 @@ class DayDesign(unittest.TestCase):
         for state in ('add', 'delete', 'change'):
             self.assertGreaterEqual(wcag('#000000',p['diff'][state+'Emphasis']),7.0)
 
-    def test_black_neutrals_on_parchment(self):
+    def test_black_main_text_on_parchment(self):
         p=load_palette('loden-day')
         self.assertEqual(p['backgrounds']['base'], '#F0E9D2')
-        self.assertEqual(set(p['foregrounds'].values()), {'#000000'})
-        for name in ('black','white','brightBlack','brightWhite'):
-            self.assertEqual(p['ansi'][name], '#000000')
+        self.assertEqual(p['foregrounds']['text'], '#000000')
+        self.assertEqual(p['foregrounds']['bright'], '#000000')
+        self.assertNotEqual(p['foregrounds']['comment'],p['foregrounds']['text'])
         self.assertEqual(p['diff']['contextForeground'], '#000000')
+
+    def test_terminal_endpoint_collapse_is_rejected(self):
+        p=copy.deepcopy(load_palette('loden-day'))
+        p['ansi']['white']=p['ansi']['brightWhite']='#000000'
+        self.assertIn('ANSI white on black',self.audit(p)['failures'])
+
+    def test_syntax_on_added_lines_is_gated(self):
+        p=copy.deepcopy(load_palette('loden-day'))
+        p['diff']['addBackground']='#B2CCA4'
+        self.assertIn('diff add syntax ochre',self.audit(p)['failures'])
 
     def test_changed_line_does_not_merge_with_canvas(self):
         p=load_palette('loden-day')

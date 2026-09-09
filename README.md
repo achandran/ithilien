@@ -1,6 +1,6 @@
 # Loden
 
-A restrained earthy theme family. Night draws on the olive-green dial, brushed steel, and cream markings of a Formex Reef watch; Day pairs warm parchment with black neutral text and restrained colored syntax, informed by the Citizen AQ4100-57C and a preference for Gruvbox Light Soft. Loden is designed for sustained software-engineering work, with particular attention to readable syntax and high-information diffs in Neovim, Ghostty, Codex, and Claude Code.
+A restrained earthy theme family. Night draws on the olive-green dial, brushed steel, and cream markings of a Formex Reef watch; Day pairs warm parchment with black main text and restrained colored syntax, informed by the Citizen AQ4100-57C and a preference for Gruvbox Light Soft. Loden is designed for sustained software-engineering work, with particular attention to readable syntax and high-information diffs in Neovim, Ghostty, Codex, and Claude Code.
 
 Loden includes equal Day and Night variants. Both are authored from canonical JSON palettes and share the ochre interaction color `#B17232` with black selected text.
 
@@ -73,7 +73,7 @@ Generated artifacts:
 - `slack/loden-night.txt` and `slack/loden-day.txt`
 - `linear/loden-night.txt` and `linear/loden-day.txt`
 
-Day’s surface contract, matched previews, comparison palettes, simulation trade-offs, and validation commands are in the [Day design review](reports/day-review/README.md). Day uses black neutral text, colored syntax with bold keywords, black-on-ochre selection and DiffText, and black underlined GitSigns inline characters; informational muted text is held to 4.5:1 on its supported surfaces. Night remains unchanged.
+Day’s current surface contract, matched previews, and validation results are in the [Day refinement](reports/day-refinement/README.md). Day uses black main text, readable olive-gray secondary text, restrained syntax with bold keywords, and black underlined changed characters. Audits include syntax on diff-line fills and supported ANSI foreground/background pairs. Night remains unchanged.
 
 The shared interaction pair is ochre `#B17232` with pure black text `#000000`. It drives Neovim Visual mode, Ghostty selections and cursor, Zsh selections, the macOS system highlight, and Firefox URL-bar selection.
 
@@ -87,7 +87,7 @@ Copy `ghostty/themes/loden-night` and `ghostty/themes/loden-day` into `~/.config
 theme = light:loden-day,dark:loden-night
 ```
 
-The generated dark theme uses Berkeley Mono Retina without font thickening. The light theme uses Berkeley Mono with `font-thicken = true`.
+The generated dark theme uses Berkeley Mono Retina without font thickening. The light theme uses Berkeley Mono with `font-thicken = true`, `faint-opacity = 1` to protect agent deletion text, and `minimum-contrast = 4.5` for unexpected terminal pairs. The Day ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text remains black.
 
 ### Neovim and LazyVim
 

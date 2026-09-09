@@ -1288,7 +1288,7 @@
       "oklch": [
         0.0,
         0.0,
-        NaN
+        null
       ],
       "inSrgb": true,
       "simulations": {

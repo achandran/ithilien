@@ -8,15 +8,15 @@ palette = 3=#5A4006
 palette = 4=#304564
 palette = 5=#67475C
 palette = 6=#204F49
-palette = 7=#000000
-palette = 8=#000000
+palette = 7=#F0E9D2
+palette = 8=#53594E
 palette = 9=#A03440
 palette = 10=#456344
 palette = 11=#5C4619
 palette = 12=#405B80
 palette = 13=#75516F
 palette = 14=#28665F
-palette = 15=#000000
+palette = 15=#F7F0DF
 palette = 16=#795B28
 palette = 17=#88483E
 
@@ -29,3 +29,7 @@ selection-foreground = #000000
 
 font-family = Berkeley Mono
 font-thicken = true
+
+# Preserve readable agent deletions and unexpected terminal pairs.
+faint-opacity = 1
+minimum-contrast = 4.5

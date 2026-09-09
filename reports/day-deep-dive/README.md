@@ -1,5 +1,7 @@
 # Loden Day: independent quality assessment
 
+Historical review of the earlier design. See [the current refinement](../day-refinement/README.md) for subsequent corrections and validation.
+
 **Loden Day has a strong, distinctive core palette, but the complete theme is not yet demonstrably world class.** Its parchment canvas, black main text, and restrained syntax are worth retaining. The most important remaining work concerns actual diff composition, terminal foreground/background combinations, and secondary hierarchy. More attractive swatches or larger color distances would not resolve those weaknesses.
 
 This assessment examines commit **`4289246`**, committed on 2026-09-08. Subsequent design clarification establishes black as the **main foreground**, while allowing other colors for secondary and semantic roles. Selection text and specifically changed diff characters should remain black. Consequently, the committed choice to make every neutral foreground and neutral ANSI slot black is an overextension of the intended preference, not a requirement to preserve.

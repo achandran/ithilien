@@ -159,6 +159,17 @@ function M.load(variant)
         overrides.BlinkCmpMenuBorder = { link = "FloatBorder" }
         overrides.WinSeparator = { fg = fg.muted }
         overrides.CursorLine = { bg = bg.surface1 }
+        overrides.CursorLineNr = { fg = fg.text, bold = true }
+        overrides.StatusLine = { fg = fg.text, bg = bg.mantle, bold = true }
+        overrides.StatusLineNC = { fg = fg.subtext, bg = bg.mantle }
+        overrides.CurSearch = { fg = highlight.foreground, bg = highlight.background, bold = true, underline = true }
+        overrides.DiffText = { fg = highlight.foreground, bg = highlight.background, bold = true, underline = true }
+        -- Neovim uses this in either buffer for unmatched characters; it does
+        -- not encode old/new direction, so keep the neutral change treatment.
+        overrides.DiffTextAdd = { link = "DiffText" }
+        -- Severity remains available when info/hint hues converge.
+        overrides.DiagnosticUnderlineInfo = { sp = accent.blue, undercurl = false, underline = true }
+        overrides.DiagnosticUnderlineHint = { sp = accent.aqua, undercurl = false, underdotted = true }
         overrides.PmenuMatch = { fg = accent.clay, bg = bg.surface0, bold = true }
         overrides.PmenuMatchSel = { fg = highlight.foreground, bg = highlight.background, bold = true }
       end

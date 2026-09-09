@@ -1,5 +1,7 @@
 # Accepted Day palette
 
+Historical review of the earlier design. See [the current refinement](../day-refinement/README.md) for subsequent corrections and validation.
+
 Warm parchment **`#F0E9D2`**, black neutral text **`#000000`**, and the existing restrained syntax accents are now in the canonical Day palette. All neutral text roles, neutral ANSI entries, and diff-context text use black. Semantic syntax, diagnostic colors, and colored diff-line foregrounds remain intact.
 
 [Code before/after](code-normal.png) · [Agent prose and precise diffs](agent.png) · [Full design rationale](../day-review/README.md) · [Audit](../loden-day-audit.md)

@@ -1,4 +1,9 @@
 {
+  "colorSpace": "sRGB",
+  "highlight": {
+    "background": "#B17232",
+    "foreground": "#000000"
+  },
   "name": "Loden Day",
   "slug": "loden-day",
   "polarity": "light",
@@ -11,9 +16,9 @@
     "surface2": "#C1BEAC"
   },
   "foregrounds": {
-    "muted": "#53594E",
-    "comment": "#53594E",
-    "subtext": "#484E43",
+    "muted": "#000000",
+    "comment": "#000000",
+    "subtext": "#000000",
     "text": "#000000",
     "bright": "#000000"
   },
@@ -36,15 +41,15 @@
     "blue": "#304564",
     "magenta": "#67475C",
     "cyan": "#204F49",
-    "white": "#F0E9D2",
-    "brightBlack": "#53594E",
+    "white": "#000000",
+    "brightBlack": "#000000",
     "brightRed": "#A03440",
     "brightGreen": "#456344",
     "brightYellow": "#5C4619",
     "brightBlue": "#405B80",
     "brightMagenta": "#75516F",
     "brightCyan": "#28665F",
-    "brightWhite": "#F7F0DF",
+    "brightWhite": "#000000",
     "extendedOchre": "#795B28",
     "extendedClay": "#88483E"
   },
@@ -52,12 +57,12 @@
     "contextForeground": "#000000",
     "inlineForeground": "#000000",
     "addForeground": "#1F3518",
-    "addBackground": "#D5E1CA",
+    "addBackground": "#B2CCA4",
     "addEmphasis": "#A1BA77",
-    "deleteForeground": "#6B322E",
-    "deleteBackground": "#F0DCD6",
+    "deleteForeground": "#602C28",
+    "deleteBackground": "#E8D3CD",
     "deleteEmphasis": "#E2A69B",
-    "changeForeground": "#453510",
+    "changeForeground": "#514015",
     "changeBackground": "#F4E3AD",
     "changeEmphasis": "#D2B16B",
     "hunkForeground": "#25443F",

@@ -45,9 +45,9 @@
     },
     {
       "group": "@comment",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -117,17 +117,17 @@
     },
     {
       "group": "@diff.delta",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "@diff.minus",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
@@ -349,9 +349,9 @@
     },
     {
       "group": "@lsp.type.comment",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -501,9 +501,9 @@
     },
     {
       "group": "@lsp.type.parameter",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -517,9 +517,9 @@
     },
     {
       "group": "@lsp.type.punctuation",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -701,9 +701,9 @@
     },
     {
       "group": "@markup.quote",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -765,25 +765,25 @@
     },
     {
       "group": "@punctuation",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "@punctuation.bracket",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "@punctuation.delimiter",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -877,9 +877,9 @@
     },
     {
       "group": "@tag.delimiter",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -925,9 +925,9 @@
     },
     {
       "group": "@variable.parameter",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1165,9 +1165,9 @@
     },
     {
       "group": "BlinkCmpDocBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
@@ -1181,17 +1181,17 @@
     },
     {
       "group": "BlinkCmpGhostText",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BlinkCmpKind",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1397,9 +1397,9 @@
     },
     {
       "group": "BlinkCmpKindVariable",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1413,17 +1413,17 @@
     },
     {
       "group": "BlinkCmpLabelDeprecated",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BlinkCmpLabelDetails",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -1445,9 +1445,9 @@
     },
     {
       "group": "BlinkCmpMenuBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
@@ -1477,9 +1477,9 @@
     },
     {
       "group": "BlinkCmpSignatureHelpBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
@@ -1493,17 +1493,17 @@
     },
     {
       "group": "BufferLineBackground",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineBuffer",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1517,17 +1517,17 @@
     },
     {
       "group": "BufferLineBufferVisible",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineCloseButton",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1541,33 +1541,33 @@
     },
     {
       "group": "BufferLineCloseButtonVisible",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineDevIconLua",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineDevIconLuaInactive",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineDuplicate",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1581,25 +1581,25 @@
     },
     {
       "group": "BufferLineDuplicateVisible",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineError",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineErrorDiagnostic",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1637,17 +1637,17 @@
     },
     {
       "group": "BufferLineHint",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineHintDiagnostic",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1685,33 +1685,33 @@
     },
     {
       "group": "BufferLineIndicatorSelected",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineIndicatorVisible",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineInfo",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineInfoDiagnostic",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1749,33 +1749,33 @@
     },
     {
       "group": "BufferLineModified",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineModifiedSelected",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineModifiedVisible",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineNumbers",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1789,17 +1789,17 @@
     },
     {
       "group": "BufferLineNumbersVisible",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineOffsetSeparator",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 3,
       "passed": true
     },
@@ -1829,41 +1829,41 @@
     },
     {
       "group": "BufferLineSeparator",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 3,
       "passed": true
     },
     {
       "group": "BufferLineSeparatorSelected",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 3,
       "passed": true
     },
     {
       "group": "BufferLineSeparatorVisible",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 3,
       "passed": true
     },
     {
       "group": "BufferLineTab",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineTabClose",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1877,41 +1877,41 @@
     },
     {
       "group": "BufferLineTabSeparator",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 3,
       "passed": true
     },
     {
       "group": "BufferLineTabSeparatorSelected",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 3,
       "passed": true
     },
     {
       "group": "BufferLineTruncMarker",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineWarning",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "BufferLineWarningDiagnostic",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -1949,9 +1949,9 @@
     },
     {
       "group": "Changed",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
@@ -1973,9 +1973,9 @@
     },
     {
       "group": "CmpCompletionBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
@@ -1997,17 +1997,17 @@
     },
     {
       "group": "CmpDocumentationBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
     {
       "group": "CmpGhostText",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -2021,9 +2021,9 @@
     },
     {
       "group": "CmpItemAbbrDeprecated",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -2085,9 +2085,9 @@
     },
     {
       "group": "CmpItemKindDefault",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -2253,17 +2253,17 @@
     },
     {
       "group": "CmpItemKindVariable",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "CmpItemMenu",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -2277,17 +2277,17 @@
     },
     {
       "group": "Comment",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "ComplHint",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -2301,9 +2301,9 @@
     },
     {
       "group": "Conceal",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -2349,9 +2349,9 @@
     },
     {
       "group": "CursorLineFold",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -2365,9 +2365,9 @@
     },
     {
       "group": "CursorLineSign",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -2381,9 +2381,9 @@
     },
     {
       "group": "DapUIBreakpointsDisabledLine",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -2405,17 +2405,17 @@
     },
     {
       "group": "DapUIDecoration",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "DapUIFloatBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 3,
       "passed": true
     },
@@ -2533,9 +2533,9 @@
     },
     {
       "group": "DapUIUnavailable",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -2581,25 +2581,25 @@
     },
     {
       "group": "DashboardFooter",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "DashboardHeader",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "DashboardIcon",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -2637,9 +2637,9 @@
     },
     {
       "group": "Delimiter",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -2757,9 +2757,9 @@
     },
     {
       "group": "DiagnosticUnnecessary",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -2854,24 +2854,24 @@
     {
       "group": "DiffAdd",
       "foreground": "#1F3518",
-      "background": "#B2CCA4",
-      "ratio": 7.634,
+      "background": "#D5E1CA",
+      "ratio": 9.776,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "DiffChange",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F4E3AD",
-      "ratio": 7.85,
+      "ratio": 9.288,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "DiffDelete",
-      "foreground": "#602C28",
-      "background": "#E8D3CD",
-      "ratio": 7.748,
+      "foreground": "#6B322E",
+      "background": "#F0DCD6",
+      "ratio": 7.503,
       "target": 4.5,
       "passed": true
     },
@@ -2933,49 +2933,49 @@
     },
     {
       "group": "FloatBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
     {
       "group": "FloatFooter",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "FloatTitle",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "FloatermBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 3,
       "passed": true
     },
     {
       "group": "FoldColumn",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "Folded",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
@@ -3037,9 +3037,9 @@
     },
     {
       "group": "GitSignsChange",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
@@ -3061,17 +3061,17 @@
     },
     {
       "group": "GitSignsChangedelete",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "GitSignsDelete",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
@@ -3093,17 +3093,17 @@
     },
     {
       "group": "GitSignsTopdelete",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "GitSignsUntracked",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -3117,9 +3117,9 @@
     },
     {
       "group": "Ignore",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -3157,57 +3157,57 @@
     },
     {
       "group": "LazyProgressTodo",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "LineNr",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "LineNrAbove",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "LineNrBelow",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "LspCodeLens",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "LspCodeLensSeparator",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 3,
       "passed": true
     },
     {
       "group": "LspInlayHint",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -3245,9 +3245,9 @@
     },
     {
       "group": "MiniClueBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
@@ -3293,9 +3293,9 @@
     },
     {
       "group": "MiniClueTitle",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
@@ -3309,9 +3309,9 @@
     },
     {
       "group": "MiniDepsChangeRemoved",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
@@ -3341,9 +3341,9 @@
     },
     {
       "group": "MiniDepsPlaceholder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -3357,9 +3357,9 @@
     },
     {
       "group": "MiniDepsTitleError",
-      "foreground": "#602C28",
-      "background": "#E8D3CD",
-      "ratio": 7.748,
+      "foreground": "#6B322E",
+      "background": "#F0DCD6",
+      "ratio": 7.503,
       "target": 4.5,
       "passed": true
     },
@@ -3374,16 +3374,16 @@
     {
       "group": "MiniDepsTitleUpdate",
       "foreground": "#1F3518",
-      "background": "#B2CCA4",
-      "ratio": 7.634,
+      "background": "#D5E1CA",
+      "ratio": 9.776,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniDiffOverAdd",
       "foreground": "#1F3518",
-      "background": "#B2CCA4",
-      "ratio": 7.634,
+      "background": "#D5E1CA",
+      "ratio": 9.776,
       "target": 4.5,
       "passed": true
     },
@@ -3397,17 +3397,17 @@
     },
     {
       "group": "MiniDiffOverContext",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F4E3AD",
-      "ratio": 7.85,
+      "ratio": 9.288,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniDiffOverDelete",
-      "foreground": "#602C28",
-      "background": "#E8D3CD",
-      "ratio": 7.748,
+      "foreground": "#6B322E",
+      "background": "#F0DCD6",
+      "ratio": 7.503,
       "target": 4.5,
       "passed": true
     },
@@ -3421,25 +3421,25 @@
     },
     {
       "group": "MiniDiffSignChange",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniDiffSignDelete",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniFilesBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
@@ -3477,9 +3477,9 @@
     },
     {
       "group": "MiniFilesTitle",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
@@ -3605,9 +3605,9 @@
     },
     {
       "group": "MiniJump2dDim",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -3661,17 +3661,17 @@
     },
     {
       "group": "MiniMapSymbolView",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniNotifyBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
@@ -3685,9 +3685,9 @@
     },
     {
       "group": "MiniNotifyTitle",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
@@ -3701,9 +3701,9 @@
     },
     {
       "group": "MiniPickBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 6.359,
       "target": 3,
       "passed": true
     },
@@ -3717,9 +3717,9 @@
     },
     {
       "group": "MiniPickBorderText",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 3,
       "passed": true
     },
@@ -3789,9 +3789,9 @@
     },
     {
       "group": "MiniStarterFooter",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -3805,9 +3805,9 @@
     },
     {
       "group": "MiniStarterInactive",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -3821,9 +3821,9 @@
     },
     {
       "group": "MiniStarterItemBullet",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -3853,33 +3853,33 @@
     },
     {
       "group": "MiniStatuslineDevinfo",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniStatuslineFileinfo",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniStatuslineFilename",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#E8E1CD",
-      "ratio": 16.083,
+      "ratio": 6.574,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniStatuslineInactive",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "ratio": 17.291,
+      "foreground": "#484E43",
+      "background": "#E8E1CD",
+      "ratio": 6.574,
       "target": 4.5,
       "passed": true
     },
@@ -3941,41 +3941,41 @@
     },
     {
       "group": "MiniTablineCurrent",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniTablineHidden",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#D8D2BE",
-      "ratio": 13.882,
+      "ratio": 5.675,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniTablineModifiedCurrent",
       "foreground": "#F7F0DF",
-      "background": "#000000",
-      "ratio": 18.484,
+      "background": "#484E43",
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniTablineModifiedHidden",
       "foreground": "#D8D2BE",
-      "background": "#000000",
-      "ratio": 13.882,
+      "background": "#484E43",
+      "ratio": 5.675,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "MiniTablineModifiedVisible",
       "foreground": "#D8D2BE",
-      "background": "#000000",
-      "ratio": 13.882,
+      "background": "#484E43",
+      "ratio": 5.675,
       "target": 4.5,
       "passed": true
     },
@@ -3989,9 +3989,9 @@
     },
     {
       "group": "MiniTablineVisible",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#D8D2BE",
-      "ratio": 13.882,
+      "ratio": 5.675,
       "target": 4.5,
       "passed": true
     },
@@ -4029,9 +4029,9 @@
     },
     {
       "group": "MsgArea",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -4261,9 +4261,9 @@
     },
     {
       "group": "NeoTreeDimText",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -4285,17 +4285,17 @@
     },
     {
       "group": "NeoTreeGitDeleted",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NeoTreeGitModified",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
@@ -4309,25 +4309,25 @@
     },
     {
       "group": "NeoTreeGitUnstaged",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NeoTreeGitUntracked",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NeoTreeIndentMarker",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -4365,33 +4365,33 @@
     },
     {
       "group": "NeoTreeTabActive",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NeoTreeTabInactive",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NeoTreeTabSeparatorActive",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 3,
       "passed": true
     },
     {
       "group": "NeoTreeTabSeparatorInactive",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 3,
       "passed": true
     },
@@ -4437,9 +4437,9 @@
     },
     {
       "group": "NeotestExpandMarker",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -4461,9 +4461,9 @@
     },
     {
       "group": "NeotestIndent",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -4493,9 +4493,9 @@
     },
     {
       "group": "NeotestRunning",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
@@ -4525,17 +4525,17 @@
     },
     {
       "group": "NeotestUnknown",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NeotestWatching",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
@@ -4549,9 +4549,9 @@
     },
     {
       "group": "NonText",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -4677,25 +4677,25 @@
     },
     {
       "group": "NotifyTRACEBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 3,
       "passed": true
     },
     {
       "group": "NotifyTRACEIcon",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NotifyTRACETitle",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -4741,9 +4741,9 @@
     },
     {
       "group": "NvimArrow",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -4813,25 +4813,25 @@
     },
     {
       "group": "NvimCallingParenthesis",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NvimColon",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NvimComma",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -4869,25 +4869,25 @@
     },
     {
       "group": "NvimContainer",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NvimCurly",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NvimDict",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -5557,17 +5557,17 @@
     },
     {
       "group": "NvimLambda",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NvimList",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -5589,9 +5589,9 @@
     },
     {
       "group": "NvimNestingParenthesis",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -5669,9 +5669,9 @@
     },
     {
       "group": "NvimParenthesis",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -5757,25 +5757,25 @@
     },
     {
       "group": "NvimSubscript",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NvimSubscriptBracket",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NvimSubscriptColon",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -5813,17 +5813,17 @@
     },
     {
       "group": "NvimTreeGitDeleted",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "NvimTreeGitDirty",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
@@ -5901,9 +5901,9 @@
     },
     {
       "group": "NvimTreeWinSeparator",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 3,
       "passed": true
     },
@@ -5973,9 +5973,9 @@
     },
     {
       "group": "PmenuExtra",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
@@ -5989,9 +5989,9 @@
     },
     {
       "group": "PmenuKind",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
@@ -6061,9 +6061,9 @@
     },
     {
       "group": "Removed",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
@@ -6085,9 +6085,9 @@
     },
     {
       "group": "SignColumn",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -6109,9 +6109,9 @@
     },
     {
       "group": "SnacksPickerDim",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -6229,9 +6229,9 @@
     },
     {
       "group": "SpecialKey",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -6246,32 +6246,32 @@
     {
       "group": "StatusLine",
       "foreground": "#000000",
-      "background": "#F0E9D2",
-      "ratio": 17.291,
+      "background": "#E8E1CD",
+      "ratio": 16.083,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "StatusLineNC",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "ratio": 17.291,
+      "foreground": "#484E43",
+      "background": "#E8E1CD",
+      "ratio": 6.574,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "StatusLineTerm",
       "foreground": "#000000",
-      "background": "#F0E9D2",
-      "ratio": 17.291,
+      "background": "#E8E1CD",
+      "ratio": 16.083,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "StatusLineTermNC",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "ratio": 17.291,
+      "foreground": "#484E43",
+      "background": "#E8E1CD",
+      "ratio": 6.574,
       "target": 4.5,
       "passed": true
     },
@@ -6317,17 +6317,17 @@
     },
     {
       "group": "TabLine",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "TabLineSel",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
@@ -6341,9 +6341,9 @@
     },
     {
       "group": "TelescopeBorder",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 3,
       "passed": true
     },
@@ -6389,9 +6389,9 @@
     },
     {
       "group": "TelescopeTitle",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -6413,25 +6413,25 @@
     },
     {
       "group": "TreesitterContext",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F7F0DF",
-      "ratio": 18.484,
+      "ratio": 7.556,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "TreesitterContextLineNumber",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "TroublePos",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
@@ -6461,9 +6461,9 @@
     },
     {
       "group": "VertSplit",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     },
@@ -6501,25 +6501,25 @@
     },
     {
       "group": "WinBar",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "WinBarNC",
-      "foreground": "#000000",
+      "foreground": "#484E43",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 7.068,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "WinSeparator",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 3,
       "passed": true
     },
@@ -6541,17 +6541,17 @@
     },
     {
       "group": "diffChanged",
-      "foreground": "#514015",
+      "foreground": "#453510",
       "background": "#F0E9D2",
-      "ratio": 8.257,
+      "ratio": 9.77,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "diffDeleted",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
@@ -6565,17 +6565,17 @@
     },
     {
       "group": "diffOldFile",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
     {
       "group": "diffRemoved",
-      "foreground": "#602C28",
+      "foreground": "#6B322E",
       "background": "#F0E9D2",
-      "ratio": 9.157,
+      "ratio": 8.153,
       "target": 4.5,
       "passed": true
     },
@@ -6637,9 +6637,9 @@
     },
     {
       "group": "qfLineNr",
-      "foreground": "#000000",
+      "foreground": "#53594E",
       "background": "#F0E9D2",
-      "ratio": 17.291,
+      "ratio": 5.949,
       "target": 4.5,
       "passed": true
     }

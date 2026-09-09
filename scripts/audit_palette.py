@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import sys
 from itertools import combinations
 
@@ -52,7 +53,7 @@ def main(variant: str = "loden-night") -> None:
         *[
             (f"ANSI {name}", color, backgrounds["base"], 3.0 if name == "brightBlack" and not day else 4.5, 20 if name == "brightBlack" else 44)
             for name, color in ansi.items()
-            if name != "black" or day
+            if (day and name not in {"white", "brightWhite"}) or (not day and name != "black")
         ],
     ]
 
@@ -63,7 +64,7 @@ def main(variant: str = "loden-night") -> None:
         for name, color in {**foregrounds, **accents}.items():
             surface_specs.append((f"{name} on {surface}", color, backgrounds[surface], 4.5, 0))
     for surface in ("crust", "surface2"):
-        for name in ("text", "subtext", "bright"):
+        for name in (foregrounds if day and surface == "crust" else ("text", "subtext", "bright")):
             surface_specs.append((f"chrome {name} on {surface}", foregrounds[name], backgrounds[surface], 4.5, 0))
     surface_specs += [
         ("inactive status label", foregrounds["muted"], backgrounds["mantle"], 4.5, 0),
@@ -86,6 +87,24 @@ def main(variant: str = "loden-night") -> None:
                          target=t, passed=wcag(f,b)>=t) for n,f,b,t,_ in surface_specs]
     if day:
         contrast_specs.extend(surface_specs)
+        # Light ANSI endpoints are intended for dark indexed backgrounds, not
+        # for the parchment canvas. Test their actual foreground/background use.
+        contrast_specs.extend([
+            (f"ANSI {light} on {dark}", ansi[light], ansi[dark], 4.5, 0)
+            for light in ("white", "brightWhite")
+            for dark in ("black", "red", "green", "yellow", "blue", "magenta", "cyan",
+                         "brightRed", "brightGreen", "brightYellow", "brightBlue", "brightMagenta", "brightCyan")
+        ])
+        contrast_specs.extend([
+            (f"ANSI black on {light}", ansi["black"], ansi[light], 7.0, 0)
+            for light in ("white", "brightWhite")
+        ])
+        # Agent diff renderers can preserve syntax foregrounds over line fills.
+        contrast_specs.extend([
+            (f"diff {state} syntax {role}", color, diff[state+"Background"], 4.5, 0)
+            for state in ("add", "delete", "change")
+            for role, color in {**foregrounds, **accents}.items()
+        ])
 
     contrasts = []
     failures = []
@@ -119,7 +138,7 @@ def main(variant: str = "loden-night") -> None:
         lightness, chroma, hue = oklch(value)
         color_data[name] = {
             "hex": value,
-            "oklch": [round(lightness, 4), round(chroma, 4), round(hue, 1)],
+            "oklch": [round(lightness, 4), round(chroma, 4), round(hue, 1) if math.isfinite(hue) else None],
             "inSrgb": True,
             "simulations": {mode: simulated_hex(value, mode) for mode in SIMULATIONS[1:]},
         }
@@ -201,7 +220,7 @@ def main(variant: str = "loden-night") -> None:
     report_stem = f"{variant}-audit"
     json_report = reports / f"{report_stem}.json"
     markdown_report = reports / f"{report_stem}.md"
-    json_report.write_text(json.dumps(report, indent=2) + "\n")
+    json_report.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
 
     lines = [
         f"# {palette['name']} palette audit",

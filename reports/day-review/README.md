@@ -1,5 +1,7 @@
 # Loden Day design review
 
+Historical review of the earlier design. See [the current refinement](../day-refinement/README.md) for subsequent corrections and validation.
+
 The accepted design is **warm parchment `#F0E9D2`, pure-black neutral text, and restrained colored syntax**. This replaces the initial silver-ivory proposal following the user's preference for Gruvbox Light Soft and black foreground text. Changes remain uncommitted.
 
 [Accepted before/after code](../day-adoption/code-normal.png) · [Agent prose and character-level diffs](../day-adoption/agent.png) · [Latest audit](../loden-day-audit.md) · [Original baseline comparison](index.html)

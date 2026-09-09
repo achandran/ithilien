@@ -53,6 +53,13 @@ def main():
                      'GitSignsAddLnInline', 'GitSignsDeleteLnInline', 'GitSignsChangeLnInline'):
             assert h[name]['fg'] == 0 and h[name].get('underline'), name
         assert h['DiffText']['fg'] == 0
+        assert h['DiffText'].get('underline')
+        assert h['DiffTextAdd']['fg'] == 0 and h['DiffTextAdd'].get('underline')
+        assert h['CursorLineNr']['fg'] == 0 and h['CursorLineNr'].get('bold')
+        assert h['LineNr'] != h['CursorLineNr']
+        assert h['StatusLine'] != h['StatusLineNC']
+        assert h['DiagnosticUnderlineInfo'].get('underline')
+        assert h['DiagnosticUnderlineHint'].get('underdotted')
         checks = []
         base = h['Normal']['bg']
         for name, c in sorted(h.items()):
