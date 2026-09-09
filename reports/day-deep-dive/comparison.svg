@@ -1,0 +1,676 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1540" height="1825" viewBox="0 0 1540 1825">
+<style>text{font-family:"Berkeley Mono",monospace;font-size:15px}</style>
+<rect x="0" y="0" width="1540" height="1825" fill="#FFFFFF"/>
+<rect x="0" y="0" width="760" height="445" fill="#F0E9D2"/>
+<text x="16" y="25" fill="#000000" font-weight="700">Loden Day / 4289246</text>
+<text x="16" y="59" fill="#000000" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="16" y="82" fill="#88483E" font-weight="700">export type </text>
+<text x="124" y="82" fill="#28665F" >RetryPolicy</text>
+<text x="223" y="82" fill="#000000" > = { limit: </text>
+<text x="331" y="82" fill="#28665F" >number</text>
+<text x="385" y="82" fill="#000000" >; delay: </text>
+<text x="466" y="82" fill="#28665F" >number</text>
+<text x="520" y="82" fill="#000000" > }</text>
+<text x="16" y="105" fill="#88483E" font-weight="700">const </text>
+<text x="70" y="105" fill="#000000" >policy: </text>
+<text x="142" y="105" fill="#28665F" >RetryPolicy</text>
+<text x="241" y="105" fill="#000000" > = { limit: </text>
+<text x="349" y="105" fill="#795B28" >3</text>
+<text x="358" y="105" fill="#000000" >, delay: </text>
+<text x="439" y="105" fill="#795B28" >250</text>
+<text x="466" y="105" fill="#000000" > }</text>
+<text x="16" y="128" fill="#88483E" font-weight="700">export async function </text>
+<text x="214" y="128" fill="#5C4619" >fetchWithRetry</text>
+<text x="340" y="128" fill="#000000" >(url: </text>
+<text x="394" y="128" fill="#28665F" >string</text>
+<text x="448" y="128" fill="#000000" >) {</text>
+<text x="16" y="151" fill="#000000" >  </text>
+<text x="34" y="151" fill="#88483E" font-weight="700">for </text>
+<text x="70" y="151" fill="#000000" >(</text>
+<text x="79" y="151" fill="#88483E" font-weight="700">let </text>
+<text x="115" y="151" fill="#000000" >attempt = </text>
+<text x="205" y="151" fill="#795B28" >0</text>
+<text x="214" y="151" fill="#000000" >; attempt </text>
+<text x="304" y="151" fill="#64602F" >&lt; </text>
+<text x="322" y="151" fill="#000000" >policy.limit; attempt</text>
+<text x="511" y="151" fill="#64602F" >++</text>
+<text x="529" y="151" fill="#000000" >) {</text>
+<text x="16" y="174" fill="#000000" >    </text>
+<text x="52" y="174" fill="#88483E" font-weight="700">const </text>
+<text x="106" y="174" fill="#000000" >response = </text>
+<text x="205" y="174" fill="#88483E" font-weight="700">await </text>
+<text x="259" y="174" fill="#5C4619" >fetch</text>
+<text x="304" y="174" fill="#000000" >(url, { cache: </text>
+<text x="439" y="174" fill="#456344" >&quot;no-store&quot;</text>
+<text x="529" y="174" fill="#000000" > })</text>
+<text x="16" y="197" fill="#000000" >    </text>
+<text x="52" y="197" fill="#88483E" font-weight="700">if </text>
+<text x="79" y="197" fill="#000000" >(response.status </text>
+<text x="232" y="197" fill="#64602F" >=== </text>
+<text x="268" y="197" fill="#795B28" >429</text>
+<text x="295" y="197" fill="#000000" >) {</text>
+<text x="16" y="220" fill="#000000" >      </text>
+<text x="70" y="220" fill="#88483E" font-weight="700">await </text>
+<text x="124" y="220" fill="#5C4619" >sleep</text>
+<text x="169" y="220" fill="#000000" >(policy.delay </text>
+<text x="295" y="220" fill="#64602F" >* </text>
+<text x="313" y="220" fill="#000000" >(attempt </text>
+<text x="394" y="220" fill="#64602F" >+ </text>
+<text x="412" y="220" fill="#795B28" >1</text>
+<text x="421" y="220" fill="#000000" >))</text>
+<text x="16" y="243" fill="#000000" >      </text>
+<text x="70" y="243" fill="#88483E" font-weight="700">continue</text>
+<text x="16" y="266" fill="#000000" >    }</text>
+<text x="16" y="289" fill="#000000" >    </text>
+<text x="52" y="289" fill="#88483E" font-weight="700">if </text>
+<text x="79" y="289" fill="#000000" >(</text>
+<text x="88" y="289" fill="#64602F" >!</text>
+<text x="97" y="289" fill="#000000" >response.ok) </text>
+<text x="214" y="289" fill="#88483E" font-weight="700">throw new </text>
+<text x="304" y="289" fill="#28665F" >Error</text>
+<text x="349" y="289" fill="#000000" >(</text>
+<text x="358" y="289" fill="#456344" >&quot;request failed&quot;</text>
+<text x="502" y="289" fill="#000000" >)</text>
+<text x="16" y="312" fill="#000000" >    </text>
+<text x="52" y="312" fill="#88483E" font-weight="700">return </text>
+<text x="115" y="312" fill="#000000" >response.</text>
+<text x="196" y="312" fill="#5C4619" >json</text>
+<text x="232" y="312" fill="#000000" >() </text>
+<text x="259" y="312" fill="#88483E" font-weight="700">as </text>
+<text x="286" y="312" fill="#28665F" >Promise&lt;Result&gt;</text>
+<text x="16" y="335" fill="#000000" >  }</text>
+<text x="16" y="358" fill="#000000" >  </text>
+<text x="34" y="358" fill="#88483E" font-weight="700">throw new </text>
+<text x="124" y="358" fill="#28665F" >Error</text>
+<text x="169" y="358" fill="#000000" >(</text>
+<text x="178" y="358" fill="#456344" >&quot;retry budget exhausted&quot;</text>
+<text x="394" y="358" fill="#000000" >)</text>
+<text x="16" y="381" fill="#000000" >}</text>
+<text x="16" y="404" fill="#75516F" >describe</text>
+<text x="88" y="404" fill="#000000" >(</text>
+<text x="97" y="404" fill="#456344" >&quot;retries&quot;</text>
+<text x="178" y="404" fill="#000000" >, () </text>
+<text x="223" y="404" fill="#64602F" >=&gt; </text>
+<text x="250" y="404" fill="#5C4619" >expect</text>
+<text x="304" y="404" fill="#000000" >(policy.limit).</text>
+<text x="439" y="404" fill="#5C4619" >toBe</text>
+<text x="475" y="404" fill="#000000" >(</text>
+<text x="484" y="404" fill="#795B28" >3</text>
+<text x="493" y="404" fill="#000000" >))</text>
+<rect x="780" y="0" width="760" height="445" fill="#F2E5BC"/>
+<text x="796" y="25" fill="#3C3836" font-weight="700">Gruvbox Light Soft / original</text>
+<text x="796" y="59" fill="#928374" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="796" y="82" fill="#9D0006" >export type </text>
+<text x="904" y="82" fill="#B57614" >RetryPolicy</text>
+<text x="1003" y="82" fill="#3C3836" > = { limit: </text>
+<text x="1111" y="82" fill="#B57614" >number</text>
+<text x="1165" y="82" fill="#3C3836" >; delay: </text>
+<text x="1246" y="82" fill="#B57614" >number</text>
+<text x="1300" y="82" fill="#3C3836" > }</text>
+<text x="796" y="105" fill="#9D0006" >const </text>
+<text x="850" y="105" fill="#3C3836" >policy: </text>
+<text x="922" y="105" fill="#B57614" >RetryPolicy</text>
+<text x="1021" y="105" fill="#3C3836" > = { limit: </text>
+<text x="1129" y="105" fill="#8F3F71" >3</text>
+<text x="1138" y="105" fill="#3C3836" >, delay: </text>
+<text x="1219" y="105" fill="#8F3F71" >250</text>
+<text x="1246" y="105" fill="#3C3836" > }</text>
+<text x="796" y="128" fill="#9D0006" >export async function </text>
+<text x="994" y="128" fill="#79740E" font-weight="700">fetchWithRetry</text>
+<text x="1120" y="128" fill="#3C3836" >(url: </text>
+<text x="1174" y="128" fill="#B57614" >string</text>
+<text x="1228" y="128" fill="#3C3836" >) {</text>
+<text x="796" y="151" fill="#3C3836" >  </text>
+<text x="814" y="151" fill="#9D0006" >for </text>
+<text x="850" y="151" fill="#3C3836" >(</text>
+<text x="859" y="151" fill="#9D0006" >let </text>
+<text x="895" y="151" fill="#3C3836" >attempt = </text>
+<text x="985" y="151" fill="#8F3F71" >0</text>
+<text x="994" y="151" fill="#3C3836" >; attempt </text>
+<text x="1084" y="151" fill="#3C3836" >&lt; </text>
+<text x="1102" y="151" fill="#3C3836" >policy.limit; attempt</text>
+<text x="1291" y="151" fill="#3C3836" >++</text>
+<text x="1309" y="151" fill="#3C3836" >) {</text>
+<text x="796" y="174" fill="#3C3836" >    </text>
+<text x="832" y="174" fill="#9D0006" >const </text>
+<text x="886" y="174" fill="#3C3836" >response = </text>
+<text x="985" y="174" fill="#9D0006" >await </text>
+<text x="1039" y="174" fill="#79740E" font-weight="700">fetch</text>
+<text x="1084" y="174" fill="#3C3836" >(url, { cache: </text>
+<text x="1219" y="174" fill="#79740E" >&quot;no-store&quot;</text>
+<text x="1309" y="174" fill="#3C3836" > })</text>
+<text x="796" y="197" fill="#3C3836" >    </text>
+<text x="832" y="197" fill="#9D0006" >if </text>
+<text x="859" y="197" fill="#3C3836" >(response.status </text>
+<text x="1012" y="197" fill="#3C3836" >=== </text>
+<text x="1048" y="197" fill="#8F3F71" >429</text>
+<text x="1075" y="197" fill="#3C3836" >) {</text>
+<text x="796" y="220" fill="#3C3836" >      </text>
+<text x="850" y="220" fill="#9D0006" >await </text>
+<text x="904" y="220" fill="#79740E" font-weight="700">sleep</text>
+<text x="949" y="220" fill="#3C3836" >(policy.delay </text>
+<text x="1075" y="220" fill="#3C3836" >* </text>
+<text x="1093" y="220" fill="#3C3836" >(attempt </text>
+<text x="1174" y="220" fill="#3C3836" >+ </text>
+<text x="1192" y="220" fill="#8F3F71" >1</text>
+<text x="1201" y="220" fill="#3C3836" >))</text>
+<text x="796" y="243" fill="#3C3836" >      </text>
+<text x="850" y="243" fill="#9D0006" >continue</text>
+<text x="796" y="266" fill="#3C3836" >    }</text>
+<text x="796" y="289" fill="#3C3836" >    </text>
+<text x="832" y="289" fill="#9D0006" >if </text>
+<text x="859" y="289" fill="#3C3836" >(</text>
+<text x="868" y="289" fill="#3C3836" >!</text>
+<text x="877" y="289" fill="#3C3836" >response.ok) </text>
+<text x="994" y="289" fill="#9D0006" >throw new </text>
+<text x="1084" y="289" fill="#B57614" >Error</text>
+<text x="1129" y="289" fill="#3C3836" >(</text>
+<text x="1138" y="289" fill="#79740E" >&quot;request failed&quot;</text>
+<text x="1282" y="289" fill="#3C3836" >)</text>
+<text x="796" y="312" fill="#3C3836" >    </text>
+<text x="832" y="312" fill="#9D0006" >return </text>
+<text x="895" y="312" fill="#3C3836" >response.</text>
+<text x="976" y="312" fill="#79740E" font-weight="700">json</text>
+<text x="1012" y="312" fill="#3C3836" >() </text>
+<text x="1039" y="312" fill="#9D0006" >as </text>
+<text x="1066" y="312" fill="#B57614" >Promise&lt;Result&gt;</text>
+<text x="796" y="335" fill="#3C3836" >  }</text>
+<text x="796" y="358" fill="#3C3836" >  </text>
+<text x="814" y="358" fill="#9D0006" >throw new </text>
+<text x="904" y="358" fill="#B57614" >Error</text>
+<text x="949" y="358" fill="#3C3836" >(</text>
+<text x="958" y="358" fill="#79740E" >&quot;retry budget exhausted&quot;</text>
+<text x="1174" y="358" fill="#3C3836" >)</text>
+<text x="796" y="381" fill="#3C3836" >}</text>
+<text x="796" y="404" fill="#79740E" >describe</text>
+<text x="868" y="404" fill="#3C3836" >(</text>
+<text x="877" y="404" fill="#79740E" >&quot;retries&quot;</text>
+<text x="958" y="404" fill="#3C3836" >, () </text>
+<text x="1003" y="404" fill="#3C3836" >=&gt; </text>
+<text x="1030" y="404" fill="#79740E" font-weight="700">expect</text>
+<text x="1084" y="404" fill="#3C3836" >(policy.limit).</text>
+<text x="1219" y="404" fill="#79740E" font-weight="700">toBe</text>
+<text x="1255" y="404" fill="#3C3836" >(</text>
+<text x="1264" y="404" fill="#8F3F71" >3</text>
+<text x="1273" y="404" fill="#3C3836" >))</text>
+<rect x="0" y="460" width="760" height="445" fill="#FFFFFF"/>
+<text x="16" y="485" fill="#000000" font-weight="700">Modus Operandi</text>
+<text x="16" y="519" fill="#595959" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="16" y="542" fill="#531AB6" >export type </text>
+<text x="124" y="542" fill="#005F5F" >RetryPolicy</text>
+<text x="223" y="542" fill="#000000" > = { limit: </text>
+<text x="331" y="542" fill="#005F5F" >number</text>
+<text x="385" y="542" fill="#000000" >; delay: </text>
+<text x="466" y="542" fill="#005F5F" >number</text>
+<text x="520" y="542" fill="#000000" > }</text>
+<text x="16" y="565" fill="#531AB6" >const </text>
+<text x="70" y="565" fill="#000000" >policy: </text>
+<text x="142" y="565" fill="#005F5F" >RetryPolicy</text>
+<text x="241" y="565" fill="#000000" > = { limit: </text>
+<text x="349" y="565" fill="#000000" >3</text>
+<text x="358" y="565" fill="#000000" >, delay: </text>
+<text x="439" y="565" fill="#000000" >250</text>
+<text x="466" y="565" fill="#000000" > }</text>
+<text x="16" y="588" fill="#531AB6" >export async function </text>
+<text x="214" y="588" fill="#721045" >fetchWithRetry</text>
+<text x="340" y="588" fill="#000000" >(url: </text>
+<text x="394" y="588" fill="#005F5F" >string</text>
+<text x="448" y="588" fill="#000000" >) {</text>
+<text x="16" y="611" fill="#000000" >  </text>
+<text x="34" y="611" fill="#531AB6" >for </text>
+<text x="70" y="611" fill="#000000" >(</text>
+<text x="79" y="611" fill="#531AB6" >let </text>
+<text x="115" y="611" fill="#000000" >attempt = </text>
+<text x="205" y="611" fill="#000000" >0</text>
+<text x="214" y="611" fill="#000000" >; attempt </text>
+<text x="304" y="611" fill="#000000" >&lt; </text>
+<text x="322" y="611" fill="#000000" >policy.limit; attempt</text>
+<text x="511" y="611" fill="#000000" >++</text>
+<text x="529" y="611" fill="#000000" >) {</text>
+<text x="16" y="634" fill="#000000" >    </text>
+<text x="52" y="634" fill="#531AB6" >const </text>
+<text x="106" y="634" fill="#000000" >response = </text>
+<text x="205" y="634" fill="#531AB6" >await </text>
+<text x="259" y="634" fill="#721045" >fetch</text>
+<text x="304" y="634" fill="#000000" >(url, { cache: </text>
+<text x="439" y="634" fill="#3548CF" >&quot;no-store&quot;</text>
+<text x="529" y="634" fill="#000000" > })</text>
+<text x="16" y="657" fill="#000000" >    </text>
+<text x="52" y="657" fill="#531AB6" >if </text>
+<text x="79" y="657" fill="#000000" >(response.status </text>
+<text x="232" y="657" fill="#000000" >=== </text>
+<text x="268" y="657" fill="#000000" >429</text>
+<text x="295" y="657" fill="#000000" >) {</text>
+<text x="16" y="680" fill="#000000" >      </text>
+<text x="70" y="680" fill="#531AB6" >await </text>
+<text x="124" y="680" fill="#721045" >sleep</text>
+<text x="169" y="680" fill="#000000" >(policy.delay </text>
+<text x="295" y="680" fill="#000000" >* </text>
+<text x="313" y="680" fill="#000000" >(attempt </text>
+<text x="394" y="680" fill="#000000" >+ </text>
+<text x="412" y="680" fill="#000000" >1</text>
+<text x="421" y="680" fill="#000000" >))</text>
+<text x="16" y="703" fill="#000000" >      </text>
+<text x="70" y="703" fill="#531AB6" >continue</text>
+<text x="16" y="726" fill="#000000" >    }</text>
+<text x="16" y="749" fill="#000000" >    </text>
+<text x="52" y="749" fill="#531AB6" >if </text>
+<text x="79" y="749" fill="#000000" >(</text>
+<text x="88" y="749" fill="#000000" >!</text>
+<text x="97" y="749" fill="#000000" >response.ok) </text>
+<text x="214" y="749" fill="#531AB6" >throw new </text>
+<text x="304" y="749" fill="#005F5F" >Error</text>
+<text x="349" y="749" fill="#000000" >(</text>
+<text x="358" y="749" fill="#3548CF" >&quot;request failed&quot;</text>
+<text x="502" y="749" fill="#000000" >)</text>
+<text x="16" y="772" fill="#000000" >    </text>
+<text x="52" y="772" fill="#531AB6" >return </text>
+<text x="115" y="772" fill="#000000" >response.</text>
+<text x="196" y="772" fill="#721045" >json</text>
+<text x="232" y="772" fill="#000000" >() </text>
+<text x="259" y="772" fill="#531AB6" >as </text>
+<text x="286" y="772" fill="#005F5F" >Promise&lt;Result&gt;</text>
+<text x="16" y="795" fill="#000000" >  }</text>
+<text x="16" y="818" fill="#000000" >  </text>
+<text x="34" y="818" fill="#531AB6" >throw new </text>
+<text x="124" y="818" fill="#005F5F" >Error</text>
+<text x="169" y="818" fill="#000000" >(</text>
+<text x="178" y="818" fill="#3548CF" >&quot;retry budget exhausted&quot;</text>
+<text x="394" y="818" fill="#000000" >)</text>
+<text x="16" y="841" fill="#000000" >}</text>
+<text x="16" y="864" fill="#721045" >describe</text>
+<text x="88" y="864" fill="#000000" >(</text>
+<text x="97" y="864" fill="#3548CF" >&quot;retries&quot;</text>
+<text x="178" y="864" fill="#000000" >, () </text>
+<text x="223" y="864" fill="#000000" >=&gt; </text>
+<text x="250" y="864" fill="#721045" >expect</text>
+<text x="304" y="864" fill="#000000" >(policy.limit).</text>
+<text x="439" y="864" fill="#721045" >toBe</text>
+<text x="475" y="864" fill="#000000" >(</text>
+<text x="484" y="864" fill="#000000" >3</text>
+<text x="493" y="864" fill="#000000" >))</text>
+<rect x="780" y="460" width="760" height="445" fill="#FFF5EA"/>
+<text x="796" y="485" fill="#584141" font-weight="700">Ef Day / pinned e1f6176</text>
+<text x="796" y="519" fill="#527545" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="796" y="542" fill="#A45A22" >export type </text>
+<text x="904" y="542" fill="#0F7F5F" >RetryPolicy</text>
+<text x="1003" y="542" fill="#584141" > = { limit: </text>
+<text x="1111" y="542" fill="#0F7F5F" >number</text>
+<text x="1165" y="542" fill="#584141" >; delay: </text>
+<text x="1246" y="542" fill="#0F7F5F" >number</text>
+<text x="1300" y="542" fill="#584141" > }</text>
+<text x="796" y="565" fill="#A45A22" >const </text>
+<text x="850" y="565" fill="#584141" >policy: </text>
+<text x="922" y="565" fill="#0F7F5F" >RetryPolicy</text>
+<text x="1021" y="565" fill="#584141" > = { limit: </text>
+<text x="1129" y="565" fill="#584141" >3</text>
+<text x="1138" y="565" fill="#584141" >, delay: </text>
+<text x="1219" y="565" fill="#584141" >250</text>
+<text x="1246" y="565" fill="#584141" > }</text>
+<text x="796" y="588" fill="#A45A22" >export async function </text>
+<text x="994" y="588" fill="#CA3E54" >fetchWithRetry</text>
+<text x="1120" y="588" fill="#584141" >(url: </text>
+<text x="1174" y="588" fill="#0F7F5F" >string</text>
+<text x="1228" y="588" fill="#584141" >) {</text>
+<text x="796" y="611" fill="#584141" >  </text>
+<text x="814" y="611" fill="#A45A22" >for </text>
+<text x="850" y="611" fill="#584141" >(</text>
+<text x="859" y="611" fill="#A45A22" >let </text>
+<text x="895" y="611" fill="#584141" >attempt = </text>
+<text x="985" y="611" fill="#584141" >0</text>
+<text x="994" y="611" fill="#584141" >; attempt </text>
+<text x="1084" y="611" fill="#584141" >&lt; </text>
+<text x="1102" y="611" fill="#584141" >policy.limit; attempt</text>
+<text x="1291" y="611" fill="#584141" >++</text>
+<text x="1309" y="611" fill="#584141" >) {</text>
+<text x="796" y="634" fill="#584141" >    </text>
+<text x="832" y="634" fill="#A45A22" >const </text>
+<text x="886" y="634" fill="#584141" >response = </text>
+<text x="985" y="634" fill="#A45A22" >await </text>
+<text x="1039" y="634" fill="#CA3E54" >fetch</text>
+<text x="1084" y="634" fill="#584141" >(url, { cache: </text>
+<text x="1219" y="634" fill="#5F7200" >&quot;no-store&quot;</text>
+<text x="1309" y="634" fill="#584141" > })</text>
+<text x="796" y="657" fill="#584141" >    </text>
+<text x="832" y="657" fill="#A45A22" >if </text>
+<text x="859" y="657" fill="#584141" >(response.status </text>
+<text x="1012" y="657" fill="#584141" >=== </text>
+<text x="1048" y="657" fill="#584141" >429</text>
+<text x="1075" y="657" fill="#584141" >) {</text>
+<text x="796" y="680" fill="#584141" >      </text>
+<text x="850" y="680" fill="#A45A22" >await </text>
+<text x="904" y="680" fill="#CA3E54" >sleep</text>
+<text x="949" y="680" fill="#584141" >(policy.delay </text>
+<text x="1075" y="680" fill="#584141" >* </text>
+<text x="1093" y="680" fill="#584141" >(attempt </text>
+<text x="1174" y="680" fill="#584141" >+ </text>
+<text x="1192" y="680" fill="#584141" >1</text>
+<text x="1201" y="680" fill="#584141" >))</text>
+<text x="796" y="703" fill="#584141" >      </text>
+<text x="850" y="703" fill="#A45A22" >continue</text>
+<text x="796" y="726" fill="#584141" >    }</text>
+<text x="796" y="749" fill="#584141" >    </text>
+<text x="832" y="749" fill="#A45A22" >if </text>
+<text x="859" y="749" fill="#584141" >(</text>
+<text x="868" y="749" fill="#584141" >!</text>
+<text x="877" y="749" fill="#584141" >response.ok) </text>
+<text x="994" y="749" fill="#A45A22" >throw new </text>
+<text x="1084" y="749" fill="#0F7F5F" >Error</text>
+<text x="1129" y="749" fill="#584141" >(</text>
+<text x="1138" y="749" fill="#5F7200" >&quot;request failed&quot;</text>
+<text x="1282" y="749" fill="#584141" >)</text>
+<text x="796" y="772" fill="#584141" >    </text>
+<text x="832" y="772" fill="#A45A22" >return </text>
+<text x="895" y="772" fill="#584141" >response.</text>
+<text x="976" y="772" fill="#CA3E54" >json</text>
+<text x="1012" y="772" fill="#584141" >() </text>
+<text x="1039" y="772" fill="#A45A22" >as </text>
+<text x="1066" y="772" fill="#0F7F5F" >Promise&lt;Result&gt;</text>
+<text x="796" y="795" fill="#584141" >  }</text>
+<text x="796" y="818" fill="#584141" >  </text>
+<text x="814" y="818" fill="#A45A22" >throw new </text>
+<text x="904" y="818" fill="#0F7F5F" >Error</text>
+<text x="949" y="818" fill="#584141" >(</text>
+<text x="958" y="818" fill="#5F7200" >&quot;retry budget exhausted&quot;</text>
+<text x="1174" y="818" fill="#584141" >)</text>
+<text x="796" y="841" fill="#584141" >}</text>
+<text x="796" y="864" fill="#CA3E54" >describe</text>
+<text x="868" y="864" fill="#584141" >(</text>
+<text x="877" y="864" fill="#5F7200" >&quot;retries&quot;</text>
+<text x="958" y="864" fill="#584141" >, () </text>
+<text x="1003" y="864" fill="#584141" >=&gt; </text>
+<text x="1030" y="864" fill="#CA3E54" >expect</text>
+<text x="1084" y="864" fill="#584141" >(policy.limit).</text>
+<text x="1219" y="864" fill="#CA3E54" >toBe</text>
+<text x="1255" y="864" fill="#584141" >(</text>
+<text x="1264" y="864" fill="#584141" >3</text>
+<text x="1273" y="864" fill="#584141" >))</text>
+<rect x="0" y="920" width="760" height="445" fill="#FDF6E3"/>
+<text x="16" y="945" fill="#657B83" font-weight="700">Solarized Light</text>
+<text x="16" y="979" fill="#93A1A1" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="16" y="1002" fill="#859900" >export type </text>
+<text x="124" y="1002" fill="#B58900" >RetryPolicy</text>
+<text x="223" y="1002" fill="#657B83" > = { limit: </text>
+<text x="331" y="1002" fill="#B58900" >number</text>
+<text x="385" y="1002" fill="#657B83" >; delay: </text>
+<text x="466" y="1002" fill="#B58900" >number</text>
+<text x="520" y="1002" fill="#657B83" > }</text>
+<text x="16" y="1025" fill="#859900" >const </text>
+<text x="70" y="1025" fill="#657B83" >policy: </text>
+<text x="142" y="1025" fill="#B58900" >RetryPolicy</text>
+<text x="241" y="1025" fill="#657B83" > = { limit: </text>
+<text x="349" y="1025" fill="#D33682" >3</text>
+<text x="358" y="1025" fill="#657B83" >, delay: </text>
+<text x="439" y="1025" fill="#D33682" >250</text>
+<text x="466" y="1025" fill="#657B83" > }</text>
+<text x="16" y="1048" fill="#859900" >export async function </text>
+<text x="214" y="1048" fill="#268BD2" >fetchWithRetry</text>
+<text x="340" y="1048" fill="#657B83" >(url: </text>
+<text x="394" y="1048" fill="#B58900" >string</text>
+<text x="448" y="1048" fill="#657B83" >) {</text>
+<text x="16" y="1071" fill="#657B83" >  </text>
+<text x="34" y="1071" fill="#859900" >for </text>
+<text x="70" y="1071" fill="#657B83" >(</text>
+<text x="79" y="1071" fill="#859900" >let </text>
+<text x="115" y="1071" fill="#657B83" >attempt = </text>
+<text x="205" y="1071" fill="#D33682" >0</text>
+<text x="214" y="1071" fill="#657B83" >; attempt </text>
+<text x="304" y="1071" fill="#657B83" >&lt; </text>
+<text x="322" y="1071" fill="#657B83" >policy.limit; attempt</text>
+<text x="511" y="1071" fill="#657B83" >++</text>
+<text x="529" y="1071" fill="#657B83" >) {</text>
+<text x="16" y="1094" fill="#657B83" >    </text>
+<text x="52" y="1094" fill="#859900" >const </text>
+<text x="106" y="1094" fill="#657B83" >response = </text>
+<text x="205" y="1094" fill="#859900" >await </text>
+<text x="259" y="1094" fill="#268BD2" >fetch</text>
+<text x="304" y="1094" fill="#657B83" >(url, { cache: </text>
+<text x="439" y="1094" fill="#2AA198" >&quot;no-store&quot;</text>
+<text x="529" y="1094" fill="#657B83" > })</text>
+<text x="16" y="1117" fill="#657B83" >    </text>
+<text x="52" y="1117" fill="#859900" >if </text>
+<text x="79" y="1117" fill="#657B83" >(response.status </text>
+<text x="232" y="1117" fill="#657B83" >=== </text>
+<text x="268" y="1117" fill="#D33682" >429</text>
+<text x="295" y="1117" fill="#657B83" >) {</text>
+<text x="16" y="1140" fill="#657B83" >      </text>
+<text x="70" y="1140" fill="#859900" >await </text>
+<text x="124" y="1140" fill="#268BD2" >sleep</text>
+<text x="169" y="1140" fill="#657B83" >(policy.delay </text>
+<text x="295" y="1140" fill="#657B83" >* </text>
+<text x="313" y="1140" fill="#657B83" >(attempt </text>
+<text x="394" y="1140" fill="#657B83" >+ </text>
+<text x="412" y="1140" fill="#D33682" >1</text>
+<text x="421" y="1140" fill="#657B83" >))</text>
+<text x="16" y="1163" fill="#657B83" >      </text>
+<text x="70" y="1163" fill="#859900" >continue</text>
+<text x="16" y="1186" fill="#657B83" >    }</text>
+<text x="16" y="1209" fill="#657B83" >    </text>
+<text x="52" y="1209" fill="#859900" >if </text>
+<text x="79" y="1209" fill="#657B83" >(</text>
+<text x="88" y="1209" fill="#657B83" >!</text>
+<text x="97" y="1209" fill="#657B83" >response.ok) </text>
+<text x="214" y="1209" fill="#859900" >throw new </text>
+<text x="304" y="1209" fill="#B58900" >Error</text>
+<text x="349" y="1209" fill="#657B83" >(</text>
+<text x="358" y="1209" fill="#2AA198" >&quot;request failed&quot;</text>
+<text x="502" y="1209" fill="#657B83" >)</text>
+<text x="16" y="1232" fill="#657B83" >    </text>
+<text x="52" y="1232" fill="#859900" >return </text>
+<text x="115" y="1232" fill="#657B83" >response.</text>
+<text x="196" y="1232" fill="#268BD2" >json</text>
+<text x="232" y="1232" fill="#657B83" >() </text>
+<text x="259" y="1232" fill="#859900" >as </text>
+<text x="286" y="1232" fill="#B58900" >Promise&lt;Result&gt;</text>
+<text x="16" y="1255" fill="#657B83" >  }</text>
+<text x="16" y="1278" fill="#657B83" >  </text>
+<text x="34" y="1278" fill="#859900" >throw new </text>
+<text x="124" y="1278" fill="#B58900" >Error</text>
+<text x="169" y="1278" fill="#657B83" >(</text>
+<text x="178" y="1278" fill="#2AA198" >&quot;retry budget exhausted&quot;</text>
+<text x="394" y="1278" fill="#657B83" >)</text>
+<text x="16" y="1301" fill="#657B83" >}</text>
+<text x="16" y="1324" fill="#268BD2" >describe</text>
+<text x="88" y="1324" fill="#657B83" >(</text>
+<text x="97" y="1324" fill="#2AA198" >&quot;retries&quot;</text>
+<text x="178" y="1324" fill="#657B83" >, () </text>
+<text x="223" y="1324" fill="#657B83" >=&gt; </text>
+<text x="250" y="1324" fill="#268BD2" >expect</text>
+<text x="304" y="1324" fill="#657B83" >(policy.limit).</text>
+<text x="439" y="1324" fill="#268BD2" >toBe</text>
+<text x="475" y="1324" fill="#657B83" >(</text>
+<text x="484" y="1324" fill="#D33682" >3</text>
+<text x="493" y="1324" fill="#657B83" >))</text>
+<rect x="780" y="920" width="760" height="445" fill="#EFF1F5"/>
+<text x="796" y="945" fill="#4C4F69" font-weight="700">Catppuccin Latte</text>
+<text x="796" y="979" fill="#9CA0B0" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="796" y="1002" fill="#8839EF" >export type </text>
+<text x="904" y="1002" fill="#DF8E1D" >RetryPolicy</text>
+<text x="1003" y="1002" fill="#4C4F69" > = { limit: </text>
+<text x="1111" y="1002" fill="#DF8E1D" >number</text>
+<text x="1165" y="1002" fill="#4C4F69" >; delay: </text>
+<text x="1246" y="1002" fill="#DF8E1D" >number</text>
+<text x="1300" y="1002" fill="#4C4F69" > }</text>
+<text x="796" y="1025" fill="#8839EF" >const </text>
+<text x="850" y="1025" fill="#4C4F69" >policy: </text>
+<text x="922" y="1025" fill="#DF8E1D" >RetryPolicy</text>
+<text x="1021" y="1025" fill="#4C4F69" > = { limit: </text>
+<text x="1129" y="1025" fill="#FE640B" >3</text>
+<text x="1138" y="1025" fill="#4C4F69" >, delay: </text>
+<text x="1219" y="1025" fill="#FE640B" >250</text>
+<text x="1246" y="1025" fill="#4C4F69" > }</text>
+<text x="796" y="1048" fill="#8839EF" >export async function </text>
+<text x="994" y="1048" fill="#1E66F5" >fetchWithRetry</text>
+<text x="1120" y="1048" fill="#4C4F69" >(url: </text>
+<text x="1174" y="1048" fill="#DF8E1D" >string</text>
+<text x="1228" y="1048" fill="#4C4F69" >) {</text>
+<text x="796" y="1071" fill="#4C4F69" >  </text>
+<text x="814" y="1071" fill="#8839EF" >for </text>
+<text x="850" y="1071" fill="#4C4F69" >(</text>
+<text x="859" y="1071" fill="#8839EF" >let </text>
+<text x="895" y="1071" fill="#4C4F69" >attempt = </text>
+<text x="985" y="1071" fill="#FE640B" >0</text>
+<text x="994" y="1071" fill="#4C4F69" >; attempt </text>
+<text x="1084" y="1071" fill="#4C4F69" >&lt; </text>
+<text x="1102" y="1071" fill="#4C4F69" >policy.limit; attempt</text>
+<text x="1291" y="1071" fill="#4C4F69" >++</text>
+<text x="1309" y="1071" fill="#4C4F69" >) {</text>
+<text x="796" y="1094" fill="#4C4F69" >    </text>
+<text x="832" y="1094" fill="#8839EF" >const </text>
+<text x="886" y="1094" fill="#4C4F69" >response = </text>
+<text x="985" y="1094" fill="#8839EF" >await </text>
+<text x="1039" y="1094" fill="#1E66F5" >fetch</text>
+<text x="1084" y="1094" fill="#4C4F69" >(url, { cache: </text>
+<text x="1219" y="1094" fill="#40A02B" >&quot;no-store&quot;</text>
+<text x="1309" y="1094" fill="#4C4F69" > })</text>
+<text x="796" y="1117" fill="#4C4F69" >    </text>
+<text x="832" y="1117" fill="#8839EF" >if </text>
+<text x="859" y="1117" fill="#4C4F69" >(response.status </text>
+<text x="1012" y="1117" fill="#4C4F69" >=== </text>
+<text x="1048" y="1117" fill="#FE640B" >429</text>
+<text x="1075" y="1117" fill="#4C4F69" >) {</text>
+<text x="796" y="1140" fill="#4C4F69" >      </text>
+<text x="850" y="1140" fill="#8839EF" >await </text>
+<text x="904" y="1140" fill="#1E66F5" >sleep</text>
+<text x="949" y="1140" fill="#4C4F69" >(policy.delay </text>
+<text x="1075" y="1140" fill="#4C4F69" >* </text>
+<text x="1093" y="1140" fill="#4C4F69" >(attempt </text>
+<text x="1174" y="1140" fill="#4C4F69" >+ </text>
+<text x="1192" y="1140" fill="#FE640B" >1</text>
+<text x="1201" y="1140" fill="#4C4F69" >))</text>
+<text x="796" y="1163" fill="#4C4F69" >      </text>
+<text x="850" y="1163" fill="#8839EF" >continue</text>
+<text x="796" y="1186" fill="#4C4F69" >    }</text>
+<text x="796" y="1209" fill="#4C4F69" >    </text>
+<text x="832" y="1209" fill="#8839EF" >if </text>
+<text x="859" y="1209" fill="#4C4F69" >(</text>
+<text x="868" y="1209" fill="#4C4F69" >!</text>
+<text x="877" y="1209" fill="#4C4F69" >response.ok) </text>
+<text x="994" y="1209" fill="#8839EF" >throw new </text>
+<text x="1084" y="1209" fill="#DF8E1D" >Error</text>
+<text x="1129" y="1209" fill="#4C4F69" >(</text>
+<text x="1138" y="1209" fill="#40A02B" >&quot;request failed&quot;</text>
+<text x="1282" y="1209" fill="#4C4F69" >)</text>
+<text x="796" y="1232" fill="#4C4F69" >    </text>
+<text x="832" y="1232" fill="#8839EF" >return </text>
+<text x="895" y="1232" fill="#4C4F69" >response.</text>
+<text x="976" y="1232" fill="#1E66F5" >json</text>
+<text x="1012" y="1232" fill="#4C4F69" >() </text>
+<text x="1039" y="1232" fill="#8839EF" >as </text>
+<text x="1066" y="1232" fill="#DF8E1D" >Promise&lt;Result&gt;</text>
+<text x="796" y="1255" fill="#4C4F69" >  }</text>
+<text x="796" y="1278" fill="#4C4F69" >  </text>
+<text x="814" y="1278" fill="#8839EF" >throw new </text>
+<text x="904" y="1278" fill="#DF8E1D" >Error</text>
+<text x="949" y="1278" fill="#4C4F69" >(</text>
+<text x="958" y="1278" fill="#40A02B" >&quot;retry budget exhausted&quot;</text>
+<text x="1174" y="1278" fill="#4C4F69" >)</text>
+<text x="796" y="1301" fill="#4C4F69" >}</text>
+<text x="796" y="1324" fill="#1E66F5" >describe</text>
+<text x="868" y="1324" fill="#4C4F69" >(</text>
+<text x="877" y="1324" fill="#40A02B" >&quot;retries&quot;</text>
+<text x="958" y="1324" fill="#4C4F69" >, () </text>
+<text x="1003" y="1324" fill="#4C4F69" >=&gt; </text>
+<text x="1030" y="1324" fill="#1E66F5" >expect</text>
+<text x="1084" y="1324" fill="#4C4F69" >(policy.limit).</text>
+<text x="1219" y="1324" fill="#1E66F5" >toBe</text>
+<text x="1255" y="1324" fill="#4C4F69" >(</text>
+<text x="1264" y="1324" fill="#FE640B" >3</text>
+<text x="1273" y="1324" fill="#4C4F69" >))</text>
+<rect x="0" y="1380" width="760" height="445" fill="#FDF6E3"/>
+<text x="16" y="1405" fill="#5C6A72" font-weight="700">Everforest Light (medium)</text>
+<text x="16" y="1439" fill="#939F91" font-style="italic">// Resolve retries without hiding partial failures.</text>
+<text x="16" y="1462" fill="#F85552" >export type </text>
+<text x="124" y="1462" fill="#DFA000" >RetryPolicy</text>
+<text x="223" y="1462" fill="#5C6A72" > = { limit: </text>
+<text x="331" y="1462" fill="#DFA000" >number</text>
+<text x="385" y="1462" fill="#5C6A72" >; delay: </text>
+<text x="466" y="1462" fill="#DFA000" >number</text>
+<text x="520" y="1462" fill="#5C6A72" > }</text>
+<text x="16" y="1485" fill="#F85552" >const </text>
+<text x="70" y="1485" fill="#5C6A72" >policy: </text>
+<text x="142" y="1485" fill="#DFA000" >RetryPolicy</text>
+<text x="241" y="1485" fill="#5C6A72" > = { limit: </text>
+<text x="349" y="1485" fill="#DF69BA" >3</text>
+<text x="358" y="1485" fill="#5C6A72" >, delay: </text>
+<text x="439" y="1485" fill="#DF69BA" >250</text>
+<text x="466" y="1485" fill="#5C6A72" > }</text>
+<text x="16" y="1508" fill="#F85552" >export async function </text>
+<text x="214" y="1508" fill="#8DA101" >fetchWithRetry</text>
+<text x="340" y="1508" fill="#5C6A72" >(url: </text>
+<text x="394" y="1508" fill="#DFA000" >string</text>
+<text x="448" y="1508" fill="#5C6A72" >) {</text>
+<text x="16" y="1531" fill="#5C6A72" >  </text>
+<text x="34" y="1531" fill="#F85552" >for </text>
+<text x="70" y="1531" fill="#5C6A72" >(</text>
+<text x="79" y="1531" fill="#F85552" >let </text>
+<text x="115" y="1531" fill="#5C6A72" >attempt = </text>
+<text x="205" y="1531" fill="#DF69BA" >0</text>
+<text x="214" y="1531" fill="#5C6A72" >; attempt </text>
+<text x="304" y="1531" fill="#5C6A72" >&lt; </text>
+<text x="322" y="1531" fill="#5C6A72" >policy.limit; attempt</text>
+<text x="511" y="1531" fill="#5C6A72" >++</text>
+<text x="529" y="1531" fill="#5C6A72" >) {</text>
+<text x="16" y="1554" fill="#5C6A72" >    </text>
+<text x="52" y="1554" fill="#F85552" >const </text>
+<text x="106" y="1554" fill="#5C6A72" >response = </text>
+<text x="205" y="1554" fill="#F85552" >await </text>
+<text x="259" y="1554" fill="#8DA101" >fetch</text>
+<text x="304" y="1554" fill="#5C6A72" >(url, { cache: </text>
+<text x="439" y="1554" fill="#8DA101" >&quot;no-store&quot;</text>
+<text x="529" y="1554" fill="#5C6A72" > })</text>
+<text x="16" y="1577" fill="#5C6A72" >    </text>
+<text x="52" y="1577" fill="#F85552" >if </text>
+<text x="79" y="1577" fill="#5C6A72" >(response.status </text>
+<text x="232" y="1577" fill="#5C6A72" >=== </text>
+<text x="268" y="1577" fill="#DF69BA" >429</text>
+<text x="295" y="1577" fill="#5C6A72" >) {</text>
+<text x="16" y="1600" fill="#5C6A72" >      </text>
+<text x="70" y="1600" fill="#F85552" >await </text>
+<text x="124" y="1600" fill="#8DA101" >sleep</text>
+<text x="169" y="1600" fill="#5C6A72" >(policy.delay </text>
+<text x="295" y="1600" fill="#5C6A72" >* </text>
+<text x="313" y="1600" fill="#5C6A72" >(attempt </text>
+<text x="394" y="1600" fill="#5C6A72" >+ </text>
+<text x="412" y="1600" fill="#DF69BA" >1</text>
+<text x="421" y="1600" fill="#5C6A72" >))</text>
+<text x="16" y="1623" fill="#5C6A72" >      </text>
+<text x="70" y="1623" fill="#F85552" >continue</text>
+<text x="16" y="1646" fill="#5C6A72" >    }</text>
+<text x="16" y="1669" fill="#5C6A72" >    </text>
+<text x="52" y="1669" fill="#F85552" >if </text>
+<text x="79" y="1669" fill="#5C6A72" >(</text>
+<text x="88" y="1669" fill="#5C6A72" >!</text>
+<text x="97" y="1669" fill="#5C6A72" >response.ok) </text>
+<text x="214" y="1669" fill="#F85552" >throw new </text>
+<text x="304" y="1669" fill="#DFA000" >Error</text>
+<text x="349" y="1669" fill="#5C6A72" >(</text>
+<text x="358" y="1669" fill="#8DA101" >&quot;request failed&quot;</text>
+<text x="502" y="1669" fill="#5C6A72" >)</text>
+<text x="16" y="1692" fill="#5C6A72" >    </text>
+<text x="52" y="1692" fill="#F85552" >return </text>
+<text x="115" y="1692" fill="#5C6A72" >response.</text>
+<text x="196" y="1692" fill="#8DA101" >json</text>
+<text x="232" y="1692" fill="#5C6A72" >() </text>
+<text x="259" y="1692" fill="#F85552" >as </text>
+<text x="286" y="1692" fill="#DFA000" >Promise&lt;Result&gt;</text>
+<text x="16" y="1715" fill="#5C6A72" >  }</text>
+<text x="16" y="1738" fill="#5C6A72" >  </text>
+<text x="34" y="1738" fill="#F85552" >throw new </text>
+<text x="124" y="1738" fill="#DFA000" >Error</text>
+<text x="169" y="1738" fill="#5C6A72" >(</text>
+<text x="178" y="1738" fill="#8DA101" >&quot;retry budget exhausted&quot;</text>
+<text x="394" y="1738" fill="#5C6A72" >)</text>
+<text x="16" y="1761" fill="#5C6A72" >}</text>
+<text x="16" y="1784" fill="#8DA101" >describe</text>
+<text x="88" y="1784" fill="#5C6A72" >(</text>
+<text x="97" y="1784" fill="#8DA101" >&quot;retries&quot;</text>
+<text x="178" y="1784" fill="#5C6A72" >, () </text>
+<text x="223" y="1784" fill="#5C6A72" >=&gt; </text>
+<text x="250" y="1784" fill="#8DA101" >expect</text>
+<text x="304" y="1784" fill="#5C6A72" >(policy.limit).</text>
+<text x="439" y="1784" fill="#8DA101" >toBe</text>
+<text x="475" y="1784" fill="#5C6A72" >(</text>
+<text x="484" y="1784" fill="#DF69BA" >3</text>
+<text x="493" y="1784" fill="#5C6A72" >))</text>
+</svg>

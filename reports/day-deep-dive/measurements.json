@@ -1,0 +1,573 @@
+{
+  "commit": "42892468a408703b204e8d4034413ccd136bb28a",
+  "method": "Opaque sRGB; WCAG recomputed with independent piecewise transfer formula. CVD uses repository Machado severity 1; distances are observations.",
+  "maximumContrastFormulaDifference": 0.00046164311231411403,
+  "independentWcagGateAgreement": true,
+  "benchmarks": [
+    {
+      "name": "Loden Day / 4289246",
+      "background": "#F0E9D2",
+      "text": "#000000",
+      "comment": "#000000",
+      "string": "#456344",
+      "keyword": "#88483E",
+      "function": "#5C4619",
+      "type": "#28665F",
+      "number": "#795B28",
+      "ratios": {
+        "text": 17.2912,
+        "comment": 17.2912,
+        "string": 5.5398,
+        "keyword": 5.6816,
+        "function": 7.3732,
+        "type": 5.4788,
+        "number": 5.1769
+      }
+    },
+    {
+      "name": "Gruvbox Light Soft / original",
+      "source": "https://github.com/morhetz/gruvbox/blob/master/colors/gruvbox.vim",
+      "background": "#F2E5BC",
+      "text": "#3C3836",
+      "comment": "#928374",
+      "string": "#79740E",
+      "keyword": "#9D0006",
+      "function": "#79740E",
+      "type": "#B57614",
+      "number": "#8F3F71",
+      "ratios": {
+        "text": 9.2262,
+        "comment": 2.9207,
+        "string": 3.8702,
+        "keyword": 6.8586,
+        "function": 3.8702,
+        "type": 3.0019,
+        "number": 5.3601
+      }
+    },
+    {
+      "name": "Modus Operandi",
+      "source": "https://github.com/protesilaos/modus-themes/blob/main/modus-themes.el",
+      "background": "#FFFFFF",
+      "text": "#000000",
+      "comment": "#595959",
+      "string": "#3548CF",
+      "keyword": "#531AB6",
+      "function": "#721045",
+      "type": "#005F5F",
+      "number": "#000000",
+      "ratios": {
+        "text": 21.0,
+        "comment": 7.0047,
+        "string": 7.0486,
+        "keyword": 9.5845,
+        "function": 11.1968,
+        "type": 7.4943,
+        "number": 21.0
+      }
+    },
+    {
+      "name": "Ef Day / pinned e1f6176",
+      "source": "https://github.com/protesilaos/ef-themes/blob/e1f617607a5f0692b398365dcd8412ba1e98ccb3/ef-day-theme.el",
+      "background": "#FFF5EA",
+      "text": "#584141",
+      "comment": "#527545",
+      "string": "#5F7200",
+      "keyword": "#A45A22",
+      "function": "#CA3E54",
+      "type": "#0F7F5F",
+      "number": "#584141",
+      "ratios": {
+        "text": 8.6772,
+        "comment": 4.8884,
+        "string": 5.0086,
+        "keyword": 4.7984,
+        "function": 4.5054,
+        "type": 4.6197,
+        "number": 8.6772
+      }
+    },
+    {
+      "name": "Solarized Light",
+      "source": "https://github.com/altercation/solarized",
+      "background": "#FDF6E3",
+      "text": "#657B83",
+      "comment": "#93A1A1",
+      "string": "#2AA198",
+      "keyword": "#859900",
+      "function": "#268BD2",
+      "type": "#B58900",
+      "number": "#D33682",
+      "ratios": {
+        "text": 4.1296,
+        "comment": 2.479,
+        "string": 2.9276,
+        "keyword": 2.9705,
+        "function": 3.4118,
+        "type": 2.9754,
+        "number": 4.2141
+      }
+    },
+    {
+      "name": "Catppuccin Latte",
+      "source": "https://github.com/catppuccin/palette/blob/main/palette.json",
+      "background": "#EFF1F5",
+      "text": "#4C4F69",
+      "comment": "#9CA0B0",
+      "string": "#40A02B",
+      "keyword": "#8839EF",
+      "function": "#1E66F5",
+      "type": "#DF8E1D",
+      "number": "#FE640B",
+      "ratios": {
+        "text": 7.062,
+        "comment": 2.3015,
+        "string": 2.9566,
+        "keyword": 4.7881,
+        "function": 4.3448,
+        "type": 2.3142,
+        "number": 2.6372
+      }
+    },
+    {
+      "name": "Everforest Light (medium)",
+      "source": "https://github.com/sainnhe/everforest/blob/master/autoload/everforest.vim",
+      "background": "#FDF6E3",
+      "text": "#5C6A72",
+      "comment": "#939F91",
+      "string": "#8DA101",
+      "keyword": "#F85552",
+      "function": "#8DA101",
+      "type": "#DFA000",
+      "number": "#DF69BA",
+      "ratios": {
+        "text": 5.1781,
+        "comment": 2.5586,
+        "string": 2.6923,
+        "keyword": 3.0359,
+        "function": 2.6923,
+        "type": 2.124,
+        "number": 2.8349
+      }
+    }
+  ],
+  "surfaces": [
+    {
+      "token": "crust",
+      "hex": "#D8D2BE",
+      "oklch": [
+        0.8631641918818608,
+        0.027780723754431,
+        93.13434833483402
+      ],
+      "canvasContrast": 1.2455911101194,
+      "canvasDeltaEOK": 0.0703577743026766
+    },
+    {
+      "token": "mantle",
+      "hex": "#E8E1CD",
+      "oklch": [
+        0.9099156864779272,
+        0.027727134567913862,
+        90.91578357974417
+      ],
+      "canvasContrast": 1.0751390448745999,
+      "canvasDeltaEOK": 0.02381449201520082
+    },
+    {
+      "token": "base",
+      "hex": "#F0E9D2",
+      "oklch": [
+        0.9334320989672794,
+        0.031334412902820186,
+        92.95081413690707
+      ],
+      "canvasContrast": 1.0,
+      "canvasDeltaEOK": 0.0
+    },
+    {
+      "token": "surface0",
+      "hex": "#F7F0DF",
+      "oklch": [
+        0.9560395631486343,
+        0.023685230991434335,
+        88.2349643921643
+      ],
+      "canvasContrast": 1.0690033207720728,
+      "canvasDeltaEOK": 0.023971490041787006
+    },
+    {
+      "token": "surface1",
+      "hex": "#ECE5D2",
+      "oklch": [
+        0.9223193672794342,
+        0.026384948795449073,
+        90.10501266467229
+      ],
+      "canvasContrast": 1.0350988625109367,
+      "canvasDeltaEOK": 0.012248639352315006
+    },
+    {
+      "token": "surface2",
+      "hex": "#C1BEAC",
+      "oklch": [
+        0.7989672419900431,
+        0.024986762786589387,
+        99.18850849087599
+      ],
+      "canvasContrast": 1.5399332039854758,
+      "canvasDeltaEOK": 0.1346490288619881
+    }
+  ],
+  "semanticPairs": [
+    {
+      "pair": "ochre/clay",
+      "distances": {
+        "normal": 0.07077165389747105,
+        "protan": 0.05660191469314553,
+        "deutan": 0.030150078798703267,
+        "tritan": 0.05260547538364402,
+        "grayscale": 0.02161298239810766
+      }
+    },
+    {
+      "pair": "blue/aqua",
+      "distances": {
+        "normal": 0.07776442603231333,
+        "protan": 0.06630320112612194,
+        "deutan": 0.05967659333517734,
+        "tritan": 0.025823145853780736,
+        "grayscale": 0.009755476739811197
+      }
+    },
+    {
+      "pair": "sage/aqua",
+      "distances": {
+        "normal": 0.04437738991654115,
+        "protan": 0.04109272611925473,
+        "deutan": 0.04326933887826514,
+        "tritan": 0.04698231095023073,
+        "grayscale": 0.002572111568970248
+      }
+    },
+    {
+      "pair": "olive/ochre",
+      "distances": {
+        "normal": 0.03604053925213067,
+        "protan": 0.008148372032315608,
+        "deutan": 0.017290071236314222,
+        "tritan": 0.04575290823994043,
+        "grayscale": 0.005924035588784848
+      }
+    },
+    {
+      "pair": "gold/ochre",
+      "distances": {
+        "normal": 0.08407599832414003,
+        "protan": 0.07943262760564088,
+        "deutan": 0.08484392369120523,
+        "tritan": 0.08490287163984901,
+        "grayscale": 0.08242598224667841
+      }
+    }
+  ],
+  "inline": [
+    {
+      "state": "add",
+      "foregroundContrast": 9.805299635117981,
+      "fillLineContrast": 1.2305713638562956,
+      "distances": {
+        "normal": 0.07086746059332617,
+        "protan": 0.0720479609967458,
+        "deutan": 0.06810152440561743,
+        "tritan": 0.06124048372118691,
+        "grayscale": 0.060217000800379616
+      }
+    },
+    {
+      "state": "delete",
+      "foregroundContrast": 10.161853084285942,
+      "fillLineContrast": 1.4397522137321075,
+      "distances": {
+        "normal": 0.11452602224546168,
+        "protan": 0.12576520547897896,
+        "deutan": 0.10351015009802811,
+        "tritan": 0.12017280588986932,
+        "grayscale": 0.10915382588885314
+      }
+    },
+    {
+      "state": "change",
+      "foregroundContrast": 10.241695955896164,
+      "fillLineContrast": 1.604991962664287,
+      "distances": {
+        "normal": 0.144892648881496,
+        "protan": 0.15344850803948304,
+        "deutan": 0.14261942775773484,
+        "tritan": 0.14416972096610245,
+        "grayscale": 0.1442095708897415
+      }
+    }
+  ],
+  "conditionalSyntaxOverlays": [
+    {
+      "surface": "add",
+      "role": "olive",
+      "ratio": 3.7057172926294037
+    },
+    {
+      "surface": "add",
+      "role": "sage",
+      "ratio": 3.8658493253098674
+    },
+    {
+      "surface": "add",
+      "role": "gold",
+      "ratio": 5.145013491634264
+    },
+    {
+      "surface": "add",
+      "role": "ochre",
+      "ratio": 3.612454926914749
+    },
+    {
+      "surface": "add",
+      "role": "clay",
+      "ratio": 3.964556687784095
+    },
+    {
+      "surface": "add",
+      "role": "coral",
+      "ratio": 3.942930470963884
+    },
+    {
+      "surface": "add",
+      "role": "aqua",
+      "ratio": 3.8233144751481722
+    },
+    {
+      "surface": "add",
+      "role": "blue",
+      "ratio": 3.9873822895045534
+    },
+    {
+      "surface": "add",
+      "role": "mauve",
+      "ratio": 3.814824597046394
+    },
+    {
+      "surface": "delete",
+      "role": "olive",
+      "ratio": 4.493298562003207
+    },
+    {
+      "surface": "delete",
+      "role": "sage",
+      "ratio": 4.687463679133132
+    },
+    {
+      "surface": "delete",
+      "role": "gold",
+      "ratio": 6.238490391436154
+    },
+    {
+      "surface": "delete",
+      "role": "ochre",
+      "ratio": 4.380215015509208
+    },
+    {
+      "surface": "delete",
+      "role": "clay",
+      "ratio": 4.807149455149218
+    },
+    {
+      "surface": "delete",
+      "role": "coral",
+      "ratio": 4.780926988278067
+    },
+    {
+      "surface": "delete",
+      "role": "aqua",
+      "ratio": 4.635888837888037
+    },
+    {
+      "surface": "delete",
+      "role": "blue",
+      "ratio": 4.834826213867803
+    },
+    {
+      "surface": "delete",
+      "role": "mauve",
+      "ratio": 4.6255945941414405
+    },
+    {
+      "surface": "change",
+      "role": "olive",
+      "ratio": 5.048348767795873
+    },
+    {
+      "surface": "change",
+      "role": "sage",
+      "ratio": 5.2664988008474936
+    },
+    {
+      "surface": "change",
+      "role": "gold",
+      "ratio": 7.009121438498933
+    },
+    {
+      "surface": "change",
+      "role": "ochre",
+      "ratio": 4.921296186107098
+    },
+    {
+      "surface": "change",
+      "role": "clay",
+      "ratio": 5.400969175236354
+    },
+    {
+      "surface": "change",
+      "role": "coral",
+      "ratio": 5.371507487683029
+    },
+    {
+      "surface": "change",
+      "role": "aqua",
+      "ratio": 5.208552999415401
+    },
+    {
+      "surface": "change",
+      "role": "blue",
+      "ratio": 5.4320648010545645
+    },
+    {
+      "surface": "change",
+      "role": "mauve",
+      "ratio": 5.196987123697062
+    }
+  ],
+  "ansiExamples": [
+    {
+      "sequence": "37;40",
+      "foreground": "#000000",
+      "background": "#000000",
+      "ratio": 1.0
+    },
+    {
+      "sequence": "30;47",
+      "foreground": "#000000",
+      "background": "#000000",
+      "ratio": 1.0
+    },
+    {
+      "sequence": "97;40",
+      "foreground": "#000000",
+      "background": "#000000",
+      "ratio": 1.0
+    },
+    {
+      "sequence": "37;41",
+      "foreground": "#000000",
+      "background": "#84342F",
+      "ratio": 2.513504608116533
+    }
+  ],
+  "resolvedHighlights": {
+    "Normal": {
+      "bg": 15788498,
+      "fg": 0
+    },
+    "Comment": {
+      "cterm": {
+        "italic": true
+      },
+      "fg": 0,
+      "italic": true
+    },
+    "LineNr": {
+      "fg": 0
+    },
+    "CursorLineNr": {
+      "fg": 0
+    },
+    "StatusLine": {
+      "fg": 0
+    },
+    "StatusLineNC": {
+      "fg": 0
+    },
+    "Search": {
+      "bg": 11629106,
+      "fg": 0
+    },
+    "IncSearch": {
+      "bg": 11629106,
+      "fg": 0
+    },
+    "CurSearch": {
+      "bold": true,
+      "cterm": {
+        "bold": true
+      },
+      "bg": 11629106,
+      "fg": 0
+    },
+    "Visual": {
+      "bg": 11629106,
+      "fg": 0
+    },
+    "DiffText": {
+      "bold": true,
+      "cterm": {
+        "bold": true
+      },
+      "bg": 11629106,
+      "fg": 0
+    },
+    "GitSignsAddInline": {
+      "fg": 0,
+      "bold": true,
+      "cterm": {
+        "bold": true,
+        "underline": true
+      },
+      "bg": 10599031,
+      "underline": true
+    },
+    "GitSignsDeleteInline": {
+      "fg": 0,
+      "bold": true,
+      "cterm": {
+        "bold": true,
+        "underline": true
+      },
+      "bg": 14853787,
+      "underline": true
+    },
+    "GitSignsChangeInline": {
+      "fg": 0,
+      "bold": true,
+      "cterm": {
+        "bold": true,
+        "underline": true
+      },
+      "bg": 13807979,
+      "underline": true
+    },
+    "DiagnosticUnderlineInfo": {
+      "sp": 4217728,
+      "cterm": {
+        "undercurl": true
+      },
+      "undercurl": true
+    },
+    "DiagnosticUnderlineHint": {
+      "sp": 2647647,
+      "cterm": {
+        "undercurl": true
+      },
+      "undercurl": true
+    }
+  },
+  "kansoCommit": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe"
+}

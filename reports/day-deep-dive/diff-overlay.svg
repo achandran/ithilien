@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1100" height="700" viewBox="0 0 1100 700">
+<style>text{font-family:"Berkeley Mono",monospace;font-size:15px}</style>
+<rect x="0" y="0" width="1100" height="700" fill="#F0E9D2"/>
+<text x="24" y="33" fill="#000000" font-weight="700">Syntax colors on diff fills / source-derived composition</text>
+<rect x="16" y="65" width="1068" height="160" fill="#F0E9D2"/>
+<text x="28" y="88" fill="#000000" font-weight="700">Canvas</text>
+<text x="28" y="119" fill="#88483E" font-weight="700">const </text>
+<text x="82" y="119" fill="#000000" >policy: </text>
+<text x="154" y="119" fill="#28665F" >RetryPolicy</text>
+<text x="253" y="119" fill="#000000" > = { limit: </text>
+<text x="361" y="119" fill="#795B28" >3</text>
+<text x="370" y="119" fill="#000000" >, delay: </text>
+<text x="451" y="119" fill="#795B28" >250</text>
+<text x="478" y="119" fill="#000000" > }</text>
+<text x="28" y="144" fill="#88483E" font-weight="700">export async function </text>
+<text x="226" y="144" fill="#5C4619" >fetchWithRetry</text>
+<text x="352" y="144" fill="#000000" >(url: </text>
+<text x="406" y="144" fill="#28665F" >string</text>
+<text x="460" y="144" fill="#000000" >) {</text>
+<text x="28" y="169" fill="#000000" >  </text>
+<text x="46" y="169" fill="#88483E" font-weight="700">for </text>
+<text x="82" y="169" fill="#000000" >(</text>
+<text x="91" y="169" fill="#88483E" font-weight="700">let </text>
+<text x="127" y="169" fill="#000000" >attempt = </text>
+<text x="217" y="169" fill="#795B28" >0</text>
+<text x="226" y="169" fill="#000000" >; attempt </text>
+<text x="316" y="169" fill="#64602F" >&lt; </text>
+<text x="334" y="169" fill="#000000" >policy.limit; attempt</text>
+<text x="523" y="169" fill="#64602F" >++</text>
+<text x="541" y="169" fill="#000000" >) {</text>
+<text x="28" y="206" fill="#000000" >Number contrast: 5.18:1</text>
+<rect x="16" y="240" width="1068" height="160" fill="#B2CCA4"/>
+<text x="28" y="263" fill="#000000" font-weight="700">Added line</text>
+<text x="28" y="294" fill="#88483E" font-weight="700">const </text>
+<text x="82" y="294" fill="#000000" >policy: </text>
+<text x="154" y="294" fill="#28665F" >RetryPolicy</text>
+<text x="253" y="294" fill="#000000" > = { limit: </text>
+<text x="361" y="294" fill="#795B28" >3</text>
+<text x="370" y="294" fill="#000000" >, delay: </text>
+<text x="451" y="294" fill="#795B28" >250</text>
+<text x="478" y="294" fill="#000000" > }</text>
+<text x="28" y="319" fill="#88483E" font-weight="700">export async function </text>
+<text x="226" y="319" fill="#5C4619" >fetchWithRetry</text>
+<text x="352" y="319" fill="#000000" >(url: </text>
+<text x="406" y="319" fill="#28665F" >string</text>
+<text x="460" y="319" fill="#000000" >) {</text>
+<text x="28" y="344" fill="#000000" >  </text>
+<text x="46" y="344" fill="#88483E" font-weight="700">for </text>
+<text x="82" y="344" fill="#000000" >(</text>
+<text x="91" y="344" fill="#88483E" font-weight="700">let </text>
+<text x="127" y="344" fill="#000000" >attempt = </text>
+<text x="217" y="344" fill="#795B28" >0</text>
+<text x="226" y="344" fill="#000000" >; attempt </text>
+<text x="316" y="344" fill="#64602F" >&lt; </text>
+<text x="334" y="344" fill="#000000" >policy.limit; attempt</text>
+<text x="523" y="344" fill="#64602F" >++</text>
+<text x="541" y="344" fill="#000000" >) {</text>
+<text x="28" y="381" fill="#000000" >Number contrast: 3.61:1</text>
+<rect x="16" y="415" width="1068" height="160" fill="#E8D3CD"/>
+<text x="28" y="438" fill="#000000" font-weight="700">Deleted line before host dimming</text>
+<text x="28" y="469" fill="#88483E" font-weight="700">const </text>
+<text x="82" y="469" fill="#000000" >policy: </text>
+<text x="154" y="469" fill="#28665F" >RetryPolicy</text>
+<text x="253" y="469" fill="#000000" > = { limit: </text>
+<text x="361" y="469" fill="#795B28" >3</text>
+<text x="370" y="469" fill="#000000" >, delay: </text>
+<text x="451" y="469" fill="#795B28" >250</text>
+<text x="478" y="469" fill="#000000" > }</text>
+<text x="28" y="494" fill="#88483E" font-weight="700">export async function </text>
+<text x="226" y="494" fill="#5C4619" >fetchWithRetry</text>
+<text x="352" y="494" fill="#000000" >(url: </text>
+<text x="406" y="494" fill="#28665F" >string</text>
+<text x="460" y="494" fill="#000000" >) {</text>
+<text x="28" y="519" fill="#000000" >  </text>
+<text x="46" y="519" fill="#88483E" font-weight="700">for </text>
+<text x="82" y="519" fill="#000000" >(</text>
+<text x="91" y="519" fill="#88483E" font-weight="700">let </text>
+<text x="127" y="519" fill="#000000" >attempt = </text>
+<text x="217" y="519" fill="#795B28" >0</text>
+<text x="226" y="519" fill="#000000" >; attempt </text>
+<text x="316" y="519" fill="#64602F" >&lt; </text>
+<text x="334" y="519" fill="#000000" >policy.limit; attempt</text>
+<text x="523" y="519" fill="#64602F" >++</text>
+<text x="541" y="519" fill="#000000" >) {</text>
+<text x="28" y="556" fill="#000000" >Number contrast: 4.38:1</text>
+<text x="24" y="632" fill="#000000" >Codex source preserves syntax foregrounds over the line fill; deletion adds DIM.</text>
+<text x="24" y="666" fill="#000000" >Controlled token specimen, not a native Codex screenshot. Dimming is not simulated.</text>
+</svg>
