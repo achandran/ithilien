@@ -1,4 +1,4 @@
-# Loden Night palette audit
+# Ithilien Dusk palette audit
 
 Overall: **PASS**
 
@@ -14,7 +14,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | normal text | 9.33:1 | -64.8 | PASS |
 | bright text | 12.09:1 | -79.7 | PASS |
 | highlighted text | 5.32:1 | 37.5 | PASS |
-| highlight edge on Loden Night | 4.53:1 | -34.0 | PASS |
+| highlight edge on Ithilien Dusk | 4.53:1 | -34.0 | PASS |
 | highlight edge on white | 3.95:1 | 66.6 | PASS |
 | syntax olive | 7.56:1 | -54.4 | PASS |
 | syntax sage | 7.94:1 | -56.7 | PASS |

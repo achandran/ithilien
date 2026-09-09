@@ -39,10 +39,10 @@
     }
   ],
   "gruvboxReference": {
-    "name": "Gruvbox Light Soft canvas / Loden inks",
+    "name": "Gruvbox Light Soft canvas / Ithilien inks",
     "source": "https://github.com/morhetz/gruvbox/blob/master/colors/gruvbox.vim",
     "background": "#F2E5BC",
-    "note": "Canvas-only control. This is not the native Gruvbox theme: Loden foregrounds, syntax, and diffs remain fixed to isolate the foundation."
+    "note": "Canvas-only control. This is not the native Gruvbox theme: Ithilien foregrounds, syntax, and diffs remain fixed to isolate the foundation."
   },
   "referencePalette": "reports/day-adoption/before.json"
 }

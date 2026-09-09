@@ -1,0 +1,28 @@
+{
+  "baselineCommit": "2ec16c0",
+  "checks": {
+    "dawnPaletteIdentical": true,
+    "duskPaletteIdentical": true,
+    "sharedPaletteIdentical": true,
+    "portsIdenticalExceptNames": [
+      "ghostty/themes/ithilien-dawn",
+      "ghostty/themes/ithilien-dusk",
+      "codex/themes/ithilien-dawn.tmTheme",
+      "codex/themes/ithilien-dusk.tmTheme",
+      "claude-code/themes/ithilien-dawn.json",
+      "claude-code/themes/ithilien-dusk.json",
+      "slack/ithilien-dawn.txt",
+      "slack/ithilien-dusk.txt",
+      "linear/ithilien-dawn.txt",
+      "linear/ithilien-dusk.txt",
+      "shell/ithilien.zsh",
+      "firefox/manifest.json",
+      "macos/apply-highlight.sh",
+      "lua/lualine/themes/ithilien-dusk.lua",
+      "lua/lualine/themes/ithilien-dawn.lua"
+    ],
+    "wallpaperBytesIdentical": true,
+    "dawnResolvedHighlightsIdentical": 948,
+    "duskResolvedHighlightsIdentical": 933
+  }
+}

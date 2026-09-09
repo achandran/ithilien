@@ -1,5 +1,5 @@
 {
-  "palette": "Loden Night",
+  "palette": "Ithilien Dusk",
   "colorSpace": "sRGB",
   "passed": true,
   "failures": [],
@@ -65,7 +65,7 @@
       "passed": true
     },
     {
-      "name": "highlight edge on Loden Night",
+      "name": "highlight edge on Ithilien Dusk",
       "foreground": "#B17232",
       "background": "#171812",
       "wcag": 4.53,

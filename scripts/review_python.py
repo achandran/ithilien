@@ -15,7 +15,7 @@ import tokenize
 from pathlib import Path
 from unittest.mock import patch
 import review_day
-from lodenlib import ROOT,load_palette,wcag
+from ithilienlib import ROOT,load_palette,wcag
 
 OUT=ROOT/'reports/python-review'
 
@@ -86,24 +86,24 @@ def ansi_rows(value):
     return rows
 
 def main():
-    env=dict(os.environ,NVIM_LOG_FILE='/private/tmp/loden-python.log')
+    env=dict(os.environ,NVIM_LOG_FILE='/private/tmp/ithilien-python.log')
     subprocess.run(['nvim','--headless','-u','NONE','-i','NONE','-l','scripts/check_python_syntax.lua'],env=env,check=True)
     native=json.loads((OUT/'neovim.json').read_text())
-    with tempfile.TemporaryDirectory(prefix='loden-python-',dir='/private/tmp') as t:
+    with tempfile.TemporaryDirectory(prefix='ithilien-python-',dir='/private/tmp') as t:
         root=Path(t);(root/'config/themes').mkdir(parents=True)
-        shutil.copy(ROOT/'codex/themes/loden-day.tmTheme',root/'config/themes/loden-day.tmTheme')
+        shutil.copy(ROOT/'codex/themes/ithilien-dawn.tmTheme',root/'config/themes/ithilien-dawn.tmTheme')
         env=dict(os.environ,COLORTERM='truecolor',BAT_CONFIG_DIR=str(root/'config'),BAT_CACHE_PATH=str(root/'cache'))
         subprocess.run(['bat','cache','--build'],env=env,capture_output=True,check=True)
-        r=subprocess.run(['bat','--plain','--color=always','--paging=never','--theme=loden-day',str(OUT/'sample.py')],env=env,capture_output=True,text=True,check=True)
+        r=subprocess.run(['bat','--plain','--color=always','--paging=never','--theme=ithilien-dawn',str(OUT/'sample.py')],env=env,capture_output=True,text=True,check=True)
         assert not r.stderr,r.stderr # Unknown theme warnings must not silently fall back.
         (OUT/'textmate.ansi').write_text(r.stdout)
     mate=ansi_rows(r.stdout)
     assert [r['text'] for r in native['rows']]==[r['text'] for r in mate]
-    p=load_palette('loden-day');bg=p['backgrounds']['base']
+    p=load_palette('ithilien-dawn');bg=p['backgrounds']['base']
     summary={}
     d=review_day.Drawing();width=1880;height=1120
     d.rect(0,0,width,height,'#D0CEC5')
-    for x,rows,label,key in [(0,native['rows'],'Neovim / actual Python Tree-sitter roles','treesitter'),(950,mate,'TextMate / bat Syntect with Loden theme','textmate')]:
+    for x,rows,label,key in [(0,native['rows'],'Neovim / actual Python Tree-sitter roles','treesitter'),(950,mate,'TextMate / bat Syntect with Ithilien theme','textmate')]:
         d.rect(x,0,930,height,bg);d.text(x+15,12,label,'#000000','bold')
         d.text(x+15,40,'15 px Berkeley Mono / reconstructed from captured styles',p['foregrounds']['subtext'])
         ratios=[]
@@ -117,7 +117,7 @@ def main():
         checks = check_roles(rows, p)
         assert min(ratios) >= 4.5, (key, min(ratios))
         summary[key]={'minimumTextContrast':min(ratios),'lines':len(rows),'roleChecks':checks}
-    subprocess.run(['swiftc','-module-cache-path','/private/tmp/loden-swift-cache',str(ROOT/'scripts/render_review.swift'),'-o','/private/tmp/loden-render-review'],check=True)
+    subprocess.run(['swiftc','-module-cache-path','/private/tmp/ithilien-swift-cache',str(ROOT/'scripts/render_review.swift'),'-o','/private/tmp/ithilien-render-review'],check=True)
     with patch.object(review_day,'OUT',OUT):d.save('comparison',width,height,True)
     native['batVersion']=subprocess.check_output(['bat','--version'],text=True).strip()
     native['kansoCommit']=subprocess.check_output(['git','-C',os.environ['KANSO_ROOT'],'rev-parse','HEAD'],text=True).strip()

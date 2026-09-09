@@ -1,4 +1,4 @@
--- Generated from palette/loden-night.json; do not edit by hand.
+-- Generated from palette/ithilien-dusk.json; do not edit by hand.
 return {
   raw = {
     ["colorSpace"] = "sRGB",
@@ -6,8 +6,8 @@ return {
       ["background"] = "#B17232",
       ["foreground"] = "#000000",
     },
-    ["name"] = "Loden Night",
-    ["slug"] = "loden-night",
+    ["name"] = "Ithilien Dusk",
+    ["slug"] = "ithilien-dusk",
     ["polarity"] = "dark",
     ["backgrounds"] = {
       ["crust"] = "#10110D",

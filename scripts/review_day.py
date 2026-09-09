@@ -10,7 +10,7 @@ import json
 import subprocess
 import tempfile
 from pathlib import Path
-from lodenlib import ROOT, load_palette, simulated_hex, wcag
+from ithilienlib import ROOT, load_palette, simulated_hex, wcag
 
 OUT = ROOT / 'reports/day-review'
 CODE = [
@@ -47,7 +47,7 @@ class Drawing:
         if png:
             with tempfile.NamedTemporaryFile(suffix='.json',mode='w') as f:
                 json.dump(dict(width=width,height=height,commands=self.commands),f);f.flush()
-                subprocess.run(['/private/tmp/loden-render-review',f.name,str(OUT/f'{stem}.png')],check=True)
+                subprocess.run(['/private/tmp/ithilien-render-review',f.name,str(OUT/f'{stem}.png')],check=True)
 
 def panel(d,p,x,title,revised,mode):
     b,f,a,df=p['backgrounds'],p['foregrounds'],p['accents'],p['diff']; c={**f,**a}
@@ -87,8 +87,8 @@ def panel(d,p,x,title,revised,mode):
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--png',action='store_true');args=ap.parse_args()
-    if args.png: subprocess.run(['swiftc','-module-cache-path','/private/tmp/loden-swift-cache',str(ROOT/'scripts/render_review.swift'),'-o','/private/tmp/loden-render-review'],check=True)
-    before={**load_palette('loden-day'),**json.loads((OUT/'before.json').read_text())};after=load_palette('loden-day')
+    if args.png: subprocess.run(['swiftc','-module-cache-path','/private/tmp/ithilien-swift-cache',str(ROOT/'scripts/render_review.swift'),'-o','/private/tmp/ithilien-render-review'],check=True)
+    before={**load_palette('ithilien-dawn'),**json.loads((OUT/'before.json').read_text())};after=load_palette('ithilien-dawn')
     contrasts=[]
     for name,token,surface in [('Main text','text','base'),('Secondary text','subtext','base'),
                                ('Comments','comment','base'),('Muted labels','muted','base'),
@@ -100,7 +100,7 @@ def main():
     (OUT/'contrast-comparison.json').write_text(json.dumps(contrasts,indent=2)+'\n')
     for mode in ['normal','protan','deutan','tritan','grayscale']:
         d=Drawing()
-        for x,p,title,rev in [(0,before,'BEFORE / 1db45d5',False),(780,after,'AFTER / Loden Day',True)]:
+        for x,p,title,rev in [(0,before,'BEFORE / 1db45d5',False),(780,after,'AFTER / Ithilien Dawn',True)]:
             p=copy.deepcopy(p)
             if mode!='normal':
                 for family in ['backgrounds','foregrounds','accents','diff','ansi','highlight']:
@@ -109,7 +109,7 @@ def main():
         d.save('comparison-'+mode,1540,1080,args.png)
     benchmarks=json.loads((OUT/'benchmarks.json').read_text())
     roles={'string':'sage','keyword':'clay','function':'gold','type':'aqua','number':'ochre'}
-    own=dict(name='Loden Day (revised)',background=after['backgrounds']['base'],
+    own=dict(name='Ithilien Dawn (revised)',background=after['backgrounds']['base'],
              text=after['foregrounds']['text'],comment=after['foregrounds']['comment'],
              **{k:after['accents'][v] for k,v in roles.items()})
     d=Drawing();rows=[]
@@ -127,9 +127,9 @@ def main():
         d.text(x+16,y+433,f"Text {ratios['text']}:1 / comment {ratios['comment']}:1",p['text'])
     d.save('benchmarks',1540,1480,args.png)
     (OUT/'benchmark-contrast.json').write_text(json.dumps(rows,indent=2)+'\n')
-    (OUT/'index.html').write_text('''<!doctype html><meta charset="utf-8"><title>Loden Day review</title>
+    (OUT/'index.html').write_text('''<!doctype html><meta charset="utf-8"><title>Ithilien Dawn review</title>
 <style>body{font:16px system-ui;background:#eee;margin:24px}img{width:100%;height:auto}a{margin-right:18px}</style>
-<h1>Loden Day: matched role specimens</h1><p>Berkeley Mono, 15 px, identical code and geometry. Controlled specimens, not application screenshots. Left: 1db45d5. Right: revised Day. Selection and DiffText preserve black foregrounds. Selection ratio labels refer to normal vision. Simulations use Machado severity 1; grayscale uses the repository filter.</p>
+<h1>Ithilien Dawn: matched role specimens</h1><p>Berkeley Mono, 15 px, identical code and geometry. Controlled specimens, not application screenshots. Left: 1db45d5. Right: revised Day. Selection and DiffText preserve black foregrounds. Selection ratio labels refer to normal vision. Simulations use Machado severity 1; grayscale uses the repository filter.</p>
 <nav>'''+''.join(f'<a href="#'+m+'">'+m+'</a>' for m in ['normal','protan','deutan','tritan','grayscale'])+'</nav><p><a href="benchmarks.svg">Comparison palette specimens</a> (representative token selections; not native editor ports).</p>'+''.join(f'<h2 id="{m}">{m}</h2><img src="comparison-{m}.svg" alt="Before and after Day under {m}">' for m in ['normal','protan','deutan','tritan','grayscale']))
 
 if __name__=='__main__': main()

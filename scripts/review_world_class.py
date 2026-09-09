@@ -11,7 +11,7 @@ from itertools import combinations
 from pathlib import Path
 
 import review_day
-from lodenlib import ROOT, delta_e, load_palette, oklch, simulated_hex, wcag
+from ithilienlib import ROOT, delta_e, load_palette, oklch, simulated_hex, wcag
 
 OUT = ROOT / 'reports/day-deep-dive'
 MODES = ['normal', 'protan', 'deutan', 'tritan', 'grayscale']
@@ -34,20 +34,20 @@ def main():
     OUT.mkdir(exist_ok=True)
     review_day.OUT = OUT
     if args.png:
-        subprocess.run(['swiftc', '-module-cache-path', '/private/tmp/loden-swift-cache',
-                        str(ROOT/'scripts/render_review.swift'), '-o', '/private/tmp/loden-render-review'], check=True)
-    p = load_palette('loden-day')
+        subprocess.run(['swiftc', '-module-cache-path', '/private/tmp/ithilien-swift-cache',
+                        str(ROOT/'scripts/render_review.swift'), '-o', '/private/tmp/ithilien-render-review'], check=True)
+    p = load_palette('ithilien-dawn')
     b, a, f, df = (p[k] for k in ('backgrounds', 'accents', 'foregrounds', 'diff'))
     all_colors = [v for k in ('backgrounds','accents','foregrounds','ansi','diff','highlight') for v in p[k].values()]
     error = max(abs(wcag(x,y)-independent_contrast(x,y)) for x,y in combinations(all_colors,2))
     # ColorAide uses higher-precision sRGB luminance coefficients than the
     # rounded WCAG reference formula. Record the discrepancy and compare gates.
-    audit=json.loads((ROOT/'reports/loden-day-audit.json').read_text())
+    audit=json.loads((ROOT/'reports/ithilien-dawn-audit.json').read_text())
     gate_agreement=all((independent_contrast(q['foreground'],q['background']) >= q['wcagTarget']) ==
                        (wcag(q['foreground'],q['background']) >= q['wcagTarget']) for q in audit['contrast'])
     assert gate_agreement
     roles = {'string':'sage','keyword':'clay','function':'gold','type':'aqua','number':'ochre'}
-    own = dict(name='Loden Day / 4289246', background=b['base'], text=f['text'], comment=f['comment'],
+    own = dict(name='Ithilien Dawn / 4289246', background=b['base'], text=f['text'], comment=f['comment'],
                **{k:a[v] for k,v in roles.items()})
     benchmarks = json.loads((ROOT/'reports/day-review/benchmarks.json').read_text())
     benchmarks[1]['name'] = 'Ef Day / pinned e1f6176'
@@ -117,7 +117,7 @@ def main():
     for mode in MODES:
         c=lambda value: value if mode=='normal' else simulated_hex(value,mode)
         d=review_day.Drawing();d.rect(0,0,1100,900,c(b['base']))
-        d.text(24,18,'Loden Day / stress specimen / '+mode,c(f['text']),'bold')
+        d.text(24,18,'Ithilien Dawn / stress specimen / '+mode,c(f['text']),'bold')
         d.text(24,55,'Black comments and line numbers share the strongest foreground.',c(f['text']))
         for i in range(6):
             y=88+i*25

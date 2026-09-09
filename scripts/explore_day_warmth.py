@@ -1,7 +1,7 @@
 """Audit and render foundation-only Day experiments without changing live palettes.
 
 python scripts/explore_day_warmth.py [--png]
-Sources: experiments/day-warmth.json and palette/loden-day.json.
+Sources: experiments/day-warmth.json and palette/ithilien-dawn.json.
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from unittest.mock import patch
 
 import audit_palette
 import review_day
-from lodenlib import ROOT, delta_e, load_palette, oklch, simulated_hex, wcag
+from ithilienlib import ROOT, delta_e, load_palette, oklch, simulated_hex, wcag
 
 OUT = ROOT / 'reports/day-warmth'
 MODES = ('normal', 'protan', 'deutan', 'tritan', 'grayscale')
@@ -30,12 +30,12 @@ def audit(palette: dict, stem: str) -> dict:
              patch.object(audit_palette, 'load_palette', return_value=palette), \
              contextlib.redirect_stdout(io.StringIO()):
             try:
-                audit_palette.main('loden-day')
+                audit_palette.main('ithilien-dawn')
             except SystemExit as error:
                 if error.code != 1:
                     raise
         for suffix in ('json', 'md'):
-            data = (Path(temp) / f'reports/loden-day-audit.{suffix}').read_text()
+            data = (Path(temp) / f'reports/ithilien-dawn-audit.{suffix}').read_text()
             (OUT / f'{stem}-audit.{suffix}').write_text(data)
         return json.loads((OUT / f'{stem}-audit.json').read_text())
 
@@ -125,10 +125,10 @@ def main():
     args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     config = json.loads((ROOT / 'experiments/day-warmth.json').read_text())
-    current = json.loads((ROOT / config['referencePalette']).read_text()) if 'referencePalette' in config else load_palette('loden-day')
+    current = json.loads((ROOT / config['referencePalette']).read_text()) if 'referencePalette' in config else load_palette('ithilien-dawn')
     if args.png:
-        subprocess.run(['swiftc', '-module-cache-path', '/private/tmp/loden-swift-cache',
-                        str(ROOT / 'scripts/render_review.swift'), '-o', '/private/tmp/loden-render-review'], check=True)
+        subprocess.run(['swiftc', '-module-cache-path', '/private/tmp/ithilien-swift-cache',
+                        str(ROOT / 'scripts/render_review.swift'), '-o', '/private/tmp/ithilien-render-review'], check=True)
     (OUT / 'current-palette.json').write_text(json.dumps(current, indent=2) + '\n')
     candidates = [('current', 'Current Day', current)]
     for spec in config['candidates']:
@@ -165,7 +165,7 @@ def main():
     # Reference only: borrow one canvas, so its warmth can be isolated from Gruvbox syntax.
     ref = copy.deepcopy(current)
     ref['backgrounds']['base'] = config['gruvboxReference']['background']
-    draw_pair(current, ref, 'Gruvbox soft canvas / Loden inks', 'gruvbox-canvas', args.png)
+    draw_pair(current, ref, 'Gruvbox soft canvas / Ithilien inks', 'gruvbox-canvas', args.png)
     # Both passing experiments get full simulated code/diff specimens.
     for stem, name, viable in candidates:
         if stem not in ('warm-ivory', 'parchment'):
@@ -174,7 +174,7 @@ def main():
             draw_pair(current, viable, name, stem + '-' + mode, args.png, mode)
     # Compact code samples show the warmth range without changing syntax or typography.
     d = review_day.Drawing()
-    options = [(n, p) for _, n, p in candidates] + [('Gruvbox soft canvas / Loden inks', ref)]
+    options = [(n, p) for _, n, p in candidates] + [('Gruvbox soft canvas / Ithilien inks', ref)]
     for i, (name, p) in enumerate(options):
         y = i * 300
         d.rect(0, y, 1000, 300, p['backgrounds']['base'])
@@ -186,7 +186,7 @@ def main():
                 d.text(x, y + 46 + j * 24, text, colors[role],
                        'italic' if role == 'comment' else 'bold' if role == 'clay' else 'regular')
                 x += len(text) * 9
-        d.text(24, y + 272, 'Same Loden foregrounds and syntax; canvas comparison only.', p['foregrounds']['subtext'])
+        d.text(24, y + 272, 'Same Ithilien foregrounds and syntax; canvas comparison only.', p['foregrounds']['subtext'])
     with patch.object(review_day, 'OUT', OUT):
         d.save('warmth-range', 1000, 1500, args.png)
     (OUT / 'summary.json').write_text(json.dumps(summaries, indent=2) + '\n')

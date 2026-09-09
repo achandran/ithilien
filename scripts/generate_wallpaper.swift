@@ -7,7 +7,7 @@ let height = 3760
 // Read canonical palettes; never duplicate Day/Night colors in this generator.
 let paletteDirectory = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("palette")
 func canvas(_ variant: String) throws -> String {
-  let data = try Data(contentsOf: paletteDirectory.appendingPathComponent("loden-\(variant).json"))
+  let data = try Data(contentsOf: paletteDirectory.appendingPathComponent("ithilien-\(variant).json"))
   let palette = try JSONSerialization.jsonObject(with: data) as! [String: Any]
   return (palette["backgrounds"] as! [String: String])["base"]!.replacingOccurrences(of: "#", with: "")
 }

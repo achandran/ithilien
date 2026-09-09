@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 import review_day
 from explore_day_warmth import agent_panel
-from lodenlib import ROOT, load_palette, wcag
+from ithilienlib import ROOT, load_palette, wcag
 
 OUT = ROOT / 'reports/day-black-text'
 
@@ -51,18 +51,18 @@ def main():
     args=parser.parse_args()
     OUT.mkdir(parents=True,exist_ok=True)
     config=json.loads((ROOT/'experiments/day-black-text.json').read_text())
-    current=json.loads((ROOT/config['referencePalette']).read_text()) if 'referencePalette' in config else load_palette('loden-day')
+    current=json.loads((ROOT/config['referencePalette']).read_text()) if 'referencePalette' in config else load_palette('ithilien-dawn')
     warmth=json.loads((ROOT/'experiments/day-warmth.json').read_text())
     parchment=copy.deepcopy(current)
     parchment['backgrounds']=next(p['backgrounds'] for p in warmth['candidates'] if p['id']=='parchment')
     if args.png:
-        subprocess.run(['swiftc','-module-cache-path','/private/tmp/loden-swift-cache',str(ROOT/'scripts/render_review.swift'),'-o','/private/tmp/loden-render-review'],check=True)
+        subprocess.run(['swiftc','-module-cache-path','/private/tmp/ithilien-swift-cache',str(ROOT/'scripts/render_review.swift'),'-o','/private/tmp/ithilien-render-review'],check=True)
     for agent in (False,True):
         kind='agent' if agent else 'code'
         height=1020 if agent else 1080
         for policy,label in [('black-neutral','Black neutral text / colored syntax'),('all-black','All text black / colored fills')]:
             # Same background first: isolate the foreground policy.
-            save_pairs(policy_panel(parchment,'current','Loden inks / warm parchment',agent),
+            save_pairs(policy_panel(parchment,'current','Ithilien inks / warm parchment',agent),
                        policy_panel(parchment,policy,label,agent),policy+'-'+kind,args.png,height)
         save_pairs(policy_panel(current,'all-black','All text black / current ivory',agent),
                    policy_panel(parchment,'all-black','All text black / warm parchment',agent),

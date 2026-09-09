@@ -1,6 +1,6 @@
 """Audit resolved highlights with a real Kanso checkout; optionally compare Night.
 
-Usage: python scripts/check_neovim.py /path/to/kanso.nvim [--baseline /path/to/old/loden]
+Usage: python scripts/check_neovim.py /path/to/kanso.nvim [--baseline /path/to/old/ithilien]
 """
 import argparse
 import json
@@ -8,26 +8,26 @@ import os
 import subprocess
 import tempfile
 from pathlib import Path
-from lodenlib import ROOT, wcag
+from ithilienlib import ROOT, wcag
 
 LUA = '''
 vim.opt.rtp:prepend(vim.env.KANSO_ROOT)
-vim.opt.rtp:prepend(vim.env.LODEN_ROOT)
-require('loden').load(vim.env.LODEN_VARIANT)
-if vim.env.LODEN_SWITCH_CHECK == '1' then
+vim.opt.rtp:prepend(vim.env.ITHILIEN_ROOT)
+require(vim.env.ITHILIEN_MODULE).load(vim.env.ITHILIEN_VARIANT)
+if vim.env.ITHILIEN_SWITCH_CHECK == '1' then
   local before = {}
   for name,_ in pairs(vim.api.nvim_get_hl(0, {})) do
     before[name] = vim.api.nvim_get_hl(0, {name=name,link=false})
   end
-  local loden = require('loden')
-  loden.setup({bold=false,italics=false})
-  loden.load('day')
+  local ithilien = require('ithilien')
+  ithilien.setup({bold=false,italics=false})
+  ithilien.load('day')
   for _,group in ipairs({'@keyword.return.python','@keyword.exception.python','@string.documentation.python'}) do
     local h = vim.api.nvim_get_hl(0, {name=group,link=false})
     assert(not h.bold and not h.italic, 'Python typography options: '..group)
   end
-  loden.setup({bold=true,italics=true})
-  loden.load('night')
+  ithilien.setup({bold=true,italics=true})
+  ithilien.load('night')
   for name,h in pairs(before) do
     assert(vim.deep_equal(h, vim.api.nvim_get_hl(0, {name=name,link=false})), 'Night after switching: '..name)
   end
@@ -40,7 +40,7 @@ local resolved = {}
 for name,_ in pairs(vim.api.nvim_get_hl(0, {})) do
   resolved[name] = vim.api.nvim_get_hl(0, {name=name,link=false})
 end
-vim.fn.writefile({vim.json.encode(resolved)}, vim.env.LODEN_OUTPUT)
+vim.fn.writefile({vim.json.encode(resolved)}, vim.env.ITHILIEN_OUTPUT)
 vim.cmd('qa!')
 '''
 # These are deliberately invisible helper glyphs / Neovim error sentinels, not text.
@@ -58,8 +58,9 @@ def capture(root, kanso, variant, temp, switch_check=False):
     script = temp / 'capture.lua'
     script.write_text(LUA)
     output = temp / 'highlights.json'
-    env = dict(os.environ, KANSO_ROOT=str(kanso), LODEN_ROOT=str(root),
-               LODEN_VARIANT=variant, LODEN_OUTPUT=str(output), LODEN_SWITCH_CHECK='1' if switch_check else '0')
+    env = dict(os.environ, KANSO_ROOT=str(kanso), ITHILIEN_ROOT=str(root),
+               ITHILIEN_VARIANT=variant, ITHILIEN_OUTPUT=str(output), ITHILIEN_SWITCH_CHECK='1' if switch_check else '0',
+               ITHILIEN_MODULE='ithilien' if (root/'lua/ithilien/init.lua').exists() else 'loden')
     subprocess.run(['nvim','--headless','-u','NONE','-i','NONE','-l',str(script)], env=env, check=True)
     return json.loads(output.read_text())
 

@@ -1,4 +1,4 @@
-"""Shared color and palette helpers for Loden."""
+"""Shared color and palette helpers for Ithilien."""
 
 from __future__ import annotations
 
@@ -10,12 +10,12 @@ from coloraide.everything import ColorAll as Color
 
 ROOT = Path(__file__).resolve().parent.parent
 PALETTE_DIR = ROOT / "palette"
-PALETTE_PATH = PALETTE_DIR / "loden-night.json"
-SHARED_PATH = PALETTE_DIR / "loden-shared.json"
+PALETTE_PATH = PALETTE_DIR / "ithilien-dusk.json"
+SHARED_PATH = PALETTE_DIR / "ithilien-shared.json"
 
 
-def load_palette(variant: str = "loden-night") -> dict:
-    """Load a polarity-specific palette with universal Loden tokens merged in."""
+def load_palette(variant: str = "ithilien-dusk") -> dict:
+    """Load a polarity-specific palette with universal Ithilien tokens merged in."""
     shared = json.loads(SHARED_PATH.read_text())
     specific = json.loads((PALETTE_DIR / f"{variant}.json").read_text())
     return {**shared, **specific}

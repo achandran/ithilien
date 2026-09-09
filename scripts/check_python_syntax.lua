@@ -5,7 +5,7 @@ vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT))
 vim.opt.rtp:prepend(assert(vim.env.TS_ROOT))
 vim.opt.rtp:prepend(assert(vim.env.TS_SITE))
 vim.opt.rtp:prepend(vim.fn.getcwd())
-require('loden').load('day')
+require('ithilien').load('day')
 vim.cmd('edit reports/python-review/sample.py')
 vim.bo.filetype='python'
 vim.cmd('syntax on')

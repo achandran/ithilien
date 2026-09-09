@@ -1,4 +1,4 @@
-"""Generate Loden themes and preview artifacts from the canonical palettes."""
+"""Generate Ithilien themes and preview artifacts from the canonical palettes."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ import json
 import plistlib
 import re
 
-from lodenlib import ROOT, load_palette
+from ithilienlib import ROOT, load_palette
 
 
 def lua_table(value, indent: int = 0) -> str:
@@ -88,15 +88,15 @@ def generate_neovim_palette(palette: dict) -> None:
         "}\n"
     )
     module_name = f"{palette['slug']}.lua"
-    destination = ROOT / "lua" / "loden" / module_name
+    destination = ROOT / "lua" / "ithilien" / module_name
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(rendered)
 
 
 def generate_neovim_default() -> None:
-    destination = ROOT / "colors" / "loden.lua"
+    destination = ROOT / "colors" / "ithilien.lua"
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text('require("loden").load("day")\n')
+    destination.write_text('require("ithilien").load("dawn")\n')
 
 
 def generate_codex_theme(palette: dict) -> None:
@@ -151,7 +151,7 @@ def generate_codex_theme(palette: dict) -> None:
             rule("Python decorators", "variable.annotation.python meta.generic-name.python, variable.annotation.function.python meta.generic-name.python, entity.name.function.decorator.python, punctuation.definition.annotation.python", accent["ochre"]),
             rule("Python operators", "source.python keyword.operator, keyword.control.loop.for.in.python", accent["olive"], font_style=""),
         ])
-    theme = {"name": palette["name"], "author": "Loden theme generator",
+    theme = {"name": palette["name"], "author": "Ithilien theme generator",
              "semanticClass": f"theme.{palette['slug']}", "settings": settings}
     destination = ROOT / "codex" / "themes" / f"{palette['slug']}.tmTheme"
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -211,10 +211,10 @@ def generate_app_palettes(palette: dict) -> None:
 def generate_shared_highlights(palette: dict) -> None:
     highlight = palette["highlight"]
 
-    shell = ROOT / "shell" / "loden.zsh"
+    shell = ROOT / "shell" / "ithilien.zsh"
     shell.parent.mkdir(parents=True, exist_ok=True)
     shell.write_text(
-        "# Loden ZLE visual selection — generated; do not edit by hand.\n"
+        "# Ithilien ZLE visual selection — generated; do not edit by hand.\n"
         f'zle_highlight=(region:bg={highlight["background"]},fg={highlight["foreground"]})\n'
     )
 
@@ -223,7 +223,7 @@ def generate_shared_highlights(palette: dict) -> None:
     macos.parent.mkdir(parents=True, exist_ok=True)
     macos.write_text(
         "#!/bin/sh\n"
-        "# Loden system text highlight — generated; log out and back in after applying.\n"
+        "# Ithilien system text highlight — generated; log out and back in after applying.\n"
         f'defaults write -g AppleHighlightColor -string "{r:.6f} {g:.6f} {b:.6f} Other"\n'
     )
     macos.chmod(0o755)
@@ -231,7 +231,7 @@ def generate_shared_highlights(palette: dict) -> None:
     bg, fg, accent = palette["backgrounds"], palette["foregrounds"], palette["accents"]
     firefox_manifest = {
         "manifest_version": 2,
-        "name": "Loden",
+        "name": "Ithilien",
         "version": "0.1.0",
         "theme": {
             "colors": {
@@ -266,8 +266,8 @@ def generate_shared_highlights(palette: dict) -> None:
 def generate_preview(palettes: dict[str, dict]) -> None:
     destination = ROOT / "palette-preview.html"
     audits = {
-        "night": json.loads((ROOT / "reports" / "loden-night-audit.json").read_text()),
-        "day": json.loads((ROOT / "reports" / "loden-day-audit.json").read_text()),
+        "night": json.loads((ROOT / "reports" / "ithilien-dusk-audit.json").read_text()),
+        "day": json.loads((ROOT / "reports" / "ithilien-dawn-audit.json").read_text()),
     }
     data = (
         "/* GENERATED_DATA_START */\n"
@@ -289,7 +289,7 @@ def generate_preview(palettes: dict[str, dict]) -> None:
 
 
 def main() -> None:
-    palettes = {"night": load_palette("loden-night"), "day": load_palette("loden-day")}
+    palettes = {"night": load_palette("ithilien-dusk"), "day": load_palette("ithilien-dawn")}
     for palette in palettes.values():
         generate_ghostty(palette)
         generate_neovim_palette(palette)
@@ -299,7 +299,7 @@ def main() -> None:
     generate_neovim_default()
     generate_shared_highlights(palettes["night"])
     generate_preview(palettes)
-    print("Generated Loden Day and Loden Night themes for all supported applications")
+    print("Generated Ithilien Dawn and Ithilien Dusk themes for all supported applications")
 
 
 if __name__ == "__main__":

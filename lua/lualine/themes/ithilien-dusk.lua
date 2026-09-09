@@ -1,5 +1,5 @@
--- Loden Day
-local p = require("loden.loden-day").raw
+-- Ithilien Dusk
+local p = require("ithilien.ithilien-dusk").raw
 local bg, fg, a = p.backgrounds, p.foregrounds, p.accents
 
 return {

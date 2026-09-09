@@ -1,7 +1,7 @@
 [project]
-name = "loden-theme"
+name = "ithilien-theme"
 version = "0.1.0"
-description = "Palette audits and theme generators for Loden"
+description = "Palette audits and theme generators for Ithilien"
 requires-python = ">=3.12"
 dependencies = [
   "coloraide>=8.10,<9",

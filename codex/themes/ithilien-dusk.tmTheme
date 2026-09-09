@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Loden Night</string>
+	<string>Ithilien Dusk</string>
 	<key>author</key>
-	<string>Loden theme generator</string>
+	<string>Ithilien theme generator</string>
 	<key>semanticClass</key>
-	<string>theme.loden-night</string>
+	<string>theme.ithilien-dusk</string>
 	<key>settings</key>
 	<array>
 		<dict>

@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 import review_day
 from explore_day_warmth import agent_panel
-from lodenlib import ROOT, load_palette, simulated_hex, wcag, delta_e
+from ithilienlib import ROOT, load_palette, simulated_hex, wcag, delta_e
 
 OUT = ROOT / 'reports/day-adoption'
 MODES = ('normal','protan','deutan','tritan','grayscale')
@@ -18,11 +18,11 @@ def main():
     parser.add_argument('--png',action='store_true')
     args=parser.parse_args()
     before=json.loads((OUT/'before.json').read_text())
-    after=load_palette('loden-day')
+    after=load_palette('ithilien-dawn')
     assert before['accents']==after['accents'], 'Unexpected syntax recoloring'
     if args.png:
-        subprocess.run(['swiftc','-module-cache-path','/private/tmp/loden-swift-cache',
-                        str(ROOT/'scripts/render_review.swift'),'-o','/private/tmp/loden-render-review'],check=True)
+        subprocess.run(['swiftc','-module-cache-path','/private/tmp/ithilien-swift-cache',
+                        str(ROOT/'scripts/render_review.swift'),'-o','/private/tmp/ithilien-render-review'],check=True)
     for mode in MODES:
         for agent in ([False,True] if mode=='normal' else [False]):
             height=1020 if agent else 1080

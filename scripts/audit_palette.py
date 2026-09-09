@@ -1,4 +1,4 @@
-"""Audit Loden's palette and write human- and machine-readable reports."""
+"""Audit Ithilien's palette and write human- and machine-readable reports."""
 
 from __future__ import annotations
 
@@ -7,13 +7,13 @@ import math
 import sys
 from itertools import combinations
 
-from lodenlib import ROOT, apca, delta_e, load_palette, oklch, simulated_hex, wcag
+from ithilienlib import ROOT, apca, delta_e, load_palette, oklch, simulated_hex, wcag
 
 
 SIMULATIONS = ("normal", "protan", "deutan", "tritan", "grayscale")
 
 
-def main(variant: str = "loden-night") -> None:
+def main(variant: str = "ithilien-dusk") -> None:
     palette = load_palette(variant)
     backgrounds = palette["backgrounds"]
     foregrounds = palette["foregrounds"]
@@ -288,4 +288,4 @@ def main(variant: str = "loden-night") -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "loden-night")
+    main(sys.argv[1] if len(sys.argv) > 1 else "ithilien-dusk")

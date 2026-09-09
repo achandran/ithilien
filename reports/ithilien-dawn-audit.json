@@ -1,5 +1,5 @@
 {
-  "palette": "Loden Day",
+  "palette": "Ithilien Dawn",
   "colorSpace": "sRGB",
   "passed": true,
   "failures": [],
@@ -65,7 +65,7 @@
       "passed": true
     },
     {
-      "name": "highlight edge on Loden Day",
+      "name": "highlight edge on Ithilien Dawn",
       "foreground": "#B17232",
       "background": "#F0E9D2",
       "wcag": 3.25,

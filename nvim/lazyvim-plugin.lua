@@ -1,7 +1,7 @@
 -- Copy this spec into your LazyVim plugins directory.
 return {
   {
-    "achandran/loden",
+    "achandran/ithilien",
     dependencies = { "webhooked/kanso.nvim" },
     lazy = false,
     priority = 1000,
@@ -15,8 +15,8 @@ return {
     config = function()
       require("dark_notify").run({
         schemes = {
-          light = { colorscheme = "loden" },
-          dark = { colorscheme = "loden-night" },
+          light = { colorscheme = "ithilien" },
+          dark = { colorscheme = "ithilien-dusk" },
         },
       })
     end,
@@ -24,14 +24,14 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "loden",
+      colorscheme = "ithilien",
     },
   },
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
       opts.options = opts.options or {}
-      opts.options.theme = vim.g.colors_name == "loden-night" and "loden-night" or "loden-day"
+      opts.options.theme = vim.g.colors_name == "ithilien-dusk" and "ithilien-dusk" or "ithilien-dawn"
     end,
   },
 }
