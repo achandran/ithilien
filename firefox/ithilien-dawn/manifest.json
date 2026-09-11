@@ -15,13 +15,13 @@
       "toolbar_field_focus": "#F6F6F3",
       "toolbar_field_text": "#25292B",
       "toolbar_field_border": "#B3CBD8",
-      "toolbar_field_highlight": "#B3CBD8",
+      "toolbar_field_highlight": "#C4CAC8",
       "toolbar_field_highlight_text": "#25292B",
       "popup": "#FDFDFA",
       "popup_text": "#25292B",
       "popup_border": "#B3CBD8",
       "button_background_hover": "#ECEEEB",
-      "button_background_active": "#B3CBD8",
+      "button_background_active": "#C4CAC8",
       "icons_attention": "#25292B"
     },
     "properties": {

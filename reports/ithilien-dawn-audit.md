@@ -13,7 +13,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | secondary text | 7.98:1 | 84.2 | PASS |
 | normal text | 13.56:1 | 96.0 | PASS |
 | bright text | 13.56:1 | 96.0 | PASS |
-| highlighted text | 8.7:1 | 69.3 | PASS |
+| highlighted text | 8.83:1 | 70.1 | PASS |
 | highlight edge on Ithilien Dawn | 7.42:1 | 82.3 | PASS |
 | highlight edge on white | 8.03:1 | 87.8 | PASS |
 | syntax olive | 13.56:1 | 96.0 | PASS |
@@ -32,7 +32,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | inline add | 9.17:1 | 72.2 | PASS |
 | inline delete | 7.52:1 | 61.9 | PASS |
 | inline change | 8.7:1 | 69.3 | PASS |
-| inline diff marker | 8.7:1 | 69.3 | PASS |
+| inline diff marker | 8.83:1 | 70.1 | PASS |
 | conflict marker | 10.77:1 | 81.4 | PASS |
 | ANSI black | 13.56:1 | 96.0 | PASS |
 | ANSI red | 7.53:1 | 81.9 | PASS |
@@ -116,24 +116,24 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | chrome bright on surface2 | 8.7:1 | 69.3 | PASS |
 | inactive status label | 4.89:1 | 64.5 | PASS |
 | popup border | 6.19:1 | 80.1 | PASS |
-| search result | 8.7:1 | 69.3 | PASS |
-| selected popup kind | 8.7:1 | 69.3 | PASS |
-| selected popup extra | 8.7:1 | 69.3 | PASS |
-| substitution | 8.7:1 | 69.3 | PASS |
+| search result | 8.83:1 | 70.1 | PASS |
+| selected popup kind | 8.83:1 | 70.1 | PASS |
+| selected popup extra | 8.83:1 | 70.1 | PASS |
+| substitution | 8.83:1 | 70.1 | PASS |
 | error annotation | 11.66:1 | 86.2 | PASS |
 | tab label on crust | 6.22:1 | 68.3 | PASS |
-| Neovim DiffText | 8.7:1 | 69.3 | PASS |
+| Neovim DiffText | 8.83:1 | 70.1 | PASS |
 | selection edge on mantle | 6.22:1 | 70.9 | PASS |
 | selection edge on surface0 | 7.88:1 | 86.5 | PASS |
 | selection edge on surface1 | 6.88:1 | 77.4 | PASS |
 | git add sign | 13.56:1 | 96.0 | PASS |
 | git delete sign | 13.56:1 | 96.0 | PASS |
 | git change sign | 13.56:1 | 96.0 | PASS |
-| status olive | 8.7:1 | 69.3 | PASS |
-| status sage | 8.7:1 | 69.3 | PASS |
-| status mauve | 8.7:1 | 69.3 | PASS |
-| status coral | 8.7:1 | 69.3 | PASS |
-| status gold | 8.7:1 | 69.3 | PASS |
+| status olive | 8.83:1 | 70.1 | PASS |
+| status sage | 8.83:1 | 70.1 | PASS |
+| status mauve | 8.83:1 | 70.1 | PASS |
+| status coral | 8.83:1 | 70.1 | PASS |
+| status gold | 8.83:1 | 70.1 | PASS |
 | ANSI white on black | 13.56:1 | -98.3 | PASS |
 | ANSI white on red | 7.53:1 | -86.1 | PASS |
 | ANSI white on green | 8.79:1 | -90.1 | PASS |

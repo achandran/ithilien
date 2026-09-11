@@ -57,10 +57,10 @@
     {
       "name": "highlighted text",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 35,
       "passed": true
     },
@@ -247,10 +247,10 @@
     {
       "name": "inline diff marker",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 35,
       "passed": true
     },
@@ -1087,40 +1087,40 @@
     {
       "name": "search result",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selected popup kind",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selected popup extra",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "substitution",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1147,10 +1147,10 @@
     {
       "name": "Neovim DiffText",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1217,50 +1217,50 @@
     {
       "name": "status olive",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status sage",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status mauve",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status coral",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status gold",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -2539,32 +2539,32 @@
     {
       "name": "search result",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup kind",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup extra",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "substitution",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
@@ -2587,8 +2587,8 @@
     {
       "name": "Neovim DiffText",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
@@ -2643,40 +2643,40 @@
     {
       "name": "status olive",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status sage",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status mauve",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status coral",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status gold",
       "foreground": "#25292B",
-      "background": "#B3CBD8",
-      "wcag": 8.7,
+      "background": "#C4CAC8",
+      "wcag": 8.83,
       "target": 4.5,
       "passed": true
     }
@@ -2845,18 +2845,18 @@
       }
     },
     "highlight.background": {
-      "hex": "#B3CBD8",
+      "hex": "#C4CAC8",
       "oklch": [
-        0.8283,
-        0.0317,
-        231.4
+        0.8337,
+        0.0071,
+        174.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#C5CAD9",
-        "deutan": "#BFC5D8",
-        "tritan": "#A9CFCF",
-        "grayscale": "#C7C7C7"
+        "protan": "#CAC9C8",
+        "deutan": "#C8C8C8",
+        "tritan": "#C3CAC9",
+        "grayscale": "#C9C9C9"
       }
     },
     "highlight.foreground": {

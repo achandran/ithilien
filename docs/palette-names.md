@@ -2,7 +2,7 @@
 
 <!-- Generated from palette/ithilien-dawn.json; do not edit by hand. -->
 
-All **30 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
+All **31 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
 
 Names are limited to Ithilien’s plants, waters, materials and people, plus its immediate Gondorian neighbours. Gondor is its realm; Osgiliath, Pelennor and Harlond are directly connected across Anduin. Plant names refer to species mentioned in Ithilien; material names describe its local landscape. The sources establish those connections; botanical shades and the exact hex values are our interpretation.
 
@@ -22,7 +22,7 @@ Names are limited to Ithilien’s plants, waters, materials and people, plus its
 | Eglantine | `#F1E2DF` | Wild roses in Ithilien; pale pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteBackground`, `highlight.cursorBlock` |
 | Rose | `#DDAFA7` | Roses in Ithilien; stronger pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteEmphasis` |
 | Spray | `#E0E9EE` | Waterfall spray at Henneth Annûn in Ithilien; pale water. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `diff.changeBackground`, `diff.hunkBackground` |
-| Harlond | `#B3CBD8` | The harbour on the opposite bank of Anduin from Ithilien; deep river blue. [Source](https://tolkiengateway.net/wiki/Harlond_(Gondor)) | `backgrounds.surface2`, `diff.changeEmphasis`, `highlight.background` |
+| Harlond | `#B3CBD8` | The harbour on the opposite bank of Anduin from Ithilien; deep river blue. [Source](https://tolkiengateway.net/wiki/Harlond_(Gondor)) | `backgrounds.surface2`, `diff.changeEmphasis` |
 | Celandine | `#EAD9B1` | Celandines in Ithilien; pale golden flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.search` |
 | Clematis | `#E5D9E7` | Trailing clematis in Ithilien; pale floral lilac. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.conflictBackground` |
 | Juniper | `#3F535F` | Junipers in Ithilien; dark evergreen foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `highlight.border` |
@@ -38,6 +38,7 @@ Names are limited to Ithilien’s plants, waters, materials and people, plus its
 | Cypress | `#274A62` | Cypresses in Ithilien; deep evergreen foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `ansi.blue` |
 | Hyacinth | `#60425E` | Woodland hyacinths in Ithilien; violet flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `ansi.magenta` |
 | Morgulduin | `#255354` | River through Ithilien’s Morgul valley; dark water. [Source](https://tolkiengateway.net/wiki/Morgulduin) | `ansi.cyan` |
+| Ranger | `#C4CAC8` | The Rangers of Ithilien; interpreted as brushed steel for neutral selection, not a claim about their clothing. [Source](https://tolkiengateway.net/wiki/Rangers_of_Ithilien) | `highlight.background` |
 
 ## Authoring and integration
 
