@@ -26,3 +26,19 @@ class OverlayChecks(unittest.TestCase):
         self.s['state']='selection-block';self.s['overlay']['finish']=[2,2];self.s['overlay']['finish_vcol']=8
         self.s['regions']=self.s['regions'][:1];self.s['regions'][0]['vcol']=[1,8]
         self.assertFalse(overlay_failures(self.s))
+    def test_combined_line_selection_keeps_full_line(self):
+        self.s['state']='selection-search';self.s['overlay']['search_pattern']='needle'
+        self.s['cells'][2]['attr']=1
+        self.assertFalse(overlay_failures(self.s))
+    def test_combined_search_outside_selection_required(self):
+        self.s['state']='selection-search';self.s['overlay']['search_pattern']='needle'
+        self.s['cells'][2]['attr']=1
+        self.s['regions'][0]['side']='before'
+        self.s['regions'][0]['search_match']=True
+        self.s['cells'][0]['attr']=0
+        self.assertEqual(overlay_failures(self.s)[0]['gate'],'combined_search_missing')
+    def test_combined_diagnostics_must_be_present(self):
+        self.s['state']='selection-search-diagnostic'
+        self.s['overlay']['search_pattern']='needle'
+        self.s['cells'][2]['attr']=1
+        self.assertEqual(overlay_failures(self.s)[0]['gate'],'combined_diagnostic_missing')

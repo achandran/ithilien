@@ -73,15 +73,17 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None, python_runtime=No
         if python_runtime:
             runtime_evidence=n.exec_lua((ROOT/'evaluation/python-runtime.lua').read_text(),str(python_runtime),str(ROOT/'.venv/bin/basedpyright-langserver'))
         n.command('normal! gg')
-        if state == 'search':
+        if state == 'search' or 'search' in state:
             n.funcs.setreg('/', case.get('search','return\\|font\\|println')); n.command('set hlsearch')
-        elif state.startswith('selection'):
+        if state.startswith('selection'):
             n.command('normal! '+str(case.get('selection_line',2))+'G0')
-            keys={'selection':'V2j','selection-char':'v3l','selection-block':'\x163l2j'}[state]
+            keys={'selection':'V2j','selection-char':'v3l','selection-block':'\x163l2j'}.get(state,'V2j')
             n.command('normal! '+keys)
+        if 'diagnostic' in state:
+            n.exec_lua("local ns=vim.api.nvim_create_namespace('overlap-fixture');vim.diagnostic.config({virtual_text=true,underline=true});vim.diagnostic.set(ns,0,{{lnum=vim.fn.line('.')-1,col=0,severity=1,message='overlap diagnostic'}})")
         overlay = n.exec_lua("""
             local a=vim.fn.getpos('v');local b=vim.fn.getpos('.')
-            return {mode=vim.fn.mode(),anchor={a[2],a[3]},finish={b[2],b[3]},
+            return {diagnostic_count=#vim.diagnostic.get(0),search_pattern=vim.fn.getreg('/'),mode=vim.fn.mode(),anchor={a[2],a[3]},finish={b[2],b[3]},
             anchor_vcol=vim.fn.virtcol('v',true)[1],finish_vcol=vim.fn.virtcol('.',true)[2],selection=vim.o.selection}
         """)
         syntax_groups = n.exec_lua("local groups = {}; for row,line in ipairs(vim.api.nvim_buf_get_lines(0,0,-1,false)) do for col=1,#line do local name=vim.fn.synIDattr(vim.fn.synID(row,col,1),'name'); if name ~= '' then groups[name]=true end end end; return vim.tbl_keys(groups)")

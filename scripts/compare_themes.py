@@ -75,7 +75,7 @@ def main():
         resolved=check_adapter(adapter); shots=[]
         for case in cases:
             for width in (100,160):
-                for state in ('diff','search','selection','selection-char','selection-block'):
+                for state in ('diff','search','selection','selection-char','selection-block','selection-search','selection-search-diagnostic'):
                     shot=capture(case,width,state,args.nvim,None,resolved,runtime);shots.append(shot)
                     screens.setdefault((case['id'],width,state),[]).append((adapter['id'],shot))
         checks=[assess(s) for s in shots];failed|=any(c['errors'] for c in checks)

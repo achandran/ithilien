@@ -26,13 +26,13 @@ def write_index(out,report):
         stage_rows=''.join(f'<tr><td>{html.escape(g["stage"])}</td><td>{g["width"]}</td><td>{g["minimum_contrast"]}</td><td>{len(g["failures"])}</td><td>{g["dim_cells_unverified"]}</td></tr>' for g in t['agent_gates']['stages'])
         details.append(f'<details><summary>{name}: agent-stage measurements</summary><p>Whole frame including accumulated history. Required-content fragment findings are in <a href="codex/{t["id"]}/agent-gates.json">agent-gates.json</a>.</p><table><tr><th>Stage</th><th>Width</th><th>Minimum contrast</th><th>Failed cells</th><th>Dim cells (unverified)</th></tr>{stage_rows}</table></details>')
 
-    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme suite</title><style>body{font:16px/1.5 system-ui;padding:30px}td,th{padding:12px;border-bottom:1px solid #ccc}</style><h1>Combined evaluation</h1><p>Supported stages completed separately from quality gates. Full coverage remains incomplete: Ghostty, Claude Code, and comfort are unverified. Native event replay, not live model sessions.</p><p><a href="neovim/scorecard.html">Neovim gates</a> · <a href="python/scorecard.html">Python Tree-sitter/LSP gates</a> · <a href="report.json">Full evidence</a></p><table><tr><th>Theme</th><th>Codex adapter provenance</th><th>Diff gates</th><th>Flow gates</th></tr>'+''.join(rows)+'</table><p>Converted ports test our explicit mapping, not an upstream author’s Codex implementation.</p>'+''.join(details))
+    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme suite</title><style>body{font:16px/1.5 system-ui;padding:30px}td,th{padding:12px;border-bottom:1px solid #ccc}</style><h1>Combined evaluation</h1><p>Supported stages completed separately from quality gates. Full coverage remains incomplete: Ghostty, Claude Code, and comfort are unverified. Native event replay, not live model sessions.</p><p><a href="neovim/scorecard.html">Neovim gates</a> · <a href="python/scorecard.html">Python Tree-sitter/LSP gates</a> · <a href="interactions/gallery.html">fzf / diagnostics / completion</a> · <a href="report.json">Full evidence</a></p><table><tr><th>Theme</th><th>Codex adapter provenance</th><th>Diff gates</th><th>Flow gates</th></tr>'+''.join(rows)+'</table><p>Converted ports test our explicit mapping, not an upstream author’s Codex implementation.</p>'+''.join(details))
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--codex-source',type=Path,required=True);p.add_argument('--python-source',type=Path,required=True)
     p.add_argument('--manifest',type=Path,default=ROOT/'evaluation/themes.json');p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/suite')
-    p.add_argument('--themes',nargs='+');p.add_argument('--strict-gates',action='store_true');p.add_argument('--nvim',default=shutil.which('nvim'))
+    p.add_argument('--skip-fzf',action='store_true');p.add_argument('--themes',nargs='+');p.add_argument('--strict-gates',action='store_true');p.add_argument('--nvim',default=shutil.which('nvim'))
     a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=True)
     entries=json.loads(a.manifest.read_text())
     if a.themes:
@@ -56,8 +56,13 @@ def main():
         except Exception as exc:
             report['themes'].append({'id':name,'status':'unavailable_or_error','reason':str(exc)})
         (out/'report.json').write_text(json.dumps(report,indent=2))
+    from evaluate_interactions import run as run_interactions
+    interactions=run_interactions(entries,out/'interactions',a.nvim,include_fzf=not a.skip_fzf)
+    report['interactions']={'gallery':'interactions/gallery.html','report':'interactions/report.json','quality_pass':all(r['quality_pass'] for r in interactions['results'])}
+    report['stages']['interactions']={'status':'fail' if any(r['errors'] for r in interactions['results']) else 'pass'}
     failures=execution_failed(report)
     if a.strict_gates:
+        failures |= not report['interactions']['quality_pass']
         for stage in ('neovim','python'):
             path=out/stage/'scorecard.json'
             if not path.exists():failures=True;continue
