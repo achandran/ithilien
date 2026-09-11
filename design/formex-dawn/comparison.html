@@ -1,0 +1,114 @@
+<style>
+#dawn-study{font:14px/1.65 -apple-system,BlinkMacSystemFont,sans-serif;color:#25292B}#dawn-study *{box-sizing:border-box}#dawn-study .controls{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:14px;color:var(--foreground)}#dawn-study select{font:inherit;padding:7px;border-radius:4px}#dawn-study .samples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}#dawn-study article{background:var(--d-canvas);border:1px solid var(--d-border);border-radius:7px;overflow:hidden;min-width:0;color:var(--d-text)}#dawn-study header{background:var(--d-chrome);padding:15px;border-bottom:1px solid var(--d-border)}#dawn-study h3{font:500 16px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 4px}#dawn-study .hex{color:var(--d-secondary);font:12px/1.7 Menlo,monospace}#dawn-study .tab{background:var(--d-raised);color:var(--d-text);padding:8px 14px;border-bottom:3px solid var(--d-accent);font:12px/1.7 Menlo,monospace}#dawn-study .code{font:13px/1.9 Menlo,Consolas,monospace;padding:14px 0}#dawn-study .row{display:flex;padding:0 12px;white-space:pre-wrap;overflow-wrap:anywhere}#dawn-study .gutter{flex:0 0 23px;color:var(--d-secondary)}#dawn-study .src{min-width:0}#dawn-study .comment{color:var(--d-secondary)}#dawn-study b{font-weight:600}#dawn-study .add{background:var(--d-add)}#dawn-study .del{background:var(--d-delete)}#dawn-study .change{background:var(--d-change)}#dawn-study mark{color:var(--d-text);background:var(--d-changeEmphasis);font-weight:600;text-decoration:underline;text-underline-offset:3px}#dawn-study .add mark{background:var(--d-addEmphasis)}#dawn-study .del mark{background:var(--d-deleteEmphasis)}#dawn-study .selected{color:var(--d-selectionText);background:var(--d-selection);outline:1px solid var(--d-selectionBorder);padding:1px 2px}#dawn-study .section{padding:14px;border-top:1px solid var(--d-border)}#dawn-study .section p{margin:7px 0 12px}#dawn-study .label{font-weight:500;color:var(--d-accent)}#dawn-study .status{font:12px/1.8 Menlo,monospace;margin:4px 0}#dawn-study .error{color:var(--d-error)}#dawn-study .warning{color:var(--d-warning)}#dawn-study .info{color:var(--d-info)}#dawn-study .success{color:var(--d-success)}#dawn-study .popup{padding:10px;background:var(--d-raised);border:1px solid var(--d-border);margin-top:12px}#dawn-study .popup small{display:block;color:var(--d-secondary);font-size:12px}#dawn-study .strip{display:flex;height:26px;border-top:1px solid var(--d-border)}#dawn-study .strip span{flex:1}#dawn-study footer{padding:10px 14px;background:var(--d-chrome);color:var(--d-secondary);font-size:12px}#dawn-study[data-view="grayscale"] .samples{filter:grayscale(1)}@media(max-width:760px){#dawn-study .samples{grid-template-columns:1fr}#dawn-study .code{font-size:14px}#dawn-study select{min-height:44px}}
+</style>
+<div id="dawn-study" aria-label="Ithilien Dawn light palette comparison">
+<div class="controls"><span>Ithilien Dawn · identical reading and diff specimens</span><label>View <select aria-label="Comparison view"><option value="color">Color</option><option value="grayscale">Grayscale</option></select></label></div>
+<div class="samples"></div>
+<template>
+<article>
+<header><h3></h3><div class="hex"></div></header>
+<div class="tab">limits.py · working changes</div>
+<div class="code">
+<div class="row"><span class="gutter">1</span><span class="src comment"># Retry bounded requests.</span></div>
+<div class="row"><span class="gutter">2</span><span class="src"><b>def</b> accept(n: int):</span></div>
+<div class="row del"><span class="gutter">−</span><span class="src">  <b>return</b> <mark>2</mark> &lt; n &lt; <mark>4</mark></span></div>
+<div class="row add"><span class="gutter">+</span><span class="src">  <b>return</b> <mark>3</mark> &lt; n &lt; <mark>5</mark></span></div>
+<div class="row"><span class="gutter">5</span><span class="src"> </span></div>
+<div class="row change"><span class="gutter">~</span><span class="src">ready =<mark>=</mark> value</span></div>
+<div class="row"><span class="gutter">7</span><span class="src">name = <span class="selected">"boundary"</span></span></div>
+</div>
+<div class="section"><span class="label">Assistant · review</span><p>The bounds now exclude both endpoints. Check the smallest accepted value and the first rejected value.</p><div class="status success">✓ Tests passed</div><div class="status error">E Expected integer</div><div class="status warning">W Retry limit reached</div><div class="status info">I Definition available</div><div class="popup">accept(n: int) → bool<small>Return whether n is in range.</small></div></div>
+<div class="strip" aria-label="Asphodel, Gondor, Lebethron, Rosehip, Sage, Anduin"></div>
+<footer>Line tint + underlined characters</footer>
+</article>
+</template>
+</div>
+<script>
+(()=>{const root=document.getElementById('dawn-study');const palettes={
+  "neutral": {
+    "label": "A \u00b7 Neutral white",
+    "canvas": "#F6F6F3",
+    "chrome": "#E0E3E2",
+    "raised": "#FDFDFA",
+    "line": "#ECEEEB",
+    "text": "#25292B",
+    "secondary": "#596166",
+    "border": "#76848B",
+    "accent": "#A3373E",
+    "error": "#A3373E",
+    "success": "#315F46",
+    "info": "#345E77",
+    "warning": "#795922",
+    "hint": "#306466",
+    "purple": "#70516D",
+    "selection": "#B3CBD8",
+    "selectionText": "#25292B",
+    "selectionBorder": "#3F535F",
+    "add": "#E2EDDF",
+    "addEmphasis": "#BDD3B2",
+    "delete": "#F1E2DF",
+    "deleteEmphasis": "#DDAFA7",
+    "change": "#E0E9EE",
+    "changeEmphasis": "#B3CBD8",
+    "search": "#EAD9B1",
+    "conflict": "#E5D9E7"
+  },
+  "mineral": {
+    "label": "B \u00b7 Mineral white",
+    "canvas": "#F0F1EC",
+    "chrome": "#DDE1DC",
+    "raised": "#F8F9F4",
+    "line": "#E6E9E3",
+    "text": "#25292B",
+    "secondary": "#596166",
+    "border": "#76848B",
+    "accent": "#A3373E",
+    "error": "#A3373E",
+    "success": "#315F46",
+    "info": "#345E77",
+    "warning": "#795922",
+    "hint": "#306466",
+    "purple": "#70516D",
+    "selection": "#B3CBD8",
+    "selectionText": "#25292B",
+    "selectionBorder": "#3F535F",
+    "add": "#E2EDDF",
+    "addEmphasis": "#BDD3B2",
+    "delete": "#F1E2DF",
+    "deleteEmphasis": "#DDAFA7",
+    "change": "#E0E9EE",
+    "changeEmphasis": "#B3CBD8",
+    "search": "#EAD9B1",
+    "conflict": "#E5D9E7"
+  },
+  "steel": {
+    "label": "C \u00b7 Cool steel white",
+    "canvas": "#EFF3F5",
+    "chrome": "#DCE3E7",
+    "raised": "#F8FBFC",
+    "line": "#E5EBEE",
+    "text": "#25292B",
+    "secondary": "#596166",
+    "border": "#76848B",
+    "accent": "#A3373E",
+    "error": "#A3373E",
+    "success": "#315F46",
+    "info": "#345E77",
+    "warning": "#795922",
+    "hint": "#306466",
+    "purple": "#70516D",
+    "selection": "#B3CBD8",
+    "selectionText": "#25292B",
+    "selectionBorder": "#3F535F",
+    "add": "#E2EDDF",
+    "addEmphasis": "#BDD3B2",
+    "delete": "#F1E2DF",
+    "deleteEmphasis": "#DDAFA7",
+    "change": "#E0E9EE",
+    "changeEmphasis": "#B3CBD8",
+    "search": "#EAD9B1",
+    "conflict": "#E5D9E7"
+  }
+}
+;const template=root.querySelector('template');for(const p of Object.values(palettes)){const card=template.content.firstElementChild.cloneNode(true);for(const [k,v]of Object.entries(p))if(k!=='label')card.style.setProperty('--d-'+k,v);card.querySelector('h3').textContent=p.label;card.querySelector('.hex').textContent='Asphodel '+p.canvas;for(const k of ['canvas','chrome','text','accent','success','info']){const sw=document.createElement('span');sw.style.background=p[k];card.querySelector('.strip').append(sw)}root.querySelector('.samples').append(card)}root.querySelector('select').addEventListener('change',e=>root.dataset.view=e.target.value);})();
+</script>
