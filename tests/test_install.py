@@ -10,6 +10,16 @@ from install import Installer, managed_config
 
 
 class InstallTests(unittest.TestCase):
+    def test_cli_modes_and_subset(self):
+        import install
+        for flags, apply in [([], True), (['--dry-run'], False)]:
+            with self.subTest(flags=flags), patch.object(sys, 'argv', ['install.sh', *flags, '--only', 'macos']), patch.object(install, 'Installer') as factory:
+                factory.return_value.run.return_value = False
+                self.assertFalse(install.main())
+                factory.assert_called_once_with(Path.home(), apply, ['macos'])
+        with patch.object(sys, 'argv', ['install.sh', '--apply']), contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+            install.main()
+
     def test_config_idempotent_preserves_other_settings(self):
         original = '# personal\nfont-size = 15\ntheme = old\n'
         result = managed_config(original, 'new')

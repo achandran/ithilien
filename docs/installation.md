@@ -64,7 +64,7 @@ With Dawn loaded, use zsh `bindkey -v`, type a command without executing it, pre
 
 ## One-command installer
 
-Run `./install.sh --apply` after `git pull` (Python 3 required). Without `--apply`, it prints a dry run. `--only ghostty nvim codex claude slack linear firefox` selects a subset. Detection uses executables on PATH and macOS application bundles; browser-only installations and apps in custom locations may be skipped.
+Run `./install.sh` after `git pull` (Python 3 required). Changes are applied by default; use `./install.sh --dry-run` to preview them without writing. `--only ghostty nvim codex claude slack linear firefox` selects a subset. Detection uses executables on PATH and macOS application bundles; browser-only installations and apps in custom locations may be skipped.
 
 Changed existing files are backed up under `~/.local/share/ithilien/backups/<timestamp>/`, preserving their full path beneath that directory. Restore a file by copying its backup over the installed file. To undo a newly created LazyVim integration, remove `lua/plugins/ithilien-installed.lua`; other newly created theme files can likewise be removed. Repeated identical installs do not rewrite files or create backups.
 
@@ -78,7 +78,7 @@ Slack and Linear require their in-app import controls. Codex and Claude custom t
 
 Each Firefox export also includes optional `userContent.css` for website `::selection`: Dawn uses Ranger brushed steel `#A8B2AE` with Lebethron `#000000`. To use it, merge the rule into the active profile's `chrome/userContent.css`, enable `toolkit.legacyUserProfileCustomizations.stylesheets` in about:config, and restart Firefox. The installer stages this file but does not overwrite profile CSS or toggle preferences. Browser theme colors alone do not control website selection.
 
-`./install.sh --apply --only zsh firefox` installs these integrations when detected. Start a new zsh session after installation. The managed shell block defaults to Dawn; source `ithilien-dusk.zsh` instead for Dusk. ZLE visual selection and Ghostty mouse selection are separate systems. Non-region ZLE settings are preserved. The source can still be overridden by later shell/plugin hooks.
+`./install.sh --only zsh firefox` installs these integrations when detected. Start a new zsh session after installation. The managed shell block defaults to Dawn; source `ithilien-dusk.zsh` instead for Dusk. ZLE visual selection and Ghostty mouse selection are separate systems. Non-region ZLE settings are preserved. The source can still be overridden by later shell/plugin hooks.
 
 System selection exports now include `macos/apply-highlight-ithilien-dawn.sh` and `macos/apply-highlight-ithilien-dusk.sh`; the legacy apply-highlight.sh defaults to Dawn. They remain opt-in global changes. The dynamic wallpaper is unchanged.
 
@@ -94,4 +94,4 @@ The zsh installation also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `F
 
 ### macOS system selection
 
-The normal installer now includes the Dawn system highlight color on macOS, read from the canonical palette. `./install.sh` previews it; `./install.sh --apply` applies it alongside detected apps. Use `--only macos` to target it alone. Other platforms skip it. The prior value is saved as `macos-highlight.json` in the installer backup directory (null means the preference was unset). Log out and back in if applications retain their previous color.
+The normal installer now includes the Dawn system highlight color on macOS, read from the canonical palette. `./install.sh` applies it alongside detected apps; `./install.sh --dry-run` previews it without writing. Use `--only macos` to target it alone. Other platforms skip it. The prior value is saved as `macos-highlight.json` in the installer backup directory (null means the preference was unset). Log out and back in if applications retain their previous color.

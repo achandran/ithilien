@@ -68,11 +68,11 @@ Dawn uses a Ranger brushed-steel (`#A8B2AE`) Ghostty block cursor with Lebethron
 Requires Python 3. After pulling this branch, run:
 
 ```sh
-./install.sh             # preview changes
-./install.sh --apply     # install; back up replaced files
+./install.sh --dry-run   # preview changes
+./install.sh             # install; back up replaced files
 ```
 
-Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically; LazyVim receives a local-checkout plugin spec (restart and run `:Lazy sync`). Codex/Claude Code receive theme files and require `/theme` selection. Slack/Linear display import values. Missing apps are skipped. Zsh receives a backed-up managed highlight block in `.zshrc`. Firefox receives theme files for manual activation. Mobile, wallpaper, and system-wide selection are not automatically changed. See [installer details](docs/installation.md#one-command-installer).
+Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically; LazyVim receives a local-checkout plugin spec (restart and run `:Lazy sync`). Codex/Claude Code receive theme files and require `/theme` selection. Slack/Linear display import values. Missing apps are skipped. Zsh receives a backed-up managed highlight block in `.zshrc`. Firefox receives theme files for manual activation. macOS system selection is updated to Dawn’s Ranger color. Mobile and wallpaper are not automatically changed. See [installer details](docs/installation.md#one-command-installer).
 
 ### Compare against Kanso Pearl and Zenbones
 

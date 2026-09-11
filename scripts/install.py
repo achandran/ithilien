@@ -169,10 +169,10 @@ class Installer:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--apply', action='store_true', help='Write changes; default is a dry run')
+    parser.add_argument('--dry-run', action='store_true', help='Preview changes without applying them')
     parser.add_argument('--only', nargs='+', choices=['ghostty', 'nvim', 'codex', 'claude', 'slack', 'linear', 'firefox', 'zsh', 'macos'])
     args = parser.parse_args()
-    return Installer(Path.home(), args.apply, args.only).run()
+    return Installer(Path.home(), not args.dry_run, args.only).run()
 
 
 if __name__ == '__main__':
