@@ -10,7 +10,7 @@ def effective_colors(shot, cell):
 
 
 def state_failures(shot,palette):
-    if shot.get('require_syntax') and len(shot.get('syntax_groups',[])) < 3:
+    if shot.get('require_syntax') and not syntax_ready(shot):
         return [{'case':shot['case'],'state':shot['state'],'error':'Python syntax highlighting missing'}]
     role={'search':palette['backgrounds']['search'], 'selection':palette['highlight']['background']}.get('selection' if shot['state'].startswith('selection') else shot['state'])
     if role is None:return []
@@ -29,3 +29,11 @@ def compare_reports(old,new):
             'minimum_text_contrast_before':min((v for k,v in old['pair_contrasts'].items() if k.endswith('/4.5')),default=None),
             'minimum_text_contrast_after':min((v for k,v in new['pair_contrasts'].items() if k.endswith('/4.5')),default=None),
             'interpretation':'Contrast is not a comfort score. Inspect galleries before approving palette changes.'}
+
+
+def syntax_ready(shot):
+    runtime=shot.get('python_runtime')
+    if runtime is not None:
+        buffers=runtime.get('buffers',[])
+        return len(buffers)==2 and all(b.get('parser') and b.get('semantic_tokens',0)>0 and b.get('semantic_extmarks',0)>0 and b.get('diagnostics',0)>0 for b in buffers)
+    return len(shot.get('syntax_groups',[]))>=3

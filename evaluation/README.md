@@ -103,3 +103,17 @@ Light-mode visual previews request **Berkeley Mono Medium, size 16** (16 pt in H
 Captures now retain Neovim highlight provenance (`ext_hlstate`), logical selection endpoints, virtual columns and per-character search matches. `overlay_checks.py` compares every visible source region against the expected characterwise/linewise/blockwise selection or search match. It detects missing cells, extra cells and highlights leaking into the other pane, including tab expansion and Unicode byte positions. The terminal-rendered cursor glyph is excluded from selection-attribute assertions. Search spans come from Neovim's regex matcher independently of highlight attributes.
 
 These checks cover visible source text, including wrapped source characters. They do not yet cover blank cells beyond end-of-line, blank lines, offscreen content, or cursor glyph appearance/placement. Selection endpoints reflect actual logical editor state, not a separate assertion of command intent. The same region can have correct provenance but unreadable colors; the separate contrast gates still check that. The prior presence-only test remains as a coarse check alongside exact source-region checks. Mutation tests verify partial selection, spillover, wrong-pane selection, search spillover, and tab-column behavior.
+
+## Python Tree-sitter and LSP comparison
+
+```sh
+uv sync --locked
+# Clone the source listed in python-runtime.json and check out its pinned revision.
+uv run python scripts/compare_themes.py \
+  --python-source /path/to/tree-sitter-python \
+  --output evaluation/results/python-comparison
+```
+
+This uses the pinned upstream Python parser and highlights query, compiles it with `cc`, and starts pinned BasedPyright 1.40.1. It captures all four themes across three Python fixtures, two widths and five states (120 captures). Each buffer must have an active Tree-sitter highlighter, a nonempty semantic-token response, applied semantic extmarks, and diagnostics before capture. Fixtures deliberately contain a type mismatch; code is never executed. Native Neovim semantic highlighting and diagnostics are active together with Tree-sitter. The readiness check uses native parser and semantic evidence rather than requiring legacy syntax groups.
+
+Each capture records runtime evidence; the report records dependency versions. Neovim state/cache directories are temporary, and the LSP root is confined to the fixture directory with dynamic file watchers disabled. Missing prerequisites and readiness timeouts fail the run. This tests source overlays and colors under the actual integrations; it does not claim exhaustive diagnostic-popup or completion-menu coverage. The parser queries are pinned upstream queries, not a user's custom Tree-sitter configuration.

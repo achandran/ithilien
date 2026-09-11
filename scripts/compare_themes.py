@@ -7,7 +7,7 @@ from pathlib import Path
 import shutil
 import subprocess
 from evaluate_theme import capture
-from evaluation_checks import effective_colors
+from evaluation_checks import effective_colors, syntax_ready
 from ithilienlib import ROOT, wcag
 
 
@@ -30,7 +30,7 @@ def assess(shot):
         pairs[f'{fg:06x}/{bg:06x}']=round(contrast,3)
         text_count+=1; low+=contrast<4.5
     errors=[]
-    if shot.get('require_syntax') and len(shot['syntax_groups'])<3:errors.append('Python syntax missing')
+    if shot.get('require_syntax') and not syntax_ready(shot):errors.append('Python syntax missing')
     # Measure backgrounds without imposing Ithilien's preferred hues or decorations.
     h=shot['highlights']; separation={}
     for first,second in [('DiffText','DiffChange'),('Search','DiffText'),('Visual','DiffText')]:
@@ -56,6 +56,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--manifest',type=Path,default=ROOT/'evaluation/themes.json')
     p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/comparison')
+    p.add_argument('--python-source',type=Path,help='Pinned tree-sitter-python checkout; enables Python Tree-sitter/LSP corpus')
     p.add_argument('--strict-gates',action='store_true',help='Fail if any theme fails the experimental gates')
     p.add_argument('--themes',nargs='+');p.add_argument('--nvim',default=shutil.which('nvim'))
     args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
@@ -64,21 +65,25 @@ def main():
         unknown=set(args.themes)-{a['id'] for a in adapters}
         if unknown:p.error('Unknown themes: '+', '.join(sorted(unknown)))
         adapters=[a for a in adapters if a['id'] in args.themes]
-    cases=json.loads((ROOT/'evaluation/cases.json').read_text()); reports=[];screens={};failed=False
+    runtime=None
+    if args.python_source:
+        from python_runtime import prepare
+        runtime=prepare(args.python_source.resolve(),args.output/'runtime')
+    cases=json.loads((ROOT/('evaluation/python-cases.json' if runtime else 'evaluation/cases.json')).read_text()); reports=[];screens={};failed=False
     for adapter in adapters:
         print('Rendering '+adapter['id'],flush=True)
         resolved=check_adapter(adapter); shots=[]
         for case in cases:
             for width in (100,160):
                 for state in ('diff','search','selection','selection-char','selection-block'):
-                    shot=capture(case,width,state,args.nvim,None,resolved);shots.append(shot)
+                    shot=capture(case,width,state,args.nvim,None,resolved,runtime);shots.append(shot)
                     screens.setdefault((case['id'],width,state),[]).append((adapter['id'],shot))
         checks=[assess(s) for s in shots];failed|=any(c['errors'] for c in checks)
         reports.append({'theme':adapter,'captures':len(shots),'checks':checks})
         (args.output/(adapter['id']+'.cells.json')).write_text(json.dumps(shots,ensure_ascii=False))
     report={'render_profile':json.loads((ROOT/'evaluation/render-profile.json').read_text()),'mode':'original-theme','nvim':subprocess.check_output([args.nvim,'--version'],text=True).splitlines()[0],
         'corpus_sha256':hashlib.sha256(json.dumps(cases,sort_keys=True).encode()+b''.join((ROOT/'evaluation'/c[s]).read_bytes() for c in cases for s in ('before','after'))).hexdigest(),
-        'themes':reports,'coverage':{'neovim':'builtin syntax, initial viewport','codex':'not run by comparison runner','ghostty':'blocked: Computer Use policy','treesitter_lsp':'not implemented','comfort':'unverified'},
+        'themes':reports,'coverage':{'neovim':'Tree-sitter and BasedPyright' if runtime else 'builtin syntax, initial viewport','codex':'not run by comparison runner','ghostty':'blocked: Computer Use policy','treesitter_lsp':json.loads((ROOT/'evaluation/python-runtime.json').read_text()) if runtime else 'not run','comfort':'unverified'},
         'interpretation':'Contrast flags are observations, not a theme ranking. Background contrast does not measure hue separation. Browser cell reconstructions are not terminal screenshots.'}
     (args.output/'report.json').write_text(json.dumps(report,indent=2))
     blocks=[]

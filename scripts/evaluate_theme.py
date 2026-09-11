@@ -9,20 +9,23 @@ import shutil
 import subprocess
 import sys
 import signal
+import tempfile
 import pynvim
 from ithilienlib import ROOT, load_palette, wcag
 from evaluation_checks import state_failures, compare_reports
 
 
-def capture(case, width, state, nvim_bin, kanso, adapter=None):
+def capture(case, width, state, nvim_bin, kanso, adapter=None, python_runtime=None):
     def timed_out(*_): raise TimeoutError('Neovim UI capture timed out')
-    signal.signal(signal.SIGALRM, timed_out); signal.alarm(10)
-    n = pynvim.attach('child', argv=[nvim_bin, '--embed', '--headless', '-n', '-u', 'NONE', '-i', 'NONE'])
+    signal.signal(signal.SIGALRM, timed_out); signal.alarm(45 if python_runtime else 10)
+    sandbox = tempfile.TemporaryDirectory(prefix='ithilien-nvim-')
+    n = pynvim.attach('child', argv=['env','XDG_STATE_HOME='+sandbox.name,'XDG_CACHE_HOME='+sandbox.name,nvim_bin, '--embed', '--headless', '-n', '-u', 'NONE', '-i', 'NONE'])
     grid, attrs, defaults = {}, {}, {}
     syntax_groups = []
     highlights = {}
     regions = []
     overlay = {}
+    runtime_evidence = None
     attr_info = {}
     cursor = None
     def notify(name, args):
@@ -46,7 +49,7 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
                         for _ in range(cell[2] if len(cell) > 2 else 1):
                             grid[row, col] = (cell[0], attr); col += 1
     def setup():
-        nonlocal syntax_groups, highlights, regions, overlay
+        nonlocal syntax_groups, highlights, regions, overlay, runtime_evidence
         n.ui_attach(width, 30, rgb=True, ext_linegrid=True, ext_hlstate=True)
         n.command('set termguicolors splitright background=light')
         if adapter:
@@ -67,6 +70,8 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
         n.command('setlocal nofoldenable')
         n.command('windo setlocal nofoldenable')
         if not adapter: n.exec_lua("require('ithilien.diff').refresh()")
+        if python_runtime:
+            runtime_evidence=n.exec_lua((ROOT/'evaluation/python-runtime.lua').read_text(),str(python_runtime),str(ROOT/'.venv/bin/basedpyright-langserver'))
         n.command('normal! gg')
         if state == 'search':
             n.funcs.setreg('/', case.get('search','return\\|font\\|println')); n.command('set hlsearch')
@@ -115,7 +120,7 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
         n.exec_lua("local ch=...; vim.defer_fn(function() vim.cmd('redraw!'); vim.rpcnotify(ch,'evaluation_done') end,100)",n.channel_id)
     try:
         n.run_loop(None, notify, setup_cb=setup)
-        result = {'case':case['id'],'width':width,'state':state,'cursor':cursor,'overlay':overlay,'attr_info':attr_info,'regions':regions,'highlights':highlights,'syntax_groups':syntax_groups,'require_syntax':case.get('require_syntax',False),'defaults':defaults,'attrs':attrs,
+        result = {'case':case['id'],'width':width,'state':state,'python_runtime':runtime_evidence,'cursor':cursor,'overlay':overlay,'attr_info':attr_info,'regions':regions,'highlights':highlights,'syntax_groups':syntax_groups,'require_syntax':case.get('require_syntax',False),'defaults':defaults,'attrs':attrs,
                   'cells':[{'row':r,'col':c,'text':t,'attr':a} for (r,c),(t,a) in sorted(grid.items())]}
         assert result['cells'], 'No native UI cells received'
         return result
@@ -124,6 +129,7 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
         except (EOFError, OSError): pass
         n.close()
         signal.alarm(0)
+        sandbox.cleanup()
 
 
 def main():
