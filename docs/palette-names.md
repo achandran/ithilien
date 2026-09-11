@@ -2,7 +2,7 @@
 
 <!-- Generated from palette/ithilien-dawn.json; do not edit by hand. -->
 
-All **26 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
+All **24 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
 
 Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its immediate Gondorian neighbours. Gondor is its realm; Osgiliath, Pelennor and Harlond are directly connected across Anduin. Plant names refer to species mentioned in Ithilien, except Mallorn, which draws on Lórien’s golden trees; material names describe its local landscape. The sources establish those connections; botanical shades and the exact hex values are our interpretation.
 
@@ -18,12 +18,10 @@ Names draw from Ithilien’s plants, waters, materials and people, poetic landsc
 | Thyme | `#70516D` | Thyme in Ithilien; muted purple flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `accents.mauve`, `ansi.magenta`, `ansi.brightMagenta` |
 | Poros | `#306466` | River marking Ithilien’s southern boundary; blue-green water. [Source](https://www.encyclopedia-of-arda.com/p/poros.html) | `accents.aqua` |
 | Pelennor | `#E2EDDF` | Fields across Anduin from Ithilien; pale field green. [Source](https://tolkiengateway.net/wiki/Pelennor_Fields) | `diff.addBackground` |
-| Ilex | `#BDD3B2` | Holm-oaks in Ithilien; a pale foliage tint, not the literal shade of mature leaves. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.addEmphasis` |
 | Eglantine | `#F1E2DF` | Wild roses in Ithilien; pale pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteBackground` |
-| Rose | `#DDAFA7` | Roses in Ithilien; stronger pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteEmphasis` |
 | Spray | `#D7E3EA` | Waterfall spray at Henneth Annûn in Ithilien; pale water. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `diff.changeBackground`, `diff.hunkBackground` |
 | Harlond | `#B3CBD8` | Gondor’s harbour across Anduin from Ithilien; interpreted as pale river blue. [Source](https://tolkiengateway.net/wiki/Harlond_(Gondor)) | `backgrounds.surface2` |
-| Celandine | `#D8B46A` | Celandines in Ithilien; pale golden flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.changeEmphasis` |
+| Celandine | `#D8B46A` | Celandines in Ithilien; pale golden flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.addEmphasis`, `diff.deleteEmphasis`, `diff.changeEmphasis` |
 | Clematis | `#D6C6DE` | Trailing clematis in Ithilien; a pale lilac floral interpretation, not a flower color specified by Tolkien. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.search`, `diff.conflictBackground` |
 | Juniper | `#3F535F` | Junipers in Ithilien; interpreted as blue-gray foliage in shadow. [Source](https://tolkiengateway.net/wiki/Ithilien) | `highlight.border` |
 | Asphodel | `#FAFAF8` | Pale flowers encountered by Frodo and Sam in Ithilien. [Source](https://encyclopedia-of-arda.com/a/asphodel.php) | `backgrounds.base`, `ansi.white` |

@@ -10,7 +10,7 @@ from ithilienlib import load_palette
 
 # Names may evolve; canonical colors, polarity and semantic assignments are frozen.
 # Updating these fingerprints must accompany an explicitly intended palette change.
-EXPECTED = {'dawn': '997ccb24ed17605eaebc600b96e8fd9dd927541248d4ecf7c2e0635b32bca97e', 'dusk': 'a9c201a636befd4d5036864ac9557eff3d6f2d5098824ac002e294df56431e90'}
+EXPECTED = {'dawn': 'e78b33cfff653e14f90325185b3fc3fbb1fe7abeb6e0efac692b8feb87c3872d', 'dusk': 'a9c201a636befd4d5036864ac9557eff3d6f2d5098824ac002e294df56431e90'}
 
 class PaletteIdentity(unittest.TestCase):
     def test_selected_dawn_and_original_dusk(self):

@@ -22,11 +22,13 @@ class ANSIConsolidation(unittest.TestCase):
             self.assertEqual(slots[i],p['ansi'][key])
             self.assertEqual(slots[i+8],p['ansi']['bright'+key.capitalize()])
 
-    def test_adoption_changes_only_ansi_semantics(self):
+    def test_ansi_and_approved_diff_changes_preserve_other_semantics(self):
         baseline=json.loads((ROOT/'reports/ansi-consolidation/baseline.json').read_text())
         shared=json.loads((ROOT/'palette/ithilien-shared.json').read_text())
         before=resolve_palette(shared,baseline)
         after=load_palette('ithilien-dawn')
         self.assertNotEqual(before['ansi'],after['ansi'])
+        # Separately approved four-color diff consolidation.
+        before['diff']['addEmphasis']=before['diff']['deleteEmphasis']=before['diff']['changeEmphasis']
         self.assertEqual({k:v for k,v in before.items() if k!='ansi'},
                          {k:v for k,v in after.items() if k!='ansi'})

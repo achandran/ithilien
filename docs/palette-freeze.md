@@ -12,7 +12,11 @@ in tests/test_palette_identity.py enforces this freeze.
 - The four neutral ANSI slots remain distinct.
 - Removed named Lua colors: Fir, Filbert, Eventide and Hyacinth. Callers can
   migrate to Sage, Mallorn, Anduin and Thyme respectively; these have different hex values.
-- Poros remains a separate application accent. Diff and interaction colors are unchanged.
+- Poros remains a separate application accent. Interaction colors are unchanged.
+- Approved four-color diff model: Pelennor #E2EDDF added lines, Eglantine #F1E2DF
+  deleted lines, Spray #D7E3EA changed lines, Celandine #D8B46A all edited spans.
+- Removed named colors Ilex and Rose; addEmphasis/deleteEmphasis now use Celandine.
+  All diff text stays black. Search/conflict remains separately mapped to Clematis.
 - Ash user/hostname, blue directory, purple Git, black command-entry symbol.
 - Interpret palette colors as sRGB. Display P3 reinterpretation is not evaluated.
 - Interaction text minimum: WCAG contrast 4.5:1; ordinary text and diff gates remain.

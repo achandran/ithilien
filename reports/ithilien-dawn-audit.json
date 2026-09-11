@@ -217,20 +217,20 @@
     {
       "name": "inline add",
       "foreground": "#000000",
-      "background": "#BDD3B2",
-      "wcag": 13.12,
+      "background": "#D8B46A",
+      "wcag": 10.66,
       "wcagTarget": 7.0,
-      "apcaLc": 76.7,
+      "apcaLc": 66.0,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "inline delete",
       "foreground": "#000000",
-      "background": "#DDAFA7",
-      "wcag": 10.76,
+      "background": "#D8B46A",
+      "wcag": 10.66,
       "wcagTarget": 7.0,
-      "apcaLc": 66.4,
+      "apcaLc": 66.0,
       "apcaTarget": 60,
       "passed": true
     },
@@ -1968,24 +1968,24 @@
   "inlineEmphasisReview": [
     {
       "state": "add",
-      "lineContrast": 1.327,
+      "lineContrast": 1.634,
       "lineDeltaEOK": {
-        "normal": 0.0969,
-        "protan": 0.0919,
-        "deutan": 0.0937,
-        "tritan": 0.0929,
-        "grayscale": 0.0899
+        "normal": 0.1737,
+        "protan": 0.1929,
+        "deutan": 0.167,
+        "tritan": 0.1678,
+        "grayscale": 0.1517
       }
     },
     {
       "state": "delete",
-      "lineContrast": 1.55,
+      "lineContrast": 1.566,
       "lineDeltaEOK": {
-        "normal": 0.1361,
-        "protan": 0.1474,
-        "deutan": 0.1296,
-        "tritan": 0.1386,
-        "grayscale": 0.1348
+        "normal": 0.1662,
+        "protan": 0.1797,
+        "deutan": 0.161,
+        "tritan": 0.1449,
+        "grayscale": 0.1377
       }
     },
     {
@@ -3460,18 +3460,18 @@
       }
     },
     "diff.addEmphasis": {
-      "hex": "#BDD3B2",
+      "hex": "#D8B46A",
       "oklch": [
-        0.8415,
-        0.0508,
-        135.1
+        0.786,
+        0.1018,
+        84.2
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#D6CEB0",
-        "deutan": "#D2CCB3",
-        "tritan": "#BDD0CA",
-        "grayscale": "#CCCCCC"
+        "protan": "#C5B364",
+        "deutan": "#CDBD6C",
+        "tritan": "#E7A8A2",
+        "grayscale": "#B9B9B9"
       }
     },
     "diff.deleteForeground": {
@@ -3505,18 +3505,18 @@
       }
     },
     "diff.deleteEmphasis": {
-      "hex": "#DDAFA7",
+      "hex": "#D8B46A",
       "oklch": [
-        0.7933,
-        0.0553,
-        29.7
+        0.786,
+        0.1018,
+        84.2
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#B8B4A6",
-        "deutan": "#C3BDA7",
-        "tritan": "#E8AAAD",
-        "grayscale": "#BABABA"
+        "protan": "#C5B364",
+        "deutan": "#CDBD6C",
+        "tritan": "#E7A8A2",
+        "grayscale": "#B9B9B9"
       }
     },
     "diff.changeForeground": {

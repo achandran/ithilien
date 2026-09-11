@@ -3,6 +3,15 @@
 vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT, 'Set KANSO_ROOT'))
 vim.opt.rtp:prepend(vim.fn.getcwd())
 require('ithilien').load('day')
+-- Check all supported plugin word-span groups, including virtual deletion lines.
+for _,name in ipairs({'DiffText','DiffTextAdd','GitSignsAddInline','GitSignsDeleteInline',
+ 'GitSignsChangeInline','GitSignsAddLnInline','GitSignsDeleteLnInline',
+ 'GitSignsChangeLnInline','GitSignsAddVirtLnInline','GitSignsDeleteVirtLnInline',
+ 'GitSignsChangeVirtLnInline','GitSignsDeleteVirtLnInLine'}) do
+ local h=vim.api.nvim_get_hl(0,{name=name,link=false})
+ assert(h.bg==0xD8B46A and h.fg==0 and not h.bold and not h.underline,
+  name..': expected shared amber with plain black text')
+end
 vim.opt.diffopt = 'internal,filler,closeoff,inline:char'
 local cases = {
   {name='digit replacement', before='limit = 2', after='limit = 3', old={9}, new={9}},

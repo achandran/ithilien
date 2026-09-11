@@ -8,7 +8,7 @@ Porcelain whites. Black type. Steel neutrals. A small, deliberate red accent.
 
 ![Ithilien Dawn — Python code and character-level diffs in Neovim](assets/ithilien-dawn-neovim.png)
 
-**Read the code. Find the change.** Blue backgrounds locate changed lines; amber isolates the exact characters. Additions and deletions have separate green and red surfaces. Diff emphasis keeps ordinary text weight, so even a one-character edit stands out through color.
+**Read the code. Find the change.** Four diff backgrounds: green for added lines, red for deleted lines, blue for changed lines, and amber for the exact edited characters. Clients with separate added/deleted word highlights use the same amber for both. Diff emphasis keeps ordinary text weight, so even a one-character edit stands out through color.
 
 [Palette](#palette) · [Design](#design) · [Install](#install) · [Preview details](docs/readme-generation.md)
 
@@ -26,7 +26,7 @@ Open `palette-preview.html` locally to copy any swatch with a click or Enter. Gi
 
 ## Design
 
-Dawn takes its visual direction from the **Formex Reef GMT with a white dial, black ceramic bezel, and stainless steel bracelet**: clear markings on a quiet surface, metallic neutrals, and red used deliberately for interaction. Its color names come from Tolkien’s Ithilien.
+Dawn takes its visual direction from the **Formex Reef GMT with a white dial, black ceramic bezel, and stainless steel bracelet**: clear markings on a quiet surface, metallic neutrals, and red used deliberately for interaction. Its color names draw from Tolkien’s Ithilien and the wider world of Middle-earth.
 
 The aim is a working environment that stays legible without turning every token into an accent. Black carries the text. Muted syntax colors distinguish structure. Stronger backgrounds identify changes, search matches, and selection.
 

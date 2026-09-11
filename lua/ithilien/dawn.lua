@@ -156,7 +156,10 @@ for _,name in ipairs({'NvimTreeWinSeparator','NeoTreeIndentMarker','CmpDocumenta
 end
 for _,kind in ipairs({'Add','Change','Delete'}) do
   hi('GitSigns'..kind..'LnInline',{link='GitSigns'..kind..'Inline'})
+  hi('GitSigns'..kind..'VirtLnInline',{link='GitSigns'..kind..'Inline'})
 end
+-- Older Gitsigns releases used this capitalization for deleted virtual spans.
+hi('GitSignsDeleteVirtLnInLine',{link='GitSignsDeleteInline'})
 for suffix, color in pairs({Error=p.red,Warn=p.yellow,Info=p.blue,Hint=p.cyan,Ok=p.green}) do
   hi('Diagnostic'..suffix,{fg=color})
   hi('DiagnosticSign'..suffix,{fg=color})

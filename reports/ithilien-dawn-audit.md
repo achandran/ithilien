@@ -29,8 +29,8 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff delete | 16.68:1 | 90.8 | PASS |
 | diff change | 16.07:1 | 88.4 | PASS |
 | diff hunk | 16.07:1 | 88.4 | PASS |
-| inline add | 13.12:1 | 76.7 | PASS |
-| inline delete | 10.76:1 | 66.4 | PASS |
+| inline add | 10.66:1 | 66.0 | PASS |
+| inline delete | 10.66:1 | 66.0 | PASS |
 | inline change | 10.66:1 | 66.0 | PASS |
 | inline diff marker | 4.62:1 | 33.0 | PASS |
 | conflict marker | 12.99:1 | 76.2 | PASS |
@@ -243,8 +243,8 @@ Color alone does not preserve these roles in every simulation. Keywords use bold
 
 These are not text contrast gates. Day uses black inline text with bold and underline in GitSigns; lighter fills trade some boundary contrast for text readability.
 
-- add: fill/line contrast 1.327:1; grayscale ΔEOK 0.0899
-- delete: fill/line contrast 1.55:1; grayscale ΔEOK 0.1348
+- add: fill/line contrast 1.634:1; grayscale ΔEOK 0.1517
+- delete: fill/line contrast 1.566:1; grayscale ΔEOK 0.1377
 - change: fill/line contrast 1.508:1; grayscale ΔEOK 0.1254
 
 ## Changed-line fill versus canvas (observations)

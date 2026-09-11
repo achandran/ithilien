@@ -13,9 +13,7 @@
     "Thyme": "#70516D",
     "Poros": "#306466",
     "Pelennor": "#E2EDDF",
-    "Ilex": "#BDD3B2",
     "Eglantine": "#F1E2DF",
-    "Rose": "#DDAFA7",
     "Spray": "#D7E3EA",
     "Harlond": "#B3CBD8",
     "Celandine": "#D8B46A",
@@ -71,16 +69,8 @@
       "meaning": "Fields across Anduin from Ithilien; pale field green.",
       "source": "https://tolkiengateway.net/wiki/Pelennor_Fields"
     },
-    "Ilex": {
-      "meaning": "Holm-oaks in Ithilien; a pale foliage tint, not the literal shade of mature leaves.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
     "Eglantine": {
       "meaning": "Wild roses in Ithilien; pale pink petals.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
-    "Rose": {
-      "meaning": "Roses in Ithilien; stronger pink petals.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
     "Spray": {
@@ -196,10 +186,10 @@
     "inlineForeground": "Lebethron",
     "addForeground": "Lebethron",
     "addBackground": "Pelennor",
-    "addEmphasis": "Ilex",
+    "addEmphasis": "Celandine",
     "deleteForeground": "Lebethron",
     "deleteBackground": "Eglantine",
-    "deleteEmphasis": "Rose",
+    "deleteEmphasis": "Celandine",
     "changeForeground": "Lebethron",
     "changeBackground": "Spray",
     "changeEmphasis": "Celandine",
