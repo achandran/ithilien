@@ -22,9 +22,9 @@ Names are limited to Ithilien’s plants, waters, materials and people, plus its
 | Eglantine | `#F1E2DF` | Wild roses in Ithilien; pale pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteBackground` |
 | Rose | `#DDAFA7` | Roses in Ithilien; stronger pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteEmphasis` |
 | Spray | `#E0E9EE` | Waterfall spray at Henneth Annûn in Ithilien; pale water. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `diff.changeBackground`, `diff.hunkBackground` |
-| Harlond | `#B3CBD8` | The harbour on the opposite bank of Anduin from Ithilien; deep river blue. [Source](https://tolkiengateway.net/wiki/Harlond_(Gondor)) | `backgrounds.surface2`, `diff.changeEmphasis` |
-| Celandine | `#EAD9B1` | Celandines in Ithilien; pale golden flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.search` |
-| Clematis | `#E5D9E7` | Trailing clematis in Ithilien; pale floral lilac. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.conflictBackground` |
+| Harlond | `#B3CBD8` | The harbour on the opposite bank of Anduin from Ithilien; deep river blue. [Source](https://tolkiengateway.net/wiki/Harlond_(Gondor)) | `backgrounds.surface2` |
+| Celandine | `#D8B46A` | Celandines in Ithilien; pale golden flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.changeEmphasis` |
+| Clematis | `#E5D9E7` | Trailing clematis in Ithilien; pale floral lilac. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.search`, `diff.conflictBackground` |
 | Juniper | `#3F535F` | Junipers in Ithilien; dark evergreen foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `highlight.border` |
 | Asphodel | `#F6F6F3` | Pale flowers encountered by Frodo and Sam in Ithilien. [Source](https://encyclopedia-of-arda.com/a/asphodel.php) | `backgrounds.base`, `ansi.white` |
 | Gondor | `#E0E3E2` | Ithilien is a province of Gondor; pale neighbouring city stone. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.mantle` |

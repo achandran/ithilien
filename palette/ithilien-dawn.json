@@ -18,7 +18,7 @@
     "Rose": "#DDAFA7",
     "Spray": "#E0E9EE",
     "Harlond": "#B3CBD8",
-    "Celandine": "#EAD9B1",
+    "Celandine": "#D8B46A",
     "Clematis": "#E5D9E7",
     "Juniper": "#3F535F",
     "Asphodel": "#F6F6F3",
@@ -176,7 +176,7 @@
     "surface1": "Anemone",
     "surface2": "Harlond",
     "border": "Stonecrop",
-    "search": "Celandine"
+    "search": "Clematis"
   },
   "foregrounds": {
     "muted": "Ash",
@@ -227,7 +227,7 @@
     "deleteEmphasis": "Rose",
     "changeForeground": "Lebethron",
     "changeBackground": "Spray",
-    "changeEmphasis": "Harlond",
+    "changeEmphasis": "Celandine",
     "hunkForeground": "Lebethron",
     "hunkBackground": "Spray",
     "conflictForeground": "Lebethron",

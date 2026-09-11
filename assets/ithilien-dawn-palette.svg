@@ -95,16 +95,16 @@
 <text x="678" y="424" fill="#444D52" >backgrounds.surface2</text>
 <rect x="900" y="354" width="282" height="84" fill="#FDFDFA"/>
 <rect x="910" y="364" width="50" height="64" fill="#596166"/>
-<rect x="911" y="365" width="48" height="62" fill="#EAD9B1"/>
+<rect x="911" y="365" width="48" height="62" fill="#D8B46A"/>
 <text x="972" y="378" fill="#000000" font-weight="700">Celandine</text>
-<text x="972" y="400" fill="#000000" >#EAD9B1</text>
-<text x="972" y="424" fill="#444D52" >backgrounds.search</text>
+<text x="972" y="400" fill="#000000" >#D8B46A</text>
+<text x="972" y="424" fill="#444D52" >diff.changeEmphasis</text>
 <rect x="18" y="448" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="458" width="50" height="64" fill="#596166"/>
 <rect x="29" y="459" width="48" height="62" fill="#E5D9E7"/>
 <text x="90" y="472" fill="#000000" font-weight="700">Clematis</text>
 <text x="90" y="494" fill="#000000" >#E5D9E7</text>
-<text x="90" y="518" fill="#444D52" >diff.conflictBackground</text>
+<text x="90" y="518" fill="#444D52" >backgrounds.search</text>
 <rect x="312" y="448" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="458" width="50" height="64" fill="#596166"/>
 <rect x="323" y="459" width="48" height="62" fill="#3F535F"/>

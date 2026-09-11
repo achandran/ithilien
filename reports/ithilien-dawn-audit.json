@@ -237,10 +237,10 @@
     {
       "name": "inline change",
       "foreground": "#000000",
-      "background": "#B3CBD8",
-      "wcag": 12.45,
+      "background": "#D8B46A",
+      "wcag": 10.66,
       "wcagTarget": 7.0,
-      "apcaLc": 73.9,
+      "apcaLc": 66.0,
       "apcaTarget": 60,
       "passed": true
     },
@@ -1990,13 +1990,13 @@
     },
     {
       "state": "change",
-      "lineContrast": 1.37,
+      "lineContrast": 1.601,
       "lineDeltaEOK": {
-        "normal": 0.1024,
-        "protan": 0.0947,
-        "deutan": 0.1035,
-        "tritan": 0.1046,
-        "grayscale": 0.0991
+        "normal": 0.1814,
+        "protan": 0.2007,
+        "deutan": 0.1752,
+        "tritan": 0.1649,
+        "grayscale": 0.145
       }
     }
   ],
@@ -2830,18 +2830,18 @@
       }
     },
     "backgrounds.search": {
-      "hex": "#EAD9B1",
+      "hex": "#E5D9E7",
       "oklch": [
-        0.8891,
-        0.0558,
-        87.7
+        0.899,
+        0.0228,
+        321.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#E3D8AE",
-        "deutan": "#E7DCB2",
-        "tritan": "#F4D2CE",
-        "grayscale": "#DADADA"
+        "protan": "#D8DCE8",
+        "deutan": "#DADDE6",
+        "tritan": "#E6DADD",
+        "grayscale": "#DDDDDD"
       }
     },
     "highlight.background": {
@@ -3550,18 +3550,18 @@
       }
     },
     "diff.changeEmphasis": {
-      "hex": "#B3CBD8",
+      "hex": "#D8B46A",
       "oklch": [
-        0.8283,
-        0.0317,
-        231.4
+        0.786,
+        0.1018,
+        84.2
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#C5CAD9",
-        "deutan": "#BFC5D8",
-        "tritan": "#A9CFCF",
-        "grayscale": "#C7C7C7"
+        "protan": "#C5B364",
+        "deutan": "#CDBD6C",
+        "tritan": "#E7A8A2",
+        "grayscale": "#B9B9B9"
       }
     },
     "diff.hunkForeground": {

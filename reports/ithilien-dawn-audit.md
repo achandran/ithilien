@@ -31,7 +31,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff hunk | 17.06:1 | 92.1 | PASS |
 | inline add | 13.12:1 | 76.7 | PASS |
 | inline delete | 10.76:1 | 66.4 | PASS |
-| inline change | 12.45:1 | 73.9 | PASS |
+| inline change | 10.66:1 | 66.0 | PASS |
 | inline diff marker | 9.64:1 | 61.1 | PASS |
 | conflict marker | 15.41:1 | 85.9 | PASS |
 | ANSI black | 19.4:1 | 100.5 | PASS |
@@ -246,7 +246,7 @@ These are not text contrast gates. Day uses black inline text with bold and unde
 
 - add: fill/line contrast 1.327:1; grayscale ΔEOK 0.0899
 - delete: fill/line contrast 1.55:1; grayscale ΔEOK 0.1348
-- change: fill/line contrast 1.37:1; grayscale ΔEOK 0.0991
+- change: fill/line contrast 1.601:1; grayscale ΔEOK 0.145
 
 ## Changed-line fill versus canvas (observations)
 

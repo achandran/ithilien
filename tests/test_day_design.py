@@ -23,7 +23,7 @@ class DayDesign(unittest.TestCase):
     def test_neutral_selection_does_not_change_diff_emphasis(self):
         p=load_palette('ithilien-dawn')
         self.assertEqual(p['highlight']['background'], '#A8B2AE')
-        self.assertEqual(p['diff']['changeEmphasis'], '#B3CBD8')
+        self.assertEqual(p['diff']['changeEmphasis'], '#D8B46A')
         self.assertNotEqual(p['highlight']['background'],p['diff']['changeEmphasis'])
         self.assertGreaterEqual(wcag(p['highlight']['foreground'],p['highlight']['background']),7)
 
