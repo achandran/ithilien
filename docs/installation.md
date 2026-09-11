@@ -99,5 +99,3 @@ The normal installer now includes the Dawn system highlight color on macOS, read
 ### Dawn diff presentation
 
 Dawn diff windows use subdued dotted filler, pane labels, and matching syntax when a revision buffer lacks a filetype. Neovim 0.12 uses character-level inline diffs. Window presentation is restored on leaving diff mode. Labels identify FILE/REVISION/BUFFER when provenance is known; integrations may set `b:ithilien_diff_label` to a more specific label such as INDEX or WORKING COPY.
-
-Two-pane Gitsigns index/working-copy comparisons of the same file use Rose for old inline text and Ilex for new inline text, with black text and no bold or underline. Other integrations can set `b:ithilien_diff_role` to `old` and `new` on the two buffers. Unknown or multi-pane comparisons retain neutral inline colors; pane position alone never determines direction. Search retains its gold background.

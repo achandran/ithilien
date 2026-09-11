@@ -40,7 +40,7 @@ for _,name in ipairs({'Normal','Visual','PmenuSel','PmenuKindSel','PmenuExtraSel
 end
 for _,name in ipairs({'DiffText','DiffTextAdd','GitSignsAddInline','GitSignsDeleteInline','GitSignsChangeInline'}) do
  local h=vim.api.nvim_get_hl(0,{name=name,link=false})
- assert(not h.bold and not h.underline and h.bg,'Missing inline cue: '..name)
+ assert(h.bold and h.underline and h.bg,'Missing inline cue: '..name)
 end
 for mode,sections in pairs(require('lualine.themes.ithilien-dawn')) do
  for section,h in pairs(sections) do assert(h.fg~=raw.backgrounds.base,'Reversed lualine '..mode..section) end

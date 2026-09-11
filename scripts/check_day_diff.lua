@@ -35,7 +35,7 @@ for _,case in ipairs(cases) do
       local name=vim.fn.synIDattr(id,'name')
       if name=='DiffText' or name=='DiffTextAdd' then
         local hl=vim.api.nvim_get_hl(0,{name=name,link=false})
-        assert(hl.fg==tonumber(require('ithilien.ithilien-dawn').raw.foregrounds.text:sub(2),16) and not hl.underline and not hl.bold, 'Inline diff must be dark and undecorated')
+        assert(hl.fg==tonumber(require('ithilien.ithilien-dawn').raw.foregrounds.text:sub(2),16) and hl.underline and hl.bold, 'Inline diff must be dark and underlined')
         table.insert(cells,{column=col,text=side[3]:sub(col,col),group=name})
       end
     end
@@ -69,5 +69,5 @@ end
 result.multilinePassed=true
 vim.cmd('diffoff!')
 vim.fn.writefile({vim.json.encode(result)},'reports/formex-dawn-native-diffs.json')
-print((#cases+1)..' native character-diff cases passed; exact changed cells dark and undecorated')
+print((#cases+1)..' native character-diff cases passed; exact changed cells dark and underlined')
 vim.cmd('qa!')
