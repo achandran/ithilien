@@ -6,10 +6,10 @@
     "Lebethron": "#000000",
     "Ash": "#505456",
     "Afterglow": "#B8595C",
-    "Sage": "#315F46",
+    "Ilex": "#315F46",
     "Anduin": "#345E77",
     "Mallorn": "#795922",
-    "Thyme": "#70516D",
+    "Iris": "#70516D",
     "Pelennor": "#E2EDDF",
     "Eglantine": "#F1E2DF",
     "Henneth": "#D7E3EA",
@@ -35,8 +35,8 @@
       "meaning": "A poetic name for muted sunset red, inspired by the light at Henneth Ann\u00fbn; our interpretation, not a canonical Tolkien color name.",
       "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
     },
-    "Sage": {
-      "meaning": "Sages of Ithilien; green foliage.",
+    "Ilex": {
+      "meaning": "Deep green inspired by the evergreen foliage of the great ilexes of Ithilien; the exact shade is a design interpretation.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
     "Anduin": {
@@ -47,9 +47,9 @@
       "meaning": "Dark ochre inspired by the golden leaves of L\u00f3rien\u2019s mallorn trees; a shaded interpretation chosen for readable terminal text. A broader Tolkien connection, not an Ithilien tree.",
       "source": "https://tolkiengateway.net/wiki/Mallorn"
     },
-    "Thyme": {
-      "meaning": "Thyme in Ithilien; muted purple flowers.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    "Iris": {
+      "meaning": "Muted purple inspired by iris flowers. Frodo and Sam encountered irises in Ithilien; this shade is a floral interpretation, not a color specified by Tolkien.",
+      "source": "https://tolkiengateway.net/wiki/Iris"
     },
     "Pelennor": {
       "meaning": "Fields across Anduin from Ithilien; pale field green.",
@@ -129,23 +129,23 @@
     "coral": "Briar",
     "aqua": "Rauros",
     "blue": "Anduin",
-    "mauve": "Thyme"
+    "mauve": "Iris"
   },
   "ansi": {
     "black": "Lebethron",
     "red": "Briar",
-    "green": "Sage",
+    "green": "Ilex",
     "yellow": "Mallorn",
     "blue": "Anduin",
-    "magenta": "Thyme",
+    "magenta": "Iris",
     "cyan": "Rauros",
     "white": "Nimloth",
     "brightBlack": "Ash",
     "brightRed": "Briar",
-    "brightGreen": "Sage",
+    "brightGreen": "Ilex",
     "brightYellow": "Mallorn",
     "brightBlue": "Anduin",
-    "brightMagenta": "Thyme",
+    "brightMagenta": "Iris",
     "brightCyan": "Rauros",
     "brightWhite": "Nimloth",
     "extendedOchre": "Mallorn",
