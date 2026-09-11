@@ -4,10 +4,6 @@ vim.g.colors_name = nil
 vim.o.background = 'light'
 vim.cmd('highlight clear')
 vim.g.colors_name = 'ithilien-dawn'
-local lush = require('lush')
-local util = require('zenbones.util')
-local generator = require('zenbones.specs')
-local mode = 'light'
 local raw = require('ithilien.ithilien-dawn').raw
 local bg, fg, a, d = raw.backgrounds, raw.foregrounds, raw.accents, raw.diff
 local p = { bg=bg.base, surface=bg.mantle, line=bg.surface1, raised=bg.surface0,
@@ -17,14 +13,102 @@ local p = { bg=bg.base, surface=bg.mantle, line=bg.surface1, raised=bg.surface0,
  delete=d.deleteBackground, delete_emph=d.deleteEmphasis, change=d.changeBackground,
  change_emph=d.changeEmphasis, search=bg.search,
  ansi=require('ithilien.ithilien-dawn').terminal }
-local palette = util.palette_extend({
-  bg = lush.hsluv(p.bg), fg = lush.hsluv(p.fg),
-  rose = lush.hsluv(p.red), leaf = lush.hsluv(p.green),
-  wood = lush.hsluv(p.yellow), water = lush.hsluv(p.blue),
-  blossom = lush.hsluv(p.magenta), sky = lush.hsluv(p.cyan),
-}, mode)
+local palette = require('ithilien.ithilien-dawn')
+local accent, diff, highlight, is_light = a, d, raw.highlight, true
+  local theme = {
+    ui = {
+      fg = fg.text,
+      fg_dim = fg.subtext,
+      fg_reverse = bg.base,
+      bg_dim = bg.mantle,
+      bg_m3 = bg.crust,
+      bg_m2 = bg.mantle,
+      bg_m1 = bg.surface0,
+      bg = bg.base,
+      bg_p1 = bg.surface0,
+      bg_p2 = bg.surface1,
+      special = is_light and fg.subtext or fg.muted,
+      indent_line = bg.surface1,
+      active_indent_line = bg.surface2,
+      whitespace = bg.surface2,
+      nontext = fg.muted,
+      bg_visual = highlight.background,
+      bg_search = diff.changeEmphasis,
+      cursor_line_nr_foreground = fg.muted,
+      cursor_line_nr_active_foreground = fg.bright,
+      cursor_bg = highlight.background,
+      cursor_fg = highlight.foreground,
+      pmenu = {
+        fg = fg.text,
+        fg_sel = highlight.foreground,
+        bg = bg.surface0,
+        bg_sel = highlight.background,
+        bg_thumb = bg.surface2,
+        bg_sbar = bg.surface0,
+      },
+      float = {
+        fg = fg.text,
+        bg = bg.surface0,
+        fg_border = is_light and fg.muted or bg.surface2,
+        bg_border = bg.surface0,
+      },
+    },
+    syn = {
+      string = accent.sage,
+      variable = "NONE",
+      number = accent.ochre,
+      constant = accent.ochre,
+      identifier = accent.mauve,
+      parameter = fg.subtext,
+      fun = accent.gold,
+      statement = accent.clay,
+      keyword = accent.clay,
+      operator = accent.olive,
+      preproc = accent.mauve,
+      type = accent.aqua,
+      regex = accent.coral,
+      deprecated = fg.muted,
+      comment = fg.comment,
+      punct = fg.subtext,
+      special1 = accent.gold,
+      special2 = accent.mauve,
+      special3 = accent.blue,
+    },
+    diag = {
+      error = accent.coral,
+      ok = accent.sage,
+      warning = accent.gold,
+      info = accent.blue,
+      hint = accent.aqua,
+    },
+    diff = {
+      add = diff.addBackground,
+      delete = diff.deleteBackground,
+      change = diff.changeBackground,
+      text = diff.changeEmphasis,
+    },
+    vcs = {
+      added = diff.addForeground,
+      removed = diff.deleteForeground,
+      changed = diff.changeForeground,
+      untracked = fg.comment,
+    },
+    term = palette.terminal,
+  }
+
+
 local config = {italic_comments=opts.italics, italic_strings=false}
-lush(generator.generate(palette, mode, config))
+require('kanso').setup({
+  theme='pearl', background={dark='ink',light='pearl'},
+  bold=opts.bold, italics=opts.italics, transparent=false, dimInactive=false,
+  terminalColors=true, compile=false,
+  commentStyle=opts.italics and {italic=true} or {},
+  keywordStyle={bold=opts.bold,italic=false}, statementStyle={bold=opts.bold},
+  colors={palette=palette.kanso,theme={all=theme,ink={},zen={},pearl={}}},
+  overrides=function() return {} end,
+})
+require('kanso').load('pearl')
+vim.g.colors_name='ithilien-dawn'
 local function hi(name, spec) vim.api.nvim_set_hl(0, name, spec) end
 local groups = {
   Cursor={fg=p.fg,bg=raw.highlight.cursorBlock,sp=raw.highlight.cursor,underline=true},
@@ -62,6 +146,12 @@ local groups = {
   DiagnosticUnnecessary={fg=p.muted,underline=true},
 }
 for group, spec in pairs(groups) do hi(group,spec) end
+-- Kanso structural/plugin defaults need readable Dawn foregrounds.
+for _,name in ipairs({'NvimTreeWinSeparator','NeoTreeIndentMarker','CmpDocumentationBorder',
+ 'BlinkCmpDocBorder','BlinkCmpSignatureHelpBorder','MiniClueBorder','MiniNotifyBorder',
+ 'MiniPickBorder','MiniFilesBorder','LspInlayHint','Ignore'}) do
+ local h=vim.api.nvim_get_hl(0,{name=name,link=false}); h.fg=tonumber(p.muted:sub(2),16); hi(name,h)
+end
 for _,kind in ipairs({'Add','Change','Delete'}) do
   hi('GitSigns'..kind..'LnInline',{link='GitSigns'..kind..'Inline'})
 end
@@ -77,7 +167,7 @@ hi('Title',{fg=p.fg,bold=true})
 hi('Underlined',{fg=p.blue,underline=true})
 for i,color in ipairs(p.ansi) do vim.g['terminal_color_'..(i-1)]=color end
 
--- Zenbones' broad plugin inventory includes reversed labels. Dawn never uses
+-- Kanso's plugin inventory includes reversed labels. Dawn never uses
 -- light foregrounds on dark surfaces: normalize inherited reverse groups and
 -- pale foregrounds, while retaining explicit dark semantic colors.
 local function luminance(hex)

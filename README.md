@@ -77,3 +77,5 @@ Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically
 ### Compare against Kanso Pearl and Zenbones
 
 Run `python3 scripts/compare.py` for isolated Ghostty launch commands, then follow the [comparison exercises](comparison/README.md). Your installed settings are not changed.
+
+Dawn now uses Kanso Pearl as its Neovim base. The canonical palette and terminal/application exports are unchanged by this migration. Existing users should update the plugin and restart Neovim; this change is not yet proof that the reported terminal rendering issue is resolved.

@@ -1,5 +1,5 @@
 -- ZENBONES_ROOT, LUSH_ROOT and KANSO_ROOT point to dependency checkouts.
-for _,key in ipairs({'ZENBONES_ROOT','LUSH_ROOT','KANSO_ROOT'}) do vim.opt.rtp:prepend(assert(vim.env[key])) end
+for _,key in ipairs({'KANSO_ROOT'}) do vim.opt.rtp:prepend(assert(vim.env[key])) end
 vim.opt.rtp:prepend(vim.fn.getcwd())
 local theme=require('ithilien')
 local function snapshot()
@@ -11,6 +11,8 @@ theme.load('dusk')
 local dusk=snapshot()
 theme.load('dawn')
 local raw=require('ithilien.ithilien-dawn').raw
+assert(require("kanso").config.theme == "pearl", "Dawn must use Kanso Pearl")
+assert(not package.loaded["zenbones.specs"], "Dawn must not load Zenbones")
 local expected=tonumber(raw.foregrounds.text:sub(2),16)
 local checked=0
 for name,h in pairs(snapshot()) do

@@ -15,7 +15,7 @@ The generated dark theme uses Berkeley Mono Retina for terminal text and window 
 Dawn is on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Add `vim.opt.diffopt:append("inline:char")` to your configuration; the colorscheme itself does not change your diff algorithm.
 
 
-Copy `nvim/lazyvim-plugin.lua` into your LazyVim plugin specifications, then run `:Lazy sync`. The spec installs `achandran/ithilien` with Zenbones and Lush for Dawn, and Kanso for Dusk directly from GitHub. Select `ithilien`, `ithilien-dawn`, or `ithilien-dusk` with `:colorscheme`; `ithilien` defaults to Ithilien Dawn.
+Copy `nvim/lazyvim-plugin.lua` into your LazyVim plugin specifications, then run `:Lazy sync`. The spec installs `achandran/ithilien` with Kanso for both Dawn (Pearl base) and Dusk (Ink base) directly from GitHub. Select `ithilien`, `ithilien-dawn`, or `ithilien-dusk` with `:colorscheme`; `ithilien` defaults to Ithilien Dawn.
 
 On macOS, the included LazyVim spec also follows system appearance changes in running Neovim sessions. Install its native watcher first:
 

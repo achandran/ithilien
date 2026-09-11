@@ -1,5 +1,3220 @@
 [
   {
+    "group": "BufferLineInfoDiagnosticVisible",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineInfoSelected",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineInfoVisible",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@variable",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@variable.builtin",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@variable.parameter",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@variable.member",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@string.regexp",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "@string.escape",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "@string.special.symbol",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@string.special.url",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@type",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@type.builtin",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "@attribute",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@property",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@function",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@function.builtin",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@function.call",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@function.method",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@function.method.call",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@constructor",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@constructor.lua",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@operator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.coroutine",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.function",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.operator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineTabSeparatorSelected",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineTruncMarker",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineWarning",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@storageclass",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.typescript",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineWarningDiagnosticVisible",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineWarningSelected",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineWarningVisible",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.return",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.exception",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.luap",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.conditional",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@punctuation.delimiter",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@punctuation.bracket",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@punctuation.special",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@comment.warning",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "@comment.note",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.heading",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.quote",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.math",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "TermCursor",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.link.url",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "LineNrAbove",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "LineNrBelow",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "CursorLineFold",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "PmenuBorder",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "StatusLineTerm",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "StatusLineTermNC",
+    "ratio": 4.887,
+    "target": 4.5
+  },
+  {
+    "group": "StderrMsg",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "OkMsg",
+    "ratio": 8.347,
+    "target": 4.5
+  },
+  {
+    "group": "PreInsert",
+    "ratio": 8.347,
+    "target": 4.5
+  },
+  {
+    "group": "RedrawDebugNormal",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.function",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.macro",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "ComplHint",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "ComplHintMore",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "Conditional",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Repeat",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Label",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Include",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.comparison",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.bitwise",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.punctuation",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.selfParameter",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.builtinConstant",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@constant.builtin",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.magicFunction",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.mod.readonly",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.mod.typeHint",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.operator.controlFlow",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.lifetime",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.keyword.documentation",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.decorator.rust",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.variable.global",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.variable.static",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.variable.defaultLibrary",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.function.builtin",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.function.defaultLibrary",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.method.defaultLibrary",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.variable.injected",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.typemod.function.readonly",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsChangedelete",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsTopdelete",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsUntracked",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NeogitHunkHeader",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeogitHunkHeaderHighlight",
+    "ratio": 11.924,
+    "target": 4.5
+  },
+  {
+    "group": "TreesitterContext",
+    "ratio": 4.887,
+    "target": 4.5
+  },
+  {
+    "group": "TreesitterContextLineNumber",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "TelescopeBorder",
+    "ratio": 5.83,
+    "target": 3
+  },
+  {
+    "group": "TelescopeTitle",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "TelescopeSelectionCaret",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "TelescopeResultsClass",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Structure",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "TelescopeResultsStruct",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "TelescopeResultsMethod",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "TelescopeResultsVariable",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeNormal",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeNormalNC",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeRootFolder",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeGitDirty",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeGitNew",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeGitDeleted",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeGitStaged",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeSpecialFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeImageFile",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeSymlink",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeFolderName",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeExecFile",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeOpenedFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeWinSeparator",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTreeWindowPicker",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeTabInactive",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeTabActive",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeTabSeparatorInactive",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeTabSeparatorActive",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeRootName",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeModified",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeNormal",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeNormalNC",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeTitleBar",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeDimText",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeGitModified",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeGitAdded",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeGitDeleted",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeGitStaged",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeGitConflict",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeGitUntracked",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeGitUnstaged",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeoTreeIndentMarker",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DashboardShortCut",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DashboardHeader",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DashboardCenter",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "DashboardFooter",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DashboardDesc",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "DashboardKey",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DashboardIcon",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyERRORBorder",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyWARNBorder",
+    "ratio": 5.94,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyINFOBorder",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyHINTBorder",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyDEBUGBorder",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "Debug",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyTRACEBorder",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyERRORIcon",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "IndentBlanklineSpaceCharBlankline",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "IndentBlanklineContextChar",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "IblIndent",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "IblWhitespace",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "IblScope",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@ibl.indent.char.1",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@ibl.scope.char.1",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyHINTTitle",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "IndentLine",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIScope",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "IndentGuide",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "IndentGuidesOdd",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "IndentGuidesEven",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "LazyProgressTodo",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "TroubleIndent",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "TroublePos",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsModule",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsNamespace",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsPackage",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsClass",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsMethod",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsProperty",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsField",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsConstructor",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsEnum",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsInterface",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsFunction",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsVariable",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsConstant",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsString",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsNumber",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsBoolean",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsArray",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsObject",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsKey",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsNull",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsEnumMember",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsStruct",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsEvent",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemAbbr",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicSeparator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindDefault",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemMenu",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "CmpGhostText",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindText",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindMethod",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindFunction",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindConstructor",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindField",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "DiffChange",
+    "ratio": 11.924,
+    "target": 4.5
+  },
+  {
+    "group": "Added",
+    "ratio": 8.347,
+    "target": 4.5
+  },
+  {
+    "group": "Removed",
+    "ratio": 13.579,
+    "target": 4.5
+  },
+  {
+    "group": "Changed",
+    "ratio": 5.242,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindProperty",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindUnit",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindValue",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindEnum",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindKeyword",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindSnippet",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindColor",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindReference",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindFolder",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindEnumMember",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindConstant",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindStruct",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindEvent",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindOperator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindTypeParameter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualTextError",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualTextWarn",
+    "ratio": 5.94,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualTextInfo",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualTextHint",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpLabel",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpLabelMatch",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpLabelDetails",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpLabelDeprecated",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpGhostText",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpDoc",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpDocBorder",
+    "ratio": 6.195,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpDocCursorLine",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpSignatureHelp",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "PmenuKindSel",
+    "ratio": 5.199,
+    "target": 4.5
+  },
+  {
+    "group": "PmenuExtraSel",
+    "ratio": 5.199,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksPickerSelected",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Substitute",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "@comment.error",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTablineTabpagesection",
+    "ratio": 8.702,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksPickerPickWin",
+    "ratio": 8.702,
+    "target": 4.5
+  },
+  {
+    "group": "Search",
+    "ratio": 10.525,
+    "target": 4.5
+  },
+  {
+    "group": "IncSearch",
+    "ratio": 10.525,
+    "target": 4.5
+  },
+  {
+    "group": "CurSearch",
+    "ratio": 10.525,
+    "target": 4.5
+  },
+  {
+    "group": "FloatBorder",
+    "ratio": 3.786,
+    "target": 3
+  },
+  {
+    "group": "CmpCompletionBorder",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpMenuBorder",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "WinSeparator",
+    "ratio": 3.563,
+    "target": 3
+  },
+  {
+    "group": "CursorLineNr",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "StatusLineNC",
+    "ratio": 4.887,
+    "target": 4.5
+  },
+  {
+    "group": "WarningMsg",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialFileIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialModuleIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialNamespaceIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialPackageIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialClassIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialMethodIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DiffAdd",
+    "ratio": 12.171,
+    "target": 4.5
+  },
+  {
+    "group": "DiffDelete",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "qfFileName",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "markdownCode",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "markdownCodeBlock",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemAbbrMatch",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemAbbrMatchFuzzy",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemAbbrDeprecated",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "CmpCompletionSel",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "CmpCompletion",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "CmpDocumentationBorder",
+    "ratio": 6.195,
+    "target": 4.5
+  },
+  {
+    "group": "CmpDocumentation",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "healthWarning",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "healthSuccess",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "healthError",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "FloatermBorder",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIUnavailable",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIRestart",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIPlayPause",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIStop",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIStepOut",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIStepBack",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIStepInto",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIStepOver",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIBreakpointsDisabledLine",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIBreakpointsCurrentLine",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIBreakpointsInfo",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIBreakpointsPath",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIWatchesError",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIWatchesValue",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIWatchesEmpty",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIFloatBorder",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DapUILineNumber",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DapUISource",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIStoppedThread",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIThread",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIDecoration",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIModifiedValue",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineWarningDiagnosticSelected",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineWarningDiagnostic",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineTabSeparator",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineTabSelected",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineTabClose",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineIndicatorVisible",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLinePickVisible",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineDevIconLua",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLinePickSelected",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLinePick",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineTab",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineSeparatorVisible",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineSeparatorSelected",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "AerialVariableIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialConstantIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialStringIcon",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindCopilot",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpMenu",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpMenuSelection",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyWARNIcon",
+    "ratio": 5.94,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyINFOIcon",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyHINTIcon",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyTRACEIcon",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyDEBUGIcon",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyERRORTitle",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyWARNTitle",
+    "ratio": 5.94,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyINFOTitle",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyDEBUGTitle",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NotifyTRACETitle",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DapUIType",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsPlaceholder",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsTitle",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsTitleError",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsTitleSame",
+    "ratio": 8.702,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindColor",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindSnippet",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindKeyword",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsAddLnInline",
+    "ratio": 9.173,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsDeleteLnInline",
+    "ratio": 7.524,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsChangeLnInline",
+    "ratio": 8.702,
+    "target": 4.5
+  },
+  {
+    "group": "AerialFunctionIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialInterfaceIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialEnumIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "IndentBlanklineChar",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.const",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@tag.delimiter",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@tag.attribute",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.raw",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.environment",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineDevIconLuaInactive",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineNumbers",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidConcatOrSubscript",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidConcat",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidBinaryMinus",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.type",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.parameter",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.namespace",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.method",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.comment",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "@diff.delta",
+    "ratio": 11.924,
+    "target": 4.5
+  },
+  {
+    "group": "@diff.minus",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "AerialConstructorIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialFieldIcon",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "AerialPropertyIcon",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "NavicText",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsTypeParameter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NavicIconsOperator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Indent",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@ibl.whitespace.char.1",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "IndentBlanklineSpaceChar",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CocMenuSel",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindCopilot",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindTypeParameter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindOperator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindEvent",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindStruct",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindConstant",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindEnumMember",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindFolder",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindReference",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsAddInline",
+    "ratio": 9.173,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsDeleteInline",
+    "ratio": 7.524,
+    "target": 4.5
+  },
+  {
+    "group": "GitSignsChangeInline",
+    "ratio": 8.702,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindEnum",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindValue",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindUnit",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindProperty",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindModule",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindInterface",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindClass",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindVariable",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindField",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindConstructor",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindFunction",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindMethod",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKindText",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpKind",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpSignatureHelpActiveParameter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BlinkCmpSignatureHelpBorder",
+    "ratio": 6.195,
+    "target": 4.5
+  },
+  {
+    "group": "diffNewFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "diffChanged",
+    "ratio": 11.924,
+    "target": 4.5
+  },
+  {
+    "group": "diffRemoved",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "diffAdded",
+    "ratio": 12.171,
+    "target": 4.5
+  },
+  {
+    "group": "Conceal",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "Cursor",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "lCursor",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "CursorIM",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "Directory",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "EndOfBuffer",
+    "ratio": 13.556,
+    "target": 3
+  },
+  {
+    "group": "ErrorMsg",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "VertSplit",
+    "ratio": 3.563,
+    "target": 3
+  },
+  {
+    "group": "Folded",
+    "ratio": 4.887,
+    "target": 4.5
+  },
+  {
+    "group": "FoldColumn",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "LineNr",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "MatchParen",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "ModeMsg",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MsgArea",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.import",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "MoreMsg",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NonText",
+    "ratio": 3.563,
+    "target": 3
+  },
+  {
+    "group": "NormalFloat",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "FloatTitle",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "FloatFooter",
+    "ratio": 6.195,
+    "target": 4.5
+  },
+  {
+    "group": "NormalNC",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Pmenu",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "PmenuKind",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "PmenuExtra",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "Question",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "SpecialKey",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "TabLine",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "TabLineSel",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "Title",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "VisualNOS",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "Whitespace",
+    "ratio": 3.563,
+    "target": 3
+  },
+  {
+    "group": "AerialArrayIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialObjectIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialKeyIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialNullIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialEnumMemberIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialTypeParameterIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniAnimateCursor",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineSeparator",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineOffsetSeparator",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineNumbersVisible",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineNumbersSelected",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineModifiedVisible",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineModifiedSelected",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidString",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidEnvironmentName",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidEnvironmentSigil",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidOptionScopeDelimiter",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidOptionScope",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidOptionName",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidOptionSigil",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidNumberPrefix",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidFloat",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidNumber",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidRegister",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidArrow",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidComma",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidColon",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidIdentifierKey",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidIdentifierName",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidIdentifierScopeDelimiter",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidIdentifierScope",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidIdentifier",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "Todo",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "Error",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "Ignore",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidContainer",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidCurly",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "Underlined",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "Delimiter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Special",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "Type",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "PreProc",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "Exception",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "Keyword",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Operator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Statement",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Function",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Identifier",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Float",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Boolean",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Number",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Character",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "String",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "Constant",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Comment",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidBinaryPlus",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidComparisonModifier",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidComparison",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidBinaryOperator",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidNot",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidUnaryMinus",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidUnaryPlus",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidUnaryOperator",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidOperator",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidAssignmentWithConcatenation",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidAssignmentWithSubtraction",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidAssignmentWithAddition",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidAugmentedAssignment",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidPlainAssignment",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInvalidAssignment",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "LspCodeLens",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "LspSignatureActiveParameter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticSignHint",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticSignInfo",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticSignWarn",
+    "ratio": 5.94,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticSignError",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticFloatingOk",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticFloatingHint",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticFloatingInfo",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticFloatingWarn",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticFloatingError",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticOk",
+    "ratio": 6.791,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticHint",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticInfo",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticWarn",
+    "ratio": 5.94,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticError",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NvimNumberPrefix",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimFloat",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "WinBarNC",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "WinBar",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "WildMenu",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineModified",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineIndicatorSelected",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.jsx",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.tsx",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.javascript",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Normal",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Visual",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "PmenuSel",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "StatusLine",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "DiffText",
+    "ratio": 8.702,
+    "target": 4.5
+  },
+  {
+    "group": "Define",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "PreCondit",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "StorageClass",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Typedef",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "Tag",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "SpecialChar",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "SpecialComment",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "LspCodeLensSeparator",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "LspInlayHint",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "SnippetTabstop",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "SnippetTabstopActive",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualTextOk",
+    "ratio": 6.791,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualLinesError",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualLinesWarn",
+    "ratio": 5.94,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualLinesInfo",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualLinesHint",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticVirtualLinesOk",
+    "ratio": 6.791,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticSignOk",
+    "ratio": 6.791,
+    "target": 4.5
+  },
+  {
+    "group": "DiagnosticUnnecessary",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "@variable.parameter.builtin",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@constant",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@module.builtin",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@label",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@string",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "@string.special",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@character",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "@character.special",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@boolean",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@number",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@number.float",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@attribute.builtin",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@punctuation",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@comment",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "@comment.todo",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "@markup",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.link",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@tag",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@tag.builtin",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.heading.1.delimiter.vimdoc",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "DiffTextAdd",
+    "ratio": 8.702,
+    "target": 4.5
+  },
+  {
+    "group": "@markup.heading.2.delimiter.vimdoc",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.class",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.decorator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.enum",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.enumMember",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.event",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.interface",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.keyword",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.modifier",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.storage",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.number",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.operator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.property",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.regexp",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.string",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.struct",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@lsp.type.typeParameter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "@keyword.modifier",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimInternalError",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "NvimAssignment",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimPlainAssignment",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimAugmentedAssignment",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimAssignmentWithAddition",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimAssignmentWithSubtraction",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimAssignmentWithConcatenation",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimOperator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimUnaryOperator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimUnaryPlus",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimUnaryMinus",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimNot",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimBinaryOperator",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimComparison",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimComparisonModifier",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimBinaryPlus",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimBinaryMinus",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimConcat",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimConcatOrSubscript",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimOr",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimAnd",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimMultiplication",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimDivision",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimMod",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTernary",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimTernaryColon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimParenthesis",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimLambda",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimNestingParenthesis",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimCallingParenthesis",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimSubscript",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimSubscriptBracket",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimSubscriptColon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimCurly",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimContainer",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimDict",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimList",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimIdentifier",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimIdentifierScope",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimIdentifierScopeDelimiter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimIdentifierName",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimIdentifierKey",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimColon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimComma",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimArrow",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimRegister",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NvimNumber",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "debugBreakpoint",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimOptionSigil",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimOptionName",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimOptionScope",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimOptionScopeDelimiter",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimEnvironmentSigil",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NvimEnvironmentName",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
     "group": "NvimString",
     "ratio": 5.83,
     "target": 4.5
@@ -71,292 +3286,262 @@
   },
   {
     "group": "NvimInvalid",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidAssignment",
-    "ratio": 6.193,
+    "group": "MiniClueBorder",
+    "ratio": 6.195,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidPlainAssignment",
-    "ratio": 6.193,
+    "group": "MiniClueDescGroup",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidAugmentedAssignment",
-    "ratio": 6.193,
+    "group": "MiniClueDescSingle",
+    "ratio": 14.403,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidAssignmentWithAddition",
-    "ratio": 6.193,
+    "group": "MiniClueNextKey",
+    "ratio": 6.176,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidAssignmentWithSubtraction",
-    "ratio": 6.193,
+    "group": "MiniClueNextKeyWithPostkeys",
+    "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidAssignmentWithConcatenation",
-    "ratio": 6.193,
+    "group": "MiniClueSeparator",
+    "ratio": 6.436,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidOperator",
-    "ratio": 6.193,
+    "group": "MiniClueTitle",
+    "ratio": 8.483,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidUnaryOperator",
-    "ratio": 6.193,
+    "group": "FlashBackdrop",
+    "ratio": 5.83,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidUnaryPlus",
-    "ratio": 6.193,
+    "group": "HopUnmatched",
+    "ratio": 5.83,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidUnaryMinus",
-    "ratio": 6.193,
+    "group": "GitSignsAddLn",
+    "ratio": 12.171,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidNot",
-    "ratio": 6.193,
+    "group": "GitSignsChangeLn",
+    "ratio": 11.924,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidBinaryOperator",
-    "ratio": 6.193,
+    "group": "GitSignsDeleteLn",
+    "ratio": 11.662,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidComparison",
-    "ratio": 6.193,
+    "group": "GitSignsAddPreview",
+    "ratio": 12.171,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidComparisonModifier",
-    "ratio": 6.193,
+    "group": "GitSignsDeletePreview",
+    "ratio": 11.662,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidBinaryPlus",
-    "ratio": 6.193,
+    "group": "diffFile",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidBinaryMinus",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "NvimInvalidConcat",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "NvimInvalidConcatOrSubscript",
-    "ratio": 6.193,
+    "group": "diffLine",
+    "ratio": 6.436,
     "target": 4.5
   },
   {
     "group": "NvimInvalidOr",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidAnd",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidMultiplication",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidDivision",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidMod",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidTernary",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidTernaryColon",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidDelimiter",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidParenthesis",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidLambda",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidNestingParenthesis",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidCallingParenthesis",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidSubscript",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidSubscriptBracket",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidSubscriptColon",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "NvimInvalidCurly",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "NvimInvalidContainer",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidDict",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidList",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidValue",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidIdentifier",
-    "ratio": 6.193,
+    "group": "qfLineNr",
+    "ratio": 5.83,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidIdentifierScope",
-    "ratio": 6.193,
+    "group": "MiniIconsAzure",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidIdentifierScopeDelimiter",
-    "ratio": 6.193,
+    "group": "MiniIconsBlue",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidIdentifierName",
-    "ratio": 6.193,
+    "group": "MiniIconsCyan",
+    "ratio": 6.176,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidIdentifierKey",
-    "ratio": 6.193,
+    "group": "MiniIconsGreen",
+    "ratio": 5.83,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidColon",
-    "ratio": 6.193,
+    "group": "MiniIconsGrey",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidComma",
-    "ratio": 6.193,
+    "group": "MiniIconsOrange",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidArrow",
-    "ratio": 6.193,
+    "group": "MiniIconsPurple",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidRegister",
-    "ratio": 6.193,
+    "group": "MiniIconsRed",
+    "ratio": 6.436,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidNumber",
-    "ratio": 6.193,
+    "group": "MiniIconsYellow",
+    "ratio": 6.283,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidFloat",
-    "ratio": 6.193,
+    "group": "MiniIndentscopeSymbol",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidNumberPrefix",
-    "ratio": 6.193,
+    "group": "MiniJump2dDim",
+    "ratio": 5.83,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidOptionSigil",
-    "ratio": 6.193,
+    "group": "MiniJump2dSpot",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidOptionName",
-    "ratio": 6.193,
+    "group": "MiniJump2dSpotAhead",
+    "ratio": 5.176,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidOptionScope",
-    "ratio": 6.193,
+    "group": "MiniJump2dSpotUnique",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidOptionScopeDelimiter",
-    "ratio": 6.193,
+    "group": "MiniMapNormal",
+    "ratio": 14.403,
     "target": 4.5
   },
   {
-    "group": "NvimInvalidEnvironmentSigil",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "NvimInvalidEnvironmentName",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "NvimInvalidString",
-    "ratio": 6.193,
+    "group": "MiniMapSymbolCount",
+    "ratio": 6.436,
     "target": 4.5
   },
   {
@@ -366,7 +3551,7 @@
   },
   {
     "group": "NvimInvalidStringQuote",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
@@ -376,7 +3561,7 @@
   },
   {
     "group": "NvimInvalidSingleQuote",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
@@ -391,7 +3576,7 @@
   },
   {
     "group": "NvimInvalidDoubleQuote",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
@@ -406,101 +3591,226 @@
   },
   {
     "group": "NvimInvalidDoubleQuotedUnknownEscape",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidFigureBrace",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimInvalidSpacing",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
     "group": "NvimDoubleQuotedUnknownEscape",
-    "ratio": 6.193,
+    "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "@keyword.return",
+    "group": "AerialBooleanIcon",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "@keyword.exception",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.luap",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.conditional",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@punctuation.delimiter",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@punctuation.bracket",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@punctuation.special",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@comment.warning",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "@comment.note",
+    "group": "GitSignsChange",
     "ratio": 6.436,
     "target": 4.5
   },
   {
-    "group": "@markup.underline",
-    "ratio": 6.436,
+    "group": "GitSignsDelete",
+    "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "@markup.heading",
+    "group": "GitSignsAdd",
+    "ratio": 6.791,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindModule",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "@markup.quote",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.math",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.environment",
+    "group": "AerialNumberIcon",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "@markup.link.url",
+    "group": "CmpItemKindInterface",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindClass",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "CmpItemKindVariable",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "AerialStructIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialEventIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "AerialOperatorIcon",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniAnimateNormalFloat",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "diffDeleted",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "diffOldFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsChangeAdded",
+    "ratio": 12.171,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsChangeRemoved",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsHint",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsInfo",
     "ratio": 6.436,
     "target": 4.5
   },
   {
-    "group": "@markup.raw",
+    "group": "MiniDepsMsgBreaking",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDepsTitleUpdate",
+    "ratio": 12.171,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDiffSignAdd",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDiffSignChange",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDiffSignDelete",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDiffOverAdd",
+    "ratio": 12.171,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDiffOverChange",
+    "ratio": 8.702,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDiffOverContext",
+    "ratio": 11.924,
+    "target": 4.5
+  },
+  {
+    "group": "MiniDiffOverDelete",
+    "ratio": 11.662,
+    "target": 4.5
+  },
+  {
+    "group": "MiniFilesBorder",
+    "ratio": 6.195,
+    "target": 4.5
+  },
+  {
+    "group": "MiniFilesBorderModified",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniFilesDirectory",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniFilesFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniFilesNormal",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "MiniFilesTitle",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "MiniFilesTitleFocused",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "MiniHipatternsFixme",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniHipatternsHack",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniHipatternsNote",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniHipatternsTodo",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "Macro",
+    "ratio": 6.283,
+    "target": 4.5
+  },
+  {
+    "group": "@module",
     "ratio": 13.556,
     "target": 4.5
   },
@@ -510,172 +3820,352 @@
     "target": 4.5
   },
   {
-    "group": "@diff.minus",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "@diff.delta",
-    "ratio": 11.924,
-    "target": 4.5
-  },
-  {
-    "group": "@tag.attribute",
+    "group": "MiniMapSymbolLine",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "@tag.delimiter",
+    "group": "MiniMapSymbolView",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "@lsp.type.function",
-    "ratio": 13.556,
+    "group": "MiniNotifyBorder",
+    "ratio": 6.195,
     "target": 4.5
   },
   {
-    "group": "@lsp.type.macro",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.method",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.namespace",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.parameter",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.type",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.variable",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.comment",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsCyan",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.lifetime",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.decorator.rust",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.variable.static",
-    "ratio": 8.995,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.variable.defaultLibrary",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.function.defaultLibrary",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.method.defaultLibrary",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.variable.injected",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NeogitDiffDeleteHighlight",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "TelescopeBorder",
-    "ratio": 4.277,
-    "target": 3
-  },
-  {
-    "group": "TelescopeSelectionCaret",
-    "ratio": 5.769,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTreeNormal",
-    "ratio": 12.794,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTreeRootFolder",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTreeGitDirty",
-    "ratio": 11.924,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTreeGitNew",
-    "ratio": 12.171,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTreeGitDeleted",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTreeSpecialFile",
-    "ratio": 6.188,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTreeSymlink",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTreeWinSeparator",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "SnacksPickerBorder",
+    "group": "MiniNotifyNormal",
     "ratio": 14.403,
     "target": 4.5
   },
   {
+    "group": "MiniNotifyTitle",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "MiniOperatorsExchangeFrom",
+    "ratio": 10.525,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickBorder",
+    "ratio": 6.195,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickBorderBusy",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickBorderText",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickIconDirectory",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickIconFile",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickNormal",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickHeader",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickMatchMarked",
+    "ratio": 8.827,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickMatchRanges",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickPreviewRegion",
+    "ratio": 10.525,
+    "target": 4.5
+  },
+  {
+    "group": "MiniPickPrompt",
+    "ratio": 14.403,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStarterFooter",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStarterHeader",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStarterInactive",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStarterItem",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStarterItemBullet",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStarterItemPrefix",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStarterSection",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStarterQuery",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineDevinfo",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineFileinfo",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineFilename",
+    "ratio": 6.692,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineInactive",
+    "ratio": 4.887,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineModeCommand",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineModeInsert",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineModeNormal",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineModeOther",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineModeReplace",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniStatuslineModeVisual",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniSurround",
+    "ratio": 10.525,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTablineCurrent",
+    "ratio": 8.483,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTablineHidden",
+    "ratio": 6.215,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTablineModifiedCurrent",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTablineModifiedHidden",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTablineModifiedVisible",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTablineVisible",
+    "ratio": 6.215,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTestFail",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTestPass",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "MiniTrailspace",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestAdapterName",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestDir",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestExpandMarker",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestFailed",
+    "ratio": 6.111,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestFile",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestIndent",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestMarked",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestNamespace",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestPassed",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestRunning",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestWinSelect",
+    "ratio": 6.176,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestSkipped",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestTarget",
+    "ratio": 6.436,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestTest",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestUnknown",
+    "ratio": 5.83,
+    "target": 4.5
+  },
+  {
+    "group": "NeotestWatching",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksPickerTitle",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksPickerNormal",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
     "group": "SnacksPickerMatch",
-    "ratio": 6.188,
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksPickerCursor",
+    "ratio": 11.362,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksPickerPrompt",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksPickerDim",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksInputIcon",
+    "ratio": 13.556,
     "target": 4.5
   },
   {
     "group": "SnacksIndent",
+    "ratio": 13.556,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksIndentChunk",
     "ratio": 13.556,
     "target": 4.5
   },
@@ -685,2233 +4175,148 @@
     "target": 4.5
   },
   {
-    "group": "CursorLineNr",
+    "group": "SnacksPickerListCursorLine",
+    "ratio": 12.578,
+    "target": 4.5
+  },
+  {
+    "group": "SnacksPickerInputTitle",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "WinSeparator",
-    "ratio": 3.563,
-    "target": 3
-  },
-  {
-    "group": "NvimOptionScope",
+    "group": "SnacksPickerBoxTitle",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "CurSearch",
-    "ratio": 10.525,
-    "target": 4.5
-  },
-  {
-    "group": "NvimOptionSigil",
+    "group": "SnacksPickerPickWinCurrent",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimNumberPrefix",
+    "group": "BufferLineBackground",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineBuffer",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineBufferSelected",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimFloat",
-    "ratio": 6.687,
+    "group": "BufferLineBufferVisible",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "NvimNumber",
-    "ratio": 6.687,
+    "group": "BufferLineCloseButton",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "@operator",
+    "group": "BufferLineCloseButtonSelected",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "NvimArrow",
+    "group": "BufferLineCloseButtonVisible",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineDuplicate",
+    "ratio": 7.984,
+    "target": 4.5
+  },
+  {
+    "group": "BufferLineDuplicateSelected",
     "ratio": 13.556,
     "target": 4.5
   },
   {
-    "group": "@constructor",
-    "ratio": 6.436,
+    "group": "BufferLineDuplicateVisible",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "NvimColon",
-    "ratio": 13.556,
+    "group": "BufferLineError",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "@function.method",
-    "ratio": 13.556,
+    "group": "BufferLineErrorDiagnostic",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "NvimIdentifierName",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@function.builtin",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@function",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@property",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@attribute",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@type.builtin",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@type",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@string.special.url",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "NvimSubscriptColon",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@string.escape",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@string.regexp",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimCallingParenthesis",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@variable.parameter",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@variable.builtin",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@variable",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "MasonMutedBlock",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "MasonMutedBlockBold",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "MasonHeader",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "MasonError",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "NoiceCmdlineIcon",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "NoiceCmdlineIconSearch",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "Label",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NoiceCmdlinePopupBorderSearch",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "NoiceCompletionItemKindDefault",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "FlashLabel",
-    "ratio": 9.222,
-    "target": 4.5
-  },
-  {
-    "group": "TermCursor",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "Tag",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "LineNrAbove",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "LineNrBelow",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "CursorLineFold",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "PmenuBorder",
-    "ratio": 14.403,
-    "target": 4.5
-  },
-  {
-    "group": "StatusLineTerm",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "StatusLineTermNC",
-    "ratio": 4.887,
-    "target": 4.5
-  },
-  {
-    "group": "StderrMsg",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "OkMsg",
-    "ratio": 8.347,
-    "target": 4.5
-  },
-  {
-    "group": "NvimComparisonModifier",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "PreInsert",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "RedrawDebugNormal",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsAddInline",
-    "ratio": 9.173,
-    "target": 4.5
-  },
-  {
-    "group": "StatusLineNC",
-    "ratio": 4.887,
-    "target": 4.5
-  },
-  {
-    "group": "NvimComparison",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimNot",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "WarningMsg",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "Ignore",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimOperator",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimAssignmentWithConcatenation",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "Underlined",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "Delimiter",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Special",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "Type",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "PreProc",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Exception",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Keyword",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Operator",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "Statement",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Function",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Identifier",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Float",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "Boolean",
-    "ratio": 13.736,
-    "target": 4.5
-  },
-  {
-    "group": "Number",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "Character",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "String",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "Constant",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Comment",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsDeleteLn",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsAddPreview",
-    "ratio": 12.171,
-    "target": 4.5
-  },
-  {
-    "group": "StorageClass",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Error",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsYellow",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "DiffTextAdd",
-    "ratio": 8.702,
-    "target": 4.5
-  },
-  {
-    "group": "DiffText",
-    "ratio": 8.702,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.decorator",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.class",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.heading.2.delimiter.vimdoc",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "@boolean",
-    "ratio": 13.736,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.heading.1.delimiter.vimdoc",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "@tag.builtin",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "LspCodeLens",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "LspSignatureActiveParameter",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "@markup",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticSignHint",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticSignInfo",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticSignWarn",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticSignError",
+    "group": "BufferLineErrorDiagnosticSelected",
     "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "DiagnosticFloatingOk",
-    "ratio": 6.791,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticFloatingHint",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsChangeInline",
-    "ratio": 8.702,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticFloatingWarn",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticFloatingError",
+    "group": "BufferLineErrorDiagnosticVisible",
     "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "DiagnosticOk",
-    "ratio": 6.791,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticHint",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticInfo",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticWarn",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticError",
+    "group": "BufferLineErrorSelected",
     "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "NeogitHunkHeader",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "NeogitHunkHeaderHighlight",
-    "ratio": 12.794,
-    "target": 4.5
-  },
-  {
-    "group": "WinBarNC",
-    "ratio": 4.887,
-    "target": 4.5
-  },
-  {
-    "group": "WinBar",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "WildMenu",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "Whitespace",
-    "ratio": 3.563,
-    "target": 3
-  },
-  {
-    "group": "VisualNOS",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "Title",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "TabLineFill",
-    "ratio": 4.887,
-    "target": 4.5
-  },
-  {
-    "group": "TabLine",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "SpellRare",
-    "ratio": 6.171,
-    "target": 4.5
-  },
-  {
-    "group": "SpellLocal",
-    "ratio": 6.171,
-    "target": 4.5
-  },
-  {
-    "group": "SpellCap",
-    "ratio": 6.171,
-    "target": 4.5
-  },
-  {
-    "group": "SpellBad",
-    "ratio": 6.171,
-    "target": 4.5
-  },
-  {
-    "group": "SpecialKey",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "QuickFixLine",
-    "ratio": 10.525,
-    "target": 4.5
-  },
-  {
-    "group": "Question",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "PmenuExtra",
-    "ratio": 14.403,
-    "target": 4.5
-  },
-  {
-    "group": "PmenuKind",
-    "ratio": 14.403,
-    "target": 4.5
-  },
-  {
-    "group": "Pmenu",
-    "ratio": 14.403,
-    "target": 4.5
-  },
-  {
-    "group": "NormalNC",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "FloatFooter",
-    "ratio": 11.244,
-    "target": 4.5
-  },
-  {
-    "group": "FloatTitle",
-    "ratio": 11.244,
-    "target": 4.5
-  },
-  {
-    "group": "NormalFloat",
-    "ratio": 14.403,
-    "target": 4.5
-  },
-  {
-    "group": "NonText",
-    "ratio": 3.563,
-    "target": 3
-  },
-  {
-    "group": "MoreMsg",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "MsgSeparator",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "NeogitDiffAddHighlight",
-    "ratio": 12.171,
-    "target": 4.5
-  },
-  {
-    "group": "ModeMsg",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "MatchParen",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "LineNr",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "FoldColumn",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Folded",
-    "ratio": 4.887,
-    "target": 4.5
-  },
-  {
-    "group": "VertSplit",
-    "ratio": 3.563,
-    "target": 3
-  },
-  {
-    "group": "ErrorMsg",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "EndOfBuffer",
-    "ratio": 3.563,
-    "target": 3
-  },
-  {
-    "group": "CursorIM",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "lCursor",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "Cursor",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "Conceal",
-    "ratio": 5.509,
-    "target": 4.5
-  },
-  {
-    "group": "MasonMuted",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "FlashBackdrop",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "HopUnmatched",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "diffFile",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "diffLine",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "Structure",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@constant.builtin",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "StatusLine",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "PmenuSel",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "Visual",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "Normal",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@module",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Macro",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Search",
-    "ratio": 10.525,
-    "target": 4.5
-  },
-  {
-    "group": "IncSearch",
-    "ratio": 10.525,
-    "target": 4.5
-  },
-  {
-    "group": "NoiceCmdlinePopupTitle",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "FloatBorder",
-    "ratio": 3.786,
-    "target": 3
-  },
-  {
-    "group": "GitSignsDeletePreview",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsChangeLn",
-    "ratio": 11.924,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsAddLn",
-    "ratio": 12.171,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsDeleteInline",
-    "ratio": 7.524,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsPurple",
-    "ratio": 6.188,
-    "target": 4.5
-  },
-  {
-    "group": "DiffAdd",
-    "ratio": 12.171,
-    "target": 4.5
-  },
-  {
-    "group": "DiffDelete",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "DiffChange",
-    "ratio": 11.924,
-    "target": 4.5
-  },
-  {
-    "group": "Added",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "Removed",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "Changed",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsAdd",
-    "ratio": 6.791,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsDelete",
+    "group": "BufferLineErrorVisible",
     "ratio": 6.111,
     "target": 4.5
   },
   {
-    "group": "GitSignsChange",
-    "ratio": 6.436,
+    "group": "BufferLineHint",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "GitSignsAddLnInline",
-    "ratio": 9.173,
+    "group": "BufferLineHintDiagnostic",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "GitSignsDeleteLnInline",
-    "ratio": 7.524,
-    "target": 4.5
-  },
-  {
-    "group": "GitSignsChangeLnInline",
-    "ratio": 8.702,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualTextError",
-    "ratio": 6.111,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualTextWarn",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualTextInfo",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualTextHint",
+    "group": "BufferLineHintDiagnosticSelected",
     "ratio": 6.176,
     "target": 4.5
   },
   {
-    "group": "PmenuKindSel",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "PmenuExtraSel",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "Substitute",
-    "ratio": 10.525,
-    "target": 4.5
-  },
-  {
-    "group": "@comment.error",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "Debug",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "NotifyERRORIcon",
-    "ratio": 6.111,
-    "target": 4.5
-  },
-  {
-    "group": "NotifyWARNIcon",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "NotifyINFOIcon",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "NotifyDEBUGIcon",
+    "group": "BufferLineHintDiagnosticVisible",
     "ratio": 6.176,
     "target": 4.5
   },
   {
-    "group": "NotifyTRACEIcon",
+    "group": "BufferLineHintSelected",
     "ratio": 6.176,
     "target": 4.5
   },
   {
-    "group": "NotifyERRORTitle",
-    "ratio": 6.111,
-    "target": 4.5
-  },
-  {
-    "group": "NotifyWARNTitle",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "NotifyINFOTitle",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "NotifyDEBUGTitle",
+    "group": "BufferLineHintVisible",
     "ratio": 6.176,
     "target": 4.5
   },
   {
-    "group": "NotifyTRACETitle",
-    "ratio": 6.176,
+    "group": "BufferLineInfo",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "CmpItemAbbr",
-    "ratio": 8.995,
+    "group": "BufferLineInfoDiagnostic",
+    "ratio": 7.984,
     "target": 4.5
   },
   {
-    "group": "CmpItemAbbrDeprecated",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "CmpItemAbbrMatch",
-    "ratio": 13.736,
-    "target": 4.5
-  },
-  {
-    "group": "CmpItemAbbrMatchFuzzy",
-    "ratio": 10.313,
-    "target": 4.5
-  },
-  {
-    "group": "CmpItemMenu",
-    "ratio": 5.509,
-    "target": 4.5
-  },
-  {
-    "group": "BlinkCmpLabelMatch",
-    "ratio": 6.188,
-    "target": 4.5
-  },
-  {
-    "group": "BlinkCmpKind",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsAzure",
+    "group": "BufferLineInfoDiagnosticSelected",
     "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "IndentLine",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsBlue",
-    "ratio": 7.732,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsGreen",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsGrey",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsOrange",
-    "ratio": 7.47,
-    "target": 4.5
-  },
-  {
-    "group": "@constant.macro",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "MiniIconsRed",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "TermCursorNC",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "IblIndent",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "IblScope",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@string.documentation",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "@string.special.path",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@function.macro",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.repeat",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.debug",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.conditional.ternary",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.directive",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.directive.define",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@comment.documentation",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.link.label",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.raw.block",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.list",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.list.checked",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.list.unchecked",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@punctuation.special.markdown",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@string.escape.markdown",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.link.markdown",
-    "ratio": 8.995,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.title.markdown",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.raw.markdown",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.link.url.markdown",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.link.vimdoc",
-    "ratio": 8.995,
-    "target": 4.5
-  },
-  {
-    "group": "@variable.parameter.vimdoc",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@label.vimdoc",
-    "ratio": 6.163,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.boolean",
-    "ratio": 13.736,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.builtinType",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.deriveHelper",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.escapeSequence",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.formatSpecifier",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.generic",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.selfKeyword",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.selfTypeKeyword",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.typeAlias",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.class.defaultLibrary",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.enum.defaultLibrary",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.enumMember.defaultLibrary",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.keyword.async",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.keyword.injected",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.macro.defaultLibrary",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.operator.injected",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.string.injected",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.struct.defaultLibrary",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.type.defaultLibrary",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.typeAlias.defaultLibrary",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.typemod.variable.callable",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "diffIndexLine",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "gitcommitOverflow",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "markdownUrl",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "markdownLinkText",
-    "ratio": 8.995,
-    "target": 4.5
-  },
-  {
-    "group": "markdownLinkTextDelimiter",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "helpHyperTextEntry",
-    "ratio": 6.163,
-    "target": 4.5
-  },
-  {
-    "group": "helpHyperTextJump",
-    "ratio": 8.995,
-    "target": 4.5
-  },
-  {
-    "group": "helpSpecial",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "helpOption",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "GitGutterAdd",
-    "ratio": 6.791,
-    "target": 4.5
-  },
-  {
-    "group": "GitGutterChange",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "GitGutterDelete",
-    "ratio": 6.111,
-    "target": 4.5
-  },
-  {
-    "group": "IndentLineCurrent",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "TelescopeMatching",
-    "ratio": 6.188,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaHeaderBind",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaHeaderText",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaPathColNr",
-    "ratio": 6.163,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaPathLineNr",
-    "ratio": 6.163,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaBufName",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaBufNr",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaBufFlagCur",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaBufFlagAlt",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaTabTitle",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaTabMarker",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaLiveSym",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaTitle",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "FzfLuaFzfMatch",
-    "ratio": 6.188,
-    "target": 4.5
-  },
-  {
-    "group": "Sneak",
-    "ratio": 10.525,
-    "target": 4.5
-  },
-  {
-    "group": "SneakLabel",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "SneakLabelMask",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "HopNextKey",
-    "ratio": 6.188,
-    "target": 4.5
-  },
-  {
-    "group": "HopNextKey1",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "HopNextKey2",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "BufferVisible",
-    "ratio": 5.945,
-    "target": 4.5
-  },
-  {
-    "group": "BufferVisibleSign",
-    "ratio": 5.945,
-    "target": 4.5
-  },
-  {
-    "group": "BufferVisibleIndex",
-    "ratio": 5.945,
-    "target": 4.5
-  },
-  {
-    "group": "CocErrorSign",
-    "ratio": 6.111,
-    "target": 4.5
-  },
-  {
-    "group": "CocWarningSign",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "CocInfoSign",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "CocHintSign",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "CocErrorVirtualText",
-    "ratio": 6.111,
-    "target": 4.5
-  },
-  {
-    "group": "CocWarningVirtualText",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "CocSelectedText",
-    "ratio": 6.171,
-    "target": 4.5
-  },
-  {
-    "group": "CocCodeLens",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "CocMarkdownLink",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "CocSearch",
-    "ratio": 10.525,
-    "target": 4.5
-  },
-  {
-    "group": "NeogitNotificationError",
-    "ratio": 6.111,
-    "target": 4.5
-  },
-  {
-    "group": "NeogitNotificationWarning",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "NeogitNotificationInfo",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "WhichKey",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "WhichKeyGroup",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "WhichKeySeparator",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "WhichKeyValue",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "TroubleNormal",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "TroubleText",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "TroubleSource",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "CmpItemKind",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "BlinkCmpLabelDetail",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "BlinkCmpLabelDescription",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "BlinkCmpSource",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NnnNormal",
-    "ratio": 12.794,
-    "target": 4.5
-  },
-  {
-    "group": "NnnNormalNC",
-    "ratio": 12.794,
-    "target": 4.5
-  },
-  {
-    "group": "NnnWinSeparator",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NnnVertSplit",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "MasonHighlight",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "MasonHighlightBlock",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "MasonHighlightBlockBold",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "MasonHighlightSecondary",
-    "ratio": 5.966,
-    "target": 4.5
-  },
-  {
-    "group": "MasonHighlightBlockSecondary",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "MasonHighlightBlockBoldSecondary",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "ComplHint",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "ComplHintMore",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "Conditional",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Repeat",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NoiceCmdlinePopupBorder",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "Include",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "Define",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "PreCondit",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NoiceConfirmBorder",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "Typedef",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "SpecialChar",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "SpecialComment",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "LspCodeLensSeparator",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "LspInlayHint",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "SnippetTabstop",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "SnippetTabstopActive",
-    "ratio": 8.827,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualTextOk",
-    "ratio": 6.791,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualLinesError",
-    "ratio": 6.111,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualLinesWarn",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualLinesInfo",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualLinesHint",
-    "ratio": 6.176,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticVirtualLinesOk",
-    "ratio": 6.791,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticSignOk",
-    "ratio": 6.791,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticUnnecessary",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "@variable.parameter.builtin",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@constant",
-    "ratio": 8.995,
-    "target": 4.5
-  },
-  {
-    "group": "@module.builtin",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@label",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@string",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "@string.special",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@character",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@character.special",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticFloatingInfo",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@number",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "@number.float",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "@attribute.builtin",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@punctuation",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@comment",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "@markup.link",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@tag",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "diffAdded",
-    "ratio": 12.171,
-    "target": 4.5
-  },
-  {
-    "group": "diffRemoved",
-    "ratio": 11.662,
-    "target": 4.5
-  },
-  {
-    "group": "diffChanged",
-    "ratio": 11.924,
-    "target": 4.5
-  },
-  {
-    "group": "diffOldFile",
-    "ratio": 6.193,
-    "target": 4.5
-  },
-  {
-    "group": "diffNewFile",
-    "ratio": 6.689,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.enum",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.enumMember",
-    "ratio": 8.995,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.event",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.interface",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.keyword",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.modifier",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@type.qualifier",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.number",
-    "ratio": 6.687,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.operator",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.property",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.regexp",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.string",
-    "ratio": 5.83,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.struct",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.type.typeParameter",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@type.definition",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@lsp.mod.deprecated",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "DiagnosticDeprecated",
-    "ratio": 5.94,
-    "target": 4.5
-  },
-  {
-    "group": "NvimInternalError",
-    "ratio": 11.362,
-    "target": 4.5
-  },
-  {
-    "group": "NvimAssignment",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimPlainAssignment",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimAugmentedAssignment",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimAssignmentWithAddition",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimAssignmentWithSubtraction",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimUnaryOperator",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimUnaryPlus",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimUnaryMinus",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimBinaryOperator",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "markdownCode",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimBinaryPlus",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimBinaryMinus",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimConcat",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimConcatOrSubscript",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimOr",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimAnd",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimMultiplication",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimDivision",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimMod",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTernary",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimTernaryColon",
-    "ratio": 16.715,
-    "target": 4.5
-  },
-  {
-    "group": "NvimParenthesis",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimLambda",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimNestingParenthesis",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@variable.member",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimSubscript",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimSubscriptBracket",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@string.special.symbol",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimCurly",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimContainer",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimDict",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimList",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimIdentifier",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimIdentifierScope",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimIdentifierScopeDelimiter",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@function.call",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimIdentifierKey",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@function.method.call",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimComma",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@constructor.lua",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimRegister",
-    "ratio": 6.436,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.coroutine",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.function",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.operator",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.import",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimOptionName",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "@keyword.storage",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimOptionScopeDelimiter",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimEnvironmentSigil",
-    "ratio": 13.556,
-    "target": 4.5
-  },
-  {
-    "group": "NvimEnvironmentName",
-    "ratio": 13.556,
     "target": 4.5
   }
 ]
