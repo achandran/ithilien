@@ -211,18 +211,19 @@ def generate_app_palettes(palette: dict) -> None:
     linear.write_text(",".join(linear_colors) + "\n")
 
 
-def generate_shared_highlights(palette: dict) -> None:
+def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
     highlight = palette["highlight"]
 
-    shell = ROOT / "shell" / "ithilien.zsh"
+    shell = ROOT / "shell" / (f"{palette['slug']}.zsh" if variant else "ithilien.zsh")
     shell.parent.mkdir(parents=True, exist_ok=True)
     shell.write_text(
         "# Ithilien ZLE visual selection — generated; do not edit by hand.\n"
-        f'zle_highlight=(region:bg={highlight["background"]},fg={highlight["foreground"]})\n'
+        f'zle_highlight=("${{(@)zle_highlight:#region:*}}" '
+        f'"region:bg={highlight["background"]},fg={highlight["foreground"]}")\n'
     )
 
     r, g, b = (int(highlight["background"][index : index + 2], 16) / 255 for index in (1, 3, 5))
-    macos = ROOT / "macos" / "apply-highlight.sh"
+    macos = ROOT / "macos" / (f"apply-highlight-{palette['slug']}.sh" if variant else "apply-highlight.sh")
     macos.parent.mkdir(parents=True, exist_ok=True)
     macos.write_text(
         "#!/bin/sh\n"
@@ -234,8 +235,8 @@ def generate_shared_highlights(palette: dict) -> None:
     bg, fg, accent = palette["backgrounds"], palette["foregrounds"], palette["accents"]
     firefox_manifest = {
         "manifest_version": 2,
-        "name": "Ithilien",
-        "version": "0.1.0",
+        "name": palette["name"],
+        "version": "0.2.0",
         "theme": {
             "colors": {
                 "frame": bg["mantle"],
@@ -258,12 +259,16 @@ def generate_shared_highlights(palette: dict) -> None:
                 "button_background_active": highlight["background"],
                 "icons_attention": accent["gold"],
             },
-            "properties": {"color_scheme": "dark", "content_color_scheme": "dark"},
+            "properties": {"color_scheme": palette["polarity"], "content_color_scheme": palette["polarity"]},
         },
     }
-    firefox = ROOT / "firefox" / "manifest.json"
+    firefox = ROOT / "firefox" / palette["slug"] / "manifest.json" if variant else ROOT / "firefox" / "manifest.json"
     firefox.parent.mkdir(parents=True, exist_ok=True)
     firefox.write_text(json.dumps(firefox_manifest, indent=2) + "\n")
+    (firefox.parent / "userContent.css").write_text(
+        "/* Generated Ithilien website selection; optional Firefox profile customization. */\n"
+        f'::selection {{ background: {highlight["background"]} !important; color: {highlight["foreground"]} !important; }}\n'
+    )
 
 
 def generate_preview(palettes: dict[str, dict]) -> None:
@@ -339,7 +344,9 @@ def main() -> None:
         generate_claude_theme(palette)
         generate_app_palettes(palette)
     generate_neovim_default()
-    generate_shared_highlights(palettes["night"])
+    generate_shared_highlights(palettes["day"])
+    for palette in palettes.values():
+        generate_shared_highlights(palette, variant=True)
     generate_preview(palettes)
     generate_color_reference()
     from palette_chart import generate_chart

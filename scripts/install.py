@@ -39,7 +39,7 @@ class Installer:
         self.count = 0
 
     def detected(self, command, app):
-        return bool(shutil.which(command) or any((p / f'{app}.app').exists() for p in [Path('/Applications'), self.home / 'Applications']))
+        return bool(shutil.which(command) or any((p / f'{candidate}.app').exists() for p in [Path('/Applications'), self.home / 'Applications'] for candidate in ([app, 'Firefox Developer Edition', 'Firefox Nightly'] if app == 'Firefox' else [app])))
 
     def write(self, path, data):
         if path.is_symlink():
@@ -63,7 +63,7 @@ class Installer:
                 self.write(destination / path.name, path.read_bytes())
 
     def run(self):
-        integrations = [('ghostty', 'Ghostty'), ('nvim', 'Neovim'), ('codex', 'Codex'), ('claude', 'Claude'), ('slack', 'Slack'), ('linear', 'Linear'), ('firefox', 'Firefox')]
+        integrations = [('ghostty', 'Ghostty'), ('nvim', 'Neovim'), ('codex', 'Codex'), ('claude', 'Claude'), ('slack', 'Slack'), ('linear', 'Linear'), ('firefox', 'Firefox'), ('zsh', 'Zsh')]
         for command, app in integrations:
             if self.only and command not in self.only:
                 continue
@@ -118,13 +118,32 @@ class Installer:
         print('MANUAL Linear: import in Settings > Interface and theme:\n' + (ROOT / 'linear/ithilien-dawn.txt').read_text().strip())
 
     def firefox(self):
-        print('SKIP Firefox: bundled Firefox theme still uses the previous design; no current Dawn integration to install.')
+        destination = self.home / '.local/share/ithilien/firefox'
+        for variant in ('dawn', 'dusk'):
+            self.copies(f'firefox/ithilien-{variant}', destination / f'ithilien-{variant}')
+        print(f'MANUAL Firefox: about:debugging > This Firefox > Load Temporary Add-on; select {destination}/ithilien-dawn/manifest.json. Temporary themes expire on restart; permanent distribution needs Mozilla signing. This themes browser chrome, not website selections.')
+
+    def zsh(self):
+        destination = self.config / 'ithilien'
+        for variant in ('dawn', 'dusk'):
+            source = ROOT / 'shell' / f'ithilien-{variant}.zsh'
+            self.write(destination / source.name, source.read_bytes())
+        rc = Path(os.environ.get('ZDOTDIR', self.home)) / '.zshrc'
+        text = rc.read_text() if rc.exists() else ''
+        start, end = '# BEGIN ITHILIEN ZLE', '# END ITHILIEN ZLE'
+        if (start in text) != (end in text):
+            raise ValueError('Incomplete Ithilien ZLE block')
+        text = re.sub(r'(?ms)^# BEGIN ITHILIEN ZLE\n.*?^# END ITHILIEN ZLE\n?', '', text)
+        import shlex
+        block = f'{start}\nsource {shlex.quote(str(destination / "ithilien-dawn.zsh"))}\n{end}\n'
+        self.write(rc, (text.rstrip() + '\n\n' + block).encode())
+        print('NEXT zsh: start a new shell. Dawn visual selection is installed; source ithilien-dusk.zsh instead for a dark terminal. Existing non-region ZLE styles are preserved.')
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true', help='Write changes; default is a dry run')
-    parser.add_argument('--only', nargs='+', choices=['ghostty', 'nvim', 'codex', 'claude', 'slack', 'linear', 'firefox'])
+    parser.add_argument('--only', nargs='+', choices=['ghostty', 'nvim', 'codex', 'claude', 'slack', 'linear', 'firefox', 'zsh'])
     args = parser.parse_args()
     return Installer(Path.home(), args.apply, args.only).run()
 

@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 nvim.log
 wallpapers/.ithilien-dynamic.heic-*
+
+comparison/generated/

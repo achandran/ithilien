@@ -57,7 +57,7 @@ Edit the [canonical palettes](palette/), then rebuild; generated themes, palette
 
 ## Formex Dawn development
 
-The selected Neutral white palette is implemented on `design/formex-dawn`. See [implementation report](reports/formex-dawn-implementation.md) for verification and remaining native application checks. The bundled wallpaper and shared Firefox/system-selection files still represent the prior theme; they are not part of this Dawn milestone.
+The selected Neutral white palette is now on `main`. See [implementation report](reports/formex-dawn-implementation.md) for verification and remaining native application checks. The bundled wallpaper remains the prior design; Firefox and selection exports now include Dawn and Dusk.
 
 ### Dawn cursor: the GMT red tip
 
@@ -72,4 +72,8 @@ Requires Python 3. After pulling this branch, run:
 ./install.sh --apply     # install; back up replaced files
 ```
 
-Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically; LazyVim receives a local-checkout plugin spec (restart and run `:Lazy sync`). Codex/Claude Code receive theme files and require `/theme` selection. Slack/Linear display import values. Missing apps are skipped. Firefox, mobile, wallpaper, and system-wide selection are not automatically changed. See [installer details](docs/installation.md#one-command-installer).
+Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically; LazyVim receives a local-checkout plugin spec (restart and run `:Lazy sync`). Codex/Claude Code receive theme files and require `/theme` selection. Slack/Linear display import values. Missing apps are skipped. Zsh receives a backed-up managed source line in `.zshrc`. Firefox receives theme files for manual activation. Mobile, wallpaper, and system-wide selection are not automatically changed. See [installer details](docs/installation.md#one-command-installer).
+
+### Compare against Kanso Pearl and Zenbones
+
+Run `python3 scripts/compare.py` for isolated Ghostty launch commands, then follow the [comparison exercises](comparison/README.md). Your installed settings are not changed.
