@@ -4,7 +4,7 @@ from ithilienlib import ROOT, wcag
 h=json.loads((ROOT/'reports/formex-dawn-highlights.json').read_text())['highlights']
 # Structural lines/whitespace have a separate 3:1 target; the Kanso helper is
 # a synthetic workaround group that is never used to render user text.
-structural={'FloatBorder','WinSeparator','TelescopeBorder','Whitespace','EndOfBuffer','VertSplit','NonText'}
+structural={'IthilienDiffFiller','FloatBorder','WinSeparator','TelescopeBorder','Whitespace','EndOfBuffer','VertSplit','NonText'}
 skip={'nvim_set_hl_x_hi_clear_bugfix'}
 checks=[]
 for name,spec in h.items():

@@ -95,3 +95,7 @@ The zsh installation also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `F
 ### macOS system selection
 
 The normal installer now includes the Dawn system highlight color on macOS, read from the canonical palette. `./install.sh` applies it alongside detected apps; `./install.sh --dry-run` previews it without writing. Use `--only macos` to target it alone. Other platforms skip it. The prior value is saved as `macos-highlight.json` in the installer backup directory (null means the preference was unset). Log out and back in if applications retain their previous color.
+
+### Dawn diff presentation
+
+Dawn diff windows use subdued dotted filler, pane labels, and matching syntax when a revision buffer lacks a filetype. Neovim 0.12 uses character-level inline diffs. Window presentation is restored on leaving diff mode. Labels identify FILE/REVISION/BUFFER when provenance is known; integrations may set `b:ithilien_diff_label` to a more specific label such as INDEX or WORKING COPY.

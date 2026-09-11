@@ -133,7 +133,7 @@ local groups = {
   Pmenu={fg=p.fg,bg=p.raised},PmenuSel={fg=p.fg,bg=p.selection,bold=true},
   PmenuKindSel={fg=p.fg,bg=p.selection},PmenuExtraSel={fg=p.fg,bg=p.selection},
   Folded={fg=p.muted,bg=p.surface},
-  DiffAdd={fg=p.fg,bg=p.add},DiffDelete={fg=p.fg,bg=p.delete},
+  DiffAdd={fg=p.fg,bg=p.add},DiffDelete={fg=p.fg,bg=p.delete},IthilienDiffFiller={fg=p.border,bg=p.delete},
   DiffChange={fg=p.fg,bg=p.change},DiffText={fg=p.fg,bg=p.change_emph,bold=true,underline=true},
   DiffTextAdd={link='DiffText'},
   GitSignsAdd={fg=p.green},GitSignsChange={fg=p.blue},GitSignsDelete={fg=p.red},
