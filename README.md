@@ -61,7 +61,7 @@ The selected Neutral white palette is now on `main`. See [implementation report]
 
 ### Dawn cursor: the GMT red tip
 
-Dawn uses an Eglantine (`#F1E2DF`) Ghostty block cursor with Lebethron (`#000000`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections use Ranger brushed steel. Dawn explicitly sets `minimum-contrast = 1`: the higher setting caused unreadable blocks in zsh vi mode. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.
+Dawn uses a Ranger brushed-steel (`#C4CAC8`) Ghostty block cursor with Lebethron (`#000000`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections use Ranger brushed steel. Dawn explicitly sets `minimum-contrast = 1`: the higher setting caused unreadable blocks in zsh vi mode. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.
 
 ### Install or update detected apps
 

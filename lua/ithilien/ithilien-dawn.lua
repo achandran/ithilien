@@ -40,7 +40,7 @@ return {
       ["foreground"] = "#000000",
       ["border"] = "#3F535F",
       ["cursor"] = "#A3373E",
-      ["cursorBlock"] = "#F1E2DF",
+      ["cursorBlock"] = "#C4CAC8",
     },
     ["name"] = "Ithilien Dawn",
     ["slug"] = "ithilien-dawn",

@@ -2905,18 +2905,18 @@
       }
     },
     "highlight.cursorBlock": {
-      "hex": "#F1E2DF",
+      "hex": "#C4CAC8",
       "oklch": [
-        0.9239,
-        0.017,
-        31.1
+        0.8337,
+        0.0071,
+        174.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#E5E3DF",
-        "deutan": "#E8E6DF",
-        "tritan": "#F5E0E1",
-        "grayscale": "#E5E5E5"
+        "protan": "#CAC9C8",
+        "deutan": "#C8C8C8",
+        "tritan": "#C3CAC9",
+        "grayscale": "#C9C9C9"
       }
     },
     "foregrounds.muted": {

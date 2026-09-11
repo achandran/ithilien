@@ -19,7 +19,7 @@ Names are limited to Ithilien’s plants, waters, materials and people, plus its
 | Poros | `#306466` | River marking Ithilien’s southern boundary; blue-green water. [Source](https://www.encyclopedia-of-arda.com/p/poros.html) | `accents.aqua`, `ansi.brightCyan` |
 | Pelennor | `#E2EDDF` | Fields across Anduin from Ithilien; pale field green. [Source](https://tolkiengateway.net/wiki/Pelennor_Fields) | `diff.addBackground` |
 | Ilex | `#BDD3B2` | Holm-oaks in Ithilien; sunlit foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.addEmphasis` |
-| Eglantine | `#F1E2DF` | Wild roses in Ithilien; pale pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteBackground`, `highlight.cursorBlock` |
+| Eglantine | `#F1E2DF` | Wild roses in Ithilien; pale pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteBackground` |
 | Rose | `#DDAFA7` | Roses in Ithilien; stronger pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteEmphasis` |
 | Spray | `#E0E9EE` | Waterfall spray at Henneth Annûn in Ithilien; pale water. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `diff.changeBackground`, `diff.hunkBackground` |
 | Harlond | `#B3CBD8` | The harbour on the opposite bank of Anduin from Ithilien; deep river blue. [Source](https://tolkiengateway.net/wiki/Harlond_(Gondor)) | `backgrounds.surface2`, `diff.changeEmphasis` |
@@ -38,7 +38,7 @@ Names are limited to Ithilien’s plants, waters, materials and people, plus its
 | Cypress | `#274A62` | Cypresses in Ithilien; deep evergreen foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `ansi.blue` |
 | Hyacinth | `#60425E` | Woodland hyacinths in Ithilien; violet flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `ansi.magenta` |
 | Morgulduin | `#255354` | River through Ithilien’s Morgul valley; dark water. [Source](https://tolkiengateway.net/wiki/Morgulduin) | `ansi.cyan` |
-| Ranger | `#C4CAC8` | The Rangers of Ithilien; interpreted as brushed steel for neutral selection, not a claim about their clothing. [Source](https://tolkiengateway.net/wiki/Rangers_of_Ithilien) | `highlight.background` |
+| Ranger | `#C4CAC8` | The Rangers of Ithilien; interpreted as brushed steel for neutral selection, not a claim about their clothing. [Source](https://tolkiengateway.net/wiki/Rangers_of_Ithilien) | `highlight.background`, `highlight.cursorBlock` |
 
 ## Authoring and integration
 
