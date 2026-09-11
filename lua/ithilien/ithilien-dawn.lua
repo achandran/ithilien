@@ -12,7 +12,7 @@ return {
     ["Eglantine"] = "#F1E2DF",
     ["Henneth"] = "#D7E3EA",
     ["Celandine"] = "#D8B46A",
-    ["Clematis"] = "#D6C6DE",
+    ["Heather"] = "#D6C6DE",
     ["Nimloth"] = "#FAFAF8",
     ["Gondor"] = "#DEE0DF",
     ["Anemone"] = "#F0F1EF",

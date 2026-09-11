@@ -14,7 +14,7 @@
     "Eglantine": "#F1E2DF",
     "Henneth": "#D7E3EA",
     "Celandine": "#D8B46A",
-    "Clematis": "#D6C6DE",
+    "Heather": "#D6C6DE",
     "Nimloth": "#FAFAF8",
     "Gondor": "#DEE0DF",
     "Anemone": "#F0F1EF",
@@ -67,9 +67,9 @@
       "meaning": "Celandines in Ithilien; pale golden flowers.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
-    "Clematis": {
-      "meaning": "Trailing clematis in Ithilien; a pale lilac floral interpretation, not a flower color specified by Tolkien.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    "Heather": {
+      "meaning": "Pale lilac inspired by the pink-purple flowers of heather growing in Ithilien; the exact shade is a botanical interpretation, not a color specified by Tolkien.",
+      "source": "https://encyclopedia-of-arda.com/h/heather.php"
     },
     "Nimloth": {
       "meaning": "Soft white inspired by Nimloth, the White Tree of N\u00famenor and ancestor of Gondor\u2019s White Trees; its name means \u201cWhite Blossom\u201d. The shade is a poetic interpretation.",
@@ -112,7 +112,7 @@
     "surface1": "Anemone",
     "surface2": "Osgiliath",
     "border": "Ash",
-    "search": "Clematis"
+    "search": "Heather"
   },
   "foregrounds": {
     "muted": "Ash",
@@ -167,6 +167,6 @@
     "hunkForeground": "Lebethron",
     "hunkBackground": "Henneth",
     "conflictForeground": "Lebethron",
-    "conflictBackground": "Clematis"
+    "conflictBackground": "Heather"
   }
 }
