@@ -38,8 +38,9 @@ def generate_ghostty(palette: dict) -> None:
         "",
         f'background = {bg["base"]}',
         f'foreground = {fg["text"]}',
-        f'cursor-color = {highlight["background"]}',
+        f'cursor-color = {highlight.get("cursor", highlight["background"])}',
         f'cursor-text = {highlight["foreground"]}',
+        *(["cursor-style = bar"] if is_light else []),
         f'selection-background = {highlight["background"]}',
         f'selection-foreground = {highlight["foreground"]}',
         "",
@@ -121,7 +122,7 @@ def generate_codex_theme(palette: dict) -> None:
     day = palette["polarity"] == "light"
     settings = [
         {"settings": {"background": bg["base"], "foreground": fg["text"],
-                      "caret": palette["highlight"]["background"],
+                      "caret": palette["highlight"].get("cursor", palette["highlight"]["background"]),
                       "selection": palette["highlight"]["background"],
                       "invisibles": fg["muted"], "lineHighlight": bg["surface1"] if day else bg["surface0"],
                       **({"selectionForeground": palette["highlight"]["foreground"]} if day else {})}},

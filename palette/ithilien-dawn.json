@@ -159,7 +159,9 @@
   "highlight": {
     "background": "Harlond",
     "foreground": "Lebethron",
-    "border": "Juniper"
+    "border": "Juniper",
+    "cursor": "Rosehip",
+    "cursorBlock": "Eglantine"
   },
   "backgrounds": {
     "crust": "Osgiliath",

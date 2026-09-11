@@ -2889,6 +2889,36 @@
         "grayscale": "#505050"
       }
     },
+    "highlight.cursor": {
+      "hex": "#A3373E",
+      "oklch": [
+        0.4946,
+        0.1424,
+        20.3
+      ],
+      "inSrgb": true,
+      "simulations": {
+        "protan": "#534E3E",
+        "deutan": "#6E653B",
+        "tritan": "#B31F3A",
+        "grayscale": "#5D5D5D"
+      }
+    },
+    "highlight.cursorBlock": {
+      "hex": "#F1E2DF",
+      "oklch": [
+        0.9239,
+        0.017,
+        31.1
+      ],
+      "inSrgb": true,
+      "simulations": {
+        "protan": "#E5E3DF",
+        "deutan": "#E8E6DF",
+        "tritan": "#F5E0E1",
+        "grayscale": "#E5E5E5"
+      }
+    },
     "foregrounds.muted": {
       "hex": "#596166",
       "oklch": [

@@ -27,8 +27,8 @@ local config = {italic_comments=opts.italics, italic_strings=false}
 lush(generator.generate(palette, mode, config))
 local function hi(name, spec) vim.api.nvim_set_hl(0, name, spec) end
 local groups = {
-  Cursor={fg=p.fg,bg=p.selection,sp=raw.highlight.border,underline=true},
-  lCursor={fg=p.fg,bg=p.selection,sp=raw.highlight.border,underline=true},
+  Cursor={fg=p.fg,bg=raw.highlight.cursorBlock,sp=raw.highlight.cursor,underline=true},
+  lCursor={fg=p.fg,bg=raw.highlight.cursorBlock,sp=raw.highlight.cursor,underline=true},
   Normal = {fg=p.fg,bg=p.bg}, NormalNC={fg=p.fg,bg=p.bg},
   NormalFloat={fg=p.fg,bg=p.raised}, FloatBorder={fg=p.border,bg=p.raised},
   Comment={fg=p.muted,italic=config.italic_comments == true},

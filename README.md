@@ -58,3 +58,7 @@ Edit the [canonical palettes](palette/), then rebuild; generated themes, palette
 ## Formex Dawn development
 
 The selected Neutral white palette is implemented on `design/formex-dawn`. See [implementation report](reports/formex-dawn-implementation.md) for verification and remaining native application checks. The bundled wallpaper and shared Firefox/system-selection files still represent the prior theme; they are not part of this Dawn milestone.
+
+### Dawn cursor: the GMT red tip
+
+Dawn uses Rosehip (`#A3373E`) for the default Ghostty bar cursor and exported caret. Neovim uses an Eglantine (`#F1E2DF`) block with Lebethron text and a Rosehip underline, keeping the character dark and readable. Selections remain Harlond blue. Applications can override terminal cursor shape or color; a forced solid red block is not a supported dark-text pairing.

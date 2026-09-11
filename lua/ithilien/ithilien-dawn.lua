@@ -38,6 +38,8 @@ return {
       ["background"] = "#B3CBD8",
       ["foreground"] = "#25292B",
       ["border"] = "#3F535F",
+      ["cursor"] = "#A3373E",
+      ["cursorBlock"] = "#F1E2DF",
     },
     ["name"] = "Ithilien Dawn",
     ["slug"] = "ithilien-dawn",
