@@ -34,7 +34,7 @@
     "pins": {
       "../eval-gruvbox": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79"
     },
-    "setup": "vim.g.gruvbox_material_background='soft'; vim.cmd('colorscheme gruvbox-material')",
+    "setup": "vim.g.gruvbox_material_background='soft'; vim.g.gruvbox_material_foreground='original'; vim.cmd('colorscheme gruvbox-material')",
     "sources": {
       "../eval-gruvbox": "https://github.com/sainnhe/gruvbox-material"
     }
