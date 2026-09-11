@@ -38,7 +38,7 @@ Names are limited to Ithilien’s plants, waters, materials and people, plus its
 | Cypress | `#274A62` | Cypresses in Ithilien; deep evergreen foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `ansi.blue` |
 | Hyacinth | `#60425E` | Woodland hyacinths in Ithilien; violet flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `ansi.magenta` |
 | Morgulduin | `#255354` | River through Ithilien’s Morgul valley; dark water. [Source](https://tolkiengateway.net/wiki/Morgulduin) | `ansi.cyan` |
-| Ranger | `#C4CAC8` | The Rangers of Ithilien; interpreted as brushed steel for neutral selection, not a claim about their clothing. [Source](https://tolkiengateway.net/wiki/Rangers_of_Ithilien) | `highlight.background`, `highlight.cursorBlock` |
+| Ranger | `#A8B2AE` | The Rangers of Ithilien; interpreted as brushed steel for neutral selection, not a claim about their clothing. [Source](https://tolkiengateway.net/wiki/Rangers_of_Ithilien) | `highlight.background`, `highlight.cursorBlock` |
 
 ## Authoring and integration
 

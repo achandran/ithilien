@@ -57,10 +57,10 @@
     {
       "name": "highlighted text",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 35,
       "passed": true
     },
@@ -247,10 +247,10 @@
     {
       "name": "inline diff marker",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 35,
       "passed": true
     },
@@ -1087,40 +1087,40 @@
     {
       "name": "search result",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selected popup kind",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selected popup extra",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "substitution",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1147,10 +1147,10 @@
     {
       "name": "Neovim DiffText",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1217,50 +1217,50 @@
     {
       "name": "status olive",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status sage",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status mauve",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status coral",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status gold",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 61.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -2539,32 +2539,32 @@
     {
       "name": "search result",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup kind",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup extra",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "substitution",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
@@ -2587,8 +2587,8 @@
     {
       "name": "Neovim DiffText",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
@@ -2643,40 +2643,40 @@
     {
       "name": "status olive",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status sage",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status mauve",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status coral",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status gold",
       "foreground": "#000000",
-      "background": "#C4CAC8",
-      "wcag": 12.63,
+      "background": "#A8B2AE",
+      "wcag": 9.64,
       "target": 4.5,
       "passed": true
     }
@@ -2845,18 +2845,18 @@
       }
     },
     "highlight.background": {
-      "hex": "#C4CAC8",
+      "hex": "#A8B2AE",
       "oklch": [
-        0.8337,
-        0.0071,
-        174.3
+        0.7545,
+        0.0125,
+        170.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#CAC9C8",
-        "deutan": "#C8C8C8",
-        "tritan": "#C3CAC9",
-        "grayscale": "#C9C9C9"
+        "protan": "#B1B0AE",
+        "deutan": "#AFAFAE",
+        "tritan": "#A6B2B1",
+        "grayscale": "#B0B0B0"
       }
     },
     "highlight.foreground": {
@@ -2905,18 +2905,18 @@
       }
     },
     "highlight.cursorBlock": {
-      "hex": "#C4CAC8",
+      "hex": "#A8B2AE",
       "oklch": [
-        0.8337,
-        0.0071,
-        174.3
+        0.7545,
+        0.0125,
+        170.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#CAC9C8",
-        "deutan": "#C8C8C8",
-        "tritan": "#C3CAC9",
-        "grayscale": "#C9C9C9"
+        "protan": "#B1B0AE",
+        "deutan": "#AFAFAE",
+        "tritan": "#A6B2B1",
+        "grayscale": "#B0B0B0"
       }
     },
     "foregrounds.muted": {

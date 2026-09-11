@@ -185,8 +185,8 @@
 <text x="384" y="800" fill="#444D52" >ansi.cyan</text>
 <rect x="606" y="730" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="740" width="50" height="64" fill="#596166"/>
-<rect x="617" y="741" width="48" height="62" fill="#C4CAC8"/>
+<rect x="617" y="741" width="48" height="62" fill="#A8B2AE"/>
 <text x="678" y="754" fill="#000000" font-weight="700">Ranger</text>
-<text x="678" y="776" fill="#000000" >#C4CAC8</text>
+<text x="678" y="776" fill="#000000" >#A8B2AE</text>
 <text x="678" y="800" fill="#444D52" >highlight.background</text>
 </svg>

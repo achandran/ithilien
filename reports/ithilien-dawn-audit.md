@@ -13,7 +13,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | secondary text | 7.98:1 | 84.2 | PASS |
 | normal text | 19.4:1 | 100.5 | PASS |
 | bright text | 19.4:1 | 100.5 | PASS |
-| highlighted text | 12.63:1 | 74.6 | PASS |
+| highlighted text | 9.64:1 | 61.1 | PASS |
 | highlight edge on Ithilien Dawn | 7.42:1 | 82.3 | PASS |
 | highlight edge on white | 8.03:1 | 87.8 | PASS |
 | syntax olive | 19.4:1 | 100.5 | PASS |
@@ -32,7 +32,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | inline add | 13.12:1 | 76.7 | PASS |
 | inline delete | 10.76:1 | 66.4 | PASS |
 | inline change | 12.45:1 | 73.9 | PASS |
-| inline diff marker | 12.63:1 | 74.6 | PASS |
+| inline diff marker | 9.64:1 | 61.1 | PASS |
 | conflict marker | 15.41:1 | 85.9 | PASS |
 | ANSI black | 19.4:1 | 100.5 | PASS |
 | ANSI red | 7.53:1 | 81.9 | PASS |
@@ -116,24 +116,24 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | chrome bright on surface2 | 12.45:1 | 73.9 | PASS |
 | inactive status label | 4.89:1 | 64.5 | PASS |
 | popup border | 6.19:1 | 80.1 | PASS |
-| search result | 12.63:1 | 74.6 | PASS |
-| selected popup kind | 12.63:1 | 74.6 | PASS |
-| selected popup extra | 12.63:1 | 74.6 | PASS |
-| substitution | 12.63:1 | 74.6 | PASS |
+| search result | 9.64:1 | 61.1 | PASS |
+| selected popup kind | 9.64:1 | 61.1 | PASS |
+| selected popup extra | 9.64:1 | 61.1 | PASS |
+| substitution | 9.64:1 | 61.1 | PASS |
 | error annotation | 16.68:1 | 90.8 | PASS |
 | tab label on crust | 6.22:1 | 68.3 | PASS |
-| Neovim DiffText | 12.63:1 | 74.6 | PASS |
+| Neovim DiffText | 9.64:1 | 61.1 | PASS |
 | selection edge on mantle | 6.22:1 | 70.9 | PASS |
 | selection edge on surface0 | 7.88:1 | 86.5 | PASS |
 | selection edge on surface1 | 6.88:1 | 77.4 | PASS |
 | git add sign | 19.4:1 | 100.5 | PASS |
 | git delete sign | 19.4:1 | 100.5 | PASS |
 | git change sign | 19.4:1 | 100.5 | PASS |
-| status olive | 12.63:1 | 74.6 | PASS |
-| status sage | 12.63:1 | 74.6 | PASS |
-| status mauve | 12.63:1 | 74.6 | PASS |
-| status coral | 12.63:1 | 74.6 | PASS |
-| status gold | 12.63:1 | 74.6 | PASS |
+| status olive | 9.64:1 | 61.1 | PASS |
+| status sage | 9.64:1 | 61.1 | PASS |
+| status mauve | 9.64:1 | 61.1 | PASS |
+| status coral | 9.64:1 | 61.1 | PASS |
+| status gold | 9.64:1 | 61.1 | PASS |
 | ANSI white on black | 19.4:1 | -101.8 | PASS |
 | ANSI white on red | 7.53:1 | -86.1 | PASS |
 | ANSI white on green | 8.79:1 | -90.1 | PASS |

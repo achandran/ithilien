@@ -35,7 +35,7 @@ for name,h in pairs(snapshot()) do
  end
  checked=checked+1
 end
-for _,name in ipairs({'Normal','Visual','PmenuSel','StatusLine','DiffText','DiffTextAdd'}) do
+for _,name in ipairs({'Normal','Visual','PmenuSel','PmenuKindSel','PmenuExtraSel','StatusLine','DiffText','DiffTextAdd'}) do
  assert(vim.api.nvim_get_hl(0,{name=name,link=false}).fg==expected,'Dark foreground role: '..name)
 end
 for _,name in ipairs({'DiffText','DiffTextAdd','GitSignsAddInline','GitSignsDeleteInline','GitSignsChangeInline'}) do

@@ -20,7 +20,7 @@ class FzfColors(unittest.TestCase):
         source shell/ithilien-dusk.zsh
         source shell/ithilien-dawn.zsh
         [[ $first == $FZF_DEFAULT_OPTS ]] || exit 3
-        [[ $FZF_DEFAULT_OPTS == *'bg+:#C4CAC8,fg+:#000000'* ]] || exit 4
+        [[ $FZF_DEFAULT_OPTS == *'bg+:#A8B2AE,fg+:#000000'* ]] || exit 4
         [[ $FZF_CTRL_R_OPTS == *'hl+:#000000:underline'* ]] || exit 5
         '''
         subprocess.run(['zsh', '-f', '-c', script], cwd=ROOT, check=True)

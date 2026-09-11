@@ -131,6 +131,7 @@ local groups = {
   MatchParen={fg=p.fg,bg=p.selection,bold=true,underline=true},
   StatusLine={fg=p.fg,bg=p.surface},StatusLineNC={fg=p.muted,bg=p.surface},
   Pmenu={fg=p.fg,bg=p.raised},PmenuSel={fg=p.fg,bg=p.selection,bold=true},
+  PmenuKindSel={fg=p.fg,bg=p.selection},PmenuExtraSel={fg=p.fg,bg=p.selection},
   Folded={fg=p.muted,bg=p.surface},
   DiffAdd={fg=p.fg,bg=p.add},DiffDelete={fg=p.fg,bg=p.delete},
   DiffChange={fg=p.fg,bg=p.change},DiffText={fg=p.fg,bg=p.change_emph,bold=true,underline=true},
