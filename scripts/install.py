@@ -139,7 +139,7 @@ class Installer:
             return
         # Local checkout ensures git pull + installer uses the exact revision.
         import json
-        plugin = 'return {\n  { dir = ' + json.dumps(str(ROOT)) + ', name = "ithilien", lazy = false, priority = 1000,\n    dependencies = { "webhooked/kanso.nvim" },\n    config = function() vim.cmd.colorscheme("ithilien-dawn") end },\n  { "LazyVim/LazyVim", opts = { colorscheme = "ithilien-dawn" } },\n}\n'
+        plugin = 'return {\n  { dir = ' + json.dumps(str(ROOT)) + ', name = "ithilien", lazy = false, priority = 1000,\n    dependencies = { "webhooked/kanso.nvim" },\n    config = function() vim.cmd.colorscheme("ithilien-dawn") end },\n  { "LazyVim/LazyVim", opts = { colorscheme = "ithilien-dawn" } },\n  { "nvim-lualine/lualine.nvim", opts = function(_, opts) require("ithilien.statusline").configure(opts) end },\n}\n'
         self.write(base / 'lua/plugins/ithilien-installed.lua', plugin.encode())
         print('NEXT Neovim: restart and run :Lazy sync for dependencies. Keep this checkout in place; remove conflicting theme specs if needed.')
 

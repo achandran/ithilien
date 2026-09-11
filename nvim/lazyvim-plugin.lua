@@ -30,8 +30,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
-      opts.options = opts.options or {}
-      opts.options.theme = vim.g.colors_name == "ithilien-dusk" and "ithilien-dusk" or "ithilien-dawn"
+      require("ithilien.statusline").configure(opts)
     end,
   },
 }

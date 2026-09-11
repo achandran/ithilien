@@ -193,7 +193,7 @@ for _,name in ipairs({'Type','Statement','Title','CursorLineNr'}) do
  local h=vim.api.nvim_get_hl(0,{name=name,link=false}); h.bold=opts.bold;hi(name,h)
 end
 local lualine=package.loaded['lualine']
-if lualine then local c=lualine.get_config();c.options.theme='ithilien-dawn';lualine.setup(c) end
+if lualine then local c=lualine.get_config();require('ithilien.statusline').configure(c);lualine.setup(c) end
 
 end
 return M
