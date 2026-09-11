@@ -347,7 +347,7 @@ def generate_color_reference() -> None:
         lines.append(f"| {name} | `{color}` | {note['meaning']} [Source]({note['source']}) | {', '.join(roles[name])} |")
     lines.extend(['', '## Authoring and integration', '',
         'Edit hex values only in `colors`. Functional roles reference those names: '
-        '`backgrounds.base` → `Asphodel`, `foregrounds.text` → `Lebethron`, '
+        '`backgrounds.base` → `Nimloth`, `foregrounds.text` → `Lebethron`, '
         '`accents.blue` → `Anduin`. The loader resolves those references to the same '
         'role-to-hex mappings used by existing ports and audits.', '',
         'Neovim also exposes the named palette through '

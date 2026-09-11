@@ -707,140 +707,140 @@
     {
       "name": "muted on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "wcagTarget": 4.5,
-      "apcaLc": 86.6,
+      "apcaLc": 83.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "comment on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "wcagTarget": 4.5,
-      "apcaLc": 86.6,
+      "apcaLc": 83.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "subtext on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "wcagTarget": 4.5,
-      "apcaLc": 86.6,
+      "apcaLc": 83.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "text on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "wcagTarget": 4.5,
-      "apcaLc": 106.0,
+      "apcaLc": 103.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "bright on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "wcagTarget": 4.5,
-      "apcaLc": 106.0,
+      "apcaLc": 103.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "olive on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "wcagTarget": 4.5,
-      "apcaLc": 106.0,
+      "apcaLc": 103.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "sage on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "wcagTarget": 4.5,
-      "apcaLc": 86.6,
+      "apcaLc": 83.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "gold on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "wcagTarget": 4.5,
-      "apcaLc": 106.0,
+      "apcaLc": 103.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ochre on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "wcagTarget": 4.5,
-      "apcaLc": 106.0,
+      "apcaLc": 103.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "clay on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "wcagTarget": 4.5,
-      "apcaLc": 106.0,
+      "apcaLc": 103.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "coral on surface0",
       "foreground": "#8B3037",
-      "background": "#FFFFFF",
-      "wcag": 8.15,
+      "background": "#FAFAF8",
+      "wcag": 7.8,
       "wcagTarget": 4.5,
-      "apcaLc": 87.4,
+      "apcaLc": 84.3,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "aqua on surface0",
       "foreground": "#255354",
-      "background": "#FFFFFF",
-      "wcag": 8.59,
+      "background": "#FAFAF8",
+      "wcag": 8.22,
       "wcagTarget": 4.5,
-      "apcaLc": 89.4,
+      "apcaLc": 86.3,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "blue on surface0",
       "foreground": "#345E77",
-      "background": "#FFFFFF",
-      "wcag": 6.97,
+      "background": "#FAFAF8",
+      "wcag": 6.67,
       "wcagTarget": 4.5,
-      "apcaLc": 84.0,
+      "apcaLc": 80.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "mauve on surface0",
       "foreground": "#70516D",
-      "background": "#FFFFFF",
-      "wcag": 6.8,
+      "background": "#FAFAF8",
+      "wcag": 6.51,
       "wcagTarget": 4.5,
-      "apcaLc": 83.4,
+      "apcaLc": 80.3,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1077,10 +1077,10 @@
     {
       "name": "popup border",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "wcagTarget": 3.0,
-      "apcaLc": 86.6,
+      "apcaLc": 83.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1167,10 +1167,10 @@
     {
       "name": "selection edge on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "wcagTarget": 3.0,
-      "apcaLc": 86.6,
+      "apcaLc": 83.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1396,131 +1396,131 @@
     },
     {
       "name": "ANSI brightWhite on black",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#000000",
-      "wcag": 21.0,
+      "wcag": 20.09,
       "wcagTarget": 4.5,
-      "apcaLc": -107.9,
+      "apcaLc": -104.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on red",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#8B3037",
-      "wcag": 8.15,
+      "wcag": 7.8,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": -88.7,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on green",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#315F46",
-      "wcag": 7.35,
+      "wcag": 7.04,
       "wcagTarget": 4.5,
-      "apcaLc": -90.3,
+      "apcaLc": -86.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on yellow",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#795922",
-      "wcag": 6.43,
+      "wcag": 6.15,
       "wcagTarget": 4.5,
-      "apcaLc": -86.9,
+      "apcaLc": -83.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on blue",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#345E77",
-      "wcag": 6.97,
+      "wcag": 6.67,
       "wcagTarget": 4.5,
-      "apcaLc": -89.0,
+      "apcaLc": -85.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on magenta",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#70516D",
-      "wcag": 6.8,
+      "wcag": 6.51,
       "wcagTarget": 4.5,
-      "apcaLc": -88.4,
+      "apcaLc": -85.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on cyan",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#255354",
-      "wcag": 8.59,
+      "wcag": 8.22,
       "wcagTarget": 4.5,
-      "apcaLc": -93.9,
+      "apcaLc": -90.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on brightRed",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#8B3037",
-      "wcag": 8.15,
+      "wcag": 7.8,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": -88.7,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on brightGreen",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#315F46",
-      "wcag": 7.35,
-      "wcagTarget": 4.5,
-      "apcaLc": -90.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on brightYellow",
-      "foreground": "#FFFFFF",
-      "background": "#795922",
-      "wcag": 6.43,
+      "wcag": 7.04,
       "wcagTarget": 4.5,
       "apcaLc": -86.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
-      "name": "ANSI brightWhite on brightBlue",
-      "foreground": "#FFFFFF",
-      "background": "#345E77",
-      "wcag": 6.97,
+      "name": "ANSI brightWhite on brightYellow",
+      "foreground": "#FAFAF8",
+      "background": "#795922",
+      "wcag": 6.15,
       "wcagTarget": 4.5,
-      "apcaLc": -89.0,
+      "apcaLc": -83.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on brightBlue",
+      "foreground": "#FAFAF8",
+      "background": "#345E77",
+      "wcag": 6.67,
+      "wcagTarget": 4.5,
+      "apcaLc": -85.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on brightMagenta",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#70516D",
-      "wcag": 6.8,
+      "wcag": 6.51,
       "wcagTarget": 4.5,
-      "apcaLc": -88.4,
+      "apcaLc": -85.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on brightCyan",
-      "foreground": "#FFFFFF",
+      "foreground": "#FAFAF8",
       "background": "#255354",
-      "wcag": 8.59,
+      "wcag": 8.22,
       "wcagTarget": 4.5,
-      "apcaLc": -93.9,
+      "apcaLc": -90.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1537,10 +1537,10 @@
     {
       "name": "ANSI black on brightWhite",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "wcagTarget": 7.0,
-      "apcaLc": 106.0,
+      "apcaLc": 103.0,
       "apcaTarget": 0,
       "passed": true
     },
@@ -2235,112 +2235,112 @@
     {
       "name": "muted on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "comment on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "subtext on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "text on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "bright on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "olive on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "sage on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "gold on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "ochre on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "clay on surface0",
       "foreground": "#000000",
-      "background": "#FFFFFF",
-      "wcag": 21.0,
+      "background": "#FAFAF8",
+      "wcag": 20.09,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "coral on surface0",
       "foreground": "#8B3037",
-      "background": "#FFFFFF",
-      "wcag": 8.15,
+      "background": "#FAFAF8",
+      "wcag": 7.8,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "aqua on surface0",
       "foreground": "#255354",
-      "background": "#FFFFFF",
-      "wcag": 8.59,
+      "background": "#FAFAF8",
+      "wcag": 8.22,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "blue on surface0",
       "foreground": "#345E77",
-      "background": "#FFFFFF",
-      "wcag": 6.97,
+      "background": "#FAFAF8",
+      "wcag": 6.67,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "mauve on surface0",
       "foreground": "#70516D",
-      "background": "#FFFFFF",
-      "wcag": 6.8,
+      "background": "#FAFAF8",
+      "wcag": 6.51,
       "target": 4.5,
       "passed": true
     },
@@ -2531,8 +2531,8 @@
     {
       "name": "popup border",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "target": 3.0,
       "passed": true
     },
@@ -2603,8 +2603,8 @@
     {
       "name": "selection edge on surface0",
       "foreground": "#505456",
-      "background": "#FFFFFF",
-      "wcag": 7.65,
+      "background": "#FAFAF8",
+      "wcag": 7.32,
       "target": 3.0,
       "passed": true
     },
@@ -2770,18 +2770,18 @@
       }
     },
     "backgrounds.surface0": {
-      "hex": "#FFFFFF",
+      "hex": "#FAFAF8",
       "oklch": [
-        1.0,
-        0.0,
-        null
+        0.9845,
+        0.0026,
+        106.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#FFFFFF",
-        "deutan": "#FFFFFF",
-        "tritan": "#FFFFFF",
-        "grayscale": "#FFFFFF"
+        "protan": "#FAFAF8",
+        "deutan": "#FAFAF8",
+        "tritan": "#FAFAF9",
+        "grayscale": "#FAFAFA"
       }
     },
     "backgrounds.surface1": {
@@ -3355,18 +3355,18 @@
       }
     },
     "ansi.brightWhite": {
-      "hex": "#FFFFFF",
+      "hex": "#FAFAF8",
       "oklch": [
-        1.0,
-        0.0,
-        null
+        0.9845,
+        0.0026,
+        106.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#FFFFFF",
-        "deutan": "#FFFFFF",
-        "tritan": "#FFFFFF",
-        "grayscale": "#FFFFFF"
+        "protan": "#FAFAF8",
+        "deutan": "#FAFAF8",
+        "tritan": "#FAFAF9",
+        "grayscale": "#FAFAFA"
       }
     },
     "ansi.extendedOchre": {

@@ -17,9 +17,8 @@
     "Harlond": "#B3CBD8",
     "Celandine": "#D8B46A",
     "Clematis": "#D6C6DE",
-    "Asphodel": "#FAFAF8",
+    "Nimloth": "#FAFAF8",
     "Gondor": "#DEE0DF",
-    "Lily": "#FFFFFF",
     "Anemone": "#F0F1EF",
     "Osgiliath": "#C9CECB",
     "Briar": "#8B3037",
@@ -82,16 +81,12 @@
       "meaning": "Trailing clematis in Ithilien; a pale lilac floral interpretation, not a flower color specified by Tolkien.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
-    "Asphodel": {
-      "meaning": "Pale flowers encountered by Frodo and Sam in Ithilien.",
-      "source": "https://encyclopedia-of-arda.com/a/asphodel.php"
+    "Nimloth": {
+      "meaning": "Soft white inspired by Nimloth, the White Tree of N\u00famenor and ancestor of Gondor\u2019s White Trees; its name means \u201cWhite Blossom\u201d. The shade is a poetic interpretation.",
+      "source": "https://tolkiengateway.net/wiki/Nimloth_(tree)"
     },
     "Gondor": {
       "meaning": "The realm containing Ithilien; pale gray interpreted from Gondorian stone architecture.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
-    "Lily": {
-      "meaning": "Lilies in Ithilien; pale petals.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
     "Anemone": {
@@ -121,8 +116,8 @@
   "backgrounds": {
     "crust": "Osgiliath",
     "mantle": "Gondor",
-    "base": "Asphodel",
-    "surface0": "Lily",
+    "base": "Nimloth",
+    "surface0": "Nimloth",
     "surface1": "Anemone",
     "surface2": "Harlond",
     "border": "Stonecrop",
@@ -154,7 +149,7 @@
     "blue": "Anduin",
     "magenta": "Thyme",
     "cyan": "Rauros",
-    "white": "Asphodel",
+    "white": "Nimloth",
     "brightBlack": "Ash",
     "brightRed": "Briar",
     "brightGreen": "Sage",
@@ -162,7 +157,7 @@
     "brightBlue": "Anduin",
     "brightMagenta": "Thyme",
     "brightCyan": "Rauros",
-    "brightWhite": "Lily",
+    "brightWhite": "Nimloth",
     "extendedOchre": "Mallorn",
     "extendedClay": "Briar"
   },

@@ -78,20 +78,20 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | aqua on mantle | 6.48:1 | 70.9 | PASS |
 | blue on mantle | 5.25:1 | 65.5 | PASS |
 | mauve on mantle | 5.13:1 | 64.9 | PASS |
-| muted on surface0 | 7.65:1 | 86.6 | PASS |
-| comment on surface0 | 7.65:1 | 86.6 | PASS |
-| subtext on surface0 | 7.65:1 | 86.6 | PASS |
-| text on surface0 | 21.0:1 | 106.0 | PASS |
-| bright on surface0 | 21.0:1 | 106.0 | PASS |
-| olive on surface0 | 21.0:1 | 106.0 | PASS |
-| sage on surface0 | 7.65:1 | 86.6 | PASS |
-| gold on surface0 | 21.0:1 | 106.0 | PASS |
-| ochre on surface0 | 21.0:1 | 106.0 | PASS |
-| clay on surface0 | 21.0:1 | 106.0 | PASS |
-| coral on surface0 | 8.15:1 | 87.4 | PASS |
-| aqua on surface0 | 8.59:1 | 89.4 | PASS |
-| blue on surface0 | 6.97:1 | 84.0 | PASS |
-| mauve on surface0 | 6.8:1 | 83.4 | PASS |
+| muted on surface0 | 7.32:1 | 83.5 | PASS |
+| comment on surface0 | 7.32:1 | 83.5 | PASS |
+| subtext on surface0 | 7.32:1 | 83.5 | PASS |
+| text on surface0 | 20.09:1 | 103.0 | PASS |
+| bright on surface0 | 20.09:1 | 103.0 | PASS |
+| olive on surface0 | 20.09:1 | 103.0 | PASS |
+| sage on surface0 | 7.32:1 | 83.5 | PASS |
+| gold on surface0 | 20.09:1 | 103.0 | PASS |
+| ochre on surface0 | 20.09:1 | 103.0 | PASS |
+| clay on surface0 | 20.09:1 | 103.0 | PASS |
+| coral on surface0 | 7.8:1 | 84.3 | PASS |
+| aqua on surface0 | 8.22:1 | 86.3 | PASS |
+| blue on surface0 | 6.67:1 | 80.9 | PASS |
+| mauve on surface0 | 6.51:1 | 80.3 | PASS |
 | muted on surface1 | 6.76:1 | 78.1 | PASS |
 | comment on surface1 | 6.76:1 | 78.1 | PASS |
 | subtext on surface1 | 6.76:1 | 78.1 | PASS |
@@ -115,7 +115,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | chrome subtext on surface2 | 4.54:1 | 54.4 | PASS |
 | chrome bright on surface2 | 12.45:1 | 73.9 | PASS |
 | inactive status label | 5.77:1 | 68.1 | PASS |
-| popup border | 7.65:1 | 86.6 | PASS |
+| popup border | 7.32:1 | 83.5 | PASS |
 | search result | 4.62:1 | 33.0 | PASS |
 | selected popup kind | 4.62:1 | 33.0 | PASS |
 | selected popup extra | 4.62:1 | 33.0 | PASS |
@@ -124,7 +124,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | tab label on crust | 4.8:1 | 57.5 | PASS |
 | Neovim DiffText | 4.62:1 | 33.0 | PASS |
 | selection edge on mantle | 5.77:1 | 68.1 | PASS |
-| selection edge on surface0 | 7.65:1 | 86.6 | PASS |
+| selection edge on surface0 | 7.32:1 | 83.5 | PASS |
 | selection edge on surface1 | 6.76:1 | 78.1 | PASS |
 | git add sign | 20.09:1 | 103.0 | PASS |
 | git delete sign | 20.09:1 | 103.0 | PASS |
@@ -147,21 +147,21 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ANSI white on brightBlue | 6.67:1 | -85.6 | PASS |
 | ANSI white on brightMagenta | 6.51:1 | -85.0 | PASS |
 | ANSI white on brightCyan | 8.22:1 | -90.5 | PASS |
-| ANSI brightWhite on black | 21.0:1 | -107.9 | PASS |
-| ANSI brightWhite on red | 8.15:1 | -92.1 | PASS |
-| ANSI brightWhite on green | 7.35:1 | -90.3 | PASS |
-| ANSI brightWhite on yellow | 6.43:1 | -86.9 | PASS |
-| ANSI brightWhite on blue | 6.97:1 | -89.0 | PASS |
-| ANSI brightWhite on magenta | 6.8:1 | -88.4 | PASS |
-| ANSI brightWhite on cyan | 8.59:1 | -93.9 | PASS |
-| ANSI brightWhite on brightRed | 8.15:1 | -92.1 | PASS |
-| ANSI brightWhite on brightGreen | 7.35:1 | -90.3 | PASS |
-| ANSI brightWhite on brightYellow | 6.43:1 | -86.9 | PASS |
-| ANSI brightWhite on brightBlue | 6.97:1 | -89.0 | PASS |
-| ANSI brightWhite on brightMagenta | 6.8:1 | -88.4 | PASS |
-| ANSI brightWhite on brightCyan | 8.59:1 | -93.9 | PASS |
+| ANSI brightWhite on black | 20.09:1 | -104.5 | PASS |
+| ANSI brightWhite on red | 7.8:1 | -88.7 | PASS |
+| ANSI brightWhite on green | 7.04:1 | -86.9 | PASS |
+| ANSI brightWhite on yellow | 6.15:1 | -83.5 | PASS |
+| ANSI brightWhite on blue | 6.67:1 | -85.6 | PASS |
+| ANSI brightWhite on magenta | 6.51:1 | -85.0 | PASS |
+| ANSI brightWhite on cyan | 8.22:1 | -90.5 | PASS |
+| ANSI brightWhite on brightRed | 7.8:1 | -88.7 | PASS |
+| ANSI brightWhite on brightGreen | 7.04:1 | -86.9 | PASS |
+| ANSI brightWhite on brightYellow | 6.15:1 | -83.5 | PASS |
+| ANSI brightWhite on brightBlue | 6.67:1 | -85.6 | PASS |
+| ANSI brightWhite on brightMagenta | 6.51:1 | -85.0 | PASS |
+| ANSI brightWhite on brightCyan | 8.22:1 | -90.5 | PASS |
 | ANSI black on white | 20.09:1 | 103.0 | PASS |
-| ANSI black on brightWhite | 21.0:1 | 106.0 | PASS |
+| ANSI black on brightWhite | 20.09:1 | 103.0 | PASS |
 | diff add syntax muted | 6.35:1 | 74.0 | PASS |
 | diff add syntax comment | 6.35:1 | 74.0 | PASS |
 | diff add syntax subtext | 6.35:1 | 74.0 | PASS |

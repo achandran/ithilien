@@ -2,7 +2,7 @@
 
 <!-- Generated from palette/ithilien-dawn.json; do not edit by hand. -->
 
-All **21 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
+All **20 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
 
 Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its Gondorian neighbours and the wider Anduin landscape. Gondor is its realm; Osgiliath, Pelennor and Harlond are directly connected across Anduin. Plant names refer to species mentioned in Ithilien, except Mallorn, which draws on Lórien’s golden trees; material names describe its local landscape. The sources establish those connections; botanical shades and the exact hex values are our interpretation.
 
@@ -22,9 +22,8 @@ Names draw from Ithilien’s plants, waters, materials and people, poetic landsc
 | Harlond | `#B3CBD8` | Gondor’s harbour across Anduin from Ithilien; interpreted as pale river blue. [Source](https://tolkiengateway.net/wiki/Harlond_(Gondor)) | `backgrounds.surface2` |
 | Celandine | `#D8B46A` | Celandines in Ithilien; pale golden flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.addEmphasis`, `diff.deleteEmphasis`, `diff.changeEmphasis` |
 | Clematis | `#D6C6DE` | Trailing clematis in Ithilien; a pale lilac floral interpretation, not a flower color specified by Tolkien. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.search`, `diff.conflictBackground` |
-| Asphodel | `#FAFAF8` | Pale flowers encountered by Frodo and Sam in Ithilien. [Source](https://encyclopedia-of-arda.com/a/asphodel.php) | `backgrounds.base`, `ansi.white` |
+| Nimloth | `#FAFAF8` | Soft white inspired by Nimloth, the White Tree of Númenor and ancestor of Gondor’s White Trees; its name means “White Blossom”. The shade is a poetic interpretation. [Source](https://tolkiengateway.net/wiki/Nimloth_(tree)) | `backgrounds.base`, `backgrounds.surface0`, `ansi.white`, `ansi.brightWhite` |
 | Gondor | `#DEE0DF` | The realm containing Ithilien; pale gray interpreted from Gondorian stone architecture. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.mantle` |
-| Lily | `#FFFFFF` | Lilies in Ithilien; pale petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.surface0`, `ansi.brightWhite` |
 | Anemone | `#F0F1EF` | White anemones in Ithilien; interpreted as a near-white neutral. [Source](https://tolkiengateway.net/wiki/Anemones) | `backgrounds.surface1` |
 | Osgiliath | `#C9CECB` | City straddling Anduin at Ithilien’s western edge; weathered stone. [Source](https://tolkiengateway.net/wiki/Osgiliath) | `backgrounds.crust` |
 | Briar | `#8B3037` | Briars in Ithilien; dark red fruit and stems. [Source](https://tolkiengateway.net/wiki/Ithilien) | `accents.coral`, `ansi.red`, `ansi.brightRed`, `ansi.extendedClay` |
@@ -32,6 +31,6 @@ Names draw from Ithilien’s plants, waters, materials and people, poetic landsc
 
 ## Authoring and integration
 
-Edit hex values only in `colors`. Functional roles reference those names: `backgrounds.base` → `Asphodel`, `foregrounds.text` → `Lebethron`, `accents.blue` → `Anduin`. The loader resolves those references to the same role-to-hex mappings used by existing ports and audits.
+Edit hex values only in `colors`. Functional roles reference those names: `backgrounds.base` → `Nimloth`, `foregrounds.text` → `Lebethron`, `accents.blue` → `Anduin`. The loader resolves those references to the same role-to-hex mappings used by existing ports and audits.
 
 Neovim also exposes the named palette through `require("ithilien.ithilien-dawn").colors.Anduin`. Dusk and the shared interaction source remain unchanged. Dawn uses Afterglow selection and block cursors with black text.

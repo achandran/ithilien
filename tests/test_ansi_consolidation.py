@@ -8,7 +8,7 @@ from ithilienlib import ROOT, load_palette, resolve_palette
 
 
 class ANSIConsolidation(unittest.TestCase):
-    def test_ghostty_exports_complete_aliases_and_distinct_neutrals(self):
+    def test_ghostty_exports_complete_aliases_and_distinct_black(self):
         lines=(ROOT/'ghostty/themes/ithilien_dawn.conf').read_text().splitlines()
         slots={int(k):v for line in lines if line.startswith('palette = ')
                for k,v in [line.removeprefix('palette = ').split('=',1)]}
@@ -16,7 +16,7 @@ class ANSIConsolidation(unittest.TestCase):
         for index in range(1,7):
             self.assertEqual(slots[index],slots[index+8])
         self.assertNotEqual(slots[0],slots[8])
-        self.assertNotEqual(slots[7],slots[15])
+        self.assertEqual(slots[7],slots[15])
         p=load_palette('ithilien-dawn')
         for i,key in enumerate(['black','red','green','yellow','blue','magenta','cyan','white']):
             self.assertEqual(slots[i],p['ansi'][key])
@@ -34,6 +34,8 @@ class ANSIConsolidation(unittest.TestCase):
         before['highlight']['border']=before['foregrounds']['muted']
         # Approved shared teal for application accents and terminal cyan.
         before['accents']['aqua']='#255354'
+        # Approved Lily -> Nimloth (formerly Asphodel) surface consolidation, preserving roles.
+        before['backgrounds']['surface0']=before['backgrounds']['base']
         before['diff']['addEmphasis']=before['diff']['deleteEmphasis']=before['diff']['changeEmphasis']
         self.assertEqual({k:v for k,v in before.items() if k!='ansi'},
                          {k:v for k,v in after.items() if k!='ansi'})
