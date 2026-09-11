@@ -1,87 +1,42 @@
 # Ithilien
 
-Coding themes for long sessions and precise diffs. Dawn draws on the Formex Reef GMT white dial and steel bracelet, with Zenbones typography.
+Dawn is a light theme inspired by the Formex Reef GMT with a white dial, black ceramic bezel, and stainless steel bracelet. Color names draw from Tolkien’s Ithilien. Dusk is the dark variant.
 
-| Theme | Canvas | Main text |
-| --- | --- | --- |
-| **Dawn** · light | `#F6F6F3` | `#000000` |
-| **Dusk** · dark | `#171812` | `#C9BA99` |
+## Palette
 
-## Dawn palette
+![Ithilien Dawn palette: named colors, hex values, and roles](assets/ithilien-dawn-palette.svg)
 
-Named colors drawn for Ithilien’s plants, landscape, people and immediate neighbours.
+[Palette reference](docs/palette-names.md) · [Interactive preview](palette-preview.html)
 
-![Ithilien Dawn: named colors with names, hex values and roles](assets/ithilien-dawn-palette.svg)
+## Goals
 
-[Text palette and name sources](docs/palette-names.md) · [Interactive palette lab](palette-preview.html)
-
-## Reading and diffs
-
-- Neutral-white Dawn surfaces and restrained syntax; black foregrounds, including selections and status lines.
-- Distinct added, removed and changed lines. Dawn’s exact changed characters are **dark on amber, without bold or underline** in Neovim; selected text stays dark.
+- Clear diffs, including individual changed characters: dark text on amber, without bold or underline in Neovim.
+- Readable coding-agent sessions in Codex and Claude Code.
+- Comfort for long working sessions, with dark text on light surfaces in Dawn.
+- White-dial clarity, steel neutrals, and restrained red accents.
 
 ## Install
 
-| Application | Files / setup |
-| --- | --- |
-| Neovim / LazyVim | [Plugin spec](nvim/lazyvim-plugin.lua); `:colorscheme ithilien-dawn` or `ithilien-dusk` |
-| Ghostty | Copy [themes](ghostty/themes/) to `~/.config/ghostty/themes/` |
-| Codex | Copy [themes](codex/themes/) to `~/.codex/themes/`; choose with `/theme` |
-| Claude Code | Copy [themes](claude-code/themes/) to `~/.claude/themes/`; choose with `/theme` |
-| Firefox | [Extension](firefox/manifest.json) |
-| Zsh | [Selection config](shell/ithilien.zsh) |
-| macOS | [Selection script](macos/apply-highlight.sh) · [Dynamic wallpaper](wallpapers/ithilien.heic) |
-| Slack / Linear | [Slack](slack/) · [Linear](linear/) theme strings |
-
-Ghostty automatic appearance:
-
-```ini
-theme = light:ithilien_dawn.conf,dark:ithilien_dusk.conf
-```
-
-[Installation details](docs/installation.md), including Neovim dependencies and macOS appearance switching. `ithilien` defaults to Dawn.
-
-## Build and check
-
-Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
+Requires Git and Python 3.
 
 ```sh
-uv sync
-uv run python scripts/build.py
-uv run python -m unittest discover -s tests
+git clone https://github.com/achandran/ithilien.git
+cd ithilien
+./install.sh
 ```
 
-Edit the [canonical palettes](palette/), then rebuild; generated themes, palette chart and reference update together. Dawn stores each hex once under `colors`; roles reference names.
-
-[Dawn audit](reports/ithilien-dawn-audit.md) · [Dusk audit](reports/ithilien-dusk-audit.md) · [Python review](reports/python-review/README.md)
-
-## Formex Dawn development
-
-The selected Neutral white palette is now on `main`. See [implementation report](reports/formex-dawn-implementation.md) for verification and remaining native application checks. The bundled wallpaper remains the prior design; Firefox and selection exports now include Dawn and Dusk.
-
-### Dawn cursor: the GMT red tip
-
-Dawn uses a Ranger brushed-steel (`#A8B2AE`) Ghostty block cursor with Lebethron (`#000000`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections use Ranger brushed steel. Dawn explicitly sets `minimum-contrast = 1`: the higher setting caused unreadable blocks in zsh vi mode. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.
-
-### Install or update detected apps
-
-Requires Python 3. After pulling this branch, run:
+To update:
 
 ```sh
-./install.sh --dry-run   # preview changes
-./install.sh             # install; back up replaced files
+git pull
+./install.sh
 ```
 
-Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically; LazyVim receives a local-checkout plugin spec (restart and run `:Lazy sync`). Codex/Claude Code receive theme files and require `/theme` selection. Slack/Linear display import values. Missing apps are skipped. Zsh receives a backed-up managed highlight block in `.zshrc`. Firefox receives theme files for manual activation. macOS system selection is updated to Dawn’s Ranger color. Mobile and wallpaper are not automatically changed. See [installer details](docs/installation.md#one-command-installer).
+The installer configures detected apps, skips missing ones, and backs up replaced files. On macOS, it also sets the system text-selection color. Keep the checkout in place: Neovim loads the theme from it.
 
-### Compare against Kanso Pearl and Zenbones
+```sh
+./install.sh --dry-run             # preview without changes
+./install.sh --only ghostty nvim   # install selected integrations
+```
 
-Run `python3 scripts/compare.py` for isolated Ghostty launch commands, then follow the [comparison exercises](comparison/README.md). Your installed settings are not changed.
-
-Dawn now uses Kanso Pearl as its Neovim base. The canonical palette and terminal/application exports are unchanged by this migration. Existing users should update the plugin and restart Neovim; this change is not yet proof that the reported terminal rendering issue is resolved.
-
-## Palette regression evaluation
-
-See [the evaluation suite](evaluation/README.md) for native Neovim and Codex captures, pinned fixtures, contrast checks, and before/after palette review.
-
-For the combined cross-theme Neovim, Python Tree-sitter/LSP and native Codex run, use `uv run python scripts/evaluate_suite.py --codex-source /path/to/codex --python-source /path/to/tree-sitter-python`. The [evaluation guide](evaluation/README.md) describes pinned dependencies, conversion provenance, strict candidate gates and remaining coverage gaps.
+Follow the installer’s reload and activation instructions. Some apps require manual theme selection. See [installation details](docs/installation.md).
