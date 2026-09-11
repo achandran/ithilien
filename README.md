@@ -36,7 +36,7 @@ Named colors drawn for Ithilien’s plants, landscape, people and immediate neig
 Ghostty automatic appearance:
 
 ```ini
-theme = light:ithilien-dawn,dark:ithilien-dusk
+theme = light:ithilien_dawn.conf,dark:ithilien_dusk.conf
 ```
 
 [Installation details](docs/installation.md), including Neovim dependencies and macOS appearance switching. `ithilien` defaults to Dawn.

@@ -2,13 +2,13 @@
 
 ## Ghostty
 
-Copy `ghostty/themes/ithilien-dusk` and `ghostty/themes/ithilien-dawn` into `~/.config/ghostty/themes/`. To follow macOS appearance automatically:
+Copy `ghostty/themes/ithilien_dusk.conf` and `ghostty/themes/ithilien_dawn.conf` into `~/.config/ghostty/themes/`. To follow macOS appearance automatically:
 
 ```ini
-theme = light:ithilien-dawn,dark:ithilien-dusk
+theme = light:ithilien_dawn.conf,dark:ithilien_dusk.conf
 ```
 
-The generated dark theme uses Berkeley Mono Retina without font thickening. The light theme uses Berkeley Mono with `font-thicken = true`, `faint-opacity = 1` to protect agent deletion text, and `minimum-contrast = 4.5` for unexpected terminal pairs. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is dark graphite.
+The generated dark theme uses Berkeley Mono Retina for terminal text and window titles. The light theme uses Berkeley Mono Medium for both. Neither theme sets `font-thicken`. The light theme sets `faint-opacity = 1` to protect agent deletion text, and `minimum-contrast = 4.5` for unexpected terminal pairs. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is dark graphite.
 
 ## Neovim and LazyVim
 
