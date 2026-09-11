@@ -12,7 +12,7 @@ def generate_chart():
         ('Surfaces and text', [('backgrounds.base','Canvas'),('backgrounds.surface0','Raised surface'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Comments / muted'),('foregrounds.subtext','Secondary text'),('backgrounds.surface2','Accent surface')]),
         ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict'),('backgrounds.border','Surface border'),('highlight.border','Interaction border')]),
         ('Diffs', [('diff.addBackground','Added line'),('diff.addEmphasis','Added emphasis'),('diff.deleteBackground','Deleted line'),('diff.deleteEmphasis','Deleted emphasis'),('diff.changeBackground','Changed line'),('diff.changeEmphasis','Changed characters')]),
-        ('Terminal colors and accents', [('ansi.red','Red'),('ansi.green','Green'),('ansi.yellow','Yellow'),('ansi.blue','Blue'),('ansi.magenta','Magenta'),('ansi.cyan','Cyan'),('ansi.brightGreen','Bright green'),('ansi.brightYellow','Bright yellow'),('ansi.brightBlue','Bright blue'),('ansi.brightMagenta','Bright magenta'),('ansi.brightCyan','Bright cyan')]),
+        ('Terminal colors and accents', [('ansi.red','Red'),('ansi.green','Green'),('ansi.yellow','Yellow'),('ansi.blue','Blue'),('ansi.magenta','Magenta'),('ansi.cyan','Cyan'),('accents.aqua','Aqua accent')]),
     ]
     width = 1200
     height = 60 + sum(48 + ((len(items)+4)//5)*146 for _,items in groups)

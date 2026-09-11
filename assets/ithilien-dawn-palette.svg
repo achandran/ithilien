@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1200" height="1420" viewBox="0 0 1200 1420">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1200" height="1274" viewBox="0 0 1200 1274">
 <style>text{font-family:"Berkeley Mono Medium",monospace;font-size:16pt}</style>
-<rect x="0" y="0" width="1200" height="1420" fill="#FAFAF8"/>
+<rect x="0" y="0" width="1200" height="1274" fill="#FAFAF8"/>
 <text x="24" y="33" fill="#000000" font-weight="700">ITHILIEN DAWN / COLOR ROLES</text>
 <text x="24" y="81" fill="#000000" font-weight="700">Surfaces and text</text>
 <rect x="24" y="100" width="216" height="48" fill="#66716D"/>
@@ -107,53 +107,33 @@
 <text x="24" y="1069" fill="#505456" >Red</text>
 <text x="24" y="1093" fill="#505456" >#8B3037</text>
 <rect x="258" y="974" width="216" height="48" fill="#66716D"/>
-<rect x="259" y="975" width="214" height="46" fill="#274D39"/>
-<text x="258" y="1045" fill="#000000" font-weight="700">Fir</text>
+<rect x="259" y="975" width="214" height="46" fill="#315F46"/>
+<text x="258" y="1045" fill="#000000" font-weight="700">Sage</text>
 <text x="258" y="1069" fill="#505456" >Green</text>
-<text x="258" y="1093" fill="#505456" >#274D39</text>
+<text x="258" y="1093" fill="#505456" >#315F46</text>
 <rect x="492" y="974" width="216" height="48" fill="#66716D"/>
-<rect x="493" y="975" width="214" height="46" fill="#624819"/>
-<text x="492" y="1045" fill="#000000" font-weight="700">Filbert</text>
+<rect x="493" y="975" width="214" height="46" fill="#795922"/>
+<text x="492" y="1045" fill="#000000" font-weight="700">Mallorn</text>
 <text x="492" y="1069" fill="#505456" >Yellow</text>
-<text x="492" y="1093" fill="#505456" >#624819</text>
+<text x="492" y="1093" fill="#505456" >#795922</text>
 <rect x="726" y="974" width="216" height="48" fill="#66716D"/>
-<rect x="727" y="975" width="214" height="46" fill="#274A62"/>
-<text x="726" y="1045" fill="#000000" font-weight="700">Eventide</text>
+<rect x="727" y="975" width="214" height="46" fill="#345E77"/>
+<text x="726" y="1045" fill="#000000" font-weight="700">Anduin</text>
 <text x="726" y="1069" fill="#505456" >Blue</text>
-<text x="726" y="1093" fill="#505456" >#274A62</text>
+<text x="726" y="1093" fill="#505456" >#345E77</text>
 <rect x="960" y="974" width="216" height="48" fill="#66716D"/>
-<rect x="961" y="975" width="214" height="46" fill="#60425E"/>
-<text x="960" y="1045" fill="#000000" font-weight="700">Hyacinth</text>
+<rect x="961" y="975" width="214" height="46" fill="#70516D"/>
+<text x="960" y="1045" fill="#000000" font-weight="700">Thyme</text>
 <text x="960" y="1069" fill="#505456" >Magenta</text>
-<text x="960" y="1093" fill="#505456" >#60425E</text>
+<text x="960" y="1093" fill="#505456" >#70516D</text>
 <rect x="24" y="1120" width="216" height="48" fill="#66716D"/>
 <rect x="25" y="1121" width="214" height="46" fill="#255354"/>
 <text x="24" y="1191" fill="#000000" font-weight="700">Stillwater</text>
 <text x="24" y="1215" fill="#505456" >Cyan</text>
 <text x="24" y="1239" fill="#505456" >#255354</text>
 <rect x="258" y="1120" width="216" height="48" fill="#66716D"/>
-<rect x="259" y="1121" width="214" height="46" fill="#315F46"/>
-<text x="258" y="1191" fill="#000000" font-weight="700">Sage</text>
-<text x="258" y="1215" fill="#505456" >Bright green</text>
-<text x="258" y="1239" fill="#505456" >#315F46</text>
-<rect x="492" y="1120" width="216" height="48" fill="#66716D"/>
-<rect x="493" y="1121" width="214" height="46" fill="#795922"/>
-<text x="492" y="1191" fill="#000000" font-weight="700">Mallorn</text>
-<text x="492" y="1215" fill="#505456" >Bright yellow</text>
-<text x="492" y="1239" fill="#505456" >#795922</text>
-<rect x="726" y="1120" width="216" height="48" fill="#66716D"/>
-<rect x="727" y="1121" width="214" height="46" fill="#345E77"/>
-<text x="726" y="1191" fill="#000000" font-weight="700">Anduin</text>
-<text x="726" y="1215" fill="#505456" >Bright blue</text>
-<text x="726" y="1239" fill="#505456" >#345E77</text>
-<rect x="960" y="1120" width="216" height="48" fill="#66716D"/>
-<rect x="961" y="1121" width="214" height="46" fill="#70516D"/>
-<text x="960" y="1191" fill="#000000" font-weight="700">Thyme</text>
-<text x="960" y="1215" fill="#505456" >Bright magenta</text>
-<text x="960" y="1239" fill="#505456" >#70516D</text>
-<rect x="24" y="1266" width="216" height="48" fill="#66716D"/>
-<rect x="25" y="1267" width="214" height="46" fill="#306466"/>
-<text x="24" y="1337" fill="#000000" font-weight="700">Poros</text>
-<text x="24" y="1361" fill="#505456" >Bright cyan</text>
-<text x="24" y="1385" fill="#505456" >#306466</text>
+<rect x="259" y="1121" width="214" height="46" fill="#306466"/>
+<text x="258" y="1191" fill="#000000" font-weight="700">Poros</text>
+<text x="258" y="1215" fill="#505456" >Aqua accent</text>
+<text x="258" y="1239" fill="#505456" >#306466</text>
 </svg>

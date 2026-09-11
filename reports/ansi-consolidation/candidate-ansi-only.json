@@ -28,10 +28,6 @@
     "Osgiliath": "#C9CECB",
     "Faramir": "#444D52",
     "Briar": "#8B3037",
-    "Fir": "#274D39",
-    "Filbert": "#624819",
-    "Eventide": "#274A62",
-    "Hyacinth": "#60425E",
     "Stillwater": "#255354"
   },
   "colorNotes": {
@@ -133,22 +129,6 @@
     },
     "Briar": {
       "meaning": "Briars in Ithilien; dark red fruit and stems.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
-    "Fir": {
-      "meaning": "Firs in Ithilien; evergreen green.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
-    "Filbert": {
-      "meaning": "Filbert thickets in Ithilien; warm brown nuts.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
-    "Eventide": {
-      "meaning": "A poetic name for deep evening blue, inspired by shadow along Ithilien\u2019s eastern mountains; our interpretation, not a canonical Tolkien color name.",
-      "source": "https://tolkiengateway.net/wiki/Ephel_D%C3%BAath"
-    },
-    "Hyacinth": {
-      "meaning": "Woodland hyacinths in Ithilien; muted plum inspired by their flowers, not a specified Tolkien hue.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
     "Stillwater": {

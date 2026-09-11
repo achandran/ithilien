@@ -177,7 +177,9 @@ def main(variant: str = "ithilien-dusk") -> None:
         }
         passed = min(max(delta_e(first, second, mode), delta_e(first_bg, second_bg, mode))
                      for mode in SIMULATIONS) >= floor
-        informational = day and name.startswith("diff ")
+        informational = day and (name.startswith("diff ") or name.startswith("ANSI "))
+        # Dawn intentionally aliases chromatic regular/bright slots. Their
+        # separation is reported, not required; export tests enforce the aliases.
         entry = {"name": name, "deltaEOK": values, "floor": floor, "passed": passed}
         if informational: entry["informational"] = True
         separations.append(entry)

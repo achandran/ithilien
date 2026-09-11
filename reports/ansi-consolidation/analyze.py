@@ -2,7 +2,7 @@ import sys,json,itertools
 from pathlib import Path
 sys.path.insert(0,str(Path.cwd()/'scripts'))
 from ithilienlib import wcag,delta_e,oklch
-p=json.loads(Path('palette/ithilien-dawn.json').read_text()); c=p['colors']
+p=json.loads((Path(__file__).resolve().parent/'baseline.json').read_text()); c=p['colors']
 families=['red','green','yellow','blue','magenta','cyan']
 options=[['Briar'],['Fir','Sage'],['Filbert','Mallorn'],['Eventide','Anduin'],['Hyacinth','Thyme'],['Stillwater','Poros']]
 surfaces={k:c[p['backgrounds'][k]] for k in ['base','mantle','surface0','surface1']}

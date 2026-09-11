@@ -1,6 +1,6 @@
 # Ithilien Dawn: consolidated ANSI research
 
-Status: candidate recommendation, not adopted or installed. Frozen palette unchanged.
+Status: selected as the main ANSI mapping by the user. Measurements compare the preserved pre-consolidation baseline; no native-rendering or comfort validation is implied by adoption.
 
 ## Scope and method
 
@@ -51,7 +51,7 @@ Prefer these existing name-to-hex mappings for the first candidate. Dropping a t
 
 ## Yellow/ochre naming decision
 
-The user selected Mallorn for #795922. This replaces the former Broom identifier without changing its hex. Filbert remains #624819. The active theme has received the name change; the ANSI consolidation itself remains an unadopted candidate.
+The user selected Mallorn for #795922. This replaces the former Broom identifier without changing its hex. Filbert remains #624819. The active theme has received the name change; the ANSI consolidation has now also been selected as the main mapping.
 
 ## Sources
 

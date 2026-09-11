@@ -36,10 +36,10 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | conflict marker | 12.99:1 | 76.2 | PASS |
 | ANSI black | 20.09:1 | 103.0 | PASS |
 | ANSI red | 7.8:1 | 84.3 | PASS |
-| ANSI green | 9.11:1 | 88.8 | PASS |
-| ANSI yellow | 8.17:1 | 86.2 | PASS |
-| ANSI blue | 8.96:1 | 88.4 | PASS |
-| ANSI magenta | 8.24:1 | 86.4 | PASS |
+| ANSI green | 7.04:1 | 82.3 | PASS |
+| ANSI yellow | 6.15:1 | 78.7 | PASS |
+| ANSI blue | 6.67:1 | 80.9 | PASS |
+| ANSI magenta | 6.51:1 | 80.3 | PASS |
 | ANSI cyan | 8.22:1 | 86.3 | PASS |
 | ANSI brightBlack | 7.32:1 | 83.5 | PASS |
 | ANSI brightRed | 7.8:1 | 84.3 | PASS |
@@ -47,7 +47,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ANSI brightYellow | 6.15:1 | 78.7 | PASS |
 | ANSI brightBlue | 6.67:1 | 80.9 | PASS |
 | ANSI brightMagenta | 6.51:1 | 80.3 | PASS |
-| ANSI brightCyan | 6.4:1 | 79.8 | PASS |
+| ANSI brightCyan | 8.22:1 | 86.3 | PASS |
 | ANSI extendedOchre | 6.15:1 | 78.7 | PASS |
 | ANSI extendedClay | 7.8:1 | 84.3 | PASS |
 | muted on base | 7.32:1 | 83.5 | PASS |
@@ -136,30 +136,30 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | status gold | 4.62:1 | 33.0 | PASS |
 | ANSI white on black | 20.09:1 | -104.5 | PASS |
 | ANSI white on red | 7.8:1 | -88.7 | PASS |
-| ANSI white on green | 9.11:1 | -92.8 | PASS |
-| ANSI white on yellow | 8.17:1 | -90.4 | PASS |
-| ANSI white on blue | 8.96:1 | -92.4 | PASS |
-| ANSI white on magenta | 8.24:1 | -90.6 | PASS |
+| ANSI white on green | 7.04:1 | -86.9 | PASS |
+| ANSI white on yellow | 6.15:1 | -83.5 | PASS |
+| ANSI white on blue | 6.67:1 | -85.6 | PASS |
+| ANSI white on magenta | 6.51:1 | -85.0 | PASS |
 | ANSI white on cyan | 8.22:1 | -90.5 | PASS |
 | ANSI white on brightRed | 7.8:1 | -88.7 | PASS |
 | ANSI white on brightGreen | 7.04:1 | -86.9 | PASS |
 | ANSI white on brightYellow | 6.15:1 | -83.5 | PASS |
 | ANSI white on brightBlue | 6.67:1 | -85.6 | PASS |
 | ANSI white on brightMagenta | 6.51:1 | -85.0 | PASS |
-| ANSI white on brightCyan | 6.4:1 | -84.5 | PASS |
+| ANSI white on brightCyan | 8.22:1 | -90.5 | PASS |
 | ANSI brightWhite on black | 21.0:1 | -107.9 | PASS |
 | ANSI brightWhite on red | 8.15:1 | -92.1 | PASS |
-| ANSI brightWhite on green | 9.52:1 | -96.2 | PASS |
-| ANSI brightWhite on yellow | 8.54:1 | -93.8 | PASS |
-| ANSI brightWhite on blue | 9.37:1 | -95.8 | PASS |
-| ANSI brightWhite on magenta | 8.61:1 | -94.0 | PASS |
+| ANSI brightWhite on green | 7.35:1 | -90.3 | PASS |
+| ANSI brightWhite on yellow | 6.43:1 | -86.9 | PASS |
+| ANSI brightWhite on blue | 6.97:1 | -89.0 | PASS |
+| ANSI brightWhite on magenta | 6.8:1 | -88.4 | PASS |
 | ANSI brightWhite on cyan | 8.59:1 | -93.9 | PASS |
 | ANSI brightWhite on brightRed | 8.15:1 | -92.1 | PASS |
 | ANSI brightWhite on brightGreen | 7.35:1 | -90.3 | PASS |
 | ANSI brightWhite on brightYellow | 6.43:1 | -86.9 | PASS |
 | ANSI brightWhite on brightBlue | 6.97:1 | -89.0 | PASS |
 | ANSI brightWhite on brightMagenta | 6.8:1 | -88.4 | PASS |
-| ANSI brightWhite on brightCyan | 6.69:1 | -87.9 | PASS |
+| ANSI brightWhite on brightCyan | 8.59:1 | -93.9 | PASS |
 | ANSI black on white | 20.09:1 | 103.0 | PASS |
 | ANSI black on brightWhite | 21.0:1 | 106.0 | PASS |
 | diff add syntax muted | 6.35:1 | 74.0 | PASS |
@@ -215,8 +215,8 @@ Values are ΔEOK distances. They are comparative signals, not universal accessib
 | diff add/change | 0.038 | 0.037 | 0.038 | 0.028 | 0.026 | INFO |
 | diff delete/change | 0.036 | 0.018 | 0.03 | 0.046 | 0.012 | INFO |
 | error/warning | 0.461 | 0.384 | 0.456 | 0.475 | 0.429 | PASS |
-| ANSI blue/bright blue | 0.069 | 0.071 | 0.068 | 0.069 | 0.069 | PASS |
-| ANSI cyan/bright cyan | 0.058 | 0.06 | 0.058 | 0.058 | 0.058 | PASS |
+| ANSI blue/bright blue | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | INFO |
+| ANSI cyan/bright cyan | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | INFO |
 
 ## Close accent pairs for visual review
 

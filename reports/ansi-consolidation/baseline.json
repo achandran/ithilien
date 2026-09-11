@@ -28,6 +28,10 @@
     "Osgiliath": "#C9CECB",
     "Faramir": "#444D52",
     "Briar": "#8B3037",
+    "Fir": "#274D39",
+    "Filbert": "#624819",
+    "Eventide": "#274A62",
+    "Hyacinth": "#60425E",
     "Stillwater": "#255354"
   },
   "colorNotes": {
@@ -131,6 +135,22 @@
       "meaning": "Briars in Ithilien; dark red fruit and stems.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
+    "Fir": {
+      "meaning": "Firs in Ithilien; evergreen green.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Filbert": {
+      "meaning": "Filbert thickets in Ithilien; warm brown nuts.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
+    "Eventide": {
+      "meaning": "A poetic name for deep evening blue, inspired by shadow along Ithilien\u2019s eastern mountains; our interpretation, not a canonical Tolkien color name.",
+      "source": "https://tolkiengateway.net/wiki/Ephel_D%C3%BAath"
+    },
+    "Hyacinth": {
+      "meaning": "Woodland hyacinths in Ithilien; muted plum inspired by their flowers, not a specified Tolkien hue.",
+      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    },
     "Stillwater": {
       "meaning": "A poetic name for shaded teal water, inspired by the pool beneath Henneth Ann\u00fbn; our interpretation, not a canonical Tolkien color name.",
       "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
@@ -174,10 +194,10 @@
   "ansi": {
     "black": "Lebethron",
     "red": "Briar",
-    "green": "Sage",
-    "yellow": "Mallorn",
-    "blue": "Anduin",
-    "magenta": "Thyme",
+    "green": "Fir",
+    "yellow": "Filbert",
+    "blue": "Eventide",
+    "magenta": "Hyacinth",
     "cyan": "Stillwater",
     "white": "Asphodel",
     "brightBlack": "Ash",
@@ -186,7 +206,7 @@
     "brightYellow": "Mallorn",
     "brightBlue": "Anduin",
     "brightMagenta": "Thyme",
-    "brightCyan": "Stillwater",
+    "brightCyan": "Poros",
     "brightWhite": "Lily",
     "extendedOchre": "Mallorn",
     "extendedClay": "Briar"

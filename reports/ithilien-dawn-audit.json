@@ -286,41 +286,41 @@
     },
     {
       "name": "ANSI green",
-      "foreground": "#274D39",
+      "foreground": "#315F46",
       "background": "#FAFAF8",
-      "wcag": 9.11,
+      "wcag": 7.04,
       "wcagTarget": 4.5,
-      "apcaLc": 88.8,
+      "apcaLc": 82.3,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI yellow",
-      "foreground": "#624819",
+      "foreground": "#795922",
       "background": "#FAFAF8",
-      "wcag": 8.17,
+      "wcag": 6.15,
       "wcagTarget": 4.5,
-      "apcaLc": 86.2,
+      "apcaLc": 78.7,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI blue",
-      "foreground": "#274A62",
+      "foreground": "#345E77",
       "background": "#FAFAF8",
-      "wcag": 8.96,
+      "wcag": 6.67,
       "wcagTarget": 4.5,
-      "apcaLc": 88.4,
+      "apcaLc": 80.9,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI magenta",
-      "foreground": "#60425E",
+      "foreground": "#70516D",
       "background": "#FAFAF8",
-      "wcag": 8.24,
+      "wcag": 6.51,
       "wcagTarget": 4.5,
-      "apcaLc": 86.4,
+      "apcaLc": 80.3,
       "apcaTarget": 44,
       "passed": true
     },
@@ -396,11 +396,11 @@
     },
     {
       "name": "ANSI brightCyan",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#FAFAF8",
-      "wcag": 6.4,
+      "wcag": 8.22,
       "wcagTarget": 4.5,
-      "apcaLc": 79.8,
+      "apcaLc": 86.3,
       "apcaTarget": 44,
       "passed": true
     },
@@ -1287,40 +1287,40 @@
     {
       "name": "ANSI white on green",
       "foreground": "#FAFAF8",
-      "background": "#274D39",
-      "wcag": 9.11,
+      "background": "#315F46",
+      "wcag": 7.04,
       "wcagTarget": 4.5,
-      "apcaLc": -92.8,
+      "apcaLc": -86.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI white on yellow",
       "foreground": "#FAFAF8",
-      "background": "#624819",
-      "wcag": 8.17,
+      "background": "#795922",
+      "wcag": 6.15,
       "wcagTarget": 4.5,
-      "apcaLc": -90.4,
+      "apcaLc": -83.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI white on blue",
       "foreground": "#FAFAF8",
-      "background": "#274A62",
-      "wcag": 8.96,
+      "background": "#345E77",
+      "wcag": 6.67,
       "wcagTarget": 4.5,
-      "apcaLc": -92.4,
+      "apcaLc": -85.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI white on magenta",
       "foreground": "#FAFAF8",
-      "background": "#60425E",
-      "wcag": 8.24,
+      "background": "#70516D",
+      "wcag": 6.51,
       "wcagTarget": 4.5,
-      "apcaLc": -90.6,
+      "apcaLc": -85.0,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1387,10 +1387,10 @@
     {
       "name": "ANSI white on brightCyan",
       "foreground": "#FAFAF8",
-      "background": "#306466",
-      "wcag": 6.4,
+      "background": "#255354",
+      "wcag": 8.22,
       "wcagTarget": 4.5,
-      "apcaLc": -84.5,
+      "apcaLc": -90.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1417,40 +1417,40 @@
     {
       "name": "ANSI brightWhite on green",
       "foreground": "#FFFFFF",
-      "background": "#274D39",
-      "wcag": 9.52,
+      "background": "#315F46",
+      "wcag": 7.35,
       "wcagTarget": 4.5,
-      "apcaLc": -96.2,
+      "apcaLc": -90.3,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on yellow",
       "foreground": "#FFFFFF",
-      "background": "#624819",
-      "wcag": 8.54,
+      "background": "#795922",
+      "wcag": 6.43,
       "wcagTarget": 4.5,
-      "apcaLc": -93.8,
+      "apcaLc": -86.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on blue",
       "foreground": "#FFFFFF",
-      "background": "#274A62",
-      "wcag": 9.37,
+      "background": "#345E77",
+      "wcag": 6.97,
       "wcagTarget": 4.5,
-      "apcaLc": -95.8,
+      "apcaLc": -89.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI brightWhite on magenta",
       "foreground": "#FFFFFF",
-      "background": "#60425E",
-      "wcag": 8.61,
+      "background": "#70516D",
+      "wcag": 6.8,
       "wcagTarget": 4.5,
-      "apcaLc": -94.0,
+      "apcaLc": -88.4,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1517,10 +1517,10 @@
     {
       "name": "ANSI brightWhite on brightCyan",
       "foreground": "#FFFFFF",
-      "background": "#306466",
-      "wcag": 6.69,
+      "background": "#255354",
+      "wcag": 8.59,
       "wcagTarget": 4.5,
-      "apcaLc": -87.9,
+      "apcaLc": -93.9,
       "apcaTarget": 0,
       "passed": true
     },
@@ -3160,63 +3160,63 @@
       }
     },
     "ansi.green": {
-      "hex": "#274D39",
+      "hex": "#315F46",
       "oklch": [
-        0.3855,
-        0.0559,
-        159.3
+        0.4448,
+        0.066,
+        158.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4C4838",
-        "deutan": "#46443A",
-        "tritan": "#1D4D47",
-        "grayscale": "#454545"
+        "protan": "#5E5945",
+        "deutan": "#575447",
+        "tritan": "#255E58",
+        "grayscale": "#565656"
       }
     },
     "ansi.yellow": {
-      "hex": "#624819",
+      "hex": "#795922",
       "oklch": [
-        0.4201,
-        0.072,
-        79.1
+        0.4865,
+        0.0826,
+        78.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#524913",
-        "deutan": "#584F1B",
-        "tritan": "#6B413E",
-        "grayscale": "#4C4C4C"
+        "protan": "#655A1B",
+        "deutan": "#6D6224",
+        "tritan": "#84504D",
+        "grayscale": "#5F5F5F"
       }
     },
     "ansi.blue": {
-      "hex": "#274A62",
+      "hex": "#345E77",
       "oklch": [
-        0.3939,
-        0.0576,
-        240.4
+        0.4622,
+        0.0622,
+        236.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#3F4A63",
-        "deutan": "#374462",
-        "tritan": "#005052",
-        "grayscale": "#464646"
+        "protan": "#525D78",
+        "deutan": "#495677",
+        "tritan": "#056466",
+        "grayscale": "#595959"
       }
     },
     "ansi.magenta": {
-      "hex": "#60425E",
+      "hex": "#70516D",
       "oklch": [
-        0.423,
-        0.0594,
-        328.8
+        0.4779,
+        0.0587,
+        329.8
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#41495F",
-        "deutan": "#484D5D",
-        "tritan": "#62444C",
-        "grayscale": "#4C4C4C"
+        "protan": "#50586E",
+        "deutan": "#575C6C",
+        "tritan": "#72535B",
+        "grayscale": "#5B5B5B"
       }
     },
     "ansi.cyan": {
@@ -3340,18 +3340,18 @@
       }
     },
     "ansi.brightCyan": {
-      "hex": "#306466",
+      "hex": "#255354",
       "oklch": [
-        0.4685,
-        0.0556,
-        198.8
+        0.4106,
+        0.0503,
+        197.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#5E6066",
-        "deutan": "#555966",
-        "tritan": "#0C6764",
-        "grayscale": "#5C5C5C"
+        "protan": "#4E4F54",
+        "deutan": "#464A54",
+        "tritan": "#025653",
+        "grayscale": "#4C4C4C"
       }
     },
     "ansi.brightWhite": {
@@ -3680,26 +3680,28 @@
     {
       "name": "ANSI blue/bright blue",
       "deltaEOK": {
-        "normal": 0.069,
-        "protan": 0.071,
-        "deutan": 0.068,
-        "tritan": 0.069,
-        "grayscale": 0.069
+        "normal": 0.0,
+        "protan": 0.0,
+        "deutan": 0.0,
+        "tritan": 0.0,
+        "grayscale": 0.0
       },
       "floor": 0.03,
-      "passed": true
+      "passed": false,
+      "informational": true
     },
     {
       "name": "ANSI cyan/bright cyan",
       "deltaEOK": {
-        "normal": 0.058,
-        "protan": 0.06,
-        "deutan": 0.058,
-        "tritan": 0.058,
-        "grayscale": 0.058
+        "normal": 0.0,
+        "protan": 0.0,
+        "deutan": 0.0,
+        "tritan": 0.0,
+        "grayscale": 0.0
       },
       "floor": 0.03,
-      "passed": true
+      "passed": false,
+      "informational": true
     }
   ],
   "accentProximityReview": [

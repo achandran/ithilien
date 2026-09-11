@@ -1,17 +1,20 @@
 import json,copy
 from pathlib import Path
 out=Path(__file__).resolve().parent
-p=json.loads(Path('palette/ithilien-dawn.json').read_text())
+p=json.loads((Path(__file__).resolve().parent/'baseline.json').read_text())
 rows=json.loads((out/'measurements.json').read_text())['candidates']
 names=['Briar','Sage','Mallorn','Anduin','Thyme','Stillwater']
 r=next(r for r in rows if r['names']==names)
 q=copy.deepcopy(p)
 for family,name in zip(['red','green','yellow','blue','magenta','cyan'],names):
  q['ansi'][family]=q['ansi']['bright'+family.capitalize()]=name
+used={v for f in ['backgrounds','foregrounds','accents','ansi','diff','highlight'] for v in q[f].values()}
+q['colors']={k:v for k,v in q['colors'].items() if k in used}
+q['colorNotes']={k:v for k,v in q['colorNotes'].items() if k in used}
 (out/'candidate-ansi-only.json').write_text(json.dumps(q,indent=2)+'\n')
 report='''# Ithilien Dawn: consolidated ANSI research
 
-Status: candidate recommendation, not adopted or installed. Frozen palette unchanged.
+Status: selected as the main ANSI mapping by the user. Measurements compare the preserved pre-consolidation baseline; no native-rendering or comfort validation is implied by adoption.
 
 ## Scope and method
 
@@ -57,7 +60,7 @@ Prefer these existing name-to-hex mappings for the first candidate. Dropping a t
 
 ## Yellow/ochre naming decision
 
-The user selected Mallorn for #795922. This replaces the former Broom identifier without changing its hex. Filbert remains #624819. The active theme has received the name change; the ANSI consolidation itself remains an unadopted candidate.
+The user selected Mallorn for #795922. This replaces the former Broom identifier without changing its hex. Filbert remains #624819. The active theme has received the name change; the ANSI consolidation has now also been selected as the main mapping.
 
 ## Sources
 
