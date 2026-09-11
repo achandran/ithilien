@@ -2,9 +2,9 @@
 
 <!-- Generated from palette/ithilien-dawn.json; do not edit by hand. -->
 
-All **22 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
+All **21 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
 
-Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its immediate Gondorian neighbours. Gondor is its realm; Osgiliath, Pelennor and Harlond are directly connected across Anduin. Plant names refer to species mentioned in Ithilien, except Mallorn, which draws on Lórien’s golden trees; material names describe its local landscape. The sources establish those connections; botanical shades and the exact hex values are our interpretation.
+Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its Gondorian neighbours and the wider Anduin landscape. Gondor is its realm; Osgiliath, Pelennor and Harlond are directly connected across Anduin. Plant names refer to species mentioned in Ithilien, except Mallorn, which draws on Lórien’s golden trees; material names describe its local landscape. The sources establish those connections; botanical shades and the exact hex values are our interpretation.
 
 | Name | Exact hex | Tolkien connection / color association | Roles |
 | --- | --- | --- | --- |
@@ -16,7 +16,6 @@ Names draw from Ithilien’s plants, waters, materials and people, poetic landsc
 | Anduin | `#345E77` | The Great River along Ithilien; interpreted as river blue. [Source](https://tolkiengateway.net/wiki/Anduin) | `accents.blue`, `ansi.blue`, `ansi.brightBlue` |
 | Mallorn | `#795922` | Dark ochre inspired by the golden leaves of Lórien’s mallorn trees; a shaded interpretation chosen for readable terminal text. A broader Tolkien connection, not an Ithilien tree. [Source](https://tolkiengateway.net/wiki/Mallorn) | `ansi.yellow`, `ansi.brightYellow`, `ansi.extendedOchre` |
 | Thyme | `#70516D` | Thyme in Ithilien; muted purple flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `accents.mauve`, `ansi.magenta`, `ansi.brightMagenta` |
-| Poros | `#306466` | River marking Ithilien’s southern boundary; blue-green water. [Source](https://www.encyclopedia-of-arda.com/p/poros.html) | `accents.aqua` |
 | Pelennor | `#E2EDDF` | Fields across Anduin from Ithilien; pale field green. [Source](https://tolkiengateway.net/wiki/Pelennor_Fields) | `diff.addBackground` |
 | Eglantine | `#F1E2DF` | Wild roses in Ithilien; pale pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteBackground` |
 | Spray | `#D7E3EA` | Waterfall spray at Henneth Annûn in Ithilien; pale water. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `diff.changeBackground`, `diff.hunkBackground` |
@@ -29,7 +28,7 @@ Names draw from Ithilien’s plants, waters, materials and people, poetic landsc
 | Anemone | `#F0F1EF` | White anemones in Ithilien; interpreted as a near-white neutral. [Source](https://tolkiengateway.net/wiki/Anemones) | `backgrounds.surface1` |
 | Osgiliath | `#C9CECB` | City straddling Anduin at Ithilien’s western edge; weathered stone. [Source](https://tolkiengateway.net/wiki/Osgiliath) | `backgrounds.crust` |
 | Briar | `#8B3037` | Briars in Ithilien; dark red fruit and stems. [Source](https://tolkiengateway.net/wiki/Ithilien) | `accents.coral`, `ansi.red`, `ansi.brightRed`, `ansi.extendedClay` |
-| Stillwater | `#255354` | A poetic name for shaded teal water, inspired by the pool beneath Henneth Annûn; our interpretation, not a canonical Tolkien color name. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `ansi.cyan`, `ansi.brightCyan` |
+| Rauros | `#255354` | Deep teal inspired by the shaded waters of Anduin at the Falls of Rauros, north of Ithilien. A poetic color interpretation, not a hue specified by Tolkien. [Source](https://tolkiengateway.net/wiki/Rauros) | `accents.aqua`, `ansi.cyan`, `ansi.brightCyan` |
 
 ## Authoring and integration
 

@@ -22,7 +22,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | syntax ochre | 20.09:1 | 103.0 | PASS |
 | syntax clay | 20.09:1 | 103.0 | PASS |
 | syntax coral | 7.8:1 | 84.3 | PASS |
-| syntax aqua | 6.4:1 | 79.8 | PASS |
+| syntax aqua | 8.22:1 | 86.3 | PASS |
 | syntax blue | 6.67:1 | 80.9 | PASS |
 | syntax mauve | 6.51:1 | 80.3 | PASS |
 | diff add | 17.41:1 | 93.5 | PASS |
@@ -61,7 +61,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ochre on base | 20.09:1 | 103.0 | PASS |
 | clay on base | 20.09:1 | 103.0 | PASS |
 | coral on base | 7.8:1 | 84.3 | PASS |
-| aqua on base | 6.4:1 | 79.8 | PASS |
+| aqua on base | 8.22:1 | 86.3 | PASS |
 | blue on base | 6.67:1 | 80.9 | PASS |
 | mauve on base | 6.51:1 | 80.3 | PASS |
 | muted on mantle | 5.77:1 | 68.1 | PASS |
@@ -75,7 +75,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ochre on mantle | 15.83:1 | 87.5 | PASS |
 | clay on mantle | 15.83:1 | 87.5 | PASS |
 | coral on mantle | 6.15:1 | 68.9 | PASS |
-| aqua on mantle | 5.04:1 | 64.4 | PASS |
+| aqua on mantle | 6.48:1 | 70.9 | PASS |
 | blue on mantle | 5.25:1 | 65.5 | PASS |
 | mauve on mantle | 5.13:1 | 64.9 | PASS |
 | muted on surface0 | 7.65:1 | 86.6 | PASS |
@@ -89,7 +89,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ochre on surface0 | 21.0:1 | 106.0 | PASS |
 | clay on surface0 | 21.0:1 | 106.0 | PASS |
 | coral on surface0 | 8.15:1 | 87.4 | PASS |
-| aqua on surface0 | 6.69:1 | 82.9 | PASS |
+| aqua on surface0 | 8.59:1 | 89.4 | PASS |
 | blue on surface0 | 6.97:1 | 84.0 | PASS |
 | mauve on surface0 | 6.8:1 | 83.4 | PASS |
 | muted on surface1 | 6.76:1 | 78.1 | PASS |
@@ -103,7 +103,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ochre on surface1 | 18.53:1 | 97.5 | PASS |
 | clay on surface1 | 18.53:1 | 97.5 | PASS |
 | coral on surface1 | 7.19:1 | 78.9 | PASS |
-| aqua on surface1 | 5.9:1 | 74.3 | PASS |
+| aqua on surface1 | 7.58:1 | 80.8 | PASS |
 | blue on surface1 | 6.15:1 | 75.5 | PASS |
 | mauve on surface1 | 6.0:1 | 74.9 | PASS |
 | chrome muted on crust | 4.8:1 | 57.5 | PASS |
@@ -173,7 +173,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff add syntax ochre | 17.41:1 | 93.5 | PASS |
 | diff add syntax clay | 17.41:1 | 93.5 | PASS |
 | diff add syntax coral | 6.76:1 | 74.8 | PASS |
-| diff add syntax aqua | 5.54:1 | 70.3 | PASS |
+| diff add syntax aqua | 7.12:1 | 76.8 | PASS |
 | diff add syntax blue | 5.78:1 | 71.4 | PASS |
 | diff add syntax mauve | 5.64:1 | 70.8 | PASS |
 | diff delete syntax muted | 6.08:1 | 71.3 | PASS |
@@ -187,7 +187,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff delete syntax ochre | 16.68:1 | 90.8 | PASS |
 | diff delete syntax clay | 16.68:1 | 90.8 | PASS |
 | diff delete syntax coral | 6.48:1 | 72.1 | PASS |
-| diff delete syntax aqua | 5.31:1 | 67.6 | PASS |
+| diff delete syntax aqua | 6.83:1 | 74.1 | PASS |
 | diff delete syntax blue | 5.54:1 | 68.7 | PASS |
 | diff delete syntax mauve | 5.41:1 | 68.1 | PASS |
 | diff change syntax muted | 5.86:1 | 69.0 | PASS |
@@ -201,7 +201,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff change syntax ochre | 16.07:1 | 88.4 | PASS |
 | diff change syntax clay | 16.07:1 | 88.4 | PASS |
 | diff change syntax coral | 6.24:1 | 69.8 | PASS |
-| diff change syntax aqua | 5.12:1 | 65.2 | PASS |
+| diff change syntax aqua | 6.57:1 | 71.8 | PASS |
 | diff change syntax blue | 5.33:1 | 66.4 | PASS |
 | diff change syntax mauve | 5.2:1 | 65.8 | PASS |
 
@@ -226,7 +226,6 @@ Values are ΔEOK distances. They are comparative signals, not universal accessib
 - `gold/ochre`: ΔEOK 0.0
 - `gold/clay`: ΔEOK 0.0
 - `ochre/clay`: ΔEOK 0.0
-- `aqua/blue`: ΔEOK 0.039
 
 ## Syntax and diagnostic role review (not gates)
 
@@ -235,7 +234,7 @@ Color alone does not preserve these roles in every simulation. Keywords use bold
 | Pair | Normal | Protan | Deutan | Tritan | Gray |
 |---|---:|---:|---:|---:|---:|
 | numbers/keywords | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
-| information/hints | 0.039 | 0.0362 | 0.0348 | 0.0103 | 0.0096 |
+| information/hints | 0.0649 | 0.0638 | 0.061 | 0.0512 | 0.0488 |
 | operators/strings | 0.443 | 0.4451 | 0.4425 | 0.4427 | 0.4434 |
 | keywords/errors | 0.4608 | 0.384 | 0.4559 | 0.4746 | 0.4287 |
 

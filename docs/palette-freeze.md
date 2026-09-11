@@ -8,11 +8,12 @@ in tests/test_palette_identity.py enforces this freeze.
 
 - Afterglow #B8595C: cursor and selection backgrounds, black interaction text.
 - Regular/bright chromatic slots share Briar #8B3037, Sage #315F46,
-  Mallorn #795922, Anduin #345E77, Thyme #70516D, and Stillwater #255354.
+  Mallorn #795922, Anduin #345E77, Thyme #70516D, and Rauros #255354.
 - The four neutral ANSI slots remain distinct.
 - Removed named Lua colors: Fir, Filbert, Eventide and Hyacinth. Callers can
   migrate to Sage, Mallorn, Anduin and Thyme respectively; these have different hex values.
-- Poros remains a separate application accent. Interaction colors are unchanged.
+- Poros and Stillwater are consolidated as Rauros #255354 for cyan and aqua text.
+  Named Lua callers should migrate both former names to Rauros. Interaction colors are unchanged.
 - Approved four-color diff model: Pelennor #E2EDDF added lines, Eglantine #F1E2DF
   deleted lines, Spray #D7E3EA changed lines, Celandine #D8B46A all edited spans.
 - Removed named colors Ilex and Rose; addEmphasis/deleteEmphasis now use Celandine.

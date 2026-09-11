@@ -32,6 +32,8 @@ class ANSIConsolidation(unittest.TestCase):
         # Approved neutral consolidation preserves roles while sharing Ash.
         before['foregrounds']['subtext']=before['foregrounds']['muted']
         before['highlight']['border']=before['foregrounds']['muted']
+        # Approved shared teal for application accents and terminal cyan.
+        before['accents']['aqua']='#255354'
         before['diff']['addEmphasis']=before['diff']['deleteEmphasis']=before['diff']['changeEmphasis']
         self.assertEqual({k:v for k,v in before.items() if k!='ansi'},
                          {k:v for k,v in after.items() if k!='ansi'})

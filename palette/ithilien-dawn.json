@@ -11,7 +11,6 @@
     "Anduin": "#345E77",
     "Mallorn": "#795922",
     "Thyme": "#70516D",
-    "Poros": "#306466",
     "Pelennor": "#E2EDDF",
     "Eglantine": "#F1E2DF",
     "Spray": "#D7E3EA",
@@ -24,7 +23,7 @@
     "Anemone": "#F0F1EF",
     "Osgiliath": "#C9CECB",
     "Briar": "#8B3037",
-    "Stillwater": "#255354"
+    "Rauros": "#255354"
   },
   "colorNotes": {
     "Lebethron": {
@@ -58,10 +57,6 @@
     "Thyme": {
       "meaning": "Thyme in Ithilien; muted purple flowers.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
-    "Poros": {
-      "meaning": "River marking Ithilien\u2019s southern boundary; blue-green water.",
-      "source": "https://www.encyclopedia-of-arda.com/p/poros.html"
     },
     "Pelennor": {
       "meaning": "Fields across Anduin from Ithilien; pale field green.",
@@ -111,9 +106,9 @@
       "meaning": "Briars in Ithilien; dark red fruit and stems.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
-    "Stillwater": {
-      "meaning": "A poetic name for shaded teal water, inspired by the pool beneath Henneth Ann\u00fbn; our interpretation, not a canonical Tolkien color name.",
-      "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+    "Rauros": {
+      "meaning": "Deep teal inspired by the shaded waters of Anduin at the Falls of Rauros, north of Ithilien. A poetic color interpretation, not a hue specified by Tolkien.",
+      "source": "https://tolkiengateway.net/wiki/Rauros"
     }
   },
   "highlight": {
@@ -147,7 +142,7 @@
     "ochre": "Lebethron",
     "clay": "Lebethron",
     "coral": "Briar",
-    "aqua": "Poros",
+    "aqua": "Rauros",
     "blue": "Anduin",
     "mauve": "Thyme"
   },
@@ -158,7 +153,7 @@
     "yellow": "Mallorn",
     "blue": "Anduin",
     "magenta": "Thyme",
-    "cyan": "Stillwater",
+    "cyan": "Rauros",
     "white": "Asphodel",
     "brightBlack": "Ash",
     "brightRed": "Briar",
@@ -166,7 +161,7 @@
     "brightYellow": "Mallorn",
     "brightBlue": "Anduin",
     "brightMagenta": "Thyme",
-    "brightCyan": "Stillwater",
+    "brightCyan": "Rauros",
     "brightWhite": "Lily",
     "extendedOchre": "Mallorn",
     "extendedClay": "Briar"

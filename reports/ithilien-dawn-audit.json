@@ -146,11 +146,11 @@
     },
     {
       "name": "syntax aqua",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#FAFAF8",
-      "wcag": 6.4,
+      "wcag": 8.22,
       "wcagTarget": 4.5,
-      "apcaLc": 79.8,
+      "apcaLc": 86.3,
       "apcaTarget": 44,
       "passed": true
     },
@@ -536,11 +536,11 @@
     },
     {
       "name": "aqua on base",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#FAFAF8",
-      "wcag": 6.4,
+      "wcag": 8.22,
       "wcagTarget": 4.5,
-      "apcaLc": 79.8,
+      "apcaLc": 86.3,
       "apcaTarget": 0,
       "passed": true
     },
@@ -676,11 +676,11 @@
     },
     {
       "name": "aqua on mantle",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#DEE0DF",
-      "wcag": 5.04,
+      "wcag": 6.48,
       "wcagTarget": 4.5,
-      "apcaLc": 64.4,
+      "apcaLc": 70.9,
       "apcaTarget": 0,
       "passed": true
     },
@@ -816,11 +816,11 @@
     },
     {
       "name": "aqua on surface0",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#FFFFFF",
-      "wcag": 6.69,
+      "wcag": 8.59,
       "wcagTarget": 4.5,
-      "apcaLc": 82.9,
+      "apcaLc": 89.4,
       "apcaTarget": 0,
       "passed": true
     },
@@ -956,11 +956,11 @@
     },
     {
       "name": "aqua on surface1",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#F0F1EF",
-      "wcag": 5.9,
+      "wcag": 7.58,
       "wcagTarget": 4.5,
-      "apcaLc": 74.3,
+      "apcaLc": 80.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1656,11 +1656,11 @@
     },
     {
       "name": "diff add syntax aqua",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#E2EDDF",
-      "wcag": 5.54,
+      "wcag": 7.12,
       "wcagTarget": 4.5,
-      "apcaLc": 70.3,
+      "apcaLc": 76.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1796,11 +1796,11 @@
     },
     {
       "name": "diff delete syntax aqua",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#F1E2DF",
-      "wcag": 5.31,
+      "wcag": 6.83,
       "wcagTarget": 4.5,
-      "apcaLc": 67.6,
+      "apcaLc": 74.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1936,11 +1936,11 @@
     },
     {
       "name": "diff change syntax aqua",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#D7E3EA",
-      "wcag": 5.12,
+      "wcag": 6.57,
       "wcagTarget": 4.5,
-      "apcaLc": 65.2,
+      "apcaLc": 71.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -2098,9 +2098,9 @@
     },
     {
       "name": "aqua on base",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#FAFAF8",
-      "wcag": 6.4,
+      "wcag": 8.22,
       "target": 4.5,
       "passed": true
     },
@@ -2210,9 +2210,9 @@
     },
     {
       "name": "aqua on mantle",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#DEE0DF",
-      "wcag": 5.04,
+      "wcag": 6.48,
       "target": 4.5,
       "passed": true
     },
@@ -2322,9 +2322,9 @@
     },
     {
       "name": "aqua on surface0",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#FFFFFF",
-      "wcag": 6.69,
+      "wcag": 8.59,
       "target": 4.5,
       "passed": true
     },
@@ -2434,9 +2434,9 @@
     },
     {
       "name": "aqua on surface1",
-      "foreground": "#306466",
+      "foreground": "#255354",
       "background": "#F0F1EF",
-      "wcag": 5.9,
+      "wcag": 7.58,
       "target": 4.5,
       "passed": true
     },
@@ -2695,11 +2695,11 @@
     {
       "name": "information/hints",
       "deltaEOK": {
-        "normal": 0.039,
-        "protan": 0.0362,
-        "deutan": 0.0348,
-        "tritan": 0.0103,
-        "grayscale": 0.0096
+        "normal": 0.0649,
+        "protan": 0.0638,
+        "deutan": 0.061,
+        "tritan": 0.0512,
+        "grayscale": 0.0488
       }
     },
     {
@@ -3085,18 +3085,18 @@
       }
     },
     "accents.aqua": {
-      "hex": "#306466",
+      "hex": "#255354",
       "oklch": [
-        0.4685,
-        0.0556,
-        198.8
+        0.4106,
+        0.0503,
+        197.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#5E6066",
-        "deutan": "#555966",
-        "tritan": "#0C6764",
-        "grayscale": "#5C5C5C"
+        "protan": "#4E4F54",
+        "deutan": "#464A54",
+        "tritan": "#025653",
+        "grayscale": "#4C4C4C"
       }
     },
     "accents.blue": {
@@ -3728,10 +3728,6 @@
     {
       "pair": "ochre/clay",
       "deltaEOK": 0.0
-    },
-    {
-      "pair": "aqua/blue",
-      "deltaEOK": 0.039
     }
   ]
 }
