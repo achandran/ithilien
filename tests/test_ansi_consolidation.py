@@ -29,6 +29,9 @@ class ANSIConsolidation(unittest.TestCase):
         after=load_palette('ithilien-dawn')
         self.assertNotEqual(before['ansi'],after['ansi'])
         # Separately approved four-color diff consolidation.
+        # Approved neutral consolidation preserves roles while sharing Ash.
+        before['foregrounds']['subtext']=before['foregrounds']['muted']
+        before['highlight']['border']=before['foregrounds']['muted']
         before['diff']['addEmphasis']=before['diff']['deleteEmphasis']=before['diff']['changeEmphasis']
         self.assertEqual({k:v for k,v in before.items() if k!='ansi'},
                          {k:v for k,v in after.items() if k!='ansi'})

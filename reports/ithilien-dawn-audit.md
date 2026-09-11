@@ -10,12 +10,12 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 |---|---:|---:|---|
 | muted UI | 7.32:1 | 83.5 | PASS |
 | comments | 7.32:1 | 83.5 | PASS |
-| secondary text | 8.27:1 | 86.6 | PASS |
+| secondary text | 7.32:1 | 83.5 | PASS |
 | normal text | 20.09:1 | 103.0 | PASS |
 | bright text | 20.09:1 | 103.0 | PASS |
 | highlighted text | 4.62:1 | 33.0 | PASS |
-| highlight edge on Ithilien Dawn | 7.69:1 | 84.7 | PASS |
-| highlight edge on white | 8.03:1 | 87.8 | PASS |
+| highlight edge on Ithilien Dawn | 7.32:1 | 83.5 | PASS |
+| highlight edge on white | 7.65:1 | 86.6 | PASS |
 | syntax olive | 20.09:1 | 103.0 | PASS |
 | syntax sage | 7.32:1 | 83.5 | PASS |
 | syntax gold | 20.09:1 | 103.0 | PASS |
@@ -52,7 +52,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ANSI extendedClay | 7.8:1 | 84.3 | PASS |
 | muted on base | 7.32:1 | 83.5 | PASS |
 | comment on base | 7.32:1 | 83.5 | PASS |
-| subtext on base | 8.27:1 | 86.6 | PASS |
+| subtext on base | 7.32:1 | 83.5 | PASS |
 | text on base | 20.09:1 | 103.0 | PASS |
 | bright on base | 20.09:1 | 103.0 | PASS |
 | olive on base | 20.09:1 | 103.0 | PASS |
@@ -66,7 +66,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | mauve on base | 6.51:1 | 80.3 | PASS |
 | muted on mantle | 5.77:1 | 68.1 | PASS |
 | comment on mantle | 5.77:1 | 68.1 | PASS |
-| subtext on mantle | 6.52:1 | 71.2 | PASS |
+| subtext on mantle | 5.77:1 | 68.1 | PASS |
 | text on mantle | 15.83:1 | 87.5 | PASS |
 | bright on mantle | 15.83:1 | 87.5 | PASS |
 | olive on mantle | 15.83:1 | 87.5 | PASS |
@@ -80,7 +80,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | mauve on mantle | 5.13:1 | 64.9 | PASS |
 | muted on surface0 | 7.65:1 | 86.6 | PASS |
 | comment on surface0 | 7.65:1 | 86.6 | PASS |
-| subtext on surface0 | 8.64:1 | 89.7 | PASS |
+| subtext on surface0 | 7.65:1 | 86.6 | PASS |
 | text on surface0 | 21.0:1 | 106.0 | PASS |
 | bright on surface0 | 21.0:1 | 106.0 | PASS |
 | olive on surface0 | 21.0:1 | 106.0 | PASS |
@@ -94,7 +94,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | mauve on surface0 | 6.8:1 | 83.4 | PASS |
 | muted on surface1 | 6.76:1 | 78.1 | PASS |
 | comment on surface1 | 6.76:1 | 78.1 | PASS |
-| subtext on surface1 | 7.63:1 | 81.2 | PASS |
+| subtext on surface1 | 6.76:1 | 78.1 | PASS |
 | text on surface1 | 18.53:1 | 97.5 | PASS |
 | bright on surface1 | 18.53:1 | 97.5 | PASS |
 | olive on surface1 | 18.53:1 | 97.5 | PASS |
@@ -108,11 +108,11 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | mauve on surface1 | 6.0:1 | 74.9 | PASS |
 | chrome muted on crust | 4.8:1 | 57.5 | PASS |
 | chrome comment on crust | 4.8:1 | 57.5 | PASS |
-| chrome subtext on crust | 5.42:1 | 60.6 | PASS |
+| chrome subtext on crust | 4.8:1 | 57.5 | PASS |
 | chrome text on crust | 13.17:1 | 76.9 | PASS |
 | chrome bright on crust | 13.17:1 | 76.9 | PASS |
 | chrome text on surface2 | 12.45:1 | 73.9 | PASS |
-| chrome subtext on surface2 | 5.13:1 | 57.5 | PASS |
+| chrome subtext on surface2 | 4.54:1 | 54.4 | PASS |
 | chrome bright on surface2 | 12.45:1 | 73.9 | PASS |
 | inactive status label | 5.77:1 | 68.1 | PASS |
 | popup border | 7.65:1 | 86.6 | PASS |
@@ -121,11 +121,11 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | selected popup extra | 4.62:1 | 33.0 | PASS |
 | substitution | 4.62:1 | 33.0 | PASS |
 | error annotation | 16.68:1 | 90.8 | PASS |
-| tab label on crust | 5.42:1 | 60.6 | PASS |
+| tab label on crust | 4.8:1 | 57.5 | PASS |
 | Neovim DiffText | 4.62:1 | 33.0 | PASS |
-| selection edge on mantle | 6.06:1 | 69.3 | PASS |
-| selection edge on surface0 | 8.03:1 | 87.8 | PASS |
-| selection edge on surface1 | 7.09:1 | 79.3 | PASS |
+| selection edge on mantle | 5.77:1 | 68.1 | PASS |
+| selection edge on surface0 | 7.65:1 | 86.6 | PASS |
+| selection edge on surface1 | 6.76:1 | 78.1 | PASS |
 | git add sign | 20.09:1 | 103.0 | PASS |
 | git delete sign | 20.09:1 | 103.0 | PASS |
 | git change sign | 20.09:1 | 103.0 | PASS |
@@ -164,7 +164,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ANSI black on brightWhite | 21.0:1 | 106.0 | PASS |
 | diff add syntax muted | 6.35:1 | 74.0 | PASS |
 | diff add syntax comment | 6.35:1 | 74.0 | PASS |
-| diff add syntax subtext | 7.17:1 | 77.1 | PASS |
+| diff add syntax subtext | 6.35:1 | 74.0 | PASS |
 | diff add syntax text | 17.41:1 | 93.5 | PASS |
 | diff add syntax bright | 17.41:1 | 93.5 | PASS |
 | diff add syntax olive | 17.41:1 | 93.5 | PASS |
@@ -178,7 +178,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff add syntax mauve | 5.64:1 | 70.8 | PASS |
 | diff delete syntax muted | 6.08:1 | 71.3 | PASS |
 | diff delete syntax comment | 6.08:1 | 71.3 | PASS |
-| diff delete syntax subtext | 6.87:1 | 74.4 | PASS |
+| diff delete syntax subtext | 6.08:1 | 71.3 | PASS |
 | diff delete syntax text | 16.68:1 | 90.8 | PASS |
 | diff delete syntax bright | 16.68:1 | 90.8 | PASS |
 | diff delete syntax olive | 16.68:1 | 90.8 | PASS |
@@ -192,7 +192,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff delete syntax mauve | 5.41:1 | 68.1 | PASS |
 | diff change syntax muted | 5.86:1 | 69.0 | PASS |
 | diff change syntax comment | 5.86:1 | 69.0 | PASS |
-| diff change syntax subtext | 6.61:1 | 72.1 | PASS |
+| diff change syntax subtext | 5.86:1 | 69.0 | PASS |
 | diff change syntax text | 16.07:1 | 88.4 | PASS |
 | diff change syntax bright | 16.07:1 | 88.4 | PASS |
 | diff change syntax olive | 16.07:1 | 88.4 | PASS |

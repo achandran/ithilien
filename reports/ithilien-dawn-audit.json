@@ -26,11 +26,11 @@
     },
     {
       "name": "secondary text",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#FAFAF8",
-      "wcag": 8.27,
+      "wcag": 7.32,
       "wcagTarget": 7.0,
-      "apcaLc": 86.6,
+      "apcaLc": 83.5,
       "apcaTarget": 55,
       "passed": true
     },
@@ -66,21 +66,21 @@
     },
     {
       "name": "highlight edge on Ithilien Dawn",
-      "foreground": "#3F535F",
+      "foreground": "#505456",
       "background": "#FAFAF8",
-      "wcag": 7.69,
+      "wcag": 7.32,
       "wcagTarget": 3.0,
-      "apcaLc": 84.7,
+      "apcaLc": 83.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "highlight edge on white",
-      "foreground": "#3F535F",
+      "foreground": "#505456",
       "background": "#FFFFFF",
-      "wcag": 8.03,
+      "wcag": 7.65,
       "wcagTarget": 3.0,
-      "apcaLc": 87.8,
+      "apcaLc": 86.6,
       "apcaTarget": 0,
       "passed": true
     },
@@ -446,11 +446,11 @@
     },
     {
       "name": "subtext on base",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#FAFAF8",
-      "wcag": 8.27,
+      "wcag": 7.32,
       "wcagTarget": 4.5,
-      "apcaLc": 86.6,
+      "apcaLc": 83.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -586,11 +586,11 @@
     },
     {
       "name": "subtext on mantle",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#DEE0DF",
-      "wcag": 6.52,
+      "wcag": 5.77,
       "wcagTarget": 4.5,
-      "apcaLc": 71.2,
+      "apcaLc": 68.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -726,11 +726,11 @@
     },
     {
       "name": "subtext on surface0",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#FFFFFF",
-      "wcag": 8.64,
+      "wcag": 7.65,
       "wcagTarget": 4.5,
-      "apcaLc": 89.7,
+      "apcaLc": 86.6,
       "apcaTarget": 0,
       "passed": true
     },
@@ -866,11 +866,11 @@
     },
     {
       "name": "subtext on surface1",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#F0F1EF",
-      "wcag": 7.63,
+      "wcag": 6.76,
       "wcagTarget": 4.5,
-      "apcaLc": 81.2,
+      "apcaLc": 78.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1006,11 +1006,11 @@
     },
     {
       "name": "chrome subtext on crust",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#C9CECB",
-      "wcag": 5.42,
+      "wcag": 4.8,
       "wcagTarget": 4.5,
-      "apcaLc": 60.6,
+      "apcaLc": 57.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1046,11 +1046,11 @@
     },
     {
       "name": "chrome subtext on surface2",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#B3CBD8",
-      "wcag": 5.13,
+      "wcag": 4.54,
       "wcagTarget": 4.5,
-      "apcaLc": 57.5,
+      "apcaLc": 54.4,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1136,11 +1136,11 @@
     },
     {
       "name": "tab label on crust",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#C9CECB",
-      "wcag": 5.42,
+      "wcag": 4.8,
       "wcagTarget": 4.5,
-      "apcaLc": 60.6,
+      "apcaLc": 57.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1156,31 +1156,31 @@
     },
     {
       "name": "selection edge on mantle",
-      "foreground": "#3F535F",
+      "foreground": "#505456",
       "background": "#DEE0DF",
-      "wcag": 6.06,
+      "wcag": 5.77,
       "wcagTarget": 3.0,
-      "apcaLc": 69.3,
+      "apcaLc": 68.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selection edge on surface0",
-      "foreground": "#3F535F",
+      "foreground": "#505456",
       "background": "#FFFFFF",
-      "wcag": 8.03,
+      "wcag": 7.65,
       "wcagTarget": 3.0,
-      "apcaLc": 87.8,
+      "apcaLc": 86.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selection edge on surface1",
-      "foreground": "#3F535F",
+      "foreground": "#505456",
       "background": "#F0F1EF",
-      "wcag": 7.09,
+      "wcag": 6.76,
       "wcagTarget": 3.0,
-      "apcaLc": 79.3,
+      "apcaLc": 78.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1566,11 +1566,11 @@
     },
     {
       "name": "diff add syntax subtext",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#E2EDDF",
-      "wcag": 7.17,
+      "wcag": 6.35,
       "wcagTarget": 4.5,
-      "apcaLc": 77.1,
+      "apcaLc": 74.0,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1706,11 +1706,11 @@
     },
     {
       "name": "diff delete syntax subtext",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#F1E2DF",
-      "wcag": 6.87,
+      "wcag": 6.08,
       "wcagTarget": 4.5,
-      "apcaLc": 74.4,
+      "apcaLc": 71.3,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1846,11 +1846,11 @@
     },
     {
       "name": "diff change syntax subtext",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#D7E3EA",
-      "wcag": 6.61,
+      "wcag": 5.86,
       "wcagTarget": 4.5,
-      "apcaLc": 72.1,
+      "apcaLc": 69.0,
       "apcaTarget": 0,
       "passed": true
     },
@@ -2026,9 +2026,9 @@
     },
     {
       "name": "subtext on base",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#FAFAF8",
-      "wcag": 8.27,
+      "wcag": 7.32,
       "target": 4.5,
       "passed": true
     },
@@ -2138,9 +2138,9 @@
     },
     {
       "name": "subtext on mantle",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#DEE0DF",
-      "wcag": 6.52,
+      "wcag": 5.77,
       "target": 4.5,
       "passed": true
     },
@@ -2250,9 +2250,9 @@
     },
     {
       "name": "subtext on surface0",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#FFFFFF",
-      "wcag": 8.64,
+      "wcag": 7.65,
       "target": 4.5,
       "passed": true
     },
@@ -2362,9 +2362,9 @@
     },
     {
       "name": "subtext on surface1",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#F0F1EF",
-      "wcag": 7.63,
+      "wcag": 6.76,
       "target": 4.5,
       "passed": true
     },
@@ -2474,9 +2474,9 @@
     },
     {
       "name": "chrome subtext on crust",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#C9CECB",
-      "wcag": 5.42,
+      "wcag": 4.8,
       "target": 4.5,
       "passed": true
     },
@@ -2506,9 +2506,9 @@
     },
     {
       "name": "chrome subtext on surface2",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#B3CBD8",
-      "wcag": 5.13,
+      "wcag": 4.54,
       "target": 4.5,
       "passed": true
     },
@@ -2578,9 +2578,9 @@
     },
     {
       "name": "tab label on crust",
-      "foreground": "#444D52",
+      "foreground": "#505456",
       "background": "#C9CECB",
-      "wcag": 5.42,
+      "wcag": 4.8,
       "target": 4.5,
       "passed": true
     },
@@ -2594,25 +2594,25 @@
     },
     {
       "name": "selection edge on mantle",
-      "foreground": "#3F535F",
+      "foreground": "#505456",
       "background": "#DEE0DF",
-      "wcag": 6.06,
+      "wcag": 5.77,
       "target": 3.0,
       "passed": true
     },
     {
       "name": "selection edge on surface0",
-      "foreground": "#3F535F",
+      "foreground": "#505456",
       "background": "#FFFFFF",
-      "wcag": 8.03,
+      "wcag": 7.65,
       "target": 3.0,
       "passed": true
     },
     {
       "name": "selection edge on surface1",
-      "foreground": "#3F535F",
+      "foreground": "#505456",
       "background": "#F0F1EF",
-      "wcag": 7.09,
+      "wcag": 6.76,
       "target": 3.0,
       "passed": true
     },
@@ -2875,18 +2875,18 @@
       }
     },
     "highlight.border": {
-      "hex": "#3F535F",
+      "hex": "#505456",
       "oklch": [
-        0.4303,
-        0.0317,
-        234.8
+        0.443,
+        0.0061,
+        228.9
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4D5260",
-        "deutan": "#494F5F",
-        "tritan": "#355657",
-        "grayscale": "#505050"
+        "protan": "#535456",
+        "deutan": "#525356",
+        "tritan": "#4F5555",
+        "grayscale": "#535353"
       }
     },
     "highlight.cursor": {
@@ -2950,18 +2950,18 @@
       }
     },
     "foregrounds.subtext": {
-      "hex": "#444D52",
+      "hex": "#505456",
       "oklch": [
-        0.414,
-        0.0143,
-        232.0
+        0.443,
+        0.0061,
+        228.9
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4B4D52",
-        "deutan": "#494B52",
-        "tritan": "#404E4F",
-        "grayscale": "#4C4C4C"
+        "protan": "#535456",
+        "deutan": "#525356",
+        "tritan": "#4F5555",
+        "grayscale": "#535353"
       }
     },
     "foregrounds.text": {

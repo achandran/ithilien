@@ -6,11 +6,11 @@
     "colors": {
       "frame": "#DEE0DF",
       "frame_inactive": "#C9CECB",
-      "tab_background_text": "#444D52",
+      "tab_background_text": "#505456",
       "tab_text": "#000000",
       "toolbar": "#FFFFFF",
       "bookmark_text": "#000000",
-      "icons": "#444D52",
+      "icons": "#505456",
       "toolbar_field": "#FAFAF8",
       "toolbar_field_focus": "#FAFAF8",
       "toolbar_field_text": "#000000",

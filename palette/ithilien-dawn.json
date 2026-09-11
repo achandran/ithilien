@@ -18,13 +18,11 @@
     "Harlond": "#B3CBD8",
     "Celandine": "#D8B46A",
     "Clematis": "#D6C6DE",
-    "Juniper": "#3F535F",
     "Asphodel": "#FAFAF8",
     "Gondor": "#DEE0DF",
     "Lily": "#FFFFFF",
     "Anemone": "#F0F1EF",
     "Osgiliath": "#C9CECB",
-    "Faramir": "#444D52",
     "Briar": "#8B3037",
     "Stillwater": "#255354"
   },
@@ -89,10 +87,6 @@
       "meaning": "Trailing clematis in Ithilien; a pale lilac floral interpretation, not a flower color specified by Tolkien.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
-    "Juniper": {
-      "meaning": "Junipers in Ithilien; interpreted as blue-gray foliage in shadow.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
     "Asphodel": {
       "meaning": "Pale flowers encountered by Frodo and Sam in Ithilien.",
       "source": "https://encyclopedia-of-arda.com/a/asphodel.php"
@@ -113,10 +107,6 @@
       "meaning": "City straddling Anduin at Ithilien\u2019s western edge; weathered stone.",
       "source": "https://tolkiengateway.net/wiki/Osgiliath"
     },
-    "Faramir": {
-      "meaning": "Captain of Ithilien\u2019s Rangers and later its prince; slate gray interpreted from his gray eyes.",
-      "source": "https://tolkiengateway.net/wiki/Faramir"
-    },
     "Briar": {
       "meaning": "Briars in Ithilien; dark red fruit and stems.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
@@ -129,7 +119,7 @@
   "highlight": {
     "background": "Afterglow",
     "foreground": "Lebethron",
-    "border": "Juniper",
+    "border": "Ash",
     "cursor": "Afterglow",
     "cursorBlock": "Afterglow"
   },
@@ -146,7 +136,7 @@
   "foregrounds": {
     "muted": "Ash",
     "comment": "Ash",
-    "subtext": "Faramir",
+    "subtext": "Ash",
     "text": "Lebethron",
     "bright": "Lebethron"
   },

@@ -9,8 +9,8 @@ def generate_chart():
     p = load_palette('ithilien-dawn')
     d = review_day.Drawing()
     groups = [
-        ('Surfaces and text', [('backgrounds.base','Canvas'),('backgrounds.surface0','Raised surface'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Comments / muted'),('foregrounds.subtext','Secondary text'),('backgrounds.surface2','Accent surface'),('accents.aqua','Aqua text accent')]),
-        ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict'),('backgrounds.border','Surface border'),('highlight.border','Interaction border')]),
+        ('Surfaces and text', [('backgrounds.base','Canvas'),('backgrounds.surface0','Raised surface'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Muted / subtext'),('backgrounds.surface2','Accent surface'),('accents.aqua','Aqua text accent')]),
+        ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict'),('backgrounds.border','Surface border')]),
         ('Diffs', [('diff.addBackground','Added line'),('diff.deleteBackground','Deleted line'),('diff.changeBackground','Changed line'),('diff.changeEmphasis','Edited characters')]),
         ('Terminal colors', [('ansi.red','Red'),('ansi.green','Green'),('ansi.yellow','Yellow'),('ansi.blue','Blue'),('ansi.magenta','Magenta'),('ansi.cyan','Cyan')]),
     ]

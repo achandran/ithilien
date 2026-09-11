@@ -24,3 +24,7 @@ in tests/test_palette_identity.py enforces this freeze.
 The 4.62:1 interaction candidate passed the supported native evaluation suite.
 This is not proof of native Ghostty, fzf, Firefox focused-state behavior, Claude
 Code rendering, or long-session comfort. These require separate validation.
+
+The user also approved consolidating Faramir and Juniper onto Ash #505456.
+Secondary text and interaction borders retain their roles but share the muted
+text color. Named Lua callers should migrate Faramir/Juniper to Ash.
