@@ -31,7 +31,7 @@ The aim is a working environment that stays legible without turning every token 
 - **Precise diffs.** Locate added, removed, and changed code, down to individual characters and punctuation.
 - **Readable agent sessions.** Support code, explanations, patches, and tool output in Codex and Claude Code. Native Codex replay is tested; Claude Code coverage is still developing.
 - **Long-session comfort.** Light surfaces, dark text, and restrained decoration are design goals. Automated contrast checks support them; they do not prove comfort.
-- **Consistent interactions.** Afterglow marks selection and the cursor with black foreground text. Search and inline edits use different hues.
+- **Consistent interactions.** Briar marks selection and the cursor with black foreground text. Search and inline edits use different hues.
 
 The Neovim implementation builds on [Kansō](https://github.com/webhooked/kanso.nvim), with Ithilien’s palette and highlight mappings. Dusk is also included as a dark variant; Dawn is the focus of the current design and evaluation work.
 

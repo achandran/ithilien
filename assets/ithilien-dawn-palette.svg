@@ -36,7 +36,7 @@
 <text x="24" y="421" fill="#000000" font-weight="700">Interaction</text>
 <rect x="24" y="440" width="216" height="48" fill="#505456"/>
 <rect x="25" y="441" width="214" height="46" fill="#B8595C"/>
-<text x="24" y="511" fill="#000000" font-weight="700">Afterglow</text>
+<text x="24" y="511" fill="#000000" font-weight="700">Briar</text>
 <text x="24" y="535" fill="#505456" >Selection / cursor</text>
 <text x="24" y="559" fill="#505456" >#B8595C</text>
 <rect x="258" y="440" width="216" height="48" fill="#505456"/>
@@ -68,7 +68,7 @@
 <text x="24" y="809" fill="#000000" font-weight="700">Terminal colors</text>
 <rect x="24" y="828" width="216" height="48" fill="#505456"/>
 <rect x="25" y="829" width="214" height="46" fill="#8B3037"/>
-<text x="24" y="899" fill="#000000" font-weight="700">Briar</text>
+<text x="24" y="899" fill="#000000" font-weight="700">Annûn</text>
 <text x="24" y="923" fill="#505456" >Red</text>
 <text x="24" y="947" fill="#505456" >#8B3037</text>
 <rect x="258" y="828" width="216" height="48" fill="#505456"/>

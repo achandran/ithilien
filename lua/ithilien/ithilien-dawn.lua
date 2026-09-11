@@ -3,7 +3,7 @@ return {
   colors = {
     ["Lebethron"] = "#000000",
     ["Ash"] = "#505456",
-    ["Afterglow"] = "#B8595C",
+    ["Briar"] = "#B8595C",
     ["Ilex"] = "#315F46",
     ["Anduin"] = "#345E77",
     ["Mallorn"] = "#795922",
@@ -17,7 +17,7 @@ return {
     ["Gondor"] = "#DEE0DF",
     ["Anemone"] = "#F0F1EF",
     ["Osgiliath"] = "#C9CECB",
-    ["Briar"] = "#8B3037",
+    ["Annun"] = "#8B3037",
     ["Rauros"] = "#255354",
   },
   raw = {

@@ -300,7 +300,8 @@ def generate_preview(palettes: dict[str, dict]) -> None:
     }
     preview_palettes = {
         variant: {**palette, "colorNames": {
-            color: name for name, color in load_palette_source(palette['slug']).get('colors', {}).items()
+            color: load_palette_source(palette['slug'])['colorNotes'][name].get('displayName', name)
+            for name, color in load_palette_source(palette['slug']).get('colors', {}).items()
         }} for variant, palette in palettes.items()
     }
     data = (
@@ -312,7 +313,7 @@ def generate_preview(palettes: dict[str, dict]) -> None:
     html = destination.read_text()
     html, replacements = re.subn(
         r"/\* GENERATED_DATA_START \*/.*?/\* GENERATED_DATA_END \*/",
-        data,
+        lambda match: data,
         html,
         count=1,
         flags=re.DOTALL,
@@ -344,7 +345,7 @@ def generate_color_reference() -> None:
     ]
     for name, color in source['colors'].items():
         note = source['colorNotes'][name]
-        lines.append(f"| {name} | `{color}` | {note['meaning']} [Source]({note['source']}) | {', '.join(roles[name])} |")
+        lines.append(f"| {note.get('displayName', name)} | `{color}` | {note['meaning']} [Source]({note['source']}) | {', '.join(roles[name])} |")
     lines.extend(['', '## Authoring and integration', '',
         'Edit hex values only in `colors`. Functional roles reference those names: '
         '`backgrounds.base` → `Nimloth`, `foregrounds.text` → `Lebethron`, '
@@ -352,7 +353,7 @@ def generate_color_reference() -> None:
         'role-to-hex mappings used by existing ports and audits.', '',
         'Neovim also exposes the named palette through '
         '`require("ithilien.ithilien-dawn").colors.Anduin`. '
-        'Dusk and the shared interaction source remain unchanged. Dawn uses Afterglow selection and block cursors with black text.', ''])
+        'Dusk and the shared interaction source remain unchanged. Dawn uses Briar selection and block cursors with black text.', ''])
     (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
 
 

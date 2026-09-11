@@ -82,7 +82,7 @@ Each Firefox export also includes optional `userContent.css` for website `::sele
 
 System selection exports now include `macos/apply-highlight-ithilien-dawn.sh` and `macos/apply-highlight-ithilien-dusk.sh`; the legacy apply-highlight.sh defaults to Dawn. They remain opt-in global changes. The dynamic wallpaper is unchanged.
 
-The zsh installer also writes the Dawn prompt from `shell/prompt.zsh` into the managed block: black username, ANSI 9 (Afterglow) hostname, blue path and purple Git information. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.
+The zsh installer also writes the Dawn prompt from `shell/prompt.zsh` into the managed block: Ash username and hostname, blue path, purple Git information, and a black command-entry symbol. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.
 
 ### Neovim linewise selection rendering
 
@@ -90,7 +90,7 @@ Dawn Visual and VisualNOS use plain Ranger/Lebethron backgrounds and foregrounds
 
 ### fzf history search
 
-The zsh installation also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Ranger for the current row, underlined matching characters, and a Afterglow prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
+The zsh installation also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Briar for the current row, underlined matching characters, and a Briar prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
 
 ### macOS system selection
 

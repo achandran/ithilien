@@ -5,7 +5,7 @@
   "colors": {
     "Lebethron": "#000000",
     "Ash": "#505456",
-    "Afterglow": "#B8595C",
+    "Briar": "#B8595C",
     "Ilex": "#315F46",
     "Anduin": "#345E77",
     "Mallorn": "#795922",
@@ -19,7 +19,7 @@
     "Gondor": "#DEE0DF",
     "Anemone": "#F0F1EF",
     "Osgiliath": "#C9CECB",
-    "Briar": "#8B3037",
+    "Annun": "#8B3037",
     "Rauros": "#255354"
   },
   "colorNotes": {
@@ -31,9 +31,9 @@
       "meaning": "Ithilien ash trees; grey bark.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
-    "Afterglow": {
-      "meaning": "A poetic name for muted sunset red, inspired by the light at Henneth Ann\u00fbn; our interpretation, not a canonical Tolkien color name.",
-      "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+    "Briar": {
+      "meaning": "Muted rose red inspired by the hips of Ithilien briars; a botanical interpretation, not a shade specified by Tolkien.",
+      "source": "https://tolkiengateway.net/wiki/Eglantine"
     },
     "Ilex": {
       "meaning": "Deep green inspired by the evergreen foliage of the great ilexes of Ithilien; the exact shade is a design interpretation.",
@@ -87,9 +87,10 @@
       "meaning": "City straddling Anduin at Ithilien\u2019s western edge; weathered stone.",
       "source": "https://tolkiengateway.net/wiki/Osgiliath"
     },
-    "Briar": {
-      "meaning": "Briars in Ithilien; dark red fruit and stems.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
+    "Annun": {
+      "displayName": "Ann\u00fbn",
+      "meaning": "Deep sunset red inspired by the light through the waterfall at Henneth Ann\u00fbn in Ithilien. Paired with Henneth\u2019s pale waterfall blue; the shade is an interpretation, not the literal meaning of Ann\u00fbn. Uses Annun in code.",
+      "source": "https://encyclopedia-of-arda.com/w/windowofthesunset.php"
     },
     "Rauros": {
       "meaning": "Deep teal inspired by the shaded waters of Anduin at the Falls of Rauros, north of Ithilien. A poetic color interpretation, not a hue specified by Tolkien.",
@@ -97,11 +98,11 @@
     }
   },
   "highlight": {
-    "background": "Afterglow",
+    "background": "Briar",
     "foreground": "Lebethron",
     "border": "Ash",
-    "cursor": "Afterglow",
-    "cursorBlock": "Afterglow"
+    "cursor": "Briar",
+    "cursorBlock": "Briar"
   },
   "backgrounds": {
     "crust": "Osgiliath",
@@ -126,14 +127,14 @@
     "gold": "Lebethron",
     "ochre": "Lebethron",
     "clay": "Lebethron",
-    "coral": "Briar",
+    "coral": "Annun",
     "aqua": "Rauros",
     "blue": "Anduin",
     "mauve": "Iris"
   },
   "ansi": {
     "black": "Lebethron",
-    "red": "Briar",
+    "red": "Annun",
     "green": "Ilex",
     "yellow": "Mallorn",
     "blue": "Anduin",
@@ -141,7 +142,7 @@
     "cyan": "Rauros",
     "white": "Nimloth",
     "brightBlack": "Ash",
-    "brightRed": "Briar",
+    "brightRed": "Annun",
     "brightGreen": "Ilex",
     "brightYellow": "Mallorn",
     "brightBlue": "Anduin",
@@ -149,7 +150,7 @@
     "brightCyan": "Rauros",
     "brightWhite": "Nimloth",
     "extendedOchre": "Mallorn",
-    "extendedClay": "Briar"
+    "extendedClay": "Annun"
   },
   "diff": {
     "contextForeground": "Lebethron",

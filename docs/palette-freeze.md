@@ -6,8 +6,8 @@ reports/ansi-consolidation/baseline.json. Do not optimize or change
 its colors without an explicit new palette decision. The canonical fingerprint
 in tests/test_palette_identity.py enforces this freeze.
 
-- Afterglow #B8595C: cursor and selection backgrounds, black interaction text.
-- Regular/bright chromatic slots share Briar #8B3037, Sage #315F46,
+- Briar #B8595C: cursor and selection backgrounds, black interaction text.
+- Regular/bright chromatic slots share Annûn #8B3037, Sage #315F46,
   Mallorn #795922, Anduin #345E77, Thyme #70516D, and Rauros #255354.
 - The four neutral ANSI slots remain distinct.
 - Removed named Lua colors: Fir, Filbert, Eventide and Hyacinth. Callers can

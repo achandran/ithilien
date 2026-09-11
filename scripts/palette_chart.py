@@ -31,7 +31,7 @@ def generate_chart():
             x, y = 24 + (i % columns)*234, top + 34 + (i//columns)*146
             d.rect(x, y, 216, 48, p['backgrounds']['border'])
             d.rect(x+1, y+1, 214, 46, color)
-            d.text(x, y+56, name, p['foregrounds']['text'], 'bold')
+            d.text(x, y+56, source['colorNotes'][name].get('displayName', name), p['foregrounds']['text'], 'bold')
             d.text(x, y+80, label, p['foregrounds']['muted'])
             d.text(x, y+104, color, p['foregrounds']['muted'])
         top += 48 + ((len(items)+columns-1)//columns)*146
