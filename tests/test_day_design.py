@@ -22,7 +22,7 @@ class DayDesign(unittest.TestCase):
 
     def test_neutral_selection_does_not_change_diff_emphasis(self):
         p=load_palette('ithilien-dawn')
-        self.assertEqual(p['highlight']['background'], '#A8B2AE')
+        self.assertEqual(p['highlight']['background'], '#9FA9A4')
         self.assertEqual(p['diff']['changeEmphasis'], '#D8B46A')
         self.assertNotEqual(p['highlight']['background'],p['diff']['changeEmphasis'])
         self.assertGreaterEqual(wcag(p['highlight']['foreground'],p['highlight']['background']),7)
@@ -60,7 +60,7 @@ class DayDesign(unittest.TestCase):
 
     def test_pure_black_main_text_on_neutral_white(self):
         p=load_palette('ithilien-dawn')
-        self.assertEqual(p['backgrounds']['base'], '#F6F6F3')
+        self.assertEqual(p['backgrounds']['base'], '#FAFAF8')
         self.assertEqual(p['foregrounds']['text'], '#000000')
         self.assertEqual(p['foregrounds']['bright'], '#000000')
         self.assertNotEqual(p['foregrounds']['comment'],p['foregrounds']['text'])

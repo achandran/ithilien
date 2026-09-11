@@ -4,9 +4,9 @@
   "polarity": "light",
   "colors": {
     "Lebethron": "#000000",
-    "Ash": "#596166",
-    "Stonecrop": "#76848B",
-    "Rosehip": "#A3373E",
+    "Ash": "#505456",
+    "Stonecrop": "#66716D",
+    "Rosehip": "#AD2F38",
     "Sage": "#315F46",
     "Anduin": "#345E77",
     "Broom": "#795922",
@@ -19,13 +19,13 @@
     "Spray": "#D7E3EA",
     "Harlond": "#B3CBD8",
     "Celandine": "#D8B46A",
-    "Clematis": "#E5D9E7",
+    "Clematis": "#D6C6DE",
     "Juniper": "#3F535F",
-    "Asphodel": "#F6F6F3",
-    "Gondor": "#E0E3E2",
-    "Lily": "#FDFDFA",
-    "Anemone": "#ECEEEB",
-    "Osgiliath": "#D6DCD9",
+    "Asphodel": "#FAFAF8",
+    "Gondor": "#DEE0DF",
+    "Lily": "#FFFFFF",
+    "Anemone": "#F0F1EF",
+    "Osgiliath": "#C9CECB",
     "Faramir": "#444D52",
     "Briar": "#8B3037",
     "Fir": "#274D39",
@@ -33,7 +33,7 @@
     "Cypress": "#274A62",
     "Hyacinth": "#60425E",
     "Morgulduin": "#255354",
-    "Ranger": "#A8B2AE"
+    "Ranger": "#9FA9A4"
   },
   "colorNotes": {
     "Lebethron": {

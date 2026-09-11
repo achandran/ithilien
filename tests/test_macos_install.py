@@ -18,7 +18,7 @@ class MacOSInstall(unittest.TestCase):
             self.assertFalse(installer.backup.exists())
             installer.apply = True
             installer.macos()
-            self.assertEqual(run.call_args.args[0], ['/usr/bin/defaults', 'write', '-g', 'AppleHighlightColor', '-string', '0.658824 0.698039 0.682353 Other'])
+            self.assertEqual(run.call_args.args[0], ['/usr/bin/defaults', 'write', '-g', 'AppleHighlightColor', '-string', '0.623529 0.662745 0.643137 Other'])
             self.assertEqual(json.loads((installer.backup / 'macos-highlight.json').read_text())['previous'], 'old value')
 
     def test_unchanged_and_non_mac(self):
@@ -29,7 +29,7 @@ class MacOSInstall(unittest.TestCase):
                 run.assert_not_called()
                 self.assertFalse(installer.detected('macos', 'macOS'))
             with patch('install.sys.platform', 'darwin'):
-                run.return_value = subprocess.CompletedProcess([], 0, '0.658824 0.698039 0.682353 Other\n', '')
+                run.return_value = subprocess.CompletedProcess([], 0, '0.623529 0.662745 0.643137 Other\n', '')
                 installer.macos()
                 self.assertEqual(run.call_count, 1)
                 self.assertFalse(installer.backup.exists())
