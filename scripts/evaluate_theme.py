@@ -21,6 +21,7 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
     grid, attrs, defaults = {}, {}, {}
     syntax_groups = []
     highlights = {}
+    regions = []
     def notify(name, args):
         if name == 'evaluation_done':
             n.stop_loop(); return
@@ -38,7 +39,7 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
                         for _ in range(cell[2] if len(cell) > 2 else 1):
                             grid[row, col] = (cell[0], attr); col += 1
     def setup():
-        nonlocal syntax_groups, highlights
+        nonlocal syntax_groups, highlights, regions
         n.ui_attach(width, 30, rgb=True, ext_linegrid=True)
         n.command('set termguicolors splitright background=light')
         if adapter:
@@ -67,11 +68,33 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
             keys={'selection':'V2j','selection-char':'v3l','selection-block':'\x163l2j'}[state]
             n.command('normal! '+keys)
         syntax_groups = n.exec_lua("local groups = {}; for row,line in ipairs(vim.api.nvim_buf_get_lines(0,0,-1,false)) do for col=1,#line do local name=vim.fn.synIDattr(vim.fn.synID(row,col,1),'name'); if name ~= '' then groups[name]=true end end end; return vim.tbl_keys(groups)")
+        regions = n.exec_lua("""
+            local out={}
+            for _,win in ipairs(vim.api.nvim_list_wins()) do
+                vim.api.nvim_win_call(win,function()
+                    local lines=vim.api.nvim_buf_get_lines(0,0,-1,false)
+                    for row,line in ipairs(lines) do
+                        local byte=1
+                        for _,char in ipairs(vim.fn.split(line,[=[\\zs]=])) do
+                            local pos=vim.fn.screenpos(win,row,byte)
+                            if pos.row>0 and pos.col>0 then
+                                local group=vim.fn.synIDattr(vim.fn.diff_hlID(row,byte),'name')
+                                for col=pos.col,math.max(pos.col,pos.endcol) do
+                                    out[#out+1]={row=pos.row-1,col=col-1,source_line=row,source_byte=byte,side=vim.api.nvim_buf_get_name(0):find(".before.",1,true) and "before" or "after",group=group,text=char}
+                                end
+                            end
+                            byte=byte+#char
+                        end
+                    end
+                end)
+            end
+            return out
+        """)
         n.command('redraw!')
         n.exec_lua("local ch=...; vim.defer_fn(function() vim.cmd('redraw!'); vim.rpcnotify(ch,'evaluation_done') end,100)",n.channel_id)
     try:
         n.run_loop(None, notify, setup_cb=setup)
-        result = {'case':case['id'],'width':width,'state':state,'highlights':highlights,'syntax_groups':syntax_groups,'require_syntax':case.get('require_syntax',False),'defaults':defaults,'attrs':attrs,
+        result = {'case':case['id'],'width':width,'state':state,'regions':regions,'highlights':highlights,'syntax_groups':syntax_groups,'require_syntax':case.get('require_syntax',False),'defaults':defaults,'attrs':attrs,
                   'cells':[{'row':r,'col':c,'text':t,'attr':a} for (r,c),(t,a) in sorted(grid.items())]}
         assert result['cells'], 'No native UI cells received'
         return result
@@ -119,7 +142,7 @@ def main():
     if args.codex_source:
         from codex_native import run_native
         native=run_native(args.codex_source.resolve(),args.output)
-    report={'native_checks':native_checks,'nvim_version':subprocess.check_output([args.nvim,'--version'],text=True).splitlines()[0],'native_neovim_captures':len(captures),'pair_contrasts':pairs,'failures':failures,'codex':native,
+    report={'render_profile':json.loads((ROOT/'evaluation/render-profile.json').read_text()),'native_checks':native_checks,'nvim_version':subprocess.check_output([args.nvim,'--version'],text=True).splitlines()[0],'native_neovim_captures':len(captures),'pair_contrasts':pairs,'failures':failures,'codex':native,
             'comfort':'manual assessment required','palette_sha256':hashlib.sha256((ROOT/'palette/ithilien-dawn.json').read_bytes()).hexdigest()}
     if args.baseline:
         old=json.loads((args.baseline/'report.json').read_text())
@@ -140,7 +163,7 @@ def main():
                 spans.append(f'<span style="{style}">{html.escape(c["text"])}</span>')
             lines.append(''.join(spans))
         blocks.append(f'<h2>{shot["case"]} · {shot["width"]} columns · {shot["state"]}</h2><pre>'+ '\n'.join(lines)+'</pre>')
-    (args.output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><title>Ithilien native cell gallery</title><style>body{background:#eee;padding:24px}pre{font:14px/1.4 monospace;overflow:auto}h2{font:18px sans-serif}</style><h1>Native Neovim cell captures</h1><p>Browser reconstruction of actual UI cells; not a Ghostty screenshot. Codex validation status is in report.json. Review missed edits, selection visibility and comfort separately.</p>'+''.join(blocks))
+    (args.output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><title>Ithilien native cell gallery</title><style>body{background:#eee;padding:24px}pre{font:16pt/1.4 "Berkeley Mono Medium",monospace;overflow:auto}h2{font:18px sans-serif}</style><h1>Native Neovim cell captures</h1><p>Browser reconstruction of actual UI cells; not a Ghostty screenshot. Codex validation status is in report.json. Review missed edits, selection visibility and comfort separately.</p>'+''.join(blocks))
     print(json.dumps(report,indent=2))
     return bool(failures) or native['status']=='fail' or (args.require_codex and native['status']!='pass')
 if __name__=='__main__':sys.exit(main())

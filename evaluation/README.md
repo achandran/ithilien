@@ -65,3 +65,35 @@ This first comparison mode preserves original theme highlights. It applies the s
 The run produces 440 native UI captures, per-theme cell JSON, an expandable matched-fixture gallery and a machine-readable report. Below-4.5 contrast counts include structural characters and are observations, not pass/fail rankings. Background contrast ratios are not perceptual hue distances or comfort scores. Syntax failures fail the run; measured accessibility concerns remain in the report so comparison can complete. Missing dependencies or renderer failures also fail the command rather than silently omit a theme.
 
 Comparison currently covers built-in Neovim syntax only. Competitor Codex ports, palette-only mode, Tree-sitter/LSP and native Ghostty screenshots are not implemented by this command. The separate Ithilien evaluator retains its existing Codex and exact-character checks.
+
+## Experimental scorecard
+
+Every comparison now writes `scorecard.json` and `scorecard.html`. Re-score existing **region-aware** captures without rerendering:
+
+```sh
+uv run python scripts/score_themes.py evaluation/results/comparison
+```
+
+`rubric.json` versions weights, targets and small independent source-byte oracles. Version 0.1.0 produces a **provisional Neovim plain-diff score**, not a cross-application excellence score. Text readability has 50% weight, inline background separation 35%, and changed-line background separation 15%. Text contrast saturates at 4.5:1; distinction saturates at heuristic CIEDE2000 color distances of 15 and 5. The background targets are engineering choices, not validated UX thresholds. Equal weighting of fixture/width observations limits domination by long snippets. Missing components or a failed inline oracle prevent a total score.
+
+Native screen positions map code cells back to buffer text. Gutters, filler and status lines are excluded. Explicit punctuation and Unicode-prefix byte-position oracles verify required inline cells; these are limited spot checks, not exhaustive edit-span verification. Whitespace and all renderer-reported inline regions participate in separation measurements when a surrounding changed-line background is visible. Search and Visual captures remain available but are not scored yet. Background color distance includes hue but omits typography, so this rubric can undervalue themes that distinguish regions using bold or underline.
+
+Agent and long-session axes remain `null / not_evaluated`. The scorecard exposes a text-readability indicator, but does not relabel it as comfort. There is no overall score. Do not use this experimental rubric as the sole objective of unattended palette optimization until it has broader coverage and calibration. Deliberate low-contrast and indistinguishable-inline mutations are tested to ensure they lower the score; missing source regions cannot silently pass.
+
+### Version 0.2: gates and distributions
+
+The dashboard replaces headline aggregate scores with gate status and worst-case component measurements. Per-theme details expose minimum, median, maximum and linked cell-level failures. The old weighted score remains in JSON for compatibility only; it is not a ranking or acceptance criterion.
+
+Critical source-byte oracles now cover the deleted `l` in ghosttyconfig, replacement punctuation, a Unicode-prefixed digit, a removed space and an added trailing space. Required inline backgrounds must differ from the same-side changed line by at least ΔE2000 5 (an experimental threshold). Any missing required cell/emphasis, failed critical background distinction or unreadable source character is recorded individually. Source text is assessed in all five states. Overlay presence is checked against the plain capture. It does not prove every expected overlay cell or disambiguate all overlay conflicts; typography-only emphasis can be flagged by the background gate.
+
+Use `--strict-gates` with either comparison or scoring to return a failing exit status when any theme violates a gate. Ordinary comparison still completes and records all findings, permitting comparison of themes with known failures. Missing data are failures, not implicit passes. Candidate optimization should use strict mode on the candidate separately from competitor benchmarks.
+
+Mutation tests exercise low-contrast characters, absent inline emphasis, merged backgrounds, invisible search overlays, harmless distinct hue changes, and gutter exclusion. These demonstrate sensitivity to specific degradations; they do not constitute human-performance calibration. Agent and comfort axes remain unscored.
+
+### Failure audit and light-mode typography
+
+The comparison command also writes `failure-audit.html` and JSON, grouping repeated findings by rendered style. Each representative includes foreground/background values, the measured value, a native-cell line reconstruction and a fixture link. Repeated cells across states and widths are not independent defects. Regenerate from saved captures with `uv run python scripts/audit_failures.py evaluation/results/comparison`.
+
+The inline gate checks foreground and typography alternatives when background separation is weak. Alternative cues yield `inline_cue_review`, not an automatic background-only failure or an unearned pass. Bold/italic do not count as visible cues for spaces. Exact overlay boundaries and full cue effectiveness remain unverified.
+
+Light-mode visual previews request **Berkeley Mono Medium, size 16** (16 pt in HTML/SVG), as recorded in `render-profile.json`. Neovim/Ratatui cell captures do not use fonts; browser font availability and native Ghostty font rendering are not verified. Theme-requested bold/italic styling is preserved for fair original-theme comparison. A browser missing the font will use a monospace fallback; these previews must not be described as verified font screenshots.

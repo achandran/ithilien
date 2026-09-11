@@ -56,6 +56,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--manifest',type=Path,default=ROOT/'evaluation/themes.json')
     p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/comparison')
+    p.add_argument('--strict-gates',action='store_true',help='Fail if any theme fails the experimental gates')
     p.add_argument('--themes',nargs='+');p.add_argument('--nvim',default=shutil.which('nvim'))
     args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
     adapters=json.loads(args.manifest.read_text())
@@ -75,15 +76,21 @@ def main():
         checks=[assess(s) for s in shots];failed|=any(c['errors'] for c in checks)
         reports.append({'theme':adapter,'captures':len(shots),'checks':checks})
         (args.output/(adapter['id']+'.cells.json')).write_text(json.dumps(shots,ensure_ascii=False))
-    report={'mode':'original-theme','nvim':subprocess.check_output([args.nvim,'--version'],text=True).splitlines()[0],
+    report={'render_profile':json.loads((ROOT/'evaluation/render-profile.json').read_text()),'mode':'original-theme','nvim':subprocess.check_output([args.nvim,'--version'],text=True).splitlines()[0],
         'corpus_sha256':hashlib.sha256(json.dumps(cases,sort_keys=True).encode()+b''.join((ROOT/'evaluation'/c[s]).read_bytes() for c in cases for s in ('before','after'))).hexdigest(),
         'themes':reports,'coverage':{'neovim':'builtin syntax, initial viewport','codex':'not run by comparison runner','ghostty':'blocked: Computer Use policy','treesitter_lsp':'not implemented','comfort':'unverified'},
         'interpretation':'Contrast flags are observations, not a theme ranking. Background contrast does not measure hue separation. Browser cell reconstructions are not terminal screenshots.'}
     (args.output/'report.json').write_text(json.dumps(report,indent=2))
     blocks=[]
     for (case,width,state),entries in screens.items():
-        blocks.append(f'<details><summary>{html.escape(case)} / {width} / {state}</summary>'+''.join('<h3>'+html.escape(name)+'</h3>'+render(shot) for name,shot in entries)+'</details>')
-    (args.output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme comparison</title><style>body{background:#eee;font:16px sans-serif;padding:20px}pre{font:14px/1.4 monospace;overflow:auto}summary{padding:12px;cursor:pointer}details{border-bottom:1px solid #aaa}</style><h1>Original theme comparison</h1><p>Identical native Neovim cells. Expand a fixture to compare themes. No Ithilien diff helper or palette overrides. Contrast observations and coverage gaps are in report.json.</p>'+''.join(blocks))
+        blocks.append(f'<details id="{case}-{width}-{state}"><summary>{html.escape(case)} / {width} / {state}</summary>'+''.join('<h3>'+html.escape(name)+'</h3>'+render(shot) for name,shot in entries)+'</details>')
+    (args.output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme comparison</title><style>body{background:#eee;font:16px sans-serif;padding:20px}pre{font:16pt/1.4 "Berkeley Mono Medium",monospace;overflow:auto}summary{padding:12px;cursor:pointer}details{border-bottom:1px solid #aaa}</style><h1>Original theme comparison</h1><p>Identical native Neovim cells. Expand a fixture to compare themes. No Ithilien diff helper or palette overrides. Contrast observations and coverage gaps are in report.json.</p>'+''.join(blocks)+'<script>function reveal(){const e=document.getElementById(location.hash.slice(1));if(e)e.open=true;}addEventListener("hashchange",reveal);reveal();</script>')
+    from score_themes import write_scorecard
+    scored=write_scorecard(args.output,report)
+    from audit_failures import main as audit_failures
+    audit_failures(args.output)
+    failed |= any(s['diff']['oracle_failures'] for s in scored)
+    if args.strict_gates: failed |= any(s['gates']['failures'] for s in scored)
     print(f'{sum(r["captures"] for r in reports)} captures; report: {args.output}')
     return int(failed)
 if __name__=='__main__':raise SystemExit(main())
