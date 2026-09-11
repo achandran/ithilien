@@ -334,7 +334,7 @@ def generate_color_reference() -> None:
         f'All **{len(source["colors"])} named sRGB colors** define the Formex-inspired Dawn palette. '
         'Each color has one single-word name and a documented connection to Tolkien’s work. '
         'The exact shades are design interpretations, not colors measured from the books.', '',
-        'Names are limited to Ithilien’s plants, waters, materials and people, plus its '
+        'Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its '
         'immediate Gondorian neighbours. Gondor is its realm; Osgiliath, Pelennor and Harlond '
         'are directly connected across Anduin. Plant names refer to species mentioned in '
         'Ithilien; material names describe its local landscape. The sources establish those '
@@ -352,7 +352,7 @@ def generate_color_reference() -> None:
         'role-to-hex mappings used by existing ports and audits.', '',
         'Neovim also exposes the named palette through '
         '`require("ithilien.ithilien-dawn").colors.Anduin`. '
-        'Dusk and the shared interaction source remain unchanged. Dawn uses Rosehip selection and block cursors with black text.', ''])
+        'Dusk and the shared interaction source remain unchanged. Dawn uses Afterglow selection and block cursors with black text.', ''])
     (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
 
 

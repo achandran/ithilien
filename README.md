@@ -12,6 +12,18 @@ Porcelain whites. Black type. Steel neutrals. A small, deliberate red accent.
 
 [Palette](#palette) · [Design](#design) · [Install](#install) · [Preview details](docs/readme-generation.md)
 
+## Palette
+
+![Ithilien Dawn palette — names, hex values, and semantic roles](assets/ithilien-dawn-palette.svg)
+
+Colors are grouped by surfaces and text, interaction, diffs, and terminal accents. Each swatch shows its palette name, a representative role, and exact hex value. Shared colors can serve additional roles; see the full reference below.
+
+The palette and preview images are generated from the theme sources so they stay in sync. The Neovim image above uses actual captured UI-cell colors, rasterized with Berkeley Mono Medium at 16 pt. It shows built-in Python syntax, not a Tree-sitter/LSP configuration or a native Ghostty screenshot.
+
+[Full palette reference](docs/palette-names.md) · [Interactive palette — click swatches to copy hex](palette-preview.html)
+
+Open `palette-preview.html` locally to copy any swatch with a click or Enter. GitHub’s static README images cannot access the clipboard.
+
 ## Design
 
 Dawn takes its visual direction from the **Formex Reef GMT with a white dial, black ceramic bezel, and stainless steel bracelet**: clear markings on a quiet surface, metallic neutrals, and red used deliberately for interaction. Its color names come from Tolkien’s Ithilien.
@@ -21,17 +33,9 @@ The aim is a working environment that stays legible without turning every token 
 - **Precise diffs.** Locate added, removed, and changed code, down to individual characters and punctuation.
 - **Readable agent sessions.** Support code, explanations, patches, and tool output in Codex and Claude Code. Native Codex replay is tested; Claude Code coverage is still developing.
 - **Long-session comfort.** Light surfaces, dark text, and restrained decoration are design goals. Automated contrast checks support them; they do not prove comfort.
-- **Consistent interactions.** Rosehip marks selection and the cursor with black foreground text. Search and inline edits use different hues.
+- **Consistent interactions.** Afterglow marks selection and the cursor with black foreground text. Search and inline edits use different hues.
 
 The Neovim implementation builds on [Kansō](https://github.com/webhooked/kanso.nvim), with Ithilien’s palette and highlight mappings. Dusk is also included as a dark variant; Dawn is the focus of the current design and evaluation work.
-
-## Palette
-
-![Ithilien Dawn palette — names, hex values, and semantic roles](assets/ithilien-dawn-palette.svg)
-
-The palette and preview images are generated from the theme sources so they stay in sync. The Neovim image above uses actual captured UI-cell colors, rasterized with Berkeley Mono Medium at 16 pt. It shows built-in Python syntax, not a Tree-sitter/LSP configuration or a native Ghostty screenshot.
-
-[Full palette reference](docs/palette-names.md) · [Interactive palette source](palette-preview.html)
 
 ## Install
 
