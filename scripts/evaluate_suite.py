@@ -7,6 +7,7 @@ from codex_theme_adapters import prepare
 from codex_native import run_native
 from codex_flows import run as run_flows
 from agent_gates import assess
+from aesthetic_score import evaluate as evaluate_aesthetic
 
 
 def execution_failed(report):
@@ -18,6 +19,8 @@ def write_index(out,report):
     rows=[];details=[]
     for t in report['themes']:
         name=html.escape(t['id'])
+        aesthetic=t.get('aesthetic',{'status':'not evaluated','score':None})
+        details.append('<details><summary>'+name+': Formex fidelity '+html.escape(str(aesthetic.get('score')) if aesthetic.get('score') is not None else aesthetic['status'])+'</summary><pre>'+html.escape(json.dumps(aesthetic,indent=2))+'</pre></details>')
         if 'adapter' not in t:rows.append(f'<tr><td>{name}</td><td colspan="3">{html.escape(t["reason"])}</td></tr>');continue
         rows.append(f'<tr><td>{name}</td><td>{html.escape(t["adapter"]["provenance"])}</td><td><a href="{t["diff_gallery"]}">{t["codex_diff"]["status"]}: diffs</a></td><td><a href="{t["flow_gallery"]}">{t["agent_gates"]["status"]}: flows</a></td></tr>')
         stage_rows=''.join(f'<tr><td>{html.escape(g["stage"])}</td><td>{g["width"]}</td><td>{g["minimum_contrast"]}</td><td>{len(g["failures"])}</td><td>{g["dim_cells_unverified"]}</td></tr>' for g in t['agent_gates']['stages'])
@@ -49,7 +52,7 @@ def main():
             flow=run_flows(a.codex_source.resolve(),folder/'flows',theme,palette)
             records=json.loads((folder/'flows/codex-cells.json').read_text());gates=assess(records,palette)
             (folder/'agent-gates.json').write_text(json.dumps(gates,indent=2))
-            report['themes'].append({'id':name,'adapter':meta,'codex_diff':diff,'codex_flows':flow,'agent_gates':gates,'flow_gallery':f'codex/{name}/flows/codex-gallery.html','diff_gallery':f'codex/{name}/diff/codex-gallery.html'})
+            report['themes'].append({'id':name,'aesthetic':evaluate_aesthetic(entry,palette,records),'adapter':meta,'codex_diff':diff,'codex_flows':flow,'agent_gates':gates,'flow_gallery':f'codex/{name}/flows/codex-gallery.html','diff_gallery':f'codex/{name}/diff/codex-gallery.html'})
         except Exception as exc:
             report['themes'].append({'id':name,'status':'unavailable_or_error','reason':str(exc)})
         (out/'report.json').write_text(json.dumps(report,indent=2))

@@ -11,7 +11,8 @@
     "setup": "require('ithilien').load('dawn')",
     "sources": {
       "../kanso": "https://github.com/webhooked/kanso.nvim"
-    }
+    },
+    "aesthetic_profile": "formex-reef-gmt-white-steel"
   },
   {
     "id": "kanso-pearl",
