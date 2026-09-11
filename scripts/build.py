@@ -8,3 +8,6 @@ if __name__ == "__main__":
     audit("ithilien-dusk")
     audit("ithilien-dawn")
     generate()
+
+    from generate_readme import main as generate_readme
+    generate_readme()
