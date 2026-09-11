@@ -81,3 +81,5 @@ Each Firefox export also includes optional `userContent.css` for website `::sele
 `./install.sh --apply --only zsh firefox` installs these integrations when detected. Start a new zsh session after installation. The managed shell block defaults to Dawn; source `ithilien-dusk.zsh` instead for Dusk. ZLE visual selection and Ghostty mouse selection are separate systems. Non-region ZLE settings are preserved. The source can still be overridden by later shell/plugin hooks.
 
 System selection exports now include `macos/apply-highlight-ithilien-dawn.sh` and `macos/apply-highlight-ithilien-dusk.sh`; the legacy apply-highlight.sh defaults to Dawn. They remain opt-in global changes. The dynamic wallpaper is unchanged.
+
+The zsh installer also writes the Dawn prompt from `shell/prompt.zsh` into the managed block: graphite username, ANSI 9 (Rosehip) hostname, blue path and purple Git information. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.

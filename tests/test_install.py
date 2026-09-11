@@ -86,3 +86,19 @@ class InstallTests(unittest.TestCase):
                 self.assertIn('region:bg=#B3CBD8,fg=#25292B', rc.read_text())
                 result=subprocess.run(['zsh','-f','-c','zle_highlight=("paste:none" "region:standout"); source "$1"; source "$1"; print -l -- "${zle_highlight[@]}"','test',str(script)],capture_output=True,text=True,check=True)
                 self.assertEqual(result.stdout.splitlines(),['paste:none','region:bg=#B3CBD8,fg=#25292B'])
+
+    def test_installed_prompt_uses_rosehip_and_keeps_git_variable(self):
+        import subprocess
+        import shutil
+        with tempfile.TemporaryDirectory() as temp, contextlib.redirect_stdout(io.StringIO()):
+            home=Path(temp); rc=home/'.zshrc'
+            rc.write_text("export PS1='old prompt'\nvcs_info_msg_0_='main'\n")
+            with patch.dict('os.environ', {'XDG_CONFIG_HOME': str(home/'.config'), 'ZDOTDIR': str(home)}):
+                installer=Installer(home,True);installer.zsh();installer.zsh()
+            self.assertEqual(rc.read_text().count('# BEGIN ITHILIEN ZLE'),1)
+            if shutil.which('zsh'):
+                result=subprocess.run(['zsh','-f','-c','source "$1"; [[ -o promptsubst ]] || exit 1; print -r -- "$PS1"; print -r -- "$vcs_info_msg_0_"','test',str(rc)],capture_output=True,text=True,check=True)
+                self.assertIn('%F{9}%m%f',result.stdout)
+                self.assertIn('${vcs_info_msg_0_}',result.stdout)
+                self.assertIn('\n%f$ ',result.stdout)
+                self.assertTrue(result.stdout.endswith('main\n'))

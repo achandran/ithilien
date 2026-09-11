@@ -135,9 +135,10 @@ class Installer:
             raise ValueError('Incomplete Ithilien ZLE block')
         text = re.sub(r'(?ms)^# BEGIN ITHILIEN ZLE\n.*?^# END ITHILIEN ZLE\n?', '', text)
         selection = (ROOT / "shell/ithilien-dawn.zsh").read_text().rstrip()
-        block = f"{start}\n{selection}\n{end}\n"
+        prompt = (ROOT / "shell/prompt.zsh").read_text().rstrip()
+        block = f"{start}\n{selection}\n{prompt}\n{end}\n"
         self.write(rc, (text.rstrip() + '\n\n' + block).encode())
-        print('NEXT zsh: start a new shell. Dawn visual selection is installed; source ithilien-dusk.zsh instead for a dark terminal. Existing non-region ZLE styles are preserved.')
+        print('NEXT zsh: start a new shell. Dawn visual selection and Rosehip-hostname prompt are installed; source ithilien-dusk.zsh instead for a dark terminal. Existing non-region ZLE styles are preserved.')
 
 
 def main():
