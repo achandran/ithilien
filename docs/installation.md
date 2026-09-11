@@ -83,3 +83,7 @@ Each Firefox export also includes optional `userContent.css` for website `::sele
 System selection exports now include `macos/apply-highlight-ithilien-dawn.sh` and `macos/apply-highlight-ithilien-dusk.sh`; the legacy apply-highlight.sh defaults to Dawn. They remain opt-in global changes. The dynamic wallpaper is unchanged.
 
 The zsh installer also writes the Dawn prompt from `shell/prompt.zsh` into the managed block: graphite username, ANSI 9 (Rosehip) hostname, blue path and purple Git information. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.
+
+### Neovim linewise selection rendering
+
+Dawn Visual and VisualNOS use plain Ranger/Lebethron backgrounds and foregrounds with no underline or other decoration. The user confirmed that removing selection styling fixes partial-line rendering in Ghostty. Exact diff-character highlights retain bold and underline; the native highlight regression check asserts both contracts. Earlier reports describing an underlined Visual selection are historical.

@@ -14,6 +14,18 @@ local raw=require('ithilien.ithilien-dawn').raw
 assert(require("kanso").config.theme == "pearl", "Dawn must use Kanso Pearl")
 assert(not package.loaded["zenbones.specs"], "Dawn must not load Zenbones")
 local expected=tonumber(raw.foregrounds.text:sub(2),16)
+-- Plain selection fixes the user-confirmed partial V-line rendering regression.
+-- Keep decoration on exact diff changes, not on the selection overlay.
+for _,name in ipairs({'Visual','VisualNOS'}) do
+ local h=vim.api.nvim_get_hl(0,{name=name,link=false})
+ assert(h.bg==tonumber(raw.highlight.background:sub(2),16),name..' selection background')
+ assert(h.fg==expected,name..' selection text')
+ for _,key in ipairs({'underline','undercurl','underdouble','underdotted','underdashed','reverse','bold','italic','strikethrough'}) do
+  assert(not h[key],name..' must be undecorated: '..key)
+  assert(not (h.cterm and h.cterm[key]),name..' cterm must be undecorated: '..key)
+ end
+ assert(not h.sp,name..' must not set a decoration color')
+end
 local checked=0
 for name,h in pairs(snapshot()) do
  assert(not h.reverse,'Reversed group: '..name)
