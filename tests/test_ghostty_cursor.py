@@ -32,6 +32,9 @@ class GhosttyCursor(unittest.TestCase):
                 if variant == 'dawn':
                     self.assertEqual(generated['cursor-text'], palette['foregrounds']['text'])
                     self.assertEqual(generated['cursor-style'], 'block')
+                    # User reproduced black-on-black vicmd cells with 4.5;
+                    # static pair contrast alone does not cover the renderer.
+                    self.assertEqual(generated['minimum-contrast'], '1')
 
     def test_red_bar_does_not_exempt_unreadable_block_pair(self):
         with self.assertRaises(AssertionError):

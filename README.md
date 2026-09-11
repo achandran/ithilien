@@ -61,4 +61,4 @@ The selected Neutral white palette is implemented on `design/formex-dawn`. See [
 
 ### Dawn cursor: the GMT red tip
 
-Dawn uses an Eglantine (`#F1E2DF`) Ghostty block cursor with Lebethron (`#25292B`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections remain Harlond blue. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.
+Dawn uses an Eglantine (`#F1E2DF`) Ghostty block cursor with Lebethron (`#25292B`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections remain Harlond blue. Dawn explicitly sets `minimum-contrast = 1`: the higher setting caused unreadable blocks in zsh vi mode. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.

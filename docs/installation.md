@@ -8,7 +8,7 @@ Copy `ghostty/themes/ithilien_dusk.conf` and `ghostty/themes/ithilien_dawn.conf`
 theme = light:ithilien_dawn.conf,dark:ithilien_dusk.conf
 ```
 
-The generated dark theme uses Berkeley Mono Retina for terminal text and window titles. The light theme uses Berkeley Mono Medium for both. Neither theme sets `font-thicken`. The light theme sets `faint-opacity = 1` to protect agent deletion text, and `minimum-contrast = 4.5` for unexpected terminal pairs. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is dark graphite.
+The generated dark theme uses Berkeley Mono Retina for terminal text and window titles. The light theme uses Berkeley Mono Medium for both. Neither theme sets `font-thicken`. The light theme sets `faint-opacity = 1` to protect agent deletion text, and `minimum-contrast = 1` to disable renderer contrast adjustment, which made vi-mode block cursor text unreadable in the user’s Ghostty setup. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is dark graphite.
 
 ## Neovim and LazyVim
 
@@ -57,3 +57,7 @@ swiftc -module-cache-path /private/tmp/ithilien-swift-cache scripts/generate_wal
 - macOS selection: run `macos/apply-highlight.sh`, then log out and back in.
 
 Paths are relative to the repository root.
+
+### Native cursor regression check
+
+With Dawn loaded, use zsh `bindkey -v`, type a command without executing it, press Escape, and move the block over letters and punctuation. Check dark text remains readable in the pale block, then return to insert mode. The user confirmed that changing `minimum-contrast` from 4.5 to 1 fixes the unreadable block in this workflow (version reported as “1.31”; exact version string unverified). Automated tests pin this setting and audit the exported pair, but do not emulate Ghostty rendering. Applications emitting their own colors no longer receive automatic contrast correction.
