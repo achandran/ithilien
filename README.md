@@ -83,3 +83,5 @@ Dawn now uses Kanso Pearl as its Neovim base. The canonical palette and terminal
 ## Palette regression evaluation
 
 See [the evaluation suite](evaluation/README.md) for native Neovim and Codex captures, pinned fixtures, contrast checks, and before/after palette review.
+
+For the combined cross-theme Neovim, Python Tree-sitter/LSP and native Codex run, use `uv run python scripts/evaluate_suite.py --codex-source /path/to/codex --python-source /path/to/tree-sitter-python`. The [evaluation guide](evaluation/README.md) describes pinned dependencies, conversion provenance, strict candidate gates and remaining coverage gaps.

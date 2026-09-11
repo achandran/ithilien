@@ -129,3 +129,22 @@ uv run python scripts/codex_flows.py --source /path/to/pinned/codex
 The flow adapter runs inside upstream `ChatWidget` tests using real event handlers and native Ratatui rendering. It loads the exported Ithilien theme and replays a request, commentary, approval modal, failed Python test output, patch in progress/completed, successful tests and final Markdown/Python response. Two widths produce 16 captures with accumulated native history and the current widget. The approval response and tool results are synthetic events; no command is executed, no files are patched and no model/API call occurs.
 
 This is a complete scripted UI workflow, not a live app-server end-to-end session. It does not cover every Codex path, all color depths, Claude Code, or native Ghostty. The existing diff adapter still supplies explicit three-color-depth coverage. `native.log`, `codex-cells.json`, `codex-gallery.html` and `report.json` preserve evidence. Text contrast findings are reported without claiming a general agent-excellence score. Native DIM rendering remains terminal-dependent.
+
+## Unified candidate suite
+
+```sh
+uv run python scripts/evaluate_suite.py \
+  --codex-source /path/to/pinned/codex \
+  --python-source /path/to/pinned/tree-sitter-python
+# Candidate acceptance gates (competitor failures are expected in benchmark mode):
+uv run python scripts/evaluate_suite.py \
+  --codex-source /path/to/pinned/codex \
+  --python-source /path/to/pinned/tree-sitter-python \
+  --themes ithilien-dawn --strict-gates
+```
+
+One command runs built-in Neovim comparisons, Python Tree-sitter/LSP comparisons, native Codex diffs, and the scripted Codex workflow for every selected theme. `index.html` links the galleries and scorecards; `report.json` combines evidence and explicitly lists Ghostty, Claude Code and comfort as incomplete. Execution errors fail the command. Benchmark mode records quality failures without aborting comparison; strict mode rejects any supported-stage gate failure. No global excellence score is produced.
+
+Ithilien uses its native tmTheme export. Other adapters are **evaluation conversions**, generated from pinned Neovim groups and their sixteen terminal colors. They are not claimed to be upstream Codex ports, even when other upstream application exports exist. `codex_theme_adapters.py` documents the exact common scope mapping; generated `adapter.json`, `resolved-neovim.json`, `terminal-palette.json` and tmTheme preserve provenance. Results evaluate that mapping, not an authoritative rendering of every upstream syntax feature. Custom manifests use the same conversion unless their id is the native Ithilien entry.
+
+Agent gates report each workflow stage separately, with cell-level foreground/background contrast failures and required content-fragment checks. Stages include accumulated history; required fragments isolate selected key content but do not exhaustively classify all text by role. DIM cells are counted as unverified, not silently modeled as opaque. Every theme uses fresh native test processes, preventing global theme state leaking across candidates. Theme-specific colors are passed into the native renderer; captured cells are never recolored to simulate a different theme.

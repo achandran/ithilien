@@ -23,7 +23,7 @@ mod ithilien_flow {
     #[tokio::test]
     async fn ithilien_complete_flow_cells() {
         let root=PathBuf::from(std::env::var("ITHILIEN_ROOT").unwrap());
-        let mut reader=std::io::BufReader::new(std::fs::File::open(root.join("codex/themes/ithilien-dawn.tmTheme")).unwrap());
+        let mut reader=std::io::BufReader::new(std::fs::File::open(std::env::var("ITHILIEN_CODEX_THEME").map(PathBuf::from).unwrap_or_else(|_|root.join("codex/themes/ithilien-dawn.tmTheme"))).unwrap());
         crate::render::highlight::set_syntax_theme(syntect::highlighting::ThemeSet::load_from_reader(&mut reader).unwrap());
         let mut records=Vec::new();
         for width in [60,100] {

@@ -23,7 +23,9 @@ def color(value,palette,default):
     return '#'+''.join(f'{levels[x]:02X}' for x in [i//36,(i//6)%6,i%6])
 
 
-def run_native(source,output):
+def run_native(source,output,theme=None,palette=None):
+    output.mkdir(parents=True,exist_ok=True)
+    theme=theme or ROOT/"codex/themes/ithilien-dawn.tmTheme"
     pin=json.loads((ROOT/'evaluation/sources.json').read_text())['codex']['revision']
     assert subprocess.check_output(['git','-C',str(source),'rev-parse','HEAD'],text=True).strip()==pin
     cargo=shutil.which('cargo')
@@ -35,12 +37,12 @@ def run_native(source,output):
     cells_path=(output/'codex-cells.json').resolve()
     try:
         target.write_bytes(original+('\ninclude!('+json.dumps(str(ROOT/'evaluation/codex_adapter.rs'))+');\n').encode())
-        env=dict(os.environ,ITHILIEN_ROOT=str(ROOT),ITHILIEN_CODEX_OUTPUT=str(cells_path))
+        env=dict(os.environ,ITHILIEN_CODEX_THEME=str(theme),ITHILIEN_ROOT=str(ROOT),ITHILIEN_CODEX_OUTPUT=str(cells_path))
         with (output/'codex-test.log').open('w') as log:
             result=subprocess.run([cargo,'test','--locked','-p','codex-tui','--lib','exported_theme_native_cells'],cwd=source/'codex-rs',env=env,stdout=log,stderr=subprocess.STDOUT,timeout=1800)
         if result.returncode:return {'status':'fail','reason':'Native adapter failed; see codex-test.log'}
     finally:target.write_bytes(original)
-    palette=load_palette('ithilien-dawn');failures=[];modifiers=set()
+    palette=palette or load_palette('ithilien-dawn');failures=[];modifiers=set()
     records=json.loads(cells_path.read_text())
     write_gallery(records,output,palette)
     for record in records:
@@ -68,4 +70,6 @@ def write_gallery(records, output, palette):
             lines.setdefault(cell['row'],[]).append(f'<span title="{html.escape(cell["modifiers"])}" style="{style}">{html.escape(cell["text"])}</span>')
         title=html.escape(f'{record["file"]} / {record["kind"]} / {record["level"]} / {record["width"]} columns')
         blocks.append('<h2>'+title+'</h2><pre>'+'\n'.join(''.join(row) for row in lines.values())+'</pre>')
-    (output/'codex-gallery.html').write_text('<!doctype html><meta charset="utf-8"><title>Native Codex cells</title><style>body{background:#f6f6f3;padding:24px}pre{font:16pt/1.4 "Berkeley Mono Medium",monospace}h2{font:18px sans-serif}</style><h1>Native Codex diff renderer</h1><p>Actual Ratatui cells with the exported Ithilien theme. DIM is recorded in tooltips but not simulated; its appearance depends on the terminal. This is not a complete agent-session capture.</p>'+''.join(blocks))
+    (output/'codex-gallery.html').write_text('<!doctype html><meta charset="utf-8"><title>Native Codex cells</title><style>body{background:#f6f6f3;padding:24px}pre{font:16pt/1.4 "Berkeley Mono Medium",monospace}h2{font:18px sans-serif}</style><h1>Native Codex diff renderer</h1><p>Actual Ratatui cells with the selected theme adapter. DIM is recorded in tooltips but not simulated; its appearance depends on the terminal. This is not a complete agent-session capture.</p>'+''.join(blocks))
+    gallery=output/'codex-gallery.html'
+    gallery.write_text(gallery.read_text().replace('background:#f6f6f3', 'background:'+palette['backgrounds']['base']))

@@ -6,7 +6,7 @@ mod ithilien_evaluation {
     fn exported_theme_native_cells() {
         let root = PathBuf::from(std::env::var("ITHILIEN_ROOT").unwrap());
         let output = PathBuf::from(std::env::var("ITHILIEN_CODEX_OUTPUT").unwrap());
-        let mut reader = std::io::BufReader::new(std::fs::File::open(root.join("codex/themes/ithilien-dawn.tmTheme")).unwrap());
+        let mut reader = std::io::BufReader::new(std::fs::File::open(std::env::var("ITHILIEN_CODEX_THEME").map(PathBuf::from).unwrap_or_else(|_|root.join("codex/themes/ithilien-dawn.tmTheme"))).unwrap());
         let theme = syntect::highlighting::ThemeSet::load_from_reader(&mut reader).unwrap();
         crate::render::highlight::set_syntax_theme(theme);
         let scopes = diff_scope_background_rgbs();

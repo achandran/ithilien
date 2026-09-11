@@ -24,20 +24,21 @@ def validate_records(records):
             if fragment not in text:raise ValueError(f'Missing {fragment!r} in {r["file"]}')
 
 
-def run(source,output):
+def run(source,output,theme=None,palette=None):
+    theme=theme or ROOT/"codex/themes/ithilien-dawn.tmTheme"
     pin=json.loads((ROOT/'evaluation/sources.json').read_text())['codex']['revision']
     if subprocess.check_output(['git','-C',str(source),'rev-parse','HEAD'],text=True).strip()!=pin:raise ValueError('Codex revision mismatch')
     target=source/'codex-rs/tui/src/chatwidget/tests.rs';original=target.read_bytes()
     if original!=subprocess.check_output(['git','-C',str(source),'show','HEAD:codex-rs/tui/src/chatwidget/tests.rs']):raise ValueError('Refusing to modify dirty Codex test source')
     output.mkdir(parents=True,exist_ok=True)
-    env=dict(os.environ,ITHILIEN_ROOT=str(ROOT),ITHILIEN_CODEX_OUTPUT=str((output/'codex-cells.json').resolve()))
+    env=dict(os.environ,ITHILIEN_CODEX_THEME=str(theme),ITHILIEN_ROOT=str(ROOT),ITHILIEN_CODEX_OUTPUT=str((output/'codex-cells.json').resolve()))
     try:
         target.write_bytes(original+('\ninclude!('+json.dumps(str(ROOT/'evaluation/codex_flow_adapter.rs'))+');\n').encode())
         with (output/'native.log').open('w') as log:
             result=subprocess.run(['cargo','test','--locked','-p','codex-tui','--lib','ithilien_complete_flow_cells','--','--test-threads=1'],cwd=source/'codex-rs',env=env,stdout=log,stderr=subprocess.STDOUT,timeout=1800)
         if result.returncode:raise RuntimeError('Native flow test failed; inspect '+str(output/'native.log'))
     finally:target.write_bytes(original)
-    records=json.loads((output/'codex-cells.json').read_text());validate_records(records);palette=load_palette('ithilien-dawn');findings=[]
+    records=json.loads((output/'codex-cells.json').read_text());validate_records(records);palette=palette or load_palette('ithilien-dawn');findings=[]
     for r in records:
         for c in r['cells']:
             if not c['text'].strip():continue
@@ -48,7 +49,7 @@ def run(source,output):
     write_gallery(records,output,palette)
     gallery=output/'codex-gallery.html'
     gallery.write_text(gallery.read_text().replace('Native Codex diff renderer','Native Codex workflow replay'))
-    report={'status':'fail' if findings else 'pass','captures':len(records),'source_revision':pin,'theme_sha256':hashlib.sha256((ROOT/'codex/themes/ithilien-dawn.tmTheme').read_bytes()).hexdigest(),'adapter_sha256':hashlib.sha256((ROOT/'evaluation/codex_flow_adapter.rs').read_bytes()).hexdigest(),'findings':findings,'scope':'Deterministic native ChatWidget event replay with accumulated history; not a live app-server, model session or terminal screenshot. Colors are native; DIM and terminal-specific appearance unverified.'}
+    report={'status':'fail' if findings else 'pass','captures':len(records),'source_revision':pin,'theme_sha256':hashlib.sha256(theme.read_bytes()).hexdigest(),'adapter_sha256':hashlib.sha256((ROOT/'evaluation/codex_flow_adapter.rs').read_bytes()).hexdigest(),'findings':findings,'scope':'Deterministic native ChatWidget event replay with accumulated history; not a live app-server, model session or terminal screenshot. Colors are native; DIM and terminal-specific appearance unverified.'}
     (output/'report.json').write_text(json.dumps(report,indent=2));return report
 
 if __name__=='__main__':
