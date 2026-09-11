@@ -8,7 +8,7 @@ Names are limited to Ithilien’s plants, waters, materials and people, plus its
 
 | Name | Exact hex | Tolkien connection / color association | Roles |
 | --- | --- | --- | --- |
-| Lebethron | `#25292B` | Black wood used for the casket holding the Crown of Gondor. [Source](https://tolkiengateway.net/wiki/Lebethron) | `foregrounds.text`, `foregrounds.bright`, `accents.olive`, `accents.gold`, `accents.ochre`, `accents.clay`, `ansi.black`, `diff.contextForeground`, `diff.inlineForeground`, `diff.addForeground`, `diff.deleteForeground`, `diff.changeForeground`, `diff.hunkForeground`, `diff.conflictForeground`, `highlight.foreground` |
+| Lebethron | `#000000` | Black wood used for the casket holding the Crown of Gondor. [Source](https://tolkiengateway.net/wiki/Lebethron) | `foregrounds.text`, `foregrounds.bright`, `accents.olive`, `accents.gold`, `accents.ochre`, `accents.clay`, `ansi.black`, `diff.contextForeground`, `diff.inlineForeground`, `diff.addForeground`, `diff.deleteForeground`, `diff.changeForeground`, `diff.hunkForeground`, `diff.conflictForeground`, `highlight.foreground` |
 | Ash | `#596166` | Ithilien ash trees; grey bark. [Source](https://tolkiengateway.net/wiki/Ithilien) | `foregrounds.muted`, `foregrounds.comment`, `accents.sage`, `ansi.brightBlack` |
 | Stonecrop | `#76848B` | Ithilien stonecrops; muted grey-green foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.border` |
 | Rosehip | `#A3373E` | Fruit of Ithilien’s wild roses; deep red. [Source](https://tolkiengateway.net/wiki/Ithilien) | `accents.coral`, `ansi.brightRed`, `ansi.extendedClay`, `highlight.cursor` |

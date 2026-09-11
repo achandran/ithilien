@@ -36,31 +36,31 @@
     },
     {
       "name": "normal text",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 7.0,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "bright text",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 7.0,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 75,
       "passed": true
     },
     {
       "name": "highlighted text",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 35,
       "passed": true
     },
@@ -86,11 +86,11 @@
     },
     {
       "name": "syntax olive",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 44,
       "passed": true
     },
@@ -106,31 +106,31 @@
     },
     {
       "name": "syntax gold",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "syntax ochre",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "syntax clay",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 44,
       "passed": true
     },
@@ -176,101 +176,101 @@
     },
     {
       "name": "diff add",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E2EDDF",
-      "wcag": 12.17,
+      "wcag": 17.41,
       "wcagTarget": 7.0,
-      "apcaLc": 88.9,
+      "apcaLc": 93.5,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "diff delete",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "wcagTarget": 7.0,
-      "apcaLc": 86.2,
+      "apcaLc": 90.8,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "diff change",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E9EE",
-      "wcag": 11.92,
+      "wcag": 17.06,
       "wcagTarget": 7.0,
-      "apcaLc": 87.6,
+      "apcaLc": 92.1,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "diff hunk",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E9EE",
-      "wcag": 11.92,
+      "wcag": 17.06,
       "wcagTarget": 7.0,
-      "apcaLc": 87.6,
+      "apcaLc": 92.1,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "inline add",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#BDD3B2",
-      "wcag": 9.17,
+      "wcag": 13.12,
       "wcagTarget": 7.0,
-      "apcaLc": 72.2,
+      "apcaLc": 76.7,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "inline delete",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#DDAFA7",
-      "wcag": 7.52,
+      "wcag": 10.76,
       "wcagTarget": 7.0,
-      "apcaLc": 61.9,
+      "apcaLc": 66.4,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "inline change",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#B3CBD8",
-      "wcag": 8.7,
+      "wcag": 12.45,
       "wcagTarget": 7.0,
-      "apcaLc": 69.3,
+      "apcaLc": 73.9,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "inline diff marker",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 35,
       "passed": true
     },
     {
       "name": "conflict marker",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E5D9E7",
-      "wcag": 10.77,
+      "wcag": 15.41,
       "wcagTarget": 7.0,
-      "apcaLc": 81.4,
+      "apcaLc": 85.9,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "ANSI black",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 44,
       "passed": true
     },
@@ -456,31 +456,31 @@
     },
     {
       "name": "text on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "bright on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "olive on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -496,31 +496,31 @@
     },
     {
       "name": "gold on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ochre on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "clay on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -596,31 +596,31 @@
     },
     {
       "name": "text on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "wcagTarget": 4.5,
-      "apcaLc": 84.6,
+      "apcaLc": 89.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "bright on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "wcagTarget": 4.5,
-      "apcaLc": 84.6,
+      "apcaLc": 89.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "olive on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "wcagTarget": 4.5,
-      "apcaLc": 84.6,
+      "apcaLc": 89.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -636,31 +636,31 @@
     },
     {
       "name": "gold on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "wcagTarget": 4.5,
-      "apcaLc": 84.6,
+      "apcaLc": 89.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ochre on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "wcagTarget": 4.5,
-      "apcaLc": 84.6,
+      "apcaLc": 89.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "clay on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "wcagTarget": 4.5,
-      "apcaLc": 84.6,
+      "apcaLc": 89.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -736,31 +736,31 @@
     },
     {
       "name": "text on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "wcagTarget": 4.5,
-      "apcaLc": 100.2,
+      "apcaLc": 104.7,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "bright on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "wcagTarget": 4.5,
-      "apcaLc": 100.2,
+      "apcaLc": 104.7,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "olive on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "wcagTarget": 4.5,
-      "apcaLc": 100.2,
+      "apcaLc": 104.7,
       "apcaTarget": 0,
       "passed": true
     },
@@ -776,31 +776,31 @@
     },
     {
       "name": "gold on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "wcagTarget": 4.5,
-      "apcaLc": 100.2,
+      "apcaLc": 104.7,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ochre on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "wcagTarget": 4.5,
-      "apcaLc": 100.2,
+      "apcaLc": 104.7,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "clay on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "wcagTarget": 4.5,
-      "apcaLc": 100.2,
+      "apcaLc": 104.7,
       "apcaTarget": 0,
       "passed": true
     },
@@ -876,31 +876,31 @@
     },
     {
       "name": "text on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "wcagTarget": 4.5,
-      "apcaLc": 91.0,
+      "apcaLc": 95.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "bright on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "wcagTarget": 4.5,
-      "apcaLc": 91.0,
+      "apcaLc": 95.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "olive on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "wcagTarget": 4.5,
-      "apcaLc": 91.0,
+      "apcaLc": 95.6,
       "apcaTarget": 0,
       "passed": true
     },
@@ -916,31 +916,31 @@
     },
     {
       "name": "gold on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "wcagTarget": 4.5,
-      "apcaLc": 91.0,
+      "apcaLc": 95.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ochre on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "wcagTarget": 4.5,
-      "apcaLc": 91.0,
+      "apcaLc": 95.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "clay on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "wcagTarget": 4.5,
-      "apcaLc": 91.0,
+      "apcaLc": 95.6,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1016,31 +1016,31 @@
     },
     {
       "name": "chrome text on crust",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#D6DCD9",
-      "wcag": 10.55,
+      "wcag": 15.1,
       "wcagTarget": 4.5,
-      "apcaLc": 80.2,
+      "apcaLc": 84.7,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "chrome bright on crust",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#D6DCD9",
-      "wcag": 10.55,
+      "wcag": 15.1,
       "wcagTarget": 4.5,
-      "apcaLc": 80.2,
+      "apcaLc": 84.7,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "chrome text on surface2",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#B3CBD8",
-      "wcag": 8.7,
+      "wcag": 12.45,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 73.9,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1056,11 +1056,11 @@
     },
     {
       "name": "chrome bright on surface2",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#B3CBD8",
-      "wcag": 8.7,
+      "wcag": 12.45,
       "wcagTarget": 4.5,
-      "apcaLc": 69.3,
+      "apcaLc": 73.9,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1086,51 +1086,51 @@
     },
     {
       "name": "search result",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selected popup kind",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selected popup extra",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "substitution",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "error annotation",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "wcagTarget": 4.5,
-      "apcaLc": 86.2,
+      "apcaLc": 90.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1146,11 +1146,11 @@
     },
     {
       "name": "Neovim DiffText",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1186,91 +1186,91 @@
     },
     {
       "name": "git add sign",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "git delete sign",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "git change sign",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status olive",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status sage",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status mauve",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status coral",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status gold",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 74.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI white on black",
       "foreground": "#F6F6F3",
-      "background": "#25292B",
-      "wcag": 13.56,
+      "background": "#000000",
+      "wcag": 19.4,
       "wcagTarget": 4.5,
-      "apcaLc": -98.3,
+      "apcaLc": -101.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1397,10 +1397,10 @@
     {
       "name": "ANSI brightWhite on black",
       "foreground": "#FDFDFA",
-      "background": "#25292B",
-      "wcag": 14.4,
+      "background": "#000000",
+      "wcag": 20.61,
       "wcagTarget": 4.5,
-      "apcaLc": -102.9,
+      "apcaLc": -106.4,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1526,21 +1526,21 @@
     },
     {
       "name": "ANSI black on white",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "wcagTarget": 7.0,
-      "apcaLc": 96.0,
+      "apcaLc": 100.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ANSI black on brightWhite",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "wcagTarget": 7.0,
-      "apcaLc": 100.2,
+      "apcaLc": 104.7,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1576,31 +1576,31 @@
     },
     {
       "name": "diff add syntax text",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E2EDDF",
-      "wcag": 12.17,
+      "wcag": 17.41,
       "wcagTarget": 4.5,
-      "apcaLc": 88.9,
+      "apcaLc": 93.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff add syntax bright",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E2EDDF",
-      "wcag": 12.17,
+      "wcag": 17.41,
       "wcagTarget": 4.5,
-      "apcaLc": 88.9,
+      "apcaLc": 93.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff add syntax olive",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E2EDDF",
-      "wcag": 12.17,
+      "wcag": 17.41,
       "wcagTarget": 4.5,
-      "apcaLc": 88.9,
+      "apcaLc": 93.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1616,31 +1616,31 @@
     },
     {
       "name": "diff add syntax gold",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E2EDDF",
-      "wcag": 12.17,
+      "wcag": 17.41,
       "wcagTarget": 4.5,
-      "apcaLc": 88.9,
+      "apcaLc": 93.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff add syntax ochre",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E2EDDF",
-      "wcag": 12.17,
+      "wcag": 17.41,
       "wcagTarget": 4.5,
-      "apcaLc": 88.9,
+      "apcaLc": 93.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff add syntax clay",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E2EDDF",
-      "wcag": 12.17,
+      "wcag": 17.41,
       "wcagTarget": 4.5,
-      "apcaLc": 88.9,
+      "apcaLc": 93.5,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1716,31 +1716,31 @@
     },
     {
       "name": "diff delete syntax text",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "wcagTarget": 4.5,
-      "apcaLc": 86.2,
+      "apcaLc": 90.8,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff delete syntax bright",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "wcagTarget": 4.5,
-      "apcaLc": 86.2,
+      "apcaLc": 90.8,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff delete syntax olive",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "wcagTarget": 4.5,
-      "apcaLc": 86.2,
+      "apcaLc": 90.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1756,31 +1756,31 @@
     },
     {
       "name": "diff delete syntax gold",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "wcagTarget": 4.5,
-      "apcaLc": 86.2,
+      "apcaLc": 90.8,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff delete syntax ochre",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "wcagTarget": 4.5,
-      "apcaLc": 86.2,
+      "apcaLc": 90.8,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff delete syntax clay",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "wcagTarget": 4.5,
-      "apcaLc": 86.2,
+      "apcaLc": 90.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1856,31 +1856,31 @@
     },
     {
       "name": "diff change syntax text",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E9EE",
-      "wcag": 11.92,
+      "wcag": 17.06,
       "wcagTarget": 4.5,
-      "apcaLc": 87.6,
+      "apcaLc": 92.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff change syntax bright",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E9EE",
-      "wcag": 11.92,
+      "wcag": 17.06,
       "wcagTarget": 4.5,
-      "apcaLc": 87.6,
+      "apcaLc": 92.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff change syntax olive",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E9EE",
-      "wcag": 11.92,
+      "wcag": 17.06,
       "wcagTarget": 4.5,
-      "apcaLc": 87.6,
+      "apcaLc": 92.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1896,31 +1896,31 @@
     },
     {
       "name": "diff change syntax gold",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E9EE",
-      "wcag": 11.92,
+      "wcag": 17.06,
       "wcagTarget": 4.5,
-      "apcaLc": 87.6,
+      "apcaLc": 92.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff change syntax ochre",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E9EE",
-      "wcag": 11.92,
+      "wcag": 17.06,
       "wcagTarget": 4.5,
-      "apcaLc": 87.6,
+      "apcaLc": 92.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff change syntax clay",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E9EE",
-      "wcag": 11.92,
+      "wcag": 17.06,
       "wcagTarget": 4.5,
-      "apcaLc": 87.6,
+      "apcaLc": 92.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -2034,25 +2034,25 @@
     },
     {
       "name": "text on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "bright on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "olive on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
@@ -2066,25 +2066,25 @@
     },
     {
       "name": "gold on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "ochre on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "clay on base",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
@@ -2146,25 +2146,25 @@
     },
     {
       "name": "text on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "bright on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "olive on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "target": 4.5,
       "passed": true
     },
@@ -2178,25 +2178,25 @@
     },
     {
       "name": "gold on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "ochre on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "clay on mantle",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#E0E3E2",
-      "wcag": 11.36,
+      "wcag": 16.26,
       "target": 4.5,
       "passed": true
     },
@@ -2258,25 +2258,25 @@
     },
     {
       "name": "text on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "bright on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "olive on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "target": 4.5,
       "passed": true
     },
@@ -2290,25 +2290,25 @@
     },
     {
       "name": "gold on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "ochre on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "clay on surface0",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#FDFDFA",
-      "wcag": 14.4,
+      "wcag": 20.61,
       "target": 4.5,
       "passed": true
     },
@@ -2370,25 +2370,25 @@
     },
     {
       "name": "text on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "bright on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "olive on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "target": 4.5,
       "passed": true
     },
@@ -2402,25 +2402,25 @@
     },
     {
       "name": "gold on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "ochre on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "clay on surface1",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#ECEEEB",
-      "wcag": 12.58,
+      "wcag": 18.0,
       "target": 4.5,
       "passed": true
     },
@@ -2482,25 +2482,25 @@
     },
     {
       "name": "chrome text on crust",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#D6DCD9",
-      "wcag": 10.55,
+      "wcag": 15.1,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome bright on crust",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#D6DCD9",
-      "wcag": 10.55,
+      "wcag": 15.1,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome text on surface2",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#B3CBD8",
-      "wcag": 8.7,
+      "wcag": 12.45,
       "target": 4.5,
       "passed": true
     },
@@ -2514,9 +2514,9 @@
     },
     {
       "name": "chrome bright on surface2",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#B3CBD8",
-      "wcag": 8.7,
+      "wcag": 12.45,
       "target": 4.5,
       "passed": true
     },
@@ -2538,41 +2538,41 @@
     },
     {
       "name": "search result",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup kind",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup extra",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "substitution",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "error annotation",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F1E2DF",
-      "wcag": 11.66,
+      "wcag": 16.68,
       "target": 4.5,
       "passed": true
     },
@@ -2586,9 +2586,9 @@
     },
     {
       "name": "Neovim DiffText",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
@@ -2618,65 +2618,65 @@
     },
     {
       "name": "git add sign",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "git delete sign",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "git change sign",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#F6F6F3",
-      "wcag": 13.56,
+      "wcag": 19.4,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status olive",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status sage",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status mauve",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status coral",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status gold",
-      "foreground": "#25292B",
+      "foreground": "#000000",
       "background": "#C4CAC8",
-      "wcag": 8.83,
+      "wcag": 12.63,
       "target": 4.5,
       "passed": true
     }
@@ -2705,21 +2705,21 @@
     {
       "name": "operators/strings",
       "deltaEOK": {
-        "normal": 0.2097,
-        "protan": 0.2115,
-        "deutan": 0.2092,
-        "tritan": 0.2094,
-        "grayscale": 0.2099
+        "normal": 0.4876,
+        "protan": 0.4917,
+        "deutan": 0.4864,
+        "tritan": 0.487,
+        "grayscale": 0.4882
       }
     },
     {
       "name": "keywords/errors",
       "deltaEOK": {
-        "normal": 0.2628,
-        "protan": 0.1476,
-        "deutan": 0.2377,
-        "tritan": 0.2916,
-        "grayscale": 0.199
+        "normal": 0.5147,
+        "protan": 0.4252,
+        "deutan": 0.509,
+        "tritan": 0.531,
+        "grayscale": 0.4772
       }
     }
   ],
@@ -2860,18 +2860,18 @@
       }
     },
     "highlight.foreground": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "highlight.border": {
@@ -2965,48 +2965,48 @@
       }
     },
     "foregrounds.text": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "foregrounds.bright": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "accents.olive": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "accents.sage": {
@@ -3025,48 +3025,48 @@
       }
     },
     "accents.gold": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "accents.ochre": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "accents.clay": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "accents.coral": {
@@ -3130,18 +3130,18 @@
       }
     },
     "ansi.black": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "ansi.red": {
@@ -3400,48 +3400,48 @@
       }
     },
     "diff.contextForeground": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "diff.inlineForeground": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "diff.addForeground": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "diff.addBackground": {
@@ -3475,18 +3475,18 @@
       }
     },
     "diff.deleteForeground": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "diff.deleteBackground": {
@@ -3520,18 +3520,18 @@
       }
     },
     "diff.changeForeground": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "diff.changeBackground": {
@@ -3565,18 +3565,18 @@
       }
     },
     "diff.hunkForeground": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "diff.hunkBackground": {
@@ -3595,18 +3595,18 @@
       }
     },
     "diff.conflictForeground": {
-      "hex": "#25292B",
+      "hex": "#000000",
       "oklch": [
-        0.2777,
-        0.0068,
-        229.1
+        0.0,
+        0.0,
+        null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#28292B",
-        "deutan": "#27282B",
-        "tritan": "#232A2A",
-        "grayscale": "#282828"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "diff.conflictBackground": {
@@ -3668,11 +3668,11 @@
     {
       "name": "error/warning",
       "deltaEOK": {
-        "normal": 0.263,
-        "protan": 0.148,
-        "deutan": 0.238,
-        "tritan": 0.292,
-        "grayscale": 0.199
+        "normal": 0.515,
+        "protan": 0.425,
+        "deutan": 0.509,
+        "tritan": 0.531,
+        "grayscale": 0.477
       },
       "floor": 0.05,
       "passed": true

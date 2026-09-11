@@ -83,9 +83,9 @@ class InstallTests(unittest.TestCase):
             self.assertIn('bindkey -v',rc.read_text())
             if shutil.which('zsh'):
                 script=rc
-                self.assertIn('region:bg=#C4CAC8,fg=#25292B', rc.read_text())
+                self.assertIn('region:bg=#C4CAC8,fg=#000000', rc.read_text())
                 result=subprocess.run(['zsh','-f','-c','zle_highlight=("paste:none" "region:standout"); source "$1"; source "$1"; print -l -- "${zle_highlight[@]}"','test',str(script)],capture_output=True,text=True,check=True)
-                self.assertEqual(result.stdout.splitlines(),['paste:none','region:bg=#C4CAC8,fg=#25292B'])
+                self.assertEqual(result.stdout.splitlines(),['paste:none','region:bg=#C4CAC8,fg=#000000'])
 
     def test_installed_prompt_uses_rosehip_and_keeps_git_variable(self):
         import subprocess

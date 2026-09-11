@@ -1,192 +1,192 @@
 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1200" height="1020" viewBox="0 0 1200 1020">
 <style>text{font-family:"Berkeley Mono",monospace;font-size:15px}</style>
 <rect x="0" y="0" width="1200" height="1020" fill="#F6F6F3"/>
-<text x="18" y="30" fill="#25292B" font-weight="700">ITHILIEN DAWN</text>
+<text x="18" y="30" fill="#000000" font-weight="700">ITHILIEN DAWN</text>
 <text x="18" y="55" fill="#444D52" >Named colors / sRGB / dark foregrounds / precise diffs</text>
 <rect x="18" y="72" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="82" width="50" height="64" fill="#596166"/>
-<rect x="29" y="83" width="48" height="62" fill="#25292B"/>
-<text x="90" y="96" fill="#25292B" font-weight="700">Lebethron</text>
-<text x="90" y="118" fill="#25292B" >#25292B</text>
+<rect x="29" y="83" width="48" height="62" fill="#000000"/>
+<text x="90" y="96" fill="#000000" font-weight="700">Lebethron</text>
+<text x="90" y="118" fill="#000000" >#000000</text>
 <text x="90" y="142" fill="#444D52" >foregrounds.text</text>
 <rect x="312" y="72" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="82" width="50" height="64" fill="#596166"/>
 <rect x="323" y="83" width="48" height="62" fill="#596166"/>
-<text x="384" y="96" fill="#25292B" font-weight="700">Ash</text>
-<text x="384" y="118" fill="#25292B" >#596166</text>
+<text x="384" y="96" fill="#000000" font-weight="700">Ash</text>
+<text x="384" y="118" fill="#000000" >#596166</text>
 <text x="384" y="142" fill="#444D52" >foregrounds.muted</text>
 <rect x="606" y="72" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="82" width="50" height="64" fill="#596166"/>
 <rect x="617" y="83" width="48" height="62" fill="#76848B"/>
-<text x="678" y="96" fill="#25292B" font-weight="700">Stonecrop</text>
-<text x="678" y="118" fill="#25292B" >#76848B</text>
+<text x="678" y="96" fill="#000000" font-weight="700">Stonecrop</text>
+<text x="678" y="118" fill="#000000" >#76848B</text>
 <text x="678" y="142" fill="#444D52" >backgrounds.border</text>
 <rect x="900" y="72" width="282" height="84" fill="#FDFDFA"/>
 <rect x="910" y="82" width="50" height="64" fill="#596166"/>
 <rect x="911" y="83" width="48" height="62" fill="#A3373E"/>
-<text x="972" y="96" fill="#25292B" font-weight="700">Rosehip</text>
-<text x="972" y="118" fill="#25292B" >#A3373E</text>
+<text x="972" y="96" fill="#000000" font-weight="700">Rosehip</text>
+<text x="972" y="118" fill="#000000" >#A3373E</text>
 <text x="972" y="142" fill="#444D52" >accents.coral</text>
 <rect x="18" y="166" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="176" width="50" height="64" fill="#596166"/>
 <rect x="29" y="177" width="48" height="62" fill="#315F46"/>
-<text x="90" y="190" fill="#25292B" font-weight="700">Sage</text>
-<text x="90" y="212" fill="#25292B" >#315F46</text>
+<text x="90" y="190" fill="#000000" font-weight="700">Sage</text>
+<text x="90" y="212" fill="#000000" >#315F46</text>
 <text x="90" y="236" fill="#444D52" >ansi.brightGreen</text>
 <rect x="312" y="166" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="176" width="50" height="64" fill="#596166"/>
 <rect x="323" y="177" width="48" height="62" fill="#345E77"/>
-<text x="384" y="190" fill="#25292B" font-weight="700">Anduin</text>
-<text x="384" y="212" fill="#25292B" >#345E77</text>
+<text x="384" y="190" fill="#000000" font-weight="700">Anduin</text>
+<text x="384" y="212" fill="#000000" >#345E77</text>
 <text x="384" y="236" fill="#444D52" >accents.blue</text>
 <rect x="606" y="166" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="176" width="50" height="64" fill="#596166"/>
 <rect x="617" y="177" width="48" height="62" fill="#795922"/>
-<text x="678" y="190" fill="#25292B" font-weight="700">Broom</text>
-<text x="678" y="212" fill="#25292B" >#795922</text>
+<text x="678" y="190" fill="#000000" font-weight="700">Broom</text>
+<text x="678" y="212" fill="#000000" >#795922</text>
 <text x="678" y="236" fill="#444D52" >ansi.brightYellow</text>
 <rect x="900" y="166" width="282" height="84" fill="#FDFDFA"/>
 <rect x="910" y="176" width="50" height="64" fill="#596166"/>
 <rect x="911" y="177" width="48" height="62" fill="#70516D"/>
-<text x="972" y="190" fill="#25292B" font-weight="700">Thyme</text>
-<text x="972" y="212" fill="#25292B" >#70516D</text>
+<text x="972" y="190" fill="#000000" font-weight="700">Thyme</text>
+<text x="972" y="212" fill="#000000" >#70516D</text>
 <text x="972" y="236" fill="#444D52" >accents.mauve</text>
 <rect x="18" y="260" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="270" width="50" height="64" fill="#596166"/>
 <rect x="29" y="271" width="48" height="62" fill="#306466"/>
-<text x="90" y="284" fill="#25292B" font-weight="700">Poros</text>
-<text x="90" y="306" fill="#25292B" >#306466</text>
+<text x="90" y="284" fill="#000000" font-weight="700">Poros</text>
+<text x="90" y="306" fill="#000000" >#306466</text>
 <text x="90" y="330" fill="#444D52" >accents.aqua</text>
 <rect x="312" y="260" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="270" width="50" height="64" fill="#596166"/>
 <rect x="323" y="271" width="48" height="62" fill="#E2EDDF"/>
-<text x="384" y="284" fill="#25292B" font-weight="700">Pelennor</text>
-<text x="384" y="306" fill="#25292B" >#E2EDDF</text>
+<text x="384" y="284" fill="#000000" font-weight="700">Pelennor</text>
+<text x="384" y="306" fill="#000000" >#E2EDDF</text>
 <text x="384" y="330" fill="#444D52" >diff.addBackground</text>
 <rect x="606" y="260" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="270" width="50" height="64" fill="#596166"/>
 <rect x="617" y="271" width="48" height="62" fill="#BDD3B2"/>
-<text x="678" y="284" fill="#25292B" font-weight="700">Ilex</text>
-<text x="678" y="306" fill="#25292B" >#BDD3B2</text>
+<text x="678" y="284" fill="#000000" font-weight="700">Ilex</text>
+<text x="678" y="306" fill="#000000" >#BDD3B2</text>
 <text x="678" y="330" fill="#444D52" >diff.addEmphasis</text>
 <rect x="900" y="260" width="282" height="84" fill="#FDFDFA"/>
 <rect x="910" y="270" width="50" height="64" fill="#596166"/>
 <rect x="911" y="271" width="48" height="62" fill="#F1E2DF"/>
-<text x="972" y="284" fill="#25292B" font-weight="700">Eglantine</text>
-<text x="972" y="306" fill="#25292B" >#F1E2DF</text>
+<text x="972" y="284" fill="#000000" font-weight="700">Eglantine</text>
+<text x="972" y="306" fill="#000000" >#F1E2DF</text>
 <text x="972" y="330" fill="#444D52" >diff.deleteBackground</text>
 <rect x="18" y="354" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="364" width="50" height="64" fill="#596166"/>
 <rect x="29" y="365" width="48" height="62" fill="#DDAFA7"/>
-<text x="90" y="378" fill="#25292B" font-weight="700">Rose</text>
-<text x="90" y="400" fill="#25292B" >#DDAFA7</text>
+<text x="90" y="378" fill="#000000" font-weight="700">Rose</text>
+<text x="90" y="400" fill="#000000" >#DDAFA7</text>
 <text x="90" y="424" fill="#444D52" >diff.deleteEmphasis</text>
 <rect x="312" y="354" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="364" width="50" height="64" fill="#596166"/>
 <rect x="323" y="365" width="48" height="62" fill="#E0E9EE"/>
-<text x="384" y="378" fill="#25292B" font-weight="700">Spray</text>
-<text x="384" y="400" fill="#25292B" >#E0E9EE</text>
+<text x="384" y="378" fill="#000000" font-weight="700">Spray</text>
+<text x="384" y="400" fill="#000000" >#E0E9EE</text>
 <text x="384" y="424" fill="#444D52" >diff.changeBackground</text>
 <rect x="606" y="354" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="364" width="50" height="64" fill="#596166"/>
 <rect x="617" y="365" width="48" height="62" fill="#B3CBD8"/>
-<text x="678" y="378" fill="#25292B" font-weight="700">Harlond</text>
-<text x="678" y="400" fill="#25292B" >#B3CBD8</text>
+<text x="678" y="378" fill="#000000" font-weight="700">Harlond</text>
+<text x="678" y="400" fill="#000000" >#B3CBD8</text>
 <text x="678" y="424" fill="#444D52" >backgrounds.surface2</text>
 <rect x="900" y="354" width="282" height="84" fill="#FDFDFA"/>
 <rect x="910" y="364" width="50" height="64" fill="#596166"/>
 <rect x="911" y="365" width="48" height="62" fill="#EAD9B1"/>
-<text x="972" y="378" fill="#25292B" font-weight="700">Celandine</text>
-<text x="972" y="400" fill="#25292B" >#EAD9B1</text>
+<text x="972" y="378" fill="#000000" font-weight="700">Celandine</text>
+<text x="972" y="400" fill="#000000" >#EAD9B1</text>
 <text x="972" y="424" fill="#444D52" >backgrounds.search</text>
 <rect x="18" y="448" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="458" width="50" height="64" fill="#596166"/>
 <rect x="29" y="459" width="48" height="62" fill="#E5D9E7"/>
-<text x="90" y="472" fill="#25292B" font-weight="700">Clematis</text>
-<text x="90" y="494" fill="#25292B" >#E5D9E7</text>
+<text x="90" y="472" fill="#000000" font-weight="700">Clematis</text>
+<text x="90" y="494" fill="#000000" >#E5D9E7</text>
 <text x="90" y="518" fill="#444D52" >diff.conflictBackground</text>
 <rect x="312" y="448" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="458" width="50" height="64" fill="#596166"/>
 <rect x="323" y="459" width="48" height="62" fill="#3F535F"/>
-<text x="384" y="472" fill="#25292B" font-weight="700">Juniper</text>
-<text x="384" y="494" fill="#25292B" >#3F535F</text>
+<text x="384" y="472" fill="#000000" font-weight="700">Juniper</text>
+<text x="384" y="494" fill="#000000" >#3F535F</text>
 <text x="384" y="518" fill="#444D52" >highlight.border</text>
 <rect x="606" y="448" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="458" width="50" height="64" fill="#596166"/>
 <rect x="617" y="459" width="48" height="62" fill="#F6F6F3"/>
-<text x="678" y="472" fill="#25292B" font-weight="700">Asphodel</text>
-<text x="678" y="494" fill="#25292B" >#F6F6F3</text>
+<text x="678" y="472" fill="#000000" font-weight="700">Asphodel</text>
+<text x="678" y="494" fill="#000000" >#F6F6F3</text>
 <text x="678" y="518" fill="#444D52" >backgrounds.base</text>
 <rect x="900" y="448" width="282" height="84" fill="#FDFDFA"/>
 <rect x="910" y="458" width="50" height="64" fill="#596166"/>
 <rect x="911" y="459" width="48" height="62" fill="#E0E3E2"/>
-<text x="972" y="472" fill="#25292B" font-weight="700">Gondor</text>
-<text x="972" y="494" fill="#25292B" >#E0E3E2</text>
+<text x="972" y="472" fill="#000000" font-weight="700">Gondor</text>
+<text x="972" y="494" fill="#000000" >#E0E3E2</text>
 <text x="972" y="518" fill="#444D52" >backgrounds.mantle</text>
 <rect x="18" y="542" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="552" width="50" height="64" fill="#596166"/>
 <rect x="29" y="553" width="48" height="62" fill="#FDFDFA"/>
-<text x="90" y="566" fill="#25292B" font-weight="700">Lily</text>
-<text x="90" y="588" fill="#25292B" >#FDFDFA</text>
+<text x="90" y="566" fill="#000000" font-weight="700">Lily</text>
+<text x="90" y="588" fill="#000000" >#FDFDFA</text>
 <text x="90" y="612" fill="#444D52" >backgrounds.surface0</text>
 <rect x="312" y="542" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="552" width="50" height="64" fill="#596166"/>
 <rect x="323" y="553" width="48" height="62" fill="#ECEEEB"/>
-<text x="384" y="566" fill="#25292B" font-weight="700">Anemone</text>
-<text x="384" y="588" fill="#25292B" >#ECEEEB</text>
+<text x="384" y="566" fill="#000000" font-weight="700">Anemone</text>
+<text x="384" y="588" fill="#000000" >#ECEEEB</text>
 <text x="384" y="612" fill="#444D52" >backgrounds.surface1</text>
 <rect x="606" y="542" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="552" width="50" height="64" fill="#596166"/>
 <rect x="617" y="553" width="48" height="62" fill="#D6DCD9"/>
-<text x="678" y="566" fill="#25292B" font-weight="700">Osgiliath</text>
-<text x="678" y="588" fill="#25292B" >#D6DCD9</text>
+<text x="678" y="566" fill="#000000" font-weight="700">Osgiliath</text>
+<text x="678" y="588" fill="#000000" >#D6DCD9</text>
 <text x="678" y="612" fill="#444D52" >backgrounds.crust</text>
 <rect x="900" y="542" width="282" height="84" fill="#FDFDFA"/>
 <rect x="910" y="552" width="50" height="64" fill="#596166"/>
 <rect x="911" y="553" width="48" height="62" fill="#444D52"/>
-<text x="972" y="566" fill="#25292B" font-weight="700">Faramir</text>
-<text x="972" y="588" fill="#25292B" >#444D52</text>
+<text x="972" y="566" fill="#000000" font-weight="700">Faramir</text>
+<text x="972" y="588" fill="#000000" >#444D52</text>
 <text x="972" y="612" fill="#444D52" >foregrounds.subtext</text>
 <rect x="18" y="636" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="646" width="50" height="64" fill="#596166"/>
 <rect x="29" y="647" width="48" height="62" fill="#8B3037"/>
-<text x="90" y="660" fill="#25292B" font-weight="700">Briar</text>
-<text x="90" y="682" fill="#25292B" >#8B3037</text>
+<text x="90" y="660" fill="#000000" font-weight="700">Briar</text>
+<text x="90" y="682" fill="#000000" >#8B3037</text>
 <text x="90" y="706" fill="#444D52" >ansi.red</text>
 <rect x="312" y="636" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="646" width="50" height="64" fill="#596166"/>
 <rect x="323" y="647" width="48" height="62" fill="#274D39"/>
-<text x="384" y="660" fill="#25292B" font-weight="700">Fir</text>
-<text x="384" y="682" fill="#25292B" >#274D39</text>
+<text x="384" y="660" fill="#000000" font-weight="700">Fir</text>
+<text x="384" y="682" fill="#000000" >#274D39</text>
 <text x="384" y="706" fill="#444D52" >ansi.green</text>
 <rect x="606" y="636" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="646" width="50" height="64" fill="#596166"/>
 <rect x="617" y="647" width="48" height="62" fill="#624819"/>
-<text x="678" y="660" fill="#25292B" font-weight="700">Filbert</text>
-<text x="678" y="682" fill="#25292B" >#624819</text>
+<text x="678" y="660" fill="#000000" font-weight="700">Filbert</text>
+<text x="678" y="682" fill="#000000" >#624819</text>
 <text x="678" y="706" fill="#444D52" >ansi.yellow</text>
 <rect x="900" y="636" width="282" height="84" fill="#FDFDFA"/>
 <rect x="910" y="646" width="50" height="64" fill="#596166"/>
 <rect x="911" y="647" width="48" height="62" fill="#274A62"/>
-<text x="972" y="660" fill="#25292B" font-weight="700">Cypress</text>
-<text x="972" y="682" fill="#25292B" >#274A62</text>
+<text x="972" y="660" fill="#000000" font-weight="700">Cypress</text>
+<text x="972" y="682" fill="#000000" >#274A62</text>
 <text x="972" y="706" fill="#444D52" >ansi.blue</text>
 <rect x="18" y="730" width="282" height="84" fill="#FDFDFA"/>
 <rect x="28" y="740" width="50" height="64" fill="#596166"/>
 <rect x="29" y="741" width="48" height="62" fill="#60425E"/>
-<text x="90" y="754" fill="#25292B" font-weight="700">Hyacinth</text>
-<text x="90" y="776" fill="#25292B" >#60425E</text>
+<text x="90" y="754" fill="#000000" font-weight="700">Hyacinth</text>
+<text x="90" y="776" fill="#000000" >#60425E</text>
 <text x="90" y="800" fill="#444D52" >ansi.magenta</text>
 <rect x="312" y="730" width="282" height="84" fill="#FDFDFA"/>
 <rect x="322" y="740" width="50" height="64" fill="#596166"/>
 <rect x="323" y="741" width="48" height="62" fill="#255354"/>
-<text x="384" y="754" fill="#25292B" font-weight="700">Morgulduin</text>
-<text x="384" y="776" fill="#25292B" >#255354</text>
+<text x="384" y="754" fill="#000000" font-weight="700">Morgulduin</text>
+<text x="384" y="776" fill="#000000" >#255354</text>
 <text x="384" y="800" fill="#444D52" >ansi.cyan</text>
 <rect x="606" y="730" width="282" height="84" fill="#FDFDFA"/>
 <rect x="616" y="740" width="50" height="64" fill="#596166"/>
 <rect x="617" y="741" width="48" height="62" fill="#C4CAC8"/>
-<text x="678" y="754" fill="#25292B" font-weight="700">Ranger</text>
-<text x="678" y="776" fill="#25292B" >#C4CAC8</text>
+<text x="678" y="754" fill="#000000" font-weight="700">Ranger</text>
+<text x="678" y="776" fill="#000000" >#C4CAC8</text>
 <text x="678" y="800" fill="#444D52" >highlight.background</text>
 </svg>

@@ -4,7 +4,7 @@ Coding themes for long sessions and precise diffs. Dawn draws on the Formex Reef
 
 | Theme | Canvas | Main text |
 | --- | --- | --- |
-| **Dawn** · light | `#F6F6F3` | `#25292B` |
+| **Dawn** · light | `#F6F6F3` | `#000000` |
 | **Dusk** · dark | `#171812` | `#C9BA99` |
 
 ## Dawn palette
@@ -17,7 +17,7 @@ Named colors drawn for Ithilien’s plants, landscape, people and immediate neig
 
 ## Reading and diffs
 
-- Neutral-white Dawn surfaces and restrained syntax; dark graphite foregrounds, including selections and status lines.
+- Neutral-white Dawn surfaces and restrained syntax; black foregrounds, including selections and status lines.
 - Distinct added, removed and changed lines. Dawn’s exact changed characters are **dark and underlined** in Neovim; selected text stays dark.
 
 ## Install
@@ -61,7 +61,7 @@ The selected Neutral white palette is now on `main`. See [implementation report]
 
 ### Dawn cursor: the GMT red tip
 
-Dawn uses an Eglantine (`#F1E2DF`) Ghostty block cursor with Lebethron (`#25292B`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections use Ranger brushed steel. Dawn explicitly sets `minimum-contrast = 1`: the higher setting caused unreadable blocks in zsh vi mode. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.
+Dawn uses an Eglantine (`#F1E2DF`) Ghostty block cursor with Lebethron (`#000000`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections use Ranger brushed steel. Dawn explicitly sets `minimum-contrast = 1`: the higher setting caused unreadable blocks in zsh vi mode. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.
 
 ### Install or update detected apps
 

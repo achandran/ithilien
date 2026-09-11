@@ -52,23 +52,23 @@ class DayDesign(unittest.TestCase):
         with patch.object(audit_palette,'wcag',side_effect=contrast):
             self.assertIn('comments',self.audit(p)['failures'])
 
-    def test_inline_diff_foreground_is_graphite(self):
+    def test_inline_diff_foreground_is_pure_black(self):
         p=load_palette('ithilien-dawn')
-        self.assertEqual(p['diff']['inlineForeground'], '#25292B')
+        self.assertEqual(p['diff']['inlineForeground'], '#000000')
         for state in ('add', 'delete', 'change'):
-            self.assertGreaterEqual(wcag('#25292B',p['diff'][state+'Emphasis']),7.0)
+            self.assertGreaterEqual(wcag('#000000',p['diff'][state+'Emphasis']),7.0)
 
-    def test_graphite_main_text_on_neutral_white(self):
+    def test_pure_black_main_text_on_neutral_white(self):
         p=load_palette('ithilien-dawn')
         self.assertEqual(p['backgrounds']['base'], '#F6F6F3')
-        self.assertEqual(p['foregrounds']['text'], '#25292B')
-        self.assertEqual(p['foregrounds']['bright'], '#25292B')
+        self.assertEqual(p['foregrounds']['text'], '#000000')
+        self.assertEqual(p['foregrounds']['bright'], '#000000')
         self.assertNotEqual(p['foregrounds']['comment'],p['foregrounds']['text'])
-        self.assertEqual(p['diff']['contextForeground'], '#25292B')
+        self.assertEqual(p['diff']['contextForeground'], '#000000')
 
     def test_terminal_endpoint_collapse_is_rejected(self):
         p=copy.deepcopy(load_palette('ithilien-dawn'))
-        p['ansi']['white']=p['ansi']['brightWhite']='#25292B'
+        p['ansi']['white']=p['ansi']['brightWhite']='#000000'
         self.assertIn('ANSI white on black',self.audit(p)['failures'])
 
     def test_syntax_on_added_lines_is_gated(self):
