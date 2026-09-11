@@ -75,6 +75,8 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None, python_runtime=No
         if adapter and adapter.get('evaluation_override'):
             n.exec_lua(adapter['evaluation_override'])
             highlights=n.exec_lua('local out={};for _,name in ipairs(...) do out[name]=vim.api.nvim_get_hl(0,{name=name,link=false}) end;return out',list(highlights))
+        if state=='syntax':
+            n.command('only');n.command('diffoff');n.command('set laststatus=0')
         n.command('normal! gg')
         if state == 'search' or 'search' in state:
             n.funcs.setreg('/', case.get('search','return\\|font\\|println')); n.command('set hlsearch')
