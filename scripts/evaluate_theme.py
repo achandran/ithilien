@@ -22,14 +22,21 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
     syntax_groups = []
     highlights = {}
     regions = []
+    overlay = {}
+    attr_info = {}
+    cursor = None
     def notify(name, args):
+        nonlocal cursor
         if name == 'evaluation_done':
             n.stop_loop(); return
         if name != 'redraw': return
         for event in args:
             for item in event[1:]:
                 if event[0] == 'default_colors_set': defaults.update(fg=item[0], bg=item[1])
-                elif event[0] == 'hl_attr_define': attrs[item[0]] = item[1]
+                elif event[0] == 'hl_attr_define':
+                    attrs[item[0]] = item[1]
+                    attr_info[item[0]] = item[3] if len(item)>3 else []
+                elif event[0] == 'grid_cursor_goto': cursor = item[1:3]
                 elif event[0] == 'grid_clear': grid.clear()
                 elif event[0] == 'grid_line':
                     _, row, col, cells, *_ = item
@@ -39,8 +46,8 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
                         for _ in range(cell[2] if len(cell) > 2 else 1):
                             grid[row, col] = (cell[0], attr); col += 1
     def setup():
-        nonlocal syntax_groups, highlights, regions
-        n.ui_attach(width, 30, rgb=True, ext_linegrid=True)
+        nonlocal syntax_groups, highlights, regions, overlay
+        n.ui_attach(width, 30, rgb=True, ext_linegrid=True, ext_hlstate=True)
         n.command('set termguicolors splitright background=light')
         if adapter:
             for path in adapter['paths']: n.exec_lua('vim.opt.rtp:prepend(...)',str(path))
@@ -67,6 +74,11 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
             n.command('normal! '+str(case.get('selection_line',2))+'G0')
             keys={'selection':'V2j','selection-char':'v3l','selection-block':'\x163l2j'}[state]
             n.command('normal! '+keys)
+        overlay = n.exec_lua("""
+            local a=vim.fn.getpos('v');local b=vim.fn.getpos('.')
+            return {mode=vim.fn.mode(),anchor={a[2],a[3]},finish={b[2],b[3]},
+            anchor_vcol=vim.fn.virtcol('v',true)[1],finish_vcol=vim.fn.virtcol('.',true)[2],selection=vim.o.selection}
+        """)
         syntax_groups = n.exec_lua("local groups = {}; for row,line in ipairs(vim.api.nvim_buf_get_lines(0,0,-1,false)) do for col=1,#line do local name=vim.fn.synIDattr(vim.fn.synID(row,col,1),'name'); if name ~= '' then groups[name]=true end end end; return vim.tbl_keys(groups)")
         regions = n.exec_lua("""
             local out={}
@@ -74,13 +86,22 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
                 vim.api.nvim_win_call(win,function()
                     local lines=vim.api.nvim_buf_get_lines(0,0,-1,false)
                     for row,line in ipairs(lines) do
+                        local matches={}; local offset=0
+                        if vim.o.hlsearch and vim.fn.getreg('/')~='' then
+                            while offset<=#line do
+                                local m=vim.fn.matchstrpos(line,vim.fn.getreg('/'),offset)
+                                if m[2]<0 then break end
+                                matches[#matches+1]={m[2]+1,m[3]};offset=math.max(m[3],offset+1)
+                            end
+                        end
                         local byte=1
                         for _,char in ipairs(vim.fn.split(line,[=[\\zs]=])) do
                             local pos=vim.fn.screenpos(win,row,byte)
                             if pos.row>0 and pos.col>0 then
+                                local matched=false; for _,m in ipairs(matches) do if byte>=m[1] and byte<=m[2] then matched=true end end
                                 local group=vim.fn.synIDattr(vim.fn.diff_hlID(row,byte),'name')
                                 for col=pos.col,math.max(pos.col,pos.endcol) do
-                                    out[#out+1]={row=pos.row-1,col=col-1,source_line=row,source_byte=byte,side=vim.api.nvim_buf_get_name(0):find(".before.",1,true) and "before" or "after",group=group,text=char}
+                                    out[#out+1]={row=pos.row-1,col=col-1,search_match=matched,source_line=row,source_byte=byte,vcol=vim.fn.virtcol({row,byte},true),side=vim.api.nvim_buf_get_name(0):find(".before.",1,true) and "before" or "after",group=group,text=char}
                                 end
                             end
                             byte=byte+#char
@@ -94,7 +115,7 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None):
         n.exec_lua("local ch=...; vim.defer_fn(function() vim.cmd('redraw!'); vim.rpcnotify(ch,'evaluation_done') end,100)",n.channel_id)
     try:
         n.run_loop(None, notify, setup_cb=setup)
-        result = {'case':case['id'],'width':width,'state':state,'regions':regions,'highlights':highlights,'syntax_groups':syntax_groups,'require_syntax':case.get('require_syntax',False),'defaults':defaults,'attrs':attrs,
+        result = {'case':case['id'],'width':width,'state':state,'cursor':cursor,'overlay':overlay,'attr_info':attr_info,'regions':regions,'highlights':highlights,'syntax_groups':syntax_groups,'require_syntax':case.get('require_syntax',False),'defaults':defaults,'attrs':attrs,
                   'cells':[{'row':r,'col':c,'text':t,'attr':a} for (r,c),(t,a) in sorted(grid.items())]}
         assert result['cells'], 'No native UI cells received'
         return result

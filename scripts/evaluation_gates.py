@@ -39,6 +39,9 @@ def evaluate_gates(shots,rubric):
                         cues=alternative_inline_cues(shot,r)
                         fail('inline_cue_review' if cues else 'critical_inline_background',r,{'delta_e':round(delta,3),'alternative_cues':cues})
         else:
+            from overlay_checks import overlay_failures
+            for error in overlay_failures(shot):
+                fail(error['gate'],error.get('region'))
             baseline=plain.get((shot['case'],shot['width']))
             if baseline is None:fail('overlay_baseline_missing');continue
             basecells={(c['row'],c['col']):c for c in baseline['cells']}
@@ -49,7 +52,7 @@ def evaluate_gates(shots,rubric):
                 if a and b and a['text']==b['text'] and effective_colors(shot,a)!=effective_colors(baseline,b):changed.append(r)
             if not changed:fail('overlay_not_visible')
     distributions={k:{'count':len(v),'minimum':round(min(v),3) if v else None,'median':round(median(v),3) if v else None,'maximum':round(max(v),3) if v else None} for k,v in stats.items()}
-    return {'status':'fails_current_checks' if evidence else 'meets_current_checks','failures':evidence,'distributions':distributions,'scope':'Critical inline oracles and source text; overlay presence and text contrast only. Overlay extent/conflict disambiguation and typography remain unverified.'}
+    return {'status':'fails_current_checks' if evidence else 'meets_current_checks','failures':evidence,'distributions':distributions,'scope':'Critical inline oracles and source text; exact visible source overlay provenance and text contrast. Blank tail cells, cursor glyphs and perceptual cue effectiveness remain unverified.'}
 
 
 def alternative_inline_cues(shot,region):
