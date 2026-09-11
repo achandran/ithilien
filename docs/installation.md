@@ -61,3 +61,13 @@ Paths are relative to the repository root.
 ### Native cursor regression check
 
 With Dawn loaded, use zsh `bindkey -v`, type a command without executing it, press Escape, and move the block over letters and punctuation. Check dark text remains readable in the pale block, then return to insert mode. The user confirmed that changing `minimum-contrast` from 4.5 to 1 fixes the unreadable block in this workflow (version reported as “1.31”; exact version string unverified). Automated tests pin this setting and audit the exported pair, but do not emulate Ghostty rendering. Applications emitting their own colors no longer receive automatic contrast correction.
+
+## One-command installer
+
+Run `./install.sh --apply` after `git pull` (Python 3 required). Without `--apply`, it prints a dry run. `--only ghostty nvim codex claude slack linear firefox` selects a subset. Detection uses executables on PATH and macOS application bundles; browser-only installations and apps in custom locations may be skipped.
+
+Changed existing files are backed up under `~/.local/share/ithilien/backups/<timestamp>/`, preserving their full path beneath that directory. Restore a file by copying its backup over the installed file. To undo a newly created LazyVim integration, remove `lua/plugins/ithilien-installed.lua`; other newly created theme files can likewise be removed. Repeated identical installs do not rewrite files or create backups.
+
+The installer respects XDG_CONFIG_HOME, CODEX_HOME, CLAUDE_CONFIG_DIR and NVIM_APPNAME. It refuses symlink destinations and ambiguous dual Ghostty configs. Other Ghostty settings are preserved; explicit font, cursor, or contrast settings can override the installed theme. Existing custom LazyVim theme specifications may also require reconciliation. Non-LazyVim configurations get manual instructions rather than automatic init-file edits. No dependencies are downloaded by this script.
+
+Slack and Linear require their in-app import controls. Codex and Claude custom themes require their CLI theme selectors; desktop app detection alone does not establish CLI custom-theme support. Firefox's export is still the previous design and is skipped. Wallpaper, macOS selection, shell startup files and mobile devices are outside automatic installation.

@@ -62,3 +62,14 @@ The selected Neutral white palette is implemented on `design/formex-dawn`. See [
 ### Dawn cursor: the GMT red tip
 
 Dawn uses an Eglantine (`#F1E2DF`) Ghostty block cursor with Lebethron (`#25292B`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections remain Harlond blue. Dawn explicitly sets `minimum-contrast = 1`: the higher setting caused unreadable blocks in zsh vi mode. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.
+
+### Install or update detected apps
+
+Requires Python 3. After pulling this branch, run:
+
+```sh
+./install.sh             # preview changes
+./install.sh --apply     # install; back up replaced files
+```
+
+Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically; LazyVim receives a local-checkout plugin spec (restart and run `:Lazy sync`). Codex/Claude Code receive theme files and require `/theme` selection. Slack/Linear display import values. Missing apps are skipped. Firefox, mobile, wallpaper, and system-wide selection are not automatically changed. See [installer details](docs/installation.md#one-command-installer).
