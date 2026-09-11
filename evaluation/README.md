@@ -117,3 +117,15 @@ uv run python scripts/compare_themes.py \
 This uses the pinned upstream Python parser and highlights query, compiles it with `cc`, and starts pinned BasedPyright 1.40.1. It captures all four themes across three Python fixtures, two widths and five states (120 captures). Each buffer must have an active Tree-sitter highlighter, a nonempty semantic-token response, applied semantic extmarks, and diagnostics before capture. Fixtures deliberately contain a type mismatch; code is never executed. Native Neovim semantic highlighting and diagnostics are active together with Tree-sitter. The readiness check uses native parser and semantic evidence rather than requiring legacy syntax groups.
 
 Each capture records runtime evidence; the report records dependency versions. Neovim state/cache directories are temporary, and the LSP root is confined to the fixture directory with dynamic file watchers disabled. Missing prerequisites and readiness timeouts fail the run. This tests source overlays and colors under the actual integrations; it does not claim exhaustive diagnostic-popup or completion-menu coverage. The parser queries are pinned upstream queries, not a user's custom Tree-sitter configuration.
+
+## Codex flow replay
+
+The main `evaluate_theme.py --codex-source ...` run now includes this stage after the diff-renderer checks.
+
+```sh
+uv run python scripts/codex_flows.py --source /path/to/pinned/codex
+```
+
+The flow adapter runs inside upstream `ChatWidget` tests using real event handlers and native Ratatui rendering. It loads the exported Ithilien theme and replays a request, commentary, approval modal, failed Python test output, patch in progress/completed, successful tests and final Markdown/Python response. Two widths produce 16 captures with accumulated native history and the current widget. The approval response and tool results are synthetic events; no command is executed, no files are patched and no model/API call occurs.
+
+This is a complete scripted UI workflow, not a live app-server end-to-end session. It does not cover every Codex path, all color depths, Claude Code, or native Ghostty. The existing diff adapter still supplies explicit three-color-depth coverage. `native.log`, `codex-cells.json`, `codex-gallery.html` and `report.json` preserve evidence. Text contrast findings are reported without claiming a general agent-excellence score. Native DIM rendering remains terminal-dependent.

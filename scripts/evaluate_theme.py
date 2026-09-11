@@ -169,6 +169,8 @@ def main():
     if args.codex_source:
         from codex_native import run_native
         native=run_native(args.codex_source.resolve(),args.output)
+        from codex_flows import run as run_flows
+        native['flows']=run_flows(args.codex_source.resolve(),args.output/'codex-flows')
     report={'render_profile':json.loads((ROOT/'evaluation/render-profile.json').read_text()),'native_checks':native_checks,'nvim_version':subprocess.check_output([args.nvim,'--version'],text=True).splitlines()[0],'native_neovim_captures':len(captures),'pair_contrasts':pairs,'failures':failures,'codex':native,
             'comfort':'manual assessment required','palette_sha256':hashlib.sha256((ROOT/'palette/ithilien-dawn.json').read_bytes()).hexdigest()}
     if args.baseline:
@@ -192,5 +194,5 @@ def main():
         blocks.append(f'<h2>{shot["case"]} · {shot["width"]} columns · {shot["state"]}</h2><pre>'+ '\n'.join(lines)+'</pre>')
     (args.output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><title>Ithilien native cell gallery</title><style>body{background:#eee;padding:24px}pre{font:16pt/1.4 "Berkeley Mono Medium",monospace;overflow:auto}h2{font:18px sans-serif}</style><h1>Native Neovim cell captures</h1><p>Browser reconstruction of actual UI cells; not a Ghostty screenshot. Codex validation status is in report.json. Review missed edits, selection visibility and comfort separately.</p>'+''.join(blocks))
     print(json.dumps(report,indent=2))
-    return bool(failures) or native['status']=='fail' or (args.require_codex and native['status']!='pass')
+    return bool(failures) or native['status']=='fail' or native.get('flows',{}).get('status')=='fail' or (args.require_codex and native['status']!='pass')
 if __name__=='__main__':sys.exit(main())
