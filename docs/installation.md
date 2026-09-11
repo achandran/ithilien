@@ -91,3 +91,7 @@ Dawn Visual and VisualNOS use plain Ranger/Lebethron backgrounds and foregrounds
 ### fzf history search
 
 The zsh installation also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Ranger for the current row, underlined matching characters, and a Rosehip prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
+
+### macOS system selection
+
+The normal installer now includes the Dawn system highlight color on macOS, read from the canonical palette. `./install.sh` previews it; `./install.sh --apply` applies it alongside detected apps. Use `--only macos` to target it alone. Other platforms skip it. The prior value is saved as `macos-highlight.json` in the installer backup directory (null means the preference was unset). Log out and back in if applications retain their previous color.

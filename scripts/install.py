@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Install supported Ithilien integrations; standard library only."""
 import argparse
+import json
+import subprocess
 from datetime import datetime, timezone
 import os
 import re
@@ -39,6 +41,8 @@ class Installer:
         self.count = 0
 
     def detected(self, command, app):
+        if command == 'macos':
+            return sys.platform == 'darwin'
         return bool(shutil.which(command) or any((p / f'{candidate}.app').exists() for p in [Path('/Applications'), self.home / 'Applications'] for candidate in ([app, 'Firefox Developer Edition', 'Firefox Nightly'] if app == 'Firefox' else [app])))
 
     def write(self, path, data):
@@ -63,7 +67,7 @@ class Installer:
                 self.write(destination / path.name, path.read_bytes())
 
     def run(self):
-        integrations = [('ghostty', 'Ghostty'), ('nvim', 'Neovim'), ('codex', 'Codex'), ('claude', 'Claude'), ('slack', 'Slack'), ('linear', 'Linear'), ('firefox', 'Firefox'), ('zsh', 'Zsh')]
+        integrations = [('ghostty', 'Ghostty'), ('nvim', 'Neovim'), ('codex', 'Codex'), ('claude', 'Claude'), ('slack', 'Slack'), ('linear', 'Linear'), ('firefox', 'Firefox'), ('zsh', 'Zsh'), ('macos', 'macOS')]
         for command, app in integrations:
             if self.only and command not in self.only:
                 continue
@@ -72,7 +76,7 @@ class Installer:
                 continue
             try:
                 getattr(self, command)()
-            except (OSError, ValueError) as error:
+            except (OSError, ValueError, subprocess.CalledProcessError) as error:
                 print(f'ERROR {app}: {error}', file=sys.stderr)
                 self.errors += 1
         if self.apply and self.backup.exists():
@@ -80,6 +84,28 @@ class Installer:
         return bool(self.errors)
 
     errors = 0
+
+    def macos(self):
+        if sys.platform != 'darwin':
+            print('SKIP macOS: not detected')
+            return
+        palette = json.loads((ROOT / 'palette/ithilien-dawn.json').read_text())
+        color = palette['colors'][palette['highlight']['background']]
+        value = ' '.join(f'{int(color[i:i+2], 16) / 255:.6f}' for i in (1, 3, 5)) + ' Other'
+        current = subprocess.run(['/usr/bin/defaults', 'read', '-g', 'AppleHighlightColor'],
+                                 capture_output=True, text=True)
+        previous = current.stdout.strip() if current.returncode == 0 else None
+        if previous == value:
+            print('UNCHANGED macOS system highlight')
+            return
+        print(f'{"WRITE" if self.apply else "WOULD WRITE"} macOS system highlight: {color}')
+        if self.apply:
+            self.backup.mkdir(parents=True, exist_ok=True)
+            (self.backup / 'macos-highlight.json').write_text(json.dumps(
+                {'domain': 'NSGlobalDomain', 'key': 'AppleHighlightColor', 'previous': previous}, indent=2) + '\n')
+            subprocess.run(['/usr/bin/defaults', 'write', '-g', 'AppleHighlightColor', '-string', value], check=True)
+            print('NEXT macOS: log out and back in if applications retain the old selection color.')
+        self.count += 1
 
     def ghostty(self):
         # Ghostty installation intentionally targets the user's .config folder.
@@ -144,7 +170,7 @@ class Installer:
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true', help='Write changes; default is a dry run')
-    parser.add_argument('--only', nargs='+', choices=['ghostty', 'nvim', 'codex', 'claude', 'slack', 'linear', 'firefox', 'zsh'])
+    parser.add_argument('--only', nargs='+', choices=['ghostty', 'nvim', 'codex', 'claude', 'slack', 'linear', 'firefox', 'zsh', 'macos'])
     args = parser.parse_args()
     return Installer(Path.home(), args.apply, args.only).run()
 
