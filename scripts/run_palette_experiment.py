@@ -6,7 +6,7 @@ out=root.parents[1]/'outputs/palette-experiment';out.mkdir(exist_ok=True)
 source=json.loads((root/'palette/ithilien-dawn.json').read_text());base=source['colors']
 rows=[]
 for i,(spray,amber,ash) in enumerate(itertools.product(['#E0E9EE','#D7E3EA','#D2DFE7'],['#D8B46A','#D0A859'],['#596166','#51595E'])):
- c=dict(base,Spray=spray,Celandine=amber,Ash=ash)
+ c=dict(base,Celandine=amber,Ash=ash);c[source['diff']['changeBackground']]=spray
  metrics={'comment_contrast':wcag(ash,base[source['backgrounds']['base']]),'inline_text_contrast':wcag('#000000',amber),'line_delta_e':Color(spray).delta_e(base[source['backgrounds']['base']],method='2000'),'inline_delta_e':Color(amber).delta_e(spray,method='2000'),'search_delta_e':Color(amber).delta_e(base['Clematis'],method='2000')}
  rows.append({'id':f'candidate-{i:02d}','changes':{k:v for k,v in c.items() if base[k]!=v},'metrics':metrics,'screen_pass':min(metrics['comment_contrast'],metrics['inline_text_contrast'])>=4.5})
 # Three distinct hypotheses, not a ranking by a saturated composite.

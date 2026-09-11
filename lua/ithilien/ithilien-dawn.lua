@@ -10,7 +10,7 @@ return {
     ["Thyme"] = "#70516D",
     ["Pelennor"] = "#E2EDDF",
     ["Eglantine"] = "#F1E2DF",
-    ["Spray"] = "#D7E3EA",
+    ["Henneth"] = "#D7E3EA",
     ["Celandine"] = "#D8B46A",
     ["Clematis"] = "#D6C6DE",
     ["Nimloth"] = "#FAFAF8",

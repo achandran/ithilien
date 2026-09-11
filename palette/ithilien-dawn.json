@@ -12,7 +12,7 @@
     "Thyme": "#70516D",
     "Pelennor": "#E2EDDF",
     "Eglantine": "#F1E2DF",
-    "Spray": "#D7E3EA",
+    "Henneth": "#D7E3EA",
     "Celandine": "#D8B46A",
     "Clematis": "#D6C6DE",
     "Nimloth": "#FAFAF8",
@@ -59,8 +59,8 @@
       "meaning": "Wild roses in Ithilien; pale pink petals.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
-    "Spray": {
-      "meaning": "Waterfall spray at Henneth Ann\u00fbn in Ithilien; pale water.",
+    "Henneth": {
+      "meaning": "Pale blue-gray inspired by the waterfall curtain at Henneth Ann\u00fbn, the Window on the West in Ithilien. A shortened place-name element, not a Tolkien word for mist or blue.",
       "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
     },
     "Celandine": {
@@ -161,10 +161,10 @@
     "deleteBackground": "Eglantine",
     "deleteEmphasis": "Celandine",
     "changeForeground": "Lebethron",
-    "changeBackground": "Spray",
+    "changeBackground": "Henneth",
     "changeEmphasis": "Celandine",
     "hunkForeground": "Lebethron",
-    "hunkBackground": "Spray",
+    "hunkBackground": "Henneth",
     "conflictForeground": "Lebethron",
     "conflictBackground": "Clematis"
   }
