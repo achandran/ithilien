@@ -26,7 +26,7 @@ def write_index(out,report):
         stage_rows=''.join(f'<tr><td>{html.escape(g["stage"])}</td><td>{g["width"]}</td><td>{g["minimum_contrast"]}</td><td>{len(g["failures"])}</td><td>{g["dim_cells_unverified"]}</td></tr>' for g in t['agent_gates']['stages'])
         details.append(f'<details><summary>{name}: agent-stage measurements</summary><p>Whole frame including accumulated history. Required-content fragment findings are in <a href="codex/{t["id"]}/agent-gates.json">agent-gates.json</a>.</p><table><tr><th>Stage</th><th>Width</th><th>Minimum contrast</th><th>Failed cells</th><th>Dim cells (unverified)</th></tr>{stage_rows}</table></details>')
 
-    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme suite</title><style>body{font:16px/1.5 system-ui;padding:30px}td,th{padding:12px;border-bottom:1px solid #ccc}</style><h1>Combined evaluation</h1><p>Supported stages completed separately from quality gates. Full coverage remains incomplete: Ghostty, Claude Code, and comfort are unverified. Native event replay, not live model sessions.</p><p><a href="neovim/scorecard.html">Neovim gates</a> · <a href="python/scorecard.html">Python Tree-sitter/LSP gates</a> · <a href="interactions/gallery.html">fzf / diagnostics / completion</a> · <a href="report.json">Full evidence</a></p><table><tr><th>Theme</th><th>Codex adapter provenance</th><th>Diff gates</th><th>Flow gates</th></tr>'+''.join(rows)+'</table><p>Converted ports test our explicit mapping, not an upstream author’s Codex implementation.</p>'+''.join(details))
+    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme suite</title><style>body{font:16px/1.5 system-ui;padding:30px}td,th{padding:12px;border-bottom:1px solid #ccc}</style><h1>Combined evaluation</h1><p>Supported stages completed separately from quality gates. Full coverage remains incomplete: Ghostty, Claude Code, and comfort are unverified. Native event replay, not live model sessions.</p><p><a href="neovim/scorecard.html">Neovim gates</a> · <a href="python/scorecard.html">Python Tree-sitter/LSP gates</a> · <a href="interactions/gallery.html">fzf / diagnostics / completion</a> · <a href="evaluator-validation/index.html">Evaluator validation</a> · <a href="report.json">Full evidence</a></p><table><tr><th>Theme</th><th>Codex adapter provenance</th><th>Diff gates</th><th>Flow gates</th></tr>'+''.join(rows)+'</table><p>Converted ports test our explicit mapping, not an upstream author’s Codex implementation.</p>'+''.join(details))
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -60,6 +60,9 @@ def main():
     interactions=run_interactions(entries,out/'interactions',a.nvim,include_fzf=not a.skip_fzf)
     report['interactions']={'gallery':'interactions/gallery.html','report':'interactions/report.json','quality_pass':all(r['quality_pass'] for r in interactions['results'])}
     report['stages']['interactions']={'status':'fail' if any(r['errors'] for r in interactions['results']) else 'pass'}
+    from validate_evaluator import run as validate_evaluator
+    validation=validate_evaluator(out/'evaluator-validation')
+    report['stages']['evaluator-validation']={'status':'pass' if validation['pass'] else 'fail','gallery':'evaluator-validation/index.html'}
     failures=execution_failed(report)
     if a.strict_gates:
         failures |= not report['interactions']['quality_pass']

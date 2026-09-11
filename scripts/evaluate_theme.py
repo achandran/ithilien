@@ -72,6 +72,9 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None, python_runtime=No
         if not adapter: n.exec_lua("require('ithilien.diff').refresh()")
         if python_runtime:
             runtime_evidence=n.exec_lua((ROOT/'evaluation/python-runtime.lua').read_text(),str(python_runtime),str(ROOT/'.venv/bin/basedpyright-langserver'))
+        if adapter and adapter.get('evaluation_override'):
+            n.exec_lua(adapter['evaluation_override'])
+            highlights=n.exec_lua('local out={};for _,name in ipairs(...) do out[name]=vim.api.nvim_get_hl(0,{name=name,link=false}) end;return out',list(highlights))
         n.command('normal! gg')
         if state == 'search' or 'search' in state:
             n.funcs.setreg('/', case.get('search','return\\|font\\|println')); n.command('set hlsearch')
