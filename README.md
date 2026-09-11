@@ -61,4 +61,4 @@ The selected Neutral white palette is implemented on `design/formex-dawn`. See [
 
 ### Dawn cursor: the GMT red tip
 
-Dawn uses Rosehip (`#A3373E`) for the default Ghostty bar cursor and exported caret. Neovim uses an Eglantine (`#F1E2DF`) block with Lebethron text and a Rosehip underline, keeping the character dark and readable. Selections remain Harlond blue. Applications can override terminal cursor shape or color; a forced solid red block is not a supported dark-text pairing.
+Dawn uses an Eglantine (`#F1E2DF`) Ghostty block cursor with Lebethron (`#25292B`) text. The same pair stays readable when an application changes the cursor shape. Neovim adds a Rosehip (`#A3373E`) underline to its pale block; exported carets retain Rosehip. Selections remain Harlond blue. Cursor text contrast is tested independently of the default shape, without relying on terminal contrast correction.
