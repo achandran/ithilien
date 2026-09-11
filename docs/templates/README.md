@@ -14,7 +14,7 @@ Porcelain whites. Black type. Steel neutrals. A small, deliberate red accent.
 
 ![Ithilien Dawn palette — names, hex values, and semantic roles](assets/ithilien-dawn-palette.svg)
 
-Colors are grouped by surfaces and text, interaction, diffs, and terminal colors. The six terminal colors also serve application accents; Rauros supplies both cyan and aqua text. Each swatch shows its palette name, a representative role, and exact hex value. Shared colors can serve additional roles; see the full reference below.
+Colors are grouped by surfaces and text, terminal colors, diffs, and interaction. The six terminal colors also serve application accents; Rauros supplies both cyan and aqua text. Each swatch shows its palette name, a representative role, and exact hex value. Shared colors can serve additional roles; see the full reference below.
 
 The palette and preview images are generated from the theme sources so they stay in sync. The Neovim image above uses actual captured UI-cell colors, rasterized with Berkeley Mono Medium at 16 pt. It shows built-in Python syntax, not a Tree-sitter/LSP configuration or a native Ghostty screenshot.
 

@@ -373,6 +373,8 @@ def main() -> None:
     generate_color_reference()
     from palette_chart import generate_chart
     generate_chart()
+    from generate_readme import render_readme
+    render_readme()
     print("Generated Ithilien Dawn and Ithilien Dusk themes for all supported applications")
 
 
