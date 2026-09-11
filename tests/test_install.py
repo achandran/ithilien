@@ -75,13 +75,14 @@ class InstallTests(unittest.TestCase):
         import subprocess
         import shutil
         with tempfile.TemporaryDirectory() as temp, contextlib.redirect_stdout(io.StringIO()):
-            home=Path(temp); rc=home/'.zshrc'; rc.write_text('bindkey -v\n')
+            home=Path(temp); rc=home/'.zshrc'; rc.write_text('bindkey -v\nzle_highlight=("paste:none" "region:bg=#B17232,fg=#000000")\n')
             with patch.dict('os.environ', {'XDG_CONFIG_HOME': str(home/'.config'), 'ZDOTDIR': str(home)}):
                 installer=Installer(home,True); installer.zsh(); count=installer.count; installer.zsh()
             self.assertEqual(installer.count,count)
             self.assertEqual(rc.read_text().count('# BEGIN ITHILIEN ZLE'),1)
             self.assertIn('bindkey -v',rc.read_text())
             if shutil.which('zsh'):
-                script=home/'.config/ithilien/ithilien-dawn.zsh'
+                script=rc
+                self.assertIn('region:bg=#B3CBD8,fg=#25292B', rc.read_text())
                 result=subprocess.run(['zsh','-f','-c','zle_highlight=("paste:none" "region:standout"); source "$1"; source "$1"; print -l -- "${zle_highlight[@]}"','test',str(script)],capture_output=True,text=True,check=True)
                 self.assertEqual(result.stdout.splitlines(),['paste:none','region:bg=#B3CBD8,fg=#25292B'])

@@ -70,7 +70,7 @@ Changed existing files are backed up under `~/.local/share/ithilien/backups/<tim
 
 Ghostty always installs to `~/.config/ghostty/config` and `~/.config/ghostty/themes/`, even if a native macOS config exists; that native file is left untouched. For other integrations the installer respects XDG_CONFIG_HOME, CODEX_HOME, CLAUDE_CONFIG_DIR and NVIM_APPNAME. It refuses symlink destinations. Other Ghostty settings are preserved; explicit font, cursor, or contrast settings can override the installed theme. Existing custom LazyVim theme specifications may also require reconciliation. Non-LazyVim configurations get manual instructions rather than automatic init-file edits. No dependencies are downloaded by this script.
 
-Slack and Linear require their in-app import controls. Codex and Claude custom themes require their CLI theme selectors; desktop app detection alone does not establish CLI custom-theme support. Firefox receives Dawn/Dusk theme files under `~/.local/share/ithilien/firefox`; activation remains manual. Zsh receives both selection files and a backed-up managed Dawn source line in `.zshrc` (honoring ZDOTDIR). Wallpaper, macOS selection and mobile devices are outside automatic installation.
+Slack and Linear require their in-app import controls. Codex and Claude custom themes require their CLI theme selectors; desktop app detection alone does not establish CLI custom-theme support. Firefox receives Dawn/Dusk theme files under `~/.local/share/ithilien/firefox`; activation remains manual. Zsh receives both selection files and a backed-up managed Dawn highlight block in `.zshrc` (honoring ZDOTDIR). Wallpaper, macOS selection and mobile devices are outside automatic installation.
 
 ## Firefox and shell selection
 
@@ -78,6 +78,6 @@ Slack and Linear require their in-app import controls. Codex and Claude custom t
 
 Each Firefox export also includes optional `userContent.css` for website `::selection`: Dawn uses Harlond `#B3CBD8` with Lebethron `#25292B`. To use it, merge the rule into the active profile's `chrome/userContent.css`, enable `toolkit.legacyUserProfileCustomizations.stylesheets` in about:config, and restart Firefox. The installer stages this file but does not overwrite profile CSS or toggle preferences. Browser theme colors alone do not control website selection.
 
-`./install.sh --apply --only zsh firefox` installs these integrations when detected. Start a new zsh session after installation. The managed shell source defaults to Dawn; source `ithilien-dusk.zsh` instead for Dusk. ZLE visual selection and Ghostty mouse selection are separate systems. Non-region ZLE settings are preserved. The source can still be overridden by later shell/plugin hooks.
+`./install.sh --apply --only zsh firefox` installs these integrations when detected. Start a new zsh session after installation. The managed shell block defaults to Dawn; source `ithilien-dusk.zsh` instead for Dusk. ZLE visual selection and Ghostty mouse selection are separate systems. Non-region ZLE settings are preserved. The source can still be overridden by later shell/plugin hooks.
 
 System selection exports now include `macos/apply-highlight-ithilien-dawn.sh` and `macos/apply-highlight-ithilien-dusk.sh`; the legacy apply-highlight.sh defaults to Dawn. They remain opt-in global changes. The dynamic wallpaper is unchanged.

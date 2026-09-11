@@ -72,7 +72,7 @@ Requires Python 3. After pulling this branch, run:
 ./install.sh --apply     # install; back up replaced files
 ```
 
-Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically; LazyVim receives a local-checkout plugin spec (restart and run `:Lazy sync`). Codex/Claude Code receive theme files and require `/theme` selection. Slack/Linear display import values. Missing apps are skipped. Zsh receives a backed-up managed source line in `.zshrc`. Firefox receives theme files for manual activation. Mobile, wallpaper, and system-wide selection are not automatically changed. See [installer details](docs/installation.md#one-command-installer).
+Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically; LazyVim receives a local-checkout plugin spec (restart and run `:Lazy sync`). Codex/Claude Code receive theme files and require `/theme` selection. Slack/Linear display import values. Missing apps are skipped. Zsh receives a backed-up managed highlight block in `.zshrc`. Firefox receives theme files for manual activation. Mobile, wallpaper, and system-wide selection are not automatically changed. See [installer details](docs/installation.md#one-command-installer).
 
 ### Compare against Kanso Pearl and Zenbones
 
