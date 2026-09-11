@@ -82,14 +82,9 @@ class Installer:
     errors = 0
 
     def ghostty(self):
-        base = self.config / 'ghostty'
-        # Ghostty on macOS also reads Application Support; edit the existing
-        # native config if present, and avoid guessing when both are active.
-        native = self.home / 'Library/Application Support/com.mitchellh.ghostty/config'
-        xdg = base / 'config'
-        if native.exists() and xdg.exists():
-            raise ValueError('Both native and XDG Ghostty configs exist; consolidate before automatic activation')
-        config = native if native.exists() else xdg
+        # Ghostty installation intentionally targets the user's .config folder.
+        base = self.home / '.config/ghostty'
+        config = base / 'config'
         self.copies('ghostty/themes', base / 'themes')
         text = config.read_text() if config.exists() else ''
         self.write(config, managed_config(text, 'light:ithilien_dawn.conf,dark:ithilien_dusk.conf').encode())

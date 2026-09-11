@@ -47,3 +47,26 @@ class InstallTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 Installer(home, True).write(link,b'new')
             self.assertEqual(target.read_text(),'keep')
+
+    def test_ghostty_always_uses_home_config_even_with_native_and_xdg_override(self):
+        with tempfile.TemporaryDirectory() as temp, contextlib.redirect_stdout(io.StringIO()):
+            home = Path(temp)
+            native = home / 'Library/Application Support/com.mitchellh.ghostty/config'
+            native.parent.mkdir(parents=True)
+            native.write_text('theme = native-theme\n')
+            config = home / '.config/ghostty/config'
+            config.parent.mkdir(parents=True)
+            config.write_text('font-size = 15\ntheme = old\n')
+            with patch.dict('os.environ', {'XDG_CONFIG_HOME': str(home / 'alternative')}):
+                installer = Installer(home, True)
+                installer.ghostty()
+                writes = installer.count
+                installer.ghostty()
+                self.assertEqual(installer.count, writes)
+            self.assertEqual(native.read_text(), 'theme = native-theme\n')
+            self.assertIn('font-size = 15', config.read_text())
+            self.assertIn('theme = light:ithilien_dawn.conf,dark:ithilien_dusk.conf', config.read_text())
+            for variant in ('dawn', 'dusk'):
+                self.assertTrue((config.parent / 'themes' / f'ithilien_{variant}.conf').is_file())
+            self.assertFalse((home / 'alternative').exists())
+            self.assertTrue(installer.backup.exists())
