@@ -6,1961 +6,1961 @@
   "contrast": [
     {
       "name": "muted UI",
-      "foreground": "#53594E",
-      "background": "#F0E9D2",
-      "wcag": 5.95,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "wcagTarget": 4.5,
-      "apcaLc": 72.1,
+      "apcaLc": 75.9,
       "apcaTarget": 25,
       "passed": true
     },
     {
       "name": "comments",
-      "foreground": "#53594E",
-      "background": "#F0E9D2",
-      "wcag": 5.95,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "wcagTarget": 4.5,
-      "apcaLc": 72.1,
+      "apcaLc": 75.9,
       "apcaTarget": 45,
       "passed": true
     },
     {
       "name": "secondary text",
-      "foreground": "#484E43",
-      "background": "#F0E9D2",
-      "wcag": 7.07,
+      "foreground": "#444D52",
+      "background": "#F6F6F3",
+      "wcag": 7.98,
       "wcagTarget": 7.0,
-      "apcaLc": 76.5,
+      "apcaLc": 84.2,
       "apcaTarget": 55,
       "passed": true
     },
     {
       "name": "normal text",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "wcag": 17.29,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "wcagTarget": 7.0,
-      "apcaLc": 93.0,
+      "apcaLc": 96.0,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "bright text",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "wcag": 17.29,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "wcagTarget": 7.0,
-      "apcaLc": 93.0,
+      "apcaLc": 96.0,
       "apcaTarget": 75,
       "passed": true
     },
     {
       "name": "highlighted text",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "wcagTarget": 4.5,
-      "apcaLc": 37.5,
+      "apcaLc": 69.3,
       "apcaTarget": 35,
       "passed": true
     },
     {
       "name": "highlight edge on Ithilien Dawn",
-      "foreground": "#B17232",
-      "background": "#F0E9D2",
-      "wcag": 3.25,
+      "foreground": "#3F535F",
+      "background": "#F6F6F3",
+      "wcag": 7.42,
       "wcagTarget": 3.0,
-      "apcaLc": 53.6,
+      "apcaLc": 82.3,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "highlight edge on white",
-      "foreground": "#B17232",
+      "foreground": "#3F535F",
       "background": "#FFFFFF",
-      "wcag": 3.95,
+      "wcag": 8.03,
       "wcagTarget": 3.0,
-      "apcaLc": 66.6,
+      "apcaLc": 87.8,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "syntax olive",
-      "foreground": "#64602F",
-      "background": "#F0E9D2",
-      "wcag": 5.31,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "wcagTarget": 4.5,
-      "apcaLc": 69.0,
+      "apcaLc": 96.0,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "syntax sage",
-      "foreground": "#456344",
-      "background": "#F0E9D2",
-      "wcag": 5.54,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 75.9,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "syntax gold",
-      "foreground": "#5C4619",
-      "background": "#F0E9D2",
-      "wcag": 7.37,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 44,
+      "passed": true
+    },
+    {
+      "name": "syntax ochre",
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 44,
+      "passed": true
+    },
+    {
+      "name": "syntax clay",
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 44,
+      "passed": true
+    },
+    {
+      "name": "syntax coral",
+      "foreground": "#A3373E",
+      "background": "#F6F6F3",
+      "wcag": 6.11,
+      "wcagTarget": 4.5,
+      "apcaLc": 76.3,
+      "apcaTarget": 44,
+      "passed": true
+    },
+    {
+      "name": "syntax aqua",
+      "foreground": "#306466",
+      "background": "#F6F6F3",
+      "wcag": 6.18,
       "wcagTarget": 4.5,
       "apcaLc": 77.4,
       "apcaTarget": 44,
       "passed": true
     },
     {
-      "name": "syntax ochre",
-      "foreground": "#795B28",
-      "background": "#F0E9D2",
-      "wcag": 5.18,
-      "wcagTarget": 4.5,
-      "apcaLc": 68.2,
-      "apcaTarget": 44,
-      "passed": true
-    },
-    {
-      "name": "syntax clay",
-      "foreground": "#88483E",
-      "background": "#F0E9D2",
-      "wcag": 5.68,
-      "wcagTarget": 4.5,
-      "apcaLc": 70.5,
-      "apcaTarget": 44,
-      "passed": true
-    },
-    {
-      "name": "syntax coral",
-      "foreground": "#A03440",
-      "background": "#F0E9D2",
-      "wcag": 5.65,
-      "wcagTarget": 4.5,
-      "apcaLc": 69.8,
-      "apcaTarget": 44,
-      "passed": true
-    },
-    {
-      "name": "syntax aqua",
-      "foreground": "#28665F",
-      "background": "#F0E9D2",
-      "wcag": 5.48,
-      "wcagTarget": 4.5,
-      "apcaLc": 69.6,
-      "apcaTarget": 44,
-      "passed": true
-    },
-    {
       "name": "syntax blue",
-      "foreground": "#405B80",
-      "background": "#F0E9D2",
-      "wcag": 5.71,
+      "foreground": "#345E77",
+      "background": "#F6F6F3",
+      "wcag": 6.44,
       "wcagTarget": 4.5,
-      "apcaLc": 70.9,
+      "apcaLc": 78.5,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "syntax mauve",
-      "foreground": "#75516F",
-      "background": "#F0E9D2",
-      "wcag": 5.47,
+      "foreground": "#70516D",
+      "background": "#F6F6F3",
+      "wcag": 6.28,
       "wcagTarget": 4.5,
-      "apcaLc": 69.7,
+      "apcaLc": 77.9,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "diff add",
-      "foreground": "#1F3518",
-      "background": "#D5E1CA",
-      "wcag": 9.78,
+      "foreground": "#25292B",
+      "background": "#E2EDDF",
+      "wcag": 12.17,
       "wcagTarget": 7.0,
-      "apcaLc": 79.6,
+      "apcaLc": 88.9,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "diff delete",
-      "foreground": "#6B322E",
-      "background": "#F0DCD6",
-      "wcag": 7.5,
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
       "wcagTarget": 7.0,
-      "apcaLc": 74.4,
+      "apcaLc": 86.2,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "diff change",
-      "foreground": "#453510",
-      "background": "#F4E3AD",
-      "wcag": 9.29,
+      "foreground": "#25292B",
+      "background": "#E0E9EE",
+      "wcag": 11.92,
       "wcagTarget": 7.0,
-      "apcaLc": 80.9,
+      "apcaLc": 87.6,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "diff hunk",
-      "foreground": "#25443F",
-      "background": "#D5E1DE",
-      "wcag": 7.92,
+      "foreground": "#25292B",
+      "background": "#E0E9EE",
+      "wcag": 11.92,
       "wcagTarget": 7.0,
-      "apcaLc": 75.4,
+      "apcaLc": 87.6,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "inline add",
-      "foreground": "#000000",
-      "background": "#A1BA77",
-      "wcag": 9.81,
+      "foreground": "#25292B",
+      "background": "#BDD3B2",
+      "wcag": 9.17,
+      "wcagTarget": 7.0,
+      "apcaLc": 72.2,
+      "apcaTarget": 60,
+      "passed": true
+    },
+    {
+      "name": "inline delete",
+      "foreground": "#25292B",
+      "background": "#DDAFA7",
+      "wcag": 7.52,
       "wcagTarget": 7.0,
       "apcaLc": 61.9,
       "apcaTarget": 60,
       "passed": true
     },
     {
-      "name": "inline delete",
-      "foreground": "#000000",
-      "background": "#E2A69B",
-      "wcag": 10.16,
-      "wcagTarget": 7.0,
-      "apcaLc": 63.7,
-      "apcaTarget": 60,
-      "passed": true
-    },
-    {
       "name": "inline change",
-      "foreground": "#000000",
-      "background": "#D2B16B",
-      "wcag": 10.24,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "wcagTarget": 7.0,
-      "apcaLc": 64.0,
+      "apcaLc": 69.3,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "inline diff marker",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "wcagTarget": 4.5,
-      "apcaLc": 37.5,
+      "apcaLc": 69.3,
       "apcaTarget": 35,
       "passed": true
     },
     {
       "name": "conflict marker",
-      "foreground": "#503348",
-      "background": "#E2D3DE",
-      "wcag": 7.65,
+      "foreground": "#25292B",
+      "background": "#E5D9E7",
+      "wcag": 10.77,
       "wcagTarget": 7.0,
-      "apcaLc": 72.1,
+      "apcaLc": 81.4,
       "apcaTarget": 60,
       "passed": true
     },
     {
       "name": "ANSI black",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "wcag": 17.29,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "wcagTarget": 4.5,
-      "apcaLc": 93.0,
+      "apcaLc": 96.0,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI red",
-      "foreground": "#84342F",
-      "background": "#F0E9D2",
-      "wcag": 6.88,
+      "foreground": "#8B3037",
+      "background": "#F6F6F3",
+      "wcag": 7.53,
       "wcagTarget": 4.5,
-      "apcaLc": 75.2,
+      "apcaLc": 81.9,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI green",
-      "foreground": "#405A34",
-      "background": "#F0E9D2",
-      "wcag": 6.33,
+      "foreground": "#274D39",
+      "background": "#F6F6F3",
+      "wcag": 8.79,
       "wcagTarget": 4.5,
-      "apcaLc": 73.6,
+      "apcaLc": 86.4,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI yellow",
-      "foreground": "#5A4006",
-      "background": "#F0E9D2",
-      "wcag": 7.97,
+      "foreground": "#624819",
+      "background": "#F6F6F3",
+      "wcag": 7.88,
       "wcagTarget": 4.5,
-      "apcaLc": 79.2,
+      "apcaLc": 83.7,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI blue",
-      "foreground": "#304564",
-      "background": "#F0E9D2",
-      "wcag": 8.0,
+      "foreground": "#274A62",
+      "background": "#F6F6F3",
+      "wcag": 8.65,
       "wcagTarget": 4.5,
-      "apcaLc": 79.4,
+      "apcaLc": 86.0,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI magenta",
-      "foreground": "#67475C",
-      "background": "#F0E9D2",
-      "wcag": 6.57,
+      "foreground": "#60425E",
+      "background": "#F6F6F3",
+      "wcag": 7.95,
       "wcagTarget": 4.5,
-      "apcaLc": 74.6,
+      "apcaLc": 84.0,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI cyan",
-      "foreground": "#204F49",
-      "background": "#F0E9D2",
-      "wcag": 7.6,
+      "foreground": "#255354",
+      "background": "#F6F6F3",
+      "wcag": 7.94,
       "wcagTarget": 4.5,
-      "apcaLc": 78.1,
+      "apcaLc": 83.9,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI brightBlack",
-      "foreground": "#53594E",
-      "background": "#F0E9D2",
-      "wcag": 5.95,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "wcagTarget": 4.5,
-      "apcaLc": 72.1,
+      "apcaLc": 75.9,
       "apcaTarget": 20,
       "passed": true
     },
     {
       "name": "ANSI brightRed",
-      "foreground": "#A03440",
-      "background": "#F0E9D2",
-      "wcag": 5.65,
+      "foreground": "#A3373E",
+      "background": "#F6F6F3",
+      "wcag": 6.11,
       "wcagTarget": 4.5,
-      "apcaLc": 69.8,
+      "apcaLc": 76.3,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI brightGreen",
-      "foreground": "#456344",
-      "background": "#F0E9D2",
-      "wcag": 5.54,
+      "foreground": "#315F46",
+      "background": "#F6F6F3",
+      "wcag": 6.79,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 79.9,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI brightYellow",
-      "foreground": "#5C4619",
-      "background": "#F0E9D2",
-      "wcag": 7.37,
+      "foreground": "#795922",
+      "background": "#F6F6F3",
+      "wcag": 5.94,
       "wcagTarget": 4.5,
-      "apcaLc": 77.4,
+      "apcaLc": 76.3,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI brightBlue",
-      "foreground": "#405B80",
-      "background": "#F0E9D2",
-      "wcag": 5.71,
+      "foreground": "#345E77",
+      "background": "#F6F6F3",
+      "wcag": 6.44,
       "wcagTarget": 4.5,
-      "apcaLc": 70.9,
+      "apcaLc": 78.5,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI brightMagenta",
-      "foreground": "#75516F",
-      "background": "#F0E9D2",
-      "wcag": 5.47,
+      "foreground": "#70516D",
+      "background": "#F6F6F3",
+      "wcag": 6.28,
       "wcagTarget": 4.5,
-      "apcaLc": 69.7,
+      "apcaLc": 77.9,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI brightCyan",
-      "foreground": "#28665F",
-      "background": "#F0E9D2",
-      "wcag": 5.48,
+      "foreground": "#306466",
+      "background": "#F6F6F3",
+      "wcag": 6.18,
       "wcagTarget": 4.5,
-      "apcaLc": 69.6,
+      "apcaLc": 77.4,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI extendedOchre",
-      "foreground": "#795B28",
-      "background": "#F0E9D2",
-      "wcag": 5.18,
+      "foreground": "#795922",
+      "background": "#F6F6F3",
+      "wcag": 5.94,
       "wcagTarget": 4.5,
-      "apcaLc": 68.2,
+      "apcaLc": 76.3,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "ANSI extendedClay",
-      "foreground": "#88483E",
-      "background": "#F0E9D2",
-      "wcag": 5.68,
+      "foreground": "#A3373E",
+      "background": "#F6F6F3",
+      "wcag": 6.11,
       "wcagTarget": 4.5,
-      "apcaLc": 70.5,
+      "apcaLc": 76.3,
       "apcaTarget": 44,
       "passed": true
     },
     {
       "name": "muted on base",
-      "foreground": "#53594E",
-      "background": "#F0E9D2",
-      "wcag": 5.95,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "wcagTarget": 4.5,
-      "apcaLc": 72.1,
+      "apcaLc": 75.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "comment on base",
-      "foreground": "#53594E",
-      "background": "#F0E9D2",
-      "wcag": 5.95,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "wcagTarget": 4.5,
-      "apcaLc": 72.1,
+      "apcaLc": 75.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "subtext on base",
-      "foreground": "#484E43",
-      "background": "#F0E9D2",
-      "wcag": 7.07,
+      "foreground": "#444D52",
+      "background": "#F6F6F3",
+      "wcag": 7.98,
       "wcagTarget": 4.5,
-      "apcaLc": 76.5,
+      "apcaLc": 84.2,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "text on base",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "wcag": 17.29,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "wcagTarget": 4.5,
-      "apcaLc": 93.0,
+      "apcaLc": 96.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "bright on base",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "wcag": 17.29,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "wcagTarget": 4.5,
-      "apcaLc": 93.0,
+      "apcaLc": 96.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "olive on base",
-      "foreground": "#64602F",
-      "background": "#F0E9D2",
-      "wcag": 5.31,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "wcagTarget": 4.5,
-      "apcaLc": 69.0,
+      "apcaLc": 96.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "sage on base",
-      "foreground": "#456344",
-      "background": "#F0E9D2",
-      "wcag": 5.54,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "wcagTarget": 4.5,
-      "apcaLc": 70.1,
+      "apcaLc": 75.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "gold on base",
-      "foreground": "#5C4619",
-      "background": "#F0E9D2",
-      "wcag": 7.37,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ochre on base",
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "clay on base",
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "coral on base",
+      "foreground": "#A3373E",
+      "background": "#F6F6F3",
+      "wcag": 6.11,
+      "wcagTarget": 4.5,
+      "apcaLc": 76.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "aqua on base",
+      "foreground": "#306466",
+      "background": "#F6F6F3",
+      "wcag": 6.18,
       "wcagTarget": 4.5,
       "apcaLc": 77.4,
       "apcaTarget": 0,
       "passed": true
     },
     {
-      "name": "ochre on base",
-      "foreground": "#795B28",
-      "background": "#F0E9D2",
-      "wcag": 5.18,
-      "wcagTarget": 4.5,
-      "apcaLc": 68.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "clay on base",
-      "foreground": "#88483E",
-      "background": "#F0E9D2",
-      "wcag": 5.68,
-      "wcagTarget": 4.5,
-      "apcaLc": 70.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "coral on base",
-      "foreground": "#A03440",
-      "background": "#F0E9D2",
-      "wcag": 5.65,
-      "wcagTarget": 4.5,
-      "apcaLc": 69.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "aqua on base",
-      "foreground": "#28665F",
-      "background": "#F0E9D2",
-      "wcag": 5.48,
-      "wcagTarget": 4.5,
-      "apcaLc": 69.6,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
       "name": "blue on base",
-      "foreground": "#405B80",
-      "background": "#F0E9D2",
-      "wcag": 5.71,
+      "foreground": "#345E77",
+      "background": "#F6F6F3",
+      "wcag": 6.44,
       "wcagTarget": 4.5,
-      "apcaLc": 70.9,
+      "apcaLc": 78.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "mauve on base",
-      "foreground": "#75516F",
-      "background": "#F0E9D2",
-      "wcag": 5.47,
+      "foreground": "#70516D",
+      "background": "#F6F6F3",
+      "wcag": 6.28,
       "wcagTarget": 4.5,
-      "apcaLc": 69.7,
+      "apcaLc": 77.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "muted on mantle",
-      "foreground": "#53594E",
-      "background": "#E8E1CD",
-      "wcag": 5.53,
+      "foreground": "#596166",
+      "background": "#E0E3E2",
+      "wcag": 4.89,
       "wcagTarget": 4.5,
-      "apcaLc": 67.6,
+      "apcaLc": 64.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "comment on mantle",
-      "foreground": "#53594E",
-      "background": "#E8E1CD",
-      "wcag": 5.53,
+      "foreground": "#596166",
+      "background": "#E0E3E2",
+      "wcag": 4.89,
       "wcagTarget": 4.5,
-      "apcaLc": 67.6,
+      "apcaLc": 64.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "subtext on mantle",
-      "foreground": "#484E43",
-      "background": "#E8E1CD",
-      "wcag": 6.57,
+      "foreground": "#444D52",
+      "background": "#E0E3E2",
+      "wcag": 6.69,
       "wcagTarget": 4.5,
-      "apcaLc": 72.0,
+      "apcaLc": 72.8,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "text on mantle",
-      "foreground": "#000000",
-      "background": "#E8E1CD",
-      "wcag": 16.08,
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
       "wcagTarget": 4.5,
-      "apcaLc": 88.5,
+      "apcaLc": 84.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "bright on mantle",
-      "foreground": "#000000",
-      "background": "#E8E1CD",
-      "wcag": 16.08,
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
       "wcagTarget": 4.5,
-      "apcaLc": 88.5,
+      "apcaLc": 84.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "olive on mantle",
-      "foreground": "#64602F",
-      "background": "#E8E1CD",
-      "wcag": 4.94,
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
       "wcagTarget": 4.5,
-      "apcaLc": 64.4,
+      "apcaLc": 84.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "sage on mantle",
-      "foreground": "#456344",
-      "background": "#E8E1CD",
-      "wcag": 5.15,
+      "foreground": "#596166",
+      "background": "#E0E3E2",
+      "wcag": 4.89,
       "wcagTarget": 4.5,
-      "apcaLc": 65.6,
+      "apcaLc": 64.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "gold on mantle",
-      "foreground": "#5C4619",
-      "background": "#E8E1CD",
-      "wcag": 6.86,
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
       "wcagTarget": 4.5,
-      "apcaLc": 72.9,
+      "apcaLc": 84.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "ochre on mantle",
-      "foreground": "#795B28",
-      "background": "#E8E1CD",
-      "wcag": 4.82,
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
       "wcagTarget": 4.5,
-      "apcaLc": 63.6,
+      "apcaLc": 84.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "clay on mantle",
-      "foreground": "#88483E",
-      "background": "#E8E1CD",
-      "wcag": 5.28,
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
       "wcagTarget": 4.5,
-      "apcaLc": 66.0,
+      "apcaLc": 84.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "coral on mantle",
-      "foreground": "#A03440",
-      "background": "#E8E1CD",
-      "wcag": 5.26,
-      "wcagTarget": 4.5,
-      "apcaLc": 65.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "aqua on mantle",
-      "foreground": "#28665F",
-      "background": "#E8E1CD",
-      "wcag": 5.1,
-      "wcagTarget": 4.5,
-      "apcaLc": 65.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "blue on mantle",
-      "foreground": "#405B80",
-      "background": "#E8E1CD",
-      "wcag": 5.31,
-      "wcagTarget": 4.5,
-      "apcaLc": 66.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "mauve on mantle",
-      "foreground": "#75516F",
-      "background": "#E8E1CD",
-      "wcag": 5.08,
-      "wcagTarget": 4.5,
-      "apcaLc": 65.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "muted on surface0",
-      "foreground": "#53594E",
-      "background": "#F7F0DF",
-      "wcag": 6.36,
-      "wcagTarget": 4.5,
-      "apcaLc": 76.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "comment on surface0",
-      "foreground": "#53594E",
-      "background": "#F7F0DF",
-      "wcag": 6.36,
-      "wcagTarget": 4.5,
-      "apcaLc": 76.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "subtext on surface0",
-      "foreground": "#484E43",
-      "background": "#F7F0DF",
-      "wcag": 7.56,
-      "wcagTarget": 4.5,
-      "apcaLc": 80.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "text on surface0",
-      "foreground": "#000000",
-      "background": "#F7F0DF",
-      "wcag": 18.48,
-      "wcagTarget": 4.5,
-      "apcaLc": 97.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "bright on surface0",
-      "foreground": "#000000",
-      "background": "#F7F0DF",
-      "wcag": 18.48,
-      "wcagTarget": 4.5,
-      "apcaLc": 97.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "olive on surface0",
-      "foreground": "#64602F",
-      "background": "#F7F0DF",
-      "wcag": 5.68,
-      "wcagTarget": 4.5,
-      "apcaLc": 73.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "sage on surface0",
-      "foreground": "#456344",
-      "background": "#F7F0DF",
-      "wcag": 5.92,
-      "wcagTarget": 4.5,
-      "apcaLc": 74.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "gold on surface0",
-      "foreground": "#5C4619",
-      "background": "#F7F0DF",
-      "wcag": 7.88,
-      "wcagTarget": 4.5,
-      "apcaLc": 81.7,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ochre on surface0",
-      "foreground": "#795B28",
-      "background": "#F7F0DF",
-      "wcag": 5.53,
-      "wcagTarget": 4.5,
-      "apcaLc": 72.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "clay on surface0",
-      "foreground": "#88483E",
-      "background": "#F7F0DF",
-      "wcag": 6.07,
-      "wcagTarget": 4.5,
-      "apcaLc": 74.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "coral on surface0",
-      "foreground": "#A03440",
-      "background": "#F7F0DF",
-      "wcag": 6.04,
-      "wcagTarget": 4.5,
-      "apcaLc": 74.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "aqua on surface0",
-      "foreground": "#28665F",
-      "background": "#F7F0DF",
-      "wcag": 5.86,
-      "wcagTarget": 4.5,
-      "apcaLc": 74.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "blue on surface0",
-      "foreground": "#405B80",
-      "background": "#F7F0DF",
-      "wcag": 6.11,
-      "wcagTarget": 4.5,
-      "apcaLc": 75.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "mauve on surface0",
-      "foreground": "#75516F",
-      "background": "#F7F0DF",
-      "wcag": 5.84,
-      "wcagTarget": 4.5,
-      "apcaLc": 74.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "muted on surface1",
-      "foreground": "#53594E",
-      "background": "#ECE5D2",
-      "wcag": 5.75,
-      "wcagTarget": 4.5,
-      "apcaLc": 69.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "comment on surface1",
-      "foreground": "#53594E",
-      "background": "#ECE5D2",
-      "wcag": 5.75,
-      "wcagTarget": 4.5,
-      "apcaLc": 69.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "subtext on surface1",
-      "foreground": "#484E43",
-      "background": "#ECE5D2",
-      "wcag": 6.83,
-      "wcagTarget": 4.5,
-      "apcaLc": 74.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "text on surface1",
-      "foreground": "#000000",
-      "background": "#ECE5D2",
-      "wcag": 16.7,
-      "wcagTarget": 4.5,
-      "apcaLc": 90.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "bright on surface1",
-      "foreground": "#000000",
-      "background": "#ECE5D2",
-      "wcag": 16.7,
-      "wcagTarget": 4.5,
-      "apcaLc": 90.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "olive on surface1",
-      "foreground": "#64602F",
-      "background": "#ECE5D2",
-      "wcag": 5.13,
-      "wcagTarget": 4.5,
-      "apcaLc": 66.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "sage on surface1",
-      "foreground": "#456344",
-      "background": "#ECE5D2",
-      "wcag": 5.35,
-      "wcagTarget": 4.5,
-      "apcaLc": 67.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "gold on surface1",
-      "foreground": "#5C4619",
-      "background": "#ECE5D2",
-      "wcag": 7.12,
-      "wcagTarget": 4.5,
-      "apcaLc": 75.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ochre on surface1",
-      "foreground": "#795B28",
-      "background": "#ECE5D2",
-      "wcag": 5.0,
-      "wcagTarget": 4.5,
-      "apcaLc": 66.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "clay on surface1",
-      "foreground": "#88483E",
-      "background": "#ECE5D2",
-      "wcag": 5.49,
-      "wcagTarget": 4.5,
-      "apcaLc": 68.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "coral on surface1",
-      "foreground": "#A03440",
-      "background": "#ECE5D2",
-      "wcag": 5.46,
-      "wcagTarget": 4.5,
-      "apcaLc": 67.6,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "aqua on surface1",
-      "foreground": "#28665F",
-      "background": "#ECE5D2",
-      "wcag": 5.29,
-      "wcagTarget": 4.5,
-      "apcaLc": 67.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "blue on surface1",
-      "foreground": "#405B80",
-      "background": "#ECE5D2",
-      "wcag": 5.52,
-      "wcagTarget": 4.5,
-      "apcaLc": 68.7,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "mauve on surface1",
-      "foreground": "#75516F",
-      "background": "#ECE5D2",
-      "wcag": 5.28,
-      "wcagTarget": 4.5,
-      "apcaLc": 67.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "chrome muted on crust",
-      "foreground": "#53594E",
-      "background": "#D8D2BE",
-      "wcag": 4.78,
-      "wcagTarget": 4.5,
-      "apcaLc": 58.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "chrome comment on crust",
-      "foreground": "#53594E",
-      "background": "#D8D2BE",
-      "wcag": 4.78,
-      "wcagTarget": 4.5,
-      "apcaLc": 58.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "chrome subtext on crust",
-      "foreground": "#484E43",
-      "background": "#D8D2BE",
-      "wcag": 5.67,
-      "wcagTarget": 4.5,
-      "apcaLc": 63.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "chrome text on crust",
-      "foreground": "#000000",
-      "background": "#D8D2BE",
-      "wcag": 13.88,
-      "wcagTarget": 4.5,
-      "apcaLc": 79.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "chrome bright on crust",
-      "foreground": "#000000",
-      "background": "#D8D2BE",
-      "wcag": 13.88,
-      "wcagTarget": 4.5,
-      "apcaLc": 79.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "chrome text on surface2",
-      "foreground": "#000000",
-      "background": "#C1BEAC",
-      "wcag": 11.23,
-      "wcagTarget": 4.5,
-      "apcaLc": 68.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "chrome subtext on surface2",
-      "foreground": "#484E43",
-      "background": "#C1BEAC",
-      "wcag": 4.59,
-      "wcagTarget": 4.5,
-      "apcaLc": 52.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "chrome bright on surface2",
-      "foreground": "#000000",
-      "background": "#C1BEAC",
-      "wcag": 11.23,
-      "wcagTarget": 4.5,
-      "apcaLc": 68.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "inactive status label",
-      "foreground": "#53594E",
-      "background": "#E8E1CD",
-      "wcag": 5.53,
-      "wcagTarget": 4.5,
-      "apcaLc": 67.6,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "popup border",
-      "foreground": "#53594E",
-      "background": "#F7F0DF",
-      "wcag": 6.36,
-      "wcagTarget": 3.0,
-      "apcaLc": 76.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "search result",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
-      "wcagTarget": 4.5,
-      "apcaLc": 37.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "selected popup kind",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
-      "wcagTarget": 4.5,
-      "apcaLc": 37.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "selected popup extra",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
-      "wcagTarget": 4.5,
-      "apcaLc": 37.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "substitution",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
-      "wcagTarget": 4.5,
-      "apcaLc": 37.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "error annotation",
-      "foreground": "#F0E9D2",
-      "background": "#A03440",
-      "wcag": 5.65,
-      "wcagTarget": 4.5,
-      "apcaLc": -73.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "tab label on crust",
-      "foreground": "#484E43",
-      "background": "#D8D2BE",
-      "wcag": 5.67,
-      "wcagTarget": 4.5,
-      "apcaLc": 63.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "Neovim DiffText",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
-      "wcagTarget": 4.5,
-      "apcaLc": 37.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "selection edge on mantle",
-      "foreground": "#B17232",
-      "background": "#E8E1CD",
-      "wcag": 3.02,
-      "wcagTarget": 3.0,
-      "apcaLc": 49.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "selection edge on surface0",
-      "foreground": "#B17232",
-      "background": "#F7F0DF",
-      "wcag": 3.47,
-      "wcagTarget": 3.0,
-      "apcaLc": 57.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "selection edge on surface1",
-      "foreground": "#B17232",
-      "background": "#ECE5D2",
-      "wcag": 3.14,
-      "wcagTarget": 3.0,
-      "apcaLc": 51.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "git add sign",
-      "foreground": "#1F3518",
-      "background": "#F0E9D2",
-      "wcag": 10.94,
-      "wcagTarget": 4.5,
-      "apcaLc": 86.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "git delete sign",
-      "foreground": "#6B322E",
-      "background": "#F0E9D2",
-      "wcag": 8.15,
-      "wcagTarget": 4.5,
-      "apcaLc": 79.6,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "git change sign",
-      "foreground": "#453510",
-      "background": "#F0E9D2",
-      "wcag": 9.77,
-      "wcagTarget": 4.5,
-      "apcaLc": 84.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "status olive",
-      "foreground": "#F0E9D2",
-      "background": "#64602F",
-      "wcag": 5.31,
-      "wcagTarget": 4.5,
-      "apcaLc": -72.7,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "status sage",
-      "foreground": "#F0E9D2",
-      "background": "#456344",
-      "wcag": 5.54,
-      "wcagTarget": 4.5,
-      "apcaLc": -73.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "status mauve",
-      "foreground": "#F0E9D2",
-      "background": "#75516F",
-      "wcag": 5.47,
-      "wcagTarget": 4.5,
-      "apcaLc": -73.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "status coral",
-      "foreground": "#F0E9D2",
-      "background": "#A03440",
-      "wcag": 5.65,
-      "wcagTarget": 4.5,
-      "apcaLc": -73.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "status gold",
-      "foreground": "#F0E9D2",
-      "background": "#5C4619",
-      "wcag": 7.37,
-      "wcagTarget": 4.5,
-      "apcaLc": -80.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on black",
-      "foreground": "#F0E9D2",
-      "background": "#000000",
-      "wcag": 17.29,
-      "wcagTarget": 4.5,
-      "apcaLc": -93.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on red",
-      "foreground": "#F0E9D2",
-      "background": "#84342F",
-      "wcag": 6.88,
-      "wcagTarget": 4.5,
-      "apcaLc": -78.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on green",
-      "foreground": "#F0E9D2",
-      "background": "#405A34",
-      "wcag": 6.33,
-      "wcagTarget": 4.5,
-      "apcaLc": -77.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on yellow",
-      "foreground": "#F0E9D2",
-      "background": "#5A4006",
-      "wcag": 7.97,
-      "wcagTarget": 4.5,
-      "apcaLc": -82.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on blue",
-      "foreground": "#F0E9D2",
-      "background": "#304564",
-      "wcag": 8.0,
-      "wcagTarget": 4.5,
-      "apcaLc": -82.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on magenta",
-      "foreground": "#F0E9D2",
-      "background": "#67475C",
-      "wcag": 6.57,
-      "wcagTarget": 4.5,
-      "apcaLc": -77.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on cyan",
-      "foreground": "#F0E9D2",
-      "background": "#204F49",
-      "wcag": 7.6,
-      "wcagTarget": 4.5,
-      "apcaLc": -81.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on brightRed",
-      "foreground": "#F0E9D2",
-      "background": "#A03440",
-      "wcag": 5.65,
-      "wcagTarget": 4.5,
-      "apcaLc": -73.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on brightGreen",
-      "foreground": "#F0E9D2",
-      "background": "#456344",
-      "wcag": 5.54,
-      "wcagTarget": 4.5,
-      "apcaLc": -73.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on brightYellow",
-      "foreground": "#F0E9D2",
-      "background": "#5C4619",
-      "wcag": 7.37,
-      "wcagTarget": 4.5,
-      "apcaLc": -80.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on brightBlue",
-      "foreground": "#F0E9D2",
-      "background": "#405B80",
-      "wcag": 5.71,
-      "wcagTarget": 4.5,
-      "apcaLc": -74.6,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on brightMagenta",
-      "foreground": "#F0E9D2",
-      "background": "#75516F",
-      "wcag": 5.47,
-      "wcagTarget": 4.5,
-      "apcaLc": -73.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI white on brightCyan",
-      "foreground": "#F0E9D2",
-      "background": "#28665F",
-      "wcag": 5.48,
-      "wcagTarget": 4.5,
-      "apcaLc": -73.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on black",
-      "foreground": "#F7F0DF",
-      "background": "#000000",
-      "wcag": 18.48,
-      "wcagTarget": 4.5,
-      "apcaLc": -98.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on red",
-      "foreground": "#F7F0DF",
-      "background": "#84342F",
-      "wcag": 7.35,
-      "wcagTarget": 4.5,
-      "apcaLc": -83.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on green",
-      "foreground": "#F7F0DF",
-      "background": "#405A34",
-      "wcag": 6.77,
-      "wcagTarget": 4.5,
-      "apcaLc": -81.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on yellow",
-      "foreground": "#F7F0DF",
-      "background": "#5A4006",
-      "wcag": 8.52,
-      "wcagTarget": 4.5,
-      "apcaLc": -86.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on blue",
-      "foreground": "#F7F0DF",
-      "background": "#304564",
-      "wcag": 8.55,
-      "wcagTarget": 4.5,
-      "apcaLc": -87.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on magenta",
-      "foreground": "#F7F0DF",
-      "background": "#67475C",
-      "wcag": 7.02,
-      "wcagTarget": 4.5,
-      "apcaLc": -82.7,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on cyan",
-      "foreground": "#F7F0DF",
-      "background": "#204F49",
-      "wcag": 8.12,
-      "wcagTarget": 4.5,
-      "apcaLc": -85.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on brightRed",
-      "foreground": "#F7F0DF",
-      "background": "#A03440",
-      "wcag": 6.04,
-      "wcagTarget": 4.5,
-      "apcaLc": -78.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on brightGreen",
-      "foreground": "#F7F0DF",
-      "background": "#456344",
-      "wcag": 5.92,
-      "wcagTarget": 4.5,
-      "apcaLc": -78.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on brightYellow",
-      "foreground": "#F7F0DF",
-      "background": "#5C4619",
-      "wcag": 7.88,
-      "wcagTarget": 4.5,
-      "apcaLc": -85.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on brightBlue",
-      "foreground": "#F7F0DF",
-      "background": "#405B80",
-      "wcag": 6.11,
-      "wcagTarget": 4.5,
-      "apcaLc": -79.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on brightMagenta",
-      "foreground": "#F7F0DF",
-      "background": "#75516F",
-      "wcag": 5.84,
-      "wcagTarget": 4.5,
-      "apcaLc": -78.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI brightWhite on brightCyan",
-      "foreground": "#F7F0DF",
-      "background": "#28665F",
-      "wcag": 5.86,
-      "wcagTarget": 4.5,
-      "apcaLc": -78.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI black on white",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "wcag": 17.29,
-      "wcagTarget": 7.0,
-      "apcaLc": 93.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "ANSI black on brightWhite",
-      "foreground": "#000000",
-      "background": "#F7F0DF",
-      "wcag": 18.48,
-      "wcagTarget": 7.0,
-      "apcaLc": 97.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax muted",
-      "foreground": "#53594E",
-      "background": "#D5E1CA",
-      "wcag": 5.32,
-      "wcagTarget": 4.5,
-      "apcaLc": 65.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax comment",
-      "foreground": "#53594E",
-      "background": "#D5E1CA",
-      "wcag": 5.32,
-      "wcagTarget": 4.5,
-      "apcaLc": 65.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax subtext",
-      "foreground": "#484E43",
-      "background": "#D5E1CA",
-      "wcag": 6.32,
-      "wcagTarget": 4.5,
-      "apcaLc": 69.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax text",
-      "foreground": "#000000",
-      "background": "#D5E1CA",
-      "wcag": 15.45,
-      "wcagTarget": 4.5,
-      "apcaLc": 86.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax bright",
-      "foreground": "#000000",
-      "background": "#D5E1CA",
-      "wcag": 15.45,
-      "wcagTarget": 4.5,
-      "apcaLc": 86.1,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax olive",
-      "foreground": "#64602F",
-      "background": "#D5E1CA",
-      "wcag": 4.75,
-      "wcagTarget": 4.5,
-      "apcaLc": 62.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax sage",
-      "foreground": "#456344",
-      "background": "#D5E1CA",
-      "wcag": 4.95,
-      "wcagTarget": 4.5,
-      "apcaLc": 63.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax gold",
-      "foreground": "#5C4619",
-      "background": "#D5E1CA",
-      "wcag": 6.59,
-      "wcagTarget": 4.5,
-      "apcaLc": 70.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax ochre",
-      "foreground": "#795B28",
-      "background": "#D5E1CA",
-      "wcag": 4.63,
-      "wcagTarget": 4.5,
-      "apcaLc": 61.2,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax clay",
-      "foreground": "#88483E",
-      "background": "#D5E1CA",
-      "wcag": 5.08,
-      "wcagTarget": 4.5,
-      "apcaLc": 63.6,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax coral",
-      "foreground": "#A03440",
-      "background": "#D5E1CA",
-      "wcag": 5.05,
-      "wcagTarget": 4.5,
-      "apcaLc": 62.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax aqua",
-      "foreground": "#28665F",
-      "background": "#D5E1CA",
-      "wcag": 4.9,
-      "wcagTarget": 4.5,
-      "apcaLc": 62.7,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax blue",
-      "foreground": "#405B80",
-      "background": "#D5E1CA",
-      "wcag": 5.11,
-      "wcagTarget": 4.5,
-      "apcaLc": 64.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff add syntax mauve",
-      "foreground": "#75516F",
-      "background": "#D5E1CA",
-      "wcag": 4.89,
-      "wcagTarget": 4.5,
-      "apcaLc": 62.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax muted",
-      "foreground": "#53594E",
-      "background": "#F0DCD6",
-      "wcag": 5.47,
-      "wcagTarget": 4.5,
-      "apcaLc": 66.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax comment",
-      "foreground": "#53594E",
-      "background": "#F0DCD6",
-      "wcag": 5.47,
-      "wcagTarget": 4.5,
-      "apcaLc": 66.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax subtext",
-      "foreground": "#484E43",
-      "background": "#F0DCD6",
-      "wcag": 6.51,
-      "wcagTarget": 4.5,
-      "apcaLc": 71.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax text",
-      "foreground": "#000000",
-      "background": "#F0DCD6",
-      "wcag": 15.91,
-      "wcagTarget": 4.5,
-      "apcaLc": 87.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax bright",
-      "foreground": "#000000",
-      "background": "#F0DCD6",
-      "wcag": 15.91,
-      "wcagTarget": 4.5,
-      "apcaLc": 87.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax olive",
-      "foreground": "#64602F",
-      "background": "#F0DCD6",
-      "wcag": 4.89,
-      "wcagTarget": 4.5,
-      "apcaLc": 63.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax sage",
-      "foreground": "#456344",
-      "background": "#F0DCD6",
-      "wcag": 5.1,
+      "foreground": "#A3373E",
+      "background": "#E0E3E2",
+      "wcag": 5.12,
       "wcagTarget": 4.5,
       "apcaLc": 64.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
-      "name": "diff delete syntax gold",
-      "foreground": "#5C4619",
-      "background": "#F0DCD6",
+      "name": "aqua on mantle",
+      "foreground": "#306466",
+      "background": "#E0E3E2",
+      "wcag": 5.18,
+      "wcagTarget": 4.5,
+      "apcaLc": 66.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "blue on mantle",
+      "foreground": "#345E77",
+      "background": "#E0E3E2",
+      "wcag": 5.39,
+      "wcagTarget": 4.5,
+      "apcaLc": 67.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "mauve on mantle",
+      "foreground": "#70516D",
+      "background": "#E0E3E2",
+      "wcag": 5.27,
+      "wcagTarget": 4.5,
+      "apcaLc": 66.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "muted on surface0",
+      "foreground": "#596166",
+      "background": "#FDFDFA",
+      "wcag": 6.19,
+      "wcagTarget": 4.5,
+      "apcaLc": 80.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "comment on surface0",
+      "foreground": "#596166",
+      "background": "#FDFDFA",
+      "wcag": 6.19,
+      "wcagTarget": 4.5,
+      "apcaLc": 80.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "subtext on surface0",
+      "foreground": "#444D52",
+      "background": "#FDFDFA",
+      "wcag": 8.48,
+      "wcagTarget": 4.5,
+      "apcaLc": 88.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "text on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "wcagTarget": 4.5,
+      "apcaLc": 100.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "bright on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "wcagTarget": 4.5,
+      "apcaLc": 100.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "olive on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "wcagTarget": 4.5,
+      "apcaLc": 100.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "sage on surface0",
+      "foreground": "#596166",
+      "background": "#FDFDFA",
+      "wcag": 6.19,
+      "wcagTarget": 4.5,
+      "apcaLc": 80.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "gold on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "wcagTarget": 4.5,
+      "apcaLc": 100.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ochre on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "wcagTarget": 4.5,
+      "apcaLc": 100.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "clay on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "wcagTarget": 4.5,
+      "apcaLc": 100.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "coral on surface0",
+      "foreground": "#A3373E",
+      "background": "#FDFDFA",
+      "wcag": 6.49,
+      "wcagTarget": 4.5,
+      "apcaLc": 80.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "aqua on surface0",
+      "foreground": "#306466",
+      "background": "#FDFDFA",
+      "wcag": 6.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 81.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "blue on surface0",
+      "foreground": "#345E77",
+      "background": "#FDFDFA",
+      "wcag": 6.84,
+      "wcagTarget": 4.5,
+      "apcaLc": 82.7,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "mauve on surface0",
+      "foreground": "#70516D",
+      "background": "#FDFDFA",
+      "wcag": 6.68,
+      "wcagTarget": 4.5,
+      "apcaLc": 82.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "muted on surface1",
+      "foreground": "#596166",
+      "background": "#ECEEEB",
+      "wcag": 5.41,
+      "wcagTarget": 4.5,
+      "apcaLc": 71.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "comment on surface1",
+      "foreground": "#596166",
+      "background": "#ECEEEB",
+      "wcag": 5.41,
+      "wcagTarget": 4.5,
+      "apcaLc": 71.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "subtext on surface1",
+      "foreground": "#444D52",
+      "background": "#ECEEEB",
+      "wcag": 7.41,
+      "wcagTarget": 4.5,
+      "apcaLc": 79.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "text on surface1",
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
+      "wcagTarget": 4.5,
+      "apcaLc": 91.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "bright on surface1",
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
+      "wcagTarget": 4.5,
+      "apcaLc": 91.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "olive on surface1",
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
+      "wcagTarget": 4.5,
+      "apcaLc": 91.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "sage on surface1",
+      "foreground": "#596166",
+      "background": "#ECEEEB",
+      "wcag": 5.41,
+      "wcagTarget": 4.5,
+      "apcaLc": 71.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "gold on surface1",
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
+      "wcagTarget": 4.5,
+      "apcaLc": 91.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ochre on surface1",
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
+      "wcagTarget": 4.5,
+      "apcaLc": 91.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "clay on surface1",
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
+      "wcagTarget": 4.5,
+      "apcaLc": 91.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "coral on surface1",
+      "foreground": "#A3373E",
+      "background": "#ECEEEB",
+      "wcag": 5.67,
+      "wcagTarget": 4.5,
+      "apcaLc": 71.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "aqua on surface1",
+      "foreground": "#306466",
+      "background": "#ECEEEB",
+      "wcag": 5.73,
+      "wcagTarget": 4.5,
+      "apcaLc": 72.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "blue on surface1",
+      "foreground": "#345E77",
+      "background": "#ECEEEB",
+      "wcag": 5.97,
+      "wcagTarget": 4.5,
+      "apcaLc": 73.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "mauve on surface1",
+      "foreground": "#70516D",
+      "background": "#ECEEEB",
+      "wcag": 5.83,
+      "wcagTarget": 4.5,
+      "apcaLc": 73.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "chrome muted on crust",
+      "foreground": "#596166",
+      "background": "#D6DCD9",
+      "wcag": 4.54,
+      "wcagTarget": 4.5,
+      "apcaLc": 60.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "chrome comment on crust",
+      "foreground": "#596166",
+      "background": "#D6DCD9",
+      "wcag": 4.54,
+      "wcagTarget": 4.5,
+      "apcaLc": 60.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "chrome subtext on crust",
+      "foreground": "#444D52",
+      "background": "#D6DCD9",
+      "wcag": 6.22,
+      "wcagTarget": 4.5,
+      "apcaLc": 68.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "chrome text on crust",
+      "foreground": "#25292B",
+      "background": "#D6DCD9",
+      "wcag": 10.55,
+      "wcagTarget": 4.5,
+      "apcaLc": 80.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "chrome bright on crust",
+      "foreground": "#25292B",
+      "background": "#D6DCD9",
+      "wcag": 10.55,
+      "wcagTarget": 4.5,
+      "apcaLc": 80.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "chrome text on surface2",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "chrome subtext on surface2",
+      "foreground": "#444D52",
+      "background": "#B3CBD8",
+      "wcag": 5.13,
+      "wcagTarget": 4.5,
+      "apcaLc": 57.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "chrome bright on surface2",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "inactive status label",
+      "foreground": "#596166",
+      "background": "#E0E3E2",
+      "wcag": 4.89,
+      "wcagTarget": 4.5,
+      "apcaLc": 64.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "popup border",
+      "foreground": "#596166",
+      "background": "#FDFDFA",
+      "wcag": 6.19,
+      "wcagTarget": 3.0,
+      "apcaLc": 80.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "search result",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "selected popup kind",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "selected popup extra",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "substitution",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "error annotation",
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
+      "wcagTarget": 4.5,
+      "apcaLc": 86.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "tab label on crust",
+      "foreground": "#444D52",
+      "background": "#D6DCD9",
+      "wcag": 6.22,
+      "wcagTarget": 4.5,
+      "apcaLc": 68.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "Neovim DiffText",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "selection edge on mantle",
+      "foreground": "#3F535F",
+      "background": "#E0E3E2",
+      "wcag": 6.22,
+      "wcagTarget": 3.0,
+      "apcaLc": 70.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "selection edge on surface0",
+      "foreground": "#3F535F",
+      "background": "#FDFDFA",
+      "wcag": 7.88,
+      "wcagTarget": 3.0,
+      "apcaLc": 86.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "selection edge on surface1",
+      "foreground": "#3F535F",
+      "background": "#ECEEEB",
+      "wcag": 6.88,
+      "wcagTarget": 3.0,
+      "apcaLc": 77.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "git add sign",
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "git delete sign",
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "git change sign",
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": 96.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "status olive",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "status sage",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "status mauve",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "status coral",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "status gold",
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on black",
+      "foreground": "#F6F6F3",
+      "background": "#25292B",
+      "wcag": 13.56,
+      "wcagTarget": 4.5,
+      "apcaLc": -98.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on red",
+      "foreground": "#F6F6F3",
+      "background": "#8B3037",
+      "wcag": 7.53,
+      "wcagTarget": 4.5,
+      "apcaLc": -86.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on green",
+      "foreground": "#F6F6F3",
+      "background": "#274D39",
+      "wcag": 8.79,
+      "wcagTarget": 4.5,
+      "apcaLc": -90.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on yellow",
+      "foreground": "#F6F6F3",
+      "background": "#624819",
+      "wcag": 7.88,
+      "wcagTarget": 4.5,
+      "apcaLc": -87.7,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on blue",
+      "foreground": "#F6F6F3",
+      "background": "#274A62",
+      "wcag": 8.65,
+      "wcagTarget": 4.5,
+      "apcaLc": -89.7,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on magenta",
+      "foreground": "#F6F6F3",
+      "background": "#60425E",
+      "wcag": 7.95,
+      "wcagTarget": 4.5,
+      "apcaLc": -87.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on cyan",
+      "foreground": "#F6F6F3",
+      "background": "#255354",
+      "wcag": 7.94,
+      "wcagTarget": 4.5,
+      "apcaLc": -87.8,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on brightRed",
+      "foreground": "#F6F6F3",
+      "background": "#A3373E",
+      "wcag": 6.11,
+      "wcagTarget": 4.5,
+      "apcaLc": -80.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on brightGreen",
+      "foreground": "#F6F6F3",
+      "background": "#315F46",
       "wcag": 6.79,
       "wcagTarget": 4.5,
-      "apcaLc": 72.2,
+      "apcaLc": -84.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on brightYellow",
+      "foreground": "#F6F6F3",
+      "background": "#795922",
+      "wcag": 5.94,
+      "wcagTarget": 4.5,
+      "apcaLc": -80.8,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on brightBlue",
+      "foreground": "#F6F6F3",
+      "background": "#345E77",
+      "wcag": 6.44,
+      "wcagTarget": 4.5,
+      "apcaLc": -82.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on brightMagenta",
+      "foreground": "#F6F6F3",
+      "background": "#70516D",
+      "wcag": 6.28,
+      "wcagTarget": 4.5,
+      "apcaLc": -82.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI white on brightCyan",
+      "foreground": "#F6F6F3",
+      "background": "#306466",
+      "wcag": 6.18,
+      "wcagTarget": 4.5,
+      "apcaLc": -81.8,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on black",
+      "foreground": "#FDFDFA",
+      "background": "#25292B",
+      "wcag": 14.4,
+      "wcagTarget": 4.5,
+      "apcaLc": -102.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on red",
+      "foreground": "#FDFDFA",
+      "background": "#8B3037",
+      "wcag": 8.0,
+      "wcagTarget": 4.5,
+      "apcaLc": -90.7,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on green",
+      "foreground": "#FDFDFA",
+      "background": "#274D39",
+      "wcag": 9.34,
+      "wcagTarget": 4.5,
+      "apcaLc": -94.7,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on yellow",
+      "foreground": "#FDFDFA",
+      "background": "#624819",
+      "wcag": 8.38,
+      "wcagTarget": 4.5,
+      "apcaLc": -92.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on blue",
+      "foreground": "#FDFDFA",
+      "background": "#274A62",
+      "wcag": 9.19,
+      "wcagTarget": 4.5,
+      "apcaLc": -94.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on magenta",
+      "foreground": "#FDFDFA",
+      "background": "#60425E",
+      "wcag": 8.45,
+      "wcagTarget": 4.5,
+      "apcaLc": -92.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on cyan",
+      "foreground": "#FDFDFA",
+      "background": "#255354",
+      "wcag": 8.43,
+      "wcagTarget": 4.5,
+      "apcaLc": -92.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on brightRed",
+      "foreground": "#FDFDFA",
+      "background": "#A3373E",
+      "wcag": 6.49,
+      "wcagTarget": 4.5,
+      "apcaLc": -85.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on brightGreen",
+      "foreground": "#FDFDFA",
+      "background": "#315F46",
+      "wcag": 7.22,
+      "wcagTarget": 4.5,
+      "apcaLc": -88.8,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on brightYellow",
+      "foreground": "#FDFDFA",
+      "background": "#795922",
+      "wcag": 6.31,
+      "wcagTarget": 4.5,
+      "apcaLc": -85.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on brightBlue",
+      "foreground": "#FDFDFA",
+      "background": "#345E77",
+      "wcag": 6.84,
+      "wcagTarget": 4.5,
+      "apcaLc": -87.5,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on brightMagenta",
+      "foreground": "#FDFDFA",
+      "background": "#70516D",
+      "wcag": 6.68,
+      "wcagTarget": 4.5,
+      "apcaLc": -87.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI brightWhite on brightCyan",
+      "foreground": "#FDFDFA",
+      "background": "#306466",
+      "wcag": 6.56,
+      "wcagTarget": 4.5,
+      "apcaLc": -86.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI black on white",
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
+      "wcagTarget": 7.0,
+      "apcaLc": 96.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "ANSI black on brightWhite",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "wcagTarget": 7.0,
+      "apcaLc": 100.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax muted",
+      "foreground": "#596166",
+      "background": "#E2EDDF",
+      "wcag": 5.23,
+      "wcagTarget": 4.5,
+      "apcaLc": 68.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax comment",
+      "foreground": "#596166",
+      "background": "#E2EDDF",
+      "wcag": 5.23,
+      "wcagTarget": 4.5,
+      "apcaLc": 68.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax subtext",
+      "foreground": "#444D52",
+      "background": "#E2EDDF",
+      "wcag": 7.17,
+      "wcagTarget": 4.5,
+      "apcaLc": 77.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax text",
+      "foreground": "#25292B",
+      "background": "#E2EDDF",
+      "wcag": 12.17,
+      "wcagTarget": 4.5,
+      "apcaLc": 88.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax bright",
+      "foreground": "#25292B",
+      "background": "#E2EDDF",
+      "wcag": 12.17,
+      "wcagTarget": 4.5,
+      "apcaLc": 88.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax olive",
+      "foreground": "#25292B",
+      "background": "#E2EDDF",
+      "wcag": 12.17,
+      "wcagTarget": 4.5,
+      "apcaLc": 88.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax sage",
+      "foreground": "#596166",
+      "background": "#E2EDDF",
+      "wcag": 5.23,
+      "wcagTarget": 4.5,
+      "apcaLc": 68.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax gold",
+      "foreground": "#25292B",
+      "background": "#E2EDDF",
+      "wcag": 12.17,
+      "wcagTarget": 4.5,
+      "apcaLc": 88.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax ochre",
+      "foreground": "#25292B",
+      "background": "#E2EDDF",
+      "wcag": 12.17,
+      "wcagTarget": 4.5,
+      "apcaLc": 88.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax clay",
+      "foreground": "#25292B",
+      "background": "#E2EDDF",
+      "wcag": 12.17,
+      "wcagTarget": 4.5,
+      "apcaLc": 88.9,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax coral",
+      "foreground": "#A3373E",
+      "background": "#E2EDDF",
+      "wcag": 5.49,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax aqua",
+      "foreground": "#306466",
+      "background": "#E2EDDF",
+      "wcag": 5.54,
+      "wcagTarget": 4.5,
+      "apcaLc": 70.3,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax blue",
+      "foreground": "#345E77",
+      "background": "#E2EDDF",
+      "wcag": 5.78,
+      "wcagTarget": 4.5,
+      "apcaLc": 71.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff add syntax mauve",
+      "foreground": "#70516D",
+      "background": "#E2EDDF",
+      "wcag": 5.64,
+      "wcagTarget": 4.5,
+      "apcaLc": 70.8,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax muted",
+      "foreground": "#596166",
+      "background": "#F1E2DF",
+      "wcag": 5.02,
+      "wcagTarget": 4.5,
+      "apcaLc": 66.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax comment",
+      "foreground": "#596166",
+      "background": "#F1E2DF",
+      "wcag": 5.02,
+      "wcagTarget": 4.5,
+      "apcaLc": 66.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax subtext",
+      "foreground": "#444D52",
+      "background": "#F1E2DF",
+      "wcag": 6.87,
+      "wcagTarget": 4.5,
+      "apcaLc": 74.4,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax text",
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
+      "wcagTarget": 4.5,
+      "apcaLc": 86.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax bright",
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
+      "wcagTarget": 4.5,
+      "apcaLc": 86.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax olive",
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
+      "wcagTarget": 4.5,
+      "apcaLc": 86.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax sage",
+      "foreground": "#596166",
+      "background": "#F1E2DF",
+      "wcag": 5.02,
+      "wcagTarget": 4.5,
+      "apcaLc": 66.2,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax gold",
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
+      "wcagTarget": 4.5,
+      "apcaLc": 86.2,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff delete syntax ochre",
-      "foreground": "#795B28",
-      "background": "#F0DCD6",
-      "wcag": 4.76,
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
       "wcagTarget": 4.5,
-      "apcaLc": 63.0,
+      "apcaLc": 86.2,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff delete syntax clay",
-      "foreground": "#88483E",
-      "background": "#F0DCD6",
-      "wcag": 5.23,
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
       "wcagTarget": 4.5,
-      "apcaLc": 65.4,
+      "apcaLc": 86.2,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff delete syntax coral",
-      "foreground": "#A03440",
-      "background": "#F0DCD6",
-      "wcag": 5.2,
-      "wcagTarget": 4.5,
-      "apcaLc": 64.6,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax aqua",
-      "foreground": "#28665F",
-      "background": "#F0DCD6",
-      "wcag": 5.04,
-      "wcagTarget": 4.5,
-      "apcaLc": 64.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax blue",
-      "foreground": "#405B80",
-      "background": "#F0DCD6",
+      "foreground": "#A3373E",
+      "background": "#F1E2DF",
       "wcag": 5.26,
-      "wcagTarget": 4.5,
-      "apcaLc": 65.7,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff delete syntax mauve",
-      "foreground": "#75516F",
-      "background": "#F0DCD6",
-      "wcag": 5.03,
-      "wcagTarget": 4.5,
-      "apcaLc": 64.5,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax muted",
-      "foreground": "#53594E",
-      "background": "#F4E3AD",
-      "wcag": 5.66,
-      "wcagTarget": 4.5,
-      "apcaLc": 68.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax comment",
-      "foreground": "#53594E",
-      "background": "#F4E3AD",
-      "wcag": 5.66,
-      "wcagTarget": 4.5,
-      "apcaLc": 68.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax subtext",
-      "foreground": "#484E43",
-      "background": "#F4E3AD",
-      "wcag": 6.72,
-      "wcagTarget": 4.5,
-      "apcaLc": 73.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax text",
-      "foreground": "#000000",
-      "background": "#F4E3AD",
-      "wcag": 16.44,
-      "wcagTarget": 4.5,
-      "apcaLc": 89.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax bright",
-      "foreground": "#000000",
-      "background": "#F4E3AD",
-      "wcag": 16.44,
-      "wcagTarget": 4.5,
-      "apcaLc": 89.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax olive",
-      "foreground": "#64602F",
-      "background": "#F4E3AD",
-      "wcag": 5.05,
-      "wcagTarget": 4.5,
-      "apcaLc": 65.8,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax sage",
-      "foreground": "#456344",
-      "background": "#F4E3AD",
-      "wcag": 5.27,
-      "wcagTarget": 4.5,
-      "apcaLc": 66.9,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax gold",
-      "foreground": "#5C4619",
-      "background": "#F4E3AD",
-      "wcag": 7.01,
-      "wcagTarget": 4.5,
-      "apcaLc": 74.3,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax ochre",
-      "foreground": "#795B28",
-      "background": "#F4E3AD",
-      "wcag": 4.92,
-      "wcagTarget": 4.5,
-      "apcaLc": 65.0,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax clay",
-      "foreground": "#88483E",
-      "background": "#F4E3AD",
-      "wcag": 5.4,
-      "wcagTarget": 4.5,
-      "apcaLc": 67.4,
-      "apcaTarget": 0,
-      "passed": true
-    },
-    {
-      "name": "diff change syntax coral",
-      "foreground": "#A03440",
-      "background": "#F4E3AD",
-      "wcag": 5.37,
       "wcagTarget": 4.5,
       "apcaLc": 66.6,
       "apcaTarget": 0,
       "passed": true
     },
     {
-      "name": "diff change syntax aqua",
-      "foreground": "#28665F",
-      "background": "#F4E3AD",
-      "wcag": 5.21,
+      "name": "diff delete syntax aqua",
+      "foreground": "#306466",
+      "background": "#F1E2DF",
+      "wcag": 5.31,
       "wcagTarget": 4.5,
-      "apcaLc": 66.5,
+      "apcaLc": 67.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax blue",
+      "foreground": "#345E77",
+      "background": "#F1E2DF",
+      "wcag": 5.54,
+      "wcagTarget": 4.5,
+      "apcaLc": 68.7,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff delete syntax mauve",
+      "foreground": "#70516D",
+      "background": "#F1E2DF",
+      "wcag": 5.41,
+      "wcagTarget": 4.5,
+      "apcaLc": 68.1,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax muted",
+      "foreground": "#596166",
+      "background": "#E0E9EE",
+      "wcag": 5.13,
+      "wcagTarget": 4.5,
+      "apcaLc": 67.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax comment",
+      "foreground": "#596166",
+      "background": "#E0E9EE",
+      "wcag": 5.13,
+      "wcagTarget": 4.5,
+      "apcaLc": 67.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax subtext",
+      "foreground": "#444D52",
+      "background": "#E0E9EE",
+      "wcag": 7.02,
+      "wcagTarget": 4.5,
+      "apcaLc": 75.8,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax text",
+      "foreground": "#25292B",
+      "background": "#E0E9EE",
+      "wcag": 11.92,
+      "wcagTarget": 4.5,
+      "apcaLc": 87.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax bright",
+      "foreground": "#25292B",
+      "background": "#E0E9EE",
+      "wcag": 11.92,
+      "wcagTarget": 4.5,
+      "apcaLc": 87.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax olive",
+      "foreground": "#25292B",
+      "background": "#E0E9EE",
+      "wcag": 11.92,
+      "wcagTarget": 4.5,
+      "apcaLc": 87.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax sage",
+      "foreground": "#596166",
+      "background": "#E0E9EE",
+      "wcag": 5.13,
+      "wcagTarget": 4.5,
+      "apcaLc": 67.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax gold",
+      "foreground": "#25292B",
+      "background": "#E0E9EE",
+      "wcag": 11.92,
+      "wcagTarget": 4.5,
+      "apcaLc": 87.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax ochre",
+      "foreground": "#25292B",
+      "background": "#E0E9EE",
+      "wcag": 11.92,
+      "wcagTarget": 4.5,
+      "apcaLc": 87.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax clay",
+      "foreground": "#25292B",
+      "background": "#E0E9EE",
+      "wcag": 11.92,
+      "wcagTarget": 4.5,
+      "apcaLc": 87.6,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax coral",
+      "foreground": "#A3373E",
+      "background": "#E0E9EE",
+      "wcag": 5.38,
+      "wcagTarget": 4.5,
+      "apcaLc": 68.0,
+      "apcaTarget": 0,
+      "passed": true
+    },
+    {
+      "name": "diff change syntax aqua",
+      "foreground": "#306466",
+      "background": "#E0E9EE",
+      "wcag": 5.43,
+      "wcagTarget": 4.5,
+      "apcaLc": 69.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff change syntax blue",
-      "foreground": "#405B80",
-      "background": "#F4E3AD",
-      "wcag": 5.43,
+      "foreground": "#345E77",
+      "background": "#E0E9EE",
+      "wcag": 5.66,
       "wcagTarget": 4.5,
-      "apcaLc": 67.7,
+      "apcaLc": 70.1,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "diff change syntax mauve",
-      "foreground": "#75516F",
-      "background": "#F4E3AD",
-      "wcag": 5.2,
+      "foreground": "#70516D",
+      "background": "#E0E9EE",
+      "wcag": 5.53,
       "wcagTarget": 4.5,
-      "apcaLc": 66.5,
+      "apcaLc": 69.5,
       "apcaTarget": 0,
       "passed": true
     }
@@ -1968,715 +1968,715 @@
   "inlineEmphasisReview": [
     {
       "state": "add",
-      "lineContrast": 1.576,
+      "lineContrast": 1.327,
       "lineDeltaEOK": {
-        "normal": 0.1535,
-        "protan": 0.148,
-        "deutan": 0.1469,
-        "tritan": 0.1402,
-        "grayscale": 0.1366
+        "normal": 0.0969,
+        "protan": 0.0919,
+        "deutan": 0.0937,
+        "tritan": 0.0929,
+        "grayscale": 0.0899
       }
     },
     {
       "state": "delete",
-      "lineContrast": 1.566,
+      "lineContrast": 1.55,
       "lineDeltaEOK": {
-        "normal": 0.1396,
-        "protan": 0.1528,
-        "deutan": 0.1295,
-        "tritan": 0.1442,
-        "grayscale": 0.1359
+        "normal": 0.1361,
+        "protan": 0.1474,
+        "deutan": 0.1296,
+        "tritan": 0.1386,
+        "grayscale": 0.1348
       }
     },
     {
       "state": "change",
-      "lineContrast": 1.605,
+      "lineContrast": 1.37,
       "lineDeltaEOK": {
-        "normal": 0.1449,
-        "protan": 0.1534,
-        "deutan": 0.1426,
-        "tritan": 0.1442,
-        "grayscale": 0.1442
+        "normal": 0.1024,
+        "protan": 0.0947,
+        "deutan": 0.1035,
+        "tritan": 0.1046,
+        "grayscale": 0.0991
       }
     }
   ],
   "changedLineCanvasReview": {
-    "normal": 0.044,
-    "protan": 0.0473,
-    "deutan": 0.0432,
-    "tritan": 0.0282,
-    "grayscale": 0.0166
+    "normal": 0.046,
+    "protan": 0.0412,
+    "deutan": 0.047,
+    "tritan": 0.0471,
+    "grayscale": 0.043
   },
   "surfaceObservations": [
     {
       "name": "muted on base",
-      "foreground": "#53594E",
-      "background": "#F0E9D2",
-      "wcag": 5.95,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "comment on base",
-      "foreground": "#53594E",
-      "background": "#F0E9D2",
-      "wcag": 5.95,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "subtext on base",
-      "foreground": "#484E43",
-      "background": "#F0E9D2",
-      "wcag": 7.07,
+      "foreground": "#444D52",
+      "background": "#F6F6F3",
+      "wcag": 7.98,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "text on base",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "wcag": 17.29,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "bright on base",
-      "foreground": "#000000",
-      "background": "#F0E9D2",
-      "wcag": 17.29,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "olive on base",
-      "foreground": "#64602F",
-      "background": "#F0E9D2",
-      "wcag": 5.31,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "sage on base",
-      "foreground": "#456344",
-      "background": "#F0E9D2",
-      "wcag": 5.54,
+      "foreground": "#596166",
+      "background": "#F6F6F3",
+      "wcag": 5.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "gold on base",
-      "foreground": "#5C4619",
-      "background": "#F0E9D2",
-      "wcag": 7.37,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "ochre on base",
-      "foreground": "#795B28",
-      "background": "#F0E9D2",
-      "wcag": 5.18,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "clay on base",
-      "foreground": "#88483E",
-      "background": "#F0E9D2",
-      "wcag": 5.68,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "coral on base",
-      "foreground": "#A03440",
-      "background": "#F0E9D2",
-      "wcag": 5.65,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "aqua on base",
-      "foreground": "#28665F",
-      "background": "#F0E9D2",
-      "wcag": 5.48,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "blue on base",
-      "foreground": "#405B80",
-      "background": "#F0E9D2",
-      "wcag": 5.71,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "mauve on base",
-      "foreground": "#75516F",
-      "background": "#F0E9D2",
-      "wcag": 5.47,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "muted on mantle",
-      "foreground": "#53594E",
-      "background": "#E8E1CD",
-      "wcag": 5.53,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "comment on mantle",
-      "foreground": "#53594E",
-      "background": "#E8E1CD",
-      "wcag": 5.53,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "subtext on mantle",
-      "foreground": "#484E43",
-      "background": "#E8E1CD",
-      "wcag": 6.57,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "text on mantle",
-      "foreground": "#000000",
-      "background": "#E8E1CD",
-      "wcag": 16.08,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "bright on mantle",
-      "foreground": "#000000",
-      "background": "#E8E1CD",
-      "wcag": 16.08,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "olive on mantle",
-      "foreground": "#64602F",
-      "background": "#E8E1CD",
-      "wcag": 4.94,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "sage on mantle",
-      "foreground": "#456344",
-      "background": "#E8E1CD",
-      "wcag": 5.15,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "gold on mantle",
-      "foreground": "#5C4619",
-      "background": "#E8E1CD",
-      "wcag": 6.86,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "ochre on mantle",
-      "foreground": "#795B28",
-      "background": "#E8E1CD",
-      "wcag": 4.82,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "clay on mantle",
-      "foreground": "#88483E",
-      "background": "#E8E1CD",
-      "wcag": 5.28,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "coral on mantle",
-      "foreground": "#A03440",
-      "background": "#E8E1CD",
-      "wcag": 5.26,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "aqua on mantle",
-      "foreground": "#28665F",
-      "background": "#E8E1CD",
-      "wcag": 5.1,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "blue on mantle",
-      "foreground": "#405B80",
-      "background": "#E8E1CD",
-      "wcag": 5.31,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "mauve on mantle",
-      "foreground": "#75516F",
-      "background": "#E8E1CD",
-      "wcag": 5.08,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "muted on surface0",
-      "foreground": "#53594E",
-      "background": "#F7F0DF",
-      "wcag": 6.36,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "comment on surface0",
-      "foreground": "#53594E",
-      "background": "#F7F0DF",
-      "wcag": 6.36,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "subtext on surface0",
-      "foreground": "#484E43",
-      "background": "#F7F0DF",
-      "wcag": 7.56,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "text on surface0",
-      "foreground": "#000000",
-      "background": "#F7F0DF",
-      "wcag": 18.48,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "bright on surface0",
-      "foreground": "#000000",
-      "background": "#F7F0DF",
-      "wcag": 18.48,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "olive on surface0",
-      "foreground": "#64602F",
-      "background": "#F7F0DF",
-      "wcag": 5.68,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "sage on surface0",
-      "foreground": "#456344",
-      "background": "#F7F0DF",
-      "wcag": 5.92,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "gold on surface0",
-      "foreground": "#5C4619",
-      "background": "#F7F0DF",
-      "wcag": 7.88,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "ochre on surface0",
-      "foreground": "#795B28",
-      "background": "#F7F0DF",
-      "wcag": 5.53,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "clay on surface0",
-      "foreground": "#88483E",
-      "background": "#F7F0DF",
-      "wcag": 6.07,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "coral on surface0",
-      "foreground": "#A03440",
-      "background": "#F7F0DF",
-      "wcag": 6.04,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "aqua on surface0",
-      "foreground": "#28665F",
-      "background": "#F7F0DF",
-      "wcag": 5.86,
-      "target": 4.5,
-      "passed": true
-    },
-    {
-      "name": "blue on surface0",
-      "foreground": "#405B80",
-      "background": "#F7F0DF",
+      "foreground": "#A3373E",
+      "background": "#F6F6F3",
       "wcag": 6.11,
       "target": 4.5,
       "passed": true
     },
     {
+      "name": "aqua on base",
+      "foreground": "#306466",
+      "background": "#F6F6F3",
+      "wcag": 6.18,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "blue on base",
+      "foreground": "#345E77",
+      "background": "#F6F6F3",
+      "wcag": 6.44,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "mauve on base",
+      "foreground": "#70516D",
+      "background": "#F6F6F3",
+      "wcag": 6.28,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "muted on mantle",
+      "foreground": "#596166",
+      "background": "#E0E3E2",
+      "wcag": 4.89,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "comment on mantle",
+      "foreground": "#596166",
+      "background": "#E0E3E2",
+      "wcag": 4.89,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "subtext on mantle",
+      "foreground": "#444D52",
+      "background": "#E0E3E2",
+      "wcag": 6.69,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "text on mantle",
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "bright on mantle",
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "olive on mantle",
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "sage on mantle",
+      "foreground": "#596166",
+      "background": "#E0E3E2",
+      "wcag": 4.89,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "gold on mantle",
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "ochre on mantle",
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "clay on mantle",
+      "foreground": "#25292B",
+      "background": "#E0E3E2",
+      "wcag": 11.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "coral on mantle",
+      "foreground": "#A3373E",
+      "background": "#E0E3E2",
+      "wcag": 5.12,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "aqua on mantle",
+      "foreground": "#306466",
+      "background": "#E0E3E2",
+      "wcag": 5.18,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "blue on mantle",
+      "foreground": "#345E77",
+      "background": "#E0E3E2",
+      "wcag": 5.39,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "mauve on mantle",
+      "foreground": "#70516D",
+      "background": "#E0E3E2",
+      "wcag": 5.27,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "muted on surface0",
+      "foreground": "#596166",
+      "background": "#FDFDFA",
+      "wcag": 6.19,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "comment on surface0",
+      "foreground": "#596166",
+      "background": "#FDFDFA",
+      "wcag": 6.19,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "subtext on surface0",
+      "foreground": "#444D52",
+      "background": "#FDFDFA",
+      "wcag": 8.48,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "text on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "bright on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "olive on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "sage on surface0",
+      "foreground": "#596166",
+      "background": "#FDFDFA",
+      "wcag": 6.19,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "gold on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "ochre on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "clay on surface0",
+      "foreground": "#25292B",
+      "background": "#FDFDFA",
+      "wcag": 14.4,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "coral on surface0",
+      "foreground": "#A3373E",
+      "background": "#FDFDFA",
+      "wcag": 6.49,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "aqua on surface0",
+      "foreground": "#306466",
+      "background": "#FDFDFA",
+      "wcag": 6.56,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "name": "blue on surface0",
+      "foreground": "#345E77",
+      "background": "#FDFDFA",
+      "wcag": 6.84,
+      "target": 4.5,
+      "passed": true
+    },
+    {
       "name": "mauve on surface0",
-      "foreground": "#75516F",
-      "background": "#F7F0DF",
-      "wcag": 5.84,
+      "foreground": "#70516D",
+      "background": "#FDFDFA",
+      "wcag": 6.68,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "muted on surface1",
-      "foreground": "#53594E",
-      "background": "#ECE5D2",
-      "wcag": 5.75,
+      "foreground": "#596166",
+      "background": "#ECEEEB",
+      "wcag": 5.41,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "comment on surface1",
-      "foreground": "#53594E",
-      "background": "#ECE5D2",
-      "wcag": 5.75,
+      "foreground": "#596166",
+      "background": "#ECEEEB",
+      "wcag": 5.41,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "subtext on surface1",
-      "foreground": "#484E43",
-      "background": "#ECE5D2",
-      "wcag": 6.83,
+      "foreground": "#444D52",
+      "background": "#ECEEEB",
+      "wcag": 7.41,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "text on surface1",
-      "foreground": "#000000",
-      "background": "#ECE5D2",
-      "wcag": 16.7,
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "bright on surface1",
-      "foreground": "#000000",
-      "background": "#ECE5D2",
-      "wcag": 16.7,
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "olive on surface1",
-      "foreground": "#64602F",
-      "background": "#ECE5D2",
-      "wcag": 5.13,
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "sage on surface1",
-      "foreground": "#456344",
-      "background": "#ECE5D2",
-      "wcag": 5.35,
+      "foreground": "#596166",
+      "background": "#ECEEEB",
+      "wcag": 5.41,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "gold on surface1",
-      "foreground": "#5C4619",
-      "background": "#ECE5D2",
-      "wcag": 7.12,
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "ochre on surface1",
-      "foreground": "#795B28",
-      "background": "#ECE5D2",
-      "wcag": 5.0,
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "clay on surface1",
-      "foreground": "#88483E",
-      "background": "#ECE5D2",
-      "wcag": 5.49,
+      "foreground": "#25292B",
+      "background": "#ECEEEB",
+      "wcag": 12.58,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "coral on surface1",
-      "foreground": "#A03440",
-      "background": "#ECE5D2",
-      "wcag": 5.46,
+      "foreground": "#A3373E",
+      "background": "#ECEEEB",
+      "wcag": 5.67,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "aqua on surface1",
-      "foreground": "#28665F",
-      "background": "#ECE5D2",
-      "wcag": 5.29,
+      "foreground": "#306466",
+      "background": "#ECEEEB",
+      "wcag": 5.73,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "blue on surface1",
-      "foreground": "#405B80",
-      "background": "#ECE5D2",
-      "wcag": 5.52,
+      "foreground": "#345E77",
+      "background": "#ECEEEB",
+      "wcag": 5.97,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "mauve on surface1",
-      "foreground": "#75516F",
-      "background": "#ECE5D2",
-      "wcag": 5.28,
+      "foreground": "#70516D",
+      "background": "#ECEEEB",
+      "wcag": 5.83,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome muted on crust",
-      "foreground": "#53594E",
-      "background": "#D8D2BE",
-      "wcag": 4.78,
+      "foreground": "#596166",
+      "background": "#D6DCD9",
+      "wcag": 4.54,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome comment on crust",
-      "foreground": "#53594E",
-      "background": "#D8D2BE",
-      "wcag": 4.78,
+      "foreground": "#596166",
+      "background": "#D6DCD9",
+      "wcag": 4.54,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome subtext on crust",
-      "foreground": "#484E43",
-      "background": "#D8D2BE",
-      "wcag": 5.67,
+      "foreground": "#444D52",
+      "background": "#D6DCD9",
+      "wcag": 6.22,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome text on crust",
-      "foreground": "#000000",
-      "background": "#D8D2BE",
-      "wcag": 13.88,
+      "foreground": "#25292B",
+      "background": "#D6DCD9",
+      "wcag": 10.55,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome bright on crust",
-      "foreground": "#000000",
-      "background": "#D8D2BE",
-      "wcag": 13.88,
+      "foreground": "#25292B",
+      "background": "#D6DCD9",
+      "wcag": 10.55,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome text on surface2",
-      "foreground": "#000000",
-      "background": "#C1BEAC",
-      "wcag": 11.23,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome subtext on surface2",
-      "foreground": "#484E43",
-      "background": "#C1BEAC",
-      "wcag": 4.59,
+      "foreground": "#444D52",
+      "background": "#B3CBD8",
+      "wcag": 5.13,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome bright on surface2",
-      "foreground": "#000000",
-      "background": "#C1BEAC",
-      "wcag": 11.23,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "inactive status label",
-      "foreground": "#53594E",
-      "background": "#E8E1CD",
-      "wcag": 5.53,
+      "foreground": "#596166",
+      "background": "#E0E3E2",
+      "wcag": 4.89,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "popup border",
-      "foreground": "#53594E",
-      "background": "#F7F0DF",
-      "wcag": 6.36,
+      "foreground": "#596166",
+      "background": "#FDFDFA",
+      "wcag": 6.19,
       "target": 3.0,
       "passed": true
     },
     {
       "name": "search result",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup kind",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup extra",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "substitution",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "error annotation",
-      "foreground": "#F0E9D2",
-      "background": "#A03440",
-      "wcag": 5.65,
+      "foreground": "#25292B",
+      "background": "#F1E2DF",
+      "wcag": 11.66,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "tab label on crust",
-      "foreground": "#484E43",
-      "background": "#D8D2BE",
-      "wcag": 5.67,
+      "foreground": "#444D52",
+      "background": "#D6DCD9",
+      "wcag": 6.22,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "Neovim DiffText",
-      "foreground": "#000000",
-      "background": "#B17232",
-      "wcag": 5.32,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selection edge on mantle",
-      "foreground": "#B17232",
-      "background": "#E8E1CD",
-      "wcag": 3.02,
+      "foreground": "#3F535F",
+      "background": "#E0E3E2",
+      "wcag": 6.22,
       "target": 3.0,
       "passed": true
     },
     {
       "name": "selection edge on surface0",
-      "foreground": "#B17232",
-      "background": "#F7F0DF",
-      "wcag": 3.47,
+      "foreground": "#3F535F",
+      "background": "#FDFDFA",
+      "wcag": 7.88,
       "target": 3.0,
       "passed": true
     },
     {
       "name": "selection edge on surface1",
-      "foreground": "#B17232",
-      "background": "#ECE5D2",
-      "wcag": 3.14,
+      "foreground": "#3F535F",
+      "background": "#ECEEEB",
+      "wcag": 6.88,
       "target": 3.0,
       "passed": true
     },
     {
       "name": "git add sign",
-      "foreground": "#1F3518",
-      "background": "#F0E9D2",
-      "wcag": 10.94,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "git delete sign",
-      "foreground": "#6B322E",
-      "background": "#F0E9D2",
-      "wcag": 8.15,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "git change sign",
-      "foreground": "#453510",
-      "background": "#F0E9D2",
-      "wcag": 9.77,
+      "foreground": "#25292B",
+      "background": "#F6F6F3",
+      "wcag": 13.56,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status olive",
-      "foreground": "#F0E9D2",
-      "background": "#64602F",
-      "wcag": 5.31,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status sage",
-      "foreground": "#F0E9D2",
-      "background": "#456344",
-      "wcag": 5.54,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status mauve",
-      "foreground": "#F0E9D2",
-      "background": "#75516F",
-      "wcag": 5.47,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status coral",
-      "foreground": "#F0E9D2",
-      "background": "#A03440",
-      "wcag": 5.65,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status gold",
-      "foreground": "#F0E9D2",
-      "background": "#5C4619",
-      "wcag": 7.37,
+      "foreground": "#25292B",
+      "background": "#B3CBD8",
+      "wcag": 8.7,
       "target": 4.5,
       "passed": true
     }
@@ -2685,868 +2685,913 @@
     {
       "name": "numbers/keywords",
       "deltaEOK": {
-        "normal": 0.0708,
-        "protan": 0.0566,
-        "deutan": 0.0302,
-        "tritan": 0.0526,
-        "grayscale": 0.0216
+        "normal": 0.0,
+        "protan": 0.0,
+        "deutan": 0.0,
+        "tritan": 0.0,
+        "grayscale": 0.0
       }
     },
     {
       "name": "information/hints",
       "deltaEOK": {
-        "normal": 0.0778,
-        "protan": 0.0663,
-        "deutan": 0.0597,
-        "tritan": 0.0258,
-        "grayscale": 0.0098
+        "normal": 0.039,
+        "protan": 0.0362,
+        "deutan": 0.0348,
+        "tritan": 0.0103,
+        "grayscale": 0.0096
       }
     },
     {
       "name": "operators/strings",
       "deltaEOK": {
-        "normal": 0.0466,
-        "protan": 0.029,
-        "deutan": 0.0378,
-        "tritan": 0.0598,
-        "grayscale": 0.0098
+        "normal": 0.2097,
+        "protan": 0.2115,
+        "deutan": 0.2092,
+        "tritan": 0.2094,
+        "grayscale": 0.2099
       }
     },
     {
       "name": "keywords/errors",
       "deltaEOK": {
-        "normal": 0.059,
-        "protan": 0.0246,
-        "deutan": 0.0131,
-        "tritan": 0.064,
-        "grayscale": 0.0013
+        "normal": 0.2628,
+        "protan": 0.1476,
+        "deutan": 0.2377,
+        "tritan": 0.2916,
+        "grayscale": 0.199
       }
     }
   ],
   "colors": {
     "backgrounds.crust": {
-      "hex": "#D8D2BE",
+      "hex": "#D6DCD9",
       "oklch": [
-        0.8632,
-        0.0278,
-        93.1
+        0.889,
+        0.0076,
+        164.9
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#D7D1BD",
-        "deutan": "#D8D3BF",
-        "tritan": "#DDCFCC",
-        "grayscale": "#D2D2D2"
+        "protan": "#DCDBD9",
+        "deutan": "#DBDAD9",
+        "tritan": "#D5DCDB",
+        "grayscale": "#DBDBDB"
       }
     },
     "backgrounds.mantle": {
-      "hex": "#E8E1CD",
+      "hex": "#E0E3E2",
       "oklch": [
-        0.9099,
-        0.0277,
-        90.9
+        0.9132,
+        0.0035,
+        174.5
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#E6E0CC",
-        "deutan": "#E8E2CE",
-        "tritan": "#EDDEDB",
-        "grayscale": "#E1E1E1"
+        "protan": "#E3E3E2",
+        "deutan": "#E2E2E2",
+        "tritan": "#DFE3E3",
+        "grayscale": "#E2E2E2"
       }
     },
     "backgrounds.base": {
-      "hex": "#F0E9D2",
+      "hex": "#F6F6F3",
       "oklch": [
-        0.9334,
-        0.0313,
-        93.0
+        0.9723,
+        0.004,
+        106.5
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#EEE8D1",
-        "deutan": "#F0EAD3",
-        "tritan": "#F5E5E2",
-        "grayscale": "#E9E9E9"
+        "protan": "#F7F6F3",
+        "deutan": "#F7F6F3",
+        "tritan": "#F7F6F5",
+        "grayscale": "#F6F6F6"
       }
     },
     "backgrounds.surface0": {
-      "hex": "#F7F0DF",
+      "hex": "#FDFDFA",
       "oklch": [
-        0.956,
-        0.0237,
-        88.2
+        0.9932,
+        0.0039,
+        106.5
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#F4EFDE",
-        "deutan": "#F6F1DF",
-        "tritan": "#FBEDEB",
-        "grayscale": "#F0F0F0"
+        "protan": "#FEFDFA",
+        "deutan": "#FEFDFA",
+        "tritan": "#FEFDFC",
+        "grayscale": "#FDFDFD"
       }
     },
     "backgrounds.surface1": {
-      "hex": "#ECE5D2",
+      "hex": "#ECEEEB",
       "oklch": [
-        0.9223,
-        0.0264,
-        90.1
+        0.9467,
+        0.0045,
+        134.9
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#EAE4D1",
-        "deutan": "#ECE6D3",
-        "tritan": "#F1E2DF",
-        "grayscale": "#E5E5E5"
+        "protan": "#EEEDEB",
+        "deutan": "#EEEDEB",
+        "tritan": "#ECEEED",
+        "grayscale": "#EDEDED"
       }
     },
     "backgrounds.surface2": {
-      "hex": "#C1BEAC",
+      "hex": "#B3CBD8",
       "oklch": [
-        0.799,
-        0.025,
-        99.2
+        0.8283,
+        0.0317,
+        231.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#C2BDAB",
-        "deutan": "#C3BEAD",
-        "tritan": "#C5BBB9",
-        "grayscale": "#BDBDBD"
+        "protan": "#C5CAD9",
+        "deutan": "#BFC5D8",
+        "tritan": "#A9CFCF",
+        "grayscale": "#C7C7C7"
+      }
+    },
+    "backgrounds.border": {
+      "hex": "#76848B",
+      "oklch": [
+        0.6043,
+        0.0196,
+        229.2
+      ],
+      "inSrgb": true,
+      "simulations": {
+        "protan": "#80838B",
+        "deutan": "#7D818B",
+        "tritan": "#718686",
+        "grayscale": "#828282"
+      }
+    },
+    "backgrounds.search": {
+      "hex": "#EAD9B1",
+      "oklch": [
+        0.8891,
+        0.0558,
+        87.7
+      ],
+      "inSrgb": true,
+      "simulations": {
+        "protan": "#E3D8AE",
+        "deutan": "#E7DCB2",
+        "tritan": "#F4D2CE",
+        "grayscale": "#DADADA"
       }
     },
     "highlight.background": {
-      "hex": "#B17232",
+      "hex": "#B3CBD8",
       "oklch": [
-        0.6072,
-        0.1119,
-        63.1
+        0.8283,
+        0.0317,
+        231.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#86772B",
-        "deutan": "#958633",
-        "tritan": "#C16464",
-        "grayscale": "#808080"
+        "protan": "#C5CAD9",
+        "deutan": "#BFC5D8",
+        "tritan": "#A9CFCF",
+        "grayscale": "#C7C7C7"
       }
     },
     "highlight.foreground": {
-      "hex": "#000000",
+      "hex": "#25292B",
       "oklch": [
-        0.0,
-        0.0,
-        null
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#000000",
-        "deutan": "#000000",
-        "tritan": "#000000",
-        "grayscale": "#000000"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
+      }
+    },
+    "highlight.border": {
+      "hex": "#3F535F",
+      "oklch": [
+        0.4303,
+        0.0317,
+        234.8
+      ],
+      "inSrgb": true,
+      "simulations": {
+        "protan": "#4D5260",
+        "deutan": "#494F5F",
+        "tritan": "#355657",
+        "grayscale": "#505050"
       }
     },
     "foregrounds.muted": {
-      "hex": "#53594E",
+      "hex": "#596166",
       "oklch": [
-        0.4551,
-        0.0191,
-        130.7
+        0.4874,
+        0.0128,
+        235.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#5A574D",
-        "deutan": "#59574E",
-        "tritan": "#535856",
-        "grayscale": "#575757"
+        "protan": "#5F6166",
+        "deutan": "#5D5F66",
+        "tritan": "#566263",
+        "grayscale": "#606060"
       }
     },
     "foregrounds.comment": {
-      "hex": "#53594E",
+      "hex": "#596166",
       "oklch": [
-        0.4551,
-        0.0191,
-        130.7
+        0.4874,
+        0.0128,
+        235.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#5A574D",
-        "deutan": "#59574E",
-        "tritan": "#535856",
-        "grayscale": "#575757"
+        "protan": "#5F6166",
+        "deutan": "#5D5F66",
+        "tritan": "#566263",
+        "grayscale": "#606060"
       }
     },
     "foregrounds.subtext": {
-      "hex": "#484E43",
+      "hex": "#444D52",
       "oklch": [
-        0.4149,
-        0.0195,
-        130.7
+        0.414,
+        0.0143,
+        232.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4F4C42",
-        "deutan": "#4E4C43",
-        "tritan": "#484D4B",
+        "protan": "#4B4D52",
+        "deutan": "#494B52",
+        "tritan": "#404E4F",
         "grayscale": "#4C4C4C"
       }
     },
     "foregrounds.text": {
-      "hex": "#000000",
+      "hex": "#25292B",
       "oklch": [
-        0.0,
-        0.0,
-        null
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#000000",
-        "deutan": "#000000",
-        "tritan": "#000000",
-        "grayscale": "#000000"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "foregrounds.bright": {
-      "hex": "#000000",
+      "hex": "#25292B",
       "oklch": [
-        0.0,
-        0.0,
-        null
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#000000",
-        "deutan": "#000000",
-        "tritan": "#000000",
-        "grayscale": "#000000"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "accents.olive": {
-      "hex": "#64602F",
+      "hex": "#25292B",
       "oklch": [
-        0.4811,
-        0.0693,
-        104.5
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#675D2B",
-        "deutan": "#696031",
-        "tritan": "#6B5A55",
-        "grayscale": "#5E5E5E"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "accents.sage": {
-      "hex": "#456344",
+      "hex": "#596166",
       "oklch": [
-        0.467,
-        0.0606,
-        143.8
+        0.4874,
+        0.0128,
+        235.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#645D42",
-        "deutan": "#605A46",
-        "tritan": "#42615B",
-        "grayscale": "#5C5C5C"
-      }
-    },
-    "accents.gold": {
-      "hex": "#5C4619",
-      "oklch": [
-        0.4082,
-        0.0681,
-        82.5
-      ],
-      "inSrgb": true,
-      "simulations": {
-        "protan": "#4F4614",
-        "deutan": "#554C1B",
-        "tritan": "#643F3C",
-        "grayscale": "#494949"
-      }
-    },
-    "accents.ochre": {
-      "hex": "#795B28",
-      "oklch": [
-        0.4915,
-        0.0784,
-        78.4
-      ],
-      "inSrgb": true,
-      "simulations": {
-        "protan": "#675C23",
-        "deutan": "#6E632A",
-        "tritan": "#835350",
+        "protan": "#5F6166",
+        "deutan": "#5D5F66",
+        "tritan": "#566263",
         "grayscale": "#606060"
       }
     },
-    "accents.clay": {
-      "hex": "#88483E",
+    "accents.gold": {
+      "hex": "#25292B",
       "oklch": [
-        0.4774,
-        0.0892,
-        30.0
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#57523D",
-        "deutan": "#675F3D",
-        "tritan": "#943E46",
-        "grayscale": "#5A5A5A"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
+      }
+    },
+    "accents.ochre": {
+      "hex": "#25292B",
+      "oklch": [
+        0.2777,
+        0.0068,
+        229.1
+      ],
+      "inSrgb": true,
+      "simulations": {
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
+      }
+    },
+    "accents.clay": {
+      "hex": "#25292B",
+      "oklch": [
+        0.2777,
+        0.0068,
+        229.1
+      ],
+      "inSrgb": true,
+      "simulations": {
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "accents.coral": {
-      "hex": "#A03440",
+      "hex": "#A3373E",
       "oklch": [
-        0.4864,
+        0.4946,
         0.1424,
-        17.8
+        20.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4F4C40",
-        "deutan": "#6B633D",
-        "tritan": "#AF1D39",
-        "grayscale": "#5A5A5A"
+        "protan": "#534E3E",
+        "deutan": "#6E653B",
+        "tritan": "#B31F3A",
+        "grayscale": "#5D5D5D"
       }
     },
     "accents.aqua": {
-      "hex": "#28665F",
+      "hex": "#306466",
       "oklch": [
-        0.4679,
-        0.0645,
-        185.2
+        0.4685,
+        0.0556,
+        198.8
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#61615F",
-        "deutan": "#575960",
-        "tritan": "#006863",
+        "protan": "#5E6066",
+        "deutan": "#555966",
+        "tritan": "#0C6764",
         "grayscale": "#5C5C5C"
       }
     },
     "accents.blue": {
-      "hex": "#405B80",
+      "hex": "#345E77",
       "oklch": [
-        0.4662,
-        0.0688,
-        256.5
+        0.4622,
+        0.0622,
+        236.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4D5D82",
-        "deutan": "#45577F",
-        "tritan": "#246368",
-        "grayscale": "#5A5A5A"
+        "protan": "#525D78",
+        "deutan": "#495677",
+        "tritan": "#056466",
+        "grayscale": "#595959"
       }
     },
     "accents.mauve": {
-      "hex": "#75516F",
+      "hex": "#70516D",
       "oklch": [
-        0.4844,
-        0.0651,
-        332.5
+        0.4779,
+        0.0587,
+        329.8
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#505970",
-        "deutan": "#595E6E",
-        "tritan": "#78535C",
-        "grayscale": "#5C5C5C"
+        "protan": "#50586E",
+        "deutan": "#575C6C",
+        "tritan": "#72535B",
+        "grayscale": "#5B5B5B"
       }
     },
     "ansi.black": {
-      "hex": "#000000",
+      "hex": "#25292B",
       "oklch": [
-        0.0,
-        0.0,
-        null
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#000000",
-        "deutan": "#000000",
-        "tritan": "#000000",
-        "grayscale": "#000000"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "ansi.red": {
-      "hex": "#84342F",
+      "hex": "#8B3037",
       "oklch": [
-        0.436,
-        0.1115,
-        26.3
+        0.4439,
+        0.1237,
+        19.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#48432E",
-        "deutan": "#5C542D",
-        "tritan": "#912433",
-        "grayscale": "#4E4E4E"
+        "protan": "#474337",
+        "deutan": "#5E5635",
+        "tritan": "#981E33",
+        "grayscale": "#4F4F4F"
       }
     },
     "ansi.green": {
-      "hex": "#405A34",
+      "hex": "#274D39",
       "oklch": [
-        0.436,
-        0.0674,
-        136.3
+        0.3855,
+        0.0559,
+        159.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#5D5431",
-        "deutan": "#595236",
-        "tritan": "#3F5751",
-        "grayscale": "#535353"
+        "protan": "#4C4838",
+        "deutan": "#46443A",
+        "tritan": "#1D4D47",
+        "grayscale": "#454545"
       }
     },
     "ansi.yellow": {
-      "hex": "#5A4006",
+      "hex": "#624819",
       "oklch": [
-        0.3904,
-        0.0772,
-        81.1
+        0.4201,
+        0.072,
+        79.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4A4100",
-        "deutan": "#514709",
-        "tritan": "#633836",
-        "grayscale": "#444444"
+        "protan": "#524913",
+        "deutan": "#584F1B",
+        "tritan": "#6B413E",
+        "grayscale": "#4C4C4C"
       }
     },
     "ansi.blue": {
-      "hex": "#304564",
+      "hex": "#274A62",
       "oklch": [
-        0.3875,
-        0.0594,
-        258.0
+        0.3939,
+        0.0576,
+        240.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#394765",
-        "deutan": "#334263",
-        "tritan": "#194C50",
-        "grayscale": "#444444"
+        "protan": "#3F4A63",
+        "deutan": "#374462",
+        "tritan": "#005052",
+        "grayscale": "#464646"
       }
     },
     "ansi.magenta": {
-      "hex": "#67475C",
+      "hex": "#60425E",
       "oklch": [
-        0.4406,
-        0.0537,
-        340.1
+        0.423,
+        0.0594,
+        328.8
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#484E5D",
-        "deutan": "#50535B",
-        "tritan": "#6B474E",
-        "grayscale": "#515151"
+        "protan": "#41495F",
+        "deutan": "#484D5D",
+        "tritan": "#62444C",
+        "grayscale": "#4C4C4C"
       }
     },
     "ansi.cyan": {
-      "hex": "#204F49",
+      "hex": "#255354",
       "oklch": [
-        0.3931,
-        0.0523,
-        184.2
+        0.4106,
+        0.0503,
+        197.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4B4B49",
-        "deutan": "#44454A",
-        "tritan": "#01514D",
-        "grayscale": "#474747"
+        "protan": "#4E4F54",
+        "deutan": "#464A54",
+        "tritan": "#025653",
+        "grayscale": "#4C4C4C"
       }
     },
     "ansi.white": {
-      "hex": "#F0E9D2",
+      "hex": "#F6F6F3",
       "oklch": [
-        0.9334,
-        0.0313,
-        93.0
+        0.9723,
+        0.004,
+        106.5
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#EEE8D1",
-        "deutan": "#F0EAD3",
-        "tritan": "#F5E5E2",
-        "grayscale": "#E9E9E9"
+        "protan": "#F7F6F3",
+        "deutan": "#F7F6F3",
+        "tritan": "#F7F6F5",
+        "grayscale": "#F6F6F6"
       }
     },
     "ansi.brightBlack": {
-      "hex": "#53594E",
+      "hex": "#596166",
       "oklch": [
-        0.4551,
-        0.0191,
-        130.7
+        0.4874,
+        0.0128,
+        235.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#5A574D",
-        "deutan": "#59574E",
-        "tritan": "#535856",
-        "grayscale": "#575757"
+        "protan": "#5F6166",
+        "deutan": "#5D5F66",
+        "tritan": "#566263",
+        "grayscale": "#606060"
       }
     },
     "ansi.brightRed": {
-      "hex": "#A03440",
+      "hex": "#A3373E",
       "oklch": [
-        0.4864,
+        0.4946,
         0.1424,
-        17.8
+        20.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4F4C40",
-        "deutan": "#6B633D",
-        "tritan": "#AF1D39",
-        "grayscale": "#5A5A5A"
+        "protan": "#534E3E",
+        "deutan": "#6E653B",
+        "tritan": "#B31F3A",
+        "grayscale": "#5D5D5D"
       }
     },
     "ansi.brightGreen": {
-      "hex": "#456344",
+      "hex": "#315F46",
       "oklch": [
-        0.467,
-        0.0606,
-        143.8
+        0.4448,
+        0.066,
+        158.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#645D42",
-        "deutan": "#605A46",
-        "tritan": "#42615B",
-        "grayscale": "#5C5C5C"
+        "protan": "#5E5945",
+        "deutan": "#575447",
+        "tritan": "#255E58",
+        "grayscale": "#565656"
       }
     },
     "ansi.brightYellow": {
-      "hex": "#5C4619",
+      "hex": "#795922",
       "oklch": [
-        0.4082,
-        0.0681,
-        82.5
+        0.4865,
+        0.0826,
+        78.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4F4614",
-        "deutan": "#554C1B",
-        "tritan": "#643F3C",
-        "grayscale": "#494949"
+        "protan": "#655A1B",
+        "deutan": "#6D6224",
+        "tritan": "#84504D",
+        "grayscale": "#5F5F5F"
       }
     },
     "ansi.brightBlue": {
-      "hex": "#405B80",
+      "hex": "#345E77",
       "oklch": [
-        0.4662,
-        0.0688,
-        256.5
+        0.4622,
+        0.0622,
+        236.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#4D5D82",
-        "deutan": "#45577F",
-        "tritan": "#246368",
-        "grayscale": "#5A5A5A"
+        "protan": "#525D78",
+        "deutan": "#495677",
+        "tritan": "#056466",
+        "grayscale": "#595959"
       }
     },
     "ansi.brightMagenta": {
-      "hex": "#75516F",
+      "hex": "#70516D",
       "oklch": [
-        0.4844,
-        0.0651,
-        332.5
+        0.4779,
+        0.0587,
+        329.8
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#505970",
-        "deutan": "#595E6E",
-        "tritan": "#78535C",
-        "grayscale": "#5C5C5C"
+        "protan": "#50586E",
+        "deutan": "#575C6C",
+        "tritan": "#72535B",
+        "grayscale": "#5B5B5B"
       }
     },
     "ansi.brightCyan": {
-      "hex": "#28665F",
+      "hex": "#306466",
       "oklch": [
-        0.4679,
-        0.0645,
-        185.2
+        0.4685,
+        0.0556,
+        198.8
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#61615F",
-        "deutan": "#575960",
-        "tritan": "#006863",
+        "protan": "#5E6066",
+        "deutan": "#555966",
+        "tritan": "#0C6764",
         "grayscale": "#5C5C5C"
       }
     },
     "ansi.brightWhite": {
-      "hex": "#F7F0DF",
+      "hex": "#FDFDFA",
       "oklch": [
-        0.956,
-        0.0237,
-        88.2
+        0.9932,
+        0.0039,
+        106.5
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#F4EFDE",
-        "deutan": "#F6F1DF",
-        "tritan": "#FBEDEB",
-        "grayscale": "#F0F0F0"
+        "protan": "#FEFDFA",
+        "deutan": "#FEFDFA",
+        "tritan": "#FEFDFC",
+        "grayscale": "#FDFDFD"
       }
     },
     "ansi.extendedOchre": {
-      "hex": "#795B28",
+      "hex": "#795922",
       "oklch": [
-        0.4915,
-        0.0784,
-        78.4
+        0.4865,
+        0.0826,
+        78.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#675C23",
-        "deutan": "#6E632A",
-        "tritan": "#835350",
-        "grayscale": "#606060"
+        "protan": "#655A1B",
+        "deutan": "#6D6224",
+        "tritan": "#84504D",
+        "grayscale": "#5F5F5F"
       }
     },
     "ansi.extendedClay": {
-      "hex": "#88483E",
+      "hex": "#A3373E",
       "oklch": [
-        0.4774,
-        0.0892,
-        30.0
+        0.4946,
+        0.1424,
+        20.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#57523D",
-        "deutan": "#675F3D",
-        "tritan": "#943E46",
-        "grayscale": "#5A5A5A"
+        "protan": "#534E3E",
+        "deutan": "#6E653B",
+        "tritan": "#B31F3A",
+        "grayscale": "#5D5D5D"
       }
     },
     "diff.contextForeground": {
-      "hex": "#000000",
+      "hex": "#25292B",
       "oklch": [
-        0.0,
-        0.0,
-        null
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#000000",
-        "deutan": "#000000",
-        "tritan": "#000000",
-        "grayscale": "#000000"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "diff.inlineForeground": {
-      "hex": "#000000",
+      "hex": "#25292B",
       "oklch": [
-        0.0,
-        0.0,
-        null
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#000000",
-        "deutan": "#000000",
-        "tritan": "#000000",
-        "grayscale": "#000000"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "diff.addForeground": {
-      "hex": "#1F3518",
+      "hex": "#25292B",
       "oklch": [
-        0.302,
-        0.0569,
-        138.5
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#373116",
-        "deutan": "#332F1A",
-        "tritan": "#1E332E",
-        "grayscale": "#303030"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "diff.addBackground": {
-      "hex": "#D5E1CA",
+      "hex": "#E2EDDF",
       "oklch": [
-        0.8944,
-        0.0334,
-        129.7
+        0.934,
+        0.022,
+        139.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#E4DEC9",
-        "deutan": "#E2DDCB",
-        "tritan": "#D6DFDA",
-        "grayscale": "#DDDDDD"
+        "protan": "#EEEADE",
+        "deutan": "#ECE9E0",
+        "tritan": "#E2ECE9",
+        "grayscale": "#EAEAEA"
       }
     },
     "diff.addEmphasis": {
-      "hex": "#A1BA77",
+      "hex": "#BDD3B2",
       "oklch": [
-        0.7537,
-        0.0945,
-        125.2
+        0.8415,
+        0.0508,
+        135.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#C1B272",
-        "deutan": "#BDB17A",
-        "tritan": "#A5B4A9",
-        "grayscale": "#B1B1B1"
+        "protan": "#D6CEB0",
+        "deutan": "#D2CCB3",
+        "tritan": "#BDD0CA",
+        "grayscale": "#CCCCCC"
       }
     },
     "diff.deleteForeground": {
-      "hex": "#6B322E",
+      "hex": "#25292B",
       "oklch": [
-        0.3922,
-        0.0822,
-        25.6
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#3F3C2D",
-        "deutan": "#4E482D",
-        "tritan": "#752931",
-        "grayscale": "#434343"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "diff.deleteBackground": {
-      "hex": "#F0DCD6",
+      "hex": "#F1E2DF",
       "oklch": [
-        0.909,
-        0.0236,
-        37.4
+        0.9239,
+        0.017,
+        31.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#E0DED6",
-        "deutan": "#E5E2D6",
-        "tritan": "#F6D9DA",
-        "grayscale": "#E0E0E0"
+        "protan": "#E5E3DF",
+        "deutan": "#E8E6DF",
+        "tritan": "#F5E0E1",
+        "grayscale": "#E5E5E5"
       }
     },
     "diff.deleteEmphasis": {
-      "hex": "#E2A69B",
+      "hex": "#DDAFA7",
       "oklch": [
-        0.7787,
-        0.0733,
-        30.5
+        0.7933,
+        0.0553,
+        29.7
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#B3AD9A",
-        "deutan": "#C1B99A",
-        "tritan": "#EF9EA3",
-        "grayscale": "#B4B4B4"
+        "protan": "#B8B4A6",
+        "deutan": "#C3BDA7",
+        "tritan": "#E8AAAD",
+        "grayscale": "#BABABA"
       }
     },
     "diff.changeForeground": {
-      "hex": "#453510",
+      "hex": "#25292B",
       "oklch": [
-        0.3386,
-        0.0571,
-        85.1
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#3C350B",
-        "deutan": "#403912",
-        "tritan": "#4B302D",
-        "grayscale": "#373737"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "diff.changeBackground": {
-      "hex": "#F4E3AD",
+      "hex": "#E0E9EE",
       "oklch": [
-        0.9166,
-        0.072,
-        92.7
+        0.9287,
+        0.0118,
+        231.7
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#EFE0A9",
-        "deutan": "#F3E6AF",
-        "tritan": "#FFDBD5",
-        "grayscale": "#E3E3E3"
+        "protan": "#E7E8EE",
+        "deutan": "#E5E7EE",
+        "tritan": "#DDEAEA",
+        "grayscale": "#E7E7E7"
       }
     },
     "diff.changeEmphasis": {
-      "hex": "#D2B16B",
+      "hex": "#B3CBD8",
       "oklch": [
-        0.7743,
-        0.0968,
-        85.0
+        0.8283,
+        0.0317,
+        231.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#C1B065",
-        "deutan": "#C9B96D",
-        "tritan": "#E0A6A0",
-        "grayscale": "#B5B5B5"
+        "protan": "#C5CAD9",
+        "deutan": "#BFC5D8",
+        "tritan": "#A9CFCF",
+        "grayscale": "#C7C7C7"
       }
     },
     "diff.hunkForeground": {
-      "hex": "#25443F",
+      "hex": "#25292B",
       "oklch": [
-        0.3608,
-        0.0381,
-        182.7
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#41413F",
-        "deutan": "#3C3D3F",
-        "tritan": "#194542",
-        "grayscale": "#3E3E3E"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "diff.hunkBackground": {
-      "hex": "#D5E1DE",
+      "hex": "#E0E9EE",
       "oklch": [
-        0.8998,
-        0.0135,
-        179.4
+        0.9287,
+        0.0118,
+        231.7
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#E0DFDE",
-        "deutan": "#DDDEDE",
-        "tritan": "#D2E1E0",
-        "grayscale": "#DEDEDE"
+        "protan": "#E7E8EE",
+        "deutan": "#E5E7EE",
+        "tritan": "#DDEAEA",
+        "grayscale": "#E7E7E7"
       }
     },
     "diff.conflictForeground": {
-      "hex": "#503348",
+      "hex": "#25292B",
       "oklch": [
-        0.3634,
-        0.0528,
-        337.3
+        0.2777,
+        0.0068,
+        229.1
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#343A49",
-        "deutan": "#3B3E47",
-        "tritan": "#53343A",
-        "grayscale": "#3C3C3C"
+        "protan": "#28292B",
+        "deutan": "#27282B",
+        "tritan": "#232A2A",
+        "grayscale": "#282828"
       }
     },
     "diff.conflictBackground": {
-      "hex": "#E2D3DE",
+      "hex": "#E5D9E7",
       "oklch": [
-        0.8822,
-        0.0221,
-        335.0
+        0.899,
+        0.0228,
+        321.4
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#D3D6DE",
-        "deutan": "#D6D8DD",
-        "tritan": "#E4D3D6",
-        "grayscale": "#D7D7D7"
+        "protan": "#D8DCE8",
+        "deutan": "#DADDE6",
+        "tritan": "#E6DADD",
+        "grayscale": "#DDDDDD"
       }
     }
   },
@@ -3554,47 +3599,50 @@
     {
       "name": "diff add/delete",
       "deltaEOK": {
-        "normal": 0.148,
-        "protan": 0.047,
-        "deutan": 0.095,
-        "tritan": 0.163,
-        "grayscale": 0.075
+        "normal": 0.033,
+        "protan": 0.023,
+        "deutan": 0.01,
+        "tritan": 0.035,
+        "grayscale": 0.014
       },
       "floor": 0.03,
-      "passed": true
+      "passed": false,
+      "informational": true
     },
     {
       "name": "diff add/change",
       "deltaEOK": {
-        "normal": 0.063,
-        "protan": 0.045,
-        "deutan": 0.055,
-        "tritan": 0.078,
-        "grayscale": 0.03
+        "normal": 0.026,
+        "protan": 0.025,
+        "deutan": 0.024,
+        "tritan": 0.008,
+        "grayscale": 0.007
       },
       "floor": 0.03,
-      "passed": true
+      "passed": false,
+      "informational": true
     },
     {
       "name": "diff delete/change",
       "deltaEOK": {
-        "normal": 0.09,
-        "protan": 0.062,
-        "deutan": 0.058,
-        "tritan": 0.086,
-        "grayscale": 0.045
+        "normal": 0.029,
+        "protan": 0.021,
+        "deutan": 0.02,
+        "tritan": 0.038,
+        "grayscale": 0.007
       },
       "floor": 0.03,
-      "passed": true
+      "passed": false,
+      "informational": true
     },
     {
       "name": "error/warning",
       "deltaEOK": {
-        "normal": 0.151,
-        "protan": 0.054,
-        "deutan": 0.085,
-        "tritan": 0.15,
-        "grayscale": 0.062
+        "normal": 0.263,
+        "protan": 0.148,
+        "deutan": 0.238,
+        "tritan": 0.292,
+        "grayscale": 0.199
       },
       "floor": 0.05,
       "passed": true
@@ -3602,11 +3650,11 @@
     {
       "name": "ANSI blue/bright blue",
       "deltaEOK": {
-        "normal": 0.079,
-        "protan": 0.082,
-        "deutan": 0.078,
-        "tritan": 0.079,
-        "grayscale": 0.079
+        "normal": 0.069,
+        "protan": 0.071,
+        "deutan": 0.068,
+        "tritan": 0.069,
+        "grayscale": 0.069
       },
       "floor": 0.03,
       "passed": true
@@ -3614,11 +3662,11 @@
     {
       "name": "ANSI cyan/bright cyan",
       "deltaEOK": {
-        "normal": 0.076,
-        "protan": 0.079,
-        "deutan": 0.074,
-        "tritan": 0.076,
-        "grayscale": 0.076
+        "normal": 0.058,
+        "protan": 0.06,
+        "deutan": 0.058,
+        "tritan": 0.058,
+        "grayscale": 0.058
       },
       "floor": 0.03,
       "passed": true
@@ -3626,16 +3674,36 @@
   ],
   "accentProximityReview": [
     {
+      "pair": "olive/gold",
+      "deltaEOK": 0.0
+    },
+    {
       "pair": "olive/ochre",
-      "deltaEOK": 0.036
+      "deltaEOK": 0.0
+    },
+    {
+      "pair": "olive/clay",
+      "deltaEOK": 0.0
+    },
+    {
+      "pair": "gold/ochre",
+      "deltaEOK": 0.0
+    },
+    {
+      "pair": "gold/clay",
+      "deltaEOK": 0.0
+    },
+    {
+      "pair": "ochre/clay",
+      "deltaEOK": 0.0
+    },
+    {
+      "pair": "aqua/blue",
+      "deltaEOK": 0.039
     },
     {
       "pair": "sage/aqua",
-      "deltaEOK": 0.044
-    },
-    {
-      "pair": "olive/sage",
-      "deltaEOK": 0.047
+      "deltaEOK": 0.05
     }
   ]
 }

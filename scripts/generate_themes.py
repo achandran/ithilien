@@ -167,12 +167,12 @@ def generate_claude_theme(palette: dict) -> None:
         palette["backgrounds"], palette["foregrounds"], palette["accents"], palette["diff"]
     )
     overrides = {
-        "claude": accent["ochre"], "claudeShimmer": accent["gold"],
+        "claude": accent["coral"] if palette["polarity"] == "light" else accent["ochre"], "claudeShimmer": accent["gold"],
         "text": fg["text"], "inverseText": palette["highlight"]["foreground"],
         "inactive": fg["muted"], "inactiveShimmer": fg["comment"], "subtle": fg["comment"],
         "suggestion": accent["olive"], "permission": accent["gold"],
         "permissionShimmer": accent["ochre"], "remember": accent["mauve"],
-        "success": accent["sage"], "error": accent["coral"], "warning": accent["gold"],
+        "success": palette["ansi"]["brightGreen"] if palette["polarity"] == "light" else accent["sage"], "error": accent["coral"], "warning": palette["ansi"]["brightYellow"] if palette["polarity"] == "light" else accent["gold"],
         "warningShimmer": accent["ochre"], "merged": accent["mauve"],
         "promptBorder": accent["olive"], "promptBorderShimmer": accent["sage"],
         "planMode": accent["blue"], "autoAccept": accent["sage"],
@@ -304,7 +304,7 @@ def generate_color_reference() -> None:
     lines = [
         '# Ithilien Dawn: named colors', '',
         '<!-- Generated from palette/ithilien-dawn.json; do not edit by hand. -->', '',
-        'All **38 distinct sRGB colors** are preserved from Loden Day at `2ec16c0`. '
+        f'All **{len(source["colors"])} named sRGB colors** define the Formex-inspired Dawn palette. '
         'Each color has one single-word name and a documented connection to Tolkien’s work. '
         'The exact shades are design interpretations, not colors measured from the books.', '',
         'Names are limited to Ithilien’s plants, waters, materials and people, plus its '
@@ -325,8 +325,7 @@ def generate_color_reference() -> None:
         'role-to-hex mappings used by existing ports and audits.', '',
         'Neovim also exposes the named palette through '
         '`require("ithilien.ithilien-dawn").colors.Anduin`. '
-        'Dusk and the shared interaction source remain unchanged. Dawn names the shared selection '
-        'Resin/Lebethron while preserving its exact hex pair.', ''])
+        'Dusk and the shared interaction source remain unchanged. Dawn uses its own pale steel selection with dark text.', ''])
     (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
 
 

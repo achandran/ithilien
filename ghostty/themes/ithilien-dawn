@@ -1,31 +1,31 @@
 # Ithilien Dawn — generated from palette/ithilien-dawn.json; do not edit by hand.
 # Warm, readability-first foundations and diff-aware ANSI colors.
 
-palette = 0=#000000
-palette = 1=#84342F
-palette = 2=#405A34
-palette = 3=#5A4006
-palette = 4=#304564
-palette = 5=#67475C
-palette = 6=#204F49
-palette = 7=#F0E9D2
-palette = 8=#53594E
-palette = 9=#A03440
-palette = 10=#456344
-palette = 11=#5C4619
-palette = 12=#405B80
-palette = 13=#75516F
-palette = 14=#28665F
-palette = 15=#F7F0DF
-palette = 16=#795B28
-palette = 17=#88483E
+palette = 0=#25292B
+palette = 1=#8B3037
+palette = 2=#274D39
+palette = 3=#624819
+palette = 4=#274A62
+palette = 5=#60425E
+palette = 6=#255354
+palette = 7=#F6F6F3
+palette = 8=#596166
+palette = 9=#A3373E
+palette = 10=#315F46
+palette = 11=#795922
+palette = 12=#345E77
+palette = 13=#70516D
+palette = 14=#306466
+palette = 15=#FDFDFA
+palette = 16=#795922
+palette = 17=#A3373E
 
-background = #F0E9D2
-foreground = #000000
-cursor-color = #B17232
-cursor-text = #000000
-selection-background = #B17232
-selection-foreground = #000000
+background = #F6F6F3
+foreground = #25292B
+cursor-color = #B3CBD8
+cursor-text = #25292B
+selection-background = #B3CBD8
+selection-foreground = #25292B
 
 font-family = Berkeley Mono
 font-thicken = true

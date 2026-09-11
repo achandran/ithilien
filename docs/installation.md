@@ -8,11 +8,14 @@ Copy `ghostty/themes/ithilien-dusk` and `ghostty/themes/ithilien-dawn` into `~/.
 theme = light:ithilien-dawn,dark:ithilien-dusk
 ```
 
-The generated dark theme uses Berkeley Mono Retina without font thickening. The light theme uses Berkeley Mono with `font-thicken = true`, `faint-opacity = 1` to protect agent deletion text, and `minimum-contrast = 4.5` for unexpected terminal pairs. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text remains black.
+The generated dark theme uses Berkeley Mono Retina without font thickening. The light theme uses Berkeley Mono with `font-thicken = true`, `faint-opacity = 1` to protect agent deletion text, and `minimum-contrast = 4.5` for unexpected terminal pairs. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is dark graphite.
 
 ## Neovim and LazyVim
 
-Copy `nvim/lazyvim-plugin.lua` into your LazyVim plugin specifications, then run `:Lazy sync`. The spec installs `achandran/ithilien` and its Kanso dependency directly from GitHub. Select `ithilien`, `ithilien-dawn`, or `ithilien-dusk` with `:colorscheme`; `ithilien` defaults to Ithilien Dawn.
+For the current development version, use branch `design/formex-dawn` once published, or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Add `vim.opt.diffopt:append("inline:char")` to your configuration; the colorscheme itself does not change your diff algorithm.
+
+
+Copy `nvim/lazyvim-plugin.lua` into your LazyVim plugin specifications, then run `:Lazy sync`. The spec installs `achandran/ithilien` with Zenbones and Lush for Dawn, and Kanso for Dusk directly from GitHub. Select `ithilien`, `ithilien-dawn`, or `ithilien-dusk` with `:colorscheme`; `ithilien` defaults to Ithilien Dawn.
 
 On macOS, the included LazyVim spec also follows system appearance changes in running Neovim sessions. Install its native watcher first:
 

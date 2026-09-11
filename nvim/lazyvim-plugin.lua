@@ -2,7 +2,7 @@
 return {
   {
     "achandran/ithilien",
-    dependencies = { "webhooked/kanso.nvim" },
+    dependencies = { "webhooked/kanso.nvim", "zenbones-theme/zenbones.nvim", "rktjmp/lush.nvim" },
     lazy = false,
     priority = 1000,
     opts = {

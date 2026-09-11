@@ -1,6 +1,7 @@
 -- Exercise Neovim's real character-level diff engine, not hand-assigned spans.
 -- KANSO_ROOT=/path/to/kanso.nvim nvim --headless -u NONE -i NONE -l scripts/check_day_diff.lua
-vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT, 'Set KANSO_ROOT'))
+vim.opt.rtp:prepend(assert(vim.env.ZENBONES_ROOT, 'Set ZENBONES_ROOT'))
+vim.opt.rtp:prepend(assert(vim.env.LUSH_ROOT, 'Set LUSH_ROOT'))
 vim.opt.rtp:prepend(vim.fn.getcwd())
 require('ithilien').load('day')
 vim.opt.diffopt = 'internal,filler,closeoff,inline:char'
@@ -12,6 +13,7 @@ local cases = {
   {name='trailing space', before='return value', after='return value ', old={}, new={13}},
   {name='operator replacement', before='ready && valid', after='ready || valid', old={7,8}, new={7,8}},
 }
+table.insert(cases,{name='Unicode prefix with digit edit',before='π = 2',after='π = 3',old={6},new={6}})
 local result = {version=vim.version(), diffopt=vim.o.diffopt, cases={}}
 for _,case in ipairs(cases) do
   vim.cmd('only!')
@@ -34,7 +36,7 @@ for _,case in ipairs(cases) do
       local name=vim.fn.synIDattr(id,'name')
       if name=='DiffText' or name=='DiffTextAdd' then
         local hl=vim.api.nvim_get_hl(0,{name=name,link=false})
-        assert(hl.fg==0 and hl.underline, 'Inline diff must be black and underlined')
+        assert(hl.fg==tonumber(require('ithilien.ithilien-dawn').raw.foregrounds.text:sub(2),16) and hl.underline and hl.bold, 'Inline diff must be dark and underlined')
         table.insert(cells,{column=col,text=side[3]:sub(col,col),group=name})
       end
     end
@@ -45,6 +47,28 @@ for _,case in ipairs(cases) do
   table.insert(result.cases,captured)
   vim.cmd('diffoff!')
 end
-vim.fn.writefile({vim.json.encode(result)},'reports/day-refinement/native-diffs.json')
-print(#cases..' native character-diff cases passed; exact changed cells black and underlined')
+-- Multiline case with unchanged context between two changed lines.
+vim.cmd('only!')
+vim.api.nvim_buf_set_lines(0,0,-1,false,{'limit = 2','-- unchanged','retry = 4'})
+vim.cmd('diffthis')
+local left=vim.api.nvim_get_current_win()
+vim.cmd('vnew')
+vim.api.nvim_buf_set_lines(0,0,-1,false,{'limit = 3','-- unchanged','retry = 5'})
+vim.cmd('diffthis')
+local right=vim.api.nvim_get_current_win()
+vim.cmd('diffupdate')
+for _,win in ipairs({left,right}) do
+ vim.api.nvim_set_current_win(win)
+ for _,lnum in ipairs({1,3}) do
+  for col=1,9 do
+   local group=vim.fn.synIDattr(vim.fn.diff_hlID(lnum,col),'name')
+   assert((group=='DiffText')==(col==9),'Multiline changed cell mismatch')
+  end
+ end
+ assert(vim.fn.diff_hlID(2,1)==0,'Unchanged context highlighted')
+end
+result.multilinePassed=true
+vim.cmd('diffoff!')
+vim.fn.writefile({vim.json.encode(result)},'reports/formex-dawn-native-diffs.json')
+print((#cases+1)..' native character-diff cases passed; exact changed cells dark and underlined')
 vim.cmd('qa!')

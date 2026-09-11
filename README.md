@@ -1,24 +1,24 @@
 # Ithilien
 
-Warm coding themes for long sessions and precise diffs.
+Coding themes for long sessions and precise diffs. Dawn draws on the Formex Reef GMT white dial and steel bracelet, with Zenbones typography.
 
 | Theme | Canvas | Main text |
 | --- | --- | --- |
-| **Dawn** · light | `#F0E9D2` | `#000000` |
+| **Dawn** · light | `#F6F6F3` | `#25292B` |
 | **Dusk** · dark | `#171812` | `#C9BA99` |
 
 ## Dawn palette
 
-38 colors named for Ithilien’s plants, landscape, people and immediate neighbours.
+Named colors drawn for Ithilien’s plants, landscape, people and immediate neighbours.
 
-![Ithilien Dawn: all 38 colors with names, hex values and roles](assets/ithilien-dawn-palette.svg)
+![Ithilien Dawn: named colors with names, hex values and roles](assets/ithilien-dawn-palette.svg)
 
 [Text palette and name sources](docs/palette-names.md) · [Interactive palette lab](palette-preview.html)
 
 ## Reading and diffs
 
-- Warm surfaces and restrained syntax colors; Dawn uses black main text.
-- Distinct added, removed and changed lines. Dawn’s exact changed characters are **black and underlined** in Neovim; selected text stays black.
+- Neutral-white Dawn surfaces and restrained syntax; dark graphite foregrounds, including selections and status lines.
+- Distinct added, removed and changed lines. Dawn’s exact changed characters are **dark and underlined** in Neovim; selected text stays dark.
 
 ## Install
 
@@ -54,3 +54,7 @@ uv run python -m unittest discover -s tests
 Edit the [canonical palettes](palette/), then rebuild; generated themes, palette chart and reference update together. Dawn stores each hex once under `colors`; roles reference names.
 
 [Dawn audit](reports/ithilien-dawn-audit.md) · [Dusk audit](reports/ithilien-dusk-audit.md) · [Python review](reports/python-review/README.md)
+
+## Formex Dawn development
+
+The selected Neutral white palette is implemented on `design/formex-dawn`. See [implementation report](reports/formex-dawn-implementation.md) for verification and remaining native application checks. The bundled wallpaper and shared Firefox/system-selection files still represent the prior theme; they are not part of this Dawn milestone.

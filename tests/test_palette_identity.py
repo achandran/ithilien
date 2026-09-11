@@ -1,4 +1,4 @@
-"""Protect the exact pre-rename colors and role assignments from commit 2ec16c0."""
+"""Freeze the selected Formex Dawn and original Dusk."""
 import hashlib
 import json
 import sys
@@ -10,13 +10,13 @@ from ithilienlib import load_palette
 
 # Names may evolve; canonical colors, polarity and semantic assignments are frozen.
 # Updating these fingerprints must accompany an explicitly intended palette change.
-EXPECTED = {'dawn': '87de8b1e8f4b98312648fad7a9c2c930e98a1a97ca32bef8324556d91094b698', 'dusk': 'a9c201a636befd4d5036864ac9557eff3d6f2d5098824ac002e294df56431e90'}
+EXPECTED = {'dawn': '480ddb01869f762c08c698f1e943d05274631e9e79b29f178cdf245216549227', 'dusk': 'a9c201a636befd4d5036864ac9557eff3d6f2d5098824ac002e294df56431e90'}
 
 class PaletteIdentity(unittest.TestCase):
-    def test_rename_preserves_both_palettes(self):
+    def test_selected_dawn_and_original_dusk(self):
         for variant, expected in EXPECTED.items():
             with self.subTest(variant=variant):
                 palette = load_palette('ithilien-' + variant)
                 palette = {k: v for k, v in palette.items() if k not in {'name', 'slug'}}
                 actual = hashlib.sha256(json.dumps(palette, sort_keys=True).encode()).hexdigest()
-                self.assertEqual(actual, expected, 'Palette or semantic role changed since 2ec16c0')
+                self.assertEqual(actual, expected, 'Palette changed from approved neutral Dawn / original Dusk baseline')

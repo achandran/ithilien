@@ -11,6 +11,7 @@ end
 
 function M.load(variant)
   local is_light = variant == "dawn" or variant == "day" or variant == "light"
+  if is_light then return require("ithilien.dawn").load(M.config) end
   local palette = require(is_light and "ithilien.ithilien-dawn" or "ithilien.ithilien-dusk")
   local raw = palette.raw
   local bg, fg, accent, diff = raw.backgrounds, raw.foregrounds, raw.accents, raw.diff

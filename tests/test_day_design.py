@@ -25,7 +25,7 @@ class DayDesign(unittest.TestCase):
 
     def test_mantle_comment_regression_is_rejected(self):
         p=copy.deepcopy(load_palette('ithilien-dawn'))
-        p['foregrounds']['comment']='#62695F'  # passes base, fails mantle
+        p['foregrounds']['comment']='#717171'  # passes base, fails mantle
         self.assertGreaterEqual(wcag(p['foregrounds']['comment'],p['backgrounds']['base']),4.5)
         self.assertIn('comment on mantle',self.audit(p)['failures'])
 
@@ -45,35 +45,35 @@ class DayDesign(unittest.TestCase):
         with patch.object(audit_palette,'wcag',side_effect=contrast):
             self.assertIn('comments',self.audit(p)['failures'])
 
-    def test_inline_diff_foreground_is_black(self):
+    def test_inline_diff_foreground_is_graphite(self):
         p=load_palette('ithilien-dawn')
-        self.assertEqual(p['diff']['inlineForeground'], '#000000')
+        self.assertEqual(p['diff']['inlineForeground'], '#25292B')
         for state in ('add', 'delete', 'change'):
-            self.assertGreaterEqual(wcag('#000000',p['diff'][state+'Emphasis']),7.0)
+            self.assertGreaterEqual(wcag('#25292B',p['diff'][state+'Emphasis']),7.0)
 
-    def test_black_main_text_on_parchment(self):
+    def test_graphite_main_text_on_neutral_white(self):
         p=load_palette('ithilien-dawn')
-        self.assertEqual(p['backgrounds']['base'], '#F0E9D2')
-        self.assertEqual(p['foregrounds']['text'], '#000000')
-        self.assertEqual(p['foregrounds']['bright'], '#000000')
+        self.assertEqual(p['backgrounds']['base'], '#F6F6F3')
+        self.assertEqual(p['foregrounds']['text'], '#25292B')
+        self.assertEqual(p['foregrounds']['bright'], '#25292B')
         self.assertNotEqual(p['foregrounds']['comment'],p['foregrounds']['text'])
-        self.assertEqual(p['diff']['contextForeground'], '#000000')
+        self.assertEqual(p['diff']['contextForeground'], '#25292B')
 
     def test_terminal_endpoint_collapse_is_rejected(self):
         p=copy.deepcopy(load_palette('ithilien-dawn'))
-        p['ansi']['white']=p['ansi']['brightWhite']='#000000'
+        p['ansi']['white']=p['ansi']['brightWhite']='#25292B'
         self.assertIn('ANSI white on black',self.audit(p)['failures'])
 
     def test_syntax_on_added_lines_is_gated(self):
         p=copy.deepcopy(load_palette('ithilien-dawn'))
         p['diff']['addBackground']='#B2CCA4'
-        self.assertIn('diff add syntax ochre',self.audit(p)['failures'])
+        self.assertIn('diff add syntax comment',self.audit(p)['failures'])
 
     def test_changed_line_does_not_merge_with_canvas(self):
         p=load_palette('ithilien-dawn')
         # A design regression floor in normal vision, not a WCAG requirement.
         self.assertGreaterEqual(delta_e(p['diff']['changeBackground'],p['backgrounds']['base']),0.03)
-        self.assertGreaterEqual(wcag(p['highlight']['background'],p['diff']['changeBackground']),3.0)
+        self.assertGreaterEqual(wcag(p['highlight']['border'],p['diff']['changeBackground']),3.0)
 
     def test_surface_order(self):
         p=load_palette('ithilien-dawn')['backgrounds']
