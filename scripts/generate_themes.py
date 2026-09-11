@@ -228,8 +228,8 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
               f"bg+:{highlight['background']},fg+:{highlight['foreground']},"
               f"hl:{fg['text']}:underline,hl+:{highlight['foreground']}:underline,"
               f"info:{fg['text']},header:{fg['text']},border:{fg['comment']},"
-              f"prompt:{highlight.get('cursor', palette['accents']['coral'])},pointer:{highlight['foreground']},"
-              f"marker:{highlight['foreground']},spinner:{highlight.get('cursor', palette['accents']['coral'])},"
+              f"prompt:{highlight.get('cursor', palette['accents']['coral'])},pointer:{fg['text'] if palette['polarity'] == 'light' else highlight['foreground']},"
+              f"marker:{fg['text'] if palette['polarity'] == 'light' else highlight['foreground']},spinner:{highlight.get('cursor', palette['accents']['coral'])},"
               f"gutter:{bg['base']},query:{fg['text']}")
     with shell.open("a") as output:
         output.write(
@@ -352,7 +352,7 @@ def generate_color_reference() -> None:
         'role-to-hex mappings used by existing ports and audits.', '',
         'Neovim also exposes the named palette through '
         '`require("ithilien.ithilien-dawn").colors.Anduin`. '
-        'Dusk and the shared interaction source remain unchanged. Dawn uses its own pale steel selection with dark text.', ''])
+        'Dusk and the shared interaction source remain unchanged. Dawn uses Briar selection and block cursors with white text.', ''])
     (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
 
 

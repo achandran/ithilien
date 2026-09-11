@@ -183,10 +183,4 @@
 <text x="384" y="754" fill="#000000" font-weight="700">Morgulduin</text>
 <text x="384" y="776" fill="#000000" >#255354</text>
 <text x="384" y="800" fill="#444D52" >ansi.cyan</text>
-<rect x="606" y="730" width="282" height="84" fill="#FFFFFF"/>
-<rect x="616" y="740" width="50" height="64" fill="#505456"/>
-<rect x="617" y="741" width="48" height="62" fill="#9FA9A4"/>
-<text x="678" y="754" fill="#000000" font-weight="700">Ranger</text>
-<text x="678" y="776" fill="#000000" >#9FA9A4</text>
-<text x="678" y="800" fill="#444D52" >highlight.background</text>
 </svg>

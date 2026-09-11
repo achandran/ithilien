@@ -18,15 +18,15 @@
 				<key>foreground</key>
 				<string>#000000</string>
 				<key>caret</key>
-				<string>#AD2F38</string>
+				<string>#8B3037</string>
 				<key>selection</key>
-				<string>#9FA9A4</string>
+				<string>#8B3037</string>
 				<key>invisibles</key>
 				<string>#505456</string>
 				<key>lineHighlight</key>
 				<string>#F0F1EF</string>
 				<key>selectionForeground</key>
-				<string>#000000</string>
+				<string>#FFFFFF</string>
 			</dict>
 		</dict>
 		<dict>

@@ -30,9 +30,9 @@ class GhosttyCursor(unittest.TestCase):
                 self.assert_readable(generated)
                 self.assertEqual(generated, settings(ROOT / relative))
                 if variant == 'dawn':
-                    self.assertEqual(generated['cursor-text'], palette['foregrounds']['text'])
+                    self.assertEqual(generated['cursor-text'], '#FFFFFF')
                     self.assertEqual(generated['cursor-style'], 'block')
-                    self.assertEqual(generated['cursor-color'], '#9FA9A4')
+                    self.assertEqual(generated['cursor-color'], '#8B3037')
                     # User reproduced black-on-black vicmd cells with 4.5;
                     # static pair contrast alone does not cover the renderer.
                     self.assertEqual(generated['minimum-contrast'], '1')

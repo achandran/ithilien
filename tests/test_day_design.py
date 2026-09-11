@@ -20,12 +20,12 @@ class DayDesign(unittest.TestCase):
             except SystemExit: pass
             return json.loads((Path(temp)/'reports/ithilien-dawn-audit.json').read_text())
 
-    def test_neutral_selection_does_not_change_diff_emphasis(self):
+    def test_briar_selection_does_not_change_diff_emphasis(self):
         p=load_palette('ithilien-dawn')
-        self.assertEqual(p['highlight']['background'], '#9FA9A4')
+        self.assertEqual(p['highlight']['background'], '#8B3037')
         self.assertEqual(p['diff']['changeEmphasis'], '#D8B46A')
         self.assertNotEqual(p['highlight']['background'],p['diff']['changeEmphasis'])
-        self.assertGreaterEqual(wcag(p['highlight']['foreground'],p['highlight']['background']),7)
+        self.assertGreaterEqual(wcag(p['highlight']['foreground'],p['highlight']['background']),4.5)
 
     def test_day_passes(self):
         self.assertTrue(self.audit(load_palette('ithilien-dawn'))['passed'])

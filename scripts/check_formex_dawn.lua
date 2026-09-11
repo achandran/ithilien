@@ -19,7 +19,7 @@ local expected=tonumber(raw.foregrounds.text:sub(2),16)
 for _,name in ipairs({'Visual','VisualNOS'}) do
  local h=vim.api.nvim_get_hl(0,{name=name,link=false})
  assert(h.bg==tonumber(raw.highlight.background:sub(2),16),name..' selection background')
- assert(h.fg==expected,name..' selection text')
+ assert(h.fg==tonumber(raw.highlight.foreground:sub(2),16),name..' selection text')
  for _,key in ipairs({'underline','undercurl','underdouble','underdotted','underdashed','reverse','bold','italic','strikethrough'}) do
   assert(not h[key],name..' must be undecorated: '..key)
   assert(not (h.cterm and h.cterm[key]),name..' cterm must be undecorated: '..key)
@@ -31,11 +31,11 @@ for name,h in pairs(snapshot()) do
  assert(not h.reverse,'Reversed group: '..name)
  if h.fg and name~='nvim_set_hl_x_hi_clear_bugfix' then
   local max=math.max(math.floor(h.fg/65536)%256,math.floor(h.fg/256)%256,h.fg%256)
-  assert(max<190,'Light foreground: '..name)
+  assert(max<190 or (h.fg==tonumber(raw.highlight.foreground:sub(2),16) and h.bg==tonumber(raw.highlight.background:sub(2),16)),'Unexpected light foreground: '..name)
  end
  checked=checked+1
 end
-for _,name in ipairs({'Normal','Visual','PmenuSel','PmenuKindSel','PmenuExtraSel','StatusLine','DiffText','DiffTextAdd'}) do
+for _,name in ipairs({'Normal','StatusLine','DiffText','DiffTextAdd'}) do
  assert(vim.api.nvim_get_hl(0,{name=name,link=false}).fg==expected,'Dark foreground role: '..name)
 end
 for _,name in ipairs({'DiffText','DiffTextAdd','GitSignsAddInline','GitSignsDeleteInline','GitSignsChangeInline'}) do
@@ -49,5 +49,5 @@ local dawn=snapshot()
 theme.load('dusk')
 for name,h in pairs(dusk) do assert(vim.deep_equal(h,vim.api.nvim_get_hl(0,{name=name,link=false})),'Dusk changed after switching: '..name) end
 vim.fn.writefile({vim.json.encode({checked=checked,highlights=dawn,duskSwitchUnchanged=true})},'reports/formex-dawn-highlights.json')
-print(checked..' resolved highlights checked; no reversed/light foregrounds; Dusk switching unchanged')
+print(checked..' resolved highlights checked; white foregrounds restricted to Briar backgrounds; Dusk switching unchanged')
 vim.cmd('qa!')

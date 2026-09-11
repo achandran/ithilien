@@ -32,8 +32,7 @@
     "Filbert": "#624819",
     "Cypress": "#274A62",
     "Hyacinth": "#60425E",
-    "Morgulduin": "#255354",
-    "Ranger": "#9FA9A4"
+    "Morgulduin": "#255354"
   },
   "colorNotes": {
     "Lebethron": {
@@ -155,18 +154,14 @@
     "Morgulduin": {
       "meaning": "River through Ithilien\u2019s Morgul valley; dark water.",
       "source": "https://tolkiengateway.net/wiki/Morgulduin"
-    },
-    "Ranger": {
-      "meaning": "The Rangers of Ithilien; interpreted as brushed steel for neutral selection, not a claim about their clothing.",
-      "source": "https://tolkiengateway.net/wiki/Rangers_of_Ithilien"
     }
   },
   "highlight": {
-    "background": "Ranger",
-    "foreground": "Lebethron",
+    "background": "Briar",
+    "foreground": "Lily",
     "border": "Juniper",
-    "cursor": "Rosehip",
-    "cursorBlock": "Ranger"
+    "cursor": "Briar",
+    "cursorBlock": "Briar"
   },
   "backgrounds": {
     "crust": "Osgiliath",

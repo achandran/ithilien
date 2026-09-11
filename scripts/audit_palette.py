@@ -80,7 +80,7 @@ def main(variant: str = "ithilien-dusk") -> None:
           for surface in ("mantle", "surface0", "surface1")],
         *[(f"git {state} sign", diff[f"{state}Foreground"], backgrounds["base"], 4.5, 0)
           for state in ("add", "delete", "change")],
-        *[(f"status {name}", foregrounds["text"] if day else backgrounds["base"], highlight["background"] if day else accents[name], 4.5, 0)
+        *[(f"status {name}", highlight["foreground"] if day else backgrounds["base"], highlight["background"] if day else accents[name], 4.5, 0)
           for name in ("olive", "sage", "mauve", "coral", "gold")],
     ]
     observations = [dict(name=n, foreground=f, background=b, wcag=round(wcag(f,b),2),

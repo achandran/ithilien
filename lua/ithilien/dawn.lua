@@ -111,8 +111,8 @@ require('kanso').load('pearl')
 vim.g.colors_name='ithilien-dawn'
 local function hi(name, spec) vim.api.nvim_set_hl(0, name, spec) end
 local groups = {
-  Cursor={fg=p.fg,bg=raw.highlight.cursorBlock,sp=raw.highlight.cursor,underline=true},
-  lCursor={fg=p.fg,bg=raw.highlight.cursorBlock,sp=raw.highlight.cursor,underline=true},
+  Cursor={fg=raw.highlight.foreground,bg=raw.highlight.cursorBlock,sp=raw.highlight.cursor,underline=true},
+  lCursor={fg=raw.highlight.foreground,bg=raw.highlight.cursorBlock,sp=raw.highlight.cursor,underline=true},
   Normal = {fg=p.fg,bg=p.bg}, NormalNC={fg=p.fg,bg=p.bg},
   NormalFloat={fg=p.fg,bg=p.raised}, FloatBorder={fg=p.border,bg=p.raised},
   Comment={fg=p.muted,italic=config.italic_comments == true},
@@ -124,14 +124,14 @@ local groups = {
   Statement={fg=p.fg,bold=true}, Special={fg=p.blue}, Constant={fg=p.fg},
   LineNr={fg=p.muted}, CursorLineNr={fg=p.fg,bold=true}, CursorLine={bg=p.line},
   SignColumn={bg=p.bg}, NonText={fg=p.border}, Whitespace={fg=p.border},
-  WinSeparator={fg=p.border}, Visual={fg=p.fg,bg=p.selection},
+  WinSeparator={fg=p.border}, Visual={fg=raw.highlight.foreground,bg=p.selection},
   VisualNOS={link="Visual"},
   Search={fg=p.fg,bg=p.search}, IncSearch={fg=p.fg,bg=p.search,bold=true,underline=true},
   CurSearch={fg=p.fg,bg=p.search,bold=true,underline=true},
-  MatchParen={fg=p.fg,bg=p.selection,bold=true,underline=true},
+  MatchParen={fg=raw.highlight.foreground,bg=p.selection,bold=true,underline=true},
   StatusLine={fg=p.fg,bg=p.surface},StatusLineNC={fg=p.muted,bg=p.surface},
-  Pmenu={fg=p.fg,bg=p.raised},PmenuSel={fg=p.fg,bg=p.selection,bold=true},
-  PmenuKindSel={fg=p.fg,bg=p.selection},PmenuExtraSel={fg=p.fg,bg=p.selection},
+  Pmenu={fg=p.fg,bg=p.raised},PmenuSel={fg=raw.highlight.foreground,bg=p.selection,bold=true},
+  PmenuKindSel={fg=raw.highlight.foreground,bg=p.selection},PmenuExtraSel={fg=raw.highlight.foreground,bg=p.selection},
   Folded={fg=p.muted,bg=p.surface},
   DiffAdd={fg=p.fg,bg=p.add},DiffDelete={fg=p.fg,bg=p.delete},IthilienDiffFiller={fg=p.border,bg=p.delete},
   DiffChange={fg=p.fg,bg=p.change},DiffText={fg=p.fg,bg=p.change_emph},
@@ -170,7 +170,7 @@ hi('Underlined',{fg=p.blue,underline=true})
 for i,color in ipairs(p.ansi) do vim.g['terminal_color_'..(i-1)]=color end
 
 -- Kanso's plugin inventory includes reversed labels. Dawn never uses
--- light foregrounds on dark surfaces: normalize inherited reverse groups and
+-- light foregrounds except explicit Briar interaction pairs: normalize reverse groups and
 -- pale foregrounds, while retaining explicit dark semantic colors.
 local function luminance(hex)
  local function ch(n) n=n/255; return n<=0.04045 and n/12.92 or ((n+0.055)/1.055)^2.4 end
@@ -178,7 +178,8 @@ local function luminance(hex)
 end
 for name,h in pairs(vim.api.nvim_get_hl(0,{})) do
  if not h.link then
-  if h.reverse or (h.fg and luminance(h.fg)>.3) or (h.bg and luminance(h.bg)<.3) then
+  local interaction = h.fg==tonumber(raw.highlight.foreground:sub(2),16) and h.bg==tonumber(raw.highlight.background:sub(2),16)
+  if not interaction and (h.reverse or (h.fg and luminance(h.fg)>.3) or (h.bg and luminance(h.bg)<.3)) then
    h.reverse=nil; h.fg=tonumber(p.fg:sub(2),16)
    if h.bg then h.bg=tonumber(p.surface:sub(2),16) end
    hi(name,h)
