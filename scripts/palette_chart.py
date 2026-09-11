@@ -9,16 +9,16 @@ def generate_chart():
     p = load_palette('ithilien-dawn')
     d = review_day.Drawing()
     groups = [
-        ('Surfaces and text', [('backgrounds.base','Canvas / popups'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Muted text / borders')]),
-        ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict')]),
+        ('Surfaces and Text', [('backgrounds.base','Canvas / popups'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Muted text / borders')]),
+        ('Terminal Colors', [('ansi.red','Red'),('ansi.green','Green'),('ansi.yellow','Yellow'),('ansi.blue','Blue'),('ansi.magenta','Magenta'),('ansi.cyan','Cyan')]),
         ('Diffs', [('diff.addBackground','Added line'),('diff.deleteBackground','Deleted line'),('diff.changeBackground','Changed line'),('diff.changeEmphasis','Edited characters')]),
-        ('Terminal colors', [('ansi.red','Red'),('ansi.green','Green'),('ansi.yellow','Yellow'),('ansi.blue','Blue'),('ansi.magenta','Magenta'),('ansi.cyan','Cyan')]),
+        ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict')]),
     ]
     columns = 4
     width = 966
     height = 60 + sum(48 + ((len(items)+columns-1)//columns)*146 for _,items in groups)
     d.rect(0, 0, width, height, p['backgrounds']['base'])
-    d.text(24, 18, 'ITHILIEN DAWN / COLOR ROLES', p['foregrounds']['text'], 'bold')
+    d.text(24, 18, 'Ithilien Dawn', p['foregrounds']['text'], 'bold')
     top = 66
     seen = set()
     for title, items in groups:
