@@ -1,0 +1,89 @@
+"""Compare original Neovim themes with identical fixtures; never recolor captures."""
+import argparse
+import hashlib
+import html
+import json
+from pathlib import Path
+import shutil
+import subprocess
+from evaluate_theme import capture
+from evaluation_checks import effective_colors
+from ithilienlib import ROOT, wcag
+
+
+def check_adapter(adapter):
+    resolved=dict(adapter,paths=[(ROOT/p).resolve() for p in adapter['paths']])
+    for path,pin in adapter.get('pins',{}).items():
+        actual=subprocess.check_output(['git','-C',str(ROOT/path),'rev-parse','HEAD'],text=True).strip()
+        if actual!=pin:raise ValueError(f'{path}: expected {pin}, found {actual}')
+        if subprocess.check_output(['git','-C',str(ROOT/path),'status','--porcelain'],text=True).strip():
+            raise ValueError(f'{path}: dependency has local changes')
+    return resolved
+
+
+def assess(shot):
+    pairs={}; low=0; text_count=0
+    for cell in shot['cells']:
+        if not cell['text'].strip():continue
+        fg,bg=effective_colors(shot,cell)
+        contrast=wcag(f'#{fg:06x}',f'#{bg:06x}')
+        pairs[f'{fg:06x}/{bg:06x}']=round(contrast,3)
+        text_count+=1; low+=contrast<4.5
+    errors=[]
+    if shot.get('require_syntax') and len(shot['syntax_groups'])<3:errors.append('Python syntax missing')
+    # Measure backgrounds without imposing Ithilien's preferred hues or decorations.
+    h=shot['highlights']; separation={}
+    for first,second in [('DiffText','DiffChange'),('Search','DiffText'),('Visual','DiffText')]:
+        def bg(name):
+            g=h[name];return g.get('fg' if g.get('reverse') else 'bg',shot['defaults']['bg'])
+        a,b=bg(first),bg(second)
+        separation[first+'/'+second]=round(wcag(f'#{a:06x}',f'#{b:06x}'),3)
+    return {'case':shot['case'],'width':shot['width'],'state':shot['state'],'errors':errors,'visible_nonspace_cells':text_count,'cells_below_4_5':low,'pair_contrasts':pairs,'background_contrast':separation}
+
+
+def render(shot):
+    rows={}
+    for c in shot['cells']:
+        fg,bg=effective_colors(shot,c);a=shot['attrs'].get(c['attr'],{})
+        style=f'color:#{fg:06x};background:#{bg:06x};'
+        for key,css in [('bold','font-weight:bold;'),('italic','font-style:italic;'),('underline','text-decoration:underline;')]:
+            if a.get(key):style+=css
+        rows.setdefault(c['row'],[]).append(f'<span style="{style}">{html.escape(c["text"])}</span>')
+    return '<pre>'+'\n'.join(''.join(row) for row in rows.values())+'</pre>'
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--manifest',type=Path,default=ROOT/'evaluation/themes.json')
+    p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/comparison')
+    p.add_argument('--themes',nargs='+');p.add_argument('--nvim',default=shutil.which('nvim'))
+    args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
+    adapters=json.loads(args.manifest.read_text())
+    if args.themes:
+        unknown=set(args.themes)-{a['id'] for a in adapters}
+        if unknown:p.error('Unknown themes: '+', '.join(sorted(unknown)))
+        adapters=[a for a in adapters if a['id'] in args.themes]
+    cases=json.loads((ROOT/'evaluation/cases.json').read_text()); reports=[];screens={};failed=False
+    for adapter in adapters:
+        print('Rendering '+adapter['id'],flush=True)
+        resolved=check_adapter(adapter); shots=[]
+        for case in cases:
+            for width in (100,160):
+                for state in ('diff','search','selection','selection-char','selection-block'):
+                    shot=capture(case,width,state,args.nvim,None,resolved);shots.append(shot)
+                    screens.setdefault((case['id'],width,state),[]).append((adapter['id'],shot))
+        checks=[assess(s) for s in shots];failed|=any(c['errors'] for c in checks)
+        reports.append({'theme':adapter,'captures':len(shots),'checks':checks})
+        (args.output/(adapter['id']+'.cells.json')).write_text(json.dumps(shots,ensure_ascii=False))
+    report={'mode':'original-theme','nvim':subprocess.check_output([args.nvim,'--version'],text=True).splitlines()[0],
+        'corpus_sha256':hashlib.sha256(json.dumps(cases,sort_keys=True).encode()+b''.join((ROOT/'evaluation'/c[s]).read_bytes() for c in cases for s in ('before','after'))).hexdigest(),
+        'themes':reports,'coverage':{'neovim':'builtin syntax, initial viewport','codex':'not run by comparison runner','ghostty':'blocked: Computer Use policy','treesitter_lsp':'not implemented','comfort':'unverified'},
+        'interpretation':'Contrast flags are observations, not a theme ranking. Background contrast does not measure hue separation. Browser cell reconstructions are not terminal screenshots.'}
+    (args.output/'report.json').write_text(json.dumps(report,indent=2))
+    blocks=[]
+    for (case,width,state),entries in screens.items():
+        blocks.append(f'<details><summary>{html.escape(case)} / {width} / {state}</summary>'+''.join('<h3>'+html.escape(name)+'</h3>'+render(shot) for name,shot in entries)+'</details>')
+    (args.output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme comparison</title><style>body{background:#eee;font:16px sans-serif;padding:20px}pre{font:14px/1.4 monospace;overflow:auto}summary{padding:12px;cursor:pointer}details{border-bottom:1px solid #aaa}</style><h1>Original theme comparison</h1><p>Identical native Neovim cells. Expand a fixture to compare themes. No Ithilien diff helper or palette overrides. Contrast observations and coverage gaps are in report.json.</p>'+''.join(blocks))
+    print(f'{sum(r["captures"] for r in reports)} captures; report: {args.output}')
+    return int(failed)
+if __name__=='__main__':raise SystemExit(main())

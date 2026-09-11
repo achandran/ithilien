@@ -67,3 +67,20 @@ class PythonCoverage(unittest.TestCase):
         self.assertTrue(state_failures(shot,load_palette('ithilien-dawn')))
         shot['syntax_groups']=['pythonStatement','pythonString','pythonComment']
         self.assertFalse(state_failures(shot,load_palette('ithilien-dawn')))
+
+class ThemeComparison(unittest.TestCase):
+    def test_contrast_uses_rendered_colors_not_ithilien_roles(self):
+        import sys
+        sys.path.insert(0,str(ROOT/'scripts'))
+        from compare_themes import assess
+        shot={'case':'test','width':10,'state':'diff','defaults':{'fg':0,'bg':0xffffff},'attrs':{1:{'foreground':0xffffff,'background':0}},'cells':[{'text':'x','attr':1}], 'highlights':{g:{'bg':0xffffff} for g in ('DiffText','DiffChange','Search','Visual')}}
+        self.assertEqual(assess(shot)['cells_below_4_5'],0)
+        shot['attrs'][1]['foreground']=0x111111
+        self.assertEqual(assess(shot)['cells_below_4_5'],1)
+
+    def test_four_named_theme_adapters(self):
+        entries=json.loads((ROOT/'evaluation/themes.json').read_text())
+        self.assertEqual(len({e['id'] for e in entries}),4)
+        for entry in entries:
+            self.assertTrue(entry['setup'])
+            for pin in entry['pins'].values():self.assertRegex(pin,r'^[a-f0-9]{40}$')

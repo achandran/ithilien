@@ -48,3 +48,20 @@ Complete Codex conversations and tool/error/approval output; Claude Code renderi
 ## Python priority
 
 Python is the primary language: eight of eleven Neovim cases are Python, and four of five Codex specimens are Python. Dedicated fixtures cover decorators, dataclasses, annotations, optional/union types, f-strings, async/await, context managers, exception chaining, comprehensions, regex/string escapes, lambdas, and match/case. Their before/after code is parsed for validity and checked for coverage of these constructs. Neovim also asserts syntax groups are active before checking rendered colors. The runner currently uses built-in Neovim syntax, not Tree-sitter or LSP semantic tokens; those integrations remain a separate coverage gap.
+
+## Compare arbitrary Neovim themes
+
+```sh
+uv run python scripts/compare_themes.py
+# Limit the run or use your own adapter manifest:
+uv run python scripts/compare_themes.py --themes kanso-pearl modus-operandi
+uv run python scripts/compare_themes.py --manifest /path/to/themes.json --output /path/to/results
+```
+
+`themes.json` defines local runtime paths (relative to the Ithilien repository), pinned dependency revisions, source URLs and trusted Lua setup code. Clone each source to its specified path and check out its pinned revision before running. The default manifest uses sibling directories `kanso`, `eval-gruvbox` and `eval-modus`. Adapters execute code: only use trusted manifests and themes. To add a theme, supply a unique `id`, `paths`, `pins`, and `setup`. The working Ithilien checkout is deliberately unpinned to support candidate iteration; external dependencies must be clean and match their pins.
+
+This first comparison mode preserves original theme highlights. It applies the same editor fixture settings to everyone and does not load Ithilien's diff presentation helper. It does not map competitors onto Ithilien's palette. The Modus entry is miikanissi's Neovim port, default `modus_operandi`, not the original Emacs implementation. Gruvbox Material uses light mode and the soft background variant; all other options remain upstream defaults.
+
+The run produces 440 native UI captures, per-theme cell JSON, an expandable matched-fixture gallery and a machine-readable report. Below-4.5 contrast counts include structural characters and are observations, not pass/fail rankings. Background contrast ratios are not perceptual hue distances or comfort scores. Syntax failures fail the run; measured accessibility concerns remain in the report so comparison can complete. Missing dependencies or renderer failures also fail the command rather than silently omit a theme.
+
+Comparison currently covers built-in Neovim syntax only. Competitor Codex ports, palette-only mode, Tree-sitter/LSP and native Ghostty screenshots are not implemented by this command. The separate Ithilien evaluator retains its existing Codex and exact-character checks.

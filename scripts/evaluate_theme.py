@@ -14,12 +14,13 @@ from ithilienlib import ROOT, load_palette, wcag
 from evaluation_checks import state_failures, compare_reports
 
 
-def capture(case, width, state, nvim_bin, kanso):
+def capture(case, width, state, nvim_bin, kanso, adapter=None):
     def timed_out(*_): raise TimeoutError('Neovim UI capture timed out')
     signal.signal(signal.SIGALRM, timed_out); signal.alarm(10)
     n = pynvim.attach('child', argv=[nvim_bin, '--embed', '--headless', '-n', '-u', 'NONE', '-i', 'NONE'])
     grid, attrs, defaults = {}, {}, {}
     syntax_groups = []
+    highlights = {}
     def notify(name, args):
         if name == 'evaluation_done':
             n.stop_loop(); return
@@ -37,11 +38,16 @@ def capture(case, width, state, nvim_bin, kanso):
                         for _ in range(cell[2] if len(cell) > 2 else 1):
                             grid[row, col] = (cell[0], attr); col += 1
     def setup():
-        nonlocal syntax_groups
+        nonlocal syntax_groups, highlights
         n.ui_attach(width, 30, rgb=True, ext_linegrid=True)
-        n.exec_lua('vim.opt.rtp:prepend(...); vim.opt.rtp:prepend(select(2,...))', str(kanso), str(ROOT))
-        n.command('set termguicolors splitright')
-        n.exec_lua("require('ithilien').load('dawn'); require('ithilien.diff').setup()")
+        n.command('set termguicolors splitright background=light')
+        if adapter:
+            for path in adapter['paths']: n.exec_lua('vim.opt.rtp:prepend(...)',str(path))
+            n.exec_lua(adapter['setup'])
+        else:
+            n.exec_lua('vim.opt.rtp:prepend(...); vim.opt.rtp:prepend(select(2,...))', str(kanso), str(ROOT))
+            n.exec_lua("require('ithilien').load('dawn'); require('ithilien.diff').setup()")
+        highlights = n.exec_lua("local out={}; for _,name in ipairs({'Normal','Visual','Search','DiffAdd','DiffDelete','DiffChange','DiffText'}) do out[name]=vim.api.nvim_get_hl(0,{name=name,link=false}) end; return out")
         n.command('filetype on'); n.command('syntax on')
         before = ROOT/'evaluation'/case['before']; after = ROOT/'evaluation'/case['after']
         n.command('edit '+n.funcs.fnameescape(str(before)))
@@ -52,7 +58,7 @@ def capture(case, width, state, nvim_bin, kanso):
         n.command('diffthis')
         n.command('setlocal nofoldenable')
         n.command('windo setlocal nofoldenable')
-        n.exec_lua("require('ithilien.diff').refresh()")
+        if not adapter: n.exec_lua("require('ithilien.diff').refresh()")
         n.command('normal! gg')
         if state == 'search':
             n.funcs.setreg('/', case.get('search','return\\|font\\|println')); n.command('set hlsearch')
@@ -65,7 +71,7 @@ def capture(case, width, state, nvim_bin, kanso):
         n.exec_lua("local ch=...; vim.defer_fn(function() vim.cmd('redraw!'); vim.rpcnotify(ch,'evaluation_done') end,100)",n.channel_id)
     try:
         n.run_loop(None, notify, setup_cb=setup)
-        result = {'case':case['id'],'width':width,'state':state,'syntax_groups':syntax_groups,'require_syntax':case.get('require_syntax',False),'defaults':defaults,'attrs':attrs,
+        result = {'case':case['id'],'width':width,'state':state,'highlights':highlights,'syntax_groups':syntax_groups,'require_syntax':case.get('require_syntax',False),'defaults':defaults,'attrs':attrs,
                   'cells':[{'row':r,'col':c,'text':t,'attr':a} for (r,c),(t,a) in sorted(grid.items())]}
         assert result['cells'], 'No native UI cells received'
         return result
