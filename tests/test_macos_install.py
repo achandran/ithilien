@@ -16,9 +16,10 @@ class MacOSInstall(unittest.TestCase):
             installer.macos()
             self.assertEqual(run.call_count, 1)
             self.assertFalse(installer.backup.exists())
+            run.side_effect = [subprocess.CompletedProcess([], 0, "old value\n", ""), subprocess.CompletedProcess([], 0, "", ""), subprocess.CompletedProcess([], 0, "0.623529 0.662745 0.643137 Other\n", "")]
             installer.apply = True
             installer.macos()
-            self.assertEqual(run.call_args.args[0], ['/usr/bin/defaults', 'write', '-g', 'AppleHighlightColor', '-string', '0.623529 0.662745 0.643137 Other'])
+            self.assertEqual(run.call_args_list[-2].args[0], ['/usr/bin/defaults', 'write', '-g', 'AppleHighlightColor', '-string', '0.623529 0.662745 0.643137 Other'])
             self.assertEqual(json.loads((installer.backup / 'macos-highlight.json').read_text())['previous'], 'old value')
 
     def test_unchanged_and_non_mac(self):
@@ -33,3 +34,11 @@ class MacOSInstall(unittest.TestCase):
                 installer.macos()
                 self.assertEqual(run.call_count, 1)
                 self.assertFalse(installer.backup.exists())
+
+    def test_successful_command_with_stale_readback_fails(self):
+        with tempfile.TemporaryDirectory() as tmp, patch('install.sys.platform', 'darwin'), patch('install.subprocess.run') as run:
+            run.return_value = subprocess.CompletedProcess([], 0, 'old value\n', '')
+            installer = Installer(Path(tmp), True, ['macos'])
+            self.assertTrue(installer.run())
+            self.assertEqual(installer.count, 0)
+            self.assertTrue((installer.backup / 'macos-highlight.json').exists())

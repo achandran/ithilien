@@ -98,13 +98,18 @@ class Installer:
         if previous == value:
             print('UNCHANGED macOS system highlight')
             return
-        print(f'{"WRITE" if self.apply else "WOULD WRITE"} macOS system highlight: {color}')
+        if not self.apply:
+            print(f'WOULD WRITE macOS system highlight: {color}')
         if self.apply:
             self.backup.mkdir(parents=True, exist_ok=True)
             (self.backup / 'macos-highlight.json').write_text(json.dumps(
                 {'domain': 'NSGlobalDomain', 'key': 'AppleHighlightColor', 'previous': previous}, indent=2) + '\n')
             subprocess.run(['/usr/bin/defaults', 'write', '-g', 'AppleHighlightColor', '-string', value], check=True)
-            print('NEXT macOS: log out and back in if applications retain the old selection color.')
+            verified = subprocess.run(['/usr/bin/defaults', 'read', '-g', 'AppleHighlightColor'], capture_output=True, text=True)
+            if verified.returncode != 0 or verified.stdout.strip() != value:
+                raise ValueError(f'Highlight preference did not persist: expected {value!r}, read {verified.stdout.strip()!r}. Quit System Settings and retry.')
+            print(f'VERIFIED macOS saved highlight preference: {color}')
+            print('NEXT macOS: reopen System Settings to refresh its color picker; log out and back in if apps retain the old color. Live application rendering is not verified.')
         self.count += 1
 
     def ghostty(self):
