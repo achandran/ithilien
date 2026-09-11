@@ -5,7 +5,6 @@
   "colors": {
     "Lebethron": "#000000",
     "Ash": "#505456",
-    "Stonecrop": "#66716D",
     "Afterglow": "#B8595C",
     "Sage": "#315F46",
     "Anduin": "#345E77",
@@ -30,10 +29,6 @@
     },
     "Ash": {
       "meaning": "Ithilien ash trees; grey bark.",
-      "source": "https://tolkiengateway.net/wiki/Ithilien"
-    },
-    "Stonecrop": {
-      "meaning": "Ithilien stonecrops; muted grey-green foliage.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
     "Afterglow": {
@@ -115,7 +110,7 @@
     "surface0": "Nimloth",
     "surface1": "Anemone",
     "surface2": "Osgiliath",
-    "border": "Stonecrop",
+    "border": "Ash",
     "search": "Clematis"
   },
   "foregrounds": {

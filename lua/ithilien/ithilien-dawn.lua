@@ -3,7 +3,6 @@ return {
   colors = {
     ["Lebethron"] = "#000000",
     ["Ash"] = "#505456",
-    ["Stonecrop"] = "#66716D",
     ["Afterglow"] = "#B8595C",
     ["Sage"] = "#315F46",
     ["Anduin"] = "#345E77",
@@ -40,7 +39,7 @@ return {
       ["surface0"] = "#FAFAF8",
       ["surface1"] = "#F0F1EF",
       ["surface2"] = "#C9CECB",
-      ["border"] = "#66716D",
+      ["border"] = "#505456",
       ["search"] = "#D6C6DE",
     },
     ["foregrounds"] = {

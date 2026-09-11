@@ -38,6 +38,8 @@ class ANSIConsolidation(unittest.TestCase):
         before['backgrounds']['surface0']=before['backgrounds']['base']
         # Approved Harlond -> Osgiliath consolidation preserves surface2 role.
         before['backgrounds']['surface2']=before['backgrounds']['crust']
+        # Approved Stonecrop -> Ash structural foreground consolidation.
+        before['backgrounds']['border']=before['foregrounds']['muted']
         before['diff']['addEmphasis']=before['diff']['deleteEmphasis']=before['diff']['changeEmphasis']
         self.assertEqual({k:v for k,v in before.items() if k!='ansi'},
                          {k:v for k,v in after.items() if k!='ansi'})

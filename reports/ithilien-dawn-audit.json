@@ -2815,18 +2815,18 @@
       }
     },
     "backgrounds.border": {
-      "hex": "#66716D",
+      "hex": "#505456",
       "oklch": [
-        0.5381,
-        0.0146,
-        171.9
+        0.443,
+        0.0061,
+        228.9
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#706F6D",
-        "deutan": "#6E6E6D",
-        "tritan": "#647170",
-        "grayscale": "#6E6E6E"
+        "protan": "#535456",
+        "deutan": "#525356",
+        "tritan": "#4F5555",
+        "grayscale": "#535353"
       }
     },
     "backgrounds.search": {

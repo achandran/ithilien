@@ -9,8 +9,8 @@ def generate_chart():
     p = load_palette('ithilien-dawn')
     d = review_day.Drawing()
     groups = [
-        ('Surfaces and text', [('backgrounds.base','Canvas / popups'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Muted / subtext')]),
-        ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict'),('backgrounds.border','Surface border')]),
+        ('Surfaces and text', [('backgrounds.base','Canvas / popups'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Muted text / borders')]),
+        ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict')]),
         ('Diffs', [('diff.addBackground','Added line'),('diff.deleteBackground','Deleted line'),('diff.changeBackground','Changed line'),('diff.changeEmphasis','Edited characters')]),
         ('Terminal colors', [('ansi.red','Red'),('ansi.green','Green'),('ansi.yellow','Yellow'),('ansi.blue','Blue'),('ansi.magenta','Magenta'),('ansi.cyan','Cyan')]),
     ]
