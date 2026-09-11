@@ -21,7 +21,7 @@ Names are limited to Ithilien’s plants, waters, materials and people, plus its
 | Ilex | `#BDD3B2` | Holm-oaks in Ithilien; sunlit foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.addEmphasis` |
 | Eglantine | `#F1E2DF` | Wild roses in Ithilien; pale pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteBackground` |
 | Rose | `#DDAFA7` | Roses in Ithilien; stronger pink petals. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.deleteEmphasis` |
-| Spray | `#E0E9EE` | Waterfall spray at Henneth Annûn in Ithilien; pale water. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `diff.changeBackground`, `diff.hunkBackground` |
+| Spray | `#D7E3EA` | Waterfall spray at Henneth Annûn in Ithilien; pale water. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `diff.changeBackground`, `diff.hunkBackground` |
 | Harlond | `#B3CBD8` | The harbour on the opposite bank of Anduin from Ithilien; deep river blue. [Source](https://tolkiengateway.net/wiki/Harlond_(Gondor)) | `backgrounds.surface2` |
 | Celandine | `#D8B46A` | Celandines in Ithilien; pale golden flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `diff.changeEmphasis` |
 | Clematis | `#E5D9E7` | Trailing clematis in Ithilien; pale floral lilac. [Source](https://tolkiengateway.net/wiki/Ithilien) | `backgrounds.search`, `diff.conflictBackground` |
