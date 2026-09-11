@@ -133,6 +133,23 @@
       .pane + .pane { border-left: 0; border-top: 1px solid var(--surface2); }
       .simulation-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
+
+    .swatch,.swatch.dark-label,.simulation-chip { background:var(--surface0);color:var(--text);padding:10px;overflow-wrap:anywhere; }
+    .swatch::before,.simulation-chip::before { content:"";display:block;background:var(--swatch-color);height:36px;width:100%;margin-bottom:10px;border:1px solid var(--muted); }
+    .swatch[hidden] {display:none;}
+    .swatch code { opacity:1;color:var(--subtext); }
+    .swatch small { color:var(--subtext);font-size:11px; }
+    input,select,button { font:inherit; }
+    input,select { background:var(--surface0);color:var(--text);border:1px solid var(--muted);padding:8px;max-width:100%; }
+    .inspector-controls {display:flex;gap:16px;flex-wrap:wrap;margin:12px 0;}
+    .inspector-controls label {display:flex;flex-direction:column;gap:5px;min-width:0;}
+    #pair-sample {padding:18px;border:1px solid var(--muted);overflow-wrap:anywhere;font-size:16px;}
+    #pair-result {margin:10px 0;color:var(--text);}
+    summary {cursor:pointer;font-weight:600;margin-bottom:14px;}
+    html[data-variant="day"] .selection {outline:1px solid var(--selection-border);text-decoration:underline;}
+    html[data-variant="day"] .success {color:var(--success-color);}
+    html[data-variant="day"] .warning {color:var(--warning-color);}
+    @media(max-width:600px) {main{padding:20px 12px}.inspector-controls label{width:100%}button{min-height:44px}}
   </style>
 </head>
 <body>
@@ -144,6 +161,19 @@
       <button type="button" data-variant="day" aria-pressed="false">Dawn</button>
     </div>
 
+
+    <section class="section" aria-label="Named palette inspector">
+      <h2>Complete named palette</h2>
+      <label>Filter by name, hex, or role <input id="color-filter" type="search" placeholder="Asphodel, #F6F6F3, diff…"></label>
+      <p id="color-count" aria-live="polite"></p>
+      <div id="named-grid" class="swatches"></div>
+      <h2 style="margin-top:24px">Inspect a foreground/background pair</h2>
+      <p>Color swatches keep their labels on a readable surface. This sample deliberately renders your selected pair—even if it fails contrast.</p>
+      <div class="inspector-controls"><label>Foreground<select id="pair-fg"></select></label><label>Background<select id="pair-bg"></select></label></div>
+      <div id="pair-sample">Read the code: return value != 0; 0123456789<br>Comments, punctuation, and long review prose.</div>
+      <div id="pair-result" aria-live="polite"></div>
+    </section>
+
     <section>
       <h2>Foundations</h2>
       <div class="swatches">
@@ -153,7 +183,7 @@
         <div class="swatch" data-token="backgrounds.surface0"><span>surface 0</span><code></code></div>
         <div class="swatch" data-token="backgrounds.surface1"><span>surface 1</span><code></code></div>
         <div class="swatch" data-token="backgrounds.surface2"><span>surface 2</span><code></code></div>
-        <div class="swatch dark-label" data-token="highlight.background"><span>shared highlight</span><code></code></div>
+        <div class="swatch dark-label" data-token="highlight.background"><span>selection</span><code></code></div>
       </div>
     </section>
 
@@ -256,8 +286,8 @@
     </section>
 
     <section class="section">
-      <h2 id="contrast-title">WCAG contrast against #171812</h2>
-      <div class="contrast-grid" id="contrast-grid"></div>
+      <details><summary id="contrast-title">Canonical contrast audit</summary>
+      <p>Checks describe the listed source pairs, not arbitrary overlays or native rendering. Diff hues alone do not pass every separation heuristic.</p><div class="contrast-grid" id="contrast-grid"></div></details>
     </section>
 
     <section class="section">
@@ -289,6 +319,10 @@
     };
     function render(variant) {
       const palette = generatedPalettes[variant];
+      renderInspector(palette);
+      document.documentElement.style.setProperty('--selection-border',palette.highlight.border||palette.highlight.background);
+      document.documentElement.style.setProperty('--success-color',palette.ansi.brightGreen);
+      document.documentElement.style.setProperty('--warning-color',palette.ansi.brightYellow);
       const audit = generatedAudits[variant];
       const token = path => path.split(".").reduce((value, key) => value[key], palette);
       document.documentElement.dataset.variant = variant;
@@ -296,17 +330,17 @@
       Object.entries(cssTokens).forEach(([name, path]) => document.documentElement.style.setProperty(`--${name}`, token(path)));
       document.querySelectorAll("[data-token]").forEach(element => {
         const color = token(element.dataset.token);
-        element.style.background = color;
+        element.style.setProperty("--swatch-color", color);
         element.querySelector("code").textContent = color;
         const label = element.querySelector("span");
         label.dataset.role ??= label.textContent;
         const name = palette.colorNames?.[color];
         label.textContent = name ? `${name} · ${label.dataset.role}` : label.dataset.role;
       });
-      document.querySelectorAll("[data-variant]").forEach(button => button.setAttribute("aria-pressed", button.dataset.variant === variant));
+      document.querySelectorAll("button[data-variant]").forEach(button => button.setAttribute("aria-pressed", button.dataset.variant === variant));
       document.getElementById("lede").textContent = variant === "night"
         ? "Warm olive-black foundations, softened cream text, restrained syntax, and diff colors designed for sustained review."
-        : "Warm parchment, black main text, readable olive-gray secondary text, and precise inline diffs. See reports/day-refinement/README.md for the current design.";
+        : "Neutral white inspired by the Formex Reef GMT: graphite text, steel surfaces, and precise underlined diffs. Controlled specimens, not native application screenshots.";
       document.getElementById("contrast-title").textContent = `WCAG contrast for supported foreground/background pairs`;
 
       const grid = document.getElementById("contrast-grid");
@@ -315,7 +349,7 @@
         const item = document.createElement("div");
         item.className = "contrast-item";
         item.style.borderColor = check.foreground;
-        item.innerHTML = `<b style="color:${check.foreground}">${check.name}</b><span class="${check.passed ? "pass" : "fail"}">WCAG ${check.wcag}:1 · APCA ${check.apcaLc}</span>`;
+        item.innerHTML = `<b>${check.name}</b><span class="${check.passed ? "pass" : "fail"}">WCAG ${check.wcag}:1 · APCA ${check.apcaLc}</span>`;
         grid.appendChild(item);
       });
 
@@ -324,7 +358,7 @@
       Object.entries(palette.ansi).forEach(([name, color], index) => {
         const swatch = document.createElement("div");
         swatch.className = variant === "day" && ["white", "brightWhite"].includes(name) ? "swatch" : "swatch dark-label";
-        swatch.style.background = color;
+        swatch.style.setProperty("--swatch-color", color);
         swatch.innerHTML = `<span>${palette.colorNames?.[color] || name} · ${index} ${name}</span><code>${color}</code>`;
         ansiGrid.appendChild(swatch);
       });
@@ -337,19 +371,61 @@
         label.textContent = mode;
         const row = document.createElement("div");
         row.className = "simulation-row";
-        ["accents.sage", "accents.coral", "accents.gold", "accents.aqua", "accents.blue", "accents.mauve"].forEach(name => {
+        ["ansi.brightGreen", "ansi.brightRed", "ansi.brightYellow", "ansi.brightCyan", "ansi.brightBlue", "ansi.brightMagenta"].forEach(name => {
           const chip = document.createElement("div");
           chip.className = "simulation-chip";
           const color = mode === "normal" ? audit.colors[name].hex : audit.colors[name].simulations[mode];
-          chip.style.background = color;
+          chip.style.setProperty("--swatch-color", color);
           chip.textContent = name.split(".")[1];
           row.appendChild(chip);
         });
         simulationGrid.append(label, row);
       });
     }
-    document.querySelectorAll("[data-variant]").forEach(button => button.addEventListener("click", () => render(button.dataset.variant)));
-    render("night");
+
+    let inspectionPalette;
+    function paletteEntries(p) {
+      const entries=new Map();
+      for(const family of ['backgrounds','foregrounds','accents','ansi','diff','highlight']) {
+        for(const [role,hex] of Object.entries(p[family])) {
+          if(!entries.has(hex)) entries.set(hex,{hex,name:p.colorNames?.[hex]||hex,roles:[]});
+          entries.get(hex).roles.push(family+'.'+role);
+        }
+      }
+      return [...entries.values()];
+    }
+    function filterColors(){
+      const q=document.getElementById('color-filter').value.toLowerCase();
+      let count=0;
+      document.querySelectorAll('#named-grid .swatch').forEach(e=>{e.hidden=!e.dataset.search.includes(q);if(!e.hidden)count++});
+      document.getElementById('color-count').textContent=count+(count===1?' color shown':' colors shown');
+    }
+    function renderInspector(p){
+      inspectionPalette=p;
+      const grid=document.getElementById('named-grid');grid.replaceChildren();
+      const fg=document.getElementById('pair-fg'),bg=document.getElementById('pair-bg');fg.replaceChildren();bg.replaceChildren();
+      for(const item of paletteEntries(p)){
+        const card=document.createElement('div');card.className='swatch';card.style.setProperty('--swatch-color',item.hex);
+        const title=document.createElement('span');title.textContent=item.name;
+        const code=document.createElement('code');code.textContent=item.hex;
+        const roles=document.createElement('small');roles.textContent=item.roles.join(' · ');
+        card.append(title,code,roles);card.dataset.search=(item.name+' '+item.hex+' '+item.roles.join(' ')).toLowerCase();grid.append(card);
+        for(const select of [fg,bg]){const option=document.createElement('option');option.value=item.hex;option.textContent=item.name+' '+item.hex;select.append(option);}
+      }
+      fg.value=p.foregrounds.text;bg.value=p.backgrounds.base;filterColors();inspectPair();
+    }
+    function luminance(hex){const rgb=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;}
+    function inspectPair(){
+      const fg=document.getElementById('pair-fg').value,bg=document.getElementById('pair-bg').value;if(!fg||!bg)return;
+      const [a,b]=[luminance(fg),luminance(bg)].sort((x,y)=>x-y),ratio=(b+.05)/(a+.05);
+      const sample=document.getElementById('pair-sample');sample.style.color=fg;sample.style.background=bg;
+      document.getElementById('pair-result').textContent=ratio.toFixed(2)+':1 · '+(ratio>=7?'Meets 7:1 enhanced text target':ratio>=4.5?'Meets 4.5:1 normal text target':'Below 4.5:1 normal text target');
+    }
+    document.getElementById('color-filter').addEventListener('input',filterColors);
+    for(const id of ['pair-fg','pair-bg'])document.getElementById(id).addEventListener('change',inspectPair);
+
+    document.querySelectorAll("button[data-variant]").forEach(button => button.addEventListener("click", () => render(button.dataset.variant)));
+    render("day");
   </script>
 </body>
 </html>
