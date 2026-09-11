@@ -154,6 +154,20 @@ for _,name in ipairs({'NvimTreeWinSeparator','NeoTreeIndentMarker','CmpDocumenta
  'MiniPickBorder','MiniFilesBorder','LspInlayHint','Ignore'}) do
  local h=vim.api.nvim_get_hl(0,{name=name,link=false}); h.fg=tonumber(p.muted:sub(2),16); hi(name,h)
 end
+-- Explicit sign families avoid inherited black combined signs and Gitsigns'
+-- faded staged colors. Underline marks staging without reducing contrast.
+for kind, color in pairs({Add=p.green,Change=p.blue,Delete=p.red,
+ Changedelete=p.blue,Topdelete=p.red,Untracked=p.green}) do
+  for _,suffix in ipairs({'','Nr','Cul'}) do
+    hi('GitSigns'..kind..suffix,{fg=color})
+    hi('GitSignsStaged'..kind..suffix,{fg=color,underline=true})
+  end
+  local line = ({Add=p.add,Change=p.change,Changedelete=p.change,Untracked=p.add})[kind]
+  if line then
+    hi('GitSigns'..kind..'Ln',{fg=p.fg,bg=line})
+    hi('GitSignsStaged'..kind..'Ln',{fg=p.fg,bg=line})
+  end
+end
 for _,kind in ipairs({'Add','Change','Delete'}) do
   hi('GitSigns'..kind..'LnInline',{link='GitSigns'..kind..'Inline'})
   hi('GitSigns'..kind..'VirtLnInline',{link='GitSigns'..kind..'Inline'})
