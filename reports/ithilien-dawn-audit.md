@@ -111,9 +111,9 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | chrome subtext on crust | 4.8:1 | 57.5 | PASS |
 | chrome text on crust | 13.17:1 | 76.9 | PASS |
 | chrome bright on crust | 13.17:1 | 76.9 | PASS |
-| chrome text on surface2 | 12.45:1 | 73.9 | PASS |
-| chrome subtext on surface2 | 4.54:1 | 54.4 | PASS |
-| chrome bright on surface2 | 12.45:1 | 73.9 | PASS |
+| chrome text on surface2 | 13.17:1 | 76.9 | PASS |
+| chrome subtext on surface2 | 4.8:1 | 57.5 | PASS |
+| chrome bright on surface2 | 13.17:1 | 76.9 | PASS |
 | inactive status label | 5.77:1 | 68.1 | PASS |
 | popup border | 7.32:1 | 83.5 | PASS |
 | search result | 4.62:1 | 33.0 | PASS |

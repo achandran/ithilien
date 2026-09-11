@@ -1037,30 +1037,30 @@
     {
       "name": "chrome text on surface2",
       "foreground": "#000000",
-      "background": "#B3CBD8",
-      "wcag": 12.45,
+      "background": "#C9CECB",
+      "wcag": 13.17,
       "wcagTarget": 4.5,
-      "apcaLc": 73.9,
+      "apcaLc": 76.9,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "chrome subtext on surface2",
       "foreground": "#505456",
-      "background": "#B3CBD8",
-      "wcag": 4.54,
+      "background": "#C9CECB",
+      "wcag": 4.8,
       "wcagTarget": 4.5,
-      "apcaLc": 54.4,
+      "apcaLc": 57.5,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "chrome bright on surface2",
       "foreground": "#000000",
-      "background": "#B3CBD8",
-      "wcag": 12.45,
+      "background": "#C9CECB",
+      "wcag": 13.17,
       "wcagTarget": 4.5,
-      "apcaLc": 73.9,
+      "apcaLc": 76.9,
       "apcaTarget": 0,
       "passed": true
     },
@@ -2499,24 +2499,24 @@
     {
       "name": "chrome text on surface2",
       "foreground": "#000000",
-      "background": "#B3CBD8",
-      "wcag": 12.45,
+      "background": "#C9CECB",
+      "wcag": 13.17,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome subtext on surface2",
       "foreground": "#505456",
-      "background": "#B3CBD8",
-      "wcag": 4.54,
+      "background": "#C9CECB",
+      "wcag": 4.8,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "chrome bright on surface2",
       "foreground": "#000000",
-      "background": "#B3CBD8",
-      "wcag": 12.45,
+      "background": "#C9CECB",
+      "wcag": 13.17,
       "target": 4.5,
       "passed": true
     },
@@ -2800,18 +2800,18 @@
       }
     },
     "backgrounds.surface2": {
-      "hex": "#B3CBD8",
+      "hex": "#C9CECB",
       "oklch": [
-        0.8283,
-        0.0317,
-        231.4
+        0.8467,
+        0.0068,
+        160.0
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#C5CAD9",
-        "deutan": "#BFC5D8",
-        "tritan": "#A9CFCF",
-        "grayscale": "#C7C7C7"
+        "protan": "#CECDCB",
+        "deutan": "#CDCCCB",
+        "tritan": "#C8CECD",
+        "grayscale": "#CDCDCD"
       }
     },
     "backgrounds.border": {

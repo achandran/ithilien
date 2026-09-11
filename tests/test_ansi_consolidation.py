@@ -36,6 +36,8 @@ class ANSIConsolidation(unittest.TestCase):
         before['accents']['aqua']='#255354'
         # Approved Lily -> Nimloth (formerly Asphodel) surface consolidation, preserving roles.
         before['backgrounds']['surface0']=before['backgrounds']['base']
+        # Approved Harlond -> Osgiliath consolidation preserves surface2 role.
+        before['backgrounds']['surface2']=before['backgrounds']['crust']
         before['diff']['addEmphasis']=before['diff']['deleteEmphasis']=before['diff']['changeEmphasis']
         self.assertEqual({k:v for k,v in before.items() if k!='ansi'},
                          {k:v for k,v in after.items() if k!='ansi'})

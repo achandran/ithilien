@@ -14,7 +14,6 @@
     "Pelennor": "#E2EDDF",
     "Eglantine": "#F1E2DF",
     "Spray": "#D7E3EA",
-    "Harlond": "#B3CBD8",
     "Celandine": "#D8B46A",
     "Clematis": "#D6C6DE",
     "Nimloth": "#FAFAF8",
@@ -69,10 +68,6 @@
       "meaning": "Waterfall spray at Henneth Ann\u00fbn in Ithilien; pale water.",
       "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
     },
-    "Harlond": {
-      "meaning": "Gondor\u2019s harbour across Anduin from Ithilien; interpreted as pale river blue.",
-      "source": "https://tolkiengateway.net/wiki/Harlond_(Gondor)"
-    },
     "Celandine": {
       "meaning": "Celandines in Ithilien; pale golden flowers.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
@@ -119,7 +114,7 @@
     "base": "Nimloth",
     "surface0": "Nimloth",
     "surface1": "Anemone",
-    "surface2": "Harlond",
+    "surface2": "Osgiliath",
     "border": "Stonecrop",
     "search": "Clematis"
   },

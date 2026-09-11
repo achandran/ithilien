@@ -335,9 +335,9 @@ def generate_color_reference() -> None:
         'Each color has one single-word name and a documented connection to Tolkien’s work. '
         'The exact shades are design interpretations, not colors measured from the books.', '',
         'Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its '
-        'Gondorian neighbours and the wider Anduin landscape. Gondor is its realm; Osgiliath, Pelennor and Harlond '
+        'Gondorian neighbours and the wider Anduin landscape. Gondor is its realm; Osgiliath and Pelennor '
         'are directly connected across Anduin. Plant names refer to species mentioned in '
-        'Ithilien, except Mallorn, which draws on Lórien’s golden trees; material names describe its local landscape. The sources establish those '
+        'Ithilien, except Mallorn, which draws on Lórien’s golden trees, and Nimloth, the White Tree of Númenor. Material names evoke the regional landscape. The sources establish those '
         'connections; botanical shades and the exact hex values are our interpretation.', '',
         '| Name | Exact hex | Tolkien connection / color association | Roles |',
         '| --- | --- | --- | --- |',

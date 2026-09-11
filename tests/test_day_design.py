@@ -91,7 +91,8 @@ class DayDesign(unittest.TestCase):
     def test_surface_order(self):
         p=load_palette('ithilien-dawn')['backgrounds']
         self.assertEqual(p['surface0'],p['base'])
-        values=[oklch(p[k])[0] for k in ['base','surface1','mantle','crust','surface2']]
+        self.assertEqual(p['surface2'],p['crust'])
+        values=[oklch(p[k])[0] for k in ['base','surface1','mantle','crust']]
         self.assertTrue(all(a>b for a,b in zip(values,values[1:])))
 
     def test_codex_day_roles_and_selection(self):
