@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Install supported Ithilien integrations; standard library only."""
 import argparse
+import configparser
 import json
 import subprocess
 from datetime import datetime, timezone
@@ -152,7 +153,33 @@ class Installer:
         destination = self.home / '.local/share/ithilien/firefox'
         for variant in ('dawn', 'dusk'):
             self.copies(f'firefox/ithilien-{variant}', destination / f'ithilien-{variant}')
-        print(f'MANUAL Firefox: about:debugging > This Firefox > Load Temporary Add-on; select {destination}/ithilien-dawn/manifest.json. Temporary themes expire on restart; permanent distribution needs Mozilla signing. This themes browser chrome, not website selections.')
+        base = self.home / ('Library/Application Support/Firefox' if sys.platform == 'darwin' else '.mozilla/firefox')
+        profiles = configparser.ConfigParser(interpolation=None)
+        profiles.read(base / 'profiles.ini')
+        selected = []
+        for section in profiles.sections():
+            if not section.startswith('Profile') or profiles.get(section, 'Name', fallback='') != 'dev-edition-default':
+                continue
+            path = Path(profiles.get(section, 'Path'))
+            if profiles.get(section, 'IsRelative', fallback='1') == '1':
+                path = base / path
+            if path.is_dir() and path not in selected:
+                selected.append(path)
+        for profile in selected:
+            css = (ROOT / 'firefox/ithilien-dawn/userContent.css').read_text().strip()
+            for path, content in ((profile / 'chrome/userContent.css', css),
+                                  (profile / 'user.js', 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);')):
+                text = path.read_text() if path.exists() else ''
+                start, end = '/* BEGIN ITHILIEN */', '/* END ITHILIEN */'
+                if text.count(start) != text.count(end) or text.count(start) > 1 or (start in text and text.index(start) > text.index(end)):
+                    raise ValueError(f'Malformed Ithilien block in {path}')
+                text = re.sub(r'/\* BEGIN ITHILIEN \*/.*?/\* END ITHILIEN \*/\n?', '', text, flags=re.S)
+                self.write(path, (text.rstrip() + '\n\n' + start + '\n' + content + '\n' + end + '\n').encode())
+        if selected:
+            print('NEXT Firefox Developer Edition: fully quit and reopen to activate Dawn webpage selections. Existing profile customizations are preserved.')
+        else:
+            print('SKIP Firefox profile selection: no dev-edition-default profile found; open Developer Edition once to create it. Renamed profiles require manual setup.')
+        print(f'MANUAL Firefox: about:debugging > This Firefox > Load Temporary Add-on; select {destination}/ithilien-dawn/manifest.json. Temporary themes expire on restart; permanent distribution needs Mozilla signing. This add-on themes browser chrome; webpage selections are installed separately above.')
 
     def zsh(self):
         destination = self.config / 'ithilien'
