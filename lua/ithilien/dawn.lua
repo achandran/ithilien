@@ -170,7 +170,7 @@ hi('Underlined',{fg=p.blue,underline=true})
 for i,color in ipairs(p.ansi) do vim.g['terminal_color_'..(i-1)]=color end
 
 -- Kanso's plugin inventory includes reversed labels. Dawn never uses
--- light foregrounds except explicit Briar interaction pairs: normalize reverse groups and
+-- light foregrounds except explicit palette interaction pairs: normalize reverse groups and
 -- pale foregrounds, while retaining explicit dark semantic colors.
 local function luminance(hex)
  local function ch(n) n=n/255; return n<=0.04045 and n/12.92 or ((n+0.055)/1.055)^2.4 end

@@ -93,9 +93,9 @@ class InstallTests(unittest.TestCase):
             self.assertIn('bindkey -v',rc.read_text())
             if shutil.which('zsh'):
                 script=rc
-                self.assertIn('region:bg=#8B3037,fg=#FFFFFF', rc.read_text())
+                self.assertIn('region:bg=#B8595C,fg=#000000', rc.read_text())
                 result=subprocess.run(['zsh','-f','-c','zle_highlight=("paste:none" "region:standout"); source "$1"; source "$1"; print -l -- "${zle_highlight[@]}"','test',str(script)],capture_output=True,text=True,check=True)
-                self.assertEqual(result.stdout.splitlines(),['paste:none','region:bg=#8B3037,fg=#FFFFFF'])
+                self.assertEqual(result.stdout.splitlines(),['paste:none','region:bg=#B8595C,fg=#000000'])
 
     def test_installed_prompt_uses_rosehip_and_keeps_git_variable(self):
         import subprocess
@@ -108,7 +108,7 @@ class InstallTests(unittest.TestCase):
             self.assertEqual(rc.read_text().count('# BEGIN ITHILIEN ZLE'),1)
             if shutil.which('zsh'):
                 result=subprocess.run(['zsh','-f','-c','source "$1"; [[ -o promptsubst ]] || exit 1; print -r -- "$PS1"; print -r -- "$vcs_info_msg_0_"','test',str(rc)],capture_output=True,text=True,check=True)
-                self.assertIn('%F{9}%m%f',result.stdout)
+                self.assertIn('%F{8}%n@%m%f:%F{blue}%~%f %F{magenta}',result.stdout)
                 self.assertIn('${vcs_info_msg_0_}',result.stdout)
-                self.assertIn('\n%f$ ',result.stdout)
+                self.assertIn('\n%F{black}$ %f',result.stdout)
                 self.assertTrue(result.stdout.endswith('main\n'))

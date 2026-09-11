@@ -49,5 +49,5 @@ local dawn=snapshot()
 theme.load('dusk')
 for name,h in pairs(dusk) do assert(vim.deep_equal(h,vim.api.nvim_get_hl(0,{name=name,link=false})),'Dusk changed after switching: '..name) end
 vim.fn.writefile({vim.json.encode({checked=checked,highlights=dawn,duskSwitchUnchanged=true})},'reports/formex-dawn-highlights.json')
-print(checked..' resolved highlights checked; white foregrounds restricted to Briar backgrounds; Dusk switching unchanged')
+print(checked..' resolved highlights checked; interaction pair matches palette; Dusk switching unchanged')
 vim.cmd('qa!')

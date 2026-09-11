@@ -13,6 +13,6 @@ class FirefoxInstall(unittest.TestCase):
             js=dev/'user.js';js.write_text('user_pref("example", 1);\n')
             Installer(home).firefox();self.assertEqual(css.read_text(),'body { color: navy; }\n')
             i=Installer(home,True);i.firefox();first=css.read_bytes();i.firefox()
-            self.assertEqual(first,css.read_bytes());self.assertIn('body { color: navy; }',css.read_text());self.assertIn('#8B3037',css.read_text())
+            self.assertEqual(first,css.read_bytes());self.assertIn('body { color: navy; }',css.read_text());self.assertIn('#B8595C',css.read_text())
             self.assertIn('user_pref("example", 1);',js.read_text());self.assertIn('stylesheets", true',js.read_text())
             self.assertFalse((other/'user.js').exists());self.assertTrue(i.backup.exists())

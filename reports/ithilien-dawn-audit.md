@@ -13,7 +13,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | secondary text | 8.27:1 | 86.6 | PASS |
 | normal text | 20.09:1 | 103.0 | PASS |
 | bright text | 20.09:1 | 103.0 | PASS |
-| highlighted text | 8.15:1 | -92.1 | PASS |
+| highlighted text | 4.62:1 | 33.0 | PASS |
 | highlight edge on Ithilien Dawn | 7.69:1 | 84.7 | PASS |
 | highlight edge on white | 8.03:1 | 87.8 | PASS |
 | syntax olive | 20.09:1 | 103.0 | PASS |
@@ -21,7 +21,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | syntax gold | 20.09:1 | 103.0 | PASS |
 | syntax ochre | 20.09:1 | 103.0 | PASS |
 | syntax clay | 20.09:1 | 103.0 | PASS |
-| syntax coral | 6.2:1 | 77.9 | PASS |
+| syntax coral | 7.8:1 | 84.3 | PASS |
 | syntax aqua | 6.4:1 | 79.8 | PASS |
 | syntax blue | 6.67:1 | 80.9 | PASS |
 | syntax mauve | 6.51:1 | 80.3 | PASS |
@@ -32,7 +32,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | inline add | 13.12:1 | 76.7 | PASS |
 | inline delete | 10.76:1 | 66.4 | PASS |
 | inline change | 10.66:1 | 66.0 | PASS |
-| inline diff marker | 8.15:1 | -92.1 | PASS |
+| inline diff marker | 4.62:1 | 33.0 | PASS |
 | conflict marker | 12.99:1 | 76.2 | PASS |
 | ANSI black | 20.09:1 | 103.0 | PASS |
 | ANSI red | 7.8:1 | 84.3 | PASS |
@@ -42,14 +42,14 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ANSI magenta | 8.24:1 | 86.4 | PASS |
 | ANSI cyan | 8.22:1 | 86.3 | PASS |
 | ANSI brightBlack | 7.32:1 | 83.5 | PASS |
-| ANSI brightRed | 6.2:1 | 77.9 | PASS |
+| ANSI brightRed | 7.8:1 | 84.3 | PASS |
 | ANSI brightGreen | 7.04:1 | 82.3 | PASS |
 | ANSI brightYellow | 6.15:1 | 78.7 | PASS |
 | ANSI brightBlue | 6.67:1 | 80.9 | PASS |
 | ANSI brightMagenta | 6.51:1 | 80.3 | PASS |
 | ANSI brightCyan | 6.4:1 | 79.8 | PASS |
 | ANSI extendedOchre | 6.15:1 | 78.7 | PASS |
-| ANSI extendedClay | 6.2:1 | 77.9 | PASS |
+| ANSI extendedClay | 7.8:1 | 84.3 | PASS |
 | muted on base | 7.32:1 | 83.5 | PASS |
 | comment on base | 7.32:1 | 83.5 | PASS |
 | subtext on base | 8.27:1 | 86.6 | PASS |
@@ -60,7 +60,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | gold on base | 20.09:1 | 103.0 | PASS |
 | ochre on base | 20.09:1 | 103.0 | PASS |
 | clay on base | 20.09:1 | 103.0 | PASS |
-| coral on base | 6.2:1 | 77.9 | PASS |
+| coral on base | 7.8:1 | 84.3 | PASS |
 | aqua on base | 6.4:1 | 79.8 | PASS |
 | blue on base | 6.67:1 | 80.9 | PASS |
 | mauve on base | 6.51:1 | 80.3 | PASS |
@@ -74,7 +74,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | gold on mantle | 15.83:1 | 87.5 | PASS |
 | ochre on mantle | 15.83:1 | 87.5 | PASS |
 | clay on mantle | 15.83:1 | 87.5 | PASS |
-| coral on mantle | 4.89:1 | 62.4 | PASS |
+| coral on mantle | 6.15:1 | 68.9 | PASS |
 | aqua on mantle | 5.04:1 | 64.4 | PASS |
 | blue on mantle | 5.25:1 | 65.5 | PASS |
 | mauve on mantle | 5.13:1 | 64.9 | PASS |
@@ -88,7 +88,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | gold on surface0 | 21.0:1 | 106.0 | PASS |
 | ochre on surface0 | 21.0:1 | 106.0 | PASS |
 | clay on surface0 | 21.0:1 | 106.0 | PASS |
-| coral on surface0 | 6.48:1 | 81.0 | PASS |
+| coral on surface0 | 8.15:1 | 87.4 | PASS |
 | aqua on surface0 | 6.69:1 | 82.9 | PASS |
 | blue on surface0 | 6.97:1 | 84.0 | PASS |
 | mauve on surface0 | 6.8:1 | 83.4 | PASS |
@@ -102,7 +102,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | gold on surface1 | 18.53:1 | 97.5 | PASS |
 | ochre on surface1 | 18.53:1 | 97.5 | PASS |
 | clay on surface1 | 18.53:1 | 97.5 | PASS |
-| coral on surface1 | 5.72:1 | 72.4 | PASS |
+| coral on surface1 | 7.19:1 | 78.9 | PASS |
 | aqua on surface1 | 5.9:1 | 74.3 | PASS |
 | blue on surface1 | 6.15:1 | 75.5 | PASS |
 | mauve on surface1 | 6.0:1 | 74.9 | PASS |
@@ -116,24 +116,24 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | chrome bright on surface2 | 12.45:1 | 73.9 | PASS |
 | inactive status label | 5.77:1 | 68.1 | PASS |
 | popup border | 7.65:1 | 86.6 | PASS |
-| search result | 8.15:1 | -92.1 | PASS |
-| selected popup kind | 8.15:1 | -92.1 | PASS |
-| selected popup extra | 8.15:1 | -92.1 | PASS |
-| substitution | 8.15:1 | -92.1 | PASS |
+| search result | 4.62:1 | 33.0 | PASS |
+| selected popup kind | 4.62:1 | 33.0 | PASS |
+| selected popup extra | 4.62:1 | 33.0 | PASS |
+| substitution | 4.62:1 | 33.0 | PASS |
 | error annotation | 16.68:1 | 90.8 | PASS |
 | tab label on crust | 5.42:1 | 60.6 | PASS |
-| Neovim DiffText | 8.15:1 | -92.1 | PASS |
+| Neovim DiffText | 4.62:1 | 33.0 | PASS |
 | selection edge on mantle | 6.06:1 | 69.3 | PASS |
 | selection edge on surface0 | 8.03:1 | 87.8 | PASS |
 | selection edge on surface1 | 7.09:1 | 79.3 | PASS |
 | git add sign | 20.09:1 | 103.0 | PASS |
 | git delete sign | 20.09:1 | 103.0 | PASS |
 | git change sign | 20.09:1 | 103.0 | PASS |
-| status olive | 8.15:1 | -92.1 | PASS |
-| status sage | 8.15:1 | -92.1 | PASS |
-| status mauve | 8.15:1 | -92.1 | PASS |
-| status coral | 8.15:1 | -92.1 | PASS |
-| status gold | 8.15:1 | -92.1 | PASS |
+| status olive | 4.62:1 | 33.0 | PASS |
+| status sage | 4.62:1 | 33.0 | PASS |
+| status mauve | 4.62:1 | 33.0 | PASS |
+| status coral | 4.62:1 | 33.0 | PASS |
+| status gold | 4.62:1 | 33.0 | PASS |
 | ANSI white on black | 20.09:1 | -104.5 | PASS |
 | ANSI white on red | 7.8:1 | -88.7 | PASS |
 | ANSI white on green | 9.11:1 | -92.8 | PASS |
@@ -141,7 +141,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ANSI white on blue | 8.96:1 | -92.4 | PASS |
 | ANSI white on magenta | 8.24:1 | -90.6 | PASS |
 | ANSI white on cyan | 8.22:1 | -90.5 | PASS |
-| ANSI white on brightRed | 6.2:1 | -82.7 | PASS |
+| ANSI white on brightRed | 7.8:1 | -88.7 | PASS |
 | ANSI white on brightGreen | 7.04:1 | -86.9 | PASS |
 | ANSI white on brightYellow | 6.15:1 | -83.5 | PASS |
 | ANSI white on brightBlue | 6.67:1 | -85.6 | PASS |
@@ -154,7 +154,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | ANSI brightWhite on blue | 9.37:1 | -95.8 | PASS |
 | ANSI brightWhite on magenta | 8.61:1 | -94.0 | PASS |
 | ANSI brightWhite on cyan | 8.59:1 | -93.9 | PASS |
-| ANSI brightWhite on brightRed | 6.48:1 | -86.1 | PASS |
+| ANSI brightWhite on brightRed | 8.15:1 | -92.1 | PASS |
 | ANSI brightWhite on brightGreen | 7.35:1 | -90.3 | PASS |
 | ANSI brightWhite on brightYellow | 6.43:1 | -86.9 | PASS |
 | ANSI brightWhite on brightBlue | 6.97:1 | -89.0 | PASS |
@@ -172,7 +172,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff add syntax gold | 17.41:1 | 93.5 | PASS |
 | diff add syntax ochre | 17.41:1 | 93.5 | PASS |
 | diff add syntax clay | 17.41:1 | 93.5 | PASS |
-| diff add syntax coral | 5.37:1 | 68.4 | PASS |
+| diff add syntax coral | 6.76:1 | 74.8 | PASS |
 | diff add syntax aqua | 5.54:1 | 70.3 | PASS |
 | diff add syntax blue | 5.78:1 | 71.4 | PASS |
 | diff add syntax mauve | 5.64:1 | 70.8 | PASS |
@@ -186,7 +186,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff delete syntax gold | 16.68:1 | 90.8 | PASS |
 | diff delete syntax ochre | 16.68:1 | 90.8 | PASS |
 | diff delete syntax clay | 16.68:1 | 90.8 | PASS |
-| diff delete syntax coral | 5.15:1 | 65.7 | PASS |
+| diff delete syntax coral | 6.48:1 | 72.1 | PASS |
 | diff delete syntax aqua | 5.31:1 | 67.6 | PASS |
 | diff delete syntax blue | 5.54:1 | 68.7 | PASS |
 | diff delete syntax mauve | 5.41:1 | 68.1 | PASS |
@@ -200,7 +200,7 @@ WCAG ratios use unrounded values for gates. Normal text requires 4.5:1; 7:1 is a
 | diff change syntax gold | 16.07:1 | 88.4 | PASS |
 | diff change syntax ochre | 16.07:1 | 88.4 | PASS |
 | diff change syntax clay | 16.07:1 | 88.4 | PASS |
-| diff change syntax coral | 4.96:1 | 63.3 | PASS |
+| diff change syntax coral | 6.24:1 | 69.8 | PASS |
 | diff change syntax aqua | 5.12:1 | 65.2 | PASS |
 | diff change syntax blue | 5.33:1 | 66.4 | PASS |
 | diff change syntax mauve | 5.2:1 | 65.8 | PASS |
@@ -214,7 +214,7 @@ Values are ΔEOK distances. They are comparative signals, not universal accessib
 | diff add/delete | 0.033 | 0.023 | 0.01 | 0.035 | 0.014 | INFO |
 | diff add/change | 0.038 | 0.037 | 0.038 | 0.028 | 0.026 | INFO |
 | diff delete/change | 0.036 | 0.018 | 0.03 | 0.046 | 0.012 | INFO |
-| error/warning | 0.527 | 0.421 | 0.52 | 0.547 | 0.482 | PASS |
+| error/warning | 0.461 | 0.384 | 0.456 | 0.475 | 0.429 | PASS |
 | ANSI blue/bright blue | 0.069 | 0.071 | 0.068 | 0.069 | 0.069 | PASS |
 | ANSI cyan/bright cyan | 0.058 | 0.06 | 0.058 | 0.058 | 0.058 | PASS |
 
@@ -237,7 +237,7 @@ Color alone does not preserve these roles in every simulation. Keywords use bold
 | numbers/keywords | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
 | information/hints | 0.039 | 0.0362 | 0.0348 | 0.0103 | 0.0096 |
 | operators/strings | 0.443 | 0.4451 | 0.4425 | 0.4427 | 0.4434 |
-| keywords/errors | 0.5274 | 0.4207 | 0.5196 | 0.5468 | 0.4821 |
+| keywords/errors | 0.4608 | 0.384 | 0.4559 | 0.4746 | 0.4287 |
 
 ## Inline fill versus line background (observations)
 

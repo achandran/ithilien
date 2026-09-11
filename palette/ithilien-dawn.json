@@ -6,7 +6,7 @@
     "Lebethron": "#000000",
     "Ash": "#505456",
     "Stonecrop": "#66716D",
-    "Rosehip": "#AD2F38",
+    "Rosehip": "#B8595C",
     "Sage": "#315F46",
     "Anduin": "#345E77",
     "Broom": "#795922",
@@ -48,7 +48,7 @@
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
     "Rosehip": {
-      "meaning": "Fruit of Ithilien\u2019s wild roses; deep red.",
+      "meaning": "Fruit of Ithilien\u2019s wild roses; interpreted as Briar lightened at the same OKLCH hue and chroma for black interaction text.",
       "source": "https://tolkiengateway.net/wiki/Ithilien"
     },
     "Sage": {
@@ -157,11 +157,11 @@
     }
   },
   "highlight": {
-    "background": "Briar",
-    "foreground": "Lily",
+    "background": "Rosehip",
+    "foreground": "Lebethron",
     "border": "Juniper",
-    "cursor": "Briar",
-    "cursorBlock": "Briar"
+    "cursor": "Rosehip",
+    "cursorBlock": "Rosehip"
   },
   "backgrounds": {
     "crust": "Osgiliath",
@@ -186,7 +186,7 @@
     "gold": "Lebethron",
     "ochre": "Lebethron",
     "clay": "Lebethron",
-    "coral": "Rosehip",
+    "coral": "Briar",
     "aqua": "Poros",
     "blue": "Anduin",
     "mauve": "Thyme"
@@ -201,7 +201,7 @@
     "cyan": "Morgulduin",
     "white": "Asphodel",
     "brightBlack": "Ash",
-    "brightRed": "Rosehip",
+    "brightRed": "Briar",
     "brightGreen": "Sage",
     "brightYellow": "Broom",
     "brightBlue": "Anduin",
@@ -209,7 +209,7 @@
     "brightCyan": "Poros",
     "brightWhite": "Lily",
     "extendedOchre": "Broom",
-    "extendedClay": "Rosehip"
+    "extendedClay": "Briar"
   },
   "diff": {
     "contextForeground": "Lebethron",

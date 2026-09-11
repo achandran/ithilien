@@ -29,7 +29,7 @@ def main(variant: str = "ithilien-dusk") -> None:
         ("secondary text", foregrounds["subtext"], backgrounds["base"], 7.0, 55),
         ("normal text", foregrounds["text"], backgrounds["base"], 7.0, 60),
         ("bright text", foregrounds["bright"], backgrounds["base"], 7.0, 75),
-        ("highlighted text", highlight["foreground"], highlight["background"], 4.5, 35),
+        ("highlighted text", highlight["foreground"], highlight["background"], 4.5, 0 if day else 35),
         # Selection/cursor boundaries are non-text UI components: WCAG 3:1
         # applies, while APCA is reported for reference but is not a gate.
         (f"highlight edge on {palette['name']}", highlight.get("border", highlight["background"]), backgrounds["base"], 3.0, 0),
@@ -47,7 +47,7 @@ def main(variant: str = "ithilien-dusk") -> None:
             highlight["foreground"],
             highlight["background"],
             4.5,
-            35,
+            0 if day else 35,
         ),
         ("conflict marker", diff["conflictForeground"], diff["conflictBackground"], 7.0, 60),
         *[

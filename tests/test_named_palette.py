@@ -20,7 +20,7 @@ class NamedPalette(unittest.TestCase):
         references = {name for family in ROLE_FAMILIES for name in self.source[family].values()}
         self.assertEqual(references, set(colors))
         resolved = load_palette('ithilien-dawn')
-        self.assertEqual(resolved['highlight']['foreground'], '#FFFFFF')
+        self.assertEqual(resolved['highlight']['foreground'], '#000000')
         self.assertNotIn('colors', resolved)
         self.assertNotIn('colorNotes', resolved)
         for family in ROLE_FAMILIES:

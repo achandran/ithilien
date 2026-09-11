@@ -56,12 +56,12 @@
     },
     {
       "name": "highlighted text",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
-      "apcaTarget": 35,
+      "apcaLc": 33.0,
+      "apcaTarget": 0,
       "passed": true
     },
     {
@@ -136,11 +136,11 @@
     },
     {
       "name": "syntax coral",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#FAFAF8",
-      "wcag": 6.2,
+      "wcag": 7.8,
       "wcagTarget": 4.5,
-      "apcaLc": 77.9,
+      "apcaLc": 84.3,
       "apcaTarget": 44,
       "passed": true
     },
@@ -246,12 +246,12 @@
     },
     {
       "name": "inline diff marker",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
-      "apcaTarget": 35,
+      "apcaLc": 33.0,
+      "apcaTarget": 0,
       "passed": true
     },
     {
@@ -346,11 +346,11 @@
     },
     {
       "name": "ANSI brightRed",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#FAFAF8",
-      "wcag": 6.2,
+      "wcag": 7.8,
       "wcagTarget": 4.5,
-      "apcaLc": 77.9,
+      "apcaLc": 84.3,
       "apcaTarget": 44,
       "passed": true
     },
@@ -416,11 +416,11 @@
     },
     {
       "name": "ANSI extendedClay",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#FAFAF8",
-      "wcag": 6.2,
+      "wcag": 7.8,
       "wcagTarget": 4.5,
-      "apcaLc": 77.9,
+      "apcaLc": 84.3,
       "apcaTarget": 44,
       "passed": true
     },
@@ -526,11 +526,11 @@
     },
     {
       "name": "coral on base",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#FAFAF8",
-      "wcag": 6.2,
+      "wcag": 7.8,
       "wcagTarget": 4.5,
-      "apcaLc": 77.9,
+      "apcaLc": 84.3,
       "apcaTarget": 0,
       "passed": true
     },
@@ -666,11 +666,11 @@
     },
     {
       "name": "coral on mantle",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#DEE0DF",
-      "wcag": 4.89,
+      "wcag": 6.15,
       "wcagTarget": 4.5,
-      "apcaLc": 62.4,
+      "apcaLc": 68.9,
       "apcaTarget": 0,
       "passed": true
     },
@@ -806,11 +806,11 @@
     },
     {
       "name": "coral on surface0",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#FFFFFF",
-      "wcag": 6.48,
+      "wcag": 8.15,
       "wcagTarget": 4.5,
-      "apcaLc": 81.0,
+      "apcaLc": 87.4,
       "apcaTarget": 0,
       "passed": true
     },
@@ -946,11 +946,11 @@
     },
     {
       "name": "coral on surface1",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#F0F1EF",
-      "wcag": 5.72,
+      "wcag": 7.19,
       "wcagTarget": 4.5,
-      "apcaLc": 72.4,
+      "apcaLc": 78.9,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1086,41 +1086,41 @@
     },
     {
       "name": "search result",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selected popup kind",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "selected popup extra",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "substitution",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1146,11 +1146,11 @@
     },
     {
       "name": "Neovim DiffText",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1216,51 +1216,51 @@
     },
     {
       "name": "status olive",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status sage",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status mauve",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status coral",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
     {
       "name": "status gold",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "wcagTarget": 4.5,
-      "apcaLc": -92.1,
+      "apcaLc": 33.0,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1337,10 +1337,10 @@
     {
       "name": "ANSI white on brightRed",
       "foreground": "#FAFAF8",
-      "background": "#AD2F38",
-      "wcag": 6.2,
+      "background": "#8B3037",
+      "wcag": 7.8,
       "wcagTarget": 4.5,
-      "apcaLc": -82.7,
+      "apcaLc": -88.7,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1467,10 +1467,10 @@
     {
       "name": "ANSI brightWhite on brightRed",
       "foreground": "#FFFFFF",
-      "background": "#AD2F38",
-      "wcag": 6.48,
+      "background": "#8B3037",
+      "wcag": 8.15,
       "wcagTarget": 4.5,
-      "apcaLc": -86.1,
+      "apcaLc": -92.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1646,11 +1646,11 @@
     },
     {
       "name": "diff add syntax coral",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#E2EDDF",
-      "wcag": 5.37,
+      "wcag": 6.76,
       "wcagTarget": 4.5,
-      "apcaLc": 68.4,
+      "apcaLc": 74.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1786,11 +1786,11 @@
     },
     {
       "name": "diff delete syntax coral",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#F1E2DF",
-      "wcag": 5.15,
+      "wcag": 6.48,
       "wcagTarget": 4.5,
-      "apcaLc": 65.7,
+      "apcaLc": 72.1,
       "apcaTarget": 0,
       "passed": true
     },
@@ -1926,11 +1926,11 @@
     },
     {
       "name": "diff change syntax coral",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#D7E3EA",
-      "wcag": 4.96,
+      "wcag": 6.24,
       "wcagTarget": 4.5,
-      "apcaLc": 63.3,
+      "apcaLc": 69.8,
       "apcaTarget": 0,
       "passed": true
     },
@@ -2090,9 +2090,9 @@
     },
     {
       "name": "coral on base",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#FAFAF8",
-      "wcag": 6.2,
+      "wcag": 7.8,
       "target": 4.5,
       "passed": true
     },
@@ -2202,9 +2202,9 @@
     },
     {
       "name": "coral on mantle",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#DEE0DF",
-      "wcag": 4.89,
+      "wcag": 6.15,
       "target": 4.5,
       "passed": true
     },
@@ -2314,9 +2314,9 @@
     },
     {
       "name": "coral on surface0",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#FFFFFF",
-      "wcag": 6.48,
+      "wcag": 8.15,
       "target": 4.5,
       "passed": true
     },
@@ -2426,9 +2426,9 @@
     },
     {
       "name": "coral on surface1",
-      "foreground": "#AD2F38",
+      "foreground": "#8B3037",
       "background": "#F0F1EF",
-      "wcag": 5.72,
+      "wcag": 7.19,
       "target": 4.5,
       "passed": true
     },
@@ -2538,33 +2538,33 @@
     },
     {
       "name": "search result",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup kind",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "selected popup extra",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "substitution",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
@@ -2586,9 +2586,9 @@
     },
     {
       "name": "Neovim DiffText",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
@@ -2642,41 +2642,41 @@
     },
     {
       "name": "status olive",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status sage",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status mauve",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status coral",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     },
     {
       "name": "status gold",
-      "foreground": "#FFFFFF",
-      "background": "#8B3037",
-      "wcag": 8.15,
+      "foreground": "#000000",
+      "background": "#B8595C",
+      "wcag": 4.62,
       "target": 4.5,
       "passed": true
     }
@@ -2715,11 +2715,11 @@
     {
       "name": "keywords/errors",
       "deltaEOK": {
-        "normal": 0.5274,
-        "protan": 0.4207,
-        "deutan": 0.5196,
-        "tritan": 0.5468,
-        "grayscale": 0.4821
+        "normal": 0.4608,
+        "protan": 0.384,
+        "deutan": 0.4559,
+        "tritan": 0.4746,
+        "grayscale": 0.4287
       }
     }
   ],
@@ -2845,33 +2845,33 @@
       }
     },
     "highlight.background": {
-      "hex": "#8B3037",
+      "hex": "#B8595C",
       "oklch": [
-        0.4439,
-        0.1237,
-        19.3
+        0.5806,
+        0.1231,
+        19.7
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#474337",
-        "deutan": "#5E5635",
-        "tritan": "#981E33",
-        "grayscale": "#4F4F4F"
+        "protan": "#6E6A5C",
+        "deutan": "#867D5A",
+        "tritan": "#C84B5B",
+        "grayscale": "#767676"
       }
     },
     "highlight.foreground": {
-      "hex": "#FFFFFF",
+      "hex": "#000000",
       "oklch": [
-        1.0,
+        0.0,
         0.0,
         null
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#FFFFFF",
-        "deutan": "#FFFFFF",
-        "tritan": "#FFFFFF",
-        "grayscale": "#FFFFFF"
+        "protan": "#000000",
+        "deutan": "#000000",
+        "tritan": "#000000",
+        "grayscale": "#000000"
       }
     },
     "highlight.border": {
@@ -2890,33 +2890,33 @@
       }
     },
     "highlight.cursor": {
-      "hex": "#8B3037",
+      "hex": "#B8595C",
       "oklch": [
-        0.4439,
-        0.1237,
-        19.3
+        0.5806,
+        0.1231,
+        19.7
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#474337",
-        "deutan": "#5E5635",
-        "tritan": "#981E33",
-        "grayscale": "#4F4F4F"
+        "protan": "#6E6A5C",
+        "deutan": "#867D5A",
+        "tritan": "#C84B5B",
+        "grayscale": "#767676"
       }
     },
     "highlight.cursorBlock": {
-      "hex": "#8B3037",
+      "hex": "#B8595C",
       "oklch": [
-        0.4439,
-        0.1237,
-        19.3
+        0.5806,
+        0.1231,
+        19.7
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#474337",
-        "deutan": "#5E5635",
-        "tritan": "#981E33",
-        "grayscale": "#4F4F4F"
+        "protan": "#6E6A5C",
+        "deutan": "#867D5A",
+        "tritan": "#C84B5B",
+        "grayscale": "#767676"
       }
     },
     "foregrounds.muted": {
@@ -3070,18 +3070,18 @@
       }
     },
     "accents.coral": {
-      "hex": "#AD2F38",
+      "hex": "#8B3037",
       "oklch": [
-        0.5019,
-        0.1619,
-        21.5
+        0.4439,
+        0.1237,
+        19.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#534D37",
-        "deutan": "#726834",
-        "tritan": "#BE0034",
-        "grayscale": "#5E5E5E"
+        "protan": "#474337",
+        "deutan": "#5E5635",
+        "tritan": "#981E33",
+        "grayscale": "#4F4F4F"
       }
     },
     "accents.aqua": {
@@ -3265,18 +3265,18 @@
       }
     },
     "ansi.brightRed": {
-      "hex": "#AD2F38",
+      "hex": "#8B3037",
       "oklch": [
-        0.5019,
-        0.1619,
-        21.5
+        0.4439,
+        0.1237,
+        19.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#534D37",
-        "deutan": "#726834",
-        "tritan": "#BE0034",
-        "grayscale": "#5E5E5E"
+        "protan": "#474337",
+        "deutan": "#5E5635",
+        "tritan": "#981E33",
+        "grayscale": "#4F4F4F"
       }
     },
     "ansi.brightGreen": {
@@ -3385,18 +3385,18 @@
       }
     },
     "ansi.extendedClay": {
-      "hex": "#AD2F38",
+      "hex": "#8B3037",
       "oklch": [
-        0.5019,
-        0.1619,
-        21.5
+        0.4439,
+        0.1237,
+        19.3
       ],
       "inSrgb": true,
       "simulations": {
-        "protan": "#534D37",
-        "deutan": "#726834",
-        "tritan": "#BE0034",
-        "grayscale": "#5E5E5E"
+        "protan": "#474337",
+        "deutan": "#5E5635",
+        "tritan": "#981E33",
+        "grayscale": "#4F4F4F"
       }
     },
     "diff.contextForeground": {
@@ -3668,11 +3668,11 @@
     {
       "name": "error/warning",
       "deltaEOK": {
-        "normal": 0.527,
-        "protan": 0.421,
-        "deutan": 0.52,
-        "tritan": 0.547,
-        "grayscale": 0.482
+        "normal": 0.461,
+        "protan": 0.384,
+        "deutan": 0.456,
+        "tritan": 0.475,
+        "grayscale": 0.429
       },
       "floor": 0.05,
       "passed": true

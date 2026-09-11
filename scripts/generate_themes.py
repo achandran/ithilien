@@ -352,7 +352,7 @@ def generate_color_reference() -> None:
         'role-to-hex mappings used by existing ports and audits.', '',
         'Neovim also exposes the named palette through '
         '`require("ithilien.ithilien-dawn").colors.Anduin`. '
-        'Dusk and the shared interaction source remain unchanged. Dawn uses Briar selection and block cursors with white text.', ''])
+        'Dusk and the shared interaction source remain unchanged. Dawn uses Rosehip selection and block cursors with black text.', ''])
     (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
 
 

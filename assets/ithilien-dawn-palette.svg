@@ -23,10 +23,10 @@
 <text x="678" y="142" fill="#444D52" >backgrounds.border</text>
 <rect x="900" y="72" width="282" height="84" fill="#FFFFFF"/>
 <rect x="910" y="82" width="50" height="64" fill="#505456"/>
-<rect x="911" y="83" width="48" height="62" fill="#AD2F38"/>
+<rect x="911" y="83" width="48" height="62" fill="#B8595C"/>
 <text x="972" y="96" fill="#000000" font-weight="700">Rosehip</text>
-<text x="972" y="118" fill="#000000" >#AD2F38</text>
-<text x="972" y="142" fill="#444D52" >accents.coral</text>
+<text x="972" y="118" fill="#000000" >#B8595C</text>
+<text x="972" y="142" fill="#444D52" >highlight.background</text>
 <rect x="18" y="166" width="282" height="84" fill="#FFFFFF"/>
 <rect x="28" y="176" width="50" height="64" fill="#505456"/>
 <rect x="29" y="177" width="48" height="62" fill="#315F46"/>
@@ -152,7 +152,7 @@
 <rect x="29" y="647" width="48" height="62" fill="#8B3037"/>
 <text x="90" y="660" fill="#000000" font-weight="700">Briar</text>
 <text x="90" y="682" fill="#000000" >#8B3037</text>
-<text x="90" y="706" fill="#444D52" >ansi.red</text>
+<text x="90" y="706" fill="#444D52" >accents.coral</text>
 <rect x="312" y="636" width="282" height="84" fill="#FFFFFF"/>
 <rect x="322" y="646" width="50" height="64" fill="#505456"/>
 <rect x="323" y="647" width="48" height="62" fill="#274D39"/>

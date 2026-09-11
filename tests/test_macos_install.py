@@ -16,10 +16,10 @@ class MacOSInstall(unittest.TestCase):
             installer.macos()
             self.assertEqual(run.call_count, 1)
             self.assertFalse(installer.backup.exists())
-            run.side_effect = [subprocess.CompletedProcess([], 0, "old value\n", ""), subprocess.CompletedProcess([], 0, "", ""), subprocess.CompletedProcess([], 0, "0.545098 0.188235 0.215686 Other\n", "")]
+            run.side_effect = [subprocess.CompletedProcess([], 0, "old value\n", ""), subprocess.CompletedProcess([], 0, "", ""), subprocess.CompletedProcess([], 0, "0.721569 0.349020 0.360784 Other\n", "")]
             installer.apply = True
             installer.macos()
-            self.assertEqual(run.call_args_list[-2].args[0], ['/usr/bin/defaults', 'write', '-g', 'AppleHighlightColor', '-string', '0.545098 0.188235 0.215686 Other'])
+            self.assertEqual(run.call_args_list[-2].args[0], ['/usr/bin/defaults', 'write', '-g', 'AppleHighlightColor', '-string', '0.721569 0.349020 0.360784 Other'])
             self.assertEqual(json.loads((installer.backup / 'macos-highlight.json').read_text())['previous'], 'old value')
 
     def test_unchanged_and_non_mac(self):
@@ -30,7 +30,7 @@ class MacOSInstall(unittest.TestCase):
                 run.assert_not_called()
                 self.assertFalse(installer.detected('macos', 'macOS'))
             with patch('install.sys.platform', 'darwin'):
-                run.return_value = subprocess.CompletedProcess([], 0, '0.545098 0.188235 0.215686 Other\n', '')
+                run.return_value = subprocess.CompletedProcess([], 0, '0.721569 0.349020 0.360784 Other\n', '')
                 installer.macos()
                 self.assertEqual(run.call_count, 1)
                 self.assertFalse(installer.backup.exists())

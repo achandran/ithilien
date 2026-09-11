@@ -196,7 +196,7 @@ class Installer:
         prompt = (ROOT / "shell/prompt.zsh").read_text().rstrip()
         block = f"{start}\n{selection}\n{prompt}\n{end}\n"
         self.write(rc, (text.rstrip() + '\n\n' + block).encode())
-        print('NEXT zsh: start a new shell. Dawn visual selection, fzf colors, and Rosehip-hostname prompt are installed; source ithilien-dusk.zsh instead for a dark terminal. Existing non-region ZLE styles are preserved.')
+        print('NEXT zsh: start a new shell. Dawn visual selection, fzf colors, and Ash user/hostname prompt are installed; source ithilien-dusk.zsh instead for a dark terminal. Existing non-region ZLE styles are preserved.')
 
 
 def main():
