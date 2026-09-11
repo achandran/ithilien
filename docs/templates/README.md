@@ -23,12 +23,6 @@ The aim is a working environment that stays legible without turning every token 
 
 The Neovim implementation builds on [Kansō](https://github.com/webhooked/kanso.nvim), with Ithilien’s palette and highlight mappings. Dusk is also included as a dark variant; Dawn is the focus of the current design and evaluation work.
 
-## Python in Neovim
-
-![Ithilien Dawn — Python syntax in Neovim](assets/ithilien-dawn-python.png)
-
-A quiet background leaves room for strings, keywords, and comments to establish hierarchy. The preview uses the shipped highlight definitions without recoloring.
-
 ## Palette
 
 ![Ithilien Dawn palette — names, hex values, and semantic roles](assets/ithilien-dawn-palette.svg)
@@ -36,12 +30,6 @@ A quiet background leaves room for strings, keywords, and comments to establish 
 The palette and preview images are generated from the theme sources so they stay in sync. The Neovim image above uses actual captured UI-cell colors, rasterized with Berkeley Mono Medium at 16 pt. It shows built-in Python syntax, not a Tree-sitter/LSP configuration or a native Ghostty screenshot.
 
 [Full palette reference](docs/palette-names.md) · [Interactive palette source](palette-preview.html)
-
-## Ghostty
-
-Dawn carries the same white foundation, dark ANSI colors, and red selection into the terminal. The installer supplies a Ghostty theme and a coordinated zsh prompt: gray user/host, blue directory, and purple Git state.
-
-Use an sRGB configuration when comparing the supplied color values. Explicit settings in your Ghostty config can override the theme. A verified native Ghostty screenshot is still pending; the Neovim preview above should not be used to judge Ghostty’s text rendering or cursor.
 
 ## Install
 
