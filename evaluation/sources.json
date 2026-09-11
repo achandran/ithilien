@@ -1,0 +1,61 @@
+{
+  "codex": {
+    "repository": "https://github.com/openai/codex",
+    "revision": "02a8f038b87ad34d4a1dc5058eda26972ed7aa6c",
+    "kind": "upstream test fixtures; not recorded user sessions",
+    "files": [
+      {
+        "path": "evaluation/fixtures/codex/codex_tui__diff_render__tests__diff_gallery_80x24.snap",
+        "upstream": "codex-rs/tui/src/snapshots/codex_tui__diff_render__tests__diff_gallery_80x24.snap",
+        "sha256": "5a8dedeefa84c412916f3503604c82f90756be0235208830ff01b5d1f60550ba"
+      },
+      {
+        "path": "evaluation/fixtures/codex/codex_tui__diff_render__tests__diff_gallery_94x35.snap",
+        "upstream": "codex-rs/tui/src/snapshots/codex_tui__diff_render__tests__diff_gallery_94x35.snap",
+        "sha256": "923d27f3fed1bead921df6b0a9d9bcf18a3ce85cc35c82eecb8ed4ed47e0d04d"
+      },
+      {
+        "path": "evaluation/fixtures/codex/codex_tui__diff_render__tests__diff_gallery_120x40.snap",
+        "upstream": "codex-rs/tui/src/snapshots/codex_tui__diff_render__tests__diff_gallery_120x40.snap",
+        "sha256": "a0ad98cf1112120fb5ff3f8cba54236e252fd2bcaab5108410209eee3cf686c8"
+      },
+      {
+        "path": "evaluation/fixtures/codex/rust.before.rs",
+        "upstream": "codex-rs/tui/src/diff_render.rs",
+        "sha256": "ae3c616a91dc24bab77c30188ff10fedf13ddd0b83be10f4b79b69e1a604ff42"
+      },
+      {
+        "path": "evaluation/fixtures/codex/rust.after.rs",
+        "upstream": "codex-rs/tui/src/diff_render.rs",
+        "sha256": "cfb3e746a2ace96220c63a421153c24f2f80e727d1fd8a22976b033d4a141e6e"
+      },
+      {
+        "path": "evaluation/fixtures/codex/py.before.py",
+        "upstream": "codex-rs/tui/src/diff_render.rs",
+        "sha256": "e40221263d68b5ec1e95224e2aa7c4af707a2ab8b9a9c92190a6f4a8083b9af2"
+      },
+      {
+        "path": "evaluation/fixtures/codex/py.after.py",
+        "upstream": "codex-rs/tui/src/diff_render.rs",
+        "sha256": "a028e21388ea760e617b4d7664612c343b0afb7073a9a74c008c24d95e98d596"
+      }
+    ]
+  },
+  "codex_real_commit": {
+    "repository": "https://github.com/openai/codex",
+    "revision": "624ccf794703e2d84e748fc3ef547d6191a8c0a4",
+    "kind": "Unmodified hunk excerpt from an actual public commit; same Apache license",
+    "files": [
+      {
+        "path": "evaluation/fixtures/codex/real-config-hunk.before.rs",
+        "upstream": "codex-rs/app-server/tests/suite/v2/mod.rs",
+        "sha256": "56327c13fe44314849e8d5d312e9e45158e2fe6b9f4963bf3666eba7548f2081"
+      },
+      {
+        "path": "evaluation/fixtures/codex/real-config-hunk.after.rs",
+        "upstream": "codex-rs/app-server/tests/suite/v2/mod.rs",
+        "sha256": "e51b2c583f7e2b200c850c4ba1cb859062a8165f9442b7877ade25132676fd11"
+      }
+    ]
+  }
+}

@@ -18,7 +18,7 @@ Named colors drawn for Ithilien’s plants, landscape, people and immediate neig
 ## Reading and diffs
 
 - Neutral-white Dawn surfaces and restrained syntax; black foregrounds, including selections and status lines.
-- Distinct added, removed and changed lines. Dawn’s exact changed characters are **dark and underlined** in Neovim; selected text stays dark.
+- Distinct added, removed and changed lines. Dawn’s exact changed characters are **dark on amber, without bold or underline** in Neovim; selected text stays dark.
 
 ## Install
 
@@ -79,3 +79,7 @@ Use `--only ghostty codex` to limit the apps. Ghostty is activated automatically
 Run `python3 scripts/compare.py` for isolated Ghostty launch commands, then follow the [comparison exercises](comparison/README.md). Your installed settings are not changed.
 
 Dawn now uses Kanso Pearl as its Neovim base. The canonical palette and terminal/application exports are unchanged by this migration. Existing users should update the plugin and restart Neovim; this change is not yet proof that the reported terminal rendering issue is resolved.
+
+## Palette regression evaluation
+
+See [the evaluation suite](evaluation/README.md) for native Neovim and Codex captures, pinned fixtures, contrast checks, and before/after palette review.
