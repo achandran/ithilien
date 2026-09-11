@@ -9,7 +9,7 @@
     "Afterglow": "#B8595C",
     "Sage": "#315F46",
     "Anduin": "#345E77",
-    "Broom": "#795922",
+    "Mallorn": "#795922",
     "Thyme": "#70516D",
     "Poros": "#306466",
     "Pelennor": "#E2EDDF",
@@ -59,9 +59,9 @@
       "meaning": "The Great River along Ithilien; interpreted as river blue.",
       "source": "https://tolkiengateway.net/wiki/Anduin"
     },
-    "Broom": {
-      "meaning": "Broom on the approach to Ithilien; a dark ochre interpretation of yellow flowers.",
-      "source": "https://lentenlordoftherings.wordpress.com/2017/03/25/on-long-descriptions-of-nature/"
+    "Mallorn": {
+      "meaning": "Dark ochre inspired by the golden leaves of L\u00f3rien\u2019s mallorn trees; a shaded interpretation chosen for readable terminal text. A broader Tolkien connection, not an Ithilien tree.",
+      "source": "https://tolkiengateway.net/wiki/Mallorn"
     },
     "Thyme": {
       "meaning": "Thyme in Ithilien; muted purple flowers.",
@@ -195,7 +195,7 @@
     "black": "Lebethron",
     "red": "Briar",
     "green": "Sage",
-    "yellow": "Broom",
+    "yellow": "Mallorn",
     "blue": "Anduin",
     "magenta": "Thyme",
     "cyan": "Stillwater",
@@ -203,12 +203,12 @@
     "brightBlack": "Ash",
     "brightRed": "Briar",
     "brightGreen": "Sage",
-    "brightYellow": "Broom",
+    "brightYellow": "Mallorn",
     "brightBlue": "Anduin",
     "brightMagenta": "Thyme",
     "brightCyan": "Stillwater",
     "brightWhite": "Lily",
-    "extendedOchre": "Broom",
+    "extendedOchre": "Mallorn",
     "extendedClay": "Briar"
   },
   "diff": {

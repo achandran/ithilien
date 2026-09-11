@@ -7,7 +7,7 @@ return {
     ["Afterglow"] = "#B8595C",
     ["Sage"] = "#315F46",
     ["Anduin"] = "#345E77",
-    ["Broom"] = "#795922",
+    ["Mallorn"] = "#795922",
     ["Thyme"] = "#70516D",
     ["Poros"] = "#306466",
     ["Pelennor"] = "#E2EDDF",

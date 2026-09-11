@@ -4,7 +4,7 @@
 
 All **30 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
 
-Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its immediate Gondorian neighbours. Gondor is its realm; Osgiliath, Pelennor and Harlond are directly connected across Anduin. Plant names refer to species mentioned in Ithilien; material names describe its local landscape. The sources establish those connections; botanical shades and the exact hex values are our interpretation.
+Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its immediate Gondorian neighbours. Gondor is its realm; Osgiliath, Pelennor and Harlond are directly connected across Anduin. Plant names refer to species mentioned in Ithilien, except Mallorn, which draws on Lórien’s golden trees; material names describe its local landscape. The sources establish those connections; botanical shades and the exact hex values are our interpretation.
 
 | Name | Exact hex | Tolkien connection / color association | Roles |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@ Names draw from Ithilien’s plants, waters, materials and people, poetic landsc
 | Afterglow | `#B8595C` | A poetic name for muted sunset red, inspired by the light at Henneth Annûn; our interpretation, not a canonical Tolkien color name. [Source](https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn) | `highlight.background`, `highlight.cursor`, `highlight.cursorBlock` |
 | Sage | `#315F46` | Sages of Ithilien; green foliage. [Source](https://tolkiengateway.net/wiki/Ithilien) | `ansi.brightGreen` |
 | Anduin | `#345E77` | The Great River along Ithilien; interpreted as river blue. [Source](https://tolkiengateway.net/wiki/Anduin) | `accents.blue`, `ansi.brightBlue` |
-| Broom | `#795922` | Broom on the approach to Ithilien; a dark ochre interpretation of yellow flowers. [Source](https://lentenlordoftherings.wordpress.com/2017/03/25/on-long-descriptions-of-nature/) | `ansi.brightYellow`, `ansi.extendedOchre` |
+| Mallorn | `#795922` | Dark ochre inspired by the golden leaves of Lórien’s mallorn trees; a shaded interpretation chosen for readable terminal text. A broader Tolkien connection, not an Ithilien tree. [Source](https://tolkiengateway.net/wiki/Mallorn) | `ansi.brightYellow`, `ansi.extendedOchre` |
 | Thyme | `#70516D` | Thyme in Ithilien; muted purple flowers. [Source](https://tolkiengateway.net/wiki/Ithilien) | `accents.mauve`, `ansi.brightMagenta` |
 | Poros | `#306466` | River marking Ithilien’s southern boundary; blue-green water. [Source](https://www.encyclopedia-of-arda.com/p/poros.html) | `accents.aqua`, `ansi.brightCyan` |
 | Pelennor | `#E2EDDF` | Fields across Anduin from Ithilien; pale field green. [Source](https://tolkiengateway.net/wiki/Pelennor_Fields) | `diff.addBackground` |
