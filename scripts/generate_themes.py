@@ -222,6 +222,27 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
         f'"region:bg={highlight["background"]},fg={highlight["foreground"]}")\n'
     )
 
+    # Append explicit colors after user options; preserve bindings and previews.
+    bg, fg = palette["backgrounds"], palette["foregrounds"]
+    colors = (f"--color={palette['polarity']},bg:{bg['base']},fg:{fg['text']},"
+              f"bg+:{highlight['background']},fg+:{highlight['foreground']},"
+              f"hl:{fg['text']}:underline,hl+:{highlight['foreground']}:underline,"
+              f"info:{fg['text']},header:{fg['text']},border:{fg['comment']},"
+              f"prompt:{highlight.get('cursor', palette['accents']['coral'])},pointer:{highlight['foreground']},"
+              f"marker:{highlight['foreground']},spinner:{highlight.get('cursor', palette['accents']['coral'])},"
+              f"gutter:{bg['base']},query:{fg['text']}")
+    with shell.open("a") as output:
+        output.write(
+            "\n# fzf, including Ctrl-R history; safe to source repeatedly.\n"
+            'if [[ -n ${_ITHILIEN_FZF_COLORS-} ]]; then\n'
+            '  FZF_DEFAULT_OPTS=${FZF_DEFAULT_OPTS//"$_ITHILIEN_FZF_COLORS"/}\n'
+            '  FZF_CTRL_R_OPTS=${FZF_CTRL_R_OPTS//"$_ITHILIEN_FZF_COLORS"/}\n'
+            'fi\n'
+            f"_ITHILIEN_FZF_COLORS='{colors}'\n"
+            'export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS% } $_ITHILIEN_FZF_COLORS"\n'
+            'export FZF_CTRL_R_OPTS="${FZF_CTRL_R_OPTS% } $_ITHILIEN_FZF_COLORS"\n'
+        )
+
     r, g, b = (int(highlight["background"][index : index + 2], 16) / 255 for index in (1, 3, 5))
     macos = ROOT / "macos" / (f"apply-highlight-{palette['slug']}.sh" if variant else "apply-highlight.sh")
     macos.parent.mkdir(parents=True, exist_ok=True)

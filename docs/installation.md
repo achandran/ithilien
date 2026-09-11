@@ -87,3 +87,7 @@ The zsh installer also writes the Dawn prompt from `shell/prompt.zsh` into the m
 ### Neovim linewise selection rendering
 
 Dawn Visual and VisualNOS use plain Ranger/Lebethron backgrounds and foregrounds with no underline or other decoration. The user confirmed that removing selection styling fixes partial-line rendering in Ghostty. Exact diff-character highlights retain bold and underline; the native highlight regression check asserts both contracts. Earlier reports describing an underlined Visual selection are historical.
+
+### fzf history search
+
+The zsh installation also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Ranger for the current row, underlined matching characters, and a Rosehip prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
