@@ -10,21 +10,29 @@ from evaluate_interactions import isolated_capture, assess
 from evaluate_installed_workflows import write_gallery
 from evaluation_checks import effective_colors
 
-SCENES=('diffview','neogit','gitsigns-preview')
+SCENES=('diffview','diffview-conflict','neogit','neogit-hunks','gitsigns-preview')
 
 def check(shot,colors):
     errors=[]
     text=shot['text'];windows=shot['evidence']['windows']
     case=shot['case']
-    if case=='neogit':
+    if case.startswith('neogit'):
         for token in ('review.py','pending.py','Staged'):
             if token not in text:errors.append('Missing status content: '+token)
         if not any(w['filetype']=='NeogitStatus' for w in windows):errors.append('Missing Neogit status window')
+        if case=='neogit-hunks':
+            for token in ('LIMIT = 10','LIMIT = 11'):
+                if token not in text:errors.append('Expanded patch absent: '+token)
+    elif case=='diffview-conflict':
+        if sum(w['diff'] for w in windows)<3:errors.append('Missing three-way conflict panes')
+        for token in ('LIMIT = 11','LIMIT = 20','<<<<<<<','>>>>>>>'):
+            if token not in text:errors.append('Missing conflict content: '+token)
     else:
         for token in ('LIMIT = 10','LIMIT = 11'):
             if token not in text:errors.append('Missing patch content: '+token)
         if case=='diffview' and sum(w['diff'] for w in windows)<2:errors.append('Missing diff panes')
         if case=='gitsigns-preview' and not any(w['floating'] for w in windows):errors.append('Missing hunk float')
+    if case in ('diffview','gitsigns-preview','neogit-hunks'):
         emphasis=int(colors['Celandine'][1:],16)
         rows={}
         for c in shot['cells']:rows.setdefault(c['row'],[]).append(c)

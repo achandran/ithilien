@@ -26,6 +26,15 @@ function M.apply()
     FzfLuaSearch={fg=f.text,bg=b.search},FzfLuaBackdrop={bg=b.mantle,blend=0},
     fzf1={fg=a.red,bg=b.mantle},fzf2={fg=f.text,bg=b.mantle},fzf3={fg=f.muted,bg=b.mantle},
   }
+  -- Neogit's native diff defaults derive additional colors; use Dawn's four roles.
+  for _,suffix in ipairs({'','Highlight','Cursor'}) do
+    groups['NeogitDiffAdd'..suffix]={fg=f.text,bg=p.diff.addBackground}
+    groups['NeogitDiffDelete'..suffix]={fg=f.text,bg=p.diff.deleteBackground}
+    groups['NeogitDiffContext'..suffix]={fg=f.text,bg=b.base}
+    groups['NeogitHunkHeader'..suffix]={fg=f.text,bg=b.mantle}
+  end
+  groups.NeogitDiffAddInline={fg=f.text,bg=p.diff.changeEmphasis}
+  groups.NeogitDiffDeleteInline={fg=f.text,bg=p.diff.changeEmphasis}
   -- Overlapping TodoBg/TodoFg spans must remain readable at keyword punctuation.
   for keyword,color in pairs({FIX=a.red,TODO=a.blue,HACK=a.yellow,WARN=a.yellow,PERF=a.magenta,NOTE=a.cyan,TEST=a.green}) do
     groups['TodoBg'..keyword]={fg=color,bg=b.mantle,bold=true}

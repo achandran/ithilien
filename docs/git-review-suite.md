@@ -5,7 +5,7 @@ and Kanso checkouts, without loading or changing your personal Neovim setup.
 The Ithilien palette remains frozen.
 
 ```sh
-# One-time dependency fetch, then the full 12-case matrix:
+# One-time dependency fetch, then the full 20-case matrix:
 .venv/bin/python scripts/evaluate_git_review.py --fetch-dependencies
 # Subsequent unattended runs require no network:
 .venv/bin/python scripts/evaluate_git_review.py
@@ -20,8 +20,8 @@ To deliberately upgrade a dependency, update its pin and check it out explicitly
 
 | Plugin | Rendered coverage | Not yet covered |
 |---|---|---|
-| Diffview | Two-way Python working-tree diff; exact edited digit on both sides | Three-way conflicts, history, search/selection overlays |
-| Neogit | Staged file and untracked file in status | Expanded hunks, commit popup, conflict resolution |
+| Diffview | Two-way Python working-tree diff and real three-way merge conflict; exact edited digit on both sides | History, search/selection overlays |
+| Neogit | Staged/untracked status and expanded staged hunks with inline digit checks | Commit popup, conflict resolution |
 | Gitsigns | Actual floating hunk preview and inline digit emphasis | Staged preview, inline preview, search overlays |
 
 Every scene runs at 100 and 160 columns, initially and after a colorscheme reload.
@@ -37,11 +37,15 @@ version, fixture digest, palette digest, and the configured rendering profile.
 The gallery uses Berkeley Mono Medium at 16 pt. It reconstructs Neovim cells;
 it does not verify Ghostty pixels, font availability, or long-session comfort.
 
-Initial result: 12/12 passed after mapping Neogit's section headers and modified
+Initial profile: 12/12 passed after mapping Neogit's section headers and modified
 file labels to Anduin. Their upstream defaults previously produced 48
 out-of-palette, low-contrast cells per Neogit capture.
 
-Next coverage milestones: expanded Git hunks and conflicts, then isolated pytest
+The expanded profile adds actual conflicts and staged hunks. Neogit diff mappings
+now use Dawn's existing backgrounds and black inline text instead of derived
+colors.
+
+Next coverage milestones: isolated pytest
 and debugpy workflows with Neotest and DAP UI. Picker alternatives and contextual
 navigation follow. These remain untested until their actual renderers are added;
 this profile does not imply complete plugin support.

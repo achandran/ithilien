@@ -33,3 +33,16 @@ class GitReviewGates(unittest.TestCase):
         shot=fixture();shot['attrs'][0]={'foreground':0xeeeeee}
         result=check(shot,COLORS)
         assert result['off_palette'] and result['contrast']['failures'] and not result['pass_']
+
+    def test_conflict_requires_three_panes(self):
+        shot=fixture();shot['case']='diffview-conflict'
+        shot['text']='LIMIT = 11 LIMIT = 20 <<<<<<< >>>>>>>'
+        self.assertFalse(check(shot,COLORS)['pass_'])
+        shot['evidence']['windows'].append({'diff':True})
+        self.assertTrue(check(shot,COLORS)['pass_'])
+
+    def test_neogit_collapsed_is_not_expanded_coverage(self):
+        shot=fixture();shot['case']='neogit-hunks'
+        shot['text']='review.py pending.py Staged'
+        shot['evidence']['windows']=[{'filetype':'NeogitStatus'}]
+        self.assertFalse(check(shot,COLORS)['pass_'])

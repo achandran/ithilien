@@ -14,17 +14,34 @@ return function(scene,state)
   vim.fn.writefile(after,'review.py')
   vim.cmd('edit review.py');vim.bo.filetype='python';vim.cmd('syntax on')
   vim.o.number=true;vim.o.signcolumn='yes'
-  if scene=='diffview' then
+  if scene=='diffview-conflict' then
+    git('checkout','-qb','incoming')
+    vim.fn.writefile({'LIMIT = 20'},'review.py');git('add','review.py');git('commit','-qm','Incoming')
+    git('checkout','-q','-');vim.fn.writefile({'LIMIT = 11'},'review.py');git('add','review.py');git('commit','-qm','Local')
+    vim.fn.system({'git','-c','core.hooksPath=/dev/null','merge','incoming'})
+    assert(vim.v.shell_error==1,'Expected a real merge conflict')
+    vim.cmd('edit! review.py')
+  end
+  if scene:match('^diffview') then
     vim.cmd('DiffviewOpen')
     assert(vim.wait(4000,function()
       local n=0;for _,w in ipairs(vim.api.nvim_list_wins()) do if vim.wo[w].diff then n=n+1 end end
-      return n>=2
+      return n>=(scene=='diffview-conflict' and 3 or 2)
     end,20),'Diffview panes unavailable')
-  elseif scene=='neogit' then
+  elseif scene:match('^neogit') then
     git('add','review.py')
     vim.fn.writefile({'# Pending work'},'pending.py')
     require('neogit').open({kind='replace'})
     assert(vim.wait(4000,function() return vim.bo.filetype=='NeogitStatus' and table.concat(vim.api.nvim_buf_get_lines(0,0,-1,false),'\n'):find('review.py',1,true)~=nil end,20),'Neogit status unavailable')
+    if scene=='neogit-hunks' then
+      for i,line in ipairs(vim.api.nvim_buf_get_lines(0,0,-1,false)) do
+        if line:find('review.py',1,true) then vim.api.nvim_win_set_cursor(0,{i,0});break end
+      end
+      vim.cmd('normal 4') -- Neogit's real Depth4 mapping expands files and hunks
+      assert(vim.wait(4000,function()
+        return table.concat(vim.api.nvim_buf_get_lines(0,0,-1,false),'\n'):find('LIMIT = 11',1,true)~=nil
+      end,20),'Expanded Neogit patch unavailable')
+    end
   else
     require('gitsigns').attach()
     assert(vim.wait(4000,function() return #(require('gitsigns').get_hunks() or {})>0 end,20),'Gitsigns hunks unavailable')
