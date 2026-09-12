@@ -32,6 +32,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--codex-source',type=Path,required=True);p.add_argument('--python-source',type=Path,required=True)
     p.add_argument('--manifest',type=Path,default=ROOT/'evaluation/themes.json');p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/suite')
+    p.add_argument('--pickers',action='store_true',help='Gate native picker/completion workflows')
     p.add_argument('--python-tools',action='store_true',help='Gate actual pytest and debugpy plugin workflows')
     p.add_argument('--git-review',action='store_true',help='Gate pinned native Git plugin screens (fetch dependencies first)')
     p.add_argument('--installed-workflows',action='store_true',help='Also gate actual locally installed Ithilien plugin workflows')
@@ -66,6 +67,10 @@ def main():
     from validate_evaluator import run as validate_evaluator
     validation=validate_evaluator(out/'evaluator-validation')
     report['stages']['evaluator-validation']={'status':'pass' if validation['pass'] else 'fail','gallery':'evaluator-validation/index.html'}
+    if a.pickers:
+        from evaluate_pickers import run as run_pickers
+        pickers=run_pickers(out/'pickers')
+        report['stages']['pickers']={'status':'pass' if pickers['pass'] else 'fail','gallery':'pickers/gallery.html'}
     if a.python_tools:
         from evaluate_python_tools import run as run_python_tools
         python_tools=run_python_tools(out/'python-tools')
