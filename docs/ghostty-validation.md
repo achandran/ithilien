@@ -97,8 +97,8 @@ indentation, and character-shape fidelity are not certified by these checks.
 The attribute probe deliberately contains white ANSI text on the light canvas;
 those incompatible pairs are exposed as findings, not hidden or changed during
 evaluation. The six real command cases are reported separately. Full native
-acceptance remains incomplete because cursor and selection checks do not yet
-exist. An OCR error never silently falls back to a passing pixel-only verdict.
+acceptance remains incomplete because mouse selection and the remaining cursor modes are not yet
+covered. An OCR error never silently falls back to a passing pixel-only verdict.
 
 Tests include blank/clipped calibration, erased glyphs, low-contrast cells,
 tiny punctuation, altered comparison operators, omitted lines, and unsupported
@@ -132,3 +132,19 @@ was rejected after erasing the equals sign in `<=`. The white-on-white ANSI prob
 still fails as intended. Synthetic mutation tests additionally cover replaced
 operators and unexpected suffixes. Ligatures or differing rasterization may
 remain unverified.
+
+### Native steady block cursor
+
+New captures also include `cursor-block`: the terminal receives a steady-block
+cursor escape sequence and positions its actual cursor over the `=` in
+`return attempt <= 3`. The emitter does not paint a replacement cursor. Its cell
+must have the configured cursor fill and foreground, meet the 4.5:1 rendered
+stroke contrast floor, and independently resolve to `=` against the native ASCII
+reference sheet. Normal command text checks still apply to the rest of the row.
+Missing fill, an outline cursor, erased or replaced glyphs cannot pass this gate.
+The JSON report records cursor evidence separately from command text evidence.
+
+Run `make evaluate-ghostty` to capture this additional case. Previous captures do
+not establish cursor coverage. This one case does not certify shell vi-mode
+transitions, other cursor shapes, mouse selection, or long-session comfort;
+full native acceptance remains incomplete until the remaining coverage exists.

@@ -17,16 +17,20 @@ def pixel_gate(measurement, colors):
             'scope':'Calibration swatch presence only; does not certify glyph legibility, font, cursor, selection, or content completeness.'}
 
 
-def emit_scene(payload, ready, release):
+def emit_scene(payload, ready, release, cursor=None):
     calibration = ''.join(f'\x1b[48;5;{i}m      ' for i in range(1, 7))+'\x1b[0m\n\n'
     os.write(1, ('\x1b[2J\x1b[H'+calibration).encode()+payload.read_bytes()+b'\x1b[0m\n')
+    if cursor is not None:
+        row,column=cursor
+        # DECSCUSR 2 requests a steady native block; CUP positions it over text.
+        os.write(1,f'\x1b[2 q\x1b[?25h\x1b[{row+3};{column+1}H'.encode())
     ready.write_text('ready')
     deadline = time.monotonic()+45
     while not release.exists() and time.monotonic() < deadline:
         time.sleep(.1)
 
 
-def write_launcher(output, name, payload, ready, release):
+def write_launcher(output, name, payload, ready, release, cursor=None):
     """Keep argument quoting and child errors independent of app launch parsing."""
     launcher = output/(name+'.launch.sh')
     started, log = output/(name+'.started'), output/(name+'.child.log')
@@ -34,6 +38,8 @@ def write_launcher(output, name, payload, ready, release):
         path.unlink(missing_ok=True)
     command = [sys.executable, str(Path(__file__).resolve()), '--emit', str(payload),
                '--ready', str(ready), '--release', str(release)]
+    if cursor is not None:
+        command += ['--cursor-row',str(cursor['row']),'--cursor-column',str(cursor['column'])]
     launcher.write_text('#!/bin/sh\n'+
         'printf started > '+shlex.quote(str(started))+'\n'+
         'exec '+shlex.join(command)+' 2>'+shlex.quote(str(log))+'\n')
@@ -79,7 +85,7 @@ def capture(output, report):
         config = output/(row['id']+'.conf')
         config.write_text((output/'ghostty.conf').read_text()+
                           f'\ntitle = {title}\nwindow-width = 120\nwindow-height = 40\n')
-        launcher, started, log = write_launcher(output, row['id'], output/row['ansi'], ready, release)
+        launcher, started, log = write_launcher(output, row['id'], output/row['ansi'], ready, release, row.get('cursor'))
         launch_command = 'shell:'+shlex.join(['/bin/sh', str(launcher)])
         try:
             subprocess.run(['open', '-na', 'Ghostty', '--args', '--config-default-files=false',
@@ -123,8 +129,15 @@ if __name__ == '__main__':
     p.add_argument('--emit', type=Path)
     p.add_argument('--ready', type=Path)
     p.add_argument('--release', type=Path)
+    p.add_argument('--cursor-row', type=int)
+    p.add_argument('--cursor-column', type=int)
     args = p.parse_args()
     if args.emit and args.ready and args.release:
-        emit_scene(args.emit, args.ready, args.release)
+        cursor=None
+        if args.cursor_row is not None or args.cursor_column is not None:
+            if args.cursor_row is None or args.cursor_column is None or not 0<=args.cursor_row<36 or not 0<=args.cursor_column<120:
+                p.error('Cursor requires row 0..35 and column 0..119')
+            cursor=(args.cursor_row,args.cursor_column)
+        emit_scene(args.emit, args.ready, args.release, cursor)
     else:
         p.error('Use evaluate_ghostty.py --capture to run the capture worker')

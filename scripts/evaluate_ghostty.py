@@ -71,6 +71,11 @@ def prepare(output, native_capture=False):
     (output/'glyph-reference.ansi').write_text(atlas)
     records.append({'id':'glyph-reference', 'kind':'glyph-reference', 'status':'prepared',
                     'ansi':'glyph-reference.ansi', 'sha256':hashlib.sha256(atlas.encode()).hexdigest(), 'contains_ansi':True})
+    cursor_text='return attempt <= 3\n'
+    (output/'cursor-block.ansi').write_text(cursor_text)
+    records.append({'id':'cursor-block','kind':'cursor','status':'prepared','ansi':'cursor-block.ansi',
+                    'sha256':hashlib.sha256(cursor_text.encode()).hexdigest(),'contains_ansi':False,
+                    'cursor':{'row':0,'column':cursor_text.index('='),'text':'=','style':'steady-block'}})
     theme = ROOT/'ghostty/themes/ithilien_dawn.conf'
     config = theme.read_text()+'\nfont-size = 16\nwindow-colorspace = srgb\n'
     (output/'ghostty.conf').write_text(config)
@@ -99,7 +104,10 @@ def prepare(output, native_capture=False):
             report['command_quality']=analyze(output, output/'ghostty-capture')
         except (OSError,ValueError,subprocess.SubprocessError) as exc:
             report['command_quality']={'status':'unverified','reason':str(exc)}
-        report['reason']='Native capture completed; see command_quality for pixel and OCR checks. Cursor and selection remain untested.'
+        cursor_results=[r.get('cursor',{}) for r in report['command_quality'].get('results',[]) if r['id']=='cursor-block']
+        if cursor_results:
+            report['coverage']['cursor']='Steady block over equals: '+cursor_results[0].get('status','unverified')+'; other modes untested'
+        report['reason']='See command_quality for command and steady-block cursor checks. Mouse selection and other cursor modes remain untested.'
         (output/'report.json').write_text(json.dumps(report, indent=2))
     links=''.join(f'<li>{html.escape(r["id"])}: {html.escape(r["status"])}'+
                   (f' — <a href="{r["ansi"]}">ANSI bytes</a>' if 'ansi' in r else '')+'</li>' for r in records)
