@@ -191,7 +191,7 @@ def cursor_check(image, geometry, cell, palette, reference):
     return result
 
 
-def assess_capture(image_path, ansi_path, helper, palette, reference=None, cursor=None):
+def assess_capture(image_path, ansi_path, helper, palette, reference=None, cursor=None, selection=None):
     image=srgb_image(image_path)
     colors=list(palette['ansi'].values())[1:7]
     geometry=grid(image,colors)
@@ -202,11 +202,28 @@ def assess_capture(image_path, ansi_path, helper, palette, reference=None, curso
         covered=[c for c in cells if c['row']==cursor['row'] and c['column']==cursor['column']]
         if len(covered)!=1 or covered[0]['text']!=cursor['text']:
             raise ValueError('Cursor target does not match recorded fixture text')
-        cursor_result=cursor_check(image,geometry,covered[0],palette,reference)
+        from ghostty_interactions import shape_check
+        cursor_result=shape_check(image,geometry,covered[0],palette,cursor.get('style','steady-block'),reference)
         text_cells=[c for c in cells if c not in covered]
+    selection_result=None
+    if selection:
+        from ghostty_interactions import selected,selection_check
+        selection_result=selection_check(image,geometry,cells,lines,palette,selection,reference)
+        text_cells=[c for c in text_cells if not selected(selection,c['row'],c['column'])]
     pixels=cell_checks(image,geometry,text_cells,palette['backgrounds']['base'])
+    content_image=image
+    if cursor and not cursor.get('style','steady-block').endswith('block') and cursor.get('style')!='hidden':
+        # The cursor gate independently validates both the strip and covered glyph.
+        # Remove only its exact-color strip from the content recognition input.
+        content_image=image.copy()
+        x0=round(geometry['x']+cursor['column']*geometry['cell_width'])
+        y0=geometry['y']+(cursor['row']+2)*geometry['cell_height']
+        for y in range(y0,y0+geometry['cell_height']):
+            for x in range(x0,x0+round(geometry['cell_width'])):
+                if max(abs(a-b) for a,b in zip(image.getpixel((x,y)),rgb(palette['highlight']['cursor'])))<=3:
+                    content_image.putpixel((x,y),rgb(palette['backgrounds']['base']))
     try:
-        manifest=prepare_ocr_rows(image,geometry,lines,image_path.parent/'ocr-rows'/image_path.stem)
+        manifest=prepare_ocr_rows(content_image,geometry,lines,image_path.parent/'ocr-rows'/image_path.stem)
         process=subprocess.run([str(helper),'ocr-rows',str(manifest)],capture_output=True,text=True,check=True,timeout=60)
         ocr=json.loads(process.stdout)
         content=row_content_gate(lines,ocr['rows'])
@@ -216,12 +233,12 @@ def assess_capture(image_path, ansi_path, helper, palette, reference=None, curso
     if reference and content.get('mismatches'):
         from ghostty_glyphs import recover_content
         try:
-            content=recover_content(content,image,geometry,*reference)
+            content=recover_content(content,content_image,geometry,*reference)
         except ValueError as exc:
             content['glyph_error']=str(exc)
-    statuses=[pixels['status'],content['status']]+([cursor_result['status']] if cursor_result else [])
+    statuses=[pixels['status'],content['status']]+([cursor_result['status']] if cursor_result else [])+([selection_result['status']] if selection_result else [])
     status='fail' if 'fail' in statuses else ('pass' if all(s=='pass' for s in statuses) else 'unverified')
-    return {'status':status, 'geometry':geometry,'cursor':cursor_result,
+    return {'status':status, 'geometry':geometry,'cursor':cursor_result,'selection':selection_result,
             'content':content,'text_pixels':pixels,'ocr':ocr,
             'image_sha256':hashlib.sha256(image_path.read_bytes()).hexdigest(),
             'ansi_sha256':hashlib.sha256(ansi_path.read_bytes()).hexdigest()}
@@ -250,21 +267,69 @@ def analyze(output, helper):
         source=output/prepared[frame['id']]['ansi']
         if hashlib.sha256(source.read_bytes()).hexdigest()!=prepared[frame['id']]['sha256']:
             raise ValueError('ANSI fixture changed since capture')
-        try:result=assess_capture(output/frame['image'],source,helper,palette,reference,prepared[frame['id']].get('cursor'))
+        try:
+            cursor=prepared[frame['id']].get('cursor');selection=prepared[frame['id']].get('selection')
+            image_path=output/frame['image'];blink=None
+            if cursor and cursor['style'].startswith('blinking-'):
+                from ghostty_interactions import shape_check,blink_gate
+                states=[];evidence=[];on_image=None
+                cells,_=ansi_cells(source.read_text(),palette)
+                cell=next(c for c in cells if c['row']==cursor['row'] and c['column']==cursor['column'])
+                times=[f['time'] for f in frame.get('frames',[])]
+                for sample in frame.get('frames',[]):
+                    path=output/sample['image'];im=srgb_image(path);g=grid(im,list(palette['ansi'].values())[1:7])
+                    on=shape_check(im,g,cell,palette,cursor['style'],reference)
+                    off=shape_check(im,g,cell,palette,'hidden',reference)
+                    state='on' if on['status']=='pass' else ('off' if off['status']=='pass' else 'unknown')
+                    states.append(state)
+                    evidence.append({'image':sample['image'],'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'state':state,'on':on,'off':off})
+                    if state=='on':on_image=path
+                blink=blink_gate(states)
+                if len(times)<8 or any(b<=a for a,b in zip(times,times[1:])) or times[-1]-times[0]<2:
+                    blink.update(status='unverified',reason='Insufficient or invalid timed sequence')
+                blink['frames']=evidence
+                if on_image:image_path=on_image
+            result=assess_capture(image_path,source,helper,palette,reference,cursor,selection)
+            if selection:
+                evidence=frame.get('interaction',{})
+                if evidence.get('input')!='native mouse drag' or not evidence.get('before_image'):
+                    if result['status']=='pass':result['status']='unverified'
+                    result['input_evidence']='Native mouse input provenance missing'
+                else:
+                    before=output/evidence['before_image']
+                    baseline=assess_capture(before,source,helper,palette,reference)
+                    result['selection_before']=baseline
+                    result['input_evidence']=evidence
+                    if baseline['status']!='pass' and result['status']=='pass':result['status']=baseline['status']
+
+            transitions=prepared[frame['id']].get('transitions')
+            if transitions:
+                phases=[]
+                for sample in frame.get('frames',[]):
+                    phase=assess_capture(output/sample['image'],source,helper,palette,reference,dict(cursor,style=sample['style']))
+                    phase['style']=sample['style'];phases.append(phase)
+                passed=[p['style'] for p in phases]==transitions and all(p['status']=='pass' for p in phases)
+                result['transitions']={'status':'pass' if passed else 'unverified','phases':phases}
+                if not passed:result['status']='fail' if any(p['status']=='fail' for p in phases) else 'unverified'
+            if blink:
+                result['blink']=blink
+                if blink['status']!='pass' and result['status']=='pass':result['status']='unverified'
+
         except (ValueError,OSError,subprocess.SubprocessError) as exc:result={'status':'unverified','reason':str(exc)}
         result['id']=frame['id'];results.append(result)
     expected={r['id'] for r in report['results'] if r['status']=='prepared' and r.get('kind')!='glyph-reference'}
     missing=sorted(expected-{r['id'] for r in results})
     summary={'status':'pass' if results and not missing and all(r['status']=='pass' for r in results) else 'not_passed',
              'missing_captures':missing,
-             'results':results,'scope':'Offline analysis of previously captured command frames. A steady block cursor has its own gate when captured; other cursor modes, selection, font identity, and full native workflows remain unverified.'}
+             'results':results,'scope':'Offline analysis of previously captured command frames. Cursor shapes, timed blinking, same-window transitions, and mouse selection have per-case gates when captured. Font identity and full native editor/agent workflows remain unverified.'}
     summary['glyph_reference_sha256']=reference_sha
     summary['glyph_classifier_sha256']=hashlib.sha256((Path(__file__).parent/'ghostty_glyphs.py').read_bytes()).hexdigest()
+    summary['interaction_gate_sha256']=hashlib.sha256((Path(__file__).parent/'ghostty_interactions.py').read_bytes()).hexdigest()
     summary['analyzer_sha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     summary['helper_sha256']=hashlib.sha256(helper.read_bytes()).hexdigest() if helper.exists() else None
     (output/'quality.json').write_text(json.dumps(summary,indent=2))
     rows=''.join('<tr><td>'+html.escape(r['id'])+'</td><td>'+html.escape(r['status'])+'</td><td>'+str(r.get('text_pixels',{}).get('minimum_contrast'))+'</td><td>'+str(len(r.get('text_pixels',{}).get('findings',[])))+'</td><td>'+html.escape(r.get('content',{}).get('status','unverified'))+'</td></tr>' for r in results)
-    (output/'quality.html').write_text('<!doctype html><meta charset="utf-8"><title>Ghostty text checks</title><style>body{font:16px system-ui;padding:30px}td,th{padding:12px;text-align:left}</style><h1>Ghostty command text checks</h1><p>Pixel checks and strict OCR are independent. OCR mismatches are unverified, not proof of a palette defect. The attribute probe intentionally includes ANSI white on the light canvas; these incompatible pairs remain visible findings.</p><table><tr><th>Case</th><th>Status</th><th>Minimum ink contrast</th><th>Pixel findings</th><th>Text completeness</th></tr>'+rows+'</table><p><a href="quality.json">Detailed evidence</a> · <a href="gallery.html">Screenshots</a></p><p>See JSON for the steady-block cursor gate. Other cursor modes, mouse selection, font identity and long-session comfort remain untested.</p>')
+    (output/'quality.html').write_text('<!doctype html><meta charset="utf-8"><title>Ghostty text checks</title><style>body{font:16px system-ui;padding:30px}td,th{padding:12px;text-align:left}</style><h1>Ghostty command text checks</h1><p>Pixel checks and strict OCR are independent. OCR mismatches are unverified, not proof of a palette defect. The attribute probe intentionally includes ANSI white on the light canvas; these incompatible pairs remain visible findings.</p><table><tr><th>Case</th><th>Status</th><th>Minimum ink contrast</th><th>Pixel findings</th><th>Text completeness</th></tr>'+rows+'</table><p><a href="quality.json">Detailed evidence</a> · <a href="gallery.html">Screenshots</a></p><p>See JSON for cursor shape, blink sequence, transition, and selection evidence. Font identity, shell mode hooks, inactive-window cursors and long-session comfort remain unverified.</p>')
     return summary
 
 

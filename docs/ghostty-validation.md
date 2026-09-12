@@ -47,8 +47,8 @@ logic require no native app access.
 - Verify full command output is visible, including wrapped paths, errors, and
   punctuation; add additional terminal command fixtures.
 - Verify font and geometry, then measure glyph foreground/background samples.
-- Exercise real cursor and mouse selection states; do not substitute colored
-  text backgrounds for native selection.
+- Extend cursor coverage to inactive windows and real shell mode hooks, then
+  verify the implemented cursor and mouse selection cases on the target host.
 - Display the existing native Neovim and Codex fixtures through Ghostty and
   compare their pixels with their recorded cells.
 - Check stable repeated captures and reject stale, clipped, or occluded frames.
@@ -97,8 +97,7 @@ indentation, and character-shape fidelity are not certified by these checks.
 The attribute probe deliberately contains white ANSI text on the light canvas;
 those incompatible pairs are exposed as findings, not hidden or changed during
 evaluation. The six real command cases are reported separately. Full native
-acceptance remains incomplete because mouse selection and the remaining cursor modes are not yet
-covered. An OCR error never silently falls back to a passing pixel-only verdict.
+acceptance remains incomplete because native Neovim/Codex workflows and font identity remain unverified. An OCR error never silently falls back to a passing pixel-only verdict.
 
 Tests include blank/clipped calibration, erased glyphs, low-contrast cells,
 tiny punctuation, altered comparison operators, omitted lines, and unsupported
@@ -144,7 +143,45 @@ reference sheet. Normal command text checks still apply to the rest of the row.
 Missing fill, an outline cursor, erased or replaced glyphs cannot pass this gate.
 The JSON report records cursor evidence separately from command text evidence.
 
-Run `make evaluate-ghostty` to capture this additional case. Previous captures do
-not establish cursor coverage. This one case does not certify shell vi-mode
-transitions, other cursor shapes, mouse selection, or long-session comfort;
-full native acceptance remains incomplete until the remaining coverage exists.
+Run `make evaluate-ghostty` to capture this case. Previous captures do not
+establish coverage for newly added interactions.
+
+### Cursor modes and real mouse selection
+
+The native stage also requests steady bar and underline cursors, hidden cursors,
+and blinking block/bar/underline cursors. Bar and underline checks enforce the
+cursor's location, extent, and palette color, plus readable underlying glyphs.
+Only exact cursor-colored strip pixels are removed for glyph/OCR recognition;
+original pixels still undergo the independent cursor and text checks. A sequence
+of 16 timed frames must contain at least two on frames, two off frames, and two
+transitions before blinking passes. A static or unrecognizable cursor cannot pass.
+A separate same-window sequence exercises bar → block → underline → hidden → block,
+with an acknowledgment after each native escape sequence and a screenshot per
+state. These are terminal protocol tests, not claims that every shell/plugin's
+vi-mode hooks are configured correctly.
+
+Mouse tests drag through a substring containing `<=` and across two lines. One
+fixture includes blue ANSI text to verify that selection overrides its foreground.
+The analyzer checks selected spaces and unselected neighbors as well as text:
+missing selection, selection beyond the expected range, wrong fill, white text,
+and damaged operators do not pass. Coordinates come from the captured terminal
+grid and are converted to window-relative fractions for Retina displays. The
+selection is native mouse input, not an ANSI-painted background or clipboard paste.
+
+In addition to Screen Recording, the helper needs **Accessibility** permission
+for window focus and mouse input. It checks permission without prompting. A
+missing permission produces a blocked run with the native error retained. Grant
+permission to the helper identified by macOS, then rerun from your terminal.
+The worker raises its own uniquely titled fixture window; it refuses input if
+identity, focus, or ownership at the target coordinates changes. It never sends
+input to your ordinary Ghostty windows. Keep this desktop session free of other
+mouse/keyboard activity while the native interaction cases run. No clipboard or
+shell-history access is involved.
+
+The palette remains frozen. Tests mutate synthetic captures to ensure wrong
+shapes, static blinking, missing/overextended selection, and altered text cannot
+pass. Native rendering still needs a fresh authorized capture; unit tests alone
+are not evidence that the installed Ghostty version passes. Inactive-window
+cursor appearance, shell-specific mode hooks, native Neovim/Codex sessions, and
+long-session comfort remain outside this interaction set. The report lists
+cursor and selection case counts separately from full native acceptance.

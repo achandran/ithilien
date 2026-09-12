@@ -15,3 +15,6 @@ evaluation/deps/
 
 # Machine-local evaluation toolchain overrides
 evaluation/local.mk
+
+# Local context for terminal Codex
+/handoff.md

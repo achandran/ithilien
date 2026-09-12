@@ -74,8 +74,9 @@ Each invocation creates a fresh directory below `evaluation/results/full` and
 prints its path. Open its `index.html` for stage statuses and galleries, or read
 `report.json` for machine-readable evidence. Checkpoints preserve partial progress.
 A failed or blocked required stage produces a nonzero exit status; missing tools
-never count as passing. Ghostty cursor and selection, Claude Code, and
-long-session comfort remain explicitly untested even when implemented stages
+never count as passing. Ghostty cursor and mouse selection now have implemented native gates, but
+require a fresh authorized capture. Inactive-window cursors, shell-specific mode
+hooks, Claude Code, and long-session comfort remain unverified even when implemented stages
 pass; Ghostty text OCR can also remain unverified. Full evaluation does not yet
 mean full coverage of every theme goal.
 
@@ -121,7 +122,7 @@ it. The first native Codex build needs network access to download dependencies
 and can take substantially longer than subsequent evaluations.
 
 Ghostty capture requires an authorized macOS session with Screen Recording
-permission, Ghostty, and Swift. It remains blocked when those are unavailable;
+permission, Accessibility permission for interaction input, Ghostty, and Swift. It remains blocked when those are unavailable;
 the suite does not request permissions or bypass restrictions. See
 [Ghostty validation](ghostty-validation.md) for coverage details.
 

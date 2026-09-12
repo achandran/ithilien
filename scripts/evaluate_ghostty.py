@@ -71,11 +71,8 @@ def prepare(output, native_capture=False):
     (output/'glyph-reference.ansi').write_text(atlas)
     records.append({'id':'glyph-reference', 'kind':'glyph-reference', 'status':'prepared',
                     'ansi':'glyph-reference.ansi', 'sha256':hashlib.sha256(atlas.encode()).hexdigest(), 'contains_ansi':True})
-    cursor_text='return attempt <= 3\n'
-    (output/'cursor-block.ansi').write_text(cursor_text)
-    records.append({'id':'cursor-block','kind':'cursor','status':'prepared','ansi':'cursor-block.ansi',
-                    'sha256':hashlib.sha256(cursor_text.encode()).hexdigest(),'contains_ansi':False,
-                    'cursor':{'row':0,'column':cursor_text.index('='),'text':'=','style':'steady-block'}})
+    from ghostty_interactions import fixtures
+    records.extend(fixtures(output))
     theme = ROOT/'ghostty/themes/ithilien_dawn.conf'
     config = theme.read_text()+'\nfont-size = 16\nwindow-colorspace = srgb\n'
     (output/'ghostty.conf').write_text(config)
@@ -96,7 +93,8 @@ def prepare(output, native_capture=False):
             detail = getattr(exc, 'stderr', None)
             if isinstance(detail, bytes):
                 detail = detail.decode('utf-8', errors='replace')
-            report['reason'] = 'Native capture failed: '+(detail.strip() if detail and detail.strip() else str(exc))
+            report['capture_error'] = 'Native capture failed: '+(detail.strip() if detail and detail.strip() else str(exc))
+            report['reason']=report['capture_error']
     (output/'report.json').write_text(json.dumps(report, indent=2))
     if report.get('native_captures'):
         from ghostty_quality import analyze
@@ -104,14 +102,24 @@ def prepare(output, native_capture=False):
             report['command_quality']=analyze(output, output/'ghostty-capture')
         except (OSError,ValueError,subprocess.SubprocessError) as exc:
             report['command_quality']={'status':'unverified','reason':str(exc)}
-        cursor_results=[r.get('cursor',{}) for r in report['command_quality'].get('results',[]) if r['id']=='cursor-block']
-        if cursor_results:
-            report['coverage']['cursor']='Steady block over equals: '+cursor_results[0].get('status','unverified')+'; other modes untested'
-        report['reason']='See command_quality for command and steady-block cursor checks. Mouse selection and other cursor modes remain untested.'
+        for role in ('cursor','selection'):
+            cases=[r for r in report['command_quality'].get('results',[]) if r['id'].startswith(role+'-')]
+            expected=[r for r in records if role in r]
+            passed=sum(r['status']=='pass' for r in cases)
+            report['coverage'][role]=f'{passed}/{len(expected)} native cases passed; see command_quality'
+        report['reason']=report.get('capture_error') or 'Native interaction and command checks are in command_quality. Full native Neovim/Codex workflows and comfort remain unverified.'
         (output/'report.json').write_text(json.dumps(report, indent=2))
     links=''.join(f'<li>{html.escape(r["id"])}: {html.escape(r["status"])}'+
                   (f' — <a href="{r["ansi"]}">ANSI bytes</a>' if 'ansi' in r else '')+'</li>' for r in records)
-    images=''.join('<h2>'+html.escape(r['id'])+'</h2><img style="max-width:100%" src="'+r['image']+'">' for r in report.get('native_captures',[]) if 'image' in r)
+    images=''
+    for frame in report.get('native_captures',[]):
+        if 'image' not in frame:continue
+        images+='<h2>'+html.escape(frame['id'])+'</h2><img style="max-width:100%" src="'+html.escape(frame['image'],quote=True)+'">'
+        if frame.get('frames'):
+            images+='<details><summary>Captured sequence</summary>'
+            for phase in frame['frames']:
+                images+='<p>'+html.escape(phase.get('style','Blink phase'))+'</p><img style="max-width:100%" src="'+html.escape(phase['image'],quote=True)+'">'
+            images+='</details>'
     (output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><h1>Ghostty validation</h1><p>'+html.escape(report['reason'])+'</p><ul>'+links+'</ul>'+images+'<p>ANSI links contain command bytes. Any PNGs above are native captures with calibration and separate text-check evidence, not full readability validation.</p><a href="report.json">Evidence and coverage</a> · <a href="quality.html">Text checks</a>')
     return report
 
