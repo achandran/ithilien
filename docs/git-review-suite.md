@@ -5,7 +5,7 @@ and Kanso checkouts, without loading or changing your personal Neovim setup.
 The Ithilien palette remains frozen.
 
 ```sh
-# One-time dependency fetch, then the full 20-case matrix:
+# One-time dependency fetch, then the full 28-case matrix:
 .venv/bin/python scripts/evaluate_git_review.py --fetch-dependencies
 # Subsequent unattended runs require no network:
 .venv/bin/python scripts/evaluate_git_review.py
@@ -20,7 +20,7 @@ To deliberately upgrade a dependency, update its pin and check it out explicitly
 
 | Plugin | Rendered coverage | Not yet covered |
 |---|---|---|
-| Diffview | Two-way Python working-tree diff and real three-way merge conflict; exact edited digit on both sides | History, search/selection overlays |
+| Diffview | Two-way Python working-tree diff and real three-way merge conflict; exact edited digit on both sides, search and linewise selection over edited text | History and conflict-resolution interactions |
 | Neogit | Staged/untracked status and expanded staged hunks with inline digit checks | Commit popup, conflict resolution |
 | Gitsigns | Actual floating hunk preview and inline digit emphasis | Staged preview, inline preview, search overlays |
 
@@ -49,3 +49,15 @@ Next coverage milestones: isolated pytest
 and debugpy workflows with Neotest and DAP UI. Picker alternatives and contextual
 navigation follow. These remain untested until their actual renderers are added;
 this profile does not imply complete plugin support.
+
+Overlap cases require Heather on both searched digits and Briar across the
+selected source line, even where the diff would normally use Celandine.
+Mutation tests reject a partially painted search or visual selection. These
+checks cover Diffview overlaps; diagnostic/cursor-line and debugger overlaps
+remain outside this profile.
+
+Current overlap result: search passes, but all four linewise-visual cases fail.
+The capture records mode `V` and the selection anchor/cursor as evidence, yet
+only part of the line receives the Visual background. This is an open rendering
+regression, not a passing integration. The expanded suite exits nonzero until
+it is resolved. No palette change was made.

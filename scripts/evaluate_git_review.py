@@ -10,7 +10,7 @@ from evaluate_interactions import isolated_capture, assess
 from evaluate_installed_workflows import write_gallery
 from evaluation_checks import effective_colors
 
-SCENES=('diffview','diffview-conflict','neogit','neogit-hunks','gitsigns-preview')
+SCENES=('diffview','diffview-conflict','diffview-search','diffview-visual','neogit','neogit-hunks','gitsigns-preview')
 
 def check(shot,colors):
     errors=[]
@@ -47,6 +47,20 @@ def check(shot,colors):
                     if effective_colors(shot,row[index+len(fragment)-1])[1]!=emphasis:
                         errors.append('Missing inline digit emphasis: '+fragment)
             if not found:errors.append('Missing inline fixture: '+fragment)
+    if case=='diffview-visual' and shot['evidence'].get('mode')!='V':errors.append('Linewise Visual mode absent')
+    if case in ('diffview-search','diffview-visual'):
+        expected=int(colors['Heather' if case=='diffview-search' else 'Briar'][1:],16)
+        rows={}
+        for c in shot['cells']:rows.setdefault(c['row'],[]).append(c)
+        found=False
+        for row in rows.values():
+            row=sorted(row,key=lambda c:c['col']);line=''.join(c['text'] for c in row)
+            start=line.find('LIMIT = 11')
+            if start>=0:
+                found=True
+                targets=row[start+8:start+10] if case=='diffview-search' else row[start:start+10]
+                if any(effective_colors(shot,c)[1]!=expected for c in targets):errors.append('Overlap not visible across intended text: '+case)
+        if not found:errors.append('Missing overlap target')
     if 'Error' in shot['evidence'].get('messages',''):errors.append('Runtime error in messages')
     allowed={int(v[1:],16) for v in colors.values()}
     off=[c for c in shot['cells'] if effective_colors(shot,c)[1] not in allowed or (c['text'].strip() and effective_colors(shot,c)[0] not in allowed)]

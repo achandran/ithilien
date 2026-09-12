@@ -46,3 +46,21 @@ class GitReviewGates(unittest.TestCase):
         shot['text']='review.py pending.py Staged'
         shot['evidence']['windows']=[{'filetype':'NeogitStatus'}]
         self.assertFalse(check(shot,COLORS)['pass_'])
+
+    def test_search_must_cover_both_digits(self):
+        shot=fixture();shot['case']='diffview-search'
+        colors=dict(COLORS,Heather='#D6C6DE')
+        shot['attrs'][2]={'background':0xD6C6DE}
+        shot['cells'][18]['attr']=2;shot['cells'][19]['attr']=2
+        self.assertTrue(check(shot,colors)['pass_'])
+        shot['cells'][19]['attr']=1
+        self.assertFalse(check(shot,colors)['pass_'])
+
+    def test_visual_must_cover_whole_source_line(self):
+        shot=fixture();shot['case']='diffview-visual';shot['evidence']['mode']='V'
+        colors=dict(COLORS,Briar='#B8595C')
+        shot['attrs'][2]={'background':0xB8595C}
+        for cell in shot['cells'][10:]:cell['attr']=2
+        self.assertTrue(check(shot,colors)['pass_'])
+        shot['cells'][15]['attr']=0
+        self.assertFalse(check(shot,colors)['pass_'])
