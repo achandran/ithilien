@@ -18,5 +18,33 @@ assert(hl('SnacksDashboardIcon').fg==0x345E77)
 for _,name in ipairs({'SnacksDashboardFooter','SnacksDashboardSpecial'}) do
  assert(hl(name).fg==0x505456 and not hl(name).bold)
 end
-print('PASS: plugin semantic mappings and plain diff emphasis')
+local palette=vim.json.decode(table.concat(vim.fn.readfile('palette/ithilien-dawn.json'),'\n')).colors
+local allowed={}
+for _,value in pairs(palette) do allowed[tonumber(value:sub(2),16)]=true end
+local function audit()
+ for name,h in pairs(vim.api.nvim_get_hl(0,{})) do
+  for _,attr in ipairs({'fg','bg','sp'}) do
+   assert(not h[attr] or allowed[h[attr]], name..'.'..attr..' is outside the palette')
+  end
+ end
+end
+audit()
+-- Emulate plugins creating defaults after the theme has loaded.
+for _,event in ipairs({'LazyLoad','VeryLazy'}) do
+ vim.api.nvim_set_hl(0,'FzfLuaHeaderBind',{fg=0x00FA9A})
+ vim.api.nvim_set_hl(0,'BufferLineFill',{bg=0xC8C8C6})
+ vim.api.nvim_exec_autocmds('User',{pattern=event})
+ assert(vim.wait(500,function() return hl('FzfLuaHeaderBind').fg==0x345E77 end))
+ audit()
+end
+vim.cmd('colorscheme ithilien-dawn')
+vim.wait(50)
+audit()
+assert(hl('FzfLuaBackdrop').blend==0)
+-- Scheduled Dawn corrections must not recolor another active theme.
+vim.g.colors_name='other-theme'
+vim.api.nvim_set_hl(0,'FzfLuaHeaderBind',{fg=0x123456})
+require('ithilien.plugin_palette').apply()
+assert(hl('FzfLuaHeaderBind').fg==0x123456)
+print('PASS: plugin semantics, palette membership, late loading, reload, and theme isolation')
 vim.cmd('qa!')
