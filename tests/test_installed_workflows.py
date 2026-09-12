@@ -52,3 +52,10 @@ class WorkflowGates(unittest.TestCase):
         self.shot.update(case='neo-tree',text='palette_workflow.py')
         self.shot['evidence']['plugins']=['neo-tree.nvim']
         self.assertIn('Plugin window absent: neo-tree',check(self.shot,self.palette)['failures'])
+
+    def test_terminal_permission_failure_is_blocked_not_pass(self):
+        self.shot.update(case='fzf-lua',text='palette_workflow.py')
+        self.shot['evidence'].update(plugins=['fzf-lua'],history=['[Fzf-lua] fzf error 2: operation not permitted'])
+        result=check(self.shot,self.palette)
+        self.assertEqual(result['status'],'blocked')
+        self.assertFalse(result['pass'])

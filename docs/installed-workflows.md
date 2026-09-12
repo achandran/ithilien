@@ -42,3 +42,13 @@ The palette-definition audit remains a separate check for all loaded plugins:
 ```sh
 .venv/bin/python scripts/audit_installed_palette.py --output evaluation/results/plugin-palette
 ```
+
+For static captures, OS-level Neo-tree file watching and LSP watched-file dynamic
+registration are disabled. They exhausted file-watcher resources in the execution
+environment; neither is needed to render these fixed files. File-system change
+notification behavior is outside this suite's scope.
+
+A terminal-mode permission error from fzf is reported as **blocked**, retains a
+nonzero suite exit status, and cannot count as successful renderer coverage.
+Run the same command in an environment permitting terminal-mode ioctls to complete
+those cases. Palette and contrast gates are not relaxed for this condition.

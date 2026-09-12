@@ -18,6 +18,19 @@ assert(hl('SnacksDashboardIcon').fg==0x345E77)
 for _,name in ipairs({'SnacksDashboardFooter','SnacksDashboardSpecial'}) do
  assert(hl(name).fg==0x505456 and not hl(name).bold)
 end
+-- Reproduce Bufferline's cached default icon after a colorscheme reload.
+local old_config=package.loaded['bufferline.config']
+local parents={buffer_visible={bg='#E6E6E4'}}
+package.loaded['bufferline.config']={get=function() return {highlights=parents} end}
+vim.api.nvim_set_hl(0,'BufferLineMiniIconsRegressionInactive',{fg=0x70516D,bg=0xE6E6E4,default=true})
+require('ithilien.plugin_palette').apply()
+assert(hl('BufferLineMiniIconsRegressionInactive').bg==0xFAFAF8)
+assert(parents.buffer_visible.bg=='#FAFAF8')
+package.loaded['bufferline.config']=old_config
+assert(hl('TodoFgTODO').fg~=hl('TodoBgTODO').bg)
+assert(hl('TodoBgTODO').bg==0xDEE0DF)
+assert(hl('FzfLuaFzfMatch').fg==0)
+assert(hl('NeoTreeRootName_35').fg==0x505456)
 local palette=vim.json.decode(table.concat(vim.fn.readfile('palette/ithilien-dawn.json'),'\n')).colors
 local allowed={}
 for _,value in pairs(palette) do allowed[tonumber(value:sub(2),16)]=true end

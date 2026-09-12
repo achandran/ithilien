@@ -30,6 +30,7 @@ return function(scene, state)
     local command=vim.env.ITHILIEN_LSP_COMMAND
     assert(command and vim.fn.executable(command)==1,'Set ITHILIEN_LSP_COMMAND to basedpyright-langserver')
     local id=vim.lsp.start({name='workflow-basedpyright',cmd={command,'--stdio'},root_dir=vim.fn.getcwd(),
+      capabilities={workspace={didChangeWatchedFiles={dynamicRegistration=false}}},
       settings={basedpyright={analysis={typeCheckingMode='standard',diagnosticMode='openFilesOnly'}}}})
     local client=assert(vim.lsp.get_client_by_id(id))
     assert(vim.wait(5000,function() return client.initialized end,20),'LSP initialization timeout')
@@ -73,6 +74,10 @@ return function(scene, state)
     vim.defer_fn(function() require('blink.cmp').show({providers={'buffer'}}) end,150)
   end
   _G.ithilien_workflow_evidence=function()
+    local history={}
+    if package.loaded['noice.message.manager'] then
+      for _,msg in ipairs(require('noice.message.manager').get(nil,{history=true})) do history[#history+1]=msg:content() end
+    end
     local windows={}
     for _,w in ipairs(vim.api.nvim_list_wins()) do
       windows[#windows+1]={filetype=vim.bo[vim.api.nvim_win_get_buf(w)].filetype,blend=vim.wo[w].winblend,floating=vim.api.nvim_win_get_config(w).relative~=''}
@@ -81,7 +86,7 @@ return function(scene, state)
     for name,p in pairs(require('lazy.core.config').plugins) do
       if p._.loaded then plugins[#plugins+1]=name end
     end
-    return {lsp=lsp_evidence,parser=vim.treesitter.highlighter.active[buf]~=nil,windows=windows,plugins=plugins,
+    return {bufferline_parents=require('bufferline.config').get().highlights.buffer_visible,history=history,lsp=lsp_evidence,parser=vim.treesitter.highlighter.active[buf]~=nil,windows=windows,plugins=plugins,
       messages=_G.ithilien_messages,mode=vim.fn.mode(),blink_visible=package.loaded['blink.cmp'] and require('blink.cmp').is_visible() or false}
   end
 end

@@ -109,7 +109,7 @@ def capture(adapter, width, scene, fixture=None, options=None, fzf=None, nvim=No
             if scene=='completion' and 'module helper' not in text:raise RuntimeError('Completion popup did not render')
             required={'diagnostic-float':'Cannot access read_text','documentation':'Read a UTF-8','signature':'Active parameter: path','references':'reference: read_config','inlay':'content: str'}
             if scene in required and required[scene] not in text:raise RuntimeError('Missing workflow content: '+scene)
-            shot['workflow_provenance']='deterministic native renderer fixture; not a live language-server response'
+            shot['workflow_provenance']=('installed plugin renderer; live LSP evidence recorded for python-lsp' if workflow else 'deterministic native renderer fixture; not a live language-server response')
             return shot
         finally:
             try:

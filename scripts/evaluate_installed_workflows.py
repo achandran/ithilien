@@ -92,7 +92,10 @@ def check(shot, palette):
     text_shot=dict(shot,cells=[c for c in shot['cells'] if not decorative(c)])
     contrast=assess(text_shot)
     contrast['decorative_cells']=sum(decorative(c) for c in shot['cells'])
-    return {'failures':failures,'off_palette':off,'contrast':contrast,
+    blocked=shot['case']=='fzf-lua' and any('fzf error 2: operation not permitted' in message for message in evidence.get('history',[]))
+    return {'status':'blocked' if blocked else ('pass' if not failures and not off and not contrast['failures'] else 'fail'),
+            'blocked_reason':'Terminal mode ioctl denied by execution environment' if blocked else None,
+            'failures':failures,'off_palette':off,'contrast':contrast,
             'pass':not failures and not off and not contrast['failures']}
 
 
@@ -110,7 +113,7 @@ lazy.setup=function(o)
  o.install={{missing=false}};o.checker={{enabled=false}};o.change_detection={{enabled=false}};o.readme={{enabled=false}}
  o.lockfile=vim.fn.getcwd()..'/lock.json';o.state=vim.fn.getcwd()..'/state.json'
  table.insert(o.spec,{{'achandran/ithilien',dir={quote(str(ROOT))}}})
- table.insert(o.spec,{{'nvim-neo-tree/neo-tree.nvim',opts={{log_to_file=vim.fn.getcwd()..'/neo-tree.log'}}}})
+ table.insert(o.spec,{{'nvim-neo-tree/neo-tree.nvim',opts={{log_to_file=vim.fn.getcwd()..'/neo-tree.log',filesystem={{use_libuv_file_watcher=false}}}}}})
  table.insert(o.spec,{{'cormacrelf/dark-notify',enabled=false}})
  return setup(o)
 end
@@ -171,7 +174,7 @@ def write_gallery(output, report, records):
     for result in report['results']:
         errors=result.get('failures',[])+([result['error']] if result.get('error') else [])
         detail=f"{len(result.get('off_palette',[]))} off-palette cells; {len(result.get('contrast',{}).get('failures',[]))} low-contrast text cells"
-        rows.append('<tr><td>'+html.escape(f"{result['scene']} / {result['width']} / {result['state']}")+'</td><td>'+('PASS' if result['pass'] else 'FAIL')+'</td><td>'+html.escape(detail+'; '+'; '.join(errors))+'</td></tr>')
+        rows.append('<tr><td>'+html.escape(f"{result['scene']} / {result['width']} / {result['state']}")+'</td><td>'+result.get('status',('pass' if result['pass'] else 'fail')).upper()+'</td><td>'+html.escape(detail+'; '+'; '.join(errors))+'</td></tr>')
     blocks=''.join('<details><summary>'+html.escape(f"{s['case']} / {s['width']} / {s['state']}")+'</summary>'+render(s)+'</details>' for s in records)
     passed=sum(r['pass'] for r in report['results'])
     (output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><style>body{font:16px system-ui;padding:24px}pre{font:16pt/1.4 "Berkeley Mono Medium",monospace;overflow:auto}td{padding:8px;border-bottom:1px solid #ddd;max-width:65em;overflow-wrap:anywhere}</style><h1>Installed Neovim workflows</h1><p>'+report['scope']+f'</p><h2>{passed}/{len(report["results"])} cases passed</h2><p><a href="report.json">Full evidence</a></p><table>'+''.join(rows)+'</table>'+blocks)
