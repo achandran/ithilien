@@ -1,6 +1,6 @@
 # README generation
 
-Edit `docs/templates/README.md`, then run `uv run python scripts/build.py`.
+Edit `docs/templates/README.md`, then run `make build`.
 The build regenerates the palette chart, native Python syntax and diff images, provenance,
 and README together. Do not edit the generated README or images directly.
 

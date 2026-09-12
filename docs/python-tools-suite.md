@@ -4,7 +4,7 @@ This profile runs actual pytest and debugpy processes through pinned Neotest,
 neotest-python, nvim-dap, and DAP UI. It does not load your personal Neovim config.
 
 ```sh
-uv pip install --python .venv/bin/python -r evaluation/python-tools-requirements.txt
+uv sync --locked
 .venv/bin/python scripts/evaluate_python_tools.py --fetch-dependencies
 # Offline subsequent runs:
 .venv/bin/python scripts/evaluate_python_tools.py
@@ -17,7 +17,7 @@ A compiled Python Tree-sitter parser must be available under
 `~/.local/share/nvim/site`. Its SHA-256 is recorded, alongside plugin revisions,
 Python package versions, Neovim version, fixture digest, and palette digest.
 Plugin revisions are enforced; the parser and package versions are recorded,
-not enforced. Use the requirements file to reproduce the tested package versions.
+not enforced. Use `uv sync --locked` to reproduce the tested package versions.
 Missing dependencies or unsuccessful execution fail; nothing is reported as
 passing merely because a plugin is installed.
 

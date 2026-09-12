@@ -55,3 +55,5 @@ The installer configures detected apps, skips missing ones, and backs up replace
 To update, run `git pull` followed by `./install.sh`. Follow the installer’s reload and activation instructions; some apps require manual theme selection.
 
 [Installation and supported integrations](docs/installation.md) · [How previews are generated](docs/readme-generation.md)
+
+[Development: test and build](docs/development.md)

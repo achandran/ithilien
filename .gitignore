@@ -10,3 +10,5 @@ comparison/generated/
 evaluation/results/
 
 evaluation/deps/
+
+.pytest_cache/
