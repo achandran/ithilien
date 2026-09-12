@@ -215,6 +215,10 @@ for _,name in ipairs({'SnacksIndentScope','SnacksIndentChunk','IblScope','MiniIn
 end
 hi('NeoTreeIndentMarker',{fg=bg.surface2})
 hi('NeoTreeGitStaged',{fg=p.green,underline=true})
+hi('SnacksDashboardDesc',{fg=p.fg})
+hi('SnacksDashboardIcon',{fg=p.blue})
+hi('SnacksDashboardFooter',{fg=p.muted})
+hi('SnacksDashboardSpecial',{fg=p.muted})
 hi('BlinkCmpLabelMatch',{fg=p.fg,bold=true})
 hi('LspSignatureActiveParameter',{fg=p.fg,bg=p.search,bold=true})
 hi('BlinkCmpSignatureHelpActiveParameter',{link='LspSignatureActiveParameter'})

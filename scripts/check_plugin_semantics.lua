@@ -13,5 +13,10 @@ assert(hl('SnacksIndent').fg==0xC9CECB)
 assert(hl('SnacksIndentScope').fg==0x505456)
 assert(hl('BufferLineBufferSelected').bg==0xDEE0DF)
 assert(hl('DiffText').bg==0xD8B46A and not hl('DiffText').bold)
+assert(hl('SnacksDashboardDesc').fg==0)
+assert(hl('SnacksDashboardIcon').fg==0x345E77)
+for _,name in ipairs({'SnacksDashboardFooter','SnacksDashboardSpecial'}) do
+ assert(hl(name).fg==0x505456 and not hl(name).bold)
+end
 print('PASS: plugin semantic mappings and plain diff emphasis')
 vim.cmd('qa!')
