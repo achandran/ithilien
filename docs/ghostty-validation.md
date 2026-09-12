@@ -36,11 +36,10 @@ selection, or readability. Actual screenshots are linked in the gallery when
 captured. The report remains `incomplete`, with a nonzero acceptance exit,
 until those additional gates exist. Partial failures remain visible.
 
-The capture worker is not executable through the current Computer Use session:
-that tool explicitly denies Ghostty access. Do not route around this restriction
-with another capture mechanism in that session. Native execution must be tested
-in an authorized environment. Preparing fixtures and testing the evaluator's
-logic require no native app access.
+An earlier Computer Use session explicitly denied Ghostty access. Such a denial
+must not be bypassed with another capture mechanism in that session. Native
+execution requires authorization in the environment running it. Preparing
+fixtures and testing the evaluator's logic require no native app access.
 
 ## Remaining acceptance work
 
@@ -168,6 +167,12 @@ and damaged operators do not pass. Coordinates come from the captured terminal
 grid and are converted to window-relative fractions for Retina displays. The
 selection is native mouse input, not an ANSI-painted background or clipboard paste.
 
+Native Ghostty may place a one-pixel bar immediately left of the inferred cell
+boundary. Shape and hidden-phase checks include that single boundary pixel;
+OCR cleanup uses the same boundary. A bar farther away, an erased bar, and an
+erased covered glyph remain rejected. This allowance changes neither the
+palette nor the contrast or independent glyph-classification thresholds.
+
 In addition to Screen Recording, the helper needs **Accessibility** permission
 for window focus and mouse input. It checks permission without prompting. A
 missing permission produces a blocked run with the native error retained. Grant
@@ -180,8 +185,16 @@ shell-history access is involved.
 
 The palette remains frozen. Tests mutate synthetic captures to ensure wrong
 shapes, static blinking, missing/overextended selection, and altered text cannot
-pass. Native rendering still needs a fresh authorized capture; unit tests alone
-are not evidence that the installed Ghostty version passes. Inactive-window
+pass. A September 12, 2026 authorized native run, reanalyzed after the bar-boundary
+repair, passed six command cases, eight cursor cases (including three timed blink
+sequences and all five transition states), and both mouse selections. Selection
+text measured 4.622:1 against the unchanged 4.5:1 floor. The white-on-white
+attribute probe still failed as intended. Local evidence is in
+`evaluation/results/ghostty-validation-20260912/quality.json` and `quality.html`;
+`report.json` retains the original pre-repair analysis. Native-image mutation
+controls in `bar-mutation-controls.json` reject erased/misplaced bars and an
+erased equals sign. These results apply to this capture, not every installation.
+Inactive-window
 cursor appearance, shell-specific mode hooks, native Neovim/Codex sessions, and
 long-session comfort remain outside this interaction set. The report lists
 cursor and selection case counts separately from full native acceptance.

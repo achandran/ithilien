@@ -58,8 +58,11 @@ def shape_check(image,g,cell,palette,style,reference):
         return cursor_check(image,g,cell,palette,reference)
     crop=crop_cell(image,g,cell['row'],cell['column']).convert('RGB')
     w,h=crop.size;target=rgb(palette['highlight']['cursor'])
-    points=[(x,y) for y in range(h) for x in range(w)
-            if max(abs(a-b) for a,b in zip(crop.getpixel((x,y)),target))<=3]
+    x0=round(g['x']+cell['column']*g['cell_width']);y0=g['y']+(cell['row']+2)*h
+    # Native Ghostty can rasterize its one-pixel bar just left of the cell.
+    # Include exactly that boundary pixel, also when testing the hidden phase.
+    points=[(x,y) for y in range(h) for x in range(-1 if x0>0 else 0,w)
+            if max(abs(a-b) for a,b in zip(image.getpixel((x0+x,y0+y)),target))<=3]
     shape='hidden' if style=='hidden' else style.split('-')[-1]
     good=not points if shape=='hidden' else False
     if points:
@@ -70,7 +73,7 @@ def shape_check(image,g,cell,palette,style,reference):
             good=min(ys)>=h*.7 and len(set(xs))>=w*.8 and len(points)>=w
     # Remove only the independently located cursor-colored strokes for glyph
     # classification. All pixels (including the cursor) still face color checks.
-    clean=image.copy();x0=round(g['x']+cell['column']*g['cell_width']);y0=g['y']+(cell['row']+2)*h
+    clean=image.copy()
     for x,y in points:clean.putpixel((x0+x,y0+y),rgb(palette['backgrounds']['base']))
     pixels=cell_checks(image,g,[cell],palette['backgrounds']['base'])
     result={'status':'pass' if good and pixels['status']=='pass' else 'fail',

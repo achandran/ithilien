@@ -219,7 +219,7 @@ def assess_capture(image_path, ansi_path, helper, palette, reference=None, curso
         x0=round(geometry['x']+cursor['column']*geometry['cell_width'])
         y0=geometry['y']+(cursor['row']+2)*geometry['cell_height']
         for y in range(y0,y0+geometry['cell_height']):
-            for x in range(x0,x0+round(geometry['cell_width'])):
+            for x in range(max(0,x0-1),x0+round(geometry['cell_width'])):
                 if max(abs(a-b) for a,b in zip(image.getpixel((x,y)),rgb(palette['highlight']['cursor'])))<=3:
                     content_image.putpixel((x,y),rgb(palette['backgrounds']['base']))
     try:

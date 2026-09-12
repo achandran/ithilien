@@ -45,6 +45,26 @@ def selection_fixture():
     return im,g,p,ref,cells,lines,spec
 
 
+def test_native_bar_at_left_boundary_is_visible_and_still_requires_glyph():
+    im,g,p,ref,cell=shape('hidden')
+    def padded(source):
+        result=Image.new('RGB',(source.width+12,source.height),p['backgrounds']['base'])
+        result.paste(source,(12,0))
+        return result
+    im=padded(im);g=dict(g,x=12);ref=(padded(ref[0]),g)
+    d=ImageDraw.Draw(im);d.line((11,48,11,71),fill=p['highlight']['cursor'])
+    assert shape_check(im,g,cell,p,'steady-bar',ref)['status']=='pass'
+    assert shape_check(im,g,cell,p,'hidden',ref)['status']=='fail'
+    # A bar a further pixel away cannot satisfy the narrow boundary allowance.
+    bad=im.copy();draw=ImageDraw.Draw(bad)
+    draw.line((11,48,11,71),fill=p['backgrounds']['base'])
+    draw.line((10,48,10,71),fill=p['highlight']['cursor'])
+    assert shape_check(bad,g,cell,p,'steady-bar',ref)['status']=='fail'
+    # The boundary allowance must not rescue an erased equals sign.
+    d.rectangle((12,48,23,71),fill=p['backgrounds']['base'])
+    assert shape_check(im,g,cell,p,'steady-bar',ref)['status']!='pass'
+
+
 def test_selection_extent_fill_and_operator_are_independent_gates():
     im,g,p,ref,cells,lines,spec=selection_fixture()
     check=lambda img:selection_check(img,g,cells,lines,p,spec,ref)
