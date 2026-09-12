@@ -32,6 +32,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--codex-source',type=Path,required=True);p.add_argument('--python-source',type=Path,required=True)
     p.add_argument('--manifest',type=Path,default=ROOT/'evaluation/themes.json');p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/suite')
+    p.add_argument('--git-review',action='store_true',help='Gate pinned native Git plugin screens (fetch dependencies first)')
     p.add_argument('--installed-workflows',action='store_true',help='Also gate actual locally installed Ithilien plugin workflows')
     p.add_argument('--skip-fzf',action='store_true');p.add_argument('--themes',nargs='+');p.add_argument('--strict-gates',action='store_true');p.add_argument('--nvim',default=shutil.which('nvim'))
     a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=True)
@@ -64,6 +65,10 @@ def main():
     from validate_evaluator import run as validate_evaluator
     validation=validate_evaluator(out/'evaluator-validation')
     report['stages']['evaluator-validation']={'status':'pass' if validation['pass'] else 'fail','gallery':'evaluator-validation/index.html'}
+    if a.git_review:
+        from evaluate_git_review import run as run_git_review
+        git_review=run_git_review(out/'git-review')
+        report['stages']['git-review']={'status':'pass' if git_review['pass'] else 'fail','gallery':'git-review/gallery.html'}
     if a.installed_workflows:
         from evaluate_installed_workflows import run as run_installed
         installed=run_installed(out/'installed-workflows',Path.home()/'.config/nvim/init.lua',Path.home()/'.local/share/nvim/lazy/lazy.nvim')

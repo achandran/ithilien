@@ -177,7 +177,7 @@ def write_gallery(output, report, records):
         rows.append('<tr><td>'+html.escape(f"{result['scene']} / {result['width']} / {result['state']}")+'</td><td>'+result.get('status',('pass' if result['pass'] else 'fail')).upper()+'</td><td>'+html.escape(detail+'; '+'; '.join(errors))+'</td></tr>')
     blocks=''.join('<details><summary>'+html.escape(f"{s['case']} / {s['width']} / {s['state']}")+'</summary>'+render(s)+'</details>' for s in records)
     passed=sum(r['pass'] for r in report['results'])
-    (output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><style>body{font:16px system-ui;padding:24px}pre{font:16pt/1.4 "Berkeley Mono Medium",monospace;overflow:auto}td{padding:8px;border-bottom:1px solid #ddd;max-width:65em;overflow-wrap:anywhere}</style><h1>Installed Neovim workflows</h1><p>'+report['scope']+f'</p><h2>{passed}/{len(report["results"])} cases passed</h2><p><a href="report.json">Full evidence</a></p><table>'+''.join(rows)+'</table>'+blocks)
+    (output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><style>body{font:16px system-ui;padding:24px}pre{font:16pt/1.4 "Berkeley Mono Medium",monospace;overflow:auto}td{padding:8px;border-bottom:1px solid #ddd;max-width:65em;overflow-wrap:anywhere}</style><h1>'+html.escape(report.get('title','Installed Neovim workflows'))+'</h1><p>'+report['scope']+f'</p><h2>{passed}/{len(report["results"])} cases passed</h2><p><a href="report.json">Full evidence</a></p><table>'+''.join(rows)+'</table>'+blocks)
 
 
 if __name__=='__main__':

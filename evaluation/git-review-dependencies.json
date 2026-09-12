@@ -1,0 +1,27 @@
+{
+  "diffview.nvim": {
+    "path": "evaluation/deps/diffview.nvim",
+    "revision": "4516612fe98ff56ae0415a259ff6361a89419b0a",
+    "url": "https://github.com/sindrets/diffview.nvim.git"
+  },
+  "neogit": {
+    "path": "evaluation/deps/neogit",
+    "revision": "5adc81b26232954cd7a90f158aa7844c18fc3165",
+    "url": "https://github.com/NeogitOrg/neogit.git"
+  },
+  "plenary.nvim": {
+    "path": "evaluation/deps/plenary.nvim",
+    "revision": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+    "url": "https://github.com/nvim-lua/plenary.nvim.git"
+  },
+  "gitsigns.nvim": {
+    "path": "evaluation/deps/gitsigns.nvim",
+    "revision": "f2421c550618d257048afa650413d9e542ddbe67",
+    "url": "https://github.com/lewis6991/gitsigns.nvim.git"
+  },
+  "kanso": {
+    "path": "evaluation/deps/kanso",
+    "revision": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
+    "url": "https://github.com/webhooked/kanso.nvim.git"
+  }
+}

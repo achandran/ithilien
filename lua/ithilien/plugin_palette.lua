@@ -5,6 +5,7 @@ function M.apply()
   local p=require('ithilien.ithilien-dawn').raw
   local b,f,a=p.backgrounds,p.foregrounds,p.ansi
   local groups={
+    NeogitSectionHeader={fg=a.blue,bold=true},NeogitChangeModified={fg=a.blue},
     Added={fg=a.green},Removed={fg=a.red},Changed={fg=a.blue},OkMsg={fg=a.green},
     DiagnosticDeprecated={sp=f.muted,strikethrough=true},
     FloatShadow={bg=b.crust,blend=0},FloatShadowThrough={bg=b.crust,blend=0},
