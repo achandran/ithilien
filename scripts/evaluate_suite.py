@@ -32,6 +32,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--codex-source',type=Path,required=True);p.add_argument('--python-source',type=Path,required=True)
     p.add_argument('--manifest',type=Path,default=ROOT/'evaluation/themes.json');p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/suite')
+    p.add_argument('--python-tools',action='store_true',help='Gate actual pytest and debugpy plugin workflows')
     p.add_argument('--git-review',action='store_true',help='Gate pinned native Git plugin screens (fetch dependencies first)')
     p.add_argument('--installed-workflows',action='store_true',help='Also gate actual locally installed Ithilien plugin workflows')
     p.add_argument('--skip-fzf',action='store_true');p.add_argument('--themes',nargs='+');p.add_argument('--strict-gates',action='store_true');p.add_argument('--nvim',default=shutil.which('nvim'))
@@ -65,6 +66,10 @@ def main():
     from validate_evaluator import run as validate_evaluator
     validation=validate_evaluator(out/'evaluator-validation')
     report['stages']['evaluator-validation']={'status':'pass' if validation['pass'] else 'fail','gallery':'evaluator-validation/index.html'}
+    if a.python_tools:
+        from evaluate_python_tools import run as run_python_tools
+        python_tools=run_python_tools(out/'python-tools')
+        report['stages']['python-tools']={'status':'pass' if python_tools['pass'] else 'fail','gallery':'python-tools/gallery.html'}
     if a.git_review:
         from evaluate_git_review import run as run_git_review
         git_review=run_git_review(out/'git-review')
