@@ -11,7 +11,9 @@ def specimen():
     p=load_palette('ithilien-dawn');g={'x':0,'y':0,'cell_width':12,'cell_height':24}
     font=ImageFont.load_default_imagefont()
     atlas=Image.new('RGB',(1440,624),p['backgrounds']['base']);draw=ImageDraw.Draw(atlas)
-    for c in reference_sheet()[1]:draw.text((c['column']*12,(c['row']+2)*24),c['text'],font=font,fill='black')
+    for c in reference_sheet()[1]:
+        reference_font=font if ord(c['text'])<256 else ImageFont.load_default(size=16)
+        draw.text((c['column']*12,(c['row']+2)*24),c['text'],font=reference_font,fill='black')
     im=Image.new('RGB',(1440,72),p['backgrounds']['base']);draw=ImageDraw.Draw(im)
     draw.rectangle((0,48,11,71),fill=p['highlight']['cursorBlock'])
     draw.text((0,48),'=',font=font,fill='black')

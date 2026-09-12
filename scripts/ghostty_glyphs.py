@@ -5,14 +5,15 @@ remain unverified. References use the same capture configuration and font.
 """
 
 ASCII = ''.join(chr(i) for i in range(33, 127))
+REFERENCE_GLYPHS = ASCII + '·•›‹└✔✓√'  # UI punctuation plus nearby confusable shapes.
 STYLES = ('0', '1', '3', '1;3', '4', '1;4', '3;4', '1;3;4')
 
 
-def reference_sheet():
+def reference_sheet(alphabet=REFERENCE_GLYPHS):
     payload = ''; labels = []
     for style in STYLES:
-        for start in range(0, len(ASCII), 40):
-            chars = ASCII[start:start+40]
+        for start in range(0, len(alphabet), 40):
+            chars = alphabet[start:start+40]
             row = len(labels)
             labels.append([{'row': row, 'column': col*2, 'text': char} for col, char in enumerate(chars)])
             payload += '\x1b[0m\x1b['+style+'m'+' '.join(chars)+'\x1b[0m\n'
@@ -60,7 +61,7 @@ def classify(ink, templates, maximum=.08, margin=.04):
 
 
 def templates_from_capture(image, geometry):
-    _, labels = reference_sheet()
+    labels = geometry.get('reference_labels', reference_sheet()[1])
     templates = {}
     for cell in labels:
         ink = mask(crop_cell(image, geometry, cell['row'], cell['column']))

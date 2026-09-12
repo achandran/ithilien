@@ -3,6 +3,13 @@
 This stage is under development. It never counts prepared ANSI output or a
 calibration-only screenshot as full native acceptance.
 
+Use `make evaluate-headless` while working on this computer. Use
+`make evaluate-offline GHOSTTY_OUTPUT=PATH` to recheck saved screenshots with no
+desktop interaction. Foreground capture requires an idle desktop: concurrent
+typing, clicking, or switching Spaces can invalidate focus, selection, and
+cursor evidence. A separate test Mac is the strongest option for unattended
+native coverage. Headless or saved-image passes do not replace that final layer.
+
 `make evaluate` prepares real Git status, Git diff, single-character Git word
 diff, ripgrep, the generated zsh prompt, and pytest output in a disposable repository. Pytest deliberately
 runs one passing and one failing Python test. A separate labeled probe covers
@@ -21,12 +28,15 @@ make evaluate GHOSTTY_ARGS=--ghostty-capture
 ```
 
 The worker compiles a small Swift helper, checks capture permission without
-requesting it, and launches isolated Ghostty windows with unique titles. Each
-window receives a generated config, Berkeley Mono Medium at 16 points, sRGB,
-and one fixture. A ready-file handshake waits for the fixture output. Only the
-uniquely titled Ghostty window is captured; there is no whole-desktop capture.
-The fixture child exits after capture or after 45 seconds. The worker never
-quits the user's other Ghostty windows.
+requesting it, and launches one isolated Ghostty window with a unique title for the entire run.
+The window receives a generated config, Berkeley Mono Medium at 16 points, and
+sRGB. A resident worker runs scenes sequentially, resets the terminal between
+scenes, and acknowledges each scene's readiness and exit. Only the uniquely
+titled window is captured; there is no whole-desktop capture. Each fixture has
+a bounded lifetime. Cleanup explicitly closes that exact window through
+Accessibility and verifies it disappeared, including after capture failures.
+`session-window.json` and `session-cleanup.json` record ownership and cleanup.
+The worker never quits the user's other Ghostty windows.
 
 Screenshots are decoded into sRGB and checked for six ANSI calibration swatches
 (with a two-channel-value tolerance and at least 100 matching pixels per color).
@@ -117,7 +127,7 @@ original unscaled screenshot. Engine failure remains unverified.
 
 New captures include a separate ASCII reference sheet, rendered by Ghostty under
 the same configuration in normal, bold, italic, and underline combinations. This
-adds one fixture window. On OCR-mismatched rows, the analyzer classifies every
+uses another scene in the same reusable fixture window. On OCR-mismatched rows, the analyzer classifies every
 cell against the full reference alphabet; it never chooses a template using the
 expected command character. Full 120-column rows must agree, including unexpected
 suffixes. Shape distance must be at most 0.08 with a 0.04 lead over the next glyph;
@@ -198,3 +208,84 @@ Inactive-window
 cursor appearance, shell-specific mode hooks, native Neovim/Codex sessions, and
 long-session comfort remain outside this interaction set. The report lists
 cursor and selection case counts separately from full native acceptance.
+
+
+## Targeted capture and offline iteration
+
+Prefer a short acquisition while developing checks:
+
+```sh
+make evaluate-ghostty GHOSTTY_OUTPUT=evaluation/results/native-smoke \
+  GHOSTTY_CAPTURE="--capture --cases git-status cursor-block selection-single neovim-diff"
+```
+
+The glyph reference is included automatically. `omitted_cases` explicitly lists
+what was left out; a targeted run never establishes complete coverage. The
+window closes before the more expensive offline analysis starts. Reuse saved
+images with `make evaluate-ghostty-images GHOSTTY_OUTPUT=...`; this does not open
+Ghostty. Reanalysis updates `report.json` and its quality hash as well as
+`quality.json`, so headline counts no longer describe an obsolete analysis.
+A changed theme still requires fresh captures.
+
+## Live Neovim scenes
+
+`neovim-diff`, `neovim-search`, `neovim-selection`, `neovim-diagnostic`, and
+`neovim-completion` launch a real Neovim TUI inside the reusable Ghostty window.
+They require Neovim and the pinned Kanso checkout. Temporary state and an RPC
+socket are isolated; installed configuration is not changed. The same running
+Neovim records the final RGB redraw cells through an observational UI at the same
+dimensions. Checks
+compare cell backgrounds, foreground strokes, and independently recognized
+glyphs against the screenshot. The fixed reference alphabet includes printable
+ASCII and selected UI punctuation with confusable alternatives; other glyphs
+remain unverified.
+The cursor cell belongs to the separate native cursor suite.
+
+The one-character diff must expose the edited equals sign on the emphasis
+background, using ordinary weight without underline. These are selected live
+workflows, not complete coverage of every plugin, language server, fallback
+font, terminal size, or agent application. Individual results remain failed or
+unverified until fresh native evidence satisfies their gates.
+
+
+## Shell keymaps and inactive focus
+
+`shell-vicmd` and `shell-viins` run real zsh ZLE in an isolated PTY and show its
+output in the same Ghostty window. Fixture-local conventional keymap hooks set
+block/bar cursors; the raw keymap and `main` alias binding are recorded. Editing
+input navigates to the equals sign but never accepts or executes the buffer.
+Closing the owned PTY terminates its shell. These cases test real ZLE behavior,
+not arbitrary hooks in the user's installed dotfiles.
+
+`cursor-inactive-block` restores the application that was active before the run,
+without opening a second test window. It checks a hollow cursor and its intact
+underlying glyph. On hosts that place these apps on different macOS Spaces,
+the inactive window may be unavailable to screenshot capture. This is recorded
+as blocked, and the other scenes continue. No other window is substituted.
+
+## Native Codex replay in Ghostty
+
+The full suite passes its newly produced native flow cells into the terminal
+stage. A targeted run may supply an existing `--codex-cells PATH`; the sibling
+report must pass and match the current exported theme hash. All flow stages at
+both recorded widths are presented as RGB/SGR cells in Ghostty, preserving bold,
+italic, underline, and DIM attributes. The source revision, cell hashes, and
+presentation scope remain explicit. This is terminal-pixel validation of native
+renderer replay, not a live model or app-server session. Oversized viewports and
+unknown modifiers fail preparation instead of being silently clipped or dropped.
+
+DIM deliberately changes the foreground, so its nominal RGB match is not a gate;
+its actual measured stroke contrast still must reach 4.5:1. Ordinary cells retain
+both exact-color and contrast checks. Diff emphasis backgrounds require ordinary
+weight without added underline. User-visible dim text that fails the contrast
+floor remains a finding; the evaluator does not alter faint opacity to pass.
+
+## Evidence from the single-window runner
+
+The September 12 live Neovim capture in
+`evaluation/results/ghostty-native-workflows/` passed all five scenes after
+independent reanalysis. The unchanged native diff passed, erasing its edited
+`=` failed, and a bold-emphasis contract mutation failed. The two real zsh
+keymaps passed in `evaluation/results/ghostty-shell-keymaps-verified/`.
+Their `session-cleanup.json` files confirm the owned window was closed.
+These are scoped results, not a claim of complete native coverage.

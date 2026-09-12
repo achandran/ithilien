@@ -9,6 +9,24 @@ The normal workflow has three commands:
 | `make evaluate` | Run tests, then all implemented native evaluation stages, including Ghostty capture and text checks. |
 
 Bare `make` shows this help without installing dependencies or starting work.
+
+While using the computer, choose `make evaluate-headless`. It runs the renderer
+and workflow checks without opening Ghostty, changing focus, or sending desktop
+input. It explicitly leaves native Ghostty pixels unevaluated. The full
+`make evaluate` command still includes foreground interaction capture and should
+run only during an idle session or on a separate test Mac.
+
+To rerun unit tests and inspect previously captured pixels without opening any
+windows, use:
+
+```sh
+make evaluate-offline GHOSTTY_OUTPUT=evaluation/results/ghostty-native-workflows
+```
+
+Offline analysis can verify those saved frames against the current compatible
+theme and evaluator, but it cannot establish behavior for a new app version,
+font, display, theme, or interaction that was not captured.
+
 For a palette change, run `make build` then `make evaluate` (which includes
 `make test`). Use `make test` alone for a fast check while editing.
 Evaluation does not rebuild artifacts: this keeps it read-only with respect to
@@ -75,9 +93,9 @@ prints its path. Open its `index.html` for stage statuses and galleries, or read
 `report.json` for machine-readable evidence. Checkpoints preserve partial progress.
 A failed or blocked required stage produces a nonzero exit status; missing tools
 never count as passing. Ghostty cursor and mouse selection now have implemented native gates, but
-require a fresh authorized capture. Inactive-window cursors, shell-specific mode
-hooks, Claude Code, and long-session comfort remain unverified even when implemented stages
-pass; Ghostty text OCR can also remain unverified. Full evaluation does not yet
+require a fresh authorized capture. Inactive focus and fixture-local zsh keymaps now have native cases. Installed
+shell hooks, complete plugin/LSP coverage, live agent sessions, Claude Code, and
+long-session comfort remain unverified even when implemented stages pass; Ghostty text OCR can also remain unverified. Full evaluation does not yet
 mean full coverage of every theme goal.
 
 The default theme is Ithilien Dawn. Override paths or compare additional themes:
@@ -133,7 +151,7 @@ the suite does not request permissions or bypass restrictions. See
 
 These are optional shortcuts; the normal workflow does not require them:
 
-- `make evaluate-ghostty`: capture and check only terminal command fixtures.
+- `make evaluate-ghostty`: capture terminal commands, interactions, and live Neovim scenes in one reusable window.
 - `make evaluate-ghostty-images`: reanalyze saved PNGs without opening Ghostty.
 - `make evaluate-ghostty GHOSTTY_CAPTURE=`: prepare command fixtures only.
 - `make evaluate GHOSTTY_ARGS=--ghostty`: prepare fixtures during the full run

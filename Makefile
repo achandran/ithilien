@@ -24,6 +24,8 @@ help:
 	  '  make build     Build all ports, palette assets, and README previews' \
 	  '  make test      Run the normal unit and regression tests' \
 	  '  make evaluate  Run tests and the full native evaluation, including Ghostty' \
+	  '  make evaluate-headless  Run renderer/workflow checks without GUI capture' \
+	  '  make evaluate-offline   Run tests and recheck saved Ghostty screenshots' \
 	  '' \
 	  'Bare make shows this help. Setup and targeted diagnostics: docs/development.md'
 
@@ -49,7 +51,15 @@ evaluate: test
 		--output "$(EVALUATE_OUTPUT)" --themes $(THEMES) \
 		--pickers --python-tools --git-review --installed-workflows $(GHOSTTY_ARGS)
 
-# Independent of Neovim, Kanso, Tree-sitter and Rust/Codex dependencies.
+# Safe while the desktop is in use: no Ghostty launch, focus, or mouse input.
+# This does not certify native pixels or complete native target coverage.
+.PHONY: evaluate-headless evaluate-offline
+evaluate-headless:
+	$(MAKE) evaluate GHOSTTY_ARGS=
+
+evaluate-offline: test evaluate-ghostty-images
+
+# Live Neovim cases require Neovim/Kanso; targeted --cases can isolate terminal checks.
 # Native execution requires authorized Ghostty access and Screen Recording.
 GHOSTTY_OUTPUT ?= evaluation/results/ghostty
 GHOSTTY_CAPTURE ?= --capture

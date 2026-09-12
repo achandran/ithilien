@@ -8,7 +8,7 @@ Copy `ghostty/themes/ithilien_dusk.conf` and `ghostty/themes/ithilien_dawn.conf`
 theme = light:ithilien_dawn.conf,dark:ithilien_dusk.conf
 ```
 
-The generated dark theme uses Berkeley Mono Retina for terminal text and window titles. The light theme uses Berkeley Mono Medium for both. Neither theme sets `font-thicken`. The light theme sets `faint-opacity = 1` to protect agent deletion text, and `minimum-contrast = 1` to disable renderer contrast adjustment, which made vi-mode block cursor text unreadable in the user’s Ghostty setup. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is black.
+The generated dark theme uses Berkeley Mono Retina for terminal text and window titles. The light theme uses Berkeley Mono Medium for both. Neither theme sets `font-thicken`. The light theme leaves `faint-opacity` unset so Ghostty uses its default dim-text rendering, and sets `minimum-contrast = 1` to disable renderer contrast adjustment, which made vi-mode block cursor text unreadable in the user’s Ghostty setup. Faint opacity applies to all terminal text carrying the dim attribute, including dimmed diff text. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is black.
 
 ## Neovim and LazyVim
 

@@ -13,7 +13,7 @@ import tempfile
 from ithilienlib import ROOT
 
 
-def prepare(output, native_capture=False):
+def prepare(output, native_capture=False, cases=None, codex_cells=None):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     records = []
@@ -73,10 +73,23 @@ def prepare(output, native_capture=False):
                     'ansi':'glyph-reference.ansi', 'sha256':hashlib.sha256(atlas.encode()).hexdigest(), 'contains_ansi':True})
     from ghostty_interactions import fixtures
     records.extend(fixtures(output))
+    from ghostty_neovim import fixtures as neovim_fixtures
+    records.extend(neovim_fixtures(output))
+    from ghostty_shell import fixtures as shell_fixtures
+    records.extend(shell_fixtures(output))
+    if codex_cells:
+        from ghostty_replay import fixtures as replay_fixtures
+        records.extend(replay_fixtures(output,codex_cells))
+    all_cases = [r['id'] for r in records]
+    if cases:
+        unknown=set(cases)-set(all_cases)
+        if unknown: raise ValueError('Unknown native cases: '+', '.join(sorted(unknown)))
+        records=[r for r in records if r['id'] in cases or r['id']=='glyph-reference']
     theme = ROOT/'ghostty/themes/ithilien_dawn.conf'
-    config = theme.read_text()+'\nfont-size = 16\nwindow-colorspace = srgb\n'
+    config = theme.read_text()+'\nfont-size = 16\nwindow-colorspace = srgb\nwindow-padding-x = 8\nwindow-padding-y = 8\n'
     (output/'ghostty.conf').write_text(config)
     report = {'status':'blocked', 'pass':False, 'results':records,
+        'omitted_cases':[name for name in all_cases if name not in {r['id'] for r in records}],
         'reason':'Native Ghostty capture provider unavailable; prepared command output is not pixel validation.',
         'theme_sha256':hashlib.sha256(theme.read_bytes()).hexdigest(),
         'render_profile':json.loads((ROOT/'evaluation/render-profile.json').read_text()),
@@ -109,6 +122,9 @@ def prepare(output, native_capture=False):
             report['coverage'][role]=f'{passed}/{len(expected)} native cases passed; see command_quality'
         report['reason']=report.get('capture_error') or 'Native interaction and command checks are in command_quality. Full native Neovim/Codex workflows and comfort remain unverified.'
         (output/'report.json').write_text(json.dumps(report, indent=2))
+        if (output/'quality.json').exists():
+            from ghostty_coverage import synchronize
+            synchronize(output, report, report['command_quality'])
     links=''.join(f'<li>{html.escape(r["id"])}: {html.escape(r["status"])}'+
                   (f' — <a href="{r["ansi"]}">ANSI bytes</a>' if 'ansi' in r else '')+'</li>' for r in records)
     images=''
@@ -128,7 +144,10 @@ if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT/'evaluation/results/ghostty')
     parser.add_argument('--capture', action='store_true', help='Launch and capture isolated native Ghostty windows on an authorized macOS host')
+    parser.add_argument('--cases', nargs='+', help='Capture only these case IDs plus the glyph reference; omitted coverage stays explicit')
+    parser.add_argument('--codex-cells',type=Path,help='Recorded native Codex flow cells and sibling passing report for the current theme')
     args=parser.parse_args()
-    report=prepare(args.output, args.capture)
-    print(json.dumps(report, indent=2))
+    report=prepare(args.output, args.capture, args.cases,args.codex_cells)
+    print(json.dumps({'status':report['status'],'reason':report['reason'],
+                     'coverage':report['coverage'],'report':str(args.output/'report.json')}, indent=2))
     sys.exit(1)  # Preparing fixtures cannot satisfy native Ghostty acceptance.

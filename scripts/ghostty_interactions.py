@@ -18,6 +18,8 @@ def fixtures(output):
     records.append(_record(output,'cursor-transitions',text,
         cursor={'row':0,'column':text.index('='),'text':'=','style':'steady-bar'},
         transitions=['steady-bar','steady-block','steady-underline','hidden','steady-block']))
+    records.append(_record(output,'cursor-inactive-block',text,
+        cursor={'row':0,'column':text.index('='),'text':'=','style':'steady-block'},inactive=True))
     for name,text,start,end in (
         ('selection-single','return \x1b[34mattempt\x1b[0m <= 3\n',[0,7],[0,18]),
         ('selection-multiline','return attempt <= 3\nreturn retries >= 2\n',[0,7],[1,14]),
@@ -34,6 +36,27 @@ def _record(output,name,text,**state):
 
 def selected(spec,row,column):
     return tuple(spec['start']) <= (row,column) < tuple(spec['end'])
+
+
+def inactive_check(image,g,cell,palette,reference):
+    from ghostty_quality import rgb,cell_checks
+    from ghostty_glyphs import crop_cell,mask,classify,templates_from_capture
+    crop=crop_cell(image,g,cell['row'],cell['column'])
+    w,h=crop.size;target=rgb(palette['highlight']['cursor'])
+    points=[(x,y) for y in range(h) for x in range(w)
+            if max(abs(a-b) for a,b in zip(crop.getpixel((x,y)),target))<=3]
+    perimeter=[(x,y) for x,y in points if x<2 or x>=w-2 or y<2 or y>=h-2]
+    outline=bool(points) and len(perimeter)>=len(points)*.9 and len({x for x,y in points})>=w*.8 and len({y for x,y in points})>=h*.8
+    clean=crop.copy()
+    for x,y in points:clean.putpixel((x,y),rgb(palette['backgrounds']['base']))
+    pixels=cell_checks(image,g,[cell],palette['backgrounds']['base'])
+    result={'status':'pass' if outline and pixels['status']=='pass' else 'fail','shape':'inactive-outline','outline_pass':outline,'pixels':pixels}
+    if reference and (g['cell_width'],g['cell_height'])==(reference[1]['cell_width'],reference[1]['cell_height']):
+        glyph,distance=classify(mask(clean),templates_from_capture(*reference))
+        result.update(observed_glyph=glyph,glyph_distance=distance)
+        if result['status']=='pass' and glyph!=cell['text']:result['status']='unverified'
+    elif result['status']=='pass':result['status']='unverified'
+    return result
 
 
 def drag_points(geometry,size,spec):

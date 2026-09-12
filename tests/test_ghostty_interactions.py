@@ -7,6 +7,19 @@ from ghostty_quality import ansi_cells
 from test_ghostty_native_cursor import specimen
 
 
+def test_inactive_outline_requires_outline_and_intact_glyph():
+    from ghostty_interactions import inactive_check
+    im,g,p,ref,cell=specimen();draw=ImageDraw.Draw(im)
+    draw.rectangle((0,48,11,71),fill=p['backgrounds']['base'],outline=p['highlight']['cursor'])
+    draw.text((0,48),'=',font=ImageFont.load_default_imagefont(),fill='black')
+    assert inactive_check(im,g,cell,p,ref)['status']=='pass'
+    draw.rectangle((0,48,11,71),fill=p['highlight']['cursor'])
+    draw.text((0,48),'=',font=ImageFont.load_default_imagefont(),fill='black')
+    assert inactive_check(im,g,cell,p,ref)['status']=='fail'
+    draw.rectangle((0,48,11,71),fill=p['backgrounds']['base'],outline=p['highlight']['cursor'])
+    assert inactive_check(im,g,cell,p,ref)['status']!='pass'
+
+
 def shape(style):
     im,g,p,ref,cell=specimen();d=ImageDraw.Draw(im)
     shifted=Image.new('RGB',ref[0].size,p['backgrounds']['base']);shifted.paste(ref[0],(2,0));ref=(shifted,g)

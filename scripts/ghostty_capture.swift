@@ -11,7 +11,7 @@ func emit(_ value: Any) throws {
 // Input is restricted to a freshly created, uniquely titled fixture window.
 func fixture(_ title: String, _ id: Int) throws -> [String: Any] {
     guard title.hasPrefix("Ithilien evaluation "),
-          let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] else {
+          let list = CGWindowListCopyWindowInfo([.optionAll, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] else {
         throw NSError(domain: "GhosttyInput", code: 1)
     }
     let matches = list.filter {
@@ -31,19 +31,38 @@ func focusFixture(_ title: String, _ id: Int) throws -> [String: Any] {
     let info = try fixture(title, id)
     let pid = info[kCGWindowOwnerPID as String] as! Int32
     guard let app = NSRunningApplication(processIdentifier: pid) else { throw NSError(domain: "GhosttyInput", code: 4) }
-    app.activate(options: [])
-    let ax = AXUIElementCreateApplication(pid)
-    var value: CFTypeRef?
-    guard AXUIElementCopyAttributeValue(ax, kAXWindowsAttribute as CFString, &value) == .success,
-          let windows = value as? [AXUIElement] else { throw NSError(domain: "GhosttyInput", code: 5) }
-    let matches = windows.filter { window in
-        var name: CFTypeRef?
-        return AXUIElementCopyAttributeValue(window, kAXTitleAttribute as CFString, &name) == .success && (name as? String) == title
+    if NSWorkspace.shared.frontmostApplication?.processIdentifier != pid {
+        app.activate(options: [])
+        Thread.sleep(forTimeInterval: 0.2)
     }
-    guard matches.count == 1, AXUIElementPerformAction(matches[0], kAXRaiseAction as CFString) == .success else {
+    let ax = AXUIElementCreateApplication(pid)
+    // The CG window may be published before its Accessibility counterpart.
+    // Retry identity lookup, never fall back to another window or global keys.
+    let deadline = Date().addingTimeInterval(3)
+    var raised = false
+    repeat {
+        _ = try fixture(title, id)
+        var value: CFTypeRef?
+        if AXUIElementCopyAttributeValue(ax, kAXWindowsAttribute as CFString, &value) == .success,
+           let windows = value as? [AXUIElement] {
+            let matches = windows.filter { window in
+                var name: CFTypeRef?
+                return AXUIElementCopyAttributeValue(window, kAXTitleAttribute as CFString, &name) == .success && (name as? String) == title
+            }
+            if matches.count == 1 && AXUIElementPerformAction(matches[0], kAXRaiseAction as CFString) == .success {
+                raised = true
+                break
+            }
+        }
+        Thread.sleep(forTimeInterval: 0.1)
+    } while Date() < deadline
+    guard raised else {
         throw NSError(domain: "GhosttyInput", code: 6, userInfo: [NSLocalizedDescriptionKey: "Cannot raise exact fixture window"])
     }
-    Thread.sleep(forTimeInterval: 0.15)
+    let focusDeadline = Date().addingTimeInterval(3)
+    while NSWorkspace.shared.frontmostApplication?.processIdentifier != pid && Date() < focusDeadline {
+        Thread.sleep(forTimeInterval: 0.1)
+    }
     guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
         throw NSError(domain: "GhosttyInput", code: 7, userInfo: [NSLocalizedDescriptionKey: "Fixture did not receive focus"])
     }
@@ -91,7 +110,45 @@ func dragFixture(_ title: String, _ id: Int, _ fractions: [Double]) throws {
 
 let args = Array(CommandLine.arguments.dropFirst())
 do {
-    if args.first == "focus", args.count == 3, let id = Int(args[2]) {
+    if args.first == "frontmost" {
+        try emit(["pid": NSWorkspace.shared.frontmostApplication?.processIdentifier ?? -1])
+    } else if args.first == "deactivate", args.count == 4, let id = Int(args[2]), let previous = Int32(args[3]) {
+        let owned = try fixture(args[1], id)
+        let pid = owned[kCGWindowOwnerPID as String] as! Int32
+        guard previous != pid, let app = NSRunningApplication(processIdentifier: previous) else {
+            throw NSError(domain: "GhosttyInput", code: 11, userInfo: [NSLocalizedDescriptionKey: "Original foreground application is unavailable"])
+        }
+        app.activate(options: [])
+        Thread.sleep(forTimeInterval: 0.3)
+        guard NSWorkspace.shared.frontmostApplication?.processIdentifier == previous else {
+            throw NSError(domain: "GhosttyInput", code: 12, userInfo: [NSLocalizedDescriptionKey: "Fixture did not become inactive"])
+        }
+        try emit(["inactive": true, "restored_pid": previous])
+    } else if args.first == "close", args.count == 3, let id = Int(args[2]) {
+        // Close only the exact, uniquely titled evaluation window. Never quit
+        // Ghostty or send a shortcut to whichever window happens to be active.
+        guard AXIsProcessTrusted() else {
+            throw NSError(domain: "GhosttyInput", code: 3, userInfo: [NSLocalizedDescriptionKey: "Accessibility permission is unavailable for fixture cleanup"])
+        }
+        let info = try fixture(args[1], id)
+        let pid = info[kCGWindowOwnerPID as String] as! Int32
+        var value: CFTypeRef?
+        let ax = AXUIElementCreateApplication(pid)
+        guard AXUIElementCopyAttributeValue(ax, kAXWindowsAttribute as CFString, &value) == .success,
+              let windows = value as? [AXUIElement] else { throw NSError(domain: "GhosttyInput", code: 5) }
+        let matches = windows.filter { window in
+            var name: CFTypeRef?
+            return AXUIElementCopyAttributeValue(window, kAXTitleAttribute as CFString, &name) == .success && (name as? String) == args[1]
+        }
+        guard matches.count == 1 else { throw NSError(domain: "GhosttyInput", code: 2) }
+        var button: CFTypeRef?
+        guard AXUIElementCopyAttributeValue(matches[0], kAXCloseButtonAttribute as CFString, &button) == .success,
+              let button = button,
+              AXUIElementPerformAction(button as! AXUIElement, kAXPressAction as CFString) == .success else {
+            throw NSError(domain: "GhosttyInput", code: 10, userInfo: [NSLocalizedDescriptionKey: "Could not close exact fixture window"])
+        }
+        try emit(["closed": true])
+    } else if args.first == "focus", args.count == 3, let id = Int(args[2]) {
         _ = try focusFixture(args[1], id)
         try emit(["focused": true])
     } else if args.first == "drag", args.count == 7, let id = Int(args[2]) {

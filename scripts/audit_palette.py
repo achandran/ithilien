@@ -264,12 +264,12 @@ def main(variant: str = "ithilien-dusk") -> None:
     lines.extend(["", "## Close accent pairs for visual review", ""])
     lines.extend(f"- `{item['pair']}`: ΔEOK {item['deltaEOK']}" for item in proximity)
     lines.extend(["", "## Syntax and diagnostic role review (not gates)", "",
-                  "Color alone does not preserve these roles in every simulation. Keywords use bold by default in Day; numbers have literal syntax. Diagnostic signs/messages must retain severity labels; diffs retain + / - / ~ and inline bold.", "",
+                  "Color alone does not preserve these roles in every simulation. Keywords use bold by default in Day; numbers have literal syntax. Diagnostic signs/messages retain severity labels. Diff line signs retain + / - / ~; edited spans intentionally use ordinary weight and color-based emphasis. Color-vision simulations do not certify exact-span discoverability.", "",
                   "| Pair | Normal | Protan | Deutan | Tritan | Gray |", "|---|---:|---:|---:|---:|---:|"])
     for check in role_review:
         lines.append("| " + check["name"] + " | " + " | ".join(str(check["deltaEOK"][m]) for m in SIMULATIONS) + " |")
     lines.extend(["", "## Inline fill versus line background (observations)", "",
-                  "These are not text contrast gates. Day uses black inline text with bold and underline in GitSigns; lighter fills trade some boundary contrast for text readability.", ""])
+                  "These are not text contrast gates. Day intentionally uses ordinary-weight black inline text with color-based emphasis, without added bold or underline. Fill visibility and exact-span discoverability require separate native and human evaluation.", ""])
     for check in inline_review:
         lines.append(f"- {check['state']}: fill/line contrast {check['lineContrast']}:1; grayscale ΔEOK {check['lineDeltaEOK']['grayscale']}")
     lines.extend(["", "## Changed-line fill versus canvas (observations)", "",

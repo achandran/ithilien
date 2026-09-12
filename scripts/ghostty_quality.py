@@ -131,7 +131,7 @@ def cell_checks(image, geometry, cells, background):
             findings.append({**cell,'reason':'unexpected cell background','observed':bg})
         elif ratio<4.5:
             findings.append({**cell,'reason':'low rendered contrast','contrast':round(ratio,3)})
-        elif matching<2:
+        elif matching<2 and not cell.get('dim'):
             findings.append({**cell,'reason':'expected foreground missing'})
     return {'status':'fail' if findings else 'pass','minimum_contrast':round(min(ratios),3) if ratios else None,
             'findings':findings,'scope':'ASCII nonspace cell coverage and dark stroke ink versus modal background; 4.5 floor. This is a rendering proxy, not a comfort score.'}
@@ -191,7 +191,7 @@ def cursor_check(image, geometry, cell, palette, reference):
     return result
 
 
-def assess_capture(image_path, ansi_path, helper, palette, reference=None, cursor=None, selection=None):
+def assess_capture(image_path, ansi_path, helper, palette, reference=None, cursor=None, selection=None, inactive=False):
     image=srgb_image(image_path)
     colors=list(palette['ansi'].values())[1:7]
     geometry=grid(image,colors)
@@ -203,7 +203,11 @@ def assess_capture(image_path, ansi_path, helper, palette, reference=None, curso
         if len(covered)!=1 or covered[0]['text']!=cursor['text']:
             raise ValueError('Cursor target does not match recorded fixture text')
         from ghostty_interactions import shape_check
-        cursor_result=shape_check(image,geometry,covered[0],palette,cursor.get('style','steady-block'),reference)
+        if inactive:
+            from ghostty_interactions import inactive_check
+            cursor_result=inactive_check(image,geometry,covered[0],palette,reference)
+        else:
+            cursor_result=shape_check(image,geometry,covered[0],palette,cursor.get('style','steady-block'),reference)
         text_cells=[c for c in cells if c not in covered]
     selection_result=None
     if selection:
@@ -212,7 +216,7 @@ def assess_capture(image_path, ansi_path, helper, palette, reference=None, curso
         text_cells=[c for c in text_cells if not selected(selection,c['row'],c['column'])]
     pixels=cell_checks(image,geometry,text_cells,palette['backgrounds']['base'])
     content_image=image
-    if cursor and not cursor.get('style','steady-block').endswith('block') and cursor.get('style')!='hidden':
+    if cursor and (inactive or not cursor.get('style','steady-block').endswith('block')) and cursor.get('style')!='hidden':
         # The cursor gate independently validates both the strip and covered glyph.
         # Remove only its exact-color strip from the content recognition input.
         content_image=image.copy()
@@ -251,19 +255,38 @@ def analyze(output, helper):
     results=[]
     prepared={r['id']:r for r in report['results']}
     reference=None; reference_sha=None
-    from ghostty_glyphs import reference_sheet
-    expected_atlas=hashlib.sha256(reference_sheet()[0].encode()).hexdigest()
+    from ghostty_glyphs import reference_sheet, ASCII, REFERENCE_GLYPHS
+    # Known complete-alphabet atlas versions remain usable for offline review.
+    # Arbitrary or command-specific reference alphabets are still rejected.
+    atlases={hashlib.sha256(reference_sheet(alphabet)[0].encode()).hexdigest():reference_sheet(alphabet)[1]
+             for alphabet in (ASCII,ASCII+'·',REFERENCE_GLYPHS)}
     for frame in report.get('native_captures',[]):
         if frame['id']=='glyph-reference' and 'image' in frame:
             source=output/prepared[frame['id']]['ansi']
-            if hashlib.sha256(source.read_bytes()).hexdigest()!=expected_atlas or prepared[frame['id']]['sha256']!=expected_atlas:
+            atlas_hash=hashlib.sha256(source.read_bytes()).hexdigest()
+            if atlas_hash not in atlases or prepared[frame['id']]['sha256']!=atlas_hash:
                 raise ValueError('Native glyph reference payload is stale or changed')
             reference_image=srgb_image(output/frame['image'])
             reference=(reference_image,grid(reference_image,list(palette['ansi'].values())[1:7]))
+            reference[1]['reference_labels']=atlases[atlas_hash]
             reference_sha=hashlib.sha256((output/frame['image']).read_bytes()).hexdigest()
     for frame in report.get('native_captures',[]):
         if frame['id']=='glyph-reference':continue
         if 'image' not in frame:continue
+        if prepared[frame['id']].get('kind') in ('native-neovim','native-codex-replay'):
+            from ghostty_neovim import assess
+            request=output/(prepared[frame['id']].get('request') or prepared[frame['id']]['ansi'])
+            if hashlib.sha256(request.read_bytes()).hexdigest()!=prepared[frame['id']]['sha256']:
+                raise ValueError('Native application request changed since capture')
+            if prepared[frame['id']].get('cells_sha256') and hashlib.sha256((output/(frame['id']+'.cells.json')).read_bytes()).hexdigest()!=prepared[frame['id']]['cells_sha256']:
+                raise ValueError('Native cell oracle changed since capture')
+            if frame.get('cells_sha256') and hashlib.sha256((output/(frame['id']+'.cells.json')).read_bytes()).hexdigest()!=frame['cells_sha256']:
+                raise ValueError('Live screen-cell oracle changed since capture')
+            try:
+                result=assess(output/frame['image'],output/(frame['id']+'.cells.json'),palette,reference)
+            except (ValueError,OSError) as exc: result={'status':'unverified','reason':str(exc)}
+            results.append(dict(result,id=frame['id']))
+            continue
         source=output/prepared[frame['id']]['ansi']
         if hashlib.sha256(source.read_bytes()).hexdigest()!=prepared[frame['id']]['sha256']:
             raise ValueError('ANSI fixture changed since capture')
@@ -289,7 +312,17 @@ def analyze(output, helper):
                     blink.update(status='unverified',reason='Insufficient or invalid timed sequence')
                 blink['frames']=evidence
                 if on_image:image_path=on_image
-            result=assess_capture(image_path,source,helper,palette,reference,cursor,selection)
+            inactive=prepared[frame['id']].get('inactive',False)
+            result=assess_capture(image_path,source,helper,palette,reference,cursor,selection,inactive)
+            if inactive:
+                result['focus_evidence']=frame.get('interaction',{})
+                if not result['focus_evidence'].get('inactive'):
+                    result.update(status='unverified',reason='Native inactive-focus evidence missing')
+            if prepared[frame['id']].get('kind')=='native-shell':
+                evidence=json.loads(source.with_suffix('.shell.json').read_text())
+                result['shell']=evidence
+                if evidence['keymap']!=prepared[frame['id']]['keymap']:
+                    result.update(status='fail',reason='Required native zsh keymap missing')
             if selection:
                 evidence=frame.get('interaction',{})
                 if evidence.get('input')!='native mouse drag' or not evidence.get('before_image'):
@@ -326,6 +359,8 @@ def analyze(output, helper):
     summary['glyph_classifier_sha256']=hashlib.sha256((Path(__file__).parent/'ghostty_glyphs.py').read_bytes()).hexdigest()
     summary['interaction_gate_sha256']=hashlib.sha256((Path(__file__).parent/'ghostty_interactions.py').read_bytes()).hexdigest()
     summary['analyzer_sha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    for module in ('ghostty_neovim','ghostty_shell','ghostty_replay'):
+        summary[module+'_sha256']=hashlib.sha256(Path(__file__).with_name(module+'.py').read_bytes()).hexdigest()
     summary['helper_sha256']=hashlib.sha256(helper.read_bytes()).hexdigest() if helper.exists() else None
     (output/'quality.json').write_text(json.dumps(summary,indent=2))
     rows=''.join('<tr><td>'+html.escape(r['id'])+'</td><td>'+html.escape(r['status'])+'</td><td>'+str(r.get('text_pixels',{}).get('minimum_contrast'))+'</td><td>'+str(len(r.get('text_pixels',{}).get('findings',[])))+'</td><td>'+html.escape(r.get('content',{}).get('status','unverified'))+'</td></tr>' for r in results)

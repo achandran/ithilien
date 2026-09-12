@@ -25,7 +25,7 @@ def atlas():
 
 def test_reference_is_independent_of_fixture_text():
     payload, labels=reference_sheet()
-    assert set(c['text'] for c in labels)==set(chr(i) for i in range(33,127))
+    assert set(c['text'] for c in labels)==set(chr(i) for i in range(33,127)) | set('·•›‹└✔✓√')
     assert 'attempt' not in payload
     assert max(c['row'] for c in labels)<38
 

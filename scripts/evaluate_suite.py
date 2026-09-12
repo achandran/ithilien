@@ -81,7 +81,7 @@ def write_index(out,report):
         details.append(f'<details><summary>{name}: agent-stage measurements</summary><p>Whole frame including accumulated history. Required-content fragment findings are in <a href="codex/{t["id"]}/agent-gates.json">agent-gates.json</a>.</p><table><tr><th>Stage</th><th>Width</th><th>Minimum contrast</th><th>Failed cells</th><th>Dim cells (unverified)</th></tr>{stage_rows}</table></details>')
 
     stage_table='<h2>Stage coverage</h2><table>'+''.join('<tr><td>'+html.escape(name)+'</td><td>'+html.escape(stage['status']+(' / quality '+stage['quality_status'] if stage.get('quality_status') else ''))+'</td><td>'+('<a href="'+html.escape(stage['gallery'],quote=True)+'">Gallery</a>' if stage.get('gallery') and (out/stage['gallery']).exists() else html.escape(stage.get('reason','')) )+'</td></tr>' for name,stage in report['stages'].items())+'</table>'
-    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme suite</title><style>body{font:16px/1.5 system-ui;padding:30px}td,th{padding:12px;border-bottom:1px solid #ccc}</style><h1>Combined evaluation</h1><p>Supported stages completed separately from quality gates. Full coverage remains incomplete: Ghostty cursor/selection, Claude Code, and comfort are unverified. See stage coverage for implemented Ghostty pixel/text checks. Native event replay, not live model sessions.</p><p><a href="neovim/scorecard.html">Neovim gates</a> · <a href="python/scorecard.html">Python Tree-sitter/LSP gates</a> · <a href="interactions/gallery.html">fzf / diagnostics / completion</a> · <a href="evaluator-validation/index.html">Evaluator validation</a> · <a href="report.json">Full evidence</a></p><table><tr><th>Theme</th><th>Codex adapter provenance</th><th>Diff gates</th><th>Flow gates</th></tr>'+''.join(rows)+'</table>'+stage_table+'<p>Converted ports test our explicit mapping, not an upstream author’s Codex implementation.</p>'+''.join(details))
+    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme suite</title><style>body{font:16px/1.5 system-ui;padding:30px}td,th{padding:12px;border-bottom:1px solid #ccc}</style><h1>Combined evaluation</h1><p>Supported stages completed separately from quality gates. Full coverage remains incomplete: See stage coverage for measured Ghostty command, cursor, selection, and live Neovim cases. Claude Code and comfort remain unverified. Native event replay, not live model sessions.</p><p><a href="neovim/scorecard.html">Neovim gates</a> · <a href="python/scorecard.html">Python Tree-sitter/LSP gates</a> · <a href="interactions/gallery.html">fzf / diagnostics / completion</a> · <a href="evaluator-validation/index.html">Evaluator validation</a> · <a href="report.json">Full evidence</a></p><table><tr><th>Theme</th><th>Codex adapter provenance</th><th>Diff gates</th><th>Flow gates</th></tr>'+''.join(rows)+'</table>'+stage_table+'<p>Converted ports test our explicit mapping, not an upstream author’s Codex implementation.</p>'+''.join(details))
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -184,7 +184,8 @@ def main():
     if a.ghostty or a.ghostty_capture:
         from evaluate_ghostty import prepare as prepare_ghostty
         try:
-            ghostty=prepare_ghostty(out/'ghostty', a.ghostty_capture)
+            native_cells=out/'codex/ithilien-dawn/flows/codex-cells.json'
+            ghostty=prepare_ghostty(out/'ghostty', a.ghostty_capture,codex_cells=native_cells if native_cells.exists() else None)
             report['stages']['ghostty']={'status':ghostty['status'],'reason':ghostty['reason'],'gallery':'ghostty/gallery.html'}
             report['coverage']['ghostty']=ghostty['coverage']
         except Exception as exc:

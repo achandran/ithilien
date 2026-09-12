@@ -46,8 +46,8 @@ def generate_ghostty(palette: dict) -> None:
         "",
         f'font-family = {"Berkeley Mono Medium" if is_light else "Berkeley Mono Retina"}',
         f'window-title-font-family = {"Berkeley Mono Medium" if is_light else "Berkeley Mono Retina"}',
-        *(["", "# Preserve dimmed text; avoid contrast adjustment corrupting vi-mode cursor cells.",
-           "faint-opacity = 1", "minimum-contrast = 1"] if is_light else []),
+        *(["", "# Preserve the vi-mode cursor contrast fix.",
+           "minimum-contrast = 1"] if is_light else []),
     ]
     destination = ROOT / "ghostty" / "themes" / (palette["slug"].replace("-", "_") + ".conf")
     destination.parent.mkdir(parents=True, exist_ok=True)

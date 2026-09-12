@@ -229,7 +229,7 @@ Values are ΔEOK distances. They are comparative signals, not universal accessib
 
 ## Syntax and diagnostic role review (not gates)
 
-Color alone does not preserve these roles in every simulation. Keywords use bold by default in Day; numbers have literal syntax. Diagnostic signs/messages must retain severity labels; diffs retain + / - / ~ and inline bold.
+Color alone does not preserve these roles in every simulation. Keywords use bold by default in Day; numbers have literal syntax. Diagnostic signs/messages retain severity labels. Diff line signs retain + / - / ~; edited spans intentionally use ordinary weight and color-based emphasis. Color-vision simulations do not certify exact-span discoverability.
 
 | Pair | Normal | Protan | Deutan | Tritan | Gray |
 |---|---:|---:|---:|---:|---:|
@@ -240,7 +240,7 @@ Color alone does not preserve these roles in every simulation. Keywords use bold
 
 ## Inline fill versus line background (observations)
 
-These are not text contrast gates. Day uses black inline text with bold and underline in GitSigns; lighter fills trade some boundary contrast for text readability.
+These are not text contrast gates. Day intentionally uses ordinary-weight black inline text with color-based emphasis, without added bold or underline. Fill visibility and exact-span discoverability require separate native and human evaluation.
 
 - add: fill/line contrast 1.634:1; grayscale ΔEOK 0.1517
 - delete: fill/line contrast 1.566:1; grayscale ΔEOK 0.1377
