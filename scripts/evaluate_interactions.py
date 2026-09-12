@@ -30,13 +30,13 @@ def fzf_roles(options):
     return {role:pair(colors[role],colors.get(bg,colors['bg'])) for role,bg in backgrounds.items() if role in colors}
 
 
-def capture(adapter, width, scene, fixture=None, options=None, fzf=None, nvim=None, action=''):
+def capture(adapter, width, scene, fixture=None, options=None, fzf=None, nvim=None, action='', workflow=None):
     resolved=check_adapter(adapter)
     def timeout(*_):raise TimeoutError('Interaction capture timed out')
     old=signal.signal(signal.SIGALRM,timeout);signal.alarm(20)
     with tempfile.TemporaryDirectory(prefix='ithilien-interaction-') as tmp:
         n=pynvim.attach('child',argv=['env','XDG_STATE_HOME='+tmp,'XDG_CACHE_HOME='+tmp,nvim,'--embed','--headless','-n','-u','NONE','-i','NONE'])
-        grid={};attrs={};defaults={};groups={};job=None;exit_status=None
+        grid={};attrs={};attr_info={};defaults={};groups={};job=None;exit_status=None
         def notify(name,args):
             if name=='interaction_done':n.stop_loop();return
             if name!='redraw':return
@@ -44,7 +44,9 @@ def capture(adapter, width, scene, fixture=None, options=None, fzf=None, nvim=No
                 for item in event[1:]:
                     kind=event[0]
                     if kind=='default_colors_set':defaults.update(fg=item[0],bg=item[1])
-                    elif kind=='hl_attr_define':attrs[item[0]]=item[1]
+                    elif kind=='hl_attr_define':
+                        attrs[item[0]]=item[1]
+                        if len(item)>3:attr_info[item[0]]=item[3]
                     elif kind=='grid_clear':grid.clear()
                     elif kind=='grid_line':
                         _,row,col,cells,*_=item;a=0
@@ -57,12 +59,15 @@ def capture(adapter, width, scene, fixture=None, options=None, fzf=None, nvim=No
                             for c in range(left,right):grid[r,c]=prev.get((r+rows,c+cols),(' ',0))
         def setup():
             nonlocal groups,job
-            n.ui_attach(width,24,rgb=True,ext_linegrid=True)
+            n.ui_attach(width,40 if workflow else 24,rgb=True,ext_linegrid=True,ext_hlstate=bool(workflow))
             n.command('set termguicolors background=light laststatus=0 noshowmode noruler')
             for p in resolved['paths']:n.exec_lua('vim.opt.rtp:prepend(...)',str(p))
+            if workflow:n.command('cd '+n.funcs.fnameescape(tmp))
             n.exec_lua(adapter['setup'])
             groups=n.exec_lua('local out={};for _,g in ipairs(...) do out[g]=vim.api.nvim_get_hl(0,{name=g,link=false}) end;return out',GROUPS)
-            if scene=='fzf':
+            if workflow:
+                n.exec_lua('local path,scene,state=...;dofile(path)(scene,state)',workflow,scene,action)
+            elif scene=='fzf':
                 env={'FZF_DEFAULT_OPTS':options,'FZF_CTRL_R_OPTS':'','FZF_DEFAULT_COMMAND':'','TERM':'xterm-256color','COLORTERM':'truecolor','NO_COLOR':''}
                 command=shlex.quote(fzf)+' --read0 --sync --no-sort --layout=reverse --height=100% --query=ghostty < '+shlex.quote(str(fixture))
                 job=n.exec_lua('local cmd,env=...;return vim.fn.termopen({"/bin/sh","-c",cmd},{env=env})',command,env)
@@ -94,8 +99,11 @@ def capture(adapter, width, scene, fixture=None, options=None, fzf=None, nvim=No
             if setup_errors:raise RuntimeError(setup_errors[0])
             if job:exit_status=n.funcs.jobwait([job],0)[0]
             shot={'case':scene,'width':width,'state':action or 'initial','defaults':defaults,'attrs':attrs,'highlights':groups,'cells':[{'row':r,'col':c,'text':t,'attr':a} for (r,c),(t,a) in sorted(grid.items())]}
-            text='\n'.join(''.join(grid.get((r,c),(' ',0))[0] for c in range(width)) for r in range(24))
+            text='\n'.join(''.join(grid.get((r,c),(' ',0))[0] for c in range(width)) for r in range(40 if workflow else 24))
             shot['text']=text
+            if workflow:
+                shot['attr_info']=attr_info
+                shot['evidence']=n.exec_lua('return _G.ithilien_workflow_evidence()')
             if scene=='fzf' and (exit_status!=-1 or 'ghostty' not in text):raise RuntimeError('fzf did not render a live result list: '+' | '.join(line.strip() for line in text.splitlines() if line.strip()))
             if scene=='diagnostics' and not all(label in text for label in ('ERROR','WARN','INFO','HINT')):raise RuntimeError('Diagnostic fixture did not render all severities')
             if scene=='completion' and 'module helper' not in text:raise RuntimeError('Completion popup did not render')
