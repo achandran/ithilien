@@ -40,3 +40,8 @@ GHOSTTY_OUTPUT ?= evaluation/results/ghostty
 GHOSTTY_CAPTURE ?= --capture
 evaluate-ghostty:
 	$(UV) run --locked python scripts/evaluate_ghostty.py $(GHOSTTY_CAPTURE) --output "$(GHOSTTY_OUTPUT)"
+
+# Analyze existing PNGs without opening or controlling Ghostty.
+.PHONY: evaluate-ghostty-images
+evaluate-ghostty-images:
+	$(UV) run --locked python scripts/analyze_ghostty_images.py --output "$(GHOSTTY_OUTPUT)"

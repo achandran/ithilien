@@ -83,12 +83,23 @@ def prepare(output, native_capture=False):
         try:
             report = capture(output, report)
         except (OSError, RuntimeError, subprocess.SubprocessError) as exc:
-            report['reason'] = 'Native capture failed: '+str(exc)
+            detail = getattr(exc, 'stderr', None)
+            if isinstance(detail, bytes):
+                detail = detail.decode('utf-8', errors='replace')
+            report['reason'] = 'Native capture failed: '+(detail.strip() if detail and detail.strip() else str(exc))
     (output/'report.json').write_text(json.dumps(report, indent=2))
+    if report.get('native_captures'):
+        from ghostty_quality import analyze
+        try:
+            report['command_quality']=analyze(output, output/'ghostty-capture')
+        except (OSError,ValueError,subprocess.SubprocessError) as exc:
+            report['command_quality']={'status':'unverified','reason':str(exc)}
+        report['reason']='Native capture completed; see command_quality for pixel and OCR checks. Cursor and selection remain untested.'
+        (output/'report.json').write_text(json.dumps(report, indent=2))
     links=''.join(f'<li>{html.escape(r["id"])}: {html.escape(r["status"])}'+
                   (f' — <a href="{r["ansi"]}">ANSI bytes</a>' if 'ansi' in r else '')+'</li>' for r in records)
     images=''.join('<h2>'+html.escape(r['id'])+'</h2><img style="max-width:100%" src="'+r['image']+'">' for r in report.get('native_captures',[]) if 'image' in r)
-    (output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><h1>Ghostty validation</h1><p>'+html.escape(report['reason'])+'</p><ul>'+links+'</ul>'+images+'<p>ANSI links contain command bytes. Any PNGs above are native captures with calibration checks only, not full readability validation.</p><a href="report.json">Evidence and coverage</a>')
+    (output/'gallery.html').write_text('<!doctype html><meta charset="utf-8"><h1>Ghostty validation</h1><p>'+html.escape(report['reason'])+'</p><ul>'+links+'</ul>'+images+'<p>ANSI links contain command bytes. Any PNGs above are native captures with calibration and separate text-check evidence, not full readability validation.</p><a href="report.json">Evidence and coverage</a> · <a href="quality.html">Text checks</a>')
     return report
 
 

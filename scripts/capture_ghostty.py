@@ -2,13 +2,13 @@
 import argparse
 import json
 import os
+import shlex
 from pathlib import Path
 import subprocess
 import sys
 import time
 from uuid import uuid4
 
-from ithilienlib import ROOT, load_palette
 
 
 def pixel_gate(measurement, colors):
@@ -26,12 +26,44 @@ def emit_scene(payload, ready, release):
         time.sleep(.1)
 
 
-def capture(output, report):
-    if sys.platform != 'darwin':
-        raise RuntimeError('Native Ghostty capture currently requires macOS')
+def write_launcher(output, name, payload, ready, release):
+    """Keep argument quoting and child errors independent of app launch parsing."""
+    launcher = output/(name+'.launch.sh')
+    started, log = output/(name+'.started'), output/(name+'.child.log')
+    for path in (started, log):
+        path.unlink(missing_ok=True)
+    command = [sys.executable, str(Path(__file__).resolve()), '--emit', str(payload),
+               '--ready', str(ready), '--release', str(release)]
+    launcher.write_text('#!/bin/sh\n'+
+        'printf started > '+shlex.quote(str(started))+'\n'+
+        'exec '+shlex.join(command)+' 2>'+shlex.quote(str(log))+'\n')
+    return launcher, started, log
+
+
+def timeout_reason(ready, started, log):
+    if ready.exists():
+        return 'Fixture rendered, but no uniquely titled Ghostty window was found'
+    detail = log.read_text(errors='replace').strip() if log.exists() else ''
+    if detail:
+        return 'Fixture child failed: '+detail[-4000:]
+    if started.exists():
+        return 'Fixture launcher started, but child did not write the ready marker; inspect '+str(log)
+    return 'Ghostty did not start the fixture launcher; inspect its startup/configuration error window'
+
+
+def build_helper(output):
+    from ithilienlib import ROOT
     helper = output/'ghostty-capture'
     subprocess.run(['swiftc', '-module-cache-path', str(output/'swift-cache'),
                     str(ROOT/'scripts/ghostty_capture.swift'), '-o', str(helper)], check=True, timeout=120)
+    return helper
+
+
+def capture(output, report):
+    from ithilienlib import ROOT, load_palette
+    if sys.platform != 'darwin':
+        raise RuntimeError('Native Ghostty capture currently requires macOS')
+    helper = build_helper(output)
     # Read-only preflight before launching any fixture windows. Never requests permission.
     subprocess.run([str(helper), 'windows', 'ithilien-preflight'], check=True, capture_output=True, timeout=10)
     palette = load_palette('ithilien-dawn')
@@ -47,11 +79,13 @@ def capture(output, report):
         config = output/(row['id']+'.conf')
         config.write_text((output/'ghostty.conf').read_text()+
                           f'\ntitle = {title}\nwindow-width = 120\nwindow-height = 40\n')
+        launcher, started, log = write_launcher(output, row['id'], output/row['ansi'], ready, release)
+        launch_command = 'shell:'+shlex.join(['/bin/sh', str(launcher)])
         try:
             subprocess.run(['open', '-na', 'Ghostty', '--args', '--config-default-files=false',
-                            '--config-file='+str(config), '-e', sys.executable, str(Path(__file__).resolve()),
-                            '--emit', str(output/row['ansi']), '--ready', str(ready), '--release', str(release)],
-                           check=True, timeout=15)
+                            '--config-file='+str(config), '--shell-integration=none',
+                            '--quit-after-last-window-closed=true', '--initial-command='+launch_command],
+                           check=True, timeout=15, capture_output=True)
             deadline = time.monotonic()+20
             window = None
             while time.monotonic() < deadline:
@@ -64,7 +98,7 @@ def capture(output, report):
                         break
                 time.sleep(.2)
             if window is None:
-                raise RuntimeError('Fixture window/ready marker not found')
+                raise RuntimeError(timeout_reason(ready, started, log))
             time.sleep(.5)
             image = output/(row['id']+'.png')
             subprocess.run(['/usr/sbin/screencapture', '-x', '-o', '-l', str(window), str(image)], check=True, timeout=15)
@@ -75,6 +109,9 @@ def capture(output, report):
             release.write_text('release')  # Only this fixture child exits; never quits the user's Ghostty.
     report['native_captures'] = results
     report['coverage']['native_pixels'] = 'captured; calibration only'
+    report['render_profile']['light']['native_capture'] = 'captured in Ghostty'
+    report['scope'] = ('Native Ghostty screenshots of prepared command output and a labeled ANSI probe. '
+                       'Calibration checks only; content completeness, glyph readability, cursor, selection, and comfort remain unverified.')
     report['status'] = 'fail' if any(not r.get('calibration', {}).get('pass') for r in results) else 'incomplete'
     report['reason'] = 'Native command screenshots captured; content, cursor, selection, and readability gates are still unimplemented.'
     report['pass'] = False

@@ -64,3 +64,44 @@ Both currently exit nonzero because native acceptance is incomplete, even if
 all available calibration checks pass. Inspect `evaluation/results/ghostty/report.json`
 for the precise status. The full `make evaluate` still requires its documented
 pinned dependencies; this target does not install them.
+
+Startup diagnostics distinguish an unstarted launcher, a failed child process,
+and a ready fixture whose window cannot be located. Each scene retains a
+`*.child.log` and `*.started` marker. The launcher uses Ghostty's explicit
+`initial-command=shell:...` form, quotes every path, disables shell integration
+for the fixture, and keeps the byte emitter free of third-party imports.
+
+## Command text checks
+
+Native runs now also produce `quality.html` and `quality.json`. To analyze
+existing screenshots without launching or capturing any app:
+
+```sh
+make evaluate-ghostty-images
+```
+
+The analyzer locates the six calibration bars to infer the terminal grid, parses
+the recorded ANSI output, and checks every expected nonspace ASCII cell for
+clipping, the expected foreground color, and dark stroke contrast against the
+cell's modal background (minimum 4.5:1). Pixels are converted using their ICC
+profile into sRGB. This is a solid-stroke rendering proxy, not a psychophysical
+readability or comfort score. Antialiased edge pixels are not required to meet
+the solid-text contrast threshold. Tiny punctuation is tested explicitly.
+
+An independent Apple Vision OCR pass compares each expected line at its rendered
+vertical position. Only whitespace is normalized: missing `=`, punctuation,
+case changes and missing lines do not pass. OCR disagreement or engine failure
+is `unverified`, not proof that the palette is defective. Font identity, exact
+indentation, and character-shape fidelity are not certified by these checks.
+
+The attribute probe deliberately contains white ANSI text on the light canvas;
+those incompatible pairs are exposed as findings, not hidden or changed during
+evaluation. The six real command cases are reported separately. Full native
+acceptance remains incomplete because cursor and selection checks do not yet
+exist. An OCR error never silently falls back to a passing pixel-only verdict.
+
+Tests include blank/clipped calibration, erased glyphs, low-contrast cells,
+tiny punctuation, altered comparison operators, omitted lines, and unsupported
+ANSI control sequences. Captured PNG and ANSI hashes are recorded in the text
+report. Existing fixtures must match the capture's stored ANSI hash and the
+current theme must match its stored theme hash before analysis proceeds.

@@ -2,6 +2,7 @@
 import AppKit
 import CoreGraphics
 import Foundation
+import Vision
 
 func emit(_ value: Any) throws {
     let bytes = try JSONSerialization.data(withJSONObject: value, options: [.sortedKeys])
@@ -20,6 +21,23 @@ do {
             ($0[kCGWindowLayer as String] as? Int) == 0
         }.compactMap { $0[kCGWindowNumber as String] as? Int }
         try emit(["windows": matches])
+    } else if args.first == "ocr", args.count == 2 {
+        guard let image = NSImage(contentsOfFile: args[1]),
+              let cg = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
+            throw NSError(domain: "GhosttyCapture", code: 2)
+        }
+        let request = VNRecognizeTextRequest()
+        request.recognitionLevel = .accurate
+        request.usesLanguageCorrection = false
+        request.recognitionLanguages = ["en-US"]
+        try VNImageRequestHandler(cgImage: cg).perform([request])
+        let lines = (request.results ?? []).compactMap { item -> [String: Any]? in
+            guard let text = item.topCandidates(1).first else { return nil }
+            let b = item.boundingBox
+            return ["text": text.string, "confidence": text.confidence,
+                    "box": [b.minX, b.minY, b.width, b.height]]
+        }
+        try emit(["lines": lines])
     } else if args.first == "pixels", args.count >= 3 {
         guard let image = NSImage(contentsOfFile: args[1]),
               let cg = image.cgImage(forProposedRect: nil, context: nil, hints: nil),
