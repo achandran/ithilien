@@ -137,19 +137,59 @@ def cell_checks(image, geometry, cells, background):
             'findings':findings,'scope':'ASCII nonspace cell coverage and dark stroke ink versus modal background; 4.5 floor. This is a rendering proxy, not a comfort score.'}
 
 
-def assess_capture(image_path, ansi_path, helper, palette):
+def prepare_ocr_rows(image, geometry, lines, output):
+    """Isolate complete terminal rows; never send expected text to the OCR engine."""
+    output.mkdir(parents=True, exist_ok=True)
+    manifest=[]
+    for row,line in enumerate(lines):
+        if not line.strip():continue
+        top=geometry['y']+(row+2)*geometry['cell_height']
+        bottom=top+geometry['cell_height']
+        if bottom>image.height:
+            raise ValueError(f'Expected row {row} is clipped')
+        # Full terminal width, not the expected string length. Preserve unexpected suffixes.
+        crop=image.crop((geometry['x'],top,image.width,bottom))
+        crop=crop.resize((crop.width*2,crop.height*2),Image.Resampling.LANCZOS)
+        padded=Image.new('RGB',(crop.width+48,crop.height+48),image.getpixel((image.width-1,top)))
+        padded.paste(crop,(24,24))
+        path=output/f'row-{row:03}.png';padded.save(path)
+        manifest.append({'row':row,'path':str(path.resolve())})
+    path=output/'rows.json';path.write_text(json.dumps(manifest,indent=2))
+    return path
+
+
+def row_content_gate(lines, recognized):
+    rows={item['row']:item for item in recognized}
+    mismatches=[]
+    for row,line in enumerate(lines):
+        if not line.strip():continue
+        observed=''.join(f['text'] for f in rows.get(row,{}).get('fragments',[]))
+        if normalize(line)!=normalize(observed):
+            mismatches.append({'row':row,'expected':line,'observed':observed})
+    return {'status':'unverified' if mismatches else 'pass','mismatches':mismatches,
+            'scope':'Isolated full-width rows, 2x scaling and padding; top OCR candidate only. Only whitespace normalized; no expected-text hints or punctuation substitutions.'}
+
+
+def assess_capture(image_path, ansi_path, helper, palette, reference=None):
     image=srgb_image(image_path)
     colors=list(palette['ansi'].values())[1:7]
     geometry=grid(image,colors)
     cells,lines=ansi_cells(ansi_path.read_text(),palette)
     pixels=cell_checks(image,geometry,cells,palette['backgrounds']['base'])
     try:
-        process=subprocess.run([str(helper),'ocr',str(image_path)],capture_output=True,text=True,check=True,timeout=60)
+        manifest=prepare_ocr_rows(image,geometry,lines,image_path.parent/'ocr-rows'/image_path.stem)
+        process=subprocess.run([str(helper),'ocr-rows',str(manifest)],capture_output=True,text=True,check=True,timeout=60)
         ocr=json.loads(process.stdout)
-        content=content_gate(lines,ocr['lines'],geometry,image.height)
+        content=row_content_gate(lines,ocr['rows'])
     except (subprocess.SubprocessError, OSError) as exc:
         ocr={'error':getattr(exc,'stderr',None) or str(exc)}
         content={'status':'unverified','reason':'OCR unavailable: '+ocr['error']}
+    if reference and content.get('mismatches'):
+        from ghostty_glyphs import recover_content
+        try:
+            content=recover_content(content,image,geometry,*reference)
+        except ValueError as exc:
+            content['glyph_error']=str(exc)
     return {'status':'fail' if pixels['status']=='fail' else content['status'], 'geometry':geometry,
             'content':content,'text_pixels':pixels,'ocr':ocr,
             'image_sha256':hashlib.sha256(image_path.read_bytes()).hexdigest(),
@@ -162,19 +202,33 @@ def analyze(output, helper):
         raise ValueError('Capture theme differs from current theme; refusing stale palette analysis')
     results=[]
     prepared={r['id']:r for r in report['results']}
+    reference=None; reference_sha=None
+    from ghostty_glyphs import reference_sheet
+    expected_atlas=hashlib.sha256(reference_sheet()[0].encode()).hexdigest()
     for frame in report.get('native_captures',[]):
+        if frame['id']=='glyph-reference' and 'image' in frame:
+            source=output/prepared[frame['id']]['ansi']
+            if hashlib.sha256(source.read_bytes()).hexdigest()!=expected_atlas or prepared[frame['id']]['sha256']!=expected_atlas:
+                raise ValueError('Native glyph reference payload is stale or changed')
+            reference_image=srgb_image(output/frame['image'])
+            reference=(reference_image,grid(reference_image,list(palette['ansi'].values())[1:7]))
+            reference_sha=hashlib.sha256((output/frame['image']).read_bytes()).hexdigest()
+    for frame in report.get('native_captures',[]):
+        if frame['id']=='glyph-reference':continue
         if 'image' not in frame:continue
         source=output/prepared[frame['id']]['ansi']
         if hashlib.sha256(source.read_bytes()).hexdigest()!=prepared[frame['id']]['sha256']:
             raise ValueError('ANSI fixture changed since capture')
-        try:result=assess_capture(output/frame['image'],source,helper,palette)
+        try:result=assess_capture(output/frame['image'],source,helper,palette,reference)
         except (ValueError,OSError,subprocess.SubprocessError) as exc:result={'status':'unverified','reason':str(exc)}
         result['id']=frame['id'];results.append(result)
-    expected={r['id'] for r in report['results'] if r['status']=='prepared'}
+    expected={r['id'] for r in report['results'] if r['status']=='prepared' and r.get('kind')!='glyph-reference'}
     missing=sorted(expected-{r['id'] for r in results})
     summary={'status':'pass' if results and not missing and all(r['status']=='pass' for r in results) else 'not_passed',
              'missing_captures':missing,
              'results':results,'scope':'Offline analysis of previously captured command frames. Does not certify cursor, selection, font, or full native workflows.'}
+    summary['glyph_reference_sha256']=reference_sha
+    summary['glyph_classifier_sha256']=hashlib.sha256((Path(__file__).parent/'ghostty_glyphs.py').read_bytes()).hexdigest()
     summary['analyzer_sha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     summary['helper_sha256']=hashlib.sha256(helper.read_bytes()).hexdigest() if helper.exists() else None
     (output/'quality.json').write_text(json.dumps(summary,indent=2))

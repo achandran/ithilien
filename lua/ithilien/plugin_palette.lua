@@ -1,7 +1,25 @@
 -- Explicit semantic overrides for colors introduced by plugin defaults.
 local M = {}
+local fzf_icon_override
 function M.apply()
-  if vim.g.colors_name ~= 'ithilien-dawn' then return end
+  local fzf=package.loaded['fzf-lua.config']
+  if vim.g.colors_name ~= 'ithilien-dawn' then
+    if fzf_icon_override and fzf and fzf.setup_opts==fzf_icon_override.options then
+      local defaults=fzf.setup_opts.defaults
+      if defaults and defaults.color_icons==false then defaults.color_icons=fzf_icon_override.previous end
+    end
+    fzf_icon_override=nil
+    return
+  end
+  -- ANSI-colored icons otherwise retain purple/blue on the red selected row.
+  -- Monochrome icons inherit fzf's normal/selected text colors. Keep the icons.
+  if fzf and fzf.setup_opts then
+    fzf.setup_opts.defaults=fzf.setup_opts.defaults or {}
+    if not fzf_icon_override or fzf_icon_override.options~=fzf.setup_opts then
+      fzf_icon_override={options=fzf.setup_opts,previous=fzf.setup_opts.defaults.color_icons}
+    end
+    fzf.setup_opts.defaults.color_icons=false
+  end
   local p=require('ithilien.ithilien-dawn').raw
   local b,f,a=p.backgrounds,p.foregrounds,p.ansi
   local groups={
@@ -24,7 +42,7 @@ function M.apply()
     FzfLuaTabMarker={fg=a.blue},FzfLuaTabTitle={fg=f.text},
     FzfLuaNormal={fg=f.text,bg=b.base},FzfLuaBorder={fg=f.muted,bg=b.base},
     FzfLuaPreviewBorder={fg=f.muted,bg=b.base},FzfLuaCursorLine={fg=f.text,bg=p.highlight.background},
-    FzfLuaFzfMatch={fg=f.text},
+    FzfLuaFzfMatch={fg=f.text},FzfLuaFzfPointer={fg=f.text},
     FzfLuaSearch={fg=f.text,bg=b.search},FzfLuaBackdrop={bg=b.mantle,blend=0},
     fzf1={fg=a.red,bg=b.mantle},fzf2={fg=f.text,bg=b.mantle},fzf3={fg=f.muted,bg=b.mantle},
   }

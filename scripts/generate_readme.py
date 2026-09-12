@@ -8,8 +8,8 @@ from evaluation_checks import effective_colors
 def generate(width,state,filename):
     nvim=shutil.which('nvim')
     if not nvim:raise RuntimeError('README capture requires Neovim')
-    kanso=ROOT.parent/'kanso'
-    if not kanso.exists():raise RuntimeError('README capture requires ../kanso')
+    kanso=ROOT/'evaluation/deps/kanso'
+    if not kanso.exists():raise RuntimeError('README capture requires evaluation/deps/kanso; run make setup-evaluation')
     case={'id':'readme-python','before':'fixtures/readme/before.py','after':'fixtures/readme/after.py','filetype':'python','selection_line':7,'require_syntax':True}
     shot=capture(case,width,state,nvim,kanso)
     if not shot['syntax_groups']:raise RuntimeError('Missing native Python syntax')

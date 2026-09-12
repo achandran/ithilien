@@ -24,3 +24,15 @@ class FzfColors(unittest.TestCase):
         [[ $FZF_CTRL_R_OPTS == *'hl+:#000000:underline'* ]] || exit 5
         '''
         subprocess.run(['zsh', '-f', '-c', script], cwd=ROOT, check=True)
+
+
+def test_all_generated_dawn_fzf_foregrounds_meet_contrast_floor():
+    import sys
+    sys.path.insert(0,str(ROOT/'scripts'))
+    from evaluate_interactions import fzf_roles
+    options=subprocess.check_output(['zsh','-f','-c','source shell/ithilien-dawn.zsh; print -rn -- "$FZF_CTRL_R_OPTS"'],cwd=ROOT,text=True)
+    roles=fzf_roles(options)
+    assert roles['prompt']['foreground']=='#8B3037'
+    assert roles['spinner']['foreground']=='#8B3037'
+    assert all(role['pass'] for role in roles.values())
+    assert roles['fg+']['background']=='#B8595C'

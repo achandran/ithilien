@@ -1,6 +1,9 @@
-.DEFAULT_GOAL := test
+.DEFAULT_GOAL := help
 
 UV ?= uv
+
+# Optional checkout-local toolchain setting, never committed.
+-include evaluation/local.mk
 
 # Optional rustup installation with cargo/ and rustup/ beneath this directory.
 # Otherwise use the user's normal toolchain from PATH.
@@ -11,7 +14,19 @@ export RUSTUP_HOME := $(abspath $(RUST_RUNTIME))/rustup
 export PATH := $(CARGO_HOME)/bin:$(PATH)
 endif
 
-.PHONY: test build evaluate evaluate-ghostty
+.PHONY: help test build evaluate evaluate-ghostty
+
+# Show commands without installing dependencies or running evaluations.
+help:
+	@printf '%s\n' \
+	  'Ithilien development' \
+	  '' \
+	  '  make build     Build all ports, palette assets, and README previews' \
+	  '  make test      Run the normal unit and regression tests' \
+	  '  make evaluate  Run tests and the full native evaluation, including Ghostty' \
+	  '' \
+	  'Bare make shows this help. Setup and targeted diagnostics: docs/development.md'
+
 
 # Run Python unit and regression tests with the locked development environment.
 test:
@@ -23,10 +38,10 @@ build:
 
 # Full native acceptance pipeline; see docs/development.md for one-time prerequisites.
 EVALUATE_OUTPUT ?= evaluation/results/full
-CODEX_SOURCE ?= ../review-codex
-PYTHON_SOURCE ?= ../eval-tree-sitter-python
+CODEX_SOURCE ?= evaluation/deps/codex
+PYTHON_SOURCE ?= evaluation/deps/tree-sitter-python
 THEMES ?= ithilien-dawn
-GHOSTTY_ARGS ?= --ghostty
+GHOSTTY_ARGS ?= --ghostty-capture
 
 evaluate: test
 	$(UV) run --locked python scripts/evaluate_suite.py --fresh-run --strict-gates \
@@ -45,3 +60,8 @@ evaluate-ghostty:
 .PHONY: evaluate-ghostty-images
 evaluate-ghostty-images:
 	$(UV) run --locked python scripts/analyze_ghostty_images.py --output "$(GHOSTTY_OUTPUT)"
+
+# One-time source setup; subsequent builds/evaluations do not fetch or reset repos.
+.PHONY: setup-evaluation
+setup-evaluation:
+	$(UV) run --locked python scripts/evaluation_dependencies.py --fetch --themes $(THEMES)

@@ -66,6 +66,11 @@ def prepare(output, native_capture=False):
     (output/'attributes.ansi').write_text(probe)
     records.append({'id':'attributes', 'status':'prepared', 'ansi':'attributes.ansi',
                     'sha256':hashlib.sha256(probe.encode()).hexdigest(), 'contains_ansi':True})
+    from ghostty_glyphs import reference_sheet
+    atlas, _ = reference_sheet()
+    (output/'glyph-reference.ansi').write_text(atlas)
+    records.append({'id':'glyph-reference', 'kind':'glyph-reference', 'status':'prepared',
+                    'ansi':'glyph-reference.ansi', 'sha256':hashlib.sha256(atlas.encode()).hexdigest(), 'contains_ansi':True})
     theme = ROOT/'ghostty/themes/ithilien_dawn.conf'
     config = theme.read_text()+'\nfont-size = 16\nwindow-colorspace = srgb\n'
     (output/'ghostty.conf').write_text(config)

@@ -1,7 +1,10 @@
 -- Real plugin renderers, isolated deterministic Python content.
 return function(scene, state)
   vim.cmd('enew!')
-  local fixture=vim.fn.getcwd()..'/palette_workflow.py'
+  -- Keep picker inputs separate from XDG caches and plugin logs.
+  local project=vim.fn.getcwd()..'/project'
+  vim.fn.mkdir(project,'p')
+  local fixture=project..'/palette_workflow.py'
   local lines={
     'from dataclasses import dataclass', 'from typing import Iterable', '',
     '@dataclass', 'class Reading:', '    value: float', 'LIMIT = 10',
@@ -55,7 +58,7 @@ return function(scene, state)
   elseif scene=='python-diagnostic' then
     vim.api.nvim_win_set_cursor(0,{14,0});vim.defer_fn(function() vim.diagnostic.open_float({scope='line',focus=false}) end,150)
   elseif scene=='neo-tree' then
-    require('neo-tree.command').execute({action='show',source='filesystem',dir=vim.fn.getcwd(),position='right'})
+    require('neo-tree.command').execute({action='show',source='filesystem',dir=project,position='right'})
   elseif scene=='trouble' then
     require('trouble').open({mode='diagnostics',focus=false})
   elseif scene=='which-key' then
@@ -65,7 +68,7 @@ return function(scene, state)
   elseif scene=='grug-far' then
     require('grug-far').open({prefills={search='values',paths=fixture}})
   elseif scene=='fzf-lua' then
-    require('fzf-lua').files({cwd=vim.fn.getcwd(),winopts={preview={hidden='hidden'}}})
+    require('fzf-lua').files({cwd=project,winopts={preview={hidden='hidden'}}})
   elseif scene=='dashboard' then
     Snacks.dashboard.open()
   elseif scene=='blink' then
@@ -80,7 +83,10 @@ return function(scene, state)
     end
     local windows={}
     for _,w in ipairs(vim.api.nvim_list_wins()) do
-      windows[#windows+1]={filetype=vim.bo[vim.api.nvim_win_get_buf(w)].filetype,blend=vim.wo[w].winblend,floating=vim.api.nvim_win_get_config(w).relative~=''}
+      local wb=vim.api.nvim_win_get_buf(w)
+      local first=vim.api.nvim_win_call(w,function() return vim.fn.line('w0') end)
+      local last=vim.api.nvim_win_call(w,function() return vim.fn.line('w$') end)
+      windows[#windows+1]={text=table.concat(vim.api.nvim_buf_get_lines(wb,first-1,last,false),'\n'),filetype=vim.bo[wb].filetype,blend=vim.wo[w].winblend,floating=vim.api.nvim_win_get_config(w).relative~=''}
     end
     local plugins={}
     for name,p in pairs(require('lazy.core.config').plugins) do

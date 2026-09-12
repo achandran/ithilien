@@ -59,3 +59,21 @@ class WorkflowGates(unittest.TestCase):
         result=check(self.shot,self.palette)
         self.assertEqual(result['status'],'blocked')
         self.assertFalse(result['pass'])
+
+
+    def test_filename_in_background_cannot_satisfy_picker(self):
+        self.shot.update(case='fzf-lua',text='palette_workflow.py')
+        self.shot['evidence'].update(plugins=['fzf-lua'],windows=[{'filetype':'fzf','text':'nvim/cache.lua'}])
+        self.assertIn('Expected Python file absent from visible fzf result pane',check(self.shot,self.palette)['failures'])
+        self.shot['evidence']['windows'][0]['text']='palette_workflow.py'
+        self.assertTrue(check(self.shot,self.palette)['pass'])
+
+
+    def test_permission_blocker_cannot_pass_even_with_visible_result(self):
+        self.shot.update(case='fzf-lua',text='palette_workflow.py')
+        self.shot['evidence'].update(plugins=['fzf-lua'],
+            windows=[{'filetype':'fzf','text':'palette_workflow.py'}],
+            history=['[Fzf-lua] fzf error 2: operation not permitted'])
+        result=check(self.shot,self.palette)
+        self.assertEqual(result['status'],'blocked')
+        self.assertFalse(result['pass'])

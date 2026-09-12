@@ -87,3 +87,11 @@ class SuiteStatus(unittest.TestCase):
             self.assertEqual(report['stages']['evaluator-validation']['status'],'blocked')
             self.assertEqual(report['stages']['ghostty']['status'],'blocked')
             self.assertTrue((out/'index.html').exists())
+
+
+def test_blocked_renderers_do_not_claim_quality_failure(tmp_path):
+    from evaluate_suite import finalize
+    report={'stages':{name:{'status':'blocked'} for name in ('neovim','python','interactions')},'themes':[]}
+    assert finalize(report,tmp_path,True)
+    assert all(s['quality_status']=='unverified' for s in report['stages'].values())
+    assert report['acceptance_status']=='fail'

@@ -224,12 +224,13 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
 
     # Append explicit colors after user options; preserve bindings and previews.
     bg, fg = palette["backgrounds"], palette["foregrounds"]
+    prompt_color = palette['ansi']['red'] if palette['polarity'] == 'light' else highlight.get('cursor', palette['accents']['coral'])
     colors = (f"--color={palette['polarity']},bg:{bg['base']},fg:{fg['text']},"
               f"bg+:{highlight['background']},fg+:{highlight['foreground']},"
               f"hl:{fg['text']}:underline,hl+:{highlight['foreground']}:underline,"
               f"info:{fg['text']},header:{fg['text']},border:{fg['comment']},"
-              f"prompt:{highlight.get('cursor', palette['accents']['coral'])},pointer:{fg['text'] if palette['polarity'] == 'light' else highlight['foreground']},"
-              f"marker:{fg['text'] if palette['polarity'] == 'light' else highlight['foreground']},spinner:{highlight.get('cursor', palette['accents']['coral'])},"
+              f"prompt:{prompt_color},pointer:{fg['text'] if palette['polarity'] == 'light' else highlight['foreground']},"
+              f"marker:{fg['text'] if palette['polarity'] == 'light' else highlight['foreground']},spinner:{prompt_color},"
               f"gutter:{bg['base']},query:{fg['text']}")
     with shell.open("a") as output:
         output.write(

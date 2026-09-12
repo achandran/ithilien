@@ -49,6 +49,10 @@ def finalize(report,out,strict):
     if strict:
         for stage in ('neovim','python'):
             path=out/stage/'scorecard.json'
+            if report['stages'].get(stage,{}).get('status')=='blocked':
+                report['stages'][stage]['quality_status']='unverified'
+                quality_bad=True
+                continue
             failed=not path.exists() or any(t['gates']['failures'] for t in json.loads(path.read_text())['results'])
             report['stages'].setdefault(stage,{'status':'untested'})['quality_status']='fail' if failed else 'pass'
             quality_bad |= failed
@@ -75,7 +79,7 @@ def write_index(out,report):
         details.append(f'<details><summary>{name}: agent-stage measurements</summary><p>Whole frame including accumulated history. Required-content fragment findings are in <a href="codex/{t["id"]}/agent-gates.json">agent-gates.json</a>.</p><table><tr><th>Stage</th><th>Width</th><th>Minimum contrast</th><th>Failed cells</th><th>Dim cells (unverified)</th></tr>{stage_rows}</table></details>')
 
     stage_table='<h2>Stage coverage</h2><table>'+''.join('<tr><td>'+html.escape(name)+'</td><td>'+html.escape(stage['status']+(' / quality '+stage['quality_status'] if stage.get('quality_status') else ''))+'</td><td>'+('<a href="'+html.escape(stage['gallery'],quote=True)+'">Gallery</a>' if stage.get('gallery') and (out/stage['gallery']).exists() else html.escape(stage.get('reason','')) )+'</td></tr>' for name,stage in report['stages'].items())+'</table>'
-    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme suite</title><style>body{font:16px/1.5 system-ui;padding:30px}td,th{padding:12px;border-bottom:1px solid #ccc}</style><h1>Combined evaluation</h1><p>Supported stages completed separately from quality gates. Full coverage remains incomplete: Ghostty, Claude Code, and comfort are unverified. Native event replay, not live model sessions.</p><p><a href="neovim/scorecard.html">Neovim gates</a> · <a href="python/scorecard.html">Python Tree-sitter/LSP gates</a> · <a href="interactions/gallery.html">fzf / diagnostics / completion</a> · <a href="evaluator-validation/index.html">Evaluator validation</a> · <a href="report.json">Full evidence</a></p><table><tr><th>Theme</th><th>Codex adapter provenance</th><th>Diff gates</th><th>Flow gates</th></tr>'+''.join(rows)+'</table>'+stage_table+'<p>Converted ports test our explicit mapping, not an upstream author’s Codex implementation.</p>'+''.join(details))
+    (out/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Theme suite</title><style>body{font:16px/1.5 system-ui;padding:30px}td,th{padding:12px;border-bottom:1px solid #ccc}</style><h1>Combined evaluation</h1><p>Supported stages completed separately from quality gates. Full coverage remains incomplete: Ghostty cursor/selection, Claude Code, and comfort are unverified. See stage coverage for implemented Ghostty pixel/text checks. Native event replay, not live model sessions.</p><p><a href="neovim/scorecard.html">Neovim gates</a> · <a href="python/scorecard.html">Python Tree-sitter/LSP gates</a> · <a href="interactions/gallery.html">fzf / diagnostics / completion</a> · <a href="evaluator-validation/index.html">Evaluator validation</a> · <a href="report.json">Full evidence</a></p><table><tr><th>Theme</th><th>Codex adapter provenance</th><th>Diff gates</th><th>Flow gates</th></tr>'+''.join(rows)+'</table>'+stage_table+'<p>Converted ports test our explicit mapping, not an upstream author’s Codex implementation.</p>'+''.join(details))
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -112,7 +116,7 @@ def main():
         missing=[str((ROOT/path).resolve()) for e in entries for path in e['paths'] if not (ROOT/path).is_dir()]
         if name=='python' and not a.python_source.is_dir():missing.append(str(a.python_source.resolve()))
         if missing:
-            report['stages'][name]={'status':'blocked','reason':'Missing dependencies: '+', '.join(sorted(set(missing)))}
+            report['stages'][name]={'status':'blocked','reason':'Missing dependencies: '+', '.join(sorted(set(missing)))+'. Run make setup-evaluation.'}
             checkpoint();continue
         result=subprocess.run(cmd,cwd=ROOT)
         report['stages'][name]={'status':'pass' if result.returncode==0 else 'fail','gallery':name+'/gallery.html','scorecard':name+'/scorecard.html'}
@@ -120,7 +124,8 @@ def main():
     for entry in entries:
         name=entry['id'];print('Codex: '+name,flush=True);folder=out/'codex'/name
         try:
-            if not shutil.which('cargo'):raise FileNotFoundError('cargo is required for native Codex evaluation')
+            if not shutil.which('cargo'):raise FileNotFoundError('Cargo is required: install the toolchain in codex-rs/rust-toolchain.toml, or set RUST_RUNTIME in evaluation/local.mk (see docs/development.md).')
+            if not a.codex_source.is_dir():raise FileNotFoundError('Missing pinned Codex source; run make setup-evaluation.')
             theme,palette,meta=prepare(entry,folder/'adapter',a.nvim)
             diff=run_native(a.codex_source.resolve(),folder/'diff',theme,palette)
             flow=run_flows(a.codex_source.resolve(),folder/'flows',theme,palette)
@@ -137,6 +142,8 @@ def main():
         checkpoint()
     from evaluate_interactions import run as run_interactions
     try:
+        from compare_themes import check_adapter
+        for entry in entries:check_adapter(entry)
         interactions=run_interactions(entries,out/'interactions',a.nvim,include_fzf=not a.skip_fzf)
         report['interactions']={'gallery':'interactions/gallery.html','report':'interactions/report.json','quality_pass':all(r['quality_pass'] for r in interactions['results'])}
         report['stages']['interactions']={'status':interaction_status(interactions),'gallery':'interactions/gallery.html'}

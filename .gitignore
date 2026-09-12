@@ -12,3 +12,6 @@ evaluation/results/
 evaluation/deps/
 
 .pytest_cache/
+
+# Machine-local evaluation toolchain overrides
+evaluation/local.mk

@@ -6,6 +6,8 @@ from ithilienlib import ROOT, wcag
 from compare_themes import check_adapter, render
 from evaluation_checks import effective_colors
 
+FZF_EXACT_QUERY = "\x15'git"  # Clear the query, then request an exact substring.
+
 GROUPS = ['Normal','DiagnosticError','DiagnosticWarn','DiagnosticInfo','DiagnosticHint',
           'DiagnosticVirtualTextError','DiagnosticVirtualTextWarn','DiagnosticVirtualTextInfo','DiagnosticVirtualTextHint',
           'Pmenu','PmenuSel','PmenuKindSel','PmenuExtraSel','PmenuMatch','PmenuMatchSel',
@@ -135,23 +137,37 @@ def isolated_capture(*args, **kwargs):
         return json.loads(output.read_text())
 
 
+def inactive_fzf_pointer(shot, cell):
+    # This fixture uses reverse layout with two header rows and a one-cell pointer
+    # gutter. fzf draws the same block in canvas color on unselected result rows.
+    if shot['case']!='fzf' or cell['col']!=0 or cell['row']<2 or cell['text']!='▌':
+        return False
+    fg,bg=effective_colors(shot,cell)
+    return fg==bg==shot['defaults']['bg']
+
+
 def assess(shot):
-    failures=[];contrasts=[]
+    failures=[];contrasts=[];inactive=0
     for c in shot['cells']:
         if not c['text'].strip():continue
+        if inactive_fzf_pointer(shot,c):
+            inactive+=1
+            continue
         fg,bg=effective_colors(shot,c);p=pair(f'#{fg:06X}',f'#{bg:06X}');contrasts.append(p['contrast'])
         if not p['pass']:failures.append(dict(row=c['row'],col=c['col'],text=c['text'],**p))
-    return {'scene':shot['case'],'width':shot['width'],'state':shot['state'],'minimum_contrast':min(contrasts) if contrasts else None,'failures':failures}
+    return {'scene':shot['case'],'width':shot['width'],'state':shot['state'],'minimum_contrast':min(contrasts) if contrasts else None,'failures':failures,'inactive_gutter_cells':inactive}
 
 
 def fzf_oracle(shot,roles):
     bg=int(roles['fg+']['background'][1:],16);fg=int(roles['fg+']['foreground'][1:],16)
     selected=[c for c in shot['cells'] if effective_colors(shot,c)[1]==bg]
-    expected={'initial':'3993','\x0e':'3992','\x15git':'3989'}[shot['state']]
+    expected={'initial':'3993','\x0e':'3992',FZF_EXACT_QUERY:'3989'}[shot['state']]
     rows={}
     for c in selected:rows.setdefault(c['row'],[]).append(c)
     if not any(expected in ''.join(c['text'] for c in sorted(row,key=lambda c:c['col'])) for row in rows.values()):
         return ['Expected selected history item '+expected+' absent from selection background']
+    if not any(c['col']==0 and c['text']=='▌' and effective_colors(shot,c)[0]==fg for c in selected):
+        return ['Active history pointer missing or unreadable']
     if any(c['text'].strip() and effective_colors(shot,c)[0]!=fg for c in selected):return ['Selected text foreground differs from generated role']
     return []
 
@@ -187,7 +203,7 @@ def run(entries,out,nvim=None,include_fzf=True):
                 if not fzf:result['errors'].append('fzf unavailable')
                 else:
                     for width in (100,160):
-                        for action in ('','\x0e','\x15git'):
+                        for action in ('','\x0e',FZF_EXACT_QUERY):
                             try:
                                 shot=isolated_capture(entry,width,'fzf',input_path,options,fzf,nvim,action);records.append((entry['id'],shot));result['captures'].append(assess(shot));result['errors'].extend(fzf_oracle(shot,result['fzf_roles']))
                             except Exception as exc:result['errors'].append(str(exc))

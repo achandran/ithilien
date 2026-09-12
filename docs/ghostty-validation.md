@@ -57,7 +57,7 @@ No comfort or Claude Code validation is claimed by this stage.
 
 ## Running from a regular checkout
 
-Use `make evaluate-ghostty` to test only Ghostty. It does not require the sibling
+Use `make evaluate-ghostty` to test only Ghostty. It does not require the pinned
 Kanso, Codex, or Tree-sitter source repositories used by the full evaluation.
 `make evaluate-ghostty GHOSTTY_CAPTURE=` prepares fixtures without launching UI.
 Both currently exit nonzero because native acceptance is incomplete, even if
@@ -105,3 +105,30 @@ tiny punctuation, altered comparison operators, omitted lines, and unsupported
 ANSI control sequences. Captured PNG and ANSI hashes are recorded in the text
 report. Existing fixtures must match the capture's stored ANSI hash and the
 current theme must match its stored theme hash before analysis proceeds.
+
+OCR now runs on isolated full-width terminal rows rather than a whole-window
+image. Each crop is padded and scaled 2× to avoid adjacent-line merges. Saved
+`ocr-rows/` images make recognition input reviewable. The engine receives row
+numbers and PNG paths only—not expected text or custom-word hints. Comparison
+still uses its top candidate and preserves every non-whitespace character;
+`<`, `<=`, and the look-alike `‹=` are distinct. Pixel checks continue to use the
+original unscaled screenshot. Engine failure remains unverified.
+
+
+### Independent punctuation recognition
+
+New captures include a separate ASCII reference sheet, rendered by Ghostty under
+the same configuration in normal, bold, italic, and underline combinations. This
+adds one fixture window. On OCR-mismatched rows, the analyzer classifies every
+cell against the full reference alphabet; it never chooses a template using the
+expected command character. Full 120-column rows must agree, including unexpected
+suffixes. Shape distance must be at most 0.08 with a 0.04 lead over the next glyph;
+ambiguous shapes remain unverified. Independent pixel/contrast checks still gate
+acceptance. Reference PNG, payload, geometry, and classifier hashes are recorded.
+Old captures without this sheet retain their OCR results; rerun native capture
+to use the additional recognizer. The first native reference run passed all six real command fixtures and recovered
+their OCR omissions. An offline mutation of that native diff passed unchanged and
+was rejected after erasing the equals sign in `<=`. The white-on-white ANSI probe
+still fails as intended. Synthetic mutation tests additionally cover replaced
+operators and unexpected suffixes. Ligatures or differing rasterization may
+remain unverified.

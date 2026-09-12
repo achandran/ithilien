@@ -37,6 +37,8 @@ def check(shot, palette):
     if shot['case']=='python-diagnostic' and not any(w.get('floating') for w in evidence['windows']): failures.append('Diagnostic float absent')
     window=WINDOW_TYPES.get(shot['case'])
     if window and not any(w['filetype']==window for w in evidence['windows']): failures.append('Plugin window absent: '+window)
+    if shot['case']=='fzf-lua' and not any(w['filetype']=='fzf' and 'palette_workflow.py' in w.get('text','') for w in evidence['windows']):
+        failures.append('Expected Python file absent from visible fzf result pane')
     plugin=PLUGIN.get(shot['case'])
     if plugin and plugin not in evidence['plugins']: failures.append('Plugin not loaded: '+plugin)
     if shot['case']=='python-lsp' and not evidence.get('lsp',{}).get('semantic_tokens'): failures.append('Live semantic tokens absent')
@@ -96,7 +98,7 @@ def check(shot, palette):
     return {'status':'blocked' if blocked else ('pass' if not failures and not off and not contrast['failures'] else 'fail'),
             'blocked_reason':'Terminal mode ioctl denied by execution environment' if blocked else None,
             'failures':failures,'off_palette':off,'contrast':contrast,
-            'pass':not failures and not off and not contrast['failures']}
+            'pass':not blocked and not failures and not off and not contrast['failures']}
 
 
 def adapter(init, lazy):

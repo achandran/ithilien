@@ -8,7 +8,7 @@ backdrop uses an opaque palette surface instead of a blended gray.
 Run the portable semantic regression check from the repository:
 
 ```sh
-KANSO_ROOT=../kanso nvim --headless -u NONE -i NONE -n -l scripts/check_plugin_semantics.lua
+KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -n -l scripts/check_plugin_semantics.lua
 ```
 
 Audit your installed Lazy configuration:

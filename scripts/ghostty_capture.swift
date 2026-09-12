@@ -21,6 +21,28 @@ do {
             ($0[kCGWindowLayer as String] as? Int) == 0
         }.compactMap { $0[kCGWindowNumber as String] as? Int }
         try emit(["windows": matches])
+    } else if args.first == "ocr-rows", args.count == 2 {
+        let data = try Data(contentsOf: URL(fileURLWithPath: args[1]))
+        let inputs = try JSONSerialization.jsonObject(with: data) as! [[String: Any]]
+        var output: [[String: Any]] = []
+        for input in inputs {
+            let path = input["path"] as! String
+            guard let image = NSImage(contentsOfFile: path),
+                  let cg = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
+                throw NSError(domain: "GhosttyCapture", code: 2)
+            }
+            let request = VNRecognizeTextRequest()
+            request.recognitionLevel = .accurate
+            request.usesLanguageCorrection = false
+            request.recognitionLanguages = ["en-US"]
+            try VNImageRequestHandler(cgImage: cg).perform([request])
+            let fragments = (request.results ?? []).sorted { $0.boundingBox.minX < $1.boundingBox.minX }.compactMap { item -> [String: Any]? in
+                guard let text = item.topCandidates(1).first else { return nil }
+                return ["text": text.string, "confidence": text.confidence]
+            }
+            output.append(["row": input["row"]!, "fragments": fragments])
+        }
+        try emit(["rows": output])
     } else if args.first == "ocr", args.count == 2 {
         guard let image = NSImage(contentsOfFile: args[1]),
               let cg = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {

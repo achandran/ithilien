@@ -54,3 +54,28 @@ def test_ansi_preserves_character_positions_and_rejects_unsupported_controls():
     assert lines==['- a','+ b']
     assert cells[2]['column']==2 and cells[2]['fg']==list(p['ansi'].values())[1]
     with pytest.raises(ValueError):ansi_cells('\x1b[2J',p)
+
+
+def test_row_ocr_keeps_operators_strict_and_no_expected_text_hints(tmp_path):
+    import json
+    from ghostty_quality import prepare_ocr_rows,row_content_gate
+    im,p=specimen();g=grid(im,list(p['ansi'].values())[1:7])
+    path=prepare_ocr_rows(im,g,['return a <= 3'],tmp_path)
+    data=json.loads(path.read_text())
+    assert set(data[0])=={'row','path'}
+    crop=Image.open(data[0]['path'])
+    assert crop.size==(im.width*2+48, g['cell_height']*2+48)
+    def recognized(text):return [{'row':0,'fragments':[{'text':text,'confidence':1.0}]}]
+    assert row_content_gate(['return a <= 3'],recognized('return a <= 3'))['status']=='pass'
+    for wrong in ('return a < 3','return a ‹= 3','return a <= 3 extra',''):
+        assert row_content_gate(['return a <= 3'],recognized(wrong))['status']=='unverified'
+
+
+def test_row_crop_does_not_include_adjacent_lines(tmp_path):
+    import json
+    from ghostty_quality import prepare_ocr_rows
+    im,p=specimen();g=grid(im,list(p['ansi'].values())[1:7])
+    ImageDraw.Draw(im).rectangle((0,60,399,79),fill='#FF00FF')
+    path=prepare_ocr_rows(im,g,['first'],tmp_path)
+    crop=Image.open(json.loads(path.read_text())[0]['path'])
+    assert (255,0,255) not in {color for count,color in crop.getcolors(crop.width*crop.height)}

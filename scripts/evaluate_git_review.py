@@ -72,13 +72,8 @@ def check(shot,colors):
     return dict(pass_=passed,failures=errors,off_palette=off,contrast=contrast)
 
 def prepare(fetch=False):
-    deps=json.loads((ROOT/'evaluation/git-review-dependencies.json').read_text())
-    for d in deps.values():
-        path=ROOT/d['path']
-        if fetch and not path.exists():
-            subprocess.run(['git','clone','--no-checkout',d['url'],str(path)],check=True)
-            subprocess.run(['git','-C',str(path),'checkout','--detach',d['revision']],check=True)
-    return deps
+    from evaluation_dependencies import plugin_dependencies
+    return plugin_dependencies('evaluation/git-review-dependencies.json', fetch)
 
 
 def run(output,widths=(100,160)):
