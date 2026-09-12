@@ -23,7 +23,7 @@ class GhosttyCursor(unittest.TestCase):
         for variant in ('dawn', 'dusk'):
             with self.subTest(variant=variant), tempfile.TemporaryDirectory() as temp:
                 palette = load_palette('ithilien-' + variant)
-                relative = Path('ghostty/themes') / f'ithilien_{variant}.conf'
+                relative = Path('extras/ghostty/themes') / f'ithilien_{variant}.conf'
                 with patch.object(generate_themes, 'ROOT', Path(temp)):
                     generate_themes.generate_ghostty(palette)
                 generated = settings(Path(temp) / relative)

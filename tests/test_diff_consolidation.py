@@ -17,7 +17,7 @@ class FourColorDiff(unittest.TestCase):
             self.assertGreaterEqual(wcag(d['inlineForeground'],d[kind+'Emphasis']),7)
 
     def test_shipped_claude_word_roles_preserve_line_direction(self):
-        c=json.loads((ROOT/'claude-code/themes/ithilien-dawn.json').read_text())['overrides']
+        c=json.loads((ROOT/'extras/claude-code/themes/ithilien-dawn.json').read_text())['overrides']
         d=load_palette('ithilien-dawn')['diff']
         self.assertEqual(c['diffAddedWord'],d['changeEmphasis'])
         self.assertEqual(c['diffRemovedWord'],d['changeEmphasis'])

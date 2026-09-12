@@ -198,7 +198,7 @@ def run(entries,out,nvim=None,include_fzf=True):
                         shot=isolated_capture(entry,width,scene,nvim=nvim);records.append((entry['id'],shot));result['captures'].append(assess(shot));result['group_pairs']=group_pairs(shot['highlights'])
                     except Exception as exc:result['errors'].append(str(exc))
             if entry['id']=='ithilien-dawn' and include_fzf:
-                options=subprocess.check_output(['zsh','-f','-c','source shell/ithilien-dawn.zsh; print -rn -- "$FZF_CTRL_R_OPTS"'],cwd=ROOT,text=True,env={**os.environ,'FZF_DEFAULT_OPTS':'','FZF_CTRL_R_OPTS':''})
+                options=subprocess.check_output(['zsh','-f','-c','source extras/shell/ithilien-dawn.zsh; print -rn -- "$FZF_CTRL_R_OPTS"'],cwd=ROOT,text=True,env={**os.environ,'FZF_DEFAULT_OPTS':'','FZF_CTRL_R_OPTS':''})
                 result['coverage']['fzf']='native capture attempted';result['fzf_roles']=fzf_roles(options);result['fzf_provenance']='native shipped shell export'
                 if not fzf:result['errors'].append('fzf unavailable')
                 else:

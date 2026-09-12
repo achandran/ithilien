@@ -12,13 +12,13 @@ class FzfColors(unittest.TestCase):
         script = r'''
         export FZF_DEFAULT_OPTS='--height=40%'
         export FZF_CTRL_R_OPTS='--preview "echo {}"'
-        source shell/ithilien-dawn.zsh
+        source extras/shell/ithilien-dawn.zsh
         first=$FZF_DEFAULT_OPTS
-        source shell/ithilien-dawn.zsh
+        source extras/shell/ithilien-dawn.zsh
         [[ $first == $FZF_DEFAULT_OPTS ]] || exit 1
         [[ $FZF_CTRL_R_OPTS == *'--preview "echo {}"'* ]] || exit 2
-        source shell/ithilien-dusk.zsh
-        source shell/ithilien-dawn.zsh
+        source extras/shell/ithilien-dusk.zsh
+        source extras/shell/ithilien-dawn.zsh
         [[ $first == $FZF_DEFAULT_OPTS ]] || exit 3
         [[ $FZF_DEFAULT_OPTS == *'bg+:#B8595C,fg+:#000000'* ]] || exit 4
         [[ $FZF_CTRL_R_OPTS == *'hl+:#000000:underline'* ]] || exit 5
@@ -30,7 +30,7 @@ def test_all_generated_dawn_fzf_foregrounds_meet_contrast_floor():
     import sys
     sys.path.insert(0,str(ROOT/'scripts'))
     from evaluate_interactions import fzf_roles
-    options=subprocess.check_output(['zsh','-f','-c','source shell/ithilien-dawn.zsh; print -rn -- "$FZF_CTRL_R_OPTS"'],cwd=ROOT,text=True)
+    options=subprocess.check_output(['zsh','-f','-c','source extras/shell/ithilien-dawn.zsh; print -rn -- "$FZF_CTRL_R_OPTS"'],cwd=ROOT,text=True)
     roles=fzf_roles(options)
     assert roles['prompt']['foreground']=='#8B3037'
     assert roles['spinner']['foreground']=='#8B3037'

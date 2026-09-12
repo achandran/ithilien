@@ -15,7 +15,7 @@ def source(tmp_path,modifiers='BOLD | DIM'):
     path.write_text(json.dumps([{'file':'request','width':60,'cells':[
         {'row':0,'col':0,'text':'=','fg':'Rgb(0, 0, 0)','bg':'Reset','modifiers':modifiers}]}]))
     (tmp_path/'report.json').write_text(json.dumps({'status':'pass','source_revision':'fixture',
-        'theme_sha256':hashlib.sha256((ROOT/'codex/themes/ithilien-dawn.tmTheme').read_bytes()).hexdigest()}))
+        'theme_sha256':hashlib.sha256((ROOT/'extras/codex/themes/ithilien-dawn.tmTheme').read_bytes()).hexdigest()}))
     return path
 
 

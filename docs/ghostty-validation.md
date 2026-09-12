@@ -166,7 +166,7 @@ of 16 timed frames must contain at least two on frames, two off frames, and two
 transitions before blinking passes. A static or unrecognizable cursor cannot pass.
 A separate same-window sequence exercises bar → block → underline → hidden → block,
 with an acknowledgment after each native escape sequence and a screenshot per
-state. These are terminal protocol tests, not claims that every shell/plugin's
+state. These are terminal protocol tests, not claims that every extras/shell/plugin's
 vi-mode hooks are configured correctly.
 
 Mouse tests drag through a substring containing `<=` and across two lines. One

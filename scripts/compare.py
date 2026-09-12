@@ -5,7 +5,7 @@ from pathlib import Path
 import shlex
 import sys
 ROOT = Path(__file__).resolve().parents[1]
-SOURCES = {'dawn': ROOT/'ghostty/themes/ithilien_dawn.conf',
+SOURCES = {'dawn': ROOT/'extras/ghostty/themes/ithilien_dawn.conf',
            'pearl': ROOT/'comparison/upstream/kanso-pearl.conf',
            'zenbones': ROOT/'comparison/upstream/zenbones-light.conf'}
 
@@ -18,7 +18,7 @@ def prepare():
         lines = [line for line in source.read_text().splitlines() if not any(line.startswith(k) for k in ('font-', 'window-title-font-family', 'minimum-contrast', 'faint-opacity', 'cursor-style'))]
         lines += ['font-family = Berkeley Mono Medium', 'window-title-font-family = Berkeley Mono Medium',
                   'font-size = 14', 'font-thicken = false', 'minimum-contrast = 1',
-                  'faint-opacity = 1', 'cursor-style = block', f'title = Ithilien comparison: {name}']
+                  'cursor-style = block', f'title = Ithilien comparison: {name}']
         # Kanso omits cursor-text upstream; explicitly reproduce its light canvas
         # to avoid inheriting Dawn text if a user loads this as a theme.
         if name == 'pearl':
@@ -44,10 +44,10 @@ def scenarios():
     print(color(8,'# Retry transient failures; preserve cancellation'))
     print(color(5,'def')+' '+color(4,'fetch')+'(url, retries='+color(3,'3')+'):')
     print('    '+color(5,'return')+' client.get(url, timeout='+color(3,'30_000')+')')
-    print('\n4. Diff: same foreground roles; stronger spans use bold + underline')
+    print('\n4. Diff: same foreground roles; ordinary-weight text; edited spans use a light background')
     for sign, number, value in [('-',1,'3'),('+',2,'6')]:
-        print(color(number,sign+' timeout = '+esc+'1;4m'+value+esc+'22;24m'+'0_000'))
-    print(color(1,'- if retries < 3:')); print(color(2,'+ if retries <'+esc+'1;4m'+'='+esc+'22;24m'+' 3:'))
+        print(color(number,sign+' timeout = '+esc+'47;30m'+value+esc+'49;39m'+'0_000'))
+    print(color(1,'- if retries < 3:')); print(color(2,'+ if retries <'+esc+'47;30m'+'='+esc+'49;39m'+' 3:'))
     print('\n5. Agent-like prose, not an actual agent screenshot')
     print(color(2,'✓ Tests passed')+'  '+color(3,'! Retry pending')+'  '+color(1,'× Request failed'))
     print(esc+'2mDimmed context: deleted token / existing code'+esc+'0m')

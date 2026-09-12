@@ -14,7 +14,7 @@ from ithilienlib import ROOT, load_palette
 def fixtures(output,source):
     source=Path(source)
     report=json.loads(source.with_name('report.json').read_text())
-    theme=hashlib.sha256((ROOT/'codex/themes/ithilien-dawn.tmTheme').read_bytes()).hexdigest()
+    theme=hashlib.sha256((ROOT/'extras/codex/themes/ithilien-dawn.tmTheme').read_bytes()).hexdigest()
     if report.get('status')!='pass' or report.get('theme_sha256')!=theme:
         raise ValueError('Codex replay is not a passing capture of the current exported theme')
     palette=load_palette('ithilien-dawn')

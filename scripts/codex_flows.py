@@ -25,7 +25,7 @@ def validate_records(records):
 
 
 def run(source,output,theme=None,palette=None):
-    theme=theme or ROOT/"codex/themes/ithilien-dawn.tmTheme"
+    theme=theme or ROOT/"extras/codex/themes/ithilien-dawn.tmTheme"
     pin=json.loads((ROOT/'evaluation/sources.json').read_text())['codex']['revision']
     if subprocess.check_output(['git','-C',str(source),'rev-parse','HEAD'],text=True).strip()!=pin:raise ValueError('Codex revision mismatch')
     target=source/'codex-rs/tui/src/chatwidget/tests.rs';original=target.read_bytes()

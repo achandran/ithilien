@@ -117,7 +117,7 @@ class Installer:
         # Ghostty installation intentionally targets the user's .config folder.
         base = self.home / '.config/ghostty'
         config = base / 'config'
-        self.copies('ghostty/themes', base / 'themes')
+        self.copies('extras/ghostty/themes', base / 'themes')
         text = config.read_text() if config.exists() else ''
         self.write(config, managed_config(text, 'light:ithilien_dawn.conf,dark:ithilien_dusk.conf').encode())
         print('NEXT Ghostty: reload configuration. Explicit cursor/font/contrast overrides in your config still take precedence over theme values.')
@@ -127,12 +127,12 @@ class Installer:
         base = Path(os.environ.get('CODEX_HOME', self.home / '.codex'))
         config = base / 'config.toml'
         text = configure(config.read_text() if config.exists() else '')
-        self.copies('codex/themes', base / 'themes')
+        self.copies('extras/codex/themes', base / 'themes')
         self.write(config, text.encode())
         print('NEXT Codex CLI: restart to disable shimmer and composer particles; choose Ithilien Dawn using /theme. Stock UI metadata and composer borders are not theme-configurable. Desktop appearance is separate.')
 
     def claude(self):
-        self.copies('claude-code/themes', Path(os.environ.get('CLAUDE_CONFIG_DIR', self.home / '.claude')) / 'themes')
+        self.copies('extras/claude-code/themes', Path(os.environ.get('CLAUDE_CONFIG_DIR', self.home / '.claude')) / 'themes')
         print('NEXT Claude Code: choose Ithilien Dawn using /theme; requires custom-theme support. Claude desktop is separate.')
 
     def nvim(self):
@@ -166,15 +166,15 @@ class Installer:
         print('NEXT Neovim: restart and run :Lazy sync for dependencies. Keep this checkout in place; remove conflicting theme specs if needed.')
 
     def slack(self):
-        print('MANUAL Slack: import in Preferences > Appearance > Custom theme:\n' + (ROOT / 'slack/ithilien-dawn.txt').read_text().strip())
+        print('MANUAL Slack: import in Preferences > Appearance > Custom theme:\n' + (ROOT / 'extras/slack/ithilien-dawn.txt').read_text().strip())
 
     def linear(self):
-        print('MANUAL Linear: import in Settings > Interface and theme:\n' + (ROOT / 'linear/ithilien-dawn.txt').read_text().strip())
+        print('MANUAL Linear: import in Settings > Interface and theme:\n' + (ROOT / 'extras/linear/ithilien-dawn.txt').read_text().strip())
 
     def firefox(self):
         destination = self.home / '.local/share/ithilien/firefox'
         for variant in ('dawn', 'dusk'):
-            self.copies(f'firefox/ithilien-{variant}', destination / f'ithilien-{variant}')
+            self.copies(f'extras/firefox/ithilien-{variant}', destination / f'ithilien-{variant}')
         base = self.home / ('Library/Application Support/Firefox' if sys.platform == 'darwin' else '.mozilla/firefox')
         profiles = configparser.ConfigParser(interpolation=None)
         profiles.read(base / 'profiles.ini')
@@ -188,7 +188,7 @@ class Installer:
             if path.is_dir() and path not in selected:
                 selected.append(path)
         for profile in selected:
-            css = (ROOT / 'firefox/ithilien-dawn/userContent.css').read_text().strip()
+            css = (ROOT / 'extras/firefox/ithilien-dawn/userContent.css').read_text().strip()
             for path, content in ((profile / 'chrome/userContent.css', css),
                                   (profile / 'user.js', 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);')):
                 text = path.read_text() if path.exists() else ''
@@ -206,7 +206,7 @@ class Installer:
     def zsh(self):
         destination = self.config / 'ithilien'
         for variant in ('dawn', 'dusk'):
-            source = ROOT / 'shell' / f'ithilien-{variant}.zsh'
+            source = ROOT / 'extras/shell' / f'ithilien-{variant}.zsh'
             self.write(destination / source.name, source.read_bytes())
         rc = Path(os.environ.get('ZDOTDIR') or self.home) / '.zshrc'
         text = rc.read_text() if rc.exists() else ''
@@ -214,8 +214,8 @@ class Installer:
         if (start in text) != (end in text):
             raise ValueError('Incomplete Ithilien ZLE block')
         text = re.sub(r'(?ms)^# BEGIN ITHILIEN ZLE\n.*?^# END ITHILIEN ZLE\n?', '', text)
-        selection = (ROOT / "shell/ithilien-dawn.zsh").read_text().rstrip()
-        prompt = (ROOT / "shell/prompt.zsh").read_text().rstrip()
+        selection = (ROOT / "extras/shell/ithilien-dawn.zsh").read_text().rstrip()
+        prompt = (ROOT / "extras/shell/prompt.zsh").read_text().rstrip()
         block = f"{start}\n{selection}\n{prompt}\n{end}\n"
         self.write(rc, (text.rstrip() + '\n\n' + block).encode())
         print('NEXT zsh: start a new shell. Dawn visual selection, fzf colors, and Ash user/hostname prompt are installed; source ithilien-dusk.zsh instead for a dark terminal. Existing non-region ZLE styles are preserved.')

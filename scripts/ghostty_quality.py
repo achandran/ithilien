@@ -250,7 +250,7 @@ def assess_capture(image_path, ansi_path, helper, palette, reference=None, curso
 
 def analyze(output, helper):
     report=json.loads((output/'report.json').read_text());palette=load_palette('ithilien-dawn')
-    if report['theme_sha256']!=hashlib.sha256((Path(__file__).resolve().parents[1]/'ghostty/themes/ithilien_dawn.conf').read_bytes()).hexdigest():
+    if report['theme_sha256']!=hashlib.sha256((Path(__file__).resolve().parents[1]/'extras/ghostty/themes/ithilien_dawn.conf').read_bytes()).hexdigest():
         raise ValueError('Capture theme differs from current theme; refusing stale palette analysis')
     results=[]
     prepared={r['id']:r for r in report['results']}

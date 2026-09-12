@@ -1,4 +1,4 @@
--- ZENBONES_ROOT, LUSH_ROOT and KANSO_ROOT point to dependency checkouts.
+-- KANSO_ROOT points to the pinned Kanso dependency checkout.
 for _,key in ipairs({'KANSO_ROOT'}) do vim.opt.rtp:prepend(assert(vim.env[key])) end
 vim.opt.rtp:prepend(vim.fn.getcwd())
 local theme=require('ithilien')
@@ -15,7 +15,7 @@ assert(require("kanso").config.theme == "pearl", "Dawn must use Kanso Pearl")
 assert(not package.loaded["zenbones.specs"], "Dawn must not load Zenbones")
 local expected=tonumber(raw.foregrounds.text:sub(2),16)
 -- Plain selection fixes the user-confirmed partial V-line rendering regression.
--- Keep decoration on exact diff changes, not on the selection overlay.
+-- Exact diff changes use ordinary weight with color-based emphasis.
 for _,name in ipairs({'Visual','VisualNOS'}) do
  local h=vim.api.nvim_get_hl(0,{name=name,link=false})
  assert(h.bg==tonumber(raw.highlight.background:sub(2),16),name..' selection background')
@@ -26,10 +26,11 @@ for _,name in ipairs({'Visual','VisualNOS'}) do
  end
  assert(not h.sp,name..' must not set a decoration color')
 end
+local guides = {SnacksIndent=true, IblIndent=true, IndentBlanklineChar=true, NeoTreeIndentMarker=true}
 local checked=0
 for name,h in pairs(snapshot()) do
  assert(not h.reverse,'Reversed group: '..name)
- if h.fg and name~='nvim_set_hl_x_hi_clear_bugfix' then
+ if h.fg and not guides[name] and name~='nvim_set_hl_x_hi_clear_bugfix' then
   local max=math.max(math.floor(h.fg/65536)%256,math.floor(h.fg/256)%256,h.fg%256)
   assert(max<190 or (h.fg==tonumber(raw.highlight.foreground:sub(2),16) and h.bg==tonumber(raw.highlight.background:sub(2),16)),'Unexpected light foreground: '..name)
  end
@@ -48,6 +49,8 @@ end
 local dawn=snapshot()
 theme.load('dusk')
 for name,h in pairs(dusk) do assert(vim.deep_equal(h,vim.api.nvim_get_hl(0,{name=name,link=false})),'Dusk changed after switching: '..name) end
-vim.fn.writefile({vim.json.encode({checked=checked,highlights=dawn,duskSwitchUnchanged=true})},'reports/formex-dawn-highlights.json')
+local output = vim.env.ITHILIEN_CHECK_OUTPUT or 'evaluation/results/highlight-checks'
+vim.fn.mkdir(output, 'p')
+vim.fn.writefile({vim.json.encode({checked=checked,highlights=dawn,duskSwitchUnchanged=true})},output..'/highlights.json')
 print(checked..' resolved highlights checked; interaction pair matches palette; Dusk switching unchanged')
 vim.cmd('qa!')

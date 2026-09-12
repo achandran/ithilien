@@ -10,7 +10,7 @@ def prepare(adapter,output,nvim):
     output.mkdir(parents=True,exist_ok=True)
     resolved=check_adapter(adapter)
     if adapter['id']=='ithilien-dawn':
-        path=ROOT/'codex/themes/ithilien-dawn.tmTheme';palette=load_palette('ithilien-dawn');kind='native Ithilien export'
+        path=ROOT/'extras/codex/themes/ithilien-dawn.tmTheme';palette=load_palette('ithilien-dawn');kind='native Ithilien export'
     else:
         with tempfile.TemporaryDirectory(prefix='codex-theme-') as tmp:
             destination=Path(tmp)/'colors.json'

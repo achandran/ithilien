@@ -1,13 +1,12 @@
 """Generate the README palette chart directly from canonical named colors."""
-from unittest.mock import patch
-import review_day
+from drawing import Drawing
 from ithilienlib import ROOT, load_palette, load_palette_source
 
 
 def generate_chart():
     source = load_palette_source('ithilien-dawn')
     p = load_palette('ithilien-dawn')
-    d = review_day.Drawing()
+    d = Drawing()
     groups = [
         ('Surfaces and Text', [('backgrounds.base','Canvas / popups'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Muted text / borders')]),
         ('Terminal Colors', [('ansi.red','Red'),('ansi.green','Green'),('ansi.yellow','Yellow'),('ansi.blue','Blue'),('ansi.magenta','Magenta'),('ansi.cyan','Cyan')]),
@@ -38,8 +37,7 @@ def generate_chart():
     assert seen == set(source['colors']), 'Every named color must appear in the chart'
     destination = ROOT/'assets'
     destination.mkdir(exist_ok=True)
-    with patch.object(review_day, 'OUT', destination):
-        d.save('ithilien-dawn-palette', width, height, False)
+    d.save(destination/'ithilien-dawn-palette.svg', width, height)
     return d
 
 

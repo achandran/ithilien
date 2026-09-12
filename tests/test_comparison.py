@@ -15,6 +15,14 @@ class ComparisonTests(unittest.TestCase):
             for name in compare.SOURCES:
                 text=(Path(temp)/f'comparison/generated/{name}.conf').read_text()
                 self.assertIn('minimum-contrast = 1',text)
+                self.assertNotIn('faint-opacity =',text)
                 self.assertIn('font-family = Berkeley Mono Medium',text)
                 self.assertIn('font-thicken = false',text)
                 self.assertEqual(text.count('cursor-style ='),1)
+
+    def test_scenario_uses_color_without_bold_or_underline(self):
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            compare.scenarios()
+        self.assertNotIn('\033[1;4m', output.getvalue())
+        self.assertIn('\033[47;30m', output.getvalue())

@@ -42,7 +42,7 @@ def prepare(output, native_capture=False, cases=None, codex_cells=None):
         ]
         zsh = shutil.which('zsh')
         if zsh:
-            commands.append(('zsh-prompt', [zsh, '-f', '-c', 'source "$1"; vcs_info_msg_0_="(main)"; print -P -- "$PS1"; print -r -- "uv run pytest -q tests/test_worker.py"', 'fixture', str(ROOT/'shell/prompt.zsh')], 0))
+            commands.append(('zsh-prompt', [zsh, '-f', '-c', 'source "$1"; vcs_info_msg_0_="(main)"; print -P -- "$PS1"; print -r -- "uv run pytest -q tests/test_worker.py"', 'fixture', str(ROOT/'extras/shell/prompt.zsh')], 0))
         else:
             records.append({'id':'zsh-prompt', 'status':'blocked', 'reason':'zsh executable missing'})
         rg = shutil.which('rg')
@@ -85,7 +85,7 @@ def prepare(output, native_capture=False, cases=None, codex_cells=None):
         unknown=set(cases)-set(all_cases)
         if unknown: raise ValueError('Unknown native cases: '+', '.join(sorted(unknown)))
         records=[r for r in records if r['id'] in cases or r['id']=='glyph-reference']
-    theme = ROOT/'ghostty/themes/ithilien_dawn.conf'
+    theme = ROOT/'extras/ghostty/themes/ithilien_dawn.conf'
     config = theme.read_text()+'\nfont-size = 16\nwindow-colorspace = srgb\nwindow-padding-x = 8\nwindow-padding-y = 8\n'
     (output/'ghostty.conf').write_text(config)
     report = {'status':'blocked', 'pass':False, 'results':records,

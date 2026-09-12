@@ -9,7 +9,7 @@ from ithilienlib import ROOT, load_palette, resolve_palette
 
 class ANSIConsolidation(unittest.TestCase):
     def test_ghostty_exports_complete_aliases_and_distinct_black(self):
-        lines=(ROOT/'ghostty/themes/ithilien_dawn.conf').read_text().splitlines()
+        lines=(ROOT/'extras/ghostty/themes/ithilien_dawn.conf').read_text().splitlines()
         slots={int(k):v for line in lines if line.startswith('palette = ')
                for k,v in [line.removeprefix('palette = ').split('=',1)]}
         self.assertTrue(set(range(16)) <= slots.keys())

@@ -25,7 +25,7 @@ def color(value,palette,default):
 
 def run_native(source,output,theme=None,palette=None):
     output.mkdir(parents=True,exist_ok=True)
-    theme=theme or ROOT/"codex/themes/ithilien-dawn.tmTheme"
+    theme=theme or ROOT/"extras/codex/themes/ithilien-dawn.tmTheme"
     pin=json.loads((ROOT/'evaluation/sources.json').read_text())['codex']['revision']
     assert subprocess.check_output(['git','-C',str(source),'rev-parse','HEAD'],text=True).strip()==pin
     cargo=shutil.which('cargo')

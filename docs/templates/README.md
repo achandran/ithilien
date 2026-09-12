@@ -1,6 +1,6 @@
-# Ithilien Dawn
+# Ithilien
 
-A light theme for reading code, reviewing changes, and working alongside coding agents.
+A Neovim colorscheme with two variants: **Dawn**, a light theme for clear code and precise diffs, and **Dusk**, an olive-dark theme.
 
 Porcelain whites. Black type. Steel neutrals. A small, deliberate red accent.
 
@@ -8,7 +8,42 @@ Porcelain whites. Black type. Steel neutrals. A small, deliberate red accent.
 
 **Read the code. Find the change.** Four diff backgrounds: green for added lines, red for deleted lines, blue for changed lines, and amber for the exact edited characters. Clients with separate added/deleted word highlights use the same amber for both. Diff emphasis keeps ordinary text weight, so even a one-character edit stands out through color.
 
-[Palette](#palette) · [Design](#design) · [Install](#install) · [Preview details](docs/readme-generation.md)
+[Install](#install) · [Usage](#usage) · [Palette](#palette) · [Design](#design) · [Extras](#extras)
+
+## Install
+
+Install with [lazy.nvim](https://github.com/folke/lazy.nvim):
+
+```lua
+{
+  "achandran/ithilien",
+  dependencies = { "webhooked/kanso.nvim" },
+  lazy = false,
+  priority = 1000,
+  opts = { bold = true, italics = true },
+  config = function(_, opts)
+    require("ithilien").setup(opts)
+    vim.cmd.colorscheme("ithilien-dawn")
+  end,
+}
+```
+
+Requires Neovim with truecolor enabled (`vim.opt.termguicolors = true`) and
+Kansō. Python and the repository's build tools are only needed for development
+or the optional extras installer.
+
+For LazyVim, use the [complete plugin spec](nvim/lazyvim-plugin.lua), including
+appearance switching and lualine integration.
+
+## Usage
+
+```lua
+vim.cmd.colorscheme("ithilien-dawn") -- light
+vim.cmd.colorscheme("ithilien-dusk") -- dark
+```
+
+`ithilien` is an alias for Dawn. Setup is optional when using the default bold
+and italic syntax styles. Exact diff emphasis uses ordinary weight and color.
 
 ## Palette
 
@@ -35,25 +70,16 @@ The aim is a working environment that stays legible without turning every token 
 
 The Neovim implementation builds on [Kansō](https://github.com/webhooked/kanso.nvim), with Ithilien’s palette and highlight mappings. Dusk is also included as a dark variant; Dawn is the focus of the current design and evaluation work.
 
-## Install
+## Extras
 
-Requires Git and Python 3. Neovim also requires the dependencies described in the [installation guide](docs/installation.md).
+Matching terminal and application ports live in [extras/](extras/README.md),
+following [Kansō's layout](https://github.com/webhooked/kanso.nvim/tree/main/extras).
+These include Ghostty, Codex, Claude Code, Firefox, Zsh, Slack, Linear, macOS
+selection scripts, and a dynamic wallpaper.
 
-```sh
-git clone https://github.com/achandran/ithilien.git
-cd ithilien
-./install.sh
-```
+For optional local installation, clone this repository and run
+`./install.sh --only ghostty` (or select other integrations). Run
+`./install.sh --dry-run` to inspect the full installer plan.
 
-The installer configures detected apps, skips missing ones, and backs up replaced files. On macOS it also sets the system text-selection color. Existing Ithilien plugin specs are preserved and updated through `:Lazy update`. Otherwise, the installer creates a local-checkout integration; keep that checkout in place.
-
-```sh
-./install.sh --dry-run             # inspect the changes first
-./install.sh --only ghostty nvim   # install selected integrations
-```
-
-To update, run `git pull` followed by `./install.sh`. Follow the installer’s reload and activation instructions; some apps require manual theme selection.
-
-[Installation and supported integrations](docs/installation.md) · [How previews are generated](docs/readme-generation.md)
-
-[Development: test and build](docs/development.md)
+[Extra installation instructions](docs/installation.md) ·
+[Development](docs/development.md) · [Preview details](docs/readme-generation.md)

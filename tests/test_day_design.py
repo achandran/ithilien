@@ -97,7 +97,7 @@ class DayDesign(unittest.TestCase):
 
     def test_codex_day_roles_and_selection(self):
         p=load_palette('ithilien-dawn')
-        with (ROOT/'codex/themes/ithilien-dawn.tmTheme').open('rb') as f: theme=plistlib.load(f)
+        with (ROOT/'extras/codex/themes/ithilien-dawn.tmTheme').open('rb') as f: theme=plistlib.load(f)
         rules={r['name']:r['settings'] for r in theme['settings'] if 'name' in r}
         for role,token in [('Keywords','clay'),('Functions','gold'),('Types','aqua'),('Operators','olive')]:
             self.assertEqual(rules[role]['foreground'],p['accents'][token])

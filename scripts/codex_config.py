@@ -4,7 +4,7 @@ import re
 import tomllib
 from pathlib import Path
 
-PROFILE = Path(__file__).resolve().parents[1] / 'codex/config.toml'
+PROFILE = Path(__file__).resolve().parents[1] / 'extras/codex/config.toml'
 
 
 def animations_enabled():

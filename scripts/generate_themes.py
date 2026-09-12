@@ -49,7 +49,7 @@ def generate_ghostty(palette: dict) -> None:
         *(["", "# Preserve the vi-mode cursor contrast fix.",
            "minimum-contrast = 1"] if is_light else []),
     ]
-    destination = ROOT / "ghostty" / "themes" / (palette["slug"].replace("-", "_") + ".conf")
+    destination = ROOT / "extras/ghostty" / "themes" / (palette["slug"].replace("-", "_") + ".conf")
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text("\n".join(lines) + "\n")
 
@@ -156,7 +156,7 @@ def generate_codex_theme(palette: dict) -> None:
         ])
     theme = {"name": palette["name"], "author": "Ithilien theme generator",
              "semanticClass": f"theme.{palette['slug']}", "settings": settings}
-    destination = ROOT / "codex" / "themes" / f"{palette['slug']}.tmTheme"
+    destination = ROOT / "extras/codex" / "themes" / f"{palette['slug']}.tmTheme"
     destination.parent.mkdir(parents=True, exist_ok=True)
     with destination.open("wb") as output:
         plistlib.dump(theme, output, fmt=plistlib.FMT_XML, sort_keys=False)
@@ -189,7 +189,7 @@ def generate_claude_theme(palette: dict) -> None:
         "briefLabelYou": accent["blue"], "briefLabelClaude": accent["ochre"],
     }
     theme = {"name": palette["name"], "base": palette["polarity"], "overrides": overrides}
-    destination = ROOT / "claude-code" / "themes" / f"{palette['slug']}.json"
+    destination = ROOT / "extras/claude-code" / "themes" / f"{palette['slug']}.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(theme, indent=2) + "\n")
 
@@ -200,13 +200,13 @@ def generate_app_palettes(palette: dict) -> None:
     slack_colors = [bg["mantle"], bg["surface0"], palette["highlight"]["background"],
                     palette["highlight"]["foreground"], bg["surface1"], fg["text"],
                     accent["sage"], accent["coral"]]
-    slack = ROOT / "slack" / f"{palette['slug']}.txt"
+    slack = ROOT / "extras/slack" / f"{palette['slug']}.txt"
     slack.parent.mkdir(parents=True, exist_ok=True)
     slack.write_text(",".join(slack_colors) + "\n")
 
     linear_colors = [bg["base"], fg["text"], bg["mantle"], fg["text"],
                      palette["highlight"]["background"], palette["highlight"]["foreground"]]
-    linear = ROOT / "linear" / f"{palette['slug']}.txt"
+    linear = ROOT / "extras/linear" / f"{palette['slug']}.txt"
     linear.parent.mkdir(parents=True, exist_ok=True)
     linear.write_text(",".join(linear_colors) + "\n")
 
@@ -214,7 +214,7 @@ def generate_app_palettes(palette: dict) -> None:
 def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
     highlight = palette["highlight"]
 
-    shell = ROOT / "shell" / (f"{palette['slug']}.zsh" if variant else "ithilien.zsh")
+    shell = ROOT / "extras/shell" / (f"{palette['slug']}.zsh" if variant else "ithilien.zsh")
     shell.parent.mkdir(parents=True, exist_ok=True)
     shell.write_text(
         "# Ithilien ZLE visual selection — generated; do not edit by hand.\n"
@@ -245,7 +245,7 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
         )
 
     r, g, b = (int(highlight["background"][index : index + 2], 16) / 255 for index in (1, 3, 5))
-    macos = ROOT / "macos" / (f"apply-highlight-{palette['slug']}.sh" if variant else "apply-highlight.sh")
+    macos = ROOT / "extras/macos" / (f"apply-highlight-{palette['slug']}.sh" if variant else "apply-highlight.sh")
     macos.parent.mkdir(parents=True, exist_ok=True)
     macos.write_text(
         "#!/bin/sh\n"
@@ -284,7 +284,7 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
             "properties": {"color_scheme": palette["polarity"], "content_color_scheme": palette["polarity"]},
         },
     }
-    firefox = ROOT / "firefox" / palette["slug"] / "manifest.json" if variant else ROOT / "firefox" / "manifest.json"
+    firefox = ROOT / "extras/firefox" / palette["slug"] / "manifest.json" if variant else ROOT / "extras/firefox" / "manifest.json"
     firefox.parent.mkdir(parents=True, exist_ok=True)
     firefox.write_text(json.dumps(firefox_manifest, indent=2) + "\n")
     (firefox.parent / "userContent.css").write_text(

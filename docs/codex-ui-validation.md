@@ -1,6 +1,6 @@
 # Stock Codex UI validation
 
-Ithilien keeps the stock Codex binary. `codex/config.toml` sets
+Ithilien keeps the stock Codex binary. `extras/codex/config.toml` sets
 `tui.animations = false`, the supported motion preference documented in the
 [official configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference).
 The Codex installer merges this one setting, preserves unrelated TOML values and
@@ -22,7 +22,7 @@ make evaluate-codex-ui
 
 It also requires `just` and `cargo-nextest`, following the pinned source's test
 instructions. `make evaluate` includes the same UI stage. The runner temporarily
-adds test instrumentation and configures the test helper from `codex/config.toml`;
+adds test instrumentation and configures the test helper from `extras/codex/config.toml`;
 it restores both upstream test files even on failure. Production renderer files
 are never patched. Do not evaluate concurrently against the same checkout.
 

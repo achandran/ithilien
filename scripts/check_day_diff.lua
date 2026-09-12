@@ -77,6 +77,8 @@ for _,win in ipairs({left,right}) do
 end
 result.multilinePassed=true
 vim.cmd('diffoff!')
-vim.fn.writefile({vim.json.encode(result)},'reports/formex-dawn-native-diffs.json')
+local output = vim.env.ITHILIEN_CHECK_OUTPUT or 'evaluation/results/highlight-checks'
+vim.fn.mkdir(output, 'p')
+vim.fn.writefile({vim.json.encode(result)},output..'/native-diffs.json')
 print((#cases+1)..' native character-diff cases passed; exact changed cells dark and undecorated')
 vim.cmd('qa!')

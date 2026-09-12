@@ -159,3 +159,21 @@ These are optional shortcuts; the normal workflow does not require them:
 
 Use `GHOSTTY_OUTPUT=/path/to/results` to select a standalone capture directory.
 The combined suite uses its fresh run directory instead.
+
+## Standalone highlight checks
+
+The retained native highlight assertions can run without desktop interaction:
+
+```sh
+KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_formex_dawn.lua
+uv run --locked python scripts/check_dawn_contrast.py
+KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_day_diff.lua
+```
+
+These write to ignored `evaluation/results/highlight-checks/`. Override with
+`ITHILIEN_CHECK_OUTPUT=/path/to/results` for the Lua checks and the matching
+`--output /path/to/results` for the contrast check. The combined legacy theme
+runner passes its own output directory to its diff assertions.
+
+Historical studies and removed experiment tooling are indexed in
+[design history](design-history.md).
