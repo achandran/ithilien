@@ -61,7 +61,7 @@ return function(scene,state)
     end
     if scene=='diffview-search' then
       vim.fn.setreg('/','11');vim.o.hlsearch=true;vim.api.nvim_win_set_cursor(0,{2,0})
-    else vim.defer_fn(function() vim.cmd('normal! \27');vim.api.nvim_win_set_cursor(0,{1,0});vim.cmd('normal! V') end,300) end
+    else vim.defer_fn(function() vim.cmd('normal! \27');vim.api.nvim_win_set_cursor(0,{1,0});vim.cmd('normal! Vj') end,300) end
   end
   _G.ithilien_workflow_evidence=function()
     local windows={}

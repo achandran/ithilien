@@ -56,8 +56,11 @@ Mutation tests reject a partially painted search or visual selection. These
 checks cover Diffview overlaps; diagnostic/cursor-line and debugger overlaps
 remain outside this profile.
 
-Current overlap result: search passes, but all four linewise-visual cases fail.
-The capture records mode `V` and the selection anchor/cursor as evidence, yet
-only part of the line receives the Visual background. This is an open rendering
-regression, not a passing integration. The expanded suite exits nonzero until
-it is resolved. No palette change was made.
+The initial four Visual failures were capture false positives: only the cursor
+cell lacked the Visual background in the text grid. The capture does not render
+Neovim's separate cursor. The corrected fixture selects the changed line plus
+the following blank line, with the cursor on the blank line. It requires mode V,
+anchor on line 1, cursor on line 2, and Briar across every target character.
+No target cells are exempted. Mutation tests still reject partial selections.
+This verifies selection, not the cursor's native appearance. No theme or palette
+change was needed.

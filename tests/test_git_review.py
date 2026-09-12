@@ -57,10 +57,18 @@ class GitReviewGates(unittest.TestCase):
         self.assertFalse(check(shot,colors)['pass_'])
 
     def test_visual_must_cover_whole_source_line(self):
-        shot=fixture();shot['case']='diffview-visual';shot['evidence']['mode']='V'
+        shot=fixture();shot['case']='diffview-visual';shot['evidence'].update(mode='V',cursor=[2,0],visual=[0,1,1,0])
         colors=dict(COLORS,Briar='#B8595C')
         shot['attrs'][2]={'background':0xB8595C}
         for cell in shot['cells'][10:]:cell['attr']=2
         self.assertTrue(check(shot,colors)['pass_'])
         shot['cells'][15]['attr']=0
         self.assertFalse(check(shot,colors)['pass_'])
+
+    def test_cursor_on_target_is_not_valid_selection_fixture(self):
+        shot=fixture();shot['case']='diffview-visual'
+        shot['evidence'].update(mode='V',cursor=[1,0],visual=[0,1,1,0])
+        colors=dict(COLORS,Briar='#B8595C')
+        shot['attrs'][2]={'background':0xB8595C}
+        for cell in shot['cells'][10:]:cell['attr']=2
+        self.assertIn('Visual fixture cursor must be on the following blank line',check(shot,colors)['failures'])

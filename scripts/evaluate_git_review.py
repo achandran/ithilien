@@ -47,7 +47,10 @@ def check(shot,colors):
                     if effective_colors(shot,row[index+len(fragment)-1])[1]!=emphasis:
                         errors.append('Missing inline digit emphasis: '+fragment)
             if not found:errors.append('Missing inline fixture: '+fragment)
-    if case=='diffview-visual' and shot['evidence'].get('mode')!='V':errors.append('Linewise Visual mode absent')
+    if case=='diffview-visual':
+        if shot['evidence'].get('mode')!='V':errors.append('Linewise Visual mode absent')
+        if shot['evidence'].get('cursor',[0])[0]!=2:errors.append('Visual fixture cursor must be on the following blank line')
+        if shot['evidence'].get('visual',[0,0])[1]!=1:errors.append('Visual fixture anchor must be on the changed line')
     if case in ('diffview-search','diffview-visual'):
         expected=int(colors['Heather' if case=='diffview-search' else 'Briar'][1:],16)
         rows={}
