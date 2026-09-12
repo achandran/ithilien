@@ -83,3 +83,17 @@ Fetch the isolated plugin profiles once using their `--fetch-dependencies` flag.
 The installed profile also requires your configured LazyVim installation; its
 fzf case needs terminal-mode ioctl permission. The suite does not request GUI
 access or silently skip restricted terminal operations.
+
+For an isolated rustup installation, set `CARGO_HOME` to `RUNTIME/cargo` and
+`RUSTUP_HOME` to `RUNTIME/rustup` when installing the toolchain named in Codex's
+`codex-rs/rust-toolchain.toml`. Use rustup's `--no-modify-path` option to leave
+your shell configuration alone. Then run:
+
+```sh
+make evaluate RUST_RUNTIME=/absolute/path/to/RUNTIME
+```
+
+This exports those two directories and prepends their Cargo binaries to PATH
+for the run. The setting is optional; a normal Rust installation works without
+it. The first native Codex build needs network access to download dependencies
+and can take substantially longer than subsequent evaluations.

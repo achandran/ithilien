@@ -2,6 +2,15 @@
 
 UV ?= uv
 
+# Optional rustup installation with cargo/ and rustup/ beneath this directory.
+# Otherwise use the user's normal toolchain from PATH.
+RUST_RUNTIME ?=
+ifneq ($(strip $(RUST_RUNTIME)),)
+export CARGO_HOME := $(abspath $(RUST_RUNTIME))/cargo
+export RUSTUP_HOME := $(abspath $(RUST_RUNTIME))/rustup
+export PATH := $(CARGO_HOME)/bin:$(PATH)
+endif
+
 .PHONY: test build evaluate
 
 # Run Python unit and regression tests with the locked development environment.
