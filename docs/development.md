@@ -97,3 +97,7 @@ This exports those two directories and prepends their Cargo binaries to PATH
 for the run. The setting is optional; a normal Rust installation works without
 it. The first native Codex build needs network access to download dependencies
 and can take substantially longer than subsequent evaluations.
+
+Ghostty fixture preparation is now included and remains a required blocked stage
+until native validation is available. See [Ghostty validation](ghostty-validation.md)
+for the optional native worker, authorization requirements, and current limits.

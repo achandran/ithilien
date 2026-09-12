@@ -13,6 +13,9 @@ from ithilienlib import ROOT, wcag
 
 def check_adapter(adapter):
     resolved=dict(adapter,paths=[(ROOT/p).resolve() for p in adapter['paths']])
+    for path in resolved['paths']:
+        if not path.is_dir():
+            raise FileNotFoundError(f'Missing theme dependency: {path}; prepare the pinned source from evaluation/themes.json')
     for path,pin in adapter.get('pins',{}).items():
         actual=subprocess.check_output(['git','-C',str(ROOT/path),'rev-parse','HEAD'],text=True).strip()
         if actual!=pin:raise ValueError(f'{path}: expected {pin}, found {actual}')

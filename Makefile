@@ -11,7 +11,7 @@ export RUSTUP_HOME := $(abspath $(RUST_RUNTIME))/rustup
 export PATH := $(CARGO_HOME)/bin:$(PATH)
 endif
 
-.PHONY: test build evaluate
+.PHONY: test build evaluate evaluate-ghostty
 
 # Run Python unit and regression tests with the locked development environment.
 test:
@@ -26,9 +26,17 @@ EVALUATE_OUTPUT ?= evaluation/results/full
 CODEX_SOURCE ?= ../review-codex
 PYTHON_SOURCE ?= ../eval-tree-sitter-python
 THEMES ?= ithilien-dawn
+GHOSTTY_ARGS ?= --ghostty
 
 evaluate: test
 	$(UV) run --locked python scripts/evaluate_suite.py --fresh-run --strict-gates \
 		--codex-source "$(CODEX_SOURCE)" --python-source "$(PYTHON_SOURCE)" \
 		--output "$(EVALUATE_OUTPUT)" --themes $(THEMES) \
-		--pickers --python-tools --git-review --installed-workflows
+		--pickers --python-tools --git-review --installed-workflows $(GHOSTTY_ARGS)
+
+# Independent of Neovim, Kanso, Tree-sitter and Rust/Codex dependencies.
+# Native execution requires authorized Ghostty access and Screen Recording.
+GHOSTTY_OUTPUT ?= evaluation/results/ghostty
+GHOSTTY_CAPTURE ?= --capture
+evaluate-ghostty:
+	$(UV) run --locked python scripts/evaluate_ghostty.py $(GHOSTTY_CAPTURE) --output "$(GHOSTTY_OUTPUT)"

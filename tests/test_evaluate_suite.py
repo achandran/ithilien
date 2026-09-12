@@ -59,3 +59,31 @@ class SuiteStatus(unittest.TestCase):
         self.assertEqual(interaction_status(r),'blocked')
         r['results'].append({'errors':['Unexpected rendering error']})
         self.assertEqual(interaction_status(r),'fail')
+
+    def test_missing_theme_dependency_is_actionable(self):
+        import tempfile
+        from compare_themes import check_adapter
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(FileNotFoundError, 'Missing theme dependency'):
+                check_adapter({'paths':[str(Path(tmp)/'absent')], 'pins':{}})
+
+    def test_missing_dependencies_do_not_prevent_ghostty_report(self):
+        import json,tempfile
+        from unittest.mock import patch
+        import evaluate_suite
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);manifest=root/'themes.json';out=root/'out'
+            manifest.write_text(json.dumps([{'id':'fixture','paths':[str(root/'absent')]}]))
+            argv=['suite','--manifest',str(manifest),'--output',str(out),'--codex-source',str(root/'codex'),
+                  '--python-source',str(root/'python'),'--nvim','nvim','--ghostty']
+            ghostty={'status':'blocked','reason':'capture unavailable','coverage':{'native_pixels':'blocked'}}
+            with patch.object(sys,'argv',argv), patch('evaluate_suite.shutil.which',return_value=None), \
+                 patch('evaluate_interactions.run',side_effect=FileNotFoundError('missing dependency')), \
+                 patch('validate_evaluator.run',side_effect=FileNotFoundError('missing dependency')), \
+                 patch('evaluate_ghostty.prepare',return_value=ghostty):
+                self.assertEqual(evaluate_suite.main(),1)
+            report=json.loads((out/'report.json').read_text())
+            self.assertEqual(report['stages']['neovim']['status'],'blocked')
+            self.assertEqual(report['stages']['evaluator-validation']['status'],'blocked')
+            self.assertEqual(report['stages']['ghostty']['status'],'blocked')
+            self.assertTrue((out/'index.html').exists())

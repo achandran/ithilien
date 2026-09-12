@@ -81,6 +81,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--codex-source',type=Path,required=True);p.add_argument('--python-source',type=Path,required=True)
     p.add_argument('--manifest',type=Path,default=ROOT/'evaluation/themes.json');p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/suite')
+    p.add_argument('--ghostty',action='store_true',help='Prepare terminal command fixtures and track native Ghostty coverage')
+    p.add_argument('--ghostty-capture',action='store_true',help='Run native macOS Ghostty capture; requires authorized UI access')
     p.add_argument('--fresh-run',action='store_true',help='Write to a unique run folder to avoid stale evidence')
     p.add_argument('--pickers',action='store_true',help='Gate native picker/completion workflows')
     p.add_argument('--python-tools',action='store_true',help='Gate actual pytest and debugpy plugin workflows')
@@ -107,6 +109,11 @@ def main():
     for name,extra in [('neovim',[]),('python',['--python-source',str(a.python_source.resolve())])]:
         print('Stage: '+name,flush=True)
         cmd=[sys.executable,str(ROOT/'scripts/compare_themes.py'),'--manifest',str(a.manifest.resolve()),'--output',str(out/name),'--nvim',a.nvim,'--themes',*[e['id'] for e in entries],*extra]
+        missing=[str((ROOT/path).resolve()) for e in entries for path in e['paths'] if not (ROOT/path).is_dir()]
+        if name=='python' and not a.python_source.is_dir():missing.append(str(a.python_source.resolve()))
+        if missing:
+            report['stages'][name]={'status':'blocked','reason':'Missing dependencies: '+', '.join(sorted(set(missing)))}
+            checkpoint();continue
         result=subprocess.run(cmd,cwd=ROOT)
         report['stages'][name]={'status':'pass' if result.returncode==0 else 'fail','gallery':name+'/gallery.html','scorecard':name+'/scorecard.html'}
         checkpoint()
@@ -129,12 +136,20 @@ def main():
             report['themes'].append({'id':name,'status':'unavailable_or_error','reason':str(exc)})
         checkpoint()
     from evaluate_interactions import run as run_interactions
-    interactions=run_interactions(entries,out/'interactions',a.nvim,include_fzf=not a.skip_fzf)
-    report['interactions']={'gallery':'interactions/gallery.html','report':'interactions/report.json','quality_pass':all(r['quality_pass'] for r in interactions['results'])}
-    report['stages']['interactions']={'status':interaction_status(interactions),'gallery':'interactions/gallery.html'}
+    try:
+        interactions=run_interactions(entries,out/'interactions',a.nvim,include_fzf=not a.skip_fzf)
+        report['interactions']={'gallery':'interactions/gallery.html','report':'interactions/report.json','quality_pass':all(r['quality_pass'] for r in interactions['results'])}
+        report['stages']['interactions']={'status':interaction_status(interactions),'gallery':'interactions/gallery.html'}
+    except Exception as exc:
+        report['stages']['interactions']={'status':'blocked' if isinstance(exc,FileNotFoundError) else 'fail','reason':str(exc)}
+    checkpoint()
     from validate_evaluator import run as validate_evaluator
-    validation=validate_evaluator(out/'evaluator-validation')
-    report['stages']['evaluator-validation']={'status':'pass' if validation['pass'] else 'fail','gallery':'evaluator-validation/index.html'}
+    try:
+        validation=validate_evaluator(out/'evaluator-validation')
+        report['stages']['evaluator-validation']={'status':'pass' if validation['pass'] else 'fail','gallery':'evaluator-validation/index.html'}
+    except Exception as exc:
+        report['stages']['evaluator-validation']={'status':'blocked' if isinstance(exc,FileNotFoundError) else 'fail','reason':str(exc)}
+    checkpoint()
     if a.pickers:
         from evaluate_pickers import run
         run_workflow(report,'pickers',lambda:run(out/'pickers'));checkpoint()
@@ -147,6 +162,15 @@ def main():
     if a.installed_workflows:
         from evaluate_installed_workflows import run
         run_workflow(report,'installed-workflows',lambda:run(out/'installed-workflows',Path.home()/'.config/nvim/init.lua',Path.home()/'.local/share/nvim/lazy/lazy.nvim'));checkpoint()
+    if a.ghostty or a.ghostty_capture:
+        from evaluate_ghostty import prepare as prepare_ghostty
+        try:
+            ghostty=prepare_ghostty(out/'ghostty', a.ghostty_capture)
+            report['stages']['ghostty']={'status':ghostty['status'],'reason':ghostty['reason'],'gallery':'ghostty/gallery.html'}
+            report['coverage']['ghostty']=ghostty['coverage']
+        except Exception as exc:
+            report['stages']['ghostty']={'status':'fail','reason':str(exc)}
+        checkpoint()
     failures=finalize(report,out,a.strict_gates)
     (out/'report.json').write_text(json.dumps(report,indent=2))
     write_index(out,report)
