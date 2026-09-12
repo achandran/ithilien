@@ -123,8 +123,13 @@ class Installer:
         print('NEXT Ghostty: reload configuration. Explicit cursor/font/contrast overrides in your config still take precedence over theme values.')
 
     def codex(self):
-        self.copies('codex/themes', Path(os.environ.get('CODEX_HOME', self.home / '.codex')) / 'themes')
-        print('NEXT Codex CLI: choose Ithilien Dawn using /theme. Desktop appearance is separate.')
+        from codex_config import configure
+        base = Path(os.environ.get('CODEX_HOME', self.home / '.codex'))
+        config = base / 'config.toml'
+        text = configure(config.read_text() if config.exists() else '')
+        self.copies('codex/themes', base / 'themes')
+        self.write(config, text.encode())
+        print('NEXT Codex CLI: restart to disable shimmer and composer particles; choose Ithilien Dawn using /theme. Stock UI metadata and composer borders are not theme-configurable. Desktop appearance is separate.')
 
     def claude(self):
         self.copies('claude-code/themes', Path(os.environ.get('CLAUDE_CONFIG_DIR', self.home / '.claude')) / 'themes')

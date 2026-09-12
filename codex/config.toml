@@ -1,0 +1,3 @@
+# Keep status text readable and the composer free of decorative particles.
+[tui]
+animations = false

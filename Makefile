@@ -61,6 +61,12 @@ evaluate-ghostty:
 evaluate-ghostty-images:
 	$(UV) run --locked python scripts/analyze_ghostty_images.py --output "$(GHOSTTY_OUTPUT)"
 
+.PHONY: evaluate-codex-ui
+CODEX_UI_OUTPUT ?= evaluation/results/codex-ui
+CODEX_UI_ARGS ?=
+evaluate-codex-ui:
+	$(UV) run --locked python scripts/codex_ui.py --source "$(CODEX_SOURCE)" --output "$(CODEX_UI_OUTPUT)" $(CODEX_UI_ARGS)
+
 # One-time source setup; subsequent builds/evaluations do not fetch or reset repos.
 .PHONY: setup-evaluation
 setup-evaluation:

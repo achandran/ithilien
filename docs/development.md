@@ -100,6 +100,9 @@ a matching Rust/Cargo toolchain on PATH, and the pinned Python grammar from
 `evaluation/python-runtime.json` (default `evaluation/deps/tree-sitter-python`). The Codex
 runner temporarily patches its dedicated source checkout and restores it; use a
 separate clean test checkout. Do not run concurrent evaluations on that checkout.
+The stock Codex UI replay additionally uses `just` and `cargo-nextest`. See
+[Codex UI validation](codex-ui-validation.md) for the motion profile, timed
+negative control, and remaining stock-renderer limitations.
 `make setup-evaluation` includes all three isolated plugin profiles.
 The installed profile also requires your configured LazyVim installation; its
 fzf case needs terminal-mode ioctl permission. The suite does not request GUI

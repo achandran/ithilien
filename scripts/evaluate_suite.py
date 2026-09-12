@@ -61,6 +61,8 @@ def finalize(report,out,strict):
         interaction_stage['quality_status']='unverified' if interaction_stage['status']=='blocked' else ('fail' if interaction_bad else 'pass')
         quality_bad |= interaction_bad
         quality_bad |= any(t.get('codex_diff',{}).get('status')!='pass' or t.get('agent_gates',{}).get('status')!='pass' for t in report['themes'])
+        if 'codex-ui' in report['stages']:
+            quality_bad |= report['stages']['codex-ui'].get('quality_status') != 'pass'
     report['required_execution_status']='fail' if execution_bad else 'complete'
     report['acceptance_status']='fail' if execution_bad or quality_bad else 'pass'
     report['strict_gates']=strict
@@ -160,6 +162,16 @@ def main():
     if a.pickers:
         from evaluate_pickers import run
         run_workflow(report,'pickers',lambda:run(out/'pickers'));checkpoint()
+    from codex_ui import run as run_codex_ui
+    try:
+        ui = run_codex_ui(a.codex_source, out/'codex-ui')
+        report['stages']['codex-ui'] = {'status': 'pass' if ui['captures'] else 'fail',
+                                      'quality_status': ui['status'], 'captures': ui['captures'],
+                                      'gallery': 'codex-ui/codex-gallery.html',
+                                      'remaining_gaps': ui['remaining_gaps']}
+    except Exception as exc:
+        report['stages']['codex-ui'] = {'status': 'blocked' if isinstance(exc, FileNotFoundError) else 'fail', 'reason': str(exc)}
+    checkpoint()
     if a.python_tools:
         from evaluate_python_tools import run
         run_workflow(report,'python-tools',lambda:run(out/'python-tools'));checkpoint()

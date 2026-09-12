@@ -95,3 +95,17 @@ def test_blocked_renderers_do_not_claim_quality_failure(tmp_path):
     assert finalize(report,tmp_path,True)
     assert all(s['quality_status']=='unverified' for s in report['stages'].values())
     assert report['acceptance_status']=='fail'
+
+
+def test_unverified_stock_ui_contrast_blocks_strict_acceptance(tmp_path):
+    import json
+    from evaluate_suite import finalize
+    for name in ('neovim', 'python'):
+        (tmp_path/name).mkdir()
+        (tmp_path/name/'scorecard.json').write_text(json.dumps({'results': []}))
+    report = {'stages': {name: {'status': 'pass'} for name in ('neovim', 'python', 'interactions')},
+              'themes': [], 'interactions': {'quality_pass': True}}
+    report['stages']['codex-ui'] = {'status': 'pass', 'captures': 48, 'quality_status': 'unverified'}
+    assert finalize(report, tmp_path, True)
+    assert report['required_execution_status'] == 'complete'
+    assert report['acceptance_status'] == 'fail'

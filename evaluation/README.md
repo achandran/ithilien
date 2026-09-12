@@ -31,6 +31,11 @@ The Codex adapter loads the actual exported Ithilien tmTheme into the upstream s
 
 ## Corpus provenance
 
+The combined suite also evaluates stock Codex's working indicator and empty
+composer across 48 timed frames using the installed integration's reduced-motion
+profile. See [stock Codex UI validation](../docs/codex-ui-validation.md). Placeholder
+`DIM` requires native pixel evidence and cannot count as a nominal-RGB pass.
+
 `sources.json` pins upstream commits, paths and SHA-256 hashes. Fixtures include Codex's own synthetic diff-gallery specimens, an unmodified excerpt from a public Codex commit, our local ghosttyconfig regression, and labeled synthetic punctuation/whitespace/Unicode/wrapping cases. Upstream snapshots are reference text only, not style validation. The upstream license is included. No private agent transcripts are used. Fixture code is displayed, never executed.
 
 ## Iterate
