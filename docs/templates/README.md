@@ -45,7 +45,7 @@ cd ithilien
 ./install.sh
 ```
 
-The installer configures detected apps, skips missing ones, and backs up replaced files. On macOS it also sets the system text-selection color. Keep the checkout in place: Neovim loads the theme from it.
+The installer configures detected apps, skips missing ones, and backs up replaced files. On macOS it also sets the system text-selection color. Existing Ithilien plugin specs are preserved and updated through `:Lazy update`. Otherwise, the installer creates a local-checkout integration; keep that checkout in place.
 
 ```sh
 ./install.sh --dry-run             # inspect the changes first

@@ -140,7 +140,24 @@ class Installer:
         # Local checkout ensures git pull + installer uses the exact revision.
         import json
         plugin = 'return {\n  { dir = ' + json.dumps(str(ROOT)) + ', name = "ithilien", lazy = false, priority = 1000,\n    dependencies = { "webhooked/kanso.nvim" },\n    config = function() vim.cmd.colorscheme("ithilien-dawn") end },\n  { "LazyVim/LazyVim", opts = { colorscheme = "ithilien-dawn" } },\n  { "nvim-lualine/lualine.nvim", opts = function(_, opts) require("ithilien.statusline").configure(opts) end },\n}\n'
-        self.write(base / 'lua/plugins/ithilien-installed.lua', plugin.encode())
+        managed = base / 'lua/plugins/ithilien-installed.lua'
+        existing = [p for p in files if p != managed and re.search(
+            r"[\"']achandran/ithilien[\"']", p.read_text(errors='replace'))]
+        if existing:
+            print('UNCHANGED Neovim: existing Ithilien spec; update with :Lazy update.')
+            if managed.exists():
+                if managed.read_text() == plugin and not managed.is_symlink():
+                    print(f'{"REMOVE" if self.apply else "WOULD REMOVE"} {managed}')
+                    if self.apply:
+                        dest = self.backup / str(managed).lstrip('/')
+                        dest.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(managed, dest)
+                        managed.unlink()
+                    self.count += 1
+                else:
+                    print(f'MANUAL Neovim: review customized duplicate {managed}; not removed.')
+            return
+        self.write(managed, plugin.encode())
         print('NEXT Neovim: restart and run :Lazy sync for dependencies. Keep this checkout in place; remove conflicting theme specs if needed.')
 
     def slack(self):

@@ -77,7 +77,7 @@ local accent, diff, highlight, is_light = a, d, raw.highlight, true
     diag = {
       error = accent.coral,
       ok = accent.sage,
-      warning = accent.gold,
+      warning = p.yellow,
       info = accent.blue,
       hint = accent.aqua,
     },
@@ -88,9 +88,9 @@ local accent, diff, highlight, is_light = a, d, raw.highlight, true
       text = diff.changeEmphasis,
     },
     vcs = {
-      added = diff.addForeground,
-      removed = diff.deleteForeground,
-      changed = diff.changeForeground,
+      added = p.green,
+      removed = p.red,
+      changed = p.blue,
       untracked = fg.comment,
     },
     term = palette.terminal,
@@ -205,6 +205,22 @@ for name,h in pairs(vim.api.nvim_get_hl(0,{})) do
 end
 for _,name in ipairs({'Type','Statement','Title','CursorLineNr'}) do
  local h=vim.api.nvim_get_hl(0,{name=name,link=false}); h.bold=opts.bold;hi(name,h)
+end
+-- Deliberate plugin semantics, applied after the generic foreground safeguard.
+for _,name in ipairs({'SnacksIndent','IblIndent','IndentBlanklineChar'}) do
+ hi(name,{fg=bg.surface2,nocombine=true})
+end
+for _,name in ipairs({'SnacksIndentScope','SnacksIndentChunk','IblScope','MiniIndentscopeSymbol'}) do
+ hi(name,{fg=fg.muted,nocombine=true})
+end
+hi('NeoTreeIndentMarker',{fg=bg.surface2})
+hi('NeoTreeGitStaged',{fg=p.green,underline=true})
+hi('BlinkCmpLabelMatch',{fg=p.fg,bold=true})
+hi('LspSignatureActiveParameter',{fg=p.fg,bg=p.search,bold=true})
+hi('BlinkCmpSignatureHelpActiveParameter',{link='LspSignatureActiveParameter'})
+for _,name in ipairs({'BufferLineBufferSelected','BufferLineNumbersSelected',
+ 'BufferLineCloseButtonSelected','BufferLineDuplicateSelected'}) do
+ local h=vim.api.nvim_get_hl(0,{name=name,link=false});h.bg=tonumber(bg.mantle:sub(2),16);hi(name,h)
 end
 local lualine=package.loaded['lualine']
 if lualine then local c=lualine.get_config();require('ithilien.statusline').configure(c);lualine.setup(c) end

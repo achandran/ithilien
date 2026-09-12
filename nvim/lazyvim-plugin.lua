@@ -2,6 +2,7 @@
 return {
   {
     "achandran/ithilien",
+    branch = "main",
     dependencies = { "webhooked/kanso.nvim" },
     lazy = false,
     priority = 1000,

@@ -99,3 +99,7 @@ The normal installer now includes the Dawn system highlight color on macOS, read
 ### Dawn diff presentation
 
 Dawn diff windows use subdued dotted filler, pane labels, and matching syntax when a revision buffer lacks a filetype. Neovim 0.12 uses character-level inline diffs. Window presentation is restored on leaving diff mode. Labels identify FILE/REVISION/BUFFER when provenance is known; integrations may set `b:ithilien_diff_label` to a more specific label such as INDEX or WORKING COPY.
+
+### Existing LazyVim theme configuration
+
+If a Lua plugin specification already declares `achandran/ithilien`, the installer leaves it unchanged. Update that GitHub-managed copy with `:Lazy update`. An unmodified duplicate `ithilien-installed.lua` created by this installer is backed up and removed; customized duplicates are left for manual review. The sample `nvim/lazyvim-plugin.lua` includes the status-line clock configuration.
