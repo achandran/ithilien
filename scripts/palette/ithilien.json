@@ -181,20 +181,20 @@
         "Lebethron": "#000000",
         "Flint": "#AAA497",
         "Briar": "#B8595C",
-        "Olive": "#A6C995",
-        "Mist": "#9DBDE0",
+        "Juniper": "#A6C995",
+        "Gilrain": "#9DBDE0",
         "Elanor": "#D0BD91",
-        "Clematis": "#C1B0CE",
+        "Tamarisk": "#C1B0CE",
         "Cypress": "#273B31",
         "Bramble": "#402E33",
-        "Grotto": "#293847",
+        "Morgulduin": "#293847",
         "Celandine": "#D8B46A",
         "Heather": "#D6C6DE",
         "Ithil": "#BDB7AB",
         "Arnen": "#2C2E2C",
-        "Slate": "#303437",
-        "Graphite": "#202120",
-        "Rosehip": "#E09A9D",
+        "Morgai": "#303437",
+        "Duath": "#202120",
+        "Rose": "#E09A9D",
         "Poros": "#83C9BE"
       },
       "colorNotes": {
@@ -210,20 +210,20 @@
           "meaning": "Muted rose red inspired by the hips of Ithilien briars; a botanical interpretation, not a shade specified by Tolkien.",
           "source": "https://tolkiengateway.net/wiki/Eglantine"
         },
-        "Olive": {
-          "meaning": "Soft gray-green inspired by the olive trees of Ithilien; a botanical color interpretation.",
+        "Juniper": {
+          "meaning": "Junipers grow in Ithilien; pale green is a botanical foliage interpretation evoking evergreen scrub.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
-        "Mist": {
-          "meaning": "Soft blue inspired by mist at the waterfall of Henneth Ann\u00fbn; a poetic water association.",
-          "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+        "Gilrain": {
+          "meaning": "A river of Gondor; soft blue interpreted from its flowing water, not a color specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Gilrain"
         },
         "Elanor": {
           "meaning": "Muted gold inspired by the golden elanor flowers of L\u00f3rien; a broader Tolkien connection, interpreted for Dusk.",
           "source": "https://tolkiengateway.net/wiki/Elanor"
         },
-        "Clematis": {
-          "meaning": "Soft mauve inspired by Ithilien\u2019s trailing clematises; a botanical color interpretation.",
+        "Tamarisk": {
+          "meaning": "Tamarisk thickets grow in Ithilien; muted mauve is a botanical interpretation inspired by their pink-lilac flowers.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Cypress": {
@@ -234,9 +234,9 @@
           "meaning": "Deep rose-brown inspired by tangled briar stems in Ithilien; a shaded botanical interpretation.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
-        "Grotto": {
-          "meaning": "Deep blue inspired by the shaded refuge behind the waterfall at Henneth Ann\u00fbn; a poetic cave-and-water association.",
-          "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+        "Morgulduin": {
+          "meaning": "The cold, corrupted river flowing from the Morgul Vale through Ithilien; deep blue is a poetic water interpretation, not a color specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Morgulduin"
         },
         "Celandine": {
           "meaning": "Muted golden yellow inspired by the bright celandine flowers of Ithilien; a softened interpretation.",
@@ -254,16 +254,17 @@
           "meaning": "Emyn Arnen, hills in South Ithilien associated with Faramir; dark gray interpreted from the shaded landscape. The exact shade is a poetic interpretation.",
           "source": "https://tolkiengateway.net/wiki/Emyn_Arnen"
         },
-        "Slate": {
-          "meaning": "Cool slate gray evoking Ithilien\u2019s shaded stone; a poetic material association, not a geological claim.",
-          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        "Morgai": {
+          "meaning": "The dark inner ridge east of Ephel D\u00faath, beyond Ithilien in the adjoining Mordor borderlands; cool gray is a shaded-stone interpretation.",
+          "source": "https://www.encyclopedia-of-arda.com/m/morgai.php"
         },
-        "Graphite": {
-          "meaning": "Deep graphite gray evoking shaded Gondorian ruins; a contemporary material interpretation of Osgiliath, not a material specified by Tolkien.",
-          "source": "https://tolkiengateway.net/wiki/Osgiliath"
+        "Duath": {
+          "meaning": "Drawn from Ephel D\u00faath, the Mountains of Shadow along Ithilien\u2019s eastern border; deep canvas gray is a poetic shadow interpretation. Uses Duath in code.",
+          "source": "https://tolkiengateway.net/wiki/Ephel_D%C3%BAath",
+          "displayName": "D\u00faath"
         },
-        "Rosehip": {
-          "meaning": "Soft rose red inspired by the hips of Ithilien\u2019s briars; a botanical color interpretation.",
+        "Rose": {
+          "meaning": "Soft pink inspired by the petals of roses growing in Ithilien; a botanical color interpretation.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Poros": {
@@ -279,12 +280,12 @@
         "cursorBlock": "Briar"
       },
       "backgrounds": {
-        "crust": "Graphite",
-        "mantle": "Slate",
-        "base": "Graphite",
+        "crust": "Duath",
+        "mantle": "Morgai",
+        "base": "Duath",
         "surface0": "Arnen",
         "surface1": "Arnen",
-        "surface2": "Slate",
+        "surface2": "Morgai",
         "border": "Flint",
         "search": "Heather"
       },
@@ -297,34 +298,34 @@
       },
       "accents": {
         "olive": "Ithil",
-        "sage": "Olive",
+        "sage": "Juniper",
         "gold": "Ithil",
-        "ochre": "Clematis",
-        "clay": "Mist",
-        "coral": "Rosehip",
+        "ochre": "Tamarisk",
+        "clay": "Gilrain",
+        "coral": "Rose",
         "aqua": "Poros",
-        "blue": "Mist",
-        "mauve": "Clematis"
+        "blue": "Gilrain",
+        "mauve": "Tamarisk"
       },
       "ansi": {
         "black": "Lebethron",
-        "red": "Rosehip",
-        "green": "Olive",
+        "red": "Rose",
+        "green": "Juniper",
         "yellow": "Elanor",
-        "blue": "Mist",
-        "magenta": "Clematis",
+        "blue": "Gilrain",
+        "magenta": "Tamarisk",
         "cyan": "Poros",
         "white": "Ithil",
         "brightBlack": "Flint",
-        "brightRed": "Rosehip",
-        "brightGreen": "Olive",
+        "brightRed": "Rose",
+        "brightGreen": "Juniper",
         "brightYellow": "Elanor",
-        "brightBlue": "Mist",
-        "brightMagenta": "Clematis",
+        "brightBlue": "Gilrain",
+        "brightMagenta": "Tamarisk",
         "brightCyan": "Poros",
         "brightWhite": "Ithil",
         "extendedOchre": "Elanor",
-        "extendedClay": "Rosehip"
+        "extendedClay": "Rose"
       },
       "diff": {
         "contextForeground": "Ithil",
@@ -336,10 +337,10 @@
         "deleteBackground": "Bramble",
         "deleteEmphasis": "Celandine",
         "changeForeground": "Ithil",
-        "changeBackground": "Grotto",
+        "changeBackground": "Morgulduin",
         "changeEmphasis": "Celandine",
         "hunkForeground": "Ithil",
-        "hunkBackground": "Grotto",
+        "hunkBackground": "Morgulduin",
         "conflictForeground": "Lebethron",
         "conflictBackground": "Heather"
       }

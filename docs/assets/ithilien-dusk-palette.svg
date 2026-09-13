@@ -5,7 +5,7 @@
 <text x="24" y="81" fill="#BDB7AB" font-weight="700">Surfaces and Text</text>
 <rect x="24" y="100" width="216" height="48" fill="#AAA497"/>
 <rect x="25" y="101" width="214" height="46" fill="#202120"/>
-<text x="24" y="171" fill="#BDB7AB" font-weight="700">Graphite</text>
+<text x="24" y="171" fill="#BDB7AB" font-weight="700">Dúath</text>
 <text x="24" y="195" fill="#AAA497" >Canvas</text>
 <text x="24" y="219" fill="#AAA497" >#202120</text>
 <rect x="258" y="100" width="216" height="48" fill="#AAA497"/>
@@ -15,7 +15,7 @@
 <text x="258" y="219" fill="#AAA497" >#2C2E2C</text>
 <rect x="492" y="100" width="216" height="48" fill="#AAA497"/>
 <rect x="493" y="101" width="214" height="46" fill="#303437"/>
-<text x="492" y="171" fill="#BDB7AB" font-weight="700">Slate</text>
+<text x="492" y="171" fill="#BDB7AB" font-weight="700">Morgai</text>
 <text x="492" y="195" fill="#AAA497" >Muted surface</text>
 <text x="492" y="219" fill="#AAA497" >#303437</text>
 <rect x="726" y="100" width="216" height="48" fill="#AAA497"/>
@@ -36,12 +36,12 @@
 <text x="24" y="421" fill="#BDB7AB" font-weight="700">Terminal Colors</text>
 <rect x="24" y="440" width="216" height="48" fill="#AAA497"/>
 <rect x="25" y="441" width="214" height="46" fill="#E09A9D"/>
-<text x="24" y="511" fill="#BDB7AB" font-weight="700">Rosehip</text>
+<text x="24" y="511" fill="#BDB7AB" font-weight="700">Rose</text>
 <text x="24" y="535" fill="#AAA497" >Red</text>
 <text x="24" y="559" fill="#AAA497" >#E09A9D</text>
 <rect x="258" y="440" width="216" height="48" fill="#AAA497"/>
 <rect x="259" y="441" width="214" height="46" fill="#A6C995"/>
-<text x="258" y="511" fill="#BDB7AB" font-weight="700">Olive</text>
+<text x="258" y="511" fill="#BDB7AB" font-weight="700">Juniper</text>
 <text x="258" y="535" fill="#AAA497" >Green</text>
 <text x="258" y="559" fill="#AAA497" >#A6C995</text>
 <rect x="492" y="440" width="216" height="48" fill="#AAA497"/>
@@ -51,12 +51,12 @@
 <text x="492" y="559" fill="#AAA497" >#D0BD91</text>
 <rect x="726" y="440" width="216" height="48" fill="#AAA497"/>
 <rect x="727" y="441" width="214" height="46" fill="#9DBDE0"/>
-<text x="726" y="511" fill="#BDB7AB" font-weight="700">Mist</text>
+<text x="726" y="511" fill="#BDB7AB" font-weight="700">Gilrain</text>
 <text x="726" y="535" fill="#AAA497" >Blue</text>
 <text x="726" y="559" fill="#AAA497" >#9DBDE0</text>
 <rect x="24" y="586" width="216" height="48" fill="#AAA497"/>
 <rect x="25" y="587" width="214" height="46" fill="#C1B0CE"/>
-<text x="24" y="657" fill="#BDB7AB" font-weight="700">Clematis</text>
+<text x="24" y="657" fill="#BDB7AB" font-weight="700">Tamarisk</text>
 <text x="24" y="681" fill="#AAA497" >Magenta</text>
 <text x="24" y="705" fill="#AAA497" >#C1B0CE</text>
 <rect x="258" y="586" width="216" height="48" fill="#AAA497"/>
@@ -77,7 +77,7 @@
 <text x="258" y="899" fill="#AAA497" >#402E33</text>
 <rect x="492" y="780" width="216" height="48" fill="#AAA497"/>
 <rect x="493" y="781" width="214" height="46" fill="#293847"/>
-<text x="492" y="851" fill="#BDB7AB" font-weight="700">Grotto</text>
+<text x="492" y="851" fill="#BDB7AB" font-weight="700">Morgulduin</text>
 <text x="492" y="875" fill="#AAA497" >Changed line</text>
 <text x="492" y="899" fill="#AAA497" >#293847</text>
 <rect x="726" y="780" width="216" height="48" fill="#AAA497"/>
