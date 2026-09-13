@@ -179,10 +179,10 @@
       "polarity": "dark",
       "colors": {
         "Lebethron": "#000000",
-        "Flint": "#AAA497",
+        "Cedar": "#AAA497",
         "Briar": "#B8595C",
         "Juniper": "#A6C995",
-        "Gilrain": "#9DBDE0",
+        "Hyacinth": "#9DBDE0",
         "Elanor": "#D0BD91",
         "Tamarisk": "#C1B0CE",
         "Cypress": "#273B31",
@@ -202,8 +202,8 @@
           "meaning": "Black wood used for the casket holding the Crown of Gondor.",
           "source": "https://tolkiengateway.net/wiki/Lebethron"
         },
-        "Flint": {
-          "meaning": "Warm flint gray; a poetic stone association with Ithilien\u2019s rocky landscape, not a claim about its geology.",
+        "Cedar": {
+          "meaning": "Warm gray inspired by weathered cedar bark. Cedars grow in Ithilien; the exact shade is a botanical interpretation, not a color specified by Tolkien.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Briar": {
@@ -214,9 +214,9 @@
           "meaning": "Junipers grow in Ithilien; pale green is a botanical foliage interpretation evoking evergreen scrub.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
-        "Gilrain": {
-          "meaning": "A river of Gondor; soft blue interpreted from its flowing water, not a color specified by Tolkien.",
-          "source": "https://tolkiengateway.net/wiki/Gilrain"
+        "Hyacinth": {
+          "meaning": "Soft blue inspired by woodland hyacinth flowers. Tolkien describes their leaves in Ithilien; the floral shade is a botanical interpretation, not a color specified in that passage.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Elanor": {
           "meaning": "Muted gold inspired by the golden elanor flowers of L\u00f3rien; a broader Tolkien connection, interpreted for Dusk.",
@@ -275,7 +275,7 @@
       "highlight": {
         "background": "Briar",
         "foreground": "Lebethron",
-        "border": "Flint",
+        "border": "Cedar",
         "cursor": "Briar",
         "cursorBlock": "Briar"
       },
@@ -286,13 +286,13 @@
         "surface0": "Arnen",
         "surface1": "Arnen",
         "surface2": "Morgai",
-        "border": "Flint",
+        "border": "Cedar",
         "search": "Heather"
       },
       "foregrounds": {
-        "muted": "Flint",
-        "comment": "Flint",
-        "subtext": "Flint",
+        "muted": "Cedar",
+        "comment": "Cedar",
+        "subtext": "Cedar",
         "text": "Ithil",
         "bright": "Ithil"
       },
@@ -301,10 +301,10 @@
         "sage": "Juniper",
         "gold": "Ithil",
         "ochre": "Tamarisk",
-        "clay": "Gilrain",
+        "clay": "Hyacinth",
         "coral": "Rose",
         "aqua": "Poros",
-        "blue": "Gilrain",
+        "blue": "Hyacinth",
         "mauve": "Tamarisk"
       },
       "ansi": {
@@ -312,15 +312,15 @@
         "red": "Rose",
         "green": "Juniper",
         "yellow": "Elanor",
-        "blue": "Gilrain",
+        "blue": "Hyacinth",
         "magenta": "Tamarisk",
         "cyan": "Poros",
         "white": "Ithil",
-        "brightBlack": "Flint",
+        "brightBlack": "Cedar",
         "brightRed": "Rose",
         "brightGreen": "Juniper",
         "brightYellow": "Elanor",
-        "brightBlue": "Gilrain",
+        "brightBlue": "Hyacinth",
         "brightMagenta": "Tamarisk",
         "brightCyan": "Poros",
         "brightWhite": "Ithil",

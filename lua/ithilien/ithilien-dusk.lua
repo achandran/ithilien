@@ -2,10 +2,10 @@
 return {
   colors = {
     ["Lebethron"] = "#000000",
-    ["Flint"] = "#AAA497",
+    ["Cedar"] = "#AAA497",
     ["Briar"] = "#B8595C",
     ["Juniper"] = "#A6C995",
-    ["Gilrain"] = "#9DBDE0",
+    ["Hyacinth"] = "#9DBDE0",
     ["Elanor"] = "#D0BD91",
     ["Tamarisk"] = "#C1B0CE",
     ["Cypress"] = "#273B31",

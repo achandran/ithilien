@@ -67,7 +67,7 @@
     "extras/codex/themes/ithilien-dusk.tmTheme": "ca88fe3450caec5576f4ef458a67b77ac3736bfe88010af83a92ad4717f30f63",
     "extras/ghostty/themes/ithilien_dusk.conf": "5ae27e1cc3d73b597518f78a04f700ba5a3efdce642f50bac15193b04bea03de",
     "extras/shell/ithilien-dusk.zsh": "b752f9df15304e2b1f1608c0c05641dc302586ef8a46b464d37cc6a272775f75",
-    "scripts/palette/ithilien.json": "4d04046c7870f2290c91f513f48cfdf0297944ae35a3589e7ea866eaae81d218"
+    "scripts/palette/ithilien.json": "84d061a037953065adb49cb0efbd5b87ebccfdd9a787ae07df7d4fc3ac16b889"
   },
   "python_treesitter_lsp": {
     "captures": 42,
@@ -115,12 +115,14 @@
       "Shale": "Arnen",
       "Foam": "Poros",
       "Rosehip": "Rose",
-      "Mist": "Gilrain",
+      "Mist": "Hyacinth",
       "Grotto": "Morgulduin",
       "Olive": "Juniper",
       "Graphite": "Duath",
       "Slate": "Morgai",
-      "Clematis": "Tamarisk"
+      "Clematis": "Tamarisk",
+      "Flint": "Cedar",
+      "Gilrain": "Hyacinth"
     },
     "scope": "Names and notes only; frozen resolved-palette fingerprints are unchanged. Existing native evidence applies to identical colors and role mappings."
   }

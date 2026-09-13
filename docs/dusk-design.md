@@ -8,7 +8,7 @@ Dawn remains unchanged. Each palette has 18 distinct named sRGB colors.
 - Reading text: Ithil `#BDB7AB`.
 - Soft surfaces: Arnen `#2C2E2C` (cursor line and popups).
 - Muted surfaces: Morgai `#303437` (statuslines and secondary panels).
-- Supporting text: Flint `#AAA497`.
+- Supporting text: Cedar `#AAA497`.
 - Typography: Berkeley Mono Retina, 16 pt. Dawn uses Medium, 16 pt.
 
 Both variants share Briar selection/cursors, Heather search, Celandine exact
@@ -26,8 +26,8 @@ Middle-earth’s geology. Functional roles remain stable: `foregrounds.text` →
 [Dusk palette reference](dusk-palette.md).
 
 Dusk’s names combine Ithilien’s gardens and moonlight with its darker borders:
-Dúath, Arnen, and Morgai for surfaces; Ithil and Flint for text; Rose, Juniper,
-Elanor, Gilrain, Tamarisk, and Poros for terminal accents; Cypress, Bramble, and
+Dúath, Arnen, and Morgai for surfaces; Ithil and Cedar for text; Rose, Juniper,
+Elanor, Hyacinth, Tamarisk, and Poros for terminal accents; Cypress, Bramble, and
 Morgulduin for diff backgrounds. The four shared names remain unchanged.
 Dúath is spelled `Duath` in code. Exact shades are design interpretations.
 
@@ -39,19 +39,19 @@ Surface designations match Dawn: canvas (`backgrounds.base`), soft
 the same 60 functional roles across backgrounds, foregrounds, accents, ANSI,
 diffs, and highlights. Arnen `#2C2E2C` supports popups and the cursor line; Morgai
 `#303437` distinguishes statuslines and secondary panels. Their OKLab distance is
-0.0256. Flint text on Morgai measures 5.06:1. This prioritizes readable supporting
+0.0256. Cedar text on Morgai measures 5.06:1. This prioritizes readable supporting
 text over a larger distance between soft and muted surfaces.
 
 Juniper `#A6C995` marks success and added-code signs, Poros `#83C9BE` marks hints,
-and Gilrain `#9DBDE0` marks information. Juniper–Poros separation is 0.0634 in OKLab;
-Poros–Gilrain separation is 0.0747. These measurements support comparison, not a
+and Hyacinth `#9DBDE0` marks information. Juniper–Poros separation is 0.0634 in OKLab;
+Poros–Hyacinth separation is 0.0747. These measurements support comparison, not a
 guarantee of perceptual recognition. Reading text, comments, the canvas, diff
 backgrounds, and all four shared colors retain their selected values.
 
 ## Syntax
 
 Everyday syntax follows Dawn’s neutral treatment: Ithil for functions,
-identifiers, keywords, types, numbers, and constants; Flint for strings and
+identifiers, keywords, types, numbers, and constants; Cedar for strings and
 comments. Keywords and types use bold when enabled. Special syntax, regexes,
 and preprocessor highlights retain selective accents as in Dawn. Diagnostics,
 terminal ANSI colors, diffs, and interactions retain their distinct colors.
