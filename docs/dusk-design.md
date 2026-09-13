@@ -6,7 +6,7 @@ Dawn remains unchanged. Each palette has 18 distinct named sRGB colors.
 
 - Canvas: Graphite `#202120`.
 - Reading text: Parchment `#BDB7AB`.
-- Raised surfaces: Shale `#282A28`.
+- Raised surfaces: Shale `#2C2E2C`.
 - Supporting text: Flint `#AAA497`.
 - Typography: Berkeley Mono Retina, 16 pt. Dawn uses Medium, 16 pt.
 
@@ -24,15 +24,17 @@ Middle-earth’s geology. Functional roles remain stable: `foregrounds.text` →
 `Parchment` → `#BDB7AB`. Full values and roles are in the generated
 [Dusk palette reference](dusk-palette.md).
 
-The naming refactor preserves every resolved role and hex value. Existing native
-captures and their source hashes record the pre-rename implementation; the frozen
-resolved-palette fingerprints verify that its appearance still applies. Direct
-users of Dusk’s Lua `.colors` table should adopt the new names; role-based
-integrations require no changes.
+The selected refinement uses Foam `#83C9BE` for clearer separation of types and
+hints from Olive strings, Mist `#9DBDE0` for keywords and information, and Shale
+`#2C2E2C` for more visible raised surfaces. Reading text, comments, the canvas,
+diff backgrounds, and all four shared colors remain unchanged. The palette still
+contains 18 colors. Tintprobe OKLab distance increases from 0.0255 to 0.0471
+between Olive and Foam, and from 0.0334 to 0.0747 between Foam and Mist; these
+measurements support comparison, not a guarantee of perceptual recognition.
 
 ## Validation
 
-The final implementation passes 65 unit/regression tests, 136 authored contrast
+The final implementation passes 66 unit/regression tests, 136 authored contrast
 checks, 154 native Neovim captures under Tintprobe's strict comparison gates, and
 20 native interaction captures covering diagnostics, completion, and fzf.
 Dawn's native highlight, contrast, and character-diff checks also pass.
