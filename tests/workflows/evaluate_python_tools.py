@@ -1,3 +1,4 @@
+from tintprobe.context import evaluation_path, script_path, project_resource, EVALUATION
 """Native pytest and debugpy plugin screens; no personal Neovim configuration is loaded."""
 import argparse
 import hashlib
@@ -5,10 +6,10 @@ import json
 import shutil
 import subprocess
 from pathlib import Path
-from ithilienlib import ROOT
-from evaluate_interactions import isolated_capture, assess
+from tintprobe.context import ROOT
+from tintprobe.evaluate_interactions import isolated_capture, assess
 from evaluate_installed_workflows import write_gallery
-from evaluation_checks import effective_colors
+from tintprobe.evaluation_checks import effective_colors
 
 SCENES=('neotest-summary','neotest-output','dap-scopes')
 
@@ -42,7 +43,7 @@ def check(shot,colors):
     return {'pass':not failures and not off and not contrast['failures'],'failures':failures,'off_palette':off,'contrast':contrast}
 
 def prepare(fetch=False):
-    from evaluation_dependencies import plugin_dependencies
+    from tintprobe.evaluation_dependencies import plugin_dependencies
     return plugin_dependencies('evaluation/python-tools-dependencies.json', fetch)
 
 
@@ -70,11 +71,11 @@ vim.cmd('colorscheme ithilien-dawn')
             for state in ('initial','reload'):
                 print(scene,width,state,flush=True)
                 try:
-                    shot=isolated_capture(adapter,width,scene,nvim=shutil.which('nvim'),action=state,workflow=str(ROOT/'evaluation/python-tools.lua'))
+                    shot=isolated_capture(adapter,width,scene,nvim=shutil.which('nvim'),action=state,workflow=str(evaluation_path('python-tools.lua')))
                     shots.append(shot);r=check(shot,colors)
                 except Exception as exc:r={'pass':False,'error':str(exc)}
                 results.append(dict(scene=scene,width=width,state=state,**r))
-    report={'title':'Python testing and debugging workflows','pass':all(r['pass'] for r in results),'results':results,'dependencies':deps,'python_packages':versions,'python_parser_sha256':parser_digest,'nvim':subprocess.check_output(['nvim','--version'],text=True).splitlines()[0],'render_profile':json.loads((ROOT/'evaluation/render-profile.json').read_text()),'palette_sha256':hashlib.sha256(palette).hexdigest(),'fixture_sha256':hashlib.sha256((ROOT/'evaluation/python-tools.lua').read_bytes()).hexdigest(),'scope':'Actual pytest results and debugpy stopped state through Neotest and DAP UI. Native Neovim cells, not Ghostty pixels or comfort proof.'}
+    report={'title':'Python testing and debugging workflows','pass':all(r['pass'] for r in results),'results':results,'dependencies':deps,'python_packages':versions,'python_parser_sha256':parser_digest,'nvim':subprocess.check_output(['nvim','--version'],text=True).splitlines()[0],'render_profile':json.loads((evaluation_path('render-profile.json')).read_text()),'palette_sha256':hashlib.sha256(palette).hexdigest(),'fixture_sha256':hashlib.sha256((evaluation_path('python-tools.lua')).read_bytes()).hexdigest(),'scope':'Actual pytest results and debugpy stopped state through Neotest and DAP UI. Native Neovim cells, not Ghostty pixels or comfort proof.'}
     (output/'report.json').write_text(json.dumps(report,indent=2));(output/'cells.json').write_text(json.dumps(shots))
     write_gallery(output,report,shots)
     return report

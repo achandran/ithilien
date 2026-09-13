@@ -1,3 +1,4 @@
+from tintprobe.context import evaluation_path, script_path, project_resource, EVALUATION
 """Capture actual installed plugin workflows with deterministic Python fixtures."""
 import argparse
 import hashlib
@@ -7,10 +8,10 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
-from evaluate_interactions import isolated_capture, assess
-from compare_themes import render
-from evaluation_checks import effective_colors
-from ithilienlib import ROOT
+from tintprobe.evaluate_interactions import isolated_capture, assess
+from tintprobe.compare_themes import render
+from tintprobe.evaluation_checks import effective_colors
+from tintprobe.context import ROOT
 
 SCENES = {
     'python-lsp': ('Reading',), 'python-diff': ('str(total)', 'total='), 'python-search': ('values',), 'python-visual': ('values', 'total'),
@@ -154,17 +155,17 @@ def run(output, init, lazy, scenes=None, widths=(100,160), states=('initial','re
                 print(f'{scene} {width} {state}',flush=True)
                 try:
                     shot=isolated_capture(adapter(init,lazy),width,scene,nvim=shutil.which('nvim'),action=state,
-                                          workflow=str(ROOT/'evaluation/installed-workflows.lua'))
+                                          workflow=str(evaluation_path('installed-workflows.lua')))
                     records.append(shot);results.append(dict(scene=scene,width=width,state=state,**check(shot,allowed)))
                 except Exception as exc:
                     results.append({'scene':scene,'width':width,'state':state,'pass':False,'error':str(exc)})
     report={'pass':all(r['pass'] for r in results) and bool(results),'results':results,
-            'fixture_sha256':hashlib.sha256((ROOT/'evaluation/installed-workflows.lua').read_bytes()).hexdigest(),
+            'fixture_sha256':hashlib.sha256((evaluation_path('installed-workflows.lua')).read_bytes()).hexdigest(),
             'palette_sha256':hashlib.sha256((ROOT/'palette/ithilien-dawn.json').read_bytes()).hexdigest(),
             'plugin_revisions':revisions,
             'nvim':subprocess.check_output(['nvim','--version'],text=True).splitlines()[0],
             'scope':'Actual installed plugin renderers and Python Tree-sitter. Deterministic diagnostics plus an explicit live BasedPyright case; normal configured servers are disabled for reproducibility. Neovim RGB cell captures, not native Ghostty screenshots. No comfort proof.',
-            'render_profile':json.loads((ROOT/'evaluation/render-profile.json').read_text())}
+            'render_profile':json.loads((evaluation_path('render-profile.json')).read_text())}
     (output/'report.json').write_text(json.dumps(report,indent=2))
     (output/'cells.json').write_text(json.dumps(records))
     write_gallery(output,report,records)

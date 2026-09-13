@@ -5,11 +5,11 @@ neotest-python, nvim-dap, and DAP UI. It does not load your personal Neovim conf
 
 ```sh
 uv sync --locked
-.venv/bin/python scripts/evaluate_python_tools.py --fetch-dependencies
+.venv/bin/python -m tintprobe --project-root . workflow evaluate_python_tools --fetch-dependencies
 # Offline subsequent runs:
-.venv/bin/python scripts/evaluate_python_tools.py
+.venv/bin/python -m tintprobe --project-root . workflow evaluate_python_tools
 # Combined gate, after dependencies are prepared:
-.venv/bin/python scripts/evaluate_suite.py --python-tools
+.venv/bin/python -m tintprobe --project-root . suite --python-tools
 ```
 
 A compiled Python Tree-sitter parser must be available under

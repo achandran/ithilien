@@ -1,7 +1,0 @@
-3993 vi ghosttyconfig
-3992 cp ~/.config/ghostty/config ghosttyconfig
-3978 cat ~/.config/ghostty/themes/ithilien_dawn.conf
-3989 git diff -- ghosttyconfig
-4000 printf 'ghostty configuration: café → 東京'\ncat ~/.config/ghostty/config
-4001 git -C ~/code/dotfiles diff --word-diff=plain --color=always -- ghosttyconfig
-4002 ghostty --config-file=/a/very/long/path/to/a/configuration/file/that/needs/horizontal/truncation/to/retain/a/meaningful/selected/result

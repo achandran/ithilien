@@ -1,6 +1,6 @@
 # Picker and completion profile
 
-Run `.venv/bin/python scripts/evaluate_pickers.py --fetch-dependencies` once,
+Run `.venv/bin/python -m tintprobe --project-root . workflow evaluate_pickers --fetch-dependencies` once,
 then omit the fetch flag for offline runs. Plugin revisions are pinned in
 `evaluation/pickers-dependencies.json`; no personal configuration is loaded.
 

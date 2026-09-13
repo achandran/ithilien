@@ -6,8 +6,8 @@ vim.cmd.colorscheme('ithilien-dawn')
 local autocmd_count=#vim.api.nvim_get_autocmds({group='IthilienDiff'})
 vim.cmd('filetype on')
 vim.cmd('syntax on')
-local path=vim.fn.getcwd()..'/evaluation/fixtures/ithilien/ghosttyconfig.after.conf'
-local old=vim.fn.readfile('evaluation/fixtures/ithilien/ghosttyconfig.before.conf')
+local path=vim.fn.getcwd()..'/tests/fixtures/diff-presentation/ghosttyconfig.after.conf'
+local old=vim.fn.readfile('tests/fixtures/diff-presentation/ghosttyconfig.before.conf')
 vim.api.nvim_buf_set_lines(0,0,-1,false,old)
 vim.b.ithilien_diff_label='INDEX'
 vim.cmd('diffthis')

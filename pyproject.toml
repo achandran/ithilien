@@ -4,9 +4,7 @@ version = "0.1.0"
 description = "Palette audits and theme generators for Ithilien"
 requires-python = ">=3.12"
 dependencies = [
-  "coloraide>=8.10,<9",
-  "pillow>=11,<13",
-  "pynvim>=0.6.0",
+  "tintprobe==0.1.0",
 ]
 
 [dependency-groups]
@@ -22,3 +20,6 @@ package = false
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra"
+
+[tool.uv.sources]
+tintprobe = { git = "https://github.com/achandran/tintprobe", rev = "17797b0225105b90344a6f75f95f61c059a301e8" }

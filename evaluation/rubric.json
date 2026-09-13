@@ -68,5 +68,6 @@
   },
   "inline_delta_e_target": 15,
   "line_delta_e_target": 5,
-  "critical_inline_delta_e_min": 5
+  "critical_inline_delta_e_min": 5,
+  "legacy_weighted_score": true
 }

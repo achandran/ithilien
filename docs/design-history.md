@@ -38,3 +38,9 @@ available at [commit cd88baf](https://github.com/achandran/ithilien/tree/cd88baf
 evidence also belongs in ignored `evaluation/results/`; see
 [development](development.md) for execution and coverage limits. Saved native
 captures and dependency builds were preserved so offline analysis remains available.
+
+
+The reusable evaluation engine was subsequently extracted into
+[Tintprobe](https://github.com/achandran/tintprobe). Its repository preserves the
+shared source history. Ithilien retains its approved palette policy and native
+plugin assertions, and pins the evaluator used to generate measurements.

@@ -3,7 +3,7 @@
 Run from the repository virtual environment:
 
 ```sh
-.venv/bin/python scripts/evaluate_installed_workflows.py --output evaluation/results/installed-workflows
+.venv/bin/python -m tintprobe --project-root . workflow evaluate_installed_workflows --output evaluation/results/installed-workflows
 ```
 
 This captures the actual installed Lazy configuration, with the working Ithilien

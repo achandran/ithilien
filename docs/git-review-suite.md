@@ -6,11 +6,11 @@ The Ithilien palette remains frozen.
 
 ```sh
 # One-time dependency fetch, then the full 28-case matrix:
-.venv/bin/python scripts/evaluate_git_review.py --fetch-dependencies
+.venv/bin/python -m tintprobe --project-root . workflow evaluate_git_review --fetch-dependencies
 # Subsequent unattended runs require no network:
-.venv/bin/python scripts/evaluate_git_review.py
+.venv/bin/python -m tintprobe --project-root . workflow evaluate_git_review
 # Include this required gate in the combined evaluation:
-.venv/bin/python scripts/evaluate_suite.py --git-review
+.venv/bin/python -m tintprobe --project-root . suite --git-review
 ```
 
 Revisions and source URLs are in `evaluation/git-review-dependencies.json`.

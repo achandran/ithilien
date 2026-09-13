@@ -2,8 +2,8 @@
 import hashlib,json,shutil,subprocess,tempfile
 from pathlib import Path
 from ithilienlib import ROOT
-from evaluate_theme import capture
-from evaluation_checks import effective_colors
+from tintprobe.evaluate_theme import capture
+from tintprobe.evaluation_checks import effective_colors
 
 def generate(width,state,filename):
     nvim=shutil.which('nvim')

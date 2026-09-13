@@ -130,4 +130,4 @@ Copy or source the files for the applications you use; see the manual
 installation instructions below.
 
 [Extra installation instructions](docs/installation.md) ·
-[Development](docs/development.md) · [Preview details](docs/readme-generation.md)
+[Development](docs/development.md) · [Tintprobe evaluator](https://github.com/achandran/tintprobe) · [Preview details](docs/readme-generation.md)

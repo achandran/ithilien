@@ -7,7 +7,7 @@ and README together. Do not edit the generated README or images directly.
 The images require macOS, Swift/AppKit, Neovim, the `evaluation/deps/kanso` checkout,
 and Berkeley Mono Medium (regular and oblique OTF files in `~/Library/Fonts`).
 Missing dependencies fail the build rather than silently keeping a stale image.
-The synthetic Python fixture lives in `evaluation/fixtures/readme`.
+The synthetic Python fixture lives in the Tintprobe package’s `data/fixtures/readme` directory.
 
 This is a rasterization of Neovim's external UI cells with built-in Python
 syntax, not a terminal screenshot or a Tree-sitter/LSP capture. Its provenance

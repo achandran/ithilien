@@ -12,7 +12,9 @@
     "sources": {
       "evaluation/deps/kanso": "https://github.com/webhooked/kanso.nvim"
     },
-    "aesthetic_profile": "formex-reef-gmt-white-steel"
+    "aesthetic_profile": "formex-reef-gmt-white-steel",
+    "codex_theme": "extras/codex/themes/ithilien-dawn.tmTheme",
+    "zsh_theme": "extras/shell/ithilien-dawn.zsh"
   },
   {
     "id": "kanso-pearl",
