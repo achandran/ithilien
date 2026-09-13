@@ -12,11 +12,11 @@
   },
   "backgrounds": {
     "crust": "#202120",
-    "mantle": "#303437",
+    "mantle": "#373B3E",
     "base": "#202120",
     "surface0": "#2C2E2C",
     "surface1": "#2C2E2C",
-    "surface2": "#303437",
+    "surface2": "#373B3E",
     "border": "#AAA497",
     "search": "#D6C6DE"
   },
@@ -29,7 +29,7 @@
   },
   "accents": {
     "olive": "#BDB7AB",
-    "sage": "#ADC5B4",
+    "sage": "#A6C995",
     "gold": "#BDB7AB",
     "ochre": "#C1B0CE",
     "clay": "#9DBDE0",
@@ -41,7 +41,7 @@
   "ansi": {
     "black": "#000000",
     "red": "#E09A9D",
-    "green": "#ADC5B4",
+    "green": "#A6C995",
     "yellow": "#D0BD91",
     "blue": "#9DBDE0",
     "magenta": "#C1B0CE",
@@ -49,7 +49,7 @@
     "white": "#BDB7AB",
     "brightBlack": "#AAA497",
     "brightRed": "#E09A9D",
-    "brightGreen": "#ADC5B4",
+    "brightGreen": "#A6C995",
     "brightYellow": "#D0BD91",
     "brightBlue": "#9DBDE0",
     "brightMagenta": "#C1B0CE",

@@ -14,10 +14,10 @@
 <text x="258" y="195" fill="#AAA497" >Soft surface</text>
 <text x="258" y="219" fill="#AAA497" >#2C2E2C</text>
 <rect x="492" y="100" width="216" height="48" fill="#AAA497"/>
-<rect x="493" y="101" width="214" height="46" fill="#303437"/>
+<rect x="493" y="101" width="214" height="46" fill="#373B3E"/>
 <text x="492" y="171" fill="#BDB7AB" font-weight="700">Slate</text>
 <text x="492" y="195" fill="#AAA497" >Muted surface</text>
-<text x="492" y="219" fill="#AAA497" >#303437</text>
+<text x="492" y="219" fill="#AAA497" >#373B3E</text>
 <rect x="726" y="100" width="216" height="48" fill="#AAA497"/>
 <rect x="727" y="101" width="214" height="46" fill="#000000"/>
 <text x="726" y="171" fill="#BDB7AB" font-weight="700">Lebethron</text>
@@ -40,10 +40,10 @@
 <text x="24" y="535" fill="#AAA497" >Red</text>
 <text x="24" y="559" fill="#AAA497" >#E09A9D</text>
 <rect x="258" y="440" width="216" height="48" fill="#AAA497"/>
-<rect x="259" y="441" width="214" height="46" fill="#ADC5B4"/>
+<rect x="259" y="441" width="214" height="46" fill="#A6C995"/>
 <text x="258" y="511" fill="#BDB7AB" font-weight="700">Olive</text>
 <text x="258" y="535" fill="#AAA497" >Green</text>
-<text x="258" y="559" fill="#AAA497" >#ADC5B4</text>
+<text x="258" y="559" fill="#AAA497" >#A6C995</text>
 <rect x="492" y="440" width="216" height="48" fill="#AAA497"/>
 <rect x="493" y="441" width="214" height="46" fill="#D0BD91"/>
 <text x="492" y="511" fill="#BDB7AB" font-weight="700">Elanor</text>

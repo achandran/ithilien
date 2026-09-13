@@ -7,7 +7,7 @@ Dawn remains unchanged. Each palette has 18 distinct named sRGB colors.
 - Canvas: Graphite `#202120`.
 - Reading text: Parchment `#BDB7AB`.
 - Soft surfaces: Shale `#2C2E2C` (cursor line and popups).
-- Muted surfaces: Slate `#303437` (statuslines and secondary panels).
+- Muted surfaces: Slate `#373B3E` (statuslines and secondary panels).
 - Supporting text: Flint `#AAA497`.
 - Typography: Berkeley Mono Retina, 16 pt. Dawn uses Medium, 16 pt.
 
@@ -25,17 +25,19 @@ Middle-earth’s geology. Functional roles remain stable: `foregrounds.text` →
 `Parchment` → `#BDB7AB`. Full values and roles are in the generated
 [Dusk palette reference](dusk-palette.md).
 
-The selected refinement uses Foam `#83C9BE` for clearer separation of types and
-hints from Olive strings, Mist `#9DBDE0` for keywords and information, and Shale
-`#2C2E2C` for more visible soft surfaces. Surface designations match Dawn: canvas
-(`backgrounds.base`), soft (`backgrounds.surface1`), and muted
-(`backgrounds.mantle`). Both palettes define the same 60 functional roles across
-backgrounds, foregrounds, accents, ANSI, diffs, and highlights. Dusk uses Slate
-for muted surfaces, keeping statuslines distinct from Shale popups and the cursor line. Reading text, comments, the canvas,
-diff backgrounds, and all four shared colors remain unchanged. The palette still
-contains 18 colors. Tintprobe OKLab distance increases from 0.0255 to 0.0471
-between Olive and Foam, and from 0.0334 to 0.0747 between Foam and Mist; these
-measurements support comparison, not a guarantee of perceptual recognition.
+Surface designations match Dawn: canvas (`backgrounds.base`), soft
+(`backgrounds.surface1`), and muted (`backgrounds.mantle`). Both palettes define
+the same 60 functional roles across backgrounds, foregrounds, accents, ANSI,
+diffs, and highlights. Shale `#2C2E2C` supports popups and the cursor line; Slate
+`#373B3E` distinguishes statuslines and secondary panels. Their OKLab distance is
+0.0520. Flint text on Slate measures 4.56:1, so further lightening would leave
+little readability margin.
+
+Olive `#A6C995` marks success and added-code signs, Foam `#83C9BE` marks hints,
+and Mist `#9DBDE0` marks information. Olive–Foam separation is 0.0634 in OKLab;
+Foam–Mist separation is 0.0747. These measurements support comparison, not a
+guarantee of perceptual recognition. Reading text, comments, the canvas, diff
+backgrounds, and all four shared colors retain their selected values.
 
 ## Syntax
 
@@ -48,7 +50,7 @@ This changes Neovim syntax mappings, not the 18-color palette or application por
 
 ## Validation
 
-The final implementation passes 68 unit/regression tests, 136 authored contrast
+The final implementation passes 72 unit/regression tests, 136 authored contrast
 checks, 154 native Neovim captures under Tintprobe's strict comparison gates, and
 20 native interaction captures covering diagnostics, completion, and fzf.
 Dawn's native highlight, contrast, and character-diff checks also pass.

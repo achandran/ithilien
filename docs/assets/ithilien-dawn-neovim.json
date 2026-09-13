@@ -3,7 +3,7 @@
     "before": "57e54009c25b58b1711bcdc3314ca180f5acec7e8453eeec6e6986ec256490fd",
     "after": "f06dfde3ac94fd66687da08ff7ee707785a2a0a1191e345a4b20670fd3f7fa44"
   },
-  "palette_sha256": "4afc309b031533aeb993e001a2f314e18cb5d141c8960c0c667b940fa1ba7df2",
+  "palette_sha256": "c725ffe92fc70d3995afb66a2cb7aa092c1dcc765eb6a5c7eb22fca350160a57",
   "nvim": "NVIM v0.12.5",
   "kanso_revision": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
   "kind": "Native Neovim UI cells rasterized using Berkeley Mono Medium 16pt; not a terminal screenshot"
