@@ -5,7 +5,41 @@
 Dawn and Dusk are on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Loading Ithilien requests `inline:char` on supported Neovim versions. Switching to another colorscheme restores the previous `diffopt` unless you changed it in the meantime.
 
 
-Copy the [LazyVim configuration from the README](../README.md#lazyvim) into your plugin specifications, then run `:Lazy sync`. The spec installs both variants, using Kanso's Pearl base for Dawn and Ink base for Dusk. Select `ithilien-dawn` or `ithilien-dusk` with `:colorscheme`; `ithilien` remains an alias for Dawn.
+For a minimal lazy.nvim setup, see the [README](../README.md#install). Select `ithilien-dawn` or `ithilien-dusk` with `:colorscheme`; `ithilien` is an alias for Dawn.
+
+### LazyVim
+
+Save it as `~/.config/nvim/lua/plugins/ithilien.lua`, then run `:Lazy sync`.
+It includes lualine integration.
+
+```lua
+return {
+  {
+    "achandran/ithilien",
+    dependencies = { "webhooked/kanso.nvim" },
+    lazy = false,
+    priority = 1000,
+    opts = {
+      bold = true,
+      italics = true,
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "ithilien-dawn", -- or "ithilien-dusk"
+    },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      require("ithilien.statusline").configure(opts)
+    end,
+  },
+}
+```
+
+Update the plugin with `:Lazy update`.
 
 ## Ghostty
 
