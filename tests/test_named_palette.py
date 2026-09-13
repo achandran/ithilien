@@ -12,7 +12,7 @@ from ithilienlib import ROOT, ROLE_FAMILIES, load_palette, load_palette_source, 
 class NamedPalette(unittest.TestCase):
     def setUp(self):
         self.source = load_palette_source('ithilien-dawn')
-        self.shared = json.loads((ROOT/'palette/ithilien-shared.json').read_text())
+        self.shared = json.loads((ROOT/'scripts/palette/ithilien-shared.json').read_text())
 
     def test_all_roles_use_named_colors(self):
         colors = self.source['colors']

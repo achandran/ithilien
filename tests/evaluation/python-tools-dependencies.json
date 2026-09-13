@@ -1,36 +1,36 @@
 {
   "plenary.nvim": {
-    "path": "evaluation/deps/plenary.nvim",
+    "path": "tests/evaluation/deps/plenary.nvim",
     "revision": "74b06c6c75e4eeb3108ec01852001636d85a932b",
     "url": "https://github.com/nvim-lua/plenary.nvim.git"
   },
   "kanso": {
-    "path": "evaluation/deps/kanso",
+    "path": "tests/evaluation/deps/kanso",
     "revision": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
     "url": "https://github.com/webhooked/kanso.nvim.git"
   },
   "neotest": {
-    "path": "evaluation/deps/neotest",
+    "path": "tests/evaluation/deps/neotest",
     "url": "https://github.com/nvim-neotest/neotest.git",
     "revision": "27bf921498043f7ecd821d6db68d05de244bbd02"
   },
   "neotest-python": {
-    "path": "evaluation/deps/neotest-python",
+    "path": "tests/evaluation/deps/neotest-python",
     "url": "https://github.com/nvim-neotest/neotest-python.git",
     "revision": "1b56ca4ba51c6014f986d6548ee629bdc95589d1"
   },
   "nvim-nio": {
-    "path": "evaluation/deps/nvim-nio",
+    "path": "tests/evaluation/deps/nvim-nio",
     "url": "https://github.com/nvim-neotest/nvim-nio.git",
     "revision": "edcc181a875301dd21840189aa2f2f9ad69fc172"
   },
   "nvim-dap": {
-    "path": "evaluation/deps/nvim-dap",
+    "path": "tests/evaluation/deps/nvim-dap",
     "url": "https://github.com/mfussenegger/nvim-dap.git",
     "revision": "cfa2d58f4537aca6ca83e2de1a0d9f1491121264"
   },
   "nvim-dap-ui": {
-    "path": "evaluation/deps/nvim-dap-ui",
+    "path": "tests/evaluation/deps/nvim-dap-ui",
     "url": "https://github.com/rcarriga/nvim-dap-ui.git",
     "revision": "cc9dd33aade7f20bae414d0cba163bc60d4d4b43"
   }

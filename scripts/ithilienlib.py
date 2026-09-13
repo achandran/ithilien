@@ -10,7 +10,7 @@ from tintprobe.colors import Color
 
 
 ROOT = Path(__file__).resolve().parent.parent
-PALETTE_DIR = ROOT / "palette"
+PALETTE_DIR = ROOT / "scripts/palette"
 PALETTE_PATH = PALETTE_DIR / "ithilien-dusk.json"
 SHARED_PATH = PALETTE_DIR / "ithilien-shared.json"
 

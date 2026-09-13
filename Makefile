@@ -3,7 +3,7 @@
 UV ?= uv
 
 # Optional checkout-local toolchain setting, never committed.
--include evaluation/local.mk
+-include tests/evaluation/local.mk
 
 # Optional rustup installation with cargo/ and rustup/ beneath this directory.
 # Otherwise use the user's normal toolchain from PATH.
@@ -39,9 +39,9 @@ build:
 	$(UV) run --locked python scripts/build.py
 
 # Headless evaluation by default; add GHOSTTY_ARGS=--ghostty-capture explicitly; see docs/development.md for one-time prerequisites.
-EVALUATE_OUTPUT ?= evaluation/results/full
-CODEX_SOURCE ?= evaluation/deps/codex
-PYTHON_SOURCE ?= evaluation/deps/tree-sitter-python
+EVALUATE_OUTPUT ?= tests/evaluation/results/full
+CODEX_SOURCE ?= tests/evaluation/deps/codex
+PYTHON_SOURCE ?= tests/evaluation/deps/tree-sitter-python
 THEMES ?= ithilien-dawn
 GHOSTTY_ARGS ?=
 
@@ -61,7 +61,7 @@ evaluate-offline: test evaluate-ghostty-images
 
 # Live Neovim cases require Neovim/Kanso; targeted --cases can isolate terminal checks.
 # Native execution requires authorized Ghostty access and Screen Recording.
-GHOSTTY_OUTPUT ?= evaluation/results/ghostty
+GHOSTTY_OUTPUT ?= tests/evaluation/results/ghostty
 GHOSTTY_CAPTURE ?= --capture
 evaluate-ghostty:
 	$(UV) run --locked python -m tintprobe --project-root . ghostty $(GHOSTTY_CAPTURE) --output "$(GHOSTTY_OUTPUT)"
@@ -72,7 +72,7 @@ evaluate-ghostty-images:
 	$(UV) run --locked python -m tintprobe --project-root . images --output "$(GHOSTTY_OUTPUT)"
 
 .PHONY: evaluate-codex-ui
-CODEX_UI_OUTPUT ?= evaluation/results/codex-ui
+CODEX_UI_OUTPUT ?= tests/evaluation/results/codex-ui
 CODEX_UI_ARGS ?=
 evaluate-codex-ui:
 	$(UV) run --locked python -m tintprobe --project-root . codex-ui --source "$(CODEX_SOURCE)" --output "$(CODEX_UI_OUTPUT)" $(CODEX_UI_ARGS)

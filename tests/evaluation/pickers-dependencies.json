@@ -1,31 +1,31 @@
 {
   "plenary.nvim": {
-    "path": "evaluation/deps/plenary.nvim",
+    "path": "tests/evaluation/deps/plenary.nvim",
     "revision": "74b06c6c75e4eeb3108ec01852001636d85a932b",
     "url": "https://github.com/nvim-lua/plenary.nvim.git"
   },
   "kanso": {
-    "path": "evaluation/deps/kanso",
+    "path": "tests/evaluation/deps/kanso",
     "revision": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
     "url": "https://github.com/webhooked/kanso.nvim.git"
   },
   "telescope.nvim": {
-    "path": "evaluation/deps/telescope.nvim",
+    "path": "tests/evaluation/deps/telescope.nvim",
     "url": "https://github.com/nvim-telescope/telescope.nvim.git",
     "revision": "40aedd8a68c78a656a10a8d62d80c54af59420fb"
   },
   "snacks.nvim": {
-    "path": "evaluation/deps/snacks.nvim",
+    "path": "tests/evaluation/deps/snacks.nvim",
     "url": "https://github.com/folke/snacks.nvim.git",
     "revision": "882c996cf28183f4d63640de0b4c02ec886d01f2"
   },
   "nvim-cmp": {
-    "path": "evaluation/deps/nvim-cmp",
+    "path": "tests/evaluation/deps/nvim-cmp",
     "url": "https://github.com/hrsh7th/nvim-cmp.git",
     "revision": "2ffe79f1f021def8dd1fcd81deb16f1bb0d989f3"
   },
   "cmp-buffer": {
-    "path": "evaluation/deps/cmp-buffer",
+    "path": "tests/evaluation/deps/cmp-buffer",
     "url": "https://github.com/hrsh7th/cmp-buffer.git",
     "revision": "b74fab3656eea9de20a9b8116afa3cfc4ec09657"
   }

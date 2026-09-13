@@ -1,5 +1,5 @@
 -- Exercise Neovim's real character-level diff engine, not hand-assigned spans.
--- KANSO_ROOT=/path/to/kanso.nvim nvim --headless -u NONE -i NONE -l scripts/check_native_diff.lua
+-- KANSO_ROOT=/path/to/kanso.nvim nvim --headless -u NONE -i NONE -l tests/check_native_diff.lua
 vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT, 'Set KANSO_ROOT'))
 vim.opt.rtp:prepend(vim.fn.getcwd())
 require('ithilien').load('day')
@@ -77,7 +77,7 @@ for _,win in ipairs({left,right}) do
 end
 result.multilinePassed=true
 vim.cmd('diffoff!')
-local output = vim.env.ITHILIEN_CHECK_OUTPUT or 'evaluation/results/highlight-checks'
+local output = vim.env.ITHILIEN_CHECK_OUTPUT or 'tests/evaluation/results/highlight-checks'
 vim.fn.mkdir(output, 'p')
 vim.fn.writefile({vim.json.encode(result)},output..'/native-diffs.json')
 print((#cases+1)..' native character-diff cases passed; exact changed cells dark and undecorated')

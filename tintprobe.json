@@ -2,10 +2,10 @@
   "schema_version": 1,
   "default_theme": "ithilien-dawn",
   "palettes": {
-    "shared": "palette/ithilien-shared.json",
+    "shared": "scripts/palette/ithilien-shared.json",
     "variants": {
-      "ithilien-dawn": "palette/ithilien-dawn.json",
-      "ithilien-dusk": "palette/ithilien-dusk.json"
+      "ithilien-dawn": "scripts/palette/ithilien-dawn.json",
+      "ithilien-dusk": "scripts/palette/ithilien-dusk.json"
     }
   },
   "ports": {
@@ -20,12 +20,13 @@
     "id": "ithilien-dawn",
     "paths": [
       ".",
-      "evaluation/deps/kanso"
+      "tests/evaluation/deps/kanso"
     ],
     "setup": "require('ithilien').load('dawn')",
     "after_diff": "require('ithilien.diff').refresh()"
   },
   "contracts": {
     "ordinary_weight_diffs": true
-  }
+  },
+  "evaluation_dir": "tests/evaluation"
 }

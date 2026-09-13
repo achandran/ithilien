@@ -1,6 +1,6 @@
 # Ithilien Dawn: named colors
 
-<!-- Generated from palette/ithilien-dawn.json; do not edit by hand. -->
+<!-- Generated from scripts/palette/ithilien-dawn.json; do not edit by hand. -->
 
 All **18 named sRGB colors** define the Formex-inspired Dawn palette. Each color has one single-word name and a documented connection to Tolkien’s work. The exact shades are design interpretations, not colors measured from the books.
 

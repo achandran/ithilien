@@ -28,13 +28,15 @@ theme/plugin sources. Prepare missing pinned source checkouts once:
 make setup-evaluation
 ```
 
-This uses Tintprobe's source manifests plus `evaluation/themes.json` and the
-project plugin manifests. Sources live in ignored `evaluation/deps/`. Dirty or
+This uses Tintprobe's source manifests plus `tests/evaluation/themes.json` and the
+project plugin manifests. Sources live in ignored `tests/evaluation/deps/`. Dirty or
 mismatched checkouts are rejected rather than reset. It does not install system
 tools or request desktop permissions.
 
 `tintprobe.json` declares Ithilien's palette inputs, native ports, default adapter,
-and `tests/workflows/` directory. `evaluation/` retains project rubrics, aesthetic
+the `tests/workflows/` directory, and `evaluation_dir: "tests/evaluation"`.
+Canonical palette inputs live in `scripts/palette/`; native regression entry
+points live in `tests/`. Pytest excludes evaluation inputs and cached dependencies. `tests/evaluation/` retains project rubrics, aesthetic
 preferences, workflow scripts, and dependency declarations. Shared fixtures,
 Codex instrumentation, and engine tests live in Tintprobe's package/repository.
 The ANSI approval baseline and native diff-presentation pair remain in
@@ -47,7 +49,7 @@ and BasedPyright; Codex replay needs its pinned Rust source/toolchain, `just`, a
 `cargo-nextest`. See Tintprobe's guides for capture-specific prerequisites.
 
 The rendering profile comes from the pinned Tintprobe package. Add a local
-`evaluation/render-profile.json` only when Ithilien needs an explicit override.
+`tests/evaluation/render-profile.json` only when Ithilien needs an explicit override.
 The rubric retains experimental weighted totals with `legacy_weighted_score: true`;
 these are project heuristics, not a universal theme ranking.
 
@@ -56,13 +58,13 @@ these are project heuristics, not a universal theme ranking.
 These do not open desktop windows:
 
 ```sh
-KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_highlights.lua
-uv run --locked python scripts/check_highlight_contrast.py
-KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_native_diff.lua
-KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_diff_presentation.lua
+KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_highlights.lua
+uv run --locked python tests/check_highlight_contrast.py
+KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_native_diff.lua
+KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_diff_presentation.lua
 ```
 
-Outputs go to ignored `evaluation/results/highlight-checks/`. Override using
+Outputs go to ignored `tests/evaluation/results/highlight-checks/`. Override using
 `ITHILIEN_CHECK_OUTPUT` for Lua checks and `--output` for the contrast reader.
 
 Project-specific workflow adapters are explicit:
@@ -80,7 +82,7 @@ the canonical palette. See [testing](testing.md) for profile commands and covera
 ## Builds and evidence
 
 `make build` writes palette audit JSON/Markdown to ignored
-`evaluation/results/palette/` before generating the palette preview. To refresh
+`tests/evaluation/results/palette/` before generating the palette preview. To refresh
 only audits and ports:
 
 ```sh
@@ -89,12 +91,12 @@ uv run --locked python scripts/audit_palette.py ithilien-dusk
 uv run --locked python scripts/generate_themes.py
 ```
 
-Fresh combined runs live below `evaluation/results/full/`. A successful capture
+Fresh combined runs live below `tests/evaluation/results/full/`. A successful capture
 is not a quality pass: inspect stage execution, findings, and missing coverage.
 Native renderer cells, terminal pixels, and human comfort are distinct evidence.
 Existing screenshot caches were preserved through extraction.
 
-An optional ignored `evaluation/local.mk` may set `RUST_RUNTIME` to an isolated
+An optional ignored `tests/evaluation/local.mk` may set `RUST_RUNTIME` to an isolated
 rustup directory with `cargo/` and `rustup/` children. Codex replay temporarily
 instruments its dedicated source checkout and restores it; do not run concurrent
 replays on that checkout.
@@ -107,7 +109,7 @@ rendering quality. Historical decisions are indexed in [palette policy and histo
 ## Preview assets
 
 Edit `README.md` directly. `make build` does not rewrite it; it regenerates the
-palette chart and `assets/ithilien-dawn-neovim.png` with its provenance JSON.
+palette chart and `docs/assets/ithilien-dawn-neovim.png` with its provenance JSON.
 To refresh just the native preview, run:
 
 ```sh
@@ -129,5 +131,5 @@ Tintprobe owns the documentation for [Codex UI replay](https://github.com/achand
 [evaluator validation](https://github.com/achandran/tintprobe/blob/main/docs/evaluator-validation.md),
 and [interaction checks](https://github.com/achandran/tintprobe/blob/main/docs/interaction-evaluation.md).
 Use this checkout’s pinned commands above; upstream documentation may describe a
-newer evaluator revision. `evaluation/deps/`, `evaluation/results/`, and
-`evaluation/local.mk` remain ignored local state.
+newer evaluator revision. `tests/evaluation/deps/`, `tests/evaluation/results/`, and
+`tests/evaluation/local.mk` remain ignored local state.

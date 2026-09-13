@@ -35,7 +35,7 @@ def generate_chart():
             d.text(x, y+104, color, p['foregrounds']['muted'])
         top += 48 + ((len(items)+columns-1)//columns)*146
     assert seen == set(source['colors']), 'Every named color must appear in the chart'
-    destination = ROOT/'assets'
+    destination = ROOT/'docs/assets'
     destination.mkdir(exist_ok=True)
     d.save(destination/'ithilien-dawn-palette.svg', width, height)
     return d

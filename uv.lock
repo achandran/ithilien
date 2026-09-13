@@ -145,7 +145,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "tintprobe", git = "https://github.com/achandran/tintprobe?rev=17797b0225105b90344a6f75f95f61c059a301e8" }]
+requires-dist = [{ name = "tintprobe", git = "https://github.com/achandran/tintprobe?rev=51f79a8b13528d0e1603e880174efa8c77776996" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -374,7 +374,7 @@ wheels = [
 [[package]]
 name = "tintprobe"
 version = "0.1.0"
-source = { git = "https://github.com/achandran/tintprobe?rev=17797b0225105b90344a6f75f95f61c059a301e8#17797b0225105b90344a6f75f95f61c059a301e8" }
+source = { git = "https://github.com/achandran/tintprobe?rev=51f79a8b13528d0e1603e880174efa8c77776996#51f79a8b13528d0e1603e880174efa8c77776996" }
 dependencies = [
     { name = "coloraide" },
     { name = "pillow" },

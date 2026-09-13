@@ -1,4 +1,4 @@
--- Generated from palette/ithilien-dawn.json; do not edit by hand.
+-- Generated from scripts/palette/ithilien-dawn.json; do not edit by hand.
 return {
   colors = {
     ["Lebethron"] = "#000000",

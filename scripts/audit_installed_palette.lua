@@ -8,7 +8,7 @@ end
 dofile(assert(vim.env.ITHILIEN_NVIM_INIT, 'Set ITHILIEN_NVIM_INIT'))
 vim.schedule(function()
  local r={plugins={},snapshots={}}
- local s=vim.json.decode(table.concat(vim.fn.readfile(vim.env.ITHILIEN_ROOT..'/palette/ithilien-dawn.json'),'\n'))
+ local s=vim.json.decode(table.concat(vim.fn.readfile(vim.env.ITHILIEN_ROOT..'/scripts/palette/ithilien-dawn.json'),'\n'))
  r.palette=s.colors;r.theme=vim.g.colors_name
  local allowed={};for _,v in pairs(s.colors) do allowed[tonumber(v:sub(2),16)]=true end
  local function snap(label)

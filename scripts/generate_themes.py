@@ -31,7 +31,7 @@ def generate_ghostty(palette: dict) -> None:
     ansi = list(ansi_tokens.values())
     is_light = palette["polarity"] == "light"
     lines = [
-        f"# {palette['name']} — generated from palette/{palette['slug']}.json; do not edit by hand.",
+        f"# {palette['name']} — generated from scripts/palette/{palette['slug']}.json; do not edit by hand.",
         "# Warm, readability-first foundations and diff-aware ANSI colors.",
         "",
         *[f"palette = {index}={color}" for index, color in enumerate(ansi)],
@@ -82,7 +82,7 @@ def generate_neovim_palette(palette: dict) -> None:
     term = list(palette["ansi"].values())
     named_colors = load_palette_source(palette["slug"]).get("colors", {})
     rendered = (
-        f"-- Generated from palette/{palette['slug']}.json; do not edit by hand.\n"
+        f"-- Generated from scripts/palette/{palette['slug']}.json; do not edit by hand.\n"
         "return {\n"
         + (f"  colors = {lua_table(named_colors, 2)},\n" if named_colors else "")
         + f"  raw = {lua_table(palette, 2)},\n"
@@ -296,8 +296,8 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
 def generate_preview(palettes: dict[str, dict]) -> None:
     destination = ROOT / "palette-preview.html"
     audits = {
-        "night": json.loads((ROOT / "evaluation/results/palette" / "ithilien-dusk-audit.json").read_text()),
-        "day": json.loads((ROOT / "evaluation/results/palette" / "ithilien-dawn-audit.json").read_text()),
+        "night": json.loads((ROOT / "tests/evaluation/results/palette" / "ithilien-dusk-audit.json").read_text()),
+        "day": json.loads((ROOT / "tests/evaluation/results/palette" / "ithilien-dawn-audit.json").read_text()),
     }
     preview_palettes = {
         variant: {**palette, "colorNames": {
@@ -332,7 +332,7 @@ def generate_color_reference() -> None:
             roles[name].append(f'`{family}.{role}`')
     lines = [
         '# Ithilien Dawn: named colors', '',
-        '<!-- Generated from palette/ithilien-dawn.json; do not edit by hand. -->', '',
+        '<!-- Generated from scripts/palette/ithilien-dawn.json; do not edit by hand. -->', '',
         f'All **{len(source["colors"])} named sRGB colors** define the Formex-inspired Dawn palette. '
         'Each color has one single-word name and a documented connection to Tolkien’s work. '
         'The exact shades are design interpretations, not colors measured from the books.', '',

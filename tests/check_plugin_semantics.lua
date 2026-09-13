@@ -31,7 +31,7 @@ assert(hl('TodoFgTODO').fg~=hl('TodoBgTODO').bg)
 assert(hl('TodoBgTODO').bg==0xDEE0DF)
 assert(hl('FzfLuaFzfMatch').fg==0)
 assert(hl('NeoTreeRootName_35').fg==0x505456)
-local palette=vim.json.decode(table.concat(vim.fn.readfile('palette/ithilien-dawn.json'),'\n')).colors
+local palette=vim.json.decode(table.concat(vim.fn.readfile('scripts/palette/ithilien-dawn.json'),'\n')).colors
 local allowed={}
 for _,value in pairs(palette) do allowed[tonumber(value:sub(2),16)]=true end
 local function audit()

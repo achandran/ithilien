@@ -9,7 +9,7 @@ from evaluate_installed_workflows import check, ROOT
 
 class WorkflowGates(unittest.TestCase):
     def setUp(self):
-        self.palette={int(v[1:],16) for v in json.loads((ROOT/'palette/ithilien-dawn.json').read_text())['colors'].values()}
+        self.palette={int(v[1:],16) for v in json.loads((ROOT/'scripts/palette/ithilien-dawn.json').read_text())['colors'].values()}
         self.shot={'case':'blink','width':100,'state':'initial','text':'summarize',
                    'defaults':{'fg':0,'bg':0xFAFAF8},'attrs':{},
                    'cells':[{'row':0,'col':0,'text':'s','attr':0}],

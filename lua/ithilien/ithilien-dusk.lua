@@ -1,4 +1,4 @@
--- Generated from palette/ithilien-dusk.json; do not edit by hand.
+-- Generated from scripts/palette/ithilien-dusk.json; do not edit by hand.
 return {
   raw = {
     ["colorSpace"] = "sRGB",

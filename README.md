@@ -4,7 +4,7 @@ A Neovim colorscheme with two variants: **Dawn**, a light theme for clear code a
 
 Porcelain whites. Black type. Steel neutrals. A small, deliberate red accent.
 
-![Ithilien Dawn — Python code and character-level diffs in Neovim](assets/ithilien-dawn-neovim.png)
+![Ithilien Dawn — Python code and character-level diffs in Neovim](docs/assets/ithilien-dawn-neovim.png)
 
 **Read the code. Find the change.** Four diff backgrounds: green for added lines, red for deleted lines, blue for changed lines, and amber for the exact edited characters. Clients with separate added/deleted word highlights use the same amber for both. Diff emphasis keeps ordinary text weight, so even a one-character edit stands out through color.
 
@@ -94,7 +94,7 @@ and italic syntax styles. Exact diff emphasis uses ordinary weight and color.
 
 ## Palette
 
-![Ithilien Dawn palette — names, hex values, and semantic roles](assets/ithilien-dawn-palette.svg)
+![Ithilien Dawn palette — names, hex values, and semantic roles](docs/assets/ithilien-dawn-palette.svg)
 
 Colors are grouped by surfaces and text, terminal colors, diffs, and interaction. The six terminal colors also serve application accents; Rauros supplies both cyan and aqua text. Each swatch shows its palette name, a representative role, and exact hex value. Shared colors can serve additional roles; see the full reference below.
 

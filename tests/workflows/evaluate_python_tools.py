@@ -44,7 +44,7 @@ def check(shot,colors):
 
 def prepare(fetch=False):
     from tintprobe.evaluation_dependencies import plugin_dependencies
-    return plugin_dependencies('evaluation/python-tools-dependencies.json', fetch)
+    return plugin_dependencies('tests/evaluation/python-tools-dependencies.json', fetch)
 
 
 def run(output,widths=(100,160)):
@@ -64,7 +64,7 @@ vim.opt.rtp:append(vim.env.ITHILIEN_PYTHON_PARSER_ROOT)
 vim.cmd('syntax on')
 vim.cmd('colorscheme ithilien-dawn')
 """}
-    palette=(ROOT/'palette/ithilien-dawn.json').read_bytes()
+    palette=(ROOT/'scripts/palette/ithilien-dawn.json').read_bytes()
     colors=json.loads(palette)['colors'];results=[];shots=[]
     for scene in SCENES:
         for width in widths:
@@ -81,6 +81,6 @@ vim.cmd('colorscheme ithilien-dawn')
     return report
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,default=ROOT/'evaluation/results/python-tools')
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,default=ROOT/'tests/evaluation/results/python-tools')
     p.add_argument('--fetch-dependencies',action='store_true',help='Fetch missing pinned test plugins')
     args=p.parse_args();prepare(args.fetch_dependencies);raise SystemExit(0 if run(args.output)['pass'] else 1)

@@ -19,7 +19,7 @@ uv run --locked python -m tintprobe --project-root . workflow evaluate_git_revie
 make evaluate
 ```
 
-Revisions and source URLs are in `evaluation/git-review-dependencies.json`.
+Revisions and source URLs are in `tests/evaluation/git-review-dependencies.json`.
 Missing dependencies, modified checkouts, revision mismatches, missing windows,
 and renderer errors fail the run. Fetching never updates an existing checkout.
 To deliberately upgrade a dependency, update its pin and check it out explicitly.
@@ -73,7 +73,7 @@ change was needed.
 
 Run `uv run --locked python -m tintprobe --project-root . workflow evaluate_pickers --fetch-dependencies` once,
 then omit the fetch flag for offline runs. Plugin revisions are pinned in
-`evaluation/pickers-dependencies.json`; no personal configuration is loaded.
+`tests/evaluation/pickers-dependencies.json`; no personal configuration is loaded.
 
 The 12 captures cover Telescope and Snacks file results with Python previews,
 and nvim-cmp with its real buffer source and a selected completion. Both widths
@@ -141,7 +141,7 @@ assertion off-screen and requires a separate viewport test.
 Run from the repository virtual environment:
 
 ```sh
-uv run --locked python -m tintprobe --project-root . workflow evaluate_installed_workflows --output evaluation/results/installed-workflows
+uv run --locked python -m tintprobe --project-root . workflow evaluate_installed_workflows --output tests/evaluation/results/installed-workflows
 ```
 
 This captures the actual installed Lazy configuration, with the working Ithilien
@@ -178,7 +178,7 @@ This suite does not prove every possible plugin state or long-session comfort.
 The palette-definition audit remains a separate check for all loaded plugins:
 
 ```sh
-uv run --locked python scripts/audit_installed_palette.py --output evaluation/results/plugin-palette
+uv run --locked python scripts/audit_installed_palette.py --output tests/evaluation/results/plugin-palette
 ```
 
 For static captures, OS-level Neo-tree file watching and LSP watched-file dynamic
@@ -201,13 +201,13 @@ backdrop uses an opaque palette surface instead of a blended gray.
 Run the portable semantic regression check from the repository:
 
 ```sh
-KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -n -l scripts/check_plugin_semantics.lua
+KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -n -l tests/check_plugin_semantics.lua
 ```
 
 Audit your installed Lazy configuration:
 
 ```sh
-uv run --locked python scripts/audit_installed_palette.py --output evaluation/results/plugin-palette
+uv run --locked python scripts/audit_installed_palette.py --output tests/evaluation/results/plugin-palette
 ```
 
 Use `--init` and `--lazy-root` for nonstandard installations. This loads your
@@ -230,7 +230,7 @@ The standalone Gitsigns check verifies staged sign cues and ordinary-weight
 inline spans before and after the plugin recreates its fallback highlights:
 
 ```sh
-KANSO_ROOT=evaluation/deps/kanso GITSIGNS_ROOT=evaluation/deps/gitsigns.nvim nvim --headless -u NONE -i NONE -l scripts/check_gitsigns.lua
+KANSO_ROOT=tests/evaluation/deps/kanso GITSIGNS_ROOT=tests/evaluation/deps/gitsigns.nvim nvim --headless -u NONE -i NONE -l tests/check_gitsigns.lua
 ```
 
 This complements the live hunk captures in the Git review suite.
