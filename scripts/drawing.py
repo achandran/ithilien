@@ -6,8 +6,8 @@ class Drawing:
     def __init__(self): self.commands=[]
     def rect(self,x,y,w,h,color): self.commands.append(dict(x=x,y=y,w=w,h=h,color=color))
     def text(self,x,y,text,color,style='regular'): self.commands.append(dict(x=x,y=y,text=text,color=color,style=style))
-    def save(self, path, width, height):
-        svg=[f'<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="{width}" height="{height}" viewBox="0 0 {width} {height}">', '<style>text{font-family:"Berkeley Mono Medium",monospace;font-size:16pt}</style>']
+    def save(self, path, width, height, font_family='Berkeley Mono Medium'):
+        svg=[f'<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="{width}" height="{height}" viewBox="0 0 {width} {height}">', f'<style>text{{font-family:"{html.escape(font_family)}",monospace;font-size:16pt}}</style>']
         for c in self.commands:
             if 'text' in c:
                 style='font-weight="700" font-style="italic"' if c['style']=='bold-italic' else 'font-weight="700"' if c['style']=='bold' else 'font-style="italic"' if c['style']=='italic' else ''

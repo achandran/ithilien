@@ -42,7 +42,8 @@ def generate_chart(variant='ithilien-dawn'):
     assert seen == set(source['colors']), 'Every named color must appear in the chart'
     destination = ROOT/'docs/assets'
     destination.mkdir(exist_ok=True)
-    d.save(destination/(variant+'-palette.svg'), width, height)
+    font_family = 'Berkeley Mono Retina' if variant == 'ithilien-dusk' else 'Berkeley Mono Medium'
+    d.save(destination/(variant+'-palette.svg'), width, height, font_family=font_family)
     return d
 
 
