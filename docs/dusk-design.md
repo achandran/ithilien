@@ -4,10 +4,10 @@ Dusk uses neutral graphite surfaces and warm stone-gray reading text, inspired
 by the black ceramic and steel surrounding the Formex Reef GMT's white dial.
 Dawn remains unchanged. Each palette has 18 distinct named sRGB colors.
 
-- Canvas: Osgiliath `#202120`.
-- Reading text: Nimloth `#BDB7AB`.
-- Raised surfaces: Gondor `#282A28`.
-- Supporting text: Ash `#AAA497`.
+- Canvas: Graphite `#202120`.
+- Reading text: Parchment `#BDB7AB`.
+- Raised surfaces: Shale `#282A28`.
+- Supporting text: Flint `#AAA497`.
 - Typography: Berkeley Mono Retina, 16 pt. Dawn uses Medium, 16 pt.
 
 Both variants share Briar selection/cursors, Heather search, Celandine exact
@@ -16,9 +16,19 @@ normal reading text is unsuitable on those light interaction fills. Dusk's green
 red, and blue diff backgrounds keep larger changed regions subdued, while amber
 marks individual changes in ordinary weight.
 
-The six chromatic ANSI regular/bright pairs share values. Palette names retain
-their Tolkien associations, with variant-specific shades where needed. Full
-values and roles are in the generated [Dusk palette reference](dusk-palette.md).
+The six chromatic ANSI regular/bright pairs share values. Across Dawn and Dusk,
+each palette name identifies one exact hex value. The four shared colors retain
+their names; Dusk’s other 14 shades have distinct botanical, water, or material
+names. Material names are poetic landscape associations, not claims about
+Middle-earth’s geology. Functional roles remain stable: `foregrounds.text` →
+`Parchment` → `#BDB7AB`. Full values and roles are in the generated
+[Dusk palette reference](dusk-palette.md).
+
+The naming refactor preserves every resolved role and hex value. Existing native
+captures and their source hashes record the pre-rename implementation; the frozen
+resolved-palette fingerprints verify that its appearance still applies. Direct
+users of Dusk’s Lua `.colors` table should adopt the new names; role-based
+integrations require no changes.
 
 ## Validation
 

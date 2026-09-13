@@ -31,7 +31,7 @@ def test_dusk_reading_and_diff_pairs_pass():
 
 def test_audit_rejects_unreadable_comments_and_changed_shared_color():
     source = copy.deepcopy(load_palette_source('ithilien-dusk'))
-    source['colors']['Ash'] = '#353535'
+    source['colors'][source['foregrounds']['comment']] = '#353535'
     assert 'comment on base' in assess(source)['failures']
     source = copy.deepcopy(load_palette_source('ithilien-dusk'))
     source['colors']['Briar'] = '#B95A5D'
@@ -70,3 +70,13 @@ def test_selected_fzf_pointer_pair_uses_selection_background():
     options = '--color=dark,bg:#202120,bg+:#B8595C,fg+:#000000,pointer:#000000,gutter:#202120'
     assert fzf_roles(options)['pointer']['pass']
     assert not fzf_roles(options.replace('pointer:#000000', 'pointer:#BDB7AB'))['pointer']['pass']
+
+
+def test_palette_names_identify_one_exact_color_across_variants():
+    dawn, dusk = (load_palette_source('ithilien-' + v)['colors'] for v in ('dawn', 'dusk'))
+    assert dawn.keys() & dusk.keys() == set(SHARED_COLORS)
+    names, colors = {}, {}
+    for palette in (dawn, dusk):
+        for name, color in palette.items():
+            assert names.setdefault(name, color) == color
+            assert colors.setdefault(color, name) == name
