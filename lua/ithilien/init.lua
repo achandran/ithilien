@@ -11,7 +11,11 @@ end
 
 function M.load(variant)
   local is_light = variant == "dawn" or variant == "day" or variant == "light"
-  if is_light then return require("ithilien.dawn").load(M.config) end
+  if is_light then
+    require("ithilien.dawn").load(M.config)
+    require("ithilien.diff").setup()
+    return
+  end
   local palette = require(is_light and "ithilien.ithilien-dawn" or "ithilien.ithilien-dusk")
   local raw = palette.raw
   local bg, fg, accent, diff = raw.backgrounds, raw.foregrounds, raw.accents, raw.diff
@@ -197,6 +201,8 @@ function M.load(variant)
   vim.g.colors_name = previous_colors_name
   require("kanso").load(is_light and "pearl" or "ink")
   vim.g.colors_name = is_light and "ithilien-dawn" or "ithilien-dusk"
+
+  require("ithilien.diff").setup()
 
   local function sync_lualine()
     local lualine = package.loaded["lualine"]

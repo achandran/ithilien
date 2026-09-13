@@ -57,7 +57,7 @@ def capture(case, width, state, nvim_bin, kanso, adapter=None, python_runtime=No
             n.exec_lua(adapter['setup'])
         else:
             n.exec_lua('vim.opt.rtp:prepend(...); vim.opt.rtp:prepend(select(2,...))', str(kanso), str(ROOT))
-            n.exec_lua("require('ithilien').load('dawn'); require('ithilien.diff').setup()")
+            n.exec_lua("require('ithilien').load('dawn')")
         highlights = n.exec_lua("local out={}; for _,name in ipairs({'Normal','Visual','Search','DiffAdd','DiffDelete','DiffChange','DiffText'}) do out[name]=vim.api.nvim_get_hl(0,{name=name,link=false}) end; return out")
         n.command('filetype on'); n.command('syntax on')
         before = ROOT/'evaluation'/case['before']; after = ROOT/'evaluation'/case['after']

@@ -22,8 +22,8 @@ there is no automatic installer.
 
 The source folders previously at the repository root now live under `extras/`.
 Update any custom scripts or symlinks that refer directly to checkout paths.
-Installed copies do not need to move. Neovim's `colors/`, `lua/`, and `plugin/`
-runtime directories remain at the root.
+Installed copies do not need to move. Neovim's `colors/` and `lua/` runtime directories remain at the root.
+Diff behavior initializes when the colorscheme loads.
 
 Contributors: edit `palette/` and the generators rather than generated exports.
 See [development](../docs/development.md) for regeneration and evaluation.

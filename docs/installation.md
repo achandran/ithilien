@@ -2,7 +2,7 @@
 
 ## Neovim and LazyVim
 
-Dawn is on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Add `vim.opt.diffopt:append("inline:char")` to your configuration; the colorscheme itself does not change your diff algorithm.
+Dawn is on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Loading Ithilien requests `inline:char` on supported Neovim versions. Switching to another colorscheme restores the previous `diffopt` unless you changed it in the meantime.
 
 
 Copy the [LazyVim configuration from the README](../README.md#lazyvim) into your plugin specifications, then run `:Lazy sync`. The spec installs `achandran/ithilien` with Kanso for both Dawn (Pearl base) and Dusk (Ink base) directly from GitHub. Select `ithilien`, `ithilien-dawn`, or `ithilien-dusk` with `:colorscheme`; `ithilien` defaults to Ithilien Dawn.

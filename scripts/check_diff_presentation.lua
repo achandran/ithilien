@@ -1,7 +1,9 @@
 vim.opt.rtp:prepend(vim.env.KANSO_ROOT)
 vim.opt.rtp:prepend(vim.fn.getcwd())
-require('ithilien').load('dawn')
-require('ithilien.diff').setup()
+local initial_diffopt=vim.o.diffopt
+assert(not package.loaded['ithilien.diff'], 'Diff setup ran before colorscheme selection')
+vim.cmd.colorscheme('ithilien-dawn')
+local autocmd_count=#vim.api.nvim_get_autocmds({group='IthilienDiff'})
 vim.cmd('filetype on')
 vim.cmd('syntax on')
 local path=vim.fn.getcwd()..'/evaluation/fixtures/ithilien/ghosttyconfig.after.conf'
@@ -36,5 +38,27 @@ end
 vim.cmd('diffoff!')
 require('ithilien.diff').refresh()
 for _,w in ipairs({left,right}) do assert(vim.wo[w].winbar=='');assert(vim.wo[w].winhighlight=='') end
+-- Repeated selection must not duplicate handlers or overwrite original options.
+vim.cmd('diffthis')
+vim.cmd.colorscheme('ithilien-dawn')
+vim.cmd.colorscheme('ithilien-dawn')
+assert(#vim.api.nvim_get_autocmds({group='IthilienDiff'})==autocmd_count)
+assert(vim.wo[left].winbar~='')
+-- Restore windows even when their tab is not current.
+vim.cmd('tabnew')
+vim.cmd.colorscheme('ithilien-dusk')
+assert(vim.wo[left].winbar=='' and vim.wo[left].winhighlight=='')
+vim.cmd.colorscheme('ithilien-dawn')
+assert(vim.wo[left].winbar~='')
+vim.cmd.colorscheme('default')
+assert(vim.wait(1000,function() return vim.wo[left].winbar=='' end,10))
+assert(vim.wo[left].winhighlight=='')
+assert(vim.o.diffopt==initial_diffopt, 'Original diffopt was not restored')
+vim.cmd.colorscheme('ithilien-dawn')
+vim.opt.diffopt:append('iwhite')
+local user_diffopt=vim.o.diffopt
+vim.cmd.colorscheme('default')
+assert(vim.wait(1000,function() return vim.wo[left].winbar=='' end,10))
+assert(vim.o.diffopt==user_diffopt, 'User diffopt change was overwritten')
 print('Exact index/worktree diff passed: missing l emphasized, matching conf syntax, labeled panes, subdued filler, settings restored')
 vim.cmd('qa!')

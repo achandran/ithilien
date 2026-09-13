@@ -1,8 +1,9 @@
 -- Window-local diff presentation; restored when diff mode ends.
 local M = {}
 local saved = {}
-function M.refresh()
-  local wins = vim.api.nvim_tabpage_list_wins(0)
+local original_diffopt, applied_diffopt
+local function refresh_tab(tab)
+  local wins = vim.api.nvim_tabpage_list_wins(tab)
   local ft
   for _, w in ipairs(wins) do
     if vim.wo[w].diff then
@@ -36,14 +37,26 @@ function M.refresh()
   end
   for w in pairs(saved) do if not vim.api.nvim_win_is_valid(w) then saved[w]=nil end end
 end
-function M.setup()
-  -- Preserve unrelated options while requesting character-sized inline edits.
-  if vim.fn.has('nvim-0.12') == 1 then
+function M.refresh()
+  local active = vim.g.colors_name == 'ithilien-dawn' or vim.g.colors_name == 'ithilien-dusk'
+  if active and not original_diffopt and vim.fn.has('nvim-0.12') == 1 then
+    original_diffopt = vim.o.diffopt
     vim.opt.diffopt:remove({'inline:simple','inline:word'})
     vim.opt.diffopt:append('inline:char')
+    applied_diffopt = vim.o.diffopt
+  elseif not active and original_diffopt then
+    -- Respect an intervening user or plugin edit.
+    if vim.o.diffopt == applied_diffopt then vim.o.diffopt = original_diffopt end
+    original_diffopt, applied_diffopt = nil, nil
   end
+  for _, tab in ipairs(vim.api.nvim_list_tabpages()) do refresh_tab(tab) end
+end
+function M.setup()
   local group = vim.api.nvim_create_augroup('IthilienDiff', {clear=true})
-  vim.api.nvim_create_autocmd({'BufWinEnter','WinEnter','FileType'}, {group=group, callback=function() vim.schedule(M.refresh) end})
+  vim.api.nvim_create_autocmd({'BufWinEnter','WinEnter','FileType','ColorScheme'}, {
+    group=group, callback=function() vim.schedule(M.refresh) end,
+  })
   vim.api.nvim_create_autocmd('OptionSet', {group=group, pattern='diff', callback=function() vim.schedule(M.refresh) end})
+  M.refresh()
 end
 return M
