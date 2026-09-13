@@ -56,9 +56,10 @@ evaluate: test
 	$(MAKE) evaluate-codex-recording
 
 .PHONY: evaluate-full evaluate-codex-recording
+CODEX_THEME ?= ithilien-dawn
 CODEX_RECORDING ?= tests/evaluation/results/codex-recording/codex-cells.json
 evaluate-codex-recording:
-	$(UV) run --locked python scripts/check_codex_recording.py --recording "$(CODEX_RECORDING)" --output "$(EVALUATE_OUTPUT)/codex-recording.json"
+	$(UV) run --locked python scripts/check_codex_recording.py --recording "$(CODEX_RECORDING)" --theme "$(CODEX_THEME)" --output "$(EVALUATE_OUTPUT)/codex-recording.json"
 
 # Opt-in deep check. Keep its rebuildable output outside this checkout.
 export CARGO_TARGET_DIR ?= $(HOME)/Library/Caches/ithilien/codex-target

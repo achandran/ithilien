@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "theme": {
     "colors": {
-      "frame": "#373B3E",
+      "frame": "#303437",
       "frame_inactive": "#202120",
       "tab_background_text": "#AAA497",
       "tab_text": "#BDB7AB",
@@ -14,12 +14,12 @@
       "toolbar_field": "#202120",
       "toolbar_field_focus": "#202120",
       "toolbar_field_text": "#BDB7AB",
-      "toolbar_field_border": "#373B3E",
+      "toolbar_field_border": "#303437",
       "toolbar_field_highlight": "#B8595C",
       "toolbar_field_highlight_text": "#000000",
       "popup": "#2C2E2C",
       "popup_text": "#BDB7AB",
-      "popup_border": "#373B3E",
+      "popup_border": "#303437",
       "button_background_hover": "#2C2E2C",
       "button_background_active": "#B8595C",
       "icons_attention": "#BDB7AB"

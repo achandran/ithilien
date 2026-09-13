@@ -1,10 +1,10 @@
 {
   "variant": "ithilien-dusk",
-  "design": "Warm Graphite \u2014 distinct green and muted surfaces",
+  "design": "Warm Graphite \u2014 minimal syntax and supporting-text readability",
   "font": "Berkeley Mono Retina",
   "font_size_pt": 16,
   "unit_tests": {
-    "passed": 72
+    "passed": 74
   },
   "palette_checks": {
     "colors": 18,
@@ -58,7 +58,7 @@
     "project_correction": "Static fzf active pointer uses bg+; native checks unchanged."
   },
   "coverage_limits": [
-    "Neovim built-in syntax; Dusk Tree-sitter/LSP workflow coverage pending.",
+    "Python Tree-sitter/LSP limited to the captured corpus; Rust Tree-sitter/LSP and broader Dusk plugin workflows pending.",
     "Native Codex and Claude Code validation pending.",
     "No Ghostty pixel/cursor capture or long-session comfort claim."
   ],
@@ -67,6 +67,45 @@
     "extras/codex/themes/ithilien-dusk.tmTheme": "ca88fe3450caec5576f4ef458a67b77ac3736bfe88010af83a92ad4717f30f63",
     "extras/ghostty/themes/ithilien_dusk.conf": "5ae27e1cc3d73b597518f78a04f700ba5a3efdce642f50bac15193b04bea03de",
     "extras/shell/ithilien-dusk.zsh": "b752f9df15304e2b1f1608c0c05641dc302586ef8a46b464d37cc6a272775f75",
-    "scripts/palette/ithilien.json": "c725ffe92fc70d3995afb66a2cb7aa092c1dcc765eb6a5c7eb22fca350160a57"
+    "scripts/palette/ithilien.json": "b345c13df69660f7c91fa550af1be607a57358c5fb787e9e3d6fb420a917e3c7"
+  },
+  "python_treesitter_lsp": {
+    "captures": 42,
+    "version": "NVIM v0.12.5",
+    "corpus_sha256": "3ac5c379fae2071cce0c11dd96b820beff0e2ff5718194d58e87a8b4788d8514",
+    "gates": {
+      "status": "meets_current_checks",
+      "failures": [],
+      "distributions": {
+        "text_contrast": {
+          "count": 35063,
+          "minimum": 4.622,
+          "median": 7.977,
+          "maximum": 12.992
+        },
+        "inline_delta_e": {
+          "count": 0,
+          "minimum": null,
+          "median": null,
+          "maximum": null
+        },
+        "line_delta_e": {
+          "count": 846,
+          "minimum": 11.799,
+          "median": 11.799,
+          "maximum": 11.799
+        }
+      },
+      "scope": "Critical inline oracles and source text; exact visible source overlay provenance and text contrast. Blank tail cells, cursor glyphs and perceptual cue effectiveness remain unverified."
+    },
+    "parser": "tree-sitter-python",
+    "language_server": "BasedPyright 1.40.1",
+    "off_palette_colors": [],
+    "scope": "42 native cell captures with parser, diagnostics, and semantic tokens. No exact-character oracles in this corpus; separate diff corpus retained."
+  },
+  "codex": {
+    "status": "blocked",
+    "reason": "Recording is not a passing capture of the current exported theme; refresh it explicitly.",
+    "source_replay_blocker": "Cargo unavailable; no matching Dusk recording found."
   }
 }

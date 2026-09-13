@@ -7,7 +7,7 @@ Dawn remains unchanged. Each palette has 18 distinct named sRGB colors.
 - Canvas: Graphite `#202120`.
 - Reading text: Parchment `#BDB7AB`.
 - Soft surfaces: Shale `#2C2E2C` (cursor line and popups).
-- Muted surfaces: Slate `#373B3E` (statuslines and secondary panels).
+- Muted surfaces: Slate `#303437` (statuslines and secondary panels).
 - Supporting text: Flint `#AAA497`.
 - Typography: Berkeley Mono Retina, 16 pt. Dawn uses Medium, 16 pt.
 
@@ -29,9 +29,9 @@ Surface designations match Dawn: canvas (`backgrounds.base`), soft
 (`backgrounds.surface1`), and muted (`backgrounds.mantle`). Both palettes define
 the same 60 functional roles across backgrounds, foregrounds, accents, ANSI,
 diffs, and highlights. Shale `#2C2E2C` supports popups and the cursor line; Slate
-`#373B3E` distinguishes statuslines and secondary panels. Their OKLab distance is
-0.0520. Flint text on Slate measures 4.56:1, so further lightening would leave
-little readability margin.
+`#303437` distinguishes statuslines and secondary panels. Their OKLab distance is
+0.0256. Flint text on Slate measures 5.06:1. This prioritizes readable supporting
+text over a larger distance between soft and muted surfaces.
 
 Olive `#A6C995` marks success and added-code signs, Foam `#83C9BE` marks hints,
 and Mist `#9DBDE0` marks information. Olive–Foam separation is 0.0634 in OKLab;
@@ -50,9 +50,12 @@ This changes Neovim syntax mappings, not the 18-color palette or application por
 
 ## Validation
 
-The final implementation passes 72 unit/regression tests, 136 authored contrast
+The final implementation passes 74 unit/regression tests, 136 authored contrast
 checks, 154 native Neovim captures under Tintprobe's strict comparison gates, and
 20 native interaction captures covering diagnostics, completion, and fzf.
+An additional 42 Python captures exercise Tree-sitter, BasedPyright diagnostics,
+and semantic tokens. This corpus has no exact-character oracles; the separate
+154-capture diff corpus covers those checks.
 Dawn's native highlight, contrast, and character-diff checks also pass.
 
 [Compact evidence and source hashes](assets/ithilien-dusk-validation.json)
@@ -73,8 +76,11 @@ Native contrast checks and selected-item oracles remain unchanged. fzf requires
 local terminal permissions.
 
 The README preview uses actual Neovim cells rasterized with Retina at 16 pt.
-Native Codex/Claude Code validation, Dusk Tree-sitter/LSP workflows, Ghostty pixels,
-and extended-session comfort remain unverified. Theme exports do not guarantee
+Native Codex/Claude Code validation, Rust Tree-sitter/LSP workflows, Ghostty
+pixels, and extended-session comfort remain unverified. Dusk’s saved Codex check
+is blocked: available recordings do not match its exported theme, and the local
+source-replay toolchain lacks Cargo. Python Tree-sitter/LSP coverage is limited
+to the captured corpus, not every plugin workflow. Theme exports do not guarantee
 that every application exposes character-level diff styling.
 
 ## Design rationale
@@ -89,3 +95,17 @@ support checking foreground/background pairs and actual presentation.
 Dark-mode preference and performance vary by person and task. The palette needs
 real use in the intended lighting before any long-session claim can be made.
 [While and Sarvghad, IEEE VIS 2024](https://arxiv.org/abs/2409.10841).
+
+## Remaining release checks
+
+Run native Codex patches, long explanations, dimmed tool output, diagnostics,
+and text selections in the intended terminal. A matching Dusk recording is
+required; Dawn replay evidence cannot certify Dusk. Use
+`make evaluate-codex-recording CODEX_THEME=ithilien-dusk CODEX_RECORDING=...`
+to check an explicitly captured recording. Source-built replay additionally
+requires the pinned Rust toolchain and repository-local build caches.
+
+During sustained use with Berkeley Mono Retina at 16 pt, record concrete friction:
+rereading comments, losing the cursor, confusing diagnostic states, or difficulty
+identifying punctuation edits. Compare usual daytime and evening lighting. These
+observations are still required before claiming long-session comfort.

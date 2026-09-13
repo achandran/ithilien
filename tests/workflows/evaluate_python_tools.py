@@ -65,7 +65,7 @@ vim.cmd('syntax on')
 vim.cmd('colorscheme ithilien-dawn')
 """}
     palette=(ROOT/'scripts/palette/ithilien.json').read_bytes()
-    colors=json.loads(palette)['colors'];results=[];shots=[]
+    colors=json.loads(palette)['variants']['ithilien-dawn']['colors'];results=[];shots=[]
     for scene in SCENES:
         for width in widths:
             for state in ('initial','reload'):
