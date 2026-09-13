@@ -100,9 +100,7 @@ Colors are grouped by surfaces and text, terminal colors, diffs, and interaction
 
 The palette and preview images are generated from the theme sources so they stay in sync. The Neovim image above uses actual captured UI-cell colors, rasterized with Berkeley Mono Medium at 16 pt. It shows built-in Python syntax, not a Tree-sitter/LSP configuration or a native Ghostty screenshot.
 
-[Full palette reference](docs/palette-names.md) · [Interactive palette — click swatches to copy hex](palette-preview.html)
-
-Open `palette-preview.html` locally to copy any swatch with a click or Enter. GitHub’s static README images cannot access the clipboard.
+[Full palette reference](docs/palette-names.md)
 
 ## Design
 

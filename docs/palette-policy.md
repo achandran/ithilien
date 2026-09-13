@@ -71,7 +71,7 @@ available at [commit cd88baf](https://github.com/achandran/ithilien/tree/cd88baf
 ### Current evidence
 
 `make build` generates Dawn and Dusk palette audits into ignored
-`tests/evaluation/results/palette/` before generating the palette preview. Native
+`tests/evaluation/results/palette/` before generating the README palette chart. Native
 evidence also belongs in ignored `tests/evaluation/results/`; see
 [development](development.md) for execution and coverage limits. Saved native
 captures and dependency builds were preserved so offline analysis remains available.

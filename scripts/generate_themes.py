@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import plistlib
-import re
 
 from ithilienlib import ROOT, load_palette, load_palette_source, ROLE_FAMILIES
 
@@ -293,37 +292,6 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
     )
 
 
-def generate_preview(palettes: dict[str, dict]) -> None:
-    destination = ROOT / "palette-preview.html"
-    audits = {
-        "night": json.loads((ROOT / "tests/evaluation/results/palette" / "ithilien-dusk-audit.json").read_text()),
-        "day": json.loads((ROOT / "tests/evaluation/results/palette" / "ithilien-dawn-audit.json").read_text()),
-    }
-    preview_palettes = {
-        variant: {**palette, "colorNames": {
-            color: load_palette_source(palette['slug'])['colorNotes'][name].get('displayName', name)
-            for name, color in load_palette_source(palette['slug']).get('colors', {}).items()
-        }} for variant, palette in palettes.items()
-    }
-    data = (
-        "/* GENERATED_DATA_START */\n"
-        f"    const generatedPalettes = {json.dumps(preview_palettes, separators=(',', ':'))};\n"
-        f"    const generatedAudits = {json.dumps(audits, separators=(',', ':'))};\n"
-        "    /* GENERATED_DATA_END */"
-    )
-    html = destination.read_text()
-    html, replacements = re.subn(
-        r"/\* GENERATED_DATA_START \*/.*?/\* GENERATED_DATA_END \*/",
-        lambda match: data,
-        html,
-        count=1,
-        flags=re.DOTALL,
-    )
-    if replacements != 1:
-        raise RuntimeError("palette-preview.html is missing its generated-data markers")
-    destination.write_text(html)
-
-
 def generate_color_reference() -> None:
     source = load_palette_source('ithilien-dawn')
     roles = {name: [] for name in source['colors']}
@@ -370,7 +338,6 @@ def main() -> None:
     generate_shared_highlights(palettes["day"])
     for palette in palettes.values():
         generate_shared_highlights(palette, variant=True)
-    generate_preview(palettes)
     generate_color_reference()
     from palette_chart import generate_chart
     generate_chart()

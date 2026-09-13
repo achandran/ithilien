@@ -9,13 +9,15 @@ in `pyproject.toml` and `uv.lock`.
 | --- | --- |
 | `make build` | Audit both palettes and regenerate ports, palette chart, and the Neovim preview. |
 | `make test` | Run Ithilien's palette, export, and project-workflow policy tests. |
-| `make evaluate` | Run tests and headless renderer/workflow evaluation through Tintprobe. |
+| `make evaluate` | Run tests, Neovim/workflow evaluation, and saved Codex-cell checks without compiling Rust. |
+| `make evaluate-full` | Opt-in full suite, compiling the pinned Codex test harness. |
+| `make evaluate-codex-recording` | Recheck saved Codex cells; no compiler or desktop required. |
 | `make evaluate-ghostty` | Explicitly capture native Ghostty windows; requires an idle authorized desktop. |
 | `make evaluate-offline GHOSTTY_OUTPUT=PATH` | Run tests and reanalyze saved screenshots without desktop interaction. |
 
 Bare `make` only prints help. `make evaluate-headless` remains an alias for the
 headless path. To include native Ghostty capture in the combined suite, explicitly
-set `GHOSTTY_ARGS=--ghostty-capture`. Never run that while using the computer.
+use `make evaluate-full GHOSTTY_ARGS=--ghostty-capture`. Never run that while using the computer.
 Missing tools and unavailable captures remain blocked or unverified, not passes.
 
 ## Dependencies and project inputs
@@ -82,7 +84,7 @@ the canonical palette. See [testing](testing.md) for profile commands and covera
 ## Builds and evidence
 
 `make build` writes palette audit JSON/Markdown to ignored
-`tests/evaluation/results/palette/` before generating the palette preview. To refresh
+`tests/evaluation/results/palette/` before generating the README palette chart. To refresh
 only audits and ports:
 
 ```sh
@@ -91,10 +93,24 @@ uv run --locked python scripts/audit_palette.py ithilien-dusk
 uv run --locked python scripts/generate_themes.py
 ```
 
-Fresh combined runs live below `tests/evaluation/results/full/`. A successful capture
+Routine runs reuse `tests/evaluation/results/routine/`. The opt-in full suite creates
+fresh timestamped subdirectories beneath `FULL_OUTPUT` (default
+`tests/evaluation/results/full/`). A successful capture
 is not a quality pass: inspect stage execution, findings, and missing coverage.
 Native renderer cells, terminal pixels, and human comfort are distinct evidence.
-Existing screenshot caches were preserved through extraction.
+Saved screenshots and cell recordings are retained; rebuildable compiler caches can
+be deleted. Rust output for optional source-built checks defaults to
+`~/Library/Caches/ithilien/codex-target`, with debug symbols and incremental
+compilation disabled. Override `CARGO_TARGET_DIR` if needed.
+
+`make evaluate-codex-recording` reads ignored local evidence from
+`tests/evaluation/results/codex-recording/{codex-cells.json,report.json}`. Override
+`CODEX_RECORDING` with another flow recording (its sibling `report.json` is required).
+Missing evidence or a changed exported theme blocks the check rather than reporting
+stale cells as a pass. Refresh with an explicit source-built run and use its
+`codex/ithilien-dawn/flows/codex-cells.json`. Saved cells do not validate the current
+installed CLI or live interactions. An installed-CLI capture adapter is not yet
+implemented; the source-built harness remains the opt-in way to refresh scenes.
 
 An optional ignored `tests/evaluation/local.mk` may set `RUST_RUNTIME` to an isolated
 rustup directory with `cargo/` and `rustup/` children. Codex replay temporarily

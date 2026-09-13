@@ -23,8 +23,9 @@ help:
 	  '' \
 	  '  make build     Build all ports, palette assets, and the Neovim preview' \
 	  '  make test      Run the normal unit and regression tests' \
-	  '  make evaluate  Run tests and headless renderer/workflow evaluation' \
+	  '  make evaluate  Run tests, Neovim workflows, and saved Codex checks' \
 	  '  make evaluate-headless  Run renderer/workflow checks without GUI capture' \
+	  '  make evaluate-full      Opt-in source-built Codex suite (large Rust cache)' \
 	  '  make evaluate-offline   Run tests and recheck saved Ghostty screenshots' \
 	  '' \
 	  'Bare make shows this help. Setup and targeted diagnostics: docs/development.md'
@@ -38,17 +39,37 @@ test:
 build:
 	$(UV) run --locked python scripts/build.py
 
-# Headless evaluation by default; add GHOSTTY_ARGS=--ghostty-capture explicitly; see docs/development.md for one-time prerequisites.
-EVALUATE_OUTPUT ?= tests/evaluation/results/full
+# Routine evaluation uses saved Codex evidence; full source replay is opt-in.
+EVALUATE_OUTPUT ?= tests/evaluation/results/routine
 CODEX_SOURCE ?= tests/evaluation/deps/codex
 PYTHON_SOURCE ?= tests/evaluation/deps/tree-sitter-python
 THEMES ?= ithilien-dawn
 GHOSTTY_ARGS ?=
 
+# Routine checks never compile Codex or create per-run Swift caches.
 evaluate: test
+	$(UV) run --locked python -m tintprobe --project-root . compare --strict-gates --python-source "$(PYTHON_SOURCE)" --output "$(EVALUATE_OUTPUT)/neovim" --themes $(THEMES)
+	$(UV) run --locked python -m tintprobe --project-root . workflow evaluate_pickers --output "$(EVALUATE_OUTPUT)/pickers"
+	$(UV) run --locked python -m tintprobe --project-root . workflow evaluate_python_tools --output "$(EVALUATE_OUTPUT)/python-tools"
+	$(UV) run --locked python -m tintprobe --project-root . workflow evaluate_git_review --output "$(EVALUATE_OUTPUT)/git-review"
+	$(UV) run --locked python -m tintprobe --project-root . workflow evaluate_installed_workflows --output "$(EVALUATE_OUTPUT)/installed-workflows"
+	$(MAKE) evaluate-codex-recording
+
+.PHONY: evaluate-full evaluate-codex-recording
+CODEX_RECORDING ?= tests/evaluation/results/codex-recording/codex-cells.json
+evaluate-codex-recording:
+	$(UV) run --locked python scripts/check_codex_recording.py --recording "$(CODEX_RECORDING)" --output "$(EVALUATE_OUTPUT)/codex-recording.json"
+
+# Opt-in deep check. Keep its rebuildable output outside this checkout.
+export CARGO_TARGET_DIR ?= $(HOME)/Library/Caches/ithilien/codex-target
+export CARGO_PROFILE_DEV_DEBUG ?= 0
+export CARGO_PROFILE_TEST_DEBUG ?= 0
+export CARGO_INCREMENTAL ?= 0
+FULL_OUTPUT ?= tests/evaluation/results/full
+evaluate-full: test
 	$(UV) run --locked python -m tintprobe --project-root . suite --fresh-run --strict-gates \
 		--codex-source "$(CODEX_SOURCE)" --python-source "$(PYTHON_SOURCE)" \
-		--output "$(EVALUATE_OUTPUT)" --themes $(THEMES) \
+		--output "$(FULL_OUTPUT)" --themes $(THEMES) \
 		--pickers --python-tools --git-review --installed-workflows $(GHOSTTY_ARGS)
 
 # Safe while the desktop is in use: no Ghostty launch, focus, or mouse input.
