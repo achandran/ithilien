@@ -190,12 +190,12 @@
         "Grotto": "#293847",
         "Celandine": "#D8B46A",
         "Heather": "#D6C6DE",
-        "Parchment": "#BDB7AB",
-        "Shale": "#2C2E2C",
+        "Ithil": "#BDB7AB",
+        "Arnen": "#2C2E2C",
         "Slate": "#303437",
         "Graphite": "#202120",
         "Rosehip": "#E09A9D",
-        "Foam": "#83C9BE"
+        "Poros": "#83C9BE"
       },
       "colorNotes": {
         "Lebethron": {
@@ -246,13 +246,13 @@
           "meaning": "Pale lilac inspired by the pink-purple flowers of heather growing in Ithilien; the exact shade is a botanical interpretation, not a color specified by Tolkien.",
           "source": "https://encyclopedia-of-arda.com/h/heather.php"
         },
-        "Parchment": {
-          "meaning": "Warm parchment gray evoking a weathered record of Gondor; a poetic material association with Osgiliath, not a documented artifact or shade.",
-          "source": "https://tolkiengateway.net/wiki/Osgiliath"
+        "Ithil": {
+          "meaning": "Ithil, the Moon; warm pale gray interpreted as softened moonlight for reading text. The exact shade is a poetic interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithil"
         },
-        "Shale": {
-          "meaning": "Dark layered-stone gray evoking Ithilien\u2019s rocky landscape; a poetic material association, not a geological claim.",
-          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        "Arnen": {
+          "meaning": "Emyn Arnen, hills in South Ithilien associated with Faramir; dark gray interpreted from the shaded landscape. The exact shade is a poetic interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Emyn_Arnen"
         },
         "Slate": {
           "meaning": "Cool slate gray evoking Ithilien\u2019s shaded stone; a poetic material association, not a geological claim.",
@@ -266,9 +266,9 @@
           "meaning": "Soft rose red inspired by the hips of Ithilien\u2019s briars; a botanical color interpretation.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
-        "Foam": {
-          "meaning": "Pale water teal inspired by the falling water at Henneth Ann\u00fbn; a poetic water association.",
-          "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+        "Poros": {
+          "meaning": "The river along southern Ithilien; a soft teal water interpretation, not a color specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Poros"
         }
       },
       "highlight": {
@@ -282,8 +282,8 @@
         "crust": "Graphite",
         "mantle": "Slate",
         "base": "Graphite",
-        "surface0": "Shale",
-        "surface1": "Shale",
+        "surface0": "Arnen",
+        "surface1": "Arnen",
         "surface2": "Slate",
         "border": "Flint",
         "search": "Heather"
@@ -292,17 +292,17 @@
         "muted": "Flint",
         "comment": "Flint",
         "subtext": "Flint",
-        "text": "Parchment",
-        "bright": "Parchment"
+        "text": "Ithil",
+        "bright": "Ithil"
       },
       "accents": {
-        "olive": "Parchment",
+        "olive": "Ithil",
         "sage": "Olive",
-        "gold": "Parchment",
+        "gold": "Ithil",
         "ochre": "Clematis",
         "clay": "Mist",
         "coral": "Rosehip",
-        "aqua": "Foam",
+        "aqua": "Poros",
         "blue": "Mist",
         "mauve": "Clematis"
       },
@@ -313,32 +313,32 @@
         "yellow": "Elanor",
         "blue": "Mist",
         "magenta": "Clematis",
-        "cyan": "Foam",
-        "white": "Parchment",
+        "cyan": "Poros",
+        "white": "Ithil",
         "brightBlack": "Flint",
         "brightRed": "Rosehip",
         "brightGreen": "Olive",
         "brightYellow": "Elanor",
         "brightBlue": "Mist",
         "brightMagenta": "Clematis",
-        "brightCyan": "Foam",
-        "brightWhite": "Parchment",
+        "brightCyan": "Poros",
+        "brightWhite": "Ithil",
         "extendedOchre": "Elanor",
         "extendedClay": "Rosehip"
       },
       "diff": {
-        "contextForeground": "Parchment",
+        "contextForeground": "Ithil",
         "inlineForeground": "Lebethron",
-        "addForeground": "Parchment",
+        "addForeground": "Ithil",
         "addBackground": "Cypress",
         "addEmphasis": "Celandine",
-        "deleteForeground": "Parchment",
+        "deleteForeground": "Ithil",
         "deleteBackground": "Bramble",
         "deleteEmphasis": "Celandine",
-        "changeForeground": "Parchment",
+        "changeForeground": "Ithil",
         "changeBackground": "Grotto",
         "changeEmphasis": "Celandine",
-        "hunkForeground": "Parchment",
+        "hunkForeground": "Ithil",
         "hunkBackground": "Grotto",
         "conflictForeground": "Lebethron",
         "conflictBackground": "Heather"

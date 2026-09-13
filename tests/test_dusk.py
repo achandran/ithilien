@@ -85,7 +85,7 @@ def test_palette_names_identify_one_exact_color_across_variants():
 def test_dusk_surface_roles_have_distinct_purposes():
     backgrounds = load_palette_source('ithilien-dusk')['backgrounds']
     assert backgrounds['base'] == 'Graphite'
-    assert backgrounds['surface0'] == backgrounds['surface1'] == 'Shale'
+    assert backgrounds['surface0'] == backgrounds['surface1'] == 'Arnen'
     assert backgrounds['mantle'] == backgrounds['surface2'] == 'Slate'
 
 
