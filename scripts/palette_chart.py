@@ -48,3 +48,4 @@ def generate_chart(variant='ithilien-dawn'):
 
 if __name__ == '__main__':
     generate_chart()
+    generate_chart('ithilien-dusk')
