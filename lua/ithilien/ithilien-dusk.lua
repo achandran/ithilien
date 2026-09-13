@@ -34,7 +34,7 @@ return {
     },
     ["backgrounds"] = {
       ["crust"] = "#202120",
-      ["mantle"] = "#2C2E2C",
+      ["mantle"] = "#303437",
       ["base"] = "#202120",
       ["surface0"] = "#2C2E2C",
       ["surface1"] = "#2C2E2C",

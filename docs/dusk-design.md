@@ -6,7 +6,8 @@ Dawn remains unchanged. Each palette has 18 distinct named sRGB colors.
 
 - Canvas: Graphite `#202120`.
 - Reading text: Parchment `#BDB7AB`.
-- Raised surfaces: Shale `#2C2E2C`.
+- Soft surfaces: Shale `#2C2E2C` (cursor line and popups).
+- Muted surfaces: Slate `#303437` (statuslines and secondary panels).
 - Supporting text: Flint `#AAA497`.
 - Typography: Berkeley Mono Retina, 16 pt. Dawn uses Medium, 16 pt.
 
@@ -26,7 +27,11 @@ Middle-earth’s geology. Functional roles remain stable: `foregrounds.text` →
 
 The selected refinement uses Foam `#83C9BE` for clearer separation of types and
 hints from Olive strings, Mist `#9DBDE0` for keywords and information, and Shale
-`#2C2E2C` for more visible raised surfaces. Reading text, comments, the canvas,
+`#2C2E2C` for more visible soft surfaces. Surface designations match Dawn: canvas
+(`backgrounds.base`), soft (`backgrounds.surface1`), and muted
+(`backgrounds.mantle`). Both palettes define the same 60 functional roles across
+backgrounds, foregrounds, accents, ANSI, diffs, and highlights. Dusk uses Slate
+for muted surfaces, keeping statuslines distinct from Shale popups and the cursor line. Reading text, comments, the canvas,
 diff backgrounds, and all four shared colors remain unchanged. The palette still
 contains 18 colors. Tintprobe OKLab distance increases from 0.0255 to 0.0471
 between Olive and Foam, and from 0.0334 to 0.0747 between Foam and Mist; these
@@ -34,7 +39,7 @@ measurements support comparison, not a guarantee of perceptual recognition.
 
 ## Validation
 
-The final implementation passes 66 unit/regression tests, 136 authored contrast
+The final implementation passes 68 unit/regression tests, 136 authored contrast
 checks, 154 native Neovim captures under Tintprobe's strict comparison gates, and
 20 native interaction captures covering diagnostics, completion, and fzf.
 Dawn's native highlight, contrast, and character-diff checks also pass.

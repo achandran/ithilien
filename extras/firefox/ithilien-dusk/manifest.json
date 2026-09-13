@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "theme": {
     "colors": {
-      "frame": "#2C2E2C",
+      "frame": "#303437",
       "frame_inactive": "#202120",
       "tab_background_text": "#AAA497",
       "tab_text": "#BDB7AB",

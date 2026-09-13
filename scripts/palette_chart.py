@@ -15,7 +15,7 @@ def generate_chart(variant='ithilien-dawn'):
     ]
     if variant == 'ithilien-dusk':
         groups[0] = ('Surfaces and Text', [('backgrounds.base','Canvas'),
-            ('backgrounds.surface2','Secondary surface'),('backgrounds.mantle','Raised surface'),
+            ('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),
             ('highlight.foreground','Interaction text'),('foregrounds.text','Primary text'),
             ('foregrounds.comment','Muted text / borders')])
     columns = 4

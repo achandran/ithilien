@@ -80,3 +80,17 @@ def test_palette_names_identify_one_exact_color_across_variants():
         for name, color in palette.items():
             assert names.setdefault(name, color) == color
             assert colors.setdefault(color, name) == name
+
+
+def test_dusk_surface_roles_have_distinct_purposes():
+    backgrounds = load_palette_source('ithilien-dusk')['backgrounds']
+    assert backgrounds['base'] == 'Graphite'
+    assert backgrounds['surface0'] == backgrounds['surface1'] == 'Shale'
+    assert backgrounds['mantle'] == backgrounds['surface2'] == 'Slate'
+
+
+def test_dusk_and_dawn_define_the_same_functional_roles():
+    dawn, dusk = (load_palette_source('ithilien-' + v) for v in ('dawn', 'dusk'))
+    assert dawn.keys() == dusk.keys()
+    for family in ROLE_FAMILIES:
+        assert dawn[family].keys() == dusk[family].keys(), family

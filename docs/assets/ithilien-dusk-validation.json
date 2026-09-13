@@ -1,10 +1,10 @@
 {
   "variant": "ithilien-dusk",
-  "design": "Warm Graphite \u2014 clearer accents and surfaces",
+  "design": "Warm Graphite \u2014 clearer accents and aligned surface roles",
   "font": "Berkeley Mono Retina",
   "font_size_pt": 16,
   "unit_tests": {
-    "passed": 66
+    "passed": 68
   },
   "palette_checks": {
     "colors": 18,
@@ -63,7 +63,7 @@
     "No Ghostty pixel/cursor capture or long-session comfort claim."
   ],
   "source_sha256": {
-    "scripts/palette/ithilien-dusk.json": "6838bb2e71715677e58a1679885b29b5aa9e97349234d3464976281c06e9a54a",
+    "scripts/palette/ithilien-dusk.json": "051fb3988331eb7b0f785567e3cabe159e05f465c6f41398b40f03838dfeeaef",
     "lua/ithilien/dusk.lua": "7444b128c2f302472a9eb2f9905be497ecfdb80752ce3ccb994d49ea989cfa8f",
     "extras/codex/themes/ithilien-dusk.tmTheme": "4fc6c9fd505722b747e5833b88b3beed245adc48d42326e98e78b5cfc9c31d3c",
     "extras/ghostty/themes/ithilien_dusk.conf": "4da0fe00997fefbf9b00a6070292ef3feff33c8d2f6f30865e263971dcb04434",
