@@ -20,7 +20,7 @@ class GhosttyCursor(unittest.TestCase):
         self.assertGreaterEqual(wcag(config['cursor-text'], config['cursor-color']), 4.5)
 
     def test_generated_and_shipped_cursor_pairs(self):
-        for variant in ('dawn', 'dusk'):
+        for variant in ('dawn',):
             with self.subTest(variant=variant), tempfile.TemporaryDirectory() as temp:
                 palette = load_palette('ithilien-' + variant)
                 relative = Path('extras/ghostty/themes') / f'ithilien_{variant}.conf'

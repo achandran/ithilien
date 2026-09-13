@@ -13,7 +13,7 @@ from ithilienlib import ROOT, apca, delta_e, load_palette, oklch, simulated_hex,
 SIMULATIONS = ("normal", "protan", "deutan", "tritan", "grayscale")
 
 
-def main(variant: str = "ithilien-dusk") -> None:
+def main(variant: str = "ithilien-dawn") -> None:
     palette = load_palette(variant)
     backgrounds = palette["backgrounds"]
     foregrounds = palette["foregrounds"]
@@ -293,4 +293,4 @@ def main(variant: str = "ithilien-dusk") -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "ithilien-dusk")
+    main(sys.argv[1] if len(sys.argv) > 1 else "ithilien-dawn")

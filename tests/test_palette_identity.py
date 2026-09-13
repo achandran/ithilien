@@ -1,4 +1,4 @@
-"""Freeze the selected Formex Dawn and original Dusk."""
+"""Freeze the selected Formex Dawn."""
 import hashlib
 import json
 import sys
@@ -10,13 +10,13 @@ from ithilienlib import load_palette
 
 # Names may evolve; canonical colors, polarity and semantic assignments are frozen.
 # Updating these fingerprints must accompany an explicitly intended palette change.
-EXPECTED = {'dawn': 'd8ceb1384c12525bbdcee723555e174b5898cc311b05aab3c7f44587cda39e35', 'dusk': 'a9c201a636befd4d5036864ac9557eff3d6f2d5098824ac002e294df56431e90'}
+EXPECTED = {'dawn': 'd8ceb1384c12525bbdcee723555e174b5898cc311b05aab3c7f44587cda39e35'}
 
 class PaletteIdentity(unittest.TestCase):
-    def test_selected_dawn_and_original_dusk(self):
+    def test_selected_dawn(self):
         for variant, expected in EXPECTED.items():
             with self.subTest(variant=variant):
                 palette = load_palette('ithilien-' + variant)
                 palette = {k: v for k, v in palette.items() if k not in {'name', 'slug'}}
                 actual = hashlib.sha256(json.dumps(palette, sort_keys=True).encode()).hexdigest()
-                self.assertEqual(actual, expected, 'Palette changed from approved neutral Dawn / original Dusk baseline')
+                self.assertEqual(actual, expected, 'Palette changed from approved neutral Dawn baseline')

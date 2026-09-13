@@ -31,4 +31,4 @@ Names draw from Ithilien’s plants, waters, materials and people, poetic landsc
 
 Edit hex values only in `colors`. Functional roles reference those names: `backgrounds.base` → `Nimloth`, `foregrounds.text` → `Lebethron`, `accents.blue` → `Anduin`. The loader resolves those references to the same role-to-hex mappings used by existing ports and audits.
 
-Neovim also exposes the named palette through `require("ithilien.ithilien-dawn").colors.Anduin`. Dusk and the shared interaction source remain unchanged. Dawn uses Briar selection and block cursors with black text.
+Neovim also exposes the named palette through `require("ithilien.ithilien-dawn").colors.Anduin`. Dawn uses Briar selection and block cursors with black text.

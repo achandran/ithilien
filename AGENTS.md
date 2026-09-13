@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-Ithilien is a Neovim colorscheme with Dawn and Dusk variants. `lua/ithilien/`
+Ithilien is a Neovim colorscheme with the Dawn variant. `lua/ithilien/`
 contains theme and highlight logic; `lua/lualine/` contains statusline themes.
 `colors/` provides colorscheme entry points. Canonical palettes live in
 `scripts/palette/`; Python generators in `scripts/` produce application ports in
@@ -27,7 +27,7 @@ Use Python 3.12+, uv, and Make. Bare `make` prints help.
 
 Use four-space Python indentation and two-space Lua indentation; follow surrounding
 style and avoid unrelated reformatting. Use snake_case for Python functions and
-`ithilien-dawn`/`ithilien-dusk` for theme identifiers. No dedicated formatter or
+`ithilien-dawn` for theme identifiers. No dedicated formatter or
 linter is configured. Edit canonical palette definitions and generators rather
 than hand-editing generated ports. Dawn role mappings reference named colors.
 

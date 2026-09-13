@@ -38,7 +38,7 @@ local function refresh_tab(tab)
   for w in pairs(saved) do if not vim.api.nvim_win_is_valid(w) then saved[w]=nil end end
 end
 function M.refresh()
-  local active = vim.g.colors_name == 'ithilien-dawn' or vim.g.colors_name == 'ithilien-dusk'
+  local active = vim.g.colors_name == 'ithilien-dawn'
   if active and not original_diffopt and vim.fn.has('nvim-0.12') == 1 then
     original_diffopt = vim.o.diffopt
     vim.opt.diffopt:remove({'inline:simple','inline:word'})

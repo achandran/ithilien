@@ -35,7 +35,7 @@ help:
 test:
 	$(UV) run --locked pytest
 
-# Audit both palettes, regenerate every theme port, and refresh the Neovim preview.
+# Audit the Dawn palette, regenerate every theme port, and refresh the Neovim preview.
 build:
 	$(UV) run --locked python scripts/build.py
 

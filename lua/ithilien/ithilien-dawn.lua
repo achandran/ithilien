@@ -22,6 +22,9 @@ return {
   },
   raw = {
     ["colorSpace"] = "sRGB",
+    ["name"] = "Ithilien Dawn",
+    ["slug"] = "ithilien-dawn",
+    ["polarity"] = "light",
     ["highlight"] = {
       ["background"] = "#B8595C",
       ["foreground"] = "#000000",
@@ -29,9 +32,6 @@ return {
       ["cursor"] = "#B8595C",
       ["cursorBlock"] = "#B8595C",
     },
-    ["name"] = "Ithilien Dawn",
-    ["slug"] = "ithilien-dawn",
-    ["polarity"] = "light",
     ["backgrounds"] = {
       ["crust"] = "#C9CECB",
       ["mantle"] = "#DEE0DF",

@@ -7,7 +7,7 @@ from ithilienlib import ROOT, load_palette, wcag
 
 class FirefoxSelectionTests(unittest.TestCase):
     def test_variant_selection_and_scheme_match_palette(self):
-        for variant in ('dawn','dusk'):
+        for variant in ('dawn',):
             p=load_palette('ithilien-'+variant)
             base=ROOT/'extras/firefox'/('ithilien-'+variant)
             theme=json.loads((base/'manifest.json').read_text())['theme']

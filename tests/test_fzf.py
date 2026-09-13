@@ -1,4 +1,4 @@
-"""Exercise generated fzf options through zsh, including variant switching."""
+"""Exercise generated fzf options through zsh, including repeated sourcing."""
 import shutil
 import subprocess
 import unittest
@@ -17,7 +17,7 @@ class FzfColors(unittest.TestCase):
         source extras/shell/ithilien-dawn.zsh
         [[ $first == $FZF_DEFAULT_OPTS ]] || exit 1
         [[ $FZF_CTRL_R_OPTS == *'--preview "echo {}"'* ]] || exit 2
-        source extras/shell/ithilien-dusk.zsh
+        source extras/shell/ithilien.zsh
         source extras/shell/ithilien-dawn.zsh
         [[ $first == $FZF_DEFAULT_OPTS ]] || exit 3
         [[ $FZF_DEFAULT_OPTS == *'bg+:#B8595C,fg+:#000000'* ]] || exit 4

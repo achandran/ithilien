@@ -11,7 +11,7 @@ from tintprobe.colors import Color
 
 ROOT = Path(__file__).resolve().parent.parent
 PALETTE_DIR = ROOT / "scripts/palette"
-PALETTE_PATH = PALETTE_DIR / "ithilien-dusk.json"
+PALETTE_PATH = PALETTE_DIR / "ithilien-dawn.json"
 SHARED_PATH = PALETTE_DIR / "ithilien-shared.json"
 
 
@@ -58,7 +58,7 @@ def resolve_palette(shared: dict, specific: dict) -> dict:
     return palette
 
 
-def load_palette(variant: str = "ithilien-dusk") -> dict:
+def load_palette(variant: str = "ithilien-dawn") -> dict:
     """Return resolved role-to-hex pairs, excluding authoring metadata."""
     shared = json.loads(SHARED_PATH.read_text())
     return resolve_palette(shared, load_palette_source(variant))

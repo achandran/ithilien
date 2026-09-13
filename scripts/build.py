@@ -5,7 +5,6 @@ from generate_themes import main as generate
 
 
 if __name__ == "__main__":
-    audit("ithilien-dusk")
     audit("ithilien-dawn")
     generate()
 

@@ -5,33 +5,24 @@
 Dawn is on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Loading Ithilien requests `inline:char` on supported Neovim versions. Switching to another colorscheme restores the previous `diffopt` unless you changed it in the meantime.
 
 
-Copy the [LazyVim configuration from the README](../README.md#lazyvim) into your plugin specifications, then run `:Lazy sync`. The spec installs `achandran/ithilien` with Kanso for both Dawn (Pearl base) and Dusk (Ink base) directly from GitHub. Select `ithilien`, `ithilien-dawn`, or `ithilien-dusk` with `:colorscheme`; `ithilien` defaults to Ithilien Dawn.
-
-On macOS, the included LazyVim spec also follows system appearance changes in running Neovim sessions. Install its native watcher first:
-
-```sh
-brew install cormacrelf/tap/dark-notify
-```
-
-Ithilien Dawn is selected in Light appearance and Ithilien Dusk in Dark appearance. Remove the `cormacrelf/dark-notify` entry from the spec if automatic switching is not wanted.
-
+Copy the [LazyVim configuration from the README](../README.md#lazyvim) into your plugin specifications, then run `:Lazy sync`. The spec installs Ithilien Dawn with Kanso's Pearl base. Select `ithilien` or `ithilien-dawn` with `:colorscheme`.
 
 ## Ghostty
 
-Copy `extras/ghostty/themes/ithilien_dusk.conf` and `extras/ghostty/themes/ithilien_dawn.conf` into `~/.config/ghostty/themes/`. To follow macOS appearance automatically:
+Copy `extras/ghostty/themes/ithilien_dawn.conf` into `~/.config/ghostty/themes/`:
 
 ```ini
-theme = light:ithilien_dawn.conf,dark:ithilien_dusk.conf
+theme = ithilien_dawn.conf
 ```
 
-The generated dark theme uses Berkeley Mono Retina for terminal text and window titles. The light theme uses Berkeley Mono Medium for both. Neither theme sets `font-thicken`. The light theme leaves `faint-opacity` unset so Ghostty uses its default dim-text rendering, and sets `minimum-contrast = 1` to disable renderer contrast adjustment, which made vi-mode block cursor text unreadable in the user’s Ghostty setup. Faint opacity applies to all terminal text carrying the dim attribute, including dimmed diff text. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is black.
+The theme uses Berkeley Mono Medium for terminal text and window titles and does not set `font-thicken`. The light theme leaves `faint-opacity` unset so Ghostty uses its default dim-text rendering, and sets `minimum-contrast = 1` to disable renderer contrast adjustment, which made vi-mode block cursor text unreadable in the user’s Ghostty setup. Faint opacity applies to all terminal text carrying the dim attribute, including dimmed diff text. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is black.
 
 
 ## AI coding tools
 
 For Codex CLI, copy the `.tmTheme` files from `extras/codex/themes/` into `~/.codex/themes/`, then choose one with `/theme`. Optionally merge `tui.animations = false` from `extras/codex/config.toml` into your config to disable motion, without replacing other settings. These themes explicitly define `markup.inserted` and `markup.deleted`, so Codex uses Ithilien's tuned diff backgrounds instead of its built-in mint and pink fallbacks.
 
-For Claude Code 2.1.118 or newer, copy the JSON files from `extras/claude-code/themes/` into `~/.claude/themes/`, then choose one with `/theme`. The generated themes define full-line, dimmed-context, and word-level diff colors. Claude Code does not currently combine two custom files behind its `auto` selection, so select Ithilien Dusk or Ithilien Dawn when appearance changes.
+For Claude Code 2.1.118 or newer, copy the JSON files from `extras/claude-code/themes/` into `~/.claude/themes/`, then choose one with `/theme`. The generated themes define full-line, dimmed-context, and word-level diff colors.
 
 ## Slack and Linear
 
@@ -39,18 +30,6 @@ Slack exposes only a subset of its interface colors. In Preferences → Appearan
 
 In Linear Preferences → Interface and theme, create a custom theme and paste the appropriate line from `extras/linear/`. Linear derives its remaining surfaces from these seed colors, so minor generated shades are controlled by Linear rather than Ithilien.
 
-
-## Dynamic macOS wallpaper
-
-`extras/wallpapers/ithilien.heic` contains two 6016×3760 sRGB frames and Apple's appearance metadata. macOS displays the warm parchment `#F0E9D2` Dawn frame in Light appearance and the olive-black `#171812` Dusk frame in Dark appearance.
-
-To regenerate and inspect it on macOS:
-
-```sh
-swiftc -module-cache-path /private/tmp/ithilien-swift-cache scripts/generate_wallpaper.swift -o /private/tmp/generate-ithilien-wallpaper
-/private/tmp/generate-ithilien-wallpaper generate extras/wallpapers/ithilien.heic
-/private/tmp/generate-ithilien-wallpaper inspect extras/wallpapers/ithilien.heic
-```
 
 ## Other integrations
 
@@ -66,16 +45,16 @@ With Dawn loaded, use zsh `bindkey -v`, type a command without executing it, pre
 
 ## Firefox and shell selection
 
-`extras/firefox/manifest.json` now defaults to Dawn. Separate `extras/firefox/ithilien-dawn/` and `extras/firefox/ithilien-dusk/` exports set the correct light/dark scheme, browser surfaces, and address-field selection. Load the desired manifest through `about:debugging` > This Firefox > Load Temporary Add-on. This expires on restart; permanent extension distribution requires signing.
+`extras/firefox/manifest.json` now defaults to Dawn. The `extras/firefox/ithilien-dawn/` export sets the light scheme, browser surfaces, and address-field selection. Load the desired manifest through `about:debugging` > This Firefox > Load Temporary Add-on. This expires on restart; permanent extension distribution requires signing.
 
 Each Firefox export also includes optional `userContent.css` for website `::selection`: Dawn uses Briar `#B8595C` with black text `#000000`. To use it, merge the rule into the active profile's `chrome/userContent.css`, enable `toolkit.legacyUserProfileCustomizations.stylesheets` in about:config, and restart Firefox. Browser theme colors alone do not control website selection.
 
 For Zsh, add `source /absolute/path/to/ithilien/extras/shell/ithilien-dawn.zsh`
-to `.zshrc` and start a new session. Choose `ithilien-dusk.zsh` for Dusk instead.
+to `.zshrc` and start a new session.
 ZLE visual selection and Ghostty mouse selection are separate systems.
 Non-region ZLE settings are preserved; later shell/plugin hooks can override them.
 
-System selection exports now include `extras/macos/apply-highlight-ithilien-dawn.sh` and `extras/macos/apply-highlight-ithilien-dusk.sh`; the legacy apply-highlight.sh defaults to Dawn. They remain opt-in global changes. The dynamic wallpaper is unchanged.
+System selection is available through `extras/macos/apply-highlight-ithilien-dawn.sh`; the legacy apply-highlight.sh also uses Dawn. These remain opt-in global changes.
 
 Optionally source `/absolute/path/to/ithilien/extras/shell/prompt.zsh` after the selection script to use the Dawn prompt: Ash username and hostname, blue path, purple Git information, and a black command-entry symbol. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.
 

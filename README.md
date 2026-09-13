@@ -1,6 +1,6 @@
 # Ithilien
 
-A Neovim colorscheme with two variants: **Dawn**, a light theme for clear code and precise diffs, and **Dusk**, an olive-dark theme.
+A Neovim colorscheme: **Dawn**, a light theme for clear code and precise diffs.
 
 Porcelain whites. Black type. Steel neutrals. A small, deliberate red accent.
 
@@ -35,7 +35,7 @@ Kansō. Python and the repository's build tools are only needed for development.
 
 Use this complete configuration instead of the minimal lazy.nvim example above.
 Save it as `~/.config/nvim/lua/plugins/ithilien.lua`, then run `:Lazy sync`.
-It includes lualine integration and optional macOS appearance switching.
+It includes lualine integration.
 
 ```lua
 return {
@@ -49,17 +49,6 @@ return {
       bold = true,
       italics = true,
     },
-  },
-  {
-    "cormacrelf/dark-notify",
-    config = function()
-      require("dark_notify").run({
-        schemes = {
-          light = { colorscheme = "ithilien" },
-          dark = { colorscheme = "ithilien-dusk" },
-        },
-      })
-    end,
   },
   {
     "LazyVim/LazyVim",
@@ -76,17 +65,13 @@ return {
 }
 ```
 
-For automatic macOS switching, install the watcher with
-`brew install cormacrelf/tap/dark-notify`. On other platforms, or to choose the
-theme manually, omit the `cormacrelf/dark-notify` entry. Update the plugin with
-`:Lazy update`.
+Update the plugin with `:Lazy update`.
 
 
 ## Usage
 
 ```lua
 vim.cmd.colorscheme("ithilien-dawn") -- light
-vim.cmd.colorscheme("ithilien-dusk") -- dark
 ```
 
 `ithilien` is an alias for Dawn. Setup is optional when using the default bold
@@ -113,14 +98,14 @@ The aim is a working environment that stays legible without turning every token 
 - **Long-session comfort.** Light surfaces, dark text, and restrained decoration are design goals. Automated contrast checks support them; they do not prove comfort.
 - **Consistent interactions.** Briar marks selection and the cursor with black foreground text. Search and inline edits use different hues.
 
-The Neovim implementation builds on [Kansō](https://github.com/webhooked/kanso.nvim), with Ithilien’s palette and highlight mappings. Dusk is also included as a dark variant; Dawn is the focus of the current design and evaluation work.
+The Neovim implementation builds on [Kansō](https://github.com/webhooked/kanso.nvim), with Ithilien’s palette and highlight mappings. Dawn is the current design and evaluation baseline.
 
 ## Extras
 
 Matching terminal and application ports live in [extras/](extras/README.md),
 following [Kansō's layout](https://github.com/webhooked/kanso.nvim/tree/main/extras).
 These include Ghostty, Codex, Claude Code, Firefox, Zsh, Slack, Linear, macOS
-selection scripts, and a dynamic wallpaper.
+selection scripts.
 
 Copy or source the files for the applications you use; see the manual
 installation instructions below.

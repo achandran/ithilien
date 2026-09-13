@@ -7,8 +7,6 @@ local function snapshot()
  for name,_ in pairs(vim.api.nvim_get_hl(0,{})) do result[name]=vim.api.nvim_get_hl(0,{name=name,link=false}) end
  return result
 end
-theme.load('dusk')
-local dusk=snapshot()
 theme.load('dawn')
 local raw=require('ithilien.ithilien-dawn').raw
 assert(require("kanso").config.theme == "pearl", "Dawn must use Kanso Pearl")
@@ -47,10 +45,10 @@ for mode,sections in pairs(require('lualine.themes.ithilien-dawn')) do
  for section,h in pairs(sections) do assert(h.fg~=raw.backgrounds.base,'Reversed lualine '..mode..section) end
 end
 local dawn=snapshot()
-theme.load('dusk')
-for name,h in pairs(dusk) do assert(vim.deep_equal(h,vim.api.nvim_get_hl(0,{name=name,link=false})),'Dusk changed after switching: '..name) end
+theme.load('dawn')
+for name,h in pairs(dawn) do assert(vim.deep_equal(h,vim.api.nvim_get_hl(0,{name=name,link=false})),'Dawn changed after reloading: '..name) end
 local output = vim.env.ITHILIEN_CHECK_OUTPUT or 'tests/evaluation/results/highlight-checks'
 vim.fn.mkdir(output, 'p')
-vim.fn.writefile({vim.json.encode({checked=checked,highlights=dawn,duskSwitchUnchanged=true})},output..'/highlights.json')
-print(checked..' resolved highlights checked; interaction pair matches palette; Dusk switching unchanged')
+vim.fn.writefile({vim.json.encode({checked=checked,highlights=dawn,dawnReloadUnchanged=true})},output..'/highlights.json')
+print(checked..' resolved highlights checked; interaction pair matches palette; Dawn reloading unchanged')
 vim.cmd('qa!')

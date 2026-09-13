@@ -89,7 +89,6 @@ only audits and ports:
 
 ```sh
 uv run --locked python scripts/audit_palette.py ithilien-dawn
-uv run --locked python scripts/audit_palette.py ithilien-dusk
 uv run --locked python scripts/generate_themes.py
 ```
 

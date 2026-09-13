@@ -322,12 +322,12 @@ def generate_color_reference() -> None:
         'role-to-hex mappings used by existing ports and audits.', '',
         'Neovim also exposes the named palette through '
         '`require("ithilien.ithilien-dawn").colors.Anduin`. '
-        'Dusk and the shared interaction source remain unchanged. Dawn uses Briar selection and block cursors with black text.', ''])
+        'Dawn uses Briar selection and block cursors with black text.', ''])
     (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
 
 
 def main() -> None:
-    palettes = {"night": load_palette("ithilien-dusk"), "day": load_palette("ithilien-dawn")}
+    palettes = {"day": load_palette("ithilien-dawn")}
     for palette in palettes.values():
         generate_ghostty(palette)
         generate_neovim_palette(palette)
@@ -341,7 +341,7 @@ def main() -> None:
     generate_color_reference()
     from palette_chart import generate_chart
     generate_chart()
-    print("Generated Ithilien Dawn and Ithilien Dusk themes for all supported applications")
+    print("Generated Ithilien Dawn themes for all supported applications")
 
 
 if __name__ == "__main__":
