@@ -37,6 +37,15 @@ contains 18 colors. Tintprobe OKLab distance increases from 0.0255 to 0.0471
 between Olive and Foam, and from 0.0334 to 0.0747 between Foam and Mist; these
 measurements support comparison, not a guarantee of perceptual recognition.
 
+## Syntax
+
+Everyday syntax follows Dawn’s neutral treatment: Parchment for functions,
+identifiers, keywords, types, numbers, and constants; Flint for strings and
+comments. Keywords and types use bold when enabled. Special syntax, regexes,
+and preprocessor highlights retain selective accents as in Dawn. Diagnostics,
+terminal ANSI colors, diffs, and interactions retain their distinct colors.
+This changes Neovim syntax mappings, not the 18-color palette or application ports.
+
 ## Validation
 
 The final implementation passes 68 unit/regression tests, 136 authored contrast

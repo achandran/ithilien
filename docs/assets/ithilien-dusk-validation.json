@@ -1,6 +1,6 @@
 {
   "variant": "ithilien-dusk",
-  "design": "Warm Graphite \u2014 clearer accents and aligned surface roles",
+  "design": "Warm Graphite \u2014 minimal everyday syntax",
   "font": "Berkeley Mono Retina",
   "font_size_pt": 16,
   "unit_tests": {
@@ -22,7 +22,7 @@
         "text_contrast": {
           "count": 53308,
           "minimum": 4.622,
-          "median": 8.098,
+          "median": 7.977,
           "maximum": 12.992
         },
         "inline_delta_e": {
@@ -64,7 +64,7 @@
   ],
   "source_sha256": {
     "scripts/palette/ithilien-dusk.json": "051fb3988331eb7b0f785567e3cabe159e05f465c6f41398b40f03838dfeeaef",
-    "lua/ithilien/dusk.lua": "7444b128c2f302472a9eb2f9905be497ecfdb80752ce3ccb994d49ea989cfa8f",
+    "lua/ithilien/dusk.lua": "e75a1070f4c458826e0e3c48c7e5c75347dc3c6e64242fca4a59e6d7a9093102",
     "extras/codex/themes/ithilien-dusk.tmTheme": "4fc6c9fd505722b747e5833b88b3beed245adc48d42326e98e78b5cfc9c31d3c",
     "extras/ghostty/themes/ithilien_dusk.conf": "4da0fe00997fefbf9b00a6070292ef3feff33c8d2f6f30865e263971dcb04434",
     "extras/shell/ithilien-dusk.zsh": "b752f9df15304e2b1f1608c0c05641dc302586ef8a46b464d37cc6a272775f75"

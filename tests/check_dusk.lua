@@ -8,6 +8,15 @@ local function check()
   assert(vim.o.background == 'dark')
   assert(get('Normal').bg == hex(p.backgrounds.base))
   assert(get('Normal').fg == hex(p.foregrounds.text))
+  for _,name in ipairs({'Identifier','Function','Type','Statement','Number','Boolean','Constant',
+    '@type.builtin','@keyword.function'}) do
+    assert(get(name).fg == hex(p.foregrounds.text), name .. ' must stay neutral')
+  end
+  assert(get('String').fg == hex(p.foregrounds.comment))
+  for name,color in pairs({DiagnosticError=p.ansi.red, DiagnosticWarn=p.ansi.yellow,
+    DiagnosticInfo=p.ansi.blue, DiagnosticHint=p.ansi.cyan, DiagnosticOk=p.ansi.green}) do
+    assert(get(name).fg == hex(color), name .. ' must retain its accent')
+  end
   for _,name in ipairs({'Visual','VisualNOS','PmenuSel','FzfLuaCursorLine'}) do
     local h = get(name)
     assert(h.fg == 0 and h.bg == hex(p.highlight.background), name)
@@ -34,5 +43,10 @@ assert(get('Normal').fg == 0)
 theme.load('dusk')
 check()
 assert(vim.deep_equal(first,get('Normal')))
-print('Dusk interaction pairs, exact edits, statusline, and Dawn/Dusk switching pass')
+theme.setup({bold=false, italics=false})
+theme.load('dusk')
+check()
+for _,name in ipairs({'Type','Statement'}) do assert(not get(name).bold, name) end
+assert(not get('Comment').italic)
+print('Dusk neutral syntax, diagnostics, interactions, style options, and Dawn/Dusk switching pass')
 vim.cmd('qa!')
