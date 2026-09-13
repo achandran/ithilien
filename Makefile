@@ -21,7 +21,7 @@ help:
 	@printf '%s\n' \
 	  'Ithilien development' \
 	  '' \
-	  '  make build     Build all ports, palette assets, and README previews' \
+	  '  make build     Build all ports, palette assets, and the Neovim preview' \
 	  '  make test      Run the normal unit and regression tests' \
 	  '  make evaluate  Run tests and headless renderer/workflow evaluation' \
 	  '  make evaluate-headless  Run renderer/workflow checks without GUI capture' \
@@ -34,7 +34,7 @@ help:
 test:
 	$(UV) run --locked pytest
 
-# Audit both palettes, regenerate every theme port, and refresh README previews.
+# Audit both palettes, regenerate every theme port, and refresh the Neovim preview.
 build:
 	$(UV) run --locked python scripts/build.py
 

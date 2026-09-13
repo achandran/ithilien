@@ -7,7 +7,7 @@ in `pyproject.toml` and `uv.lock`.
 
 | Command | Purpose |
 | --- | --- |
-| `make build` | Audit both palettes and regenerate ports, README, palette chart, and previews. |
+| `make build` | Audit both palettes and regenerate ports, palette chart, and the Neovim preview. |
 | `make test` | Run Ithilien's palette, export, and project-workflow policy tests. |
 | `make evaluate` | Run tests and headless renderer/workflow evaluation through Tintprobe. |
 | `make evaluate-ghostty` | Explicitly capture native Ghostty windows; requires an idle authorized desktop. |
@@ -46,6 +46,11 @@ comparison do not require the desktop. Python TS/LSP checks need the pinned gram
 and BasedPyright; Codex replay needs its pinned Rust source/toolchain, `just`, and
 `cargo-nextest`. See Tintprobe's guides for capture-specific prerequisites.
 
+The rendering profile comes from the pinned Tintprobe package. Add a local
+`evaluation/render-profile.json` only when Ithilien needs an explicit override.
+The rubric retains experimental weighted totals with `legacy_weighted_score: true`;
+these are project heuristics, not a universal theme ranking.
+
 ## Native project checks
 
 These do not open desktop windows:
@@ -70,7 +75,7 @@ uv run --locked python -m tintprobe --project-root . workflow evaluate_pickers
 
 The installed-workflows adapter loads your installed LazyVim configuration; its
 coverage differs from isolated fixtures. No pipeline installs themes or changes
-the canonical palette. See the project workflow guides for their limits.
+the canonical palette. See [testing](testing.md) for profile commands and coverage limits.
 
 ## Builds and evidence
 
@@ -97,4 +102,32 @@ replays on that checkout.
 To update Tintprobe, change its Git revision deliberately, regenerate `uv.lock`,
 then run both Tintprobe's tests and Ithilien's tests plus affected native checks.
 A palette change still requires native evaluation; unit tests alone do not prove
-rendering quality. Historical decisions are indexed in [design history](design-history.md).
+rendering quality. Historical decisions are indexed in [palette policy and history](palette-policy.md).
+
+## Preview assets
+
+Edit `README.md` directly. `make build` does not rewrite it; it regenerates the
+palette chart and `assets/ithilien-dawn-neovim.png` with its provenance JSON.
+To refresh just the native preview, run:
+
+```sh
+uv run --locked python scripts/generate_preview.py
+```
+
+The preview requires macOS Swift/AppKit, Neovim, the pinned Kanso checkout, and
+Berkeley Mono Medium regular/oblique OTF files in `~/Library/Fonts`. Missing
+dependencies fail the build. The source pair ships in Tintprobe’s
+`data/fixtures/readme/`. The image rasterizes actual Neovim UI cells with built-in
+Python syntax, preserving foreground/background colors and text styles. It is
+not a terminal screenshot or Tree-sitter/LSP capture. Its JSON records the palette
+hash, Neovim version, and Kanso revision.
+
+## Shared evaluator guides
+
+Tintprobe owns the documentation for [Codex UI replay](https://github.com/achandran/tintprobe/blob/main/docs/codex-ui-validation.md),
+[Ghostty capture](https://github.com/achandran/tintprobe/blob/main/docs/ghostty-validation.md),
+[evaluator validation](https://github.com/achandran/tintprobe/blob/main/docs/evaluator-validation.md),
+and [interaction checks](https://github.com/achandran/tintprobe/blob/main/docs/interaction-evaluation.md).
+Use this checkout’s pinned commands above; upstream documentation may describe a
+newer evaluator revision. `evaluation/deps/`, `evaluation/results/`, and
+`evaluation/local.mk` remain ignored local state.

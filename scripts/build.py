@@ -9,5 +9,5 @@ if __name__ == "__main__":
     audit("ithilien-dawn")
     generate()
 
-    from generate_readme import main as generate_readme
-    generate_readme()
+    from generate_preview import main as generate_preview
+    generate_preview()
