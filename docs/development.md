@@ -85,11 +85,13 @@ the canonical palette. See [testing](testing.md) for profile commands and covera
 ## Builds and evidence
 
 `make build` writes palette audit JSON/Markdown to ignored
-`tests/evaluation/results/palette/` before generating the README palette chart. To refresh
-only audits and ports:
+`tests/evaluation/results/palette/` before regenerating all ports, both palette
+charts, and both Python code previews. The standalone theme generator also
+regenerates all of these assets, so color changes cannot silently leave the code
+previews behind. Both commands require the preview dependencies listed below.
+To regenerate without running palette audits:
 
 ```sh
-uv run --locked python scripts/audit_palette.py ithilien-dawn
 uv run --locked python scripts/generate_themes.py
 ```
 

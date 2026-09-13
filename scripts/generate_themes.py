@@ -358,7 +358,9 @@ def main() -> None:
     from palette_chart import generate_chart
     generate_chart()
     generate_chart("ithilien-dusk")
-    print("Generated Ithilien Dawn and Dusk themes for all supported applications")
+    from generate_preview import main as generate_preview
+    generate_preview()
+    print("Generated Ithilien Dawn and Dusk themes, palette charts, and code previews")
 
 
 if __name__ == "__main__":

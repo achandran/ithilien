@@ -9,6 +9,3 @@ if __name__ == "__main__":
     audit("ithilien-dawn")
     audit_dusk()
     generate()
-
-    from generate_preview import main as generate_preview
-    generate_preview()
