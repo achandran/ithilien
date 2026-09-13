@@ -5,10 +5,17 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import tomllib
 
-from codex_config import PROFILE, animations_enabled
 from codex_native import color, write_gallery
 from ithilienlib import ROOT, load_palette, wcag
+
+PROFILE = ROOT / 'extras/codex/config.toml'
+
+
+def animations_enabled():
+    return tomllib.loads(PROFILE.read_text())['tui']['animations']
+
 
 PLACEHOLDER = 'Ask Codex to do anything'
 MODES = ('low', 'max', 'ultra')
@@ -133,7 +140,7 @@ def run(source, output, *, animated_control=False):
                   adapter_sha256=hashlib.sha256(adapter.read_bytes()).hexdigest(),
                   analyzer_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                   cells_sha256=hashlib.sha256((output/'codex-ui-cells.json').read_bytes()).hexdigest(),
-                  scope='Unmodified stock production widgets, configured from the repository motion profile used by the installer; 8 timed frames per effort at two widths. No model calls or commands executed by the replay.')
+                  scope='Unmodified stock production widgets, configured from the repository motion profile; 8 timed frames per effort at two widths. No model calls or commands executed by the replay.')
     write_gallery(records, output, palette)
     gallery = output/'codex-gallery.html'
     gallery.write_text(gallery.read_text().replace('Native Codex diff renderer', 'Stock Codex UI motion evaluation'))

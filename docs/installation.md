@@ -5,7 +5,7 @@
 Dawn is on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Add `vim.opt.diffopt:append("inline:char")` to your configuration; the colorscheme itself does not change your diff algorithm.
 
 
-Copy `nvim/lazyvim-plugin.lua` into your LazyVim plugin specifications, then run `:Lazy sync`. The spec installs `achandran/ithilien` with Kanso for both Dawn (Pearl base) and Dusk (Ink base) directly from GitHub. Select `ithilien`, `ithilien-dawn`, or `ithilien-dusk` with `:colorscheme`; `ithilien` defaults to Ithilien Dawn.
+Copy the [LazyVim configuration from the README](../README.md#lazyvim) into your plugin specifications, then run `:Lazy sync`. The spec installs `achandran/ithilien` with Kanso for both Dawn (Pearl base) and Dusk (Ink base) directly from GitHub. Select `ithilien`, `ithilien-dawn`, or `ithilien-dusk` with `:colorscheme`; `ithilien` defaults to Ithilien Dawn.
 
 On macOS, the included LazyVim spec also follows system appearance changes in running Neovim sessions. Install its native watcher first:
 
@@ -29,9 +29,9 @@ The generated dark theme uses Berkeley Mono Retina for terminal text and window 
 
 ## AI coding tools
 
-For Codex CLI, copy the generated `.tmTheme` files into `~/.codex/themes/`, then choose one with `/theme`. These themes explicitly define `markup.inserted` and `markup.deleted`, so Codex uses Ithilien's tuned diff backgrounds instead of its built-in mint and pink fallbacks.
+For Codex CLI, copy the `.tmTheme` files from `extras/codex/themes/` into `~/.codex/themes/`, then choose one with `/theme`. Optionally merge `tui.animations = false` from `extras/codex/config.toml` into your config to disable motion, without replacing other settings. These themes explicitly define `markup.inserted` and `markup.deleted`, so Codex uses Ithilien's tuned diff backgrounds instead of its built-in mint and pink fallbacks.
 
-For Claude Code 2.1.118 or newer, copy the generated JSON files into `~/.claude/themes/`, then choose one with `/theme`. The generated themes define full-line, dimmed-context, and word-level diff colors. Claude Code does not currently combine two custom files behind its `auto` selection, so select Ithilien Dusk or Ithilien Dawn when appearance changes.
+For Claude Code 2.1.118 or newer, copy the JSON files from `extras/claude-code/themes/` into `~/.claude/themes/`, then choose one with `/theme`. The generated themes define full-line, dimmed-context, and word-level diff colors. Claude Code does not currently combine two custom files behind its `auto` selection, so select Ithilien Dusk or Ithilien Dawn when appearance changes.
 
 ## Slack and Linear
 
@@ -64,27 +64,20 @@ Paths are relative to the repository root.
 
 With Dawn loaded, use zsh `bindkey -v`, type a command without executing it, press Escape, and move the block over letters and punctuation. Check dark text remains readable in the pale block, then return to insert mode. The user confirmed that changing `minimum-contrast` from 4.5 to 1 fixes the unreadable block in this workflow (version reported as “1.31”; exact version string unverified). Automated tests pin this setting and audit the exported pair, but do not emulate Ghostty rendering. Applications emitting their own colors no longer receive automatic contrast correction.
 
-## One-command installer
-
-Run `./install.sh` after `git pull` (Python 3 required). Changes are applied by default; use `./install.sh --dry-run` to preview them without writing. `--only ghostty nvim codex claude slack linear firefox` selects a subset. Detection uses executables on PATH and macOS application bundles; browser-only installations and apps in custom locations may be skipped.
-
-Changed existing files are backed up under `~/.local/share/ithilien/backups/<timestamp>/`, preserving their full path beneath that directory. Restore a file by copying its backup over the installed file. To undo a newly created LazyVim integration, remove `lua/plugins/ithilien-installed.lua`; other newly created theme files can likewise be removed. Repeated identical installs do not rewrite files or create backups.
-
-Ghostty always installs to `~/.config/ghostty/config` and `~/.config/ghostty/themes/`, even if a native macOS config exists; that native file is left untouched. For other integrations the installer respects XDG_CONFIG_HOME, CODEX_HOME, CLAUDE_CONFIG_DIR and NVIM_APPNAME. It refuses symlink destinations. Other Ghostty settings are preserved; explicit font, cursor, or contrast settings can override the installed theme. Existing custom LazyVim theme specifications may also require reconciliation. Non-LazyVim configurations get manual instructions rather than automatic init-file edits. No dependencies are downloaded by this script.
-
-Slack and Linear require their in-app import controls. Codex and Claude custom themes require their CLI theme selectors; desktop app detection alone does not establish CLI custom-theme support. Firefox receives Dawn/Dusk theme files under `~/.local/share/ithilien/firefox`; activation remains manual. Zsh receives both selection files and a backed-up managed Dawn highlight block in `.zshrc` (honoring ZDOTDIR). Wallpaper, macOS selection and mobile devices are outside automatic installation.
-
 ## Firefox and shell selection
 
 `extras/firefox/manifest.json` now defaults to Dawn. Separate `extras/firefox/ithilien-dawn/` and `extras/firefox/ithilien-dusk/` exports set the correct light/dark scheme, browser surfaces, and address-field selection. Load the desired manifest through `about:debugging` > This Firefox > Load Temporary Add-on. This expires on restart; permanent extension distribution requires signing.
 
-Each Firefox export also includes optional `userContent.css` for website `::selection`: Dawn uses Ranger brushed steel `#A8B2AE` with Lebethron `#000000`. To use it, merge the rule into the active profile's `chrome/userContent.css`, enable `toolkit.legacyUserProfileCustomizations.stylesheets` in about:config, and restart Firefox. The installer stages this file but does not overwrite profile CSS or toggle preferences. Browser theme colors alone do not control website selection.
+Each Firefox export also includes optional `userContent.css` for website `::selection`: Dawn uses Briar `#B8595C` with black text `#000000`. To use it, merge the rule into the active profile's `chrome/userContent.css`, enable `toolkit.legacyUserProfileCustomizations.stylesheets` in about:config, and restart Firefox. Browser theme colors alone do not control website selection.
 
-`./install.sh --only zsh firefox` installs these integrations when detected. Start a new zsh session after installation. The managed shell block defaults to Dawn; source `ithilien-dusk.zsh` instead for Dusk. ZLE visual selection and Ghostty mouse selection are separate systems. Non-region ZLE settings are preserved. The source can still be overridden by later extras/shell/plugin hooks.
+For Zsh, add `source /absolute/path/to/ithilien/extras/shell/ithilien-dawn.zsh`
+to `.zshrc` and start a new session. Choose `ithilien-dusk.zsh` for Dusk instead.
+ZLE visual selection and Ghostty mouse selection are separate systems.
+Non-region ZLE settings are preserved; later shell/plugin hooks can override them.
 
 System selection exports now include `extras/macos/apply-highlight-ithilien-dawn.sh` and `extras/macos/apply-highlight-ithilien-dusk.sh`; the legacy apply-highlight.sh defaults to Dawn. They remain opt-in global changes. The dynamic wallpaper is unchanged.
 
-The zsh installer also writes the Dawn prompt from `extras/shell/prompt.zsh` into the managed block: Ash username and hostname, blue path, purple Git information, and a black command-entry symbol. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.
+Optionally source `/absolute/path/to/ithilien/extras/shell/prompt.zsh` after the selection script to use the Dawn prompt: Ash username and hostname, blue path, purple Git information, and a black command-entry symbol. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.
 
 ### Neovim linewise selection rendering
 
@@ -92,11 +85,13 @@ Dawn Visual and VisualNOS use Briar backgrounds and black foregrounds with no un
 
 ### fzf history search
 
-The zsh installation also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Briar for the current row, underlined matching characters, and a Briar prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
+The sourced Zsh theme also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Briar for the current row, underlined matching characters, and a Briar prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
 
 ### macOS system selection
 
-The normal installer now includes the Dawn system highlight color on macOS, read from the canonical palette. `./install.sh` applies it alongside detected apps; `./install.sh --dry-run` previews it without writing. Use `--only macos` to target it alone. Other platforms skip it. The prior value is saved as `macos-highlight.json` in the installer backup directory (null means the preference was unset). Log out and back in if applications retain their previous color.
+Run the appropriate script from `extras/macos/` to change the global system
+selection color. These scripts are opt-in and do not create automatic backups.
+Log out and back in if applications retain their previous color.
 
 ### Dawn diff presentation
 
@@ -104,4 +99,7 @@ Dawn diff windows use subdued dotted filler, pane labels, and matching syntax wh
 
 ### Existing LazyVim theme configuration
 
-If a Lua plugin specification already declares `achandran/ithilien`, the installer leaves it unchanged. Update that GitHub-managed copy with `:Lazy update`. An unmodified duplicate `ithilien-installed.lua` created by this installer is backed up and removed; customized duplicates are left for manual review. The sample `nvim/lazyvim-plugin.lua` includes the status-line clock configuration.
+Use the [README configuration](../README.md#lazyvim). If you previously used the
+retired installer, its installed copies remain in place. Keep one Ithilien plugin
+specification; remove an obsolete `ithilien-installed.lua` only after transferring
+any custom settings. Existing backups remain under `~/.local/share/ithilien/backups/`.

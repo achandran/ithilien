@@ -3,9 +3,9 @@
 Ithilien keeps the stock Codex binary. `extras/codex/config.toml` sets
 `tui.animations = false`, the supported motion preference documented in the
 [official configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference).
-The Codex installer merges this one setting, preserves unrelated TOML values and
-comments, and backs up an existing file. Restart Codex after installation.
-Unsupported TOML spellings are rejected before writing rather than reconstructed.
+Merge this setting into your Codex config manually, preserving other settings,
+and restart Codex. The evaluator reads the repository profile directly; it does
+not edit your installed configuration.
 
 This removes the stock status shimmer and effort-change composer particles. The
 palette and generated Dawn/Dusk theme files are unchanged. Stock Codex's TextMate

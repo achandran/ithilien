@@ -30,3 +30,14 @@ This is a highlight-definition gate, not a claim of exhaustive pixel coverage.
 Plugin-local namespaces, terminal ANSI output, image/emoji rendering, and states
 created only by interaction need separate rendered checks. Anti-aliasing naturally
 produces intermediate pixel colors and should not fail palette membership.
+
+## Gitsigns load order
+
+The standalone Gitsigns check verifies staged sign cues and ordinary-weight
+inline spans before and after the plugin recreates its fallback highlights:
+
+```sh
+KANSO_ROOT=evaluation/deps/kanso GITSIGNS_ROOT=evaluation/deps/gitsigns.nvim nvim --headless -u NONE -i NONE -l scripts/check_gitsigns.lua
+```
+
+This complements the live hunk captures in the Git review suite.

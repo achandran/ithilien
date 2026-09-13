@@ -31,7 +31,8 @@ For a palette change, run `make build` then `make evaluate` (which includes
 `make test`). Use `make test` alone for a fast check while editing.
 Evaluation does not rebuild artifacts: this keeps it read-only with respect to
 the palette and generated ports. No command installs themes into your apps;
-installation remains `./install.sh`.
+Neovim installation is documented in the README, and extras use the manual
+steps in [installation](installation.md).
 
 Install [uv](https://docs.astral.sh/uv/) and Make first. The commands use
 `uv run --locked` to synchronize `.venv` from `pyproject.toml` and `uv.lock`.

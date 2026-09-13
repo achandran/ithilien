@@ -16,9 +16,9 @@ Application rendering and coverage differ; see the [installation guide](../docs/
 | macOS | [System selection scripts](macos/) |
 | Wallpaper | [Dynamic HEIC](wallpapers/ithilien.heic) |
 
-From the repository root, `./install.sh --only ghostty` installs one integration;
-`./install.sh --dry-run` previews the full installer. The installer requires
-Python 3 and retains the existing destination paths and backup behavior.
+Copy the files for your application or source the shell scripts using their
+absolute checkout paths. Follow the [manual installation steps](../docs/installation.md);
+there is no automatic installer.
 
 The source folders previously at the repository root now live under `extras/`.
 Update any custom scripts or symlinks that refer directly to checkout paths.

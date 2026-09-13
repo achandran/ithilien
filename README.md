@@ -31,11 +31,58 @@ Install with [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```
 
 Requires Neovim with truecolor enabled (`vim.opt.termguicolors = true`) and
-Kansō. Python and the repository's build tools are only needed for development
-or the optional extras installer.
+Kansō. Python and the repository's build tools are only needed for development.
 
-For LazyVim, use the [complete plugin spec](nvim/lazyvim-plugin.lua), including
-appearance switching and lualine integration.
+### LazyVim
+
+Use this complete configuration instead of the minimal lazy.nvim example above.
+Save it as `~/.config/nvim/lua/plugins/ithilien.lua`, then run `:Lazy sync`.
+It includes lualine integration and optional macOS appearance switching.
+
+```lua
+return {
+  {
+    "achandran/ithilien",
+    branch = "main",
+    dependencies = { "webhooked/kanso.nvim" },
+    lazy = false,
+    priority = 1000,
+    opts = {
+      bold = true,
+      italics = true,
+    },
+  },
+  {
+    "cormacrelf/dark-notify",
+    config = function()
+      require("dark_notify").run({
+        schemes = {
+          light = { colorscheme = "ithilien" },
+          dark = { colorscheme = "ithilien-dusk" },
+        },
+      })
+    end,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "ithilien",
+    },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      require("ithilien.statusline").configure(opts)
+    end,
+  },
+}
+```
+
+For automatic macOS switching, install the watcher with
+`brew install cormacrelf/tap/dark-notify`. On other platforms, or to choose the
+theme manually, omit the `cormacrelf/dark-notify` entry. Update the plugin with
+`:Lazy update`.
+
 
 ## Usage
 
@@ -79,9 +126,8 @@ following [Kansō's layout](https://github.com/webhooked/kanso.nvim/tree/main/ex
 These include Ghostty, Codex, Claude Code, Firefox, Zsh, Slack, Linear, macOS
 selection scripts, and a dynamic wallpaper.
 
-For optional local installation, clone this repository and run
-`./install.sh --only ghostty` (or select other integrations). Run
-`./install.sh --dry-run` to inspect the full installer plan.
+Copy or source the files for the applications you use; see the manual
+installation instructions below.
 
 [Extra installation instructions](docs/installation.md) ·
 [Development](docs/development.md) · [Preview details](docs/readme-generation.md)
