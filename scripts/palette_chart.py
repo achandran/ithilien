@@ -14,10 +14,11 @@ def generate_chart(variant='ithilien-dawn'):
         ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict')]),
     ]
     if variant == 'ithilien-dusk':
-        groups[0] = ('Surfaces and Text', [('backgrounds.base','Canvas'),
+        groups[0] = ('Surfaces and Text', [('backgrounds.base','Canvas / inset'),
             ('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),
-            ('highlight.foreground','Interaction text'),('foregrounds.text','Primary text'),
+            ('foregrounds.text','Primary text'),
             ('foregrounds.comment','Muted text / borders')])
+        groups[3][1].append(('highlight.foreground','Interaction text'))
     columns = 4
     width = 966
     height = 60 + sum(48 + ((len(items)+columns-1)//columns)*146 for _,items in groups)

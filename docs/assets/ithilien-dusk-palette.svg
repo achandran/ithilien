@@ -6,7 +6,7 @@
 <rect x="24" y="100" width="216" height="48" fill="#AAA497"/>
 <rect x="25" y="101" width="214" height="46" fill="#202120"/>
 <text x="24" y="171" fill="#BDB7AB" font-weight="700">Dúath</text>
-<text x="24" y="195" fill="#AAA497" >Canvas</text>
+<text x="24" y="195" fill="#AAA497" >Canvas / inset</text>
 <text x="24" y="219" fill="#AAA497" >#202120</text>
 <rect x="258" y="100" width="216" height="48" fill="#AAA497"/>
 <rect x="259" y="101" width="214" height="46" fill="#2C2E2C"/>
@@ -19,20 +19,15 @@
 <text x="492" y="195" fill="#AAA497" >Muted surface</text>
 <text x="492" y="219" fill="#AAA497" >#303437</text>
 <rect x="726" y="100" width="216" height="48" fill="#AAA497"/>
-<rect x="727" y="101" width="214" height="46" fill="#000000"/>
-<text x="726" y="171" fill="#BDB7AB" font-weight="700">Lebethron</text>
-<text x="726" y="195" fill="#AAA497" >Interaction text</text>
-<text x="726" y="219" fill="#AAA497" >#000000</text>
+<rect x="727" y="101" width="214" height="46" fill="#BDB7AB"/>
+<text x="726" y="171" fill="#BDB7AB" font-weight="700">Ithil</text>
+<text x="726" y="195" fill="#AAA497" >Primary text</text>
+<text x="726" y="219" fill="#AAA497" >#BDB7AB</text>
 <rect x="24" y="246" width="216" height="48" fill="#AAA497"/>
-<rect x="25" y="247" width="214" height="46" fill="#BDB7AB"/>
-<text x="24" y="317" fill="#BDB7AB" font-weight="700">Ithil</text>
-<text x="24" y="341" fill="#AAA497" >Primary text</text>
-<text x="24" y="365" fill="#AAA497" >#BDB7AB</text>
-<rect x="258" y="246" width="216" height="48" fill="#AAA497"/>
-<rect x="259" y="247" width="214" height="46" fill="#AAA497"/>
-<text x="258" y="317" fill="#BDB7AB" font-weight="700">Flint</text>
-<text x="258" y="341" fill="#AAA497" >Muted text / borders</text>
-<text x="258" y="365" fill="#AAA497" >#AAA497</text>
+<rect x="25" y="247" width="214" height="46" fill="#AAA497"/>
+<text x="24" y="317" fill="#BDB7AB" font-weight="700">Flint</text>
+<text x="24" y="341" fill="#AAA497" >Muted text / borders</text>
+<text x="24" y="365" fill="#AAA497" >#AAA497</text>
 <text x="24" y="421" fill="#BDB7AB" font-weight="700">Terminal Colors</text>
 <rect x="24" y="440" width="216" height="48" fill="#AAA497"/>
 <rect x="25" y="441" width="214" height="46" fill="#E09A9D"/>
@@ -96,4 +91,9 @@
 <text x="258" y="1045" fill="#BDB7AB" font-weight="700">Heather</text>
 <text x="258" y="1069" fill="#AAA497" >Search / conflict</text>
 <text x="258" y="1093" fill="#AAA497" >#D6C6DE</text>
+<rect x="492" y="974" width="216" height="48" fill="#AAA497"/>
+<rect x="493" y="975" width="214" height="46" fill="#000000"/>
+<text x="492" y="1045" fill="#BDB7AB" font-weight="700">Lebethron</text>
+<text x="492" y="1069" fill="#AAA497" >Interaction text</text>
+<text x="492" y="1093" fill="#AAA497" >#000000</text>
 </svg>
