@@ -135,11 +135,12 @@ uv run --locked python scripts/generate_preview.py
 The preview requires macOS Swift/AppKit, Neovim, the pinned Kanso checkout, and
 Berkeley Mono Medium and Retina regular/oblique OTF files, plus Bold and
 Bold Oblique, in `~/Library/Fonts`. Missing
-dependencies fail the build. The source pair ships in Tintprobe’s
-`data/fixtures/readme/`. The image rasterizes actual Neovim UI cells with built-in
-Python syntax, preserving foreground/background colors and text styles. It is
-not a terminal screenshot or Tree-sitter/LSP capture. Its JSON records the palette
-hash, Neovim version, and Kanso revision.
+dependencies fail the build. The source pair lives in this repository’s
+`tests/fixtures/readme/` and includes type annotations, a multiline docstring,
+a comprehension, validation, and formatted f-strings. The image rasterizes actual
+Neovim UI cells with built-in Python syntax, preserving foreground/background colors and text styles. It is
+not a terminal screenshot or Tree-sitter/LSP capture. Its JSON records the fixture
+and palette hashes, Neovim version, and Kanso revision.
 
 ## Shared evaluator guides
 

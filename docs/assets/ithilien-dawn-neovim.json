@@ -1,4 +1,8 @@
 {
+  "fixture_sha256": {
+    "before": "57e54009c25b58b1711bcdc3314ca180f5acec7e8453eeec6e6986ec256490fd",
+    "after": "f06dfde3ac94fd66687da08ff7ee707785a2a0a1191e345a4b20670fd3f7fa44"
+  },
   "palette_sha256": "7411552f1df2d8607d1810057425987d5445b4f40146a0cd517a47e2c4794f31",
   "nvim": "NVIM v0.12.5",
   "kanso_revision": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
