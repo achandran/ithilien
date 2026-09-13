@@ -2,10 +2,9 @@
   "schema_version": 1,
   "default_theme": "ithilien-dawn",
   "palettes": {
-    "shared": "scripts/palette/ithilien-shared.json",
     "variants": {
-      "ithilien-dawn": "scripts/palette/ithilien-dawn.json",
-      "ithilien-dusk": "scripts/palette/ithilien-dusk.json"
+      "ithilien-dawn": "extras/tintprobe/ithilien-dawn.json",
+      "ithilien-dusk": "extras/tintprobe/ithilien-dusk.json"
     }
   },
   "ports": {

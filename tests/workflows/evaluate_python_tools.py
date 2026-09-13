@@ -64,7 +64,7 @@ vim.opt.rtp:append(vim.env.ITHILIEN_PYTHON_PARSER_ROOT)
 vim.cmd('syntax on')
 vim.cmd('colorscheme ithilien-dawn')
 """}
-    palette=(ROOT/'scripts/palette/ithilien-dawn.json').read_bytes()
+    palette=(ROOT/'scripts/palette/ithilien.json').read_bytes()
     colors=json.loads(palette)['colors'];results=[];shots=[]
     for scene in SCENES:
         for width in widths:

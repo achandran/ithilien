@@ -63,10 +63,20 @@
     "No Ghostty pixel/cursor capture or long-session comfort claim."
   ],
   "source_sha256": {
-    "scripts/palette/ithilien-dusk.json": "051fb3988331eb7b0f785567e3cabe159e05f465c6f41398b40f03838dfeeaef",
     "lua/ithilien/dusk.lua": "e75a1070f4c458826e0e3c48c7e5c75347dc3c6e64242fca4a59e6d7a9093102",
     "extras/codex/themes/ithilien-dusk.tmTheme": "4fc6c9fd505722b747e5833b88b3beed245adc48d42326e98e78b5cfc9c31d3c",
-    "extras/ghostty/themes/ithilien_dusk.conf": "4da0fe00997fefbf9b00a6070292ef3feff33c8d2f6f30865e263971dcb04434",
-    "extras/shell/ithilien-dusk.zsh": "b752f9df15304e2b1f1608c0c05641dc302586ef8a46b464d37cc6a272775f75"
+    "extras/ghostty/themes/ithilien_dusk.conf": "86ef415d7807a9960cac0dac9f5f94c532cff5b99cd555301662be17498af3cf",
+    "extras/shell/ithilien-dusk.zsh": "b752f9df15304e2b1f1608c0c05641dc302586ef8a46b464d37cc6a272775f75",
+    "scripts/palette/ithilien.json": "4afc309b031533aeb993e001a2f314e18cb5d141c8960c0c667b940fa1ba7df2"
+  },
+  "palette_source_migration": {
+    "previous_source_sha256": {
+      "scripts/palette/ithilien-dusk.json": "051fb3988331eb7b0f785567e3cabe159e05f465c6f41398b40f03838dfeeaef",
+      "lua/ithilien/dusk.lua": "e75a1070f4c458826e0e3c48c7e5c75347dc3c6e64242fca4a59e6d7a9093102",
+      "extras/codex/themes/ithilien-dusk.tmTheme": "4fc6c9fd505722b747e5833b88b3beed245adc48d42326e98e78b5cfc9c31d3c",
+      "extras/ghostty/themes/ithilien_dusk.conf": "4da0fe00997fefbf9b00a6070292ef3feff33c8d2f6f30865e263971dcb04434",
+      "extras/shell/ithilien-dusk.zsh": "b752f9df15304e2b1f1608c0c05641dc302586ef8a46b464d37cc6a272775f75"
+    },
+    "note": "Consolidated source and updated generated header paths only; frozen resolved-palette fingerprints are unchanged. Native validation remains applicable to the same colors and roles."
   }
 }

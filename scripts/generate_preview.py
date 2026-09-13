@@ -28,7 +28,7 @@ def generate(width,state,filename,variant='dawn'):
     with tempfile.TemporaryDirectory() as temp:
         p=Path(temp)/'drawing.json';p.write_text(json.dumps({'width':width*10,'height':690,'commands':commands,'fontWeight':'Medium' if variant=='dawn' else 'Retina'}))
         subprocess.run(['swift','-module-cache-path',temp,str(ROOT/'scripts/render_readme.swift'),str(p),str(ROOT/('docs/assets/'+filename+'.png'))],check=True)
-    meta={'fixture_sha256':{name:hashlib.sha256((ROOT/f'tests/fixtures/readme/{name}.py').read_bytes()).hexdigest() for name in ('before','after')},'palette_sha256':hashlib.sha256((ROOT/f'scripts/palette/ithilien-{variant}.json').read_bytes()).hexdigest(),'nvim':subprocess.check_output([nvim,'--version'],text=True).splitlines()[0],'kanso_revision':subprocess.check_output(['git','-C',str(kanso),'rev-parse','HEAD'],text=True).strip(),'kind':f'Native Neovim UI cells rasterized using Berkeley Mono {"Medium" if variant=="dawn" else "Retina"} 16pt; not a terminal screenshot'}
+    meta={'fixture_sha256':{name:hashlib.sha256((ROOT/f'tests/fixtures/readme/{name}.py').read_bytes()).hexdigest() for name in ('before','after')},'palette_sha256':hashlib.sha256((ROOT/'scripts/palette/ithilien.json').read_bytes()).hexdigest(),'nvim':subprocess.check_output([nvim,'--version'],text=True).splitlines()[0],'kanso_revision':subprocess.check_output(['git','-C',str(kanso),'rev-parse','HEAD'],text=True).strip(),'kind':f'Native Neovim UI cells rasterized using Berkeley Mono {"Medium" if variant=="dawn" else "Retina"} 16pt; not a terminal screenshot'}
     (ROOT/('docs/assets/'+filename+'.json')).write_text(json.dumps(meta,indent=2)+'\n')
 
 

@@ -37,8 +37,15 @@ tools or request desktop permissions.
 
 `tintprobe.json` declares Ithilien's palette inputs, native ports, default adapter,
 the `tests/workflows/` directory, and `evaluation_dir: "tests/evaluation"`.
-Canonical palette inputs live in `scripts/palette/`; native regression entry
-points live in `tests/`. Pytest excludes evaluation inputs and cached dependencies. `tests/evaluation/` retains project rubrics, aesthetic
+The single editable palette source is `scripts/palette/ithilien.json`. It contains
+shared color-space metadata and the `ithilien-dawn` and `ithilien-dusk` entries
+under `variants`, each with named colors and functional role mappings. The
+loader preserves the existing per-variant API.
+
+The pinned Tintprobe release requires separate variant files, so generation
+writes resolved compatibility exports to `extras/tintprobe/`. These are generated
+outputs, not additional palette sources; never edit them by hand. Native
+regression entry points live in `tests/`. Pytest excludes evaluation inputs and cached dependencies. `tests/evaluation/` retains project rubrics, aesthetic
 preferences, workflow scripts, and dependency declarations. Shared fixtures,
 Codex instrumentation, and engine tests live in Tintprobe's package/repository.
 The ANSI approval baseline and native diff-presentation pair remain in

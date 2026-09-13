@@ -1,0 +1,348 @@
+{
+  "colorSpace": "sRGB",
+  "variants": {
+    "ithilien-dawn": {
+      "name": "Ithilien Dawn",
+      "slug": "ithilien-dawn",
+      "polarity": "light",
+      "colors": {
+        "Lebethron": "#000000",
+        "Ash": "#505456",
+        "Briar": "#B8595C",
+        "Ilex": "#315F46",
+        "Anduin": "#345E77",
+        "Mallorn": "#795922",
+        "Iris": "#70516D",
+        "Pelennor": "#E2EDDF",
+        "Eglantine": "#F1E2DF",
+        "Henneth": "#D7E3EA",
+        "Celandine": "#D8B46A",
+        "Heather": "#D6C6DE",
+        "Nimloth": "#FAFAF8",
+        "Gondor": "#DEE0DF",
+        "Anemone": "#F0F1EF",
+        "Osgiliath": "#C9CECB",
+        "Annun": "#8B3037",
+        "Rauros": "#255354"
+      },
+      "colorNotes": {
+        "Lebethron": {
+          "meaning": "Black wood used for the casket holding the Crown of Gondor.",
+          "source": "https://tolkiengateway.net/wiki/Lebethron"
+        },
+        "Ash": {
+          "meaning": "Ithilien ash trees; gray bark.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Briar": {
+          "meaning": "Muted rose red inspired by the hips of Ithilien briars; a botanical interpretation, not a shade specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Eglantine"
+        },
+        "Ilex": {
+          "meaning": "Deep green inspired by the evergreen foliage of the great ilexes of Ithilien; the exact shade is a design interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Anduin": {
+          "meaning": "The Great River along Ithilien; interpreted as river blue.",
+          "source": "https://tolkiengateway.net/wiki/Anduin"
+        },
+        "Mallorn": {
+          "meaning": "Dark ochre inspired by the golden leaves of L\u00f3rien\u2019s mallorn trees; a shaded interpretation chosen for readable terminal text. A broader Tolkien connection, not an Ithilien tree.",
+          "source": "https://tolkiengateway.net/wiki/Mallorn"
+        },
+        "Iris": {
+          "meaning": "Muted purple inspired by iris flowers. Frodo and Sam encountered irises in Ithilien; this shade is a floral interpretation, not a color specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Iris"
+        },
+        "Pelennor": {
+          "meaning": "Pale field green inspired by the cultivated lands of Gondor across Anduin from Ithilien.",
+          "source": "https://tolkiengateway.net/wiki/Pelennor_Fields"
+        },
+        "Eglantine": {
+          "meaning": "Pale blush inspired by the petals of Ithilien\u2019s sweet-briar.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Henneth": {
+          "meaning": "Pale blue-gray inspired by the waterfall curtain at Henneth Ann\u00fbn, the Window on the West in Ithilien. A shortened place-name element, not a Tolkien word for mist or blue.",
+          "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+        },
+        "Celandine": {
+          "meaning": "Muted golden yellow inspired by the bright celandine flowers of Ithilien; a softened interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Heather": {
+          "meaning": "Pale lilac inspired by the pink-purple flowers of heather growing in Ithilien; the exact shade is a botanical interpretation, not a color specified by Tolkien.",
+          "source": "https://encyclopedia-of-arda.com/h/heather.php"
+        },
+        "Nimloth": {
+          "meaning": "Soft white inspired by Nimloth, the White Tree of N\u00famenor and ancestor of Gondor\u2019s White Trees; its name means \u201cWhite Blossom\u201d. The shade is a poetic interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Nimloth_(tree)"
+        },
+        "Gondor": {
+          "meaning": "The realm containing Ithilien; pale gray interpreted from Gondorian stone architecture.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Anemone": {
+          "meaning": "White anemones in Ithilien; interpreted as a near-white neutral.",
+          "source": "https://tolkiengateway.net/wiki/Anemones"
+        },
+        "Osgiliath": {
+          "meaning": "City straddling Anduin at Ithilien\u2019s western edge; weathered stone.",
+          "source": "https://tolkiengateway.net/wiki/Osgiliath"
+        },
+        "Annun": {
+          "displayName": "Ann\u00fbn",
+          "meaning": "Deep sunset red inspired by the light through the waterfall at Henneth Ann\u00fbn in Ithilien. Paired with Henneth\u2019s pale waterfall blue; the shade is an interpretation, not the literal meaning of Ann\u00fbn. Uses Annun in code.",
+          "source": "https://encyclopedia-of-arda.com/w/windowofthesunset.php"
+        },
+        "Rauros": {
+          "meaning": "Deep teal inspired by the shaded waters of Anduin at the Falls of Rauros, north of Ithilien. A poetic color interpretation, not a hue specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Rauros"
+        }
+      },
+      "highlight": {
+        "background": "Briar",
+        "foreground": "Lebethron",
+        "border": "Ash",
+        "cursor": "Briar",
+        "cursorBlock": "Briar"
+      },
+      "backgrounds": {
+        "crust": "Osgiliath",
+        "mantle": "Gondor",
+        "base": "Nimloth",
+        "surface0": "Nimloth",
+        "surface1": "Anemone",
+        "surface2": "Osgiliath",
+        "border": "Ash",
+        "search": "Heather"
+      },
+      "foregrounds": {
+        "muted": "Ash",
+        "comment": "Ash",
+        "subtext": "Ash",
+        "text": "Lebethron",
+        "bright": "Lebethron"
+      },
+      "accents": {
+        "olive": "Lebethron",
+        "sage": "Ash",
+        "gold": "Lebethron",
+        "ochre": "Lebethron",
+        "clay": "Lebethron",
+        "coral": "Annun",
+        "aqua": "Rauros",
+        "blue": "Anduin",
+        "mauve": "Iris"
+      },
+      "ansi": {
+        "black": "Lebethron",
+        "red": "Annun",
+        "green": "Ilex",
+        "yellow": "Mallorn",
+        "blue": "Anduin",
+        "magenta": "Iris",
+        "cyan": "Rauros",
+        "white": "Nimloth",
+        "brightBlack": "Ash",
+        "brightRed": "Annun",
+        "brightGreen": "Ilex",
+        "brightYellow": "Mallorn",
+        "brightBlue": "Anduin",
+        "brightMagenta": "Iris",
+        "brightCyan": "Rauros",
+        "brightWhite": "Nimloth",
+        "extendedOchre": "Mallorn",
+        "extendedClay": "Annun"
+      },
+      "diff": {
+        "contextForeground": "Lebethron",
+        "inlineForeground": "Lebethron",
+        "addForeground": "Lebethron",
+        "addBackground": "Pelennor",
+        "addEmphasis": "Celandine",
+        "deleteForeground": "Lebethron",
+        "deleteBackground": "Eglantine",
+        "deleteEmphasis": "Celandine",
+        "changeForeground": "Lebethron",
+        "changeBackground": "Henneth",
+        "changeEmphasis": "Celandine",
+        "hunkForeground": "Lebethron",
+        "hunkBackground": "Henneth",
+        "conflictForeground": "Lebethron",
+        "conflictBackground": "Heather"
+      }
+    },
+    "ithilien-dusk": {
+      "name": "Ithilien Dusk",
+      "slug": "ithilien-dusk",
+      "polarity": "dark",
+      "colors": {
+        "Lebethron": "#000000",
+        "Flint": "#AAA497",
+        "Briar": "#B8595C",
+        "Olive": "#ADC5B4",
+        "Mist": "#9DBDE0",
+        "Elanor": "#D0BD91",
+        "Clematis": "#C1B0CE",
+        "Cypress": "#273B31",
+        "Bramble": "#402E33",
+        "Grotto": "#293847",
+        "Celandine": "#D8B46A",
+        "Heather": "#D6C6DE",
+        "Parchment": "#BDB7AB",
+        "Shale": "#2C2E2C",
+        "Slate": "#303437",
+        "Graphite": "#202120",
+        "Rosehip": "#E09A9D",
+        "Foam": "#83C9BE"
+      },
+      "colorNotes": {
+        "Lebethron": {
+          "meaning": "Black wood used for the casket holding the Crown of Gondor.",
+          "source": "https://tolkiengateway.net/wiki/Lebethron"
+        },
+        "Flint": {
+          "meaning": "Warm flint gray; a poetic stone association with Ithilien\u2019s rocky landscape, not a claim about its geology.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Briar": {
+          "meaning": "Muted rose red inspired by the hips of Ithilien briars; a botanical interpretation, not a shade specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Eglantine"
+        },
+        "Olive": {
+          "meaning": "Soft gray-green inspired by the olive trees of Ithilien; a botanical color interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Mist": {
+          "meaning": "Soft blue inspired by mist at the waterfall of Henneth Ann\u00fbn; a poetic water association.",
+          "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+        },
+        "Elanor": {
+          "meaning": "Muted gold inspired by the golden elanor flowers of L\u00f3rien; a broader Tolkien connection, interpreted for Dusk.",
+          "source": "https://tolkiengateway.net/wiki/Elanor"
+        },
+        "Clematis": {
+          "meaning": "Soft mauve inspired by Ithilien\u2019s trailing clematises; a botanical color interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Cypress": {
+          "meaning": "Deep green inspired by the cypresses of Ithilien; a shaded botanical interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Bramble": {
+          "meaning": "Deep rose-brown inspired by tangled briar stems in Ithilien; a shaded botanical interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Grotto": {
+          "meaning": "Deep blue inspired by the shaded refuge behind the waterfall at Henneth Ann\u00fbn; a poetic cave-and-water association.",
+          "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+        },
+        "Celandine": {
+          "meaning": "Muted golden yellow inspired by the bright celandine flowers of Ithilien; a softened interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Heather": {
+          "meaning": "Pale lilac inspired by the pink-purple flowers of heather growing in Ithilien; the exact shade is a botanical interpretation, not a color specified by Tolkien.",
+          "source": "https://encyclopedia-of-arda.com/h/heather.php"
+        },
+        "Parchment": {
+          "meaning": "Warm parchment gray evoking a weathered record of Gondor; a poetic material association with Osgiliath, not a documented artifact or shade.",
+          "source": "https://tolkiengateway.net/wiki/Osgiliath"
+        },
+        "Shale": {
+          "meaning": "Dark layered-stone gray evoking Ithilien\u2019s rocky landscape; a poetic material association, not a geological claim.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Slate": {
+          "meaning": "Cool slate gray evoking Ithilien\u2019s shaded stone; a poetic material association, not a geological claim.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Graphite": {
+          "meaning": "Deep graphite gray evoking shaded Gondorian ruins; a contemporary material interpretation of Osgiliath, not a material specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Osgiliath"
+        },
+        "Rosehip": {
+          "meaning": "Soft rose red inspired by the hips of Ithilien\u2019s briars; a botanical color interpretation.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
+        },
+        "Foam": {
+          "meaning": "Pale water teal inspired by the falling water at Henneth Ann\u00fbn; a poetic water association.",
+          "source": "https://tolkiengateway.net/wiki/Henneth_Ann%C3%BBn"
+        }
+      },
+      "highlight": {
+        "background": "Briar",
+        "foreground": "Lebethron",
+        "border": "Flint",
+        "cursor": "Briar",
+        "cursorBlock": "Briar"
+      },
+      "backgrounds": {
+        "crust": "Graphite",
+        "mantle": "Slate",
+        "base": "Graphite",
+        "surface0": "Shale",
+        "surface1": "Shale",
+        "surface2": "Slate",
+        "border": "Flint",
+        "search": "Heather"
+      },
+      "foregrounds": {
+        "muted": "Flint",
+        "comment": "Flint",
+        "subtext": "Flint",
+        "text": "Parchment",
+        "bright": "Parchment"
+      },
+      "accents": {
+        "olive": "Parchment",
+        "sage": "Olive",
+        "gold": "Parchment",
+        "ochre": "Clematis",
+        "clay": "Mist",
+        "coral": "Rosehip",
+        "aqua": "Foam",
+        "blue": "Mist",
+        "mauve": "Clematis"
+      },
+      "ansi": {
+        "black": "Lebethron",
+        "red": "Rosehip",
+        "green": "Olive",
+        "yellow": "Elanor",
+        "blue": "Mist",
+        "magenta": "Clematis",
+        "cyan": "Foam",
+        "white": "Parchment",
+        "brightBlack": "Flint",
+        "brightRed": "Rosehip",
+        "brightGreen": "Olive",
+        "brightYellow": "Elanor",
+        "brightBlue": "Mist",
+        "brightMagenta": "Clematis",
+        "brightCyan": "Foam",
+        "brightWhite": "Parchment",
+        "extendedOchre": "Elanor",
+        "extendedClay": "Rosehip"
+      },
+      "diff": {
+        "contextForeground": "Parchment",
+        "inlineForeground": "Lebethron",
+        "addForeground": "Parchment",
+        "addBackground": "Cypress",
+        "addEmphasis": "Celandine",
+        "deleteForeground": "Parchment",
+        "deleteBackground": "Bramble",
+        "deleteEmphasis": "Celandine",
+        "changeForeground": "Parchment",
+        "changeBackground": "Grotto",
+        "changeEmphasis": "Celandine",
+        "hunkForeground": "Parchment",
+        "hunkBackground": "Grotto",
+        "conflictForeground": "Lebethron",
+        "conflictBackground": "Heather"
+      }
+    }
+  }
+}

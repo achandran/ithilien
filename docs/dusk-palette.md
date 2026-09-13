@@ -1,6 +1,6 @@
 # Ithilien Dusk: Warm Graphite
 
-<!-- Generated from scripts/palette/ithilien-dusk.json; do not edit by hand. -->
+<!-- Generated from scripts/palette/ithilien.json (ithilien-dusk); do not edit by hand. -->
 
 18 named sRGB colors. Briar, Celandine, Heather, and Lebethron are shared exactly with Dawn.
 

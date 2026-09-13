@@ -46,7 +46,7 @@ def check(shot, palette):
     if shot['case']=='blink' and not evidence['blink_visible']: failures.append('Blink menu not visible')
     if shot['case']=='python-visual' and evidence['mode']!='V': failures.append('Linewise Visual mode absent')
     # Require overlays on actual source cells, not merely defined highlight groups.
-    colors=json.loads((ROOT/'scripts/palette/ithilien-dawn.json').read_text())['colors']
+    colors=json.loads((ROOT/'scripts/palette/ithilien.json').read_text())['variants']['ithilien-dawn']['colors']
     role={'python-search':'Heather','python-visual':'Briar','python-diff':'Celandine'}.get(shot['case'])
     if role:
         expected=int(colors[role][1:],16)
@@ -146,7 +146,7 @@ def run(output, init, lazy, scenes=None, widths=(100,160), states=('initial','re
     for folder in sorted(lazy.parent.iterdir()):
         if (folder/'.git').exists():
             revisions[folder.name]=subprocess.check_output(['git','-C',str(folder),'rev-parse','HEAD'],text=True).strip()
-    palette=json.loads((ROOT/'scripts/palette/ithilien-dawn.json').read_text())
+    palette=json.loads((ROOT/'scripts/palette/ithilien.json').read_text())['variants']['ithilien-dawn']
     allowed={int(v[1:],16) for v in palette['colors'].values()}
     records=[];results=[]
     for scene in scenes or SCENES:
@@ -161,7 +161,7 @@ def run(output, init, lazy, scenes=None, widths=(100,160), states=('initial','re
                     results.append({'scene':scene,'width':width,'state':state,'pass':False,'error':str(exc)})
     report={'pass':all(r['pass'] for r in results) and bool(results),'results':results,
             'fixture_sha256':hashlib.sha256((evaluation_path('installed-workflows.lua')).read_bytes()).hexdigest(),
-            'palette_sha256':hashlib.sha256((ROOT/'scripts/palette/ithilien-dawn.json').read_bytes()).hexdigest(),
+            'palette_sha256':hashlib.sha256((ROOT/'scripts/palette/ithilien.json').read_bytes()).hexdigest(),
             'plugin_revisions':revisions,
             'nvim':subprocess.check_output(['nvim','--version'],text=True).splitlines()[0],
             'scope':'Actual installed plugin renderers and Python Tree-sitter. Deterministic diagnostics plus an explicit live BasedPyright case; normal configured servers are disabled for reproducibility. Neovim RGB cell captures, not native Ghostty screenshots. No comfort proof.',

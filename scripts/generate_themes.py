@@ -30,7 +30,7 @@ def generate_ghostty(palette: dict) -> None:
     ansi = list(ansi_tokens.values())
     is_light = palette["polarity"] == "light"
     lines = [
-        f"# {palette['name']} — generated from scripts/palette/{palette['slug']}.json; do not edit by hand.",
+        f"# {palette['name']} — generated from scripts/palette/ithilien.json ({palette['slug']}); do not edit by hand.",
         "# Warm, readability-first foundations and diff-aware ANSI colors.",
         "",
         *[f"palette = {index}={color}" for index, color in enumerate(ansi)],
@@ -82,7 +82,7 @@ def generate_neovim_palette(palette: dict) -> None:
     term = list(palette["ansi"].values())
     named_colors = load_palette_source(palette["slug"]).get("colors", {})
     rendered = (
-        f"-- Generated from scripts/palette/{palette['slug']}.json; do not edit by hand.\n"
+        f"-- Generated from scripts/palette/ithilien.json ({palette['slug']}); do not edit by hand.\n"
         "return {\n"
         + (f"  colors = {lua_table(named_colors, 2)},\n" if named_colors else "")
         + f"  raw = {lua_table(palette, 2)},\n"
@@ -301,7 +301,7 @@ def generate_color_reference() -> None:
             roles[name].append(f'`{family}.{role}`')
     lines = [
         '# Ithilien Dawn: named colors', '',
-        '<!-- Generated from scripts/palette/ithilien-dawn.json; do not edit by hand. -->', '',
+        '<!-- Generated from scripts/palette/ithilien.json (ithilien-dawn); do not edit by hand. -->', '',
         f'All **{len(source["colors"])} named sRGB colors** define the Formex-inspired Dawn palette. '
         'Each color has one single-word name and a documented connection to Tolkien’s work. '
         'The exact shades are design interpretations, not colors measured from the books.', '',
@@ -330,7 +330,7 @@ def generate_color_reference() -> None:
 def generate_dusk_reference():
     source = load_palette_source('ithilien-dusk')
     lines = ['# Ithilien Dusk: Warm Graphite', '',
-             '<!-- Generated from scripts/palette/ithilien-dusk.json; do not edit by hand. -->', '',
+             '<!-- Generated from scripts/palette/ithilien.json (ithilien-dusk); do not edit by hand. -->', '',
              '18 named sRGB colors. Briar, Celandine, Heather, and Lebethron are shared exactly with Dawn.', '',
              '| Name | Hex | Roles | Interpretation |', '| --- | --- | --- | --- |']
     for name, color in source['colors'].items():
@@ -341,9 +341,17 @@ def generate_dusk_reference():
     (ROOT / 'docs/dusk-palette.md').write_text('\n'.join(lines) + '\n')
 
 
+def generate_tintprobe_palette(palette: dict) -> None:
+    """Export resolved roles for the pinned evaluator's per-variant API."""
+    destination = ROOT / 'extras/tintprobe'
+    destination.mkdir(parents=True, exist_ok=True)
+    (destination / (palette['slug'] + '.json')).write_text(json.dumps(palette, indent=2) + '\n')
+
+
 def main() -> None:
     palettes = {"day": load_palette("ithilien-dawn"), "night": load_palette("ithilien-dusk")}
     for palette in palettes.values():
+        generate_tintprobe_palette(palette)
         generate_ghostty(palette)
         generate_neovim_palette(palette)
         generate_codex_theme(palette)

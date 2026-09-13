@@ -12,7 +12,7 @@ from ithilienlib import ROOT, ROLE_FAMILIES, load_palette, load_palette_source, 
 class NamedPalette(unittest.TestCase):
     def setUp(self):
         self.source = load_palette_source('ithilien-dawn')
-        self.shared = json.loads((ROOT/'scripts/palette/ithilien-shared.json').read_text())
+        self.shared = {'colorSpace': json.loads((ROOT/'scripts/palette/ithilien.json').read_text())['colorSpace']}
 
     def test_all_roles_use_named_colors(self):
         colors = self.source['colors']
@@ -56,3 +56,13 @@ class NamedPalette(unittest.TestCase):
         del self.source['colorNotes']['Anduin']
         with self.assertRaisesRegex(ValueError, 'Tolkien association'):
             resolve_palette(self.shared, self.source)
+
+
+def test_single_canonical_palette_and_tintprobe_exports():
+    from tintprobe.context import load_palette as evaluator_palette
+    sources = list((ROOT / 'scripts/palette').glob('*.json'))
+    assert [p.name for p in sources] == ['ithilien.json']
+    document = json.loads(sources[0].read_text())
+    assert set(document['variants']) == {'ithilien-dawn', 'ithilien-dusk'}
+    for variant in document['variants']:
+        assert evaluator_palette(variant) == load_palette(variant)
