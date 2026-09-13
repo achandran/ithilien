@@ -4,7 +4,8 @@
   "palettes": {
     "shared": "scripts/palette/ithilien-shared.json",
     "variants": {
-      "ithilien-dawn": "scripts/palette/ithilien-dawn.json"
+      "ithilien-dawn": "scripts/palette/ithilien-dawn.json",
+      "ithilien-dusk": "scripts/palette/ithilien-dusk.json"
     }
   },
   "ports": {

@@ -70,7 +70,7 @@ available at [commit cd88baf](https://github.com/achandran/ithilien/tree/cd88baf
 
 ### Current evidence
 
-`make build` generates the Dawn palette audit into ignored
+`make build` generates Dawn and Dusk palette audits into ignored
 `tests/evaluation/results/palette/` before generating the README palette chart. Native
 evidence also belongs in ignored `tests/evaluation/results/`; see
 [development](development.md) for execution and coverage limits. Saved native
@@ -81,3 +81,14 @@ The reusable evaluation engine was subsequently extracted into
 [Tintprobe](https://github.com/achandran/tintprobe). Its repository preserves the
 shared source history. Ithilien retains its approved palette policy and native
 plugin assertions, and pins the evaluator used to generate measurements.
+
+### Warm Graphite Dusk
+
+Dawn's palette is fixed. The approved Dusk direction uses graphite `#202120`,
+warm stone-gray reading text `#BDB7AB`, raised graphite `#282A28`, and supporting
+text `#AAA497`. Dusk has exactly 18 named colors, sharing Briar, Celandine,
+Heather, and Lebethron with Dawn. Both variants use black interaction text and
+ordinary-weight exact edits. Dusk typography is Berkeley Mono Retina 16 pt;
+Dawn remains Berkeley Mono Medium 16 pt.
+
+See [Dusk design and validation](dusk-design.md) for scope and evidence.

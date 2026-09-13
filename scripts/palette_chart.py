@@ -3,9 +3,9 @@ from drawing import Drawing
 from ithilienlib import ROOT, load_palette, load_palette_source
 
 
-def generate_chart():
-    source = load_palette_source('ithilien-dawn')
-    p = load_palette('ithilien-dawn')
+def generate_chart(variant='ithilien-dawn'):
+    source = load_palette_source(variant)
+    p = load_palette(variant)
     d = Drawing()
     groups = [
         ('Surfaces and Text', [('backgrounds.base','Canvas / popups'),('backgrounds.surface1','Soft surface'),('backgrounds.mantle','Muted surface'),('backgrounds.crust','Inset surface'),('foregrounds.text','Primary text'),('foregrounds.comment','Muted text / borders')]),
@@ -13,11 +13,16 @@ def generate_chart():
         ('Diffs', [('diff.addBackground','Added line'),('diff.deleteBackground','Deleted line'),('diff.changeBackground','Changed line'),('diff.changeEmphasis','Edited characters')]),
         ('Interaction', [('highlight.background','Selection / cursor'),('backgrounds.search','Search / conflict')]),
     ]
+    if variant == 'ithilien-dusk':
+        groups[0] = ('Surfaces and Text', [('backgrounds.base','Canvas'),
+            ('backgrounds.surface2','Secondary surface'),('backgrounds.mantle','Raised surface'),
+            ('highlight.foreground','Interaction text'),('foregrounds.text','Primary text'),
+            ('foregrounds.comment','Muted text / borders')])
     columns = 4
     width = 966
     height = 60 + sum(48 + ((len(items)+columns-1)//columns)*146 for _,items in groups)
     d.rect(0, 0, width, height, p['backgrounds']['base'])
-    d.text(24, 18, 'Ithilien Dawn', p['foregrounds']['text'], 'bold')
+    d.text(24, 18, source['name'], p['foregrounds']['text'], 'bold')
     top = 66
     seen = set()
     for title, items in groups:
@@ -37,7 +42,7 @@ def generate_chart():
     assert seen == set(source['colors']), 'Every named color must appear in the chart'
     destination = ROOT/'docs/assets'
     destination.mkdir(exist_ok=True)
-    d.save(destination/'ithilien-dawn-palette.svg', width, height)
+    d.save(destination/(variant+'-palette.svg'), width, height)
     return d
 
 

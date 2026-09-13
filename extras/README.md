@@ -1,6 +1,6 @@
 # Extras
 
-Companion ports for the Ithilien Neovim colorscheme. Dawn exports are
+Companion ports for the Ithilien Neovim colorscheme. Dawn and Dusk exports are
 generated from the same canonical palettes as the Neovim theme where supported.
 Application rendering and coverage differ; see the [installation guide](../docs/installation.md).
 

@@ -1,7 +1,7 @@
 -- A quiet watch dial: red GMT-hand tip, dark digits, no seconds or animation.
 local M = {}
 local function palette()
-  return require('ithilien.ithilien-dawn').raw
+  return require('ithilien.' .. (vim.g.colors_name == 'ithilien-dusk' and 'ithilien-dusk' or 'ithilien-dawn')).raw
 end
 function M.clock()
   return {
@@ -15,7 +15,7 @@ function M.clock()
 end
 function M.configure(opts)
   opts.options = opts.options or {}
-  opts.options.theme = 'ithilien-dawn'
+  opts.options.theme = vim.g.colors_name == 'ithilien-dusk' and 'ithilien-dusk' or 'ithilien-dawn'
   opts.sections = opts.sections or {}
   opts.sections.lualine_z = M.clock()
   return opts

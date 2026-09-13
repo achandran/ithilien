@@ -17,6 +17,23 @@
     "zsh_theme": "extras/shell/ithilien-dawn.zsh"
   },
   {
+    "id": "ithilien-dusk",
+    "paths": [
+      ".",
+      "tests/evaluation/deps/kanso"
+    ],
+    "pins": {
+      "tests/evaluation/deps/kanso": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe"
+    },
+    "setup": "require('ithilien').load('dusk')",
+    "sources": {
+      "tests/evaluation/deps/kanso": "https://github.com/webhooked/kanso.nvim"
+    },
+    "codex_theme": "extras/codex/themes/ithilien-dusk.tmTheme",
+    "zsh_theme": "extras/shell/ithilien-dusk.zsh",
+    "background": "dark"
+  },
+  {
     "id": "kanso-pearl",
     "paths": [
       "tests/evaluation/deps/kanso"

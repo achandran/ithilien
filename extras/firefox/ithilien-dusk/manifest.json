@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Ithilien Dusk",
+  "version": "0.2.0",
+  "theme": {
+    "colors": {
+      "frame": "#282A28",
+      "frame_inactive": "#202120",
+      "tab_background_text": "#AAA497",
+      "tab_text": "#BDB7AB",
+      "toolbar": "#282A28",
+      "bookmark_text": "#BDB7AB",
+      "icons": "#AAA497",
+      "toolbar_field": "#202120",
+      "toolbar_field_focus": "#202120",
+      "toolbar_field_text": "#BDB7AB",
+      "toolbar_field_border": "#303437",
+      "toolbar_field_highlight": "#B8595C",
+      "toolbar_field_highlight_text": "#000000",
+      "popup": "#282A28",
+      "popup_text": "#BDB7AB",
+      "popup_border": "#303437",
+      "button_background_hover": "#282A28",
+      "button_background_active": "#B8595C",
+      "icons_attention": "#BDB7AB"
+    },
+    "properties": {
+      "color_scheme": "dark",
+      "content_color_scheme": "dark"
+    }
+  }
+}

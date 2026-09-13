@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="966" height="1128" viewBox="0 0 966 1128">
+<style>text{font-family:"Berkeley Mono Medium",monospace;font-size:16pt}</style>
+<rect x="0" y="0" width="966" height="1128" fill="#202120"/>
+<text x="24" y="33" fill="#BDB7AB" font-weight="700">Ithilien Dusk</text>
+<text x="24" y="81" fill="#BDB7AB" font-weight="700">Surfaces and Text</text>
+<rect x="24" y="100" width="216" height="48" fill="#AAA497"/>
+<rect x="25" y="101" width="214" height="46" fill="#202120"/>
+<text x="24" y="171" fill="#BDB7AB" font-weight="700">Osgiliath</text>
+<text x="24" y="195" fill="#AAA497" >Canvas</text>
+<text x="24" y="219" fill="#AAA497" >#202120</text>
+<rect x="258" y="100" width="216" height="48" fill="#AAA497"/>
+<rect x="259" y="101" width="214" height="46" fill="#303437"/>
+<text x="258" y="171" fill="#BDB7AB" font-weight="700">Anemone</text>
+<text x="258" y="195" fill="#AAA497" >Secondary surface</text>
+<text x="258" y="219" fill="#AAA497" >#303437</text>
+<rect x="492" y="100" width="216" height="48" fill="#AAA497"/>
+<rect x="493" y="101" width="214" height="46" fill="#282A28"/>
+<text x="492" y="171" fill="#BDB7AB" font-weight="700">Gondor</text>
+<text x="492" y="195" fill="#AAA497" >Raised surface</text>
+<text x="492" y="219" fill="#AAA497" >#282A28</text>
+<rect x="726" y="100" width="216" height="48" fill="#AAA497"/>
+<rect x="727" y="101" width="214" height="46" fill="#000000"/>
+<text x="726" y="171" fill="#BDB7AB" font-weight="700">Lebethron</text>
+<text x="726" y="195" fill="#AAA497" >Interaction text</text>
+<text x="726" y="219" fill="#AAA497" >#000000</text>
+<rect x="24" y="246" width="216" height="48" fill="#AAA497"/>
+<rect x="25" y="247" width="214" height="46" fill="#BDB7AB"/>
+<text x="24" y="317" fill="#BDB7AB" font-weight="700">Nimloth</text>
+<text x="24" y="341" fill="#AAA497" >Primary text</text>
+<text x="24" y="365" fill="#AAA497" >#BDB7AB</text>
+<rect x="258" y="246" width="216" height="48" fill="#AAA497"/>
+<rect x="259" y="247" width="214" height="46" fill="#AAA497"/>
+<text x="258" y="317" fill="#BDB7AB" font-weight="700">Ash</text>
+<text x="258" y="341" fill="#AAA497" >Muted text / borders</text>
+<text x="258" y="365" fill="#AAA497" >#AAA497</text>
+<text x="24" y="421" fill="#BDB7AB" font-weight="700">Terminal Colors</text>
+<rect x="24" y="440" width="216" height="48" fill="#AAA497"/>
+<rect x="25" y="441" width="214" height="46" fill="#E09A9D"/>
+<text x="24" y="511" fill="#BDB7AB" font-weight="700">Annûn</text>
+<text x="24" y="535" fill="#AAA497" >Red</text>
+<text x="24" y="559" fill="#AAA497" >#E09A9D</text>
+<rect x="258" y="440" width="216" height="48" fill="#AAA497"/>
+<rect x="259" y="441" width="214" height="46" fill="#ADC5B4"/>
+<text x="258" y="511" fill="#BDB7AB" font-weight="700">Ilex</text>
+<text x="258" y="535" fill="#AAA497" >Green</text>
+<text x="258" y="559" fill="#AAA497" >#ADC5B4</text>
+<rect x="492" y="440" width="216" height="48" fill="#AAA497"/>
+<rect x="493" y="441" width="214" height="46" fill="#D0BD91"/>
+<text x="492" y="511" fill="#BDB7AB" font-weight="700">Mallorn</text>
+<text x="492" y="535" fill="#AAA497" >Yellow</text>
+<text x="492" y="559" fill="#AAA497" >#D0BD91</text>
+<rect x="726" y="440" width="216" height="48" fill="#AAA497"/>
+<rect x="727" y="441" width="214" height="46" fill="#A8BFD4"/>
+<text x="726" y="511" fill="#BDB7AB" font-weight="700">Anduin</text>
+<text x="726" y="535" fill="#AAA497" >Blue</text>
+<text x="726" y="559" fill="#AAA497" >#A8BFD4</text>
+<rect x="24" y="586" width="216" height="48" fill="#AAA497"/>
+<rect x="25" y="587" width="214" height="46" fill="#C1B0CE"/>
+<text x="24" y="657" fill="#BDB7AB" font-weight="700">Iris</text>
+<text x="24" y="681" fill="#AAA497" >Magenta</text>
+<text x="24" y="705" fill="#AAA497" >#C1B0CE</text>
+<rect x="258" y="586" width="216" height="48" fill="#AAA497"/>
+<rect x="259" y="587" width="214" height="46" fill="#A1C4C3"/>
+<text x="258" y="657" fill="#BDB7AB" font-weight="700">Rauros</text>
+<text x="258" y="681" fill="#AAA497" >Cyan</text>
+<text x="258" y="705" fill="#AAA497" >#A1C4C3</text>
+<text x="24" y="761" fill="#BDB7AB" font-weight="700">Diffs</text>
+<rect x="24" y="780" width="216" height="48" fill="#AAA497"/>
+<rect x="25" y="781" width="214" height="46" fill="#273B31"/>
+<text x="24" y="851" fill="#BDB7AB" font-weight="700">Pelennor</text>
+<text x="24" y="875" fill="#AAA497" >Added line</text>
+<text x="24" y="899" fill="#AAA497" >#273B31</text>
+<rect x="258" y="780" width="216" height="48" fill="#AAA497"/>
+<rect x="259" y="781" width="214" height="46" fill="#402E33"/>
+<text x="258" y="851" fill="#BDB7AB" font-weight="700">Eglantine</text>
+<text x="258" y="875" fill="#AAA497" >Deleted line</text>
+<text x="258" y="899" fill="#AAA497" >#402E33</text>
+<rect x="492" y="780" width="216" height="48" fill="#AAA497"/>
+<rect x="493" y="781" width="214" height="46" fill="#293847"/>
+<text x="492" y="851" fill="#BDB7AB" font-weight="700">Henneth</text>
+<text x="492" y="875" fill="#AAA497" >Changed line</text>
+<text x="492" y="899" fill="#AAA497" >#293847</text>
+<rect x="726" y="780" width="216" height="48" fill="#AAA497"/>
+<rect x="727" y="781" width="214" height="46" fill="#D8B46A"/>
+<text x="726" y="851" fill="#BDB7AB" font-weight="700">Celandine</text>
+<text x="726" y="875" fill="#AAA497" >Edited characters</text>
+<text x="726" y="899" fill="#AAA497" >#D8B46A</text>
+<text x="24" y="955" fill="#BDB7AB" font-weight="700">Interaction</text>
+<rect x="24" y="974" width="216" height="48" fill="#AAA497"/>
+<rect x="25" y="975" width="214" height="46" fill="#B8595C"/>
+<text x="24" y="1045" fill="#BDB7AB" font-weight="700">Briar</text>
+<text x="24" y="1069" fill="#AAA497" >Selection / cursor</text>
+<text x="24" y="1093" fill="#AAA497" >#B8595C</text>
+<rect x="258" y="974" width="216" height="48" fill="#AAA497"/>
+<rect x="259" y="975" width="214" height="46" fill="#D6C6DE"/>
+<text x="258" y="1045" fill="#BDB7AB" font-weight="700">Heather</text>
+<text x="258" y="1069" fill="#AAA497" >Search / conflict</text>
+<text x="258" y="1093" fill="#AAA497" >#D6C6DE</text>
+</svg>

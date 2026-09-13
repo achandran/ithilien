@@ -10,6 +10,8 @@ func color(_ hex: String) -> NSColor {
   let n = UInt32(hex.dropFirst(), radix: 16)!
   return NSColor(srgbRed: CGFloat((n >> 16) & 255)/255, green: CGFloat((n >> 8) & 255)/255, blue: CGFloat(n & 255)/255, alpha: 1)
 }
+let weight = data["fontWeight"] as? String ?? "Medium"
+precondition(["Medium", "Retina"].contains(weight))
 let image = NSImage(size: NSSize(width: width, height: height))
 image.lockFocusFlipped(true)
 for c in data["commands"] as! [[String: Any]] {
@@ -17,7 +19,7 @@ for c in data["commands"] as! [[String: Any]] {
   let ink = color(c["color"] as! String)
   if let text = c["text"] as? String {
     let style = c["style"] as? String ?? "regular"
-    let fontName = style == "bold-italic" ? "BerkeleyMono-Bold-Oblique" : style == "bold" ? "BerkeleyMono-Bold" : style == "italic" ? "BerkeleyMono-Medium-Oblique" : "BerkeleyMono-Medium"
+    let fontName = style == "bold-italic" ? "BerkeleyMono-Bold-Oblique" : style == "bold" ? "BerkeleyMono-Bold" : style == "italic" ? "BerkeleyMono-\(weight)-Oblique" : "BerkeleyMono-\(weight)"
     let fontURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Fonts/\(fontName).otf")
     guard let provider = CGDataProvider(url: fontURL as CFURL), let cgFont = CGFont(provider) else { fatalError("Install Berkeley Mono for matched review rendering") }
     let font = CTFontCreateWithGraphicsFont(cgFont, 16, nil, nil) as NSFont

@@ -19,3 +19,6 @@ tests/evaluation/local.mk
 
 # Legacy local comparison output; the manual comparison tool has been retired.
 /comparison/generated/
+
+# Repository-local evaluation caches and toolchains.
+/.evaluation-runtime/

@@ -3,7 +3,7 @@ local M = {}
 local fzf_icon_override
 function M.apply()
   local fzf=package.loaded['fzf-lua.config']
-  if vim.g.colors_name ~= 'ithilien-dawn' then
+  if vim.g.colors_name ~= 'ithilien-dawn' and vim.g.colors_name ~= 'ithilien-dusk' then
     if fzf_icon_override and fzf and fzf.setup_opts==fzf_icon_override.options then
       local defaults=fzf.setup_opts.defaults
       if defaults and defaults.color_icons==false then defaults.color_icons=fzf_icon_override.previous end
@@ -20,7 +20,7 @@ function M.apply()
     end
     fzf.setup_opts.defaults.color_icons=false
   end
-  local p=require('ithilien.ithilien-dawn').raw
+  local p=require('ithilien.' .. vim.g.colors_name).raw
   local b,f,a=p.backgrounds,p.foregrounds,p.ansi
   local groups={
     NeotestPassed={fg=a.green},NeotestFailed={fg=a.red},NeotestSkipped={fg=f.muted},
@@ -41,9 +41,9 @@ function M.apply()
     FzfLuaBufNr={fg=f.muted},FzfLuaBufFlagCur={fg=a.blue},FzfLuaBufFlagAlt={fg=f.muted},
     FzfLuaTabMarker={fg=a.blue},FzfLuaTabTitle={fg=f.text},
     FzfLuaNormal={fg=f.text,bg=b.base},FzfLuaBorder={fg=f.muted,bg=b.base},
-    FzfLuaPreviewBorder={fg=f.muted,bg=b.base},FzfLuaCursorLine={fg=f.text,bg=p.highlight.background},
+    FzfLuaPreviewBorder={fg=f.muted,bg=b.base},FzfLuaCursorLine={fg=p.highlight.foreground,bg=p.highlight.background},
     FzfLuaFzfMatch={fg=f.text},FzfLuaFzfPointer={fg=f.text},
-    FzfLuaSearch={fg=f.text,bg=b.search},FzfLuaBackdrop={bg=b.mantle,blend=0},
+    FzfLuaSearch={fg=p.highlight.foreground,bg=b.search},FzfLuaBackdrop={bg=b.mantle,blend=0},
     fzf1={fg=a.red,bg=b.mantle},fzf2={fg=f.text,bg=b.mantle},fzf3={fg=f.muted,bg=b.mantle},
   }
   -- Neogit's native diff defaults derive additional colors; use Dawn's four roles.
@@ -53,8 +53,8 @@ function M.apply()
     groups['NeogitDiffContext'..suffix]={fg=f.text,bg=b.base}
     groups['NeogitHunkHeader'..suffix]={fg=f.text,bg=b.mantle}
   end
-  groups.NeogitDiffAddInline={fg=f.text,bg=p.diff.changeEmphasis}
-  groups.NeogitDiffDeleteInline={fg=f.text,bg=p.diff.changeEmphasis}
+  groups.NeogitDiffAddInline={fg=p.diff.inlineForeground,bg=p.diff.changeEmphasis}
+  groups.NeogitDiffDeleteInline={fg=p.diff.inlineForeground,bg=p.diff.changeEmphasis}
   -- Overlapping TodoBg/TodoFg spans must remain readable at keyword punctuation.
   for keyword,color in pairs({FIX=a.red,TODO=a.blue,HACK=a.yellow,WARN=a.yellow,PERF=a.magenta,NOTE=a.cyan,TEST=a.green}) do
     groups['TodoBg'..keyword]={fg=color,bg=b.mantle,bold=true}

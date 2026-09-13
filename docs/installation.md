@@ -2,20 +2,21 @@
 
 ## Neovim and LazyVim
 
-Dawn is on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Loading Ithilien requests `inline:char` on supported Neovim versions. Switching to another colorscheme restores the previous `diffopt` unless you changed it in the meantime.
+Dawn and Dusk are on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Loading Ithilien requests `inline:char` on supported Neovim versions. Switching to another colorscheme restores the previous `diffopt` unless you changed it in the meantime.
 
 
-Copy the [LazyVim configuration from the README](../README.md#lazyvim) into your plugin specifications, then run `:Lazy sync`. The spec installs Ithilien Dawn with Kanso's Pearl base. Select `ithilien` or `ithilien-dawn` with `:colorscheme`.
+Copy the [LazyVim configuration from the README](../README.md#lazyvim) into your plugin specifications, then run `:Lazy sync`. The spec installs both variants, using Kanso's Pearl base for Dawn and Ink base for Dusk. Select `ithilien-dawn` or `ithilien-dusk` with `:colorscheme`; `ithilien` remains an alias for Dawn.
 
 ## Ghostty
 
-Copy `extras/ghostty/themes/ithilien_dawn.conf` into `~/.config/ghostty/themes/`:
+Copy `extras/ghostty/themes/ithilien_dawn.conf` and `extras/ghostty/themes/ithilien_dusk.conf` into `~/.config/ghostty/themes/`:
 
 ```ini
-theme = ithilien_dawn.conf
+theme = light:ithilien_dawn.conf,dark:ithilien_dusk.conf
+font-size = 16
 ```
 
-The theme uses Berkeley Mono Medium for terminal text and window titles and does not set `font-thicken`. The light theme leaves `faint-opacity` unset so Ghostty uses its default dim-text rendering, and sets `minimum-contrast = 1` to disable renderer contrast adjustment, which made vi-mode block cursor text unreadable in the user’s Ghostty setup. Faint opacity applies to all terminal text carrying the dim attribute, including dimmed diff text. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is black.
+Dawn uses Berkeley Mono Medium and Dusk uses Berkeley Mono Retina, both at 16 pt. Neither sets `font-thicken`. Select a single theme filename instead of the light/dark pair to keep a fixed appearance. The light theme leaves `faint-opacity` unset so Ghostty uses its default dim-text rendering, and sets `minimum-contrast = 1` to disable renderer contrast adjustment, which made vi-mode block cursor text unreadable in the user’s Ghostty setup. Faint opacity applies to all terminal text carrying the dim attribute, including dimmed diff text. The Dawn ANSI white endpoints are light foregrounds for dark backgrounds; default terminal text is black.
 
 
 ## AI coding tools
@@ -45,12 +46,12 @@ With Dawn loaded, use zsh `bindkey -v`, type a command without executing it, pre
 
 ## Firefox and shell selection
 
-`extras/firefox/manifest.json` now defaults to Dawn. The `extras/firefox/ithilien-dawn/` export sets the light scheme, browser surfaces, and address-field selection. Load the desired manifest through `about:debugging` > This Firefox > Load Temporary Add-on. This expires on restart; permanent extension distribution requires signing.
+`extras/firefox/manifest.json` now defaults to Dawn. The `extras/firefox/ithilien-dawn/` and `extras/firefox/ithilien-dusk/` exports set the matching appearance, browser surfaces, and address-field selection. Load the desired manifest through `about:debugging` > This Firefox > Load Temporary Add-on. This expires on restart; permanent extension distribution requires signing.
 
 Each Firefox export also includes optional `userContent.css` for website `::selection`: Dawn uses Briar `#B8595C` with black text `#000000`. To use it, merge the rule into the active profile's `chrome/userContent.css`, enable `toolkit.legacyUserProfileCustomizations.stylesheets` in about:config, and restart Firefox. Browser theme colors alone do not control website selection.
 
 For Zsh, add `source /absolute/path/to/ithilien/extras/shell/ithilien-dawn.zsh`
-to `.zshrc` and start a new session.
+to `.zshrc` and start a new session. Use `ithilien-dusk.zsh` for Dusk.
 ZLE visual selection and Ghostty mouse selection are separate systems.
 Non-region ZLE settings are preserved; later shell/plugin hooks can override them.
 

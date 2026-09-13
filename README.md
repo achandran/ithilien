@@ -1,14 +1,32 @@
 # Ithilien
 
-A Neovim colorscheme: **Dawn**, a light theme for clear code and precise diffs.
+Two Neovim colorschemes for clear code and precise diffs: **Dawn**, porcelain and black, and **Dusk**, warm gray on graphite. Each uses 18 named colors, with shared selection, cursor, search, and exact-edit colors.
 
-Porcelain whites. Black type. Steel neutrals. A small, deliberate red accent.
+[Install](#install) · [Themes](#themes) · [Usage](#usage) · [Palette](#palette) · [Design](#design) · [Extras](#extras)
+
+## Themes
+
+### Ithilien Dawn
+
+Porcelain whites, black type, steel neutrals, and a deliberate red accent. Shown in **Berkeley Mono Medium, 16 pt**.
 
 ![Ithilien Dawn — Python code and character-level diffs in Neovim](docs/assets/ithilien-dawn-neovim.png)
 
-**Read the code. Find the change.** Four diff backgrounds: green for added lines, red for deleted lines, blue for changed lines, and amber for the exact edited characters. Clients with separate added/deleted word highlights use the same amber for both. Diff emphasis keeps ordinary text weight, so even a one-character edit stands out through color.
+```lua
+vim.cmd.colorscheme("ithilien-dawn")
+```
 
-[Install](#install) · [Usage](#usage) · [Palette](#palette) · [Design](#design) · [Extras](#extras)
+### Ithilien Dusk
+
+Warm Graphite: stone-gray reading text, neutral graphite surfaces, and restrained botanical accents. Shown in **Berkeley Mono Retina, 16 pt**.
+
+![Ithilien Dusk — warm graphite Python code and character-level diffs in Neovim](docs/assets/ithilien-dusk-neovim.png)
+
+```lua
+vim.cmd.colorscheme("ithilien-dusk")
+```
+
+**Read the code. Find the change.** Four diff backgrounds: green for added lines, red for deleted lines, blue for changed lines, and amber for the exact edited characters. Clients with separate added/deleted word highlights use the same amber for both. Diff emphasis keeps ordinary text weight, so even a one-character edit stands out through color.
 
 ## Install
 
@@ -72,6 +90,7 @@ Update the plugin with `:Lazy update`.
 
 ```lua
 vim.cmd.colorscheme("ithilien-dawn") -- light
+vim.cmd.colorscheme("ithilien-dusk") -- dark
 ```
 
 `ithilien` is an alias for Dawn. Setup is optional when using the default bold
@@ -79,26 +98,40 @@ and italic syntax styles. Exact diff emphasis uses ordinary weight and color.
 
 ## Palette
 
-![Ithilien Dawn palette — names, hex values, and semantic roles](docs/assets/ithilien-dawn-palette.svg)
+<details>
+<summary>Dawn palette — 18 colors</summary>
 
-Colors are grouped by surfaces and text, terminal colors, diffs, and interaction. The six terminal colors also serve application accents; Rauros supplies both cyan and aqua text. Each swatch shows its palette name, a representative role, and exact hex value. Shared colors can serve additional roles; see the full reference below.
+![Ithilien Dawn palette](docs/assets/ithilien-dawn-palette.svg)
 
-The palette and preview images are generated from the theme sources so they stay in sync. The Neovim image above uses actual captured UI-cell colors, rasterized with Berkeley Mono Medium at 16 pt. It shows built-in Python syntax, not a Tree-sitter/LSP configuration or a native Ghostty screenshot.
+[Named colors and roles](docs/palette-names.md)
 
-[Full palette reference](docs/palette-names.md)
+</details>
+
+<details>
+<summary>Dusk palette — 18 colors</summary>
+
+![Ithilien Dusk palette](docs/assets/ithilien-dusk-palette.svg)
+
+[Named colors and roles](docs/dusk-palette.md)
+
+</details>
+
+Both variants share **Briar** `#B8595C` for selection and cursors, **Heather** `#D6C6DE` for search, and **Celandine** `#D8B46A` for exact edits, all with **Lebethron** black text. The other shades adapt to each appearance.
+
+Palettes and previews are generated from canonical sources. The previews rasterize actual Neovim UI-cell colors with each variant's specified font at 16 pt. They show built-in Python syntax; they are not native Ghostty screenshots or Tree-sitter/LSP captures. Set the font in your terminal; Neovim colorschemes do not change it.
 
 ## Design
 
 Dawn takes its visual direction from the **Formex Reef GMT with a white dial, black ceramic bezel, and stainless steel bracelet**: clear markings on a quiet surface, metallic neutrals, and red used deliberately for interaction. Its color names draw from Tolkien’s Ithilien and the wider world of Middle-earth.
 
-The aim is a working environment that stays legible without turning every token into an accent. Black carries the text. Muted syntax colors distinguish structure. Stronger backgrounds identify changes, search matches, and selection.
+Dusk interprets the same watch through its ceramic bezel and metallic neutrals: graphite surfaces and warm stone-gray text. Both variants keep syntax restrained and give changes, search, and selection a clear visual hierarchy.
 
 - **Precise diffs.** Locate added, removed, and changed code, down to individual characters and punctuation.
-- **Readable agent sessions.** Support code, explanations, patches, and tool output in Codex and Claude Code. Native Codex replay is tested; Claude Code coverage is still developing.
-- **Long-session comfort.** Light surfaces, dark text, and restrained decoration are design goals. Automated contrast checks support them; they do not prove comfort.
+- **Readable agent sessions.** Support code, explanations, patches, and tool output in Codex and Claude Code. Dawn has saved native Codex replay coverage. Dusk exports are available; native Codex and Claude Code validation for Dusk remains pending. Character-level emphasis depends on the application exposing that role.
+- **Long-session comfort.** Readable supporting text and restrained decoration are design goals. Automated contrast checks support them; they do not prove comfort.
 - **Consistent interactions.** Briar marks selection and the cursor with black foreground text. Search and inline edits use different hues.
 
-The Neovim implementation builds on [Kansō](https://github.com/webhooked/kanso.nvim), with Ithilien’s palette and highlight mappings. Dawn is the current design and evaluation baseline.
+The Neovim implementation builds on [Kansō](https://github.com/webhooked/kanso.nvim), with Ithilien’s palette and highlight mappings. Dawn remains the fixed light palette; Dusk uses Warm Graphite. See [Dusk design and validation](docs/dusk-design.md) for evidence and coverage limits.
 
 ## Extras
 

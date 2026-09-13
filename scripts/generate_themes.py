@@ -39,14 +39,15 @@ def generate_ghostty(palette: dict) -> None:
         f'foreground = {fg["text"]}',
         f'cursor-color = {highlight.get("cursorBlock", highlight["background"])}',
         f'cursor-text = {highlight["foreground"]}',
-        *(["cursor-style = block"] if is_light else []),
+        "cursor-style = block",
         f'selection-background = {highlight["background"]}',
         f'selection-foreground = {highlight["foreground"]}',
         "",
         f'font-family = {"Berkeley Mono Medium" if is_light else "Berkeley Mono Retina"}',
+        *(["font-size = 16"] if not is_light else []),
         f'window-title-font-family = {"Berkeley Mono Medium" if is_light else "Berkeley Mono Retina"}',
-        *(["", "# Preserve the vi-mode cursor contrast fix.",
-           "minimum-contrast = 1"] if is_light else []),
+        "", "# Preserve the vi-mode cursor contrast fix.",
+        "minimum-contrast = 1",
     ]
     destination = ROOT / "extras/ghostty" / "themes" / (palette["slug"].replace("-", "_") + ".conf")
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -124,16 +125,16 @@ def generate_codex_theme(palette: dict) -> None:
                       "caret": palette["highlight"].get("cursor", palette["highlight"]["background"]),
                       "selection": palette["highlight"]["background"],
                       "invisibles": fg["muted"], "lineHighlight": bg["surface1"] if day else bg["surface0"],
-                      **({"selectionForeground": palette["highlight"]["foreground"]} if day else {})}},
+                      "selectionForeground": palette["highlight"]["foreground"]}},
         rule("Comments", "comment, punctuation.definition.comment", fg["comment"], font_style="italic"),
         rule("Strings", "string", accent["sage"]),
         rule("Numbers and constants", "constant.numeric, constant.language, constant.character", accent["ochre"]),
-        rule("Keywords", "keyword, storage.type, storage.modifier", accent["clay"] if day else accent["mauve"], font_style="bold" if day else None),
-        rule("Types", "entity.name.type, entity.name.class, support.type, support.class", accent["aqua"] if day else accent["gold"]),
-        rule("Functions", "entity.name.function, support.function, meta.function-call", accent["gold"] if day else accent["blue"]),
+        rule("Keywords", "keyword, storage.type, storage.modifier", accent["clay"], font_style="bold" if day else None),
+        rule("Types", "entity.name.type, entity.name.class, support.type, support.class", accent["aqua"]),
+        rule("Functions", "entity.name.function, support.function, meta.function-call", accent["gold"]),
         rule("Variables", "variable, support.variable", fg["text"]),
         rule("Properties", "variable.other.property, support.constant", accent["aqua"]),
-        rule("Operators", "keyword.operator", accent["olive"] if day else accent["clay"]),
+        rule("Operators", "keyword.operator", accent["olive"]),
         rule("Punctuation", "punctuation", fg["subtext"]),
         rule("Headings", "markup.heading", accent["gold"], font_style="bold"),
         rule("Links", "markup.underline.link", accent["blue"], font_style="underline"),
@@ -223,13 +224,13 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
 
     # Append explicit colors after user options; preserve bindings and previews.
     bg, fg = palette["backgrounds"], palette["foregrounds"]
-    prompt_color = palette['ansi']['red'] if palette['polarity'] == 'light' else highlight.get('cursor', palette['accents']['coral'])
+    prompt_color = palette['ansi']['red']
     colors = (f"--color={palette['polarity']},bg:{bg['base']},fg:{fg['text']},"
               f"bg+:{highlight['background']},fg+:{highlight['foreground']},"
               f"hl:{fg['text']}:underline,hl+:{highlight['foreground']}:underline,"
               f"info:{fg['text']},header:{fg['text']},border:{fg['comment']},"
-              f"prompt:{prompt_color},pointer:{fg['text'] if palette['polarity'] == 'light' else highlight['foreground']},"
-              f"marker:{fg['text'] if palette['polarity'] == 'light' else highlight['foreground']},spinner:{prompt_color},"
+              f"prompt:{prompt_color},pointer:{highlight['foreground']},"
+              f"marker:{fg['text']},spinner:{prompt_color},"
               f"gutter:{bg['base']},query:{fg['text']}")
     with shell.open("a") as output:
         output.write(
@@ -326,8 +327,22 @@ def generate_color_reference() -> None:
     (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
 
 
+def generate_dusk_reference():
+    source = load_palette_source('ithilien-dusk')
+    lines = ['# Ithilien Dusk: Warm Graphite', '',
+             '<!-- Generated from scripts/palette/ithilien-dusk.json; do not edit by hand. -->', '',
+             '18 named sRGB colors. Briar, Celandine, Heather, and Lebethron are shared exactly with Dawn.', '',
+             '| Name | Hex | Roles | Interpretation |', '| --- | --- | --- | --- |']
+    for name, color in source['colors'].items():
+        roles = [f'`{family}.{role}`' for family in ROLE_FAMILIES
+                 for role, value in source[family].items() if value == name]
+        note = source['colorNotes'][name]
+        lines.append(f"| {note.get('displayName', name)} | `{color}` | {', '.join(roles)} | {note['meaning']} [Source]({note['source']}) |")
+    (ROOT / 'docs/dusk-palette.md').write_text('\n'.join(lines) + '\n')
+
+
 def main() -> None:
-    palettes = {"day": load_palette("ithilien-dawn")}
+    palettes = {"day": load_palette("ithilien-dawn"), "night": load_palette("ithilien-dusk")}
     for palette in palettes.values():
         generate_ghostty(palette)
         generate_neovim_palette(palette)
@@ -339,9 +354,11 @@ def main() -> None:
     for palette in palettes.values():
         generate_shared_highlights(palette, variant=True)
     generate_color_reference()
+    generate_dusk_reference()
     from palette_chart import generate_chart
     generate_chart()
-    print("Generated Ithilien Dawn themes for all supported applications")
+    generate_chart("ithilien-dusk")
+    print("Generated Ithilien Dawn and Dusk themes for all supported applications")
 
 
 if __name__ == "__main__":

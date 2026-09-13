@@ -62,6 +62,7 @@ These do not open desktop windows:
 ```sh
 KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_highlights.lua
 uv run --locked python tests/check_highlight_contrast.py
+KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_dusk.lua
 KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_native_diff.lua
 KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_diff_presentation.lua
 ```
@@ -132,7 +133,8 @@ uv run --locked python scripts/generate_preview.py
 ```
 
 The preview requires macOS Swift/AppKit, Neovim, the pinned Kanso checkout, and
-Berkeley Mono Medium regular/oblique OTF files in `~/Library/Fonts`. Missing
+Berkeley Mono Medium and Retina regular/oblique OTF files, plus Bold and
+Bold Oblique, in `~/Library/Fonts`. Missing
 dependencies fail the build. The source pair ships in Tintprobe’s
 `data/fixtures/readme/`. The image rasterizes actual Neovim UI cells with built-in
 Python syntax, preserving foreground/background colors and text styles. It is
@@ -148,3 +150,20 @@ and [interaction checks](https://github.com/achandran/tintprobe/blob/main/docs/i
 Use this checkout’s pinned commands above; upstream documentation may describe a
 newer evaluator revision. `tests/evaluation/deps/`, `tests/evaluation/results/`, and
 `tests/evaluation/local.mk` remain ignored local state.
+
+## Dusk validation
+
+Dusk uses 18 named colors and shares four exact colors with Dawn. `make test`
+checks that contract and the exported interaction pairs. `make build` runs the
+Dusk-specific authored-pair audit alongside Dawn's existing audit.
+
+```sh
+uv run --locked python scripts/audit_dusk.py
+uv run --locked python scripts/check_dusk_interactions.py
+uv run --locked python -m tintprobe compare --themes ithilien-dusk --strict-gates --output tests/evaluation/results/dusk
+```
+
+The preview generator renders Dawn with Berkeley Mono Medium and Dusk with
+Berkeley Mono Retina, both at 16 pt. Native terminal pixels and Dusk Codex replay
+remain separate validation steps. The pinned Codex diff adapter assumes light
+polarity; it must be adapted and verified before claiming Dusk native coverage.
