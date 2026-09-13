@@ -152,7 +152,7 @@ def main():
     for entry in [f for source in sources.values() for f in source['files']]:
         assert hashlib.sha256((ROOT/entry['path']).read_bytes()).hexdigest()==entry['sha256'],entry['path']
     native_checks=[]
-    for script in ('check_day_diff.lua','check_diff_presentation.lua'):
+    for script in ('check_native_diff.lua','check_diff_presentation.lua'):
         result=subprocess.run([args.nvim,'--headless','-n','-u','NONE','-i','NONE','-l','scripts/'+script],cwd=ROOT,env=dict(os.environ,KANSO_ROOT=str(args.kanso.resolve()),ITHILIEN_CHECK_OUTPUT=str(args.output.resolve()/'highlight-checks')),capture_output=True,text=True,timeout=30)
         native_checks.append({'script':script,'passed':result.returncode==0,'output':result.stdout+result.stderr})
     cases=json.loads((ROOT/'evaluation/cases.json').read_text())

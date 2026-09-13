@@ -23,7 +23,7 @@ class ANSIConsolidation(unittest.TestCase):
             self.assertEqual(slots[i+8],p['ansi']['bright'+key.capitalize()])
 
     def test_ansi_and_approved_diff_changes_preserve_other_semantics(self):
-        baseline=json.loads((ROOT/'reports/ansi-consolidation/baseline.json').read_text())
+        baseline=json.loads((ROOT/'tests/fixtures/ansi-baseline.json').read_text())
         shared=json.loads((ROOT/'palette/ithilien-shared.json').read_text())
         before=resolve_palette(shared,baseline)
         after=load_palette('ithilien-dawn')

@@ -5,8 +5,6 @@ __pycache__/
 nvim.log
 extras/wallpapers/.ithilien-dynamic.heic-*
 
-comparison/generated/
-
 evaluation/results/
 
 evaluation/deps/
@@ -18,3 +16,6 @@ evaluation/local.mk
 
 # Local context for terminal Codex
 /handoff.md
+
+# Legacy local comparison output; the manual comparison tool has been retired.
+/comparison/generated/

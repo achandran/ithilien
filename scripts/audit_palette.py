@@ -220,8 +220,8 @@ def main(variant: str = "ithilien-dusk") -> None:
         "accentProximityReview": proximity,
     }
 
-    reports = ROOT / "reports"
-    reports.mkdir(exist_ok=True)
+    reports = ROOT / "evaluation/results/palette"
+    reports.mkdir(parents=True, exist_ok=True)
     report_stem = f"{variant}-audit"
     json_report = reports / f"{report_stem}.json"
     markdown_report = reports / f"{report_stem}.md"

@@ -296,8 +296,8 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
 def generate_preview(palettes: dict[str, dict]) -> None:
     destination = ROOT / "palette-preview.html"
     audits = {
-        "night": json.loads((ROOT / "reports" / "ithilien-dusk-audit.json").read_text()),
-        "day": json.loads((ROOT / "reports" / "ithilien-dawn-audit.json").read_text()),
+        "night": json.loads((ROOT / "evaluation/results/palette" / "ithilien-dusk-audit.json").read_text()),
+        "day": json.loads((ROOT / "evaluation/results/palette" / "ithilien-dawn-audit.json").read_text()),
     }
     preview_palettes = {
         variant: {**palette, "colorNames": {

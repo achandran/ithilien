@@ -2,7 +2,7 @@
 
 The approved baseline includes the user-selected consolidated ANSI mapping
 (promoted after ad04b15). The prior mapping is preserved in
-reports/ansi-consolidation/baseline.json. Do not optimize or change
+tests/fixtures/ansi-baseline.json. Do not optimize or change
 its colors without an explicit new palette decision. The canonical fingerprint
 in tests/test_palette_identity.py enforces this freeze.
 

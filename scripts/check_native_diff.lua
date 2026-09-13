@@ -1,5 +1,5 @@
 -- Exercise Neovim's real character-level diff engine, not hand-assigned spans.
--- KANSO_ROOT=/path/to/kanso.nvim nvim --headless -u NONE -i NONE -l scripts/check_day_diff.lua
+-- KANSO_ROOT=/path/to/kanso.nvim nvim --headless -u NONE -i NONE -l scripts/check_native_diff.lua
 vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT, 'Set KANSO_ROOT'))
 vim.opt.rtp:prepend(vim.fn.getcwd())
 require('ithilien').load('day')

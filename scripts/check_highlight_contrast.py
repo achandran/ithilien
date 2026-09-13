@@ -1,4 +1,4 @@
-"""Check resolved native highlight pairs after check_formex_dawn.lua."""
+"""Check resolved native highlight pairs after check_highlights.lua."""
 import argparse
 import json
 from pathlib import Path

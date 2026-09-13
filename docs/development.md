@@ -165,9 +165,9 @@ The combined suite uses its fresh run directory instead.
 The retained native highlight assertions can run without desktop interaction:
 
 ```sh
-KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_formex_dawn.lua
-uv run --locked python scripts/check_dawn_contrast.py
-KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_day_diff.lua
+KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_highlights.lua
+uv run --locked python scripts/check_highlight_contrast.py
+KANSO_ROOT=evaluation/deps/kanso nvim --headless -u NONE -i NONE -l scripts/check_native_diff.lua
 ```
 
 These write to ignored `evaluation/results/highlight-checks/`. Override with
@@ -177,3 +177,21 @@ runner passes its own output directory to its diff assertions.
 
 Historical studies and removed experiment tooling are indexed in
 [design history](design-history.md).
+
+## Generated reports and fixtures
+
+Palette audit JSON and Markdown are generated into ignored
+`evaluation/results/palette/`. `make build` runs both audits before the theme
+and palette-preview generators consume their results; generated reports are not
+versioned. To refresh only audits and ports without rendering README screenshots:
+
+```sh
+uv run --locked python scripts/audit_palette.py ithilien-dawn
+uv run --locked python scripts/audit_palette.py ithilien-dusk
+uv run --locked python scripts/generate_themes.py
+```
+
+Native cases, adapter source, and pinned dependency manifests remain tracked in
+`evaluation/`. The ANSI approval baseline is in `tests/fixtures/`. The retired
+manual comparison kit used the same Ghostty config pair already retained under
+`evaluation/fixtures/ithilien/`; native diff presentation checks now use that pair.

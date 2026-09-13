@@ -88,7 +88,7 @@ The zsh installer also writes the Dawn prompt from `extras/shell/prompt.zsh` int
 
 ### Neovim linewise selection rendering
 
-Dawn Visual and VisualNOS use plain Ranger/Lebethron backgrounds and foregrounds with no underline or other decoration. The user confirmed that removing selection styling fixes partial-line rendering in Ghostty. Exact diff-character highlights retain bold and underline; the native highlight regression check asserts both contracts. Earlier reports describing an underlined Visual selection are historical.
+Dawn Visual and VisualNOS use Briar backgrounds and black foregrounds with no underline or other decoration. The user confirmed that removing selection styling fixes partial-line rendering in Ghostty. Exact diff-character highlights use ordinary-weight black text on Celandine backgrounds, without added bold or underline; the native highlight regression check asserts both contracts. Earlier reports describing an underlined Visual selection are historical.
 
 ### fzf history search
 

@@ -4,8 +4,8 @@ require('ithilien').load('dawn')
 require('ithilien.diff').setup()
 vim.cmd('filetype on')
 vim.cmd('syntax on')
-local path=vim.fn.getcwd()..'/comparison/scenarios/ghosttyconfig/working.conf'
-local old=vim.fn.readfile('comparison/scenarios/ghosttyconfig/index.conf')
+local path=vim.fn.getcwd()..'/evaluation/fixtures/ithilien/ghosttyconfig.after.conf'
+local old=vim.fn.readfile('evaluation/fixtures/ithilien/ghosttyconfig.before.conf')
 vim.api.nvim_buf_set_lines(0,0,-1,false,old)
 vim.b.ithilien_diff_label='INDEX'
 vim.cmd('diffthis')
