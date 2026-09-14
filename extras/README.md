@@ -42,6 +42,12 @@ Dawn uses Berkeley Mono Medium and Dusk uses Berkeley Mono Retina, both at 16 pt
 
 For Codex CLI, copy the `.tmTheme` files from `extras/codex/themes/` into `~/.codex/themes/`, then choose one with `/theme`. Optionally merge `tui.animations = false` from `extras/codex/config.toml` into your config to disable motion, without replacing other settings. These themes explicitly define `markup.inserted` and `markup.deleted`, so Codex uses Ithilien's tuned diff backgrounds instead of its built-in mint and pink fallbacks.
 
+On macOS, source `/absolute/path/to/ithilien/extras/shell/codex.zsh` in `.zshrc`
+to replace the `ai` alias with a function that selects Dawn or Dusk from system
+appearance on each launch. Both Codex themes must be installed. It runs one
+`defaults` read per invocation, forwards arguments, and leaves the saved Codex
+config unchanged. Appearance changes take effect on the next launch.
+
 For Claude Code 2.1.118 or newer, copy the JSON files from `extras/claude-code/themes/` into `~/.claude/themes/`, then choose one with `/theme`. The generated themes define full-line, dimmed-context, and word-level diff colors.
 
 ## Slack and Linear
@@ -76,7 +82,7 @@ Non-region ZLE settings are preserved; later shell/plugin hooks can override the
 
 System selection is available through `extras/macos/apply-highlight-ithilien-dawn.sh`; the legacy apply-highlight.sh also uses Dawn. These remain opt-in global changes.
 
-Optionally source `/absolute/path/to/ithilien/extras/shell/prompt.zsh` after the selection script to use the Dawn prompt: Ash username and hostname, blue path, purple Git information, and a black command-entry symbol. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.
+Optionally source `/absolute/path/to/ithilien/extras/shell/prompt.zsh` after the selection script to use the shared Dawn/Dusk prompt: muted username and hostname, blue path, purple Git information, and a command-entry symbol in the terminal foreground. It enables PROMPT_SUBST and uses a literal newline, preserving your existing vcs_info hooks. This replaces the effective prompt on shell startup; later prompt-framework hooks can override it.
 
 ### fzf history search
 
