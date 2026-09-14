@@ -187,7 +187,7 @@ def generate_app_palettes(palette: dict) -> None:
 def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
     highlight = palette["highlight"]
 
-    shell = ROOT / "extras/shell" / (f"{palette['slug']}.zsh" if variant else "ithilien.zsh")
+    shell = ROOT / "extras/shell" / f"{palette['slug']}.zsh"
     shell.parent.mkdir(parents=True, exist_ok=True)
     shell.write_text(
         "# Ithilien ZLE visual selection — generated; do not edit by hand.\n"

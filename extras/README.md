@@ -54,7 +54,7 @@ In Linear Preferences → Interface and theme, create a custom theme and paste t
 ## Other integrations
 
 - Firefox: load `extras/firefox/manifest.json` as a temporary add-on.
-- Zsh selection: source `extras/shell/ithilien.zsh`.
+- Zsh selection: source `extras/shell/ithilien-dawn.zsh` or `extras/shell/ithilien-dusk.zsh`.
 - macOS selection: run `extras/macos/apply-highlight.sh`, then log out and back in.
 
 Paths are relative to the repository root.
