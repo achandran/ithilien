@@ -172,12 +172,11 @@ def generate_claude_theme(palette: dict) -> None:
 def generate_app_palettes(palette: dict) -> None:
     """Generate importable palettes for apps with constrained theme APIs."""
     bg, fg, accent = palette["backgrounds"], palette["foregrounds"], palette["accents"]
-    slack_colors = [bg["mantle"], bg["surface0"], palette["highlight"]["background"],
-                    palette["highlight"]["foreground"], bg["surface1"], fg["text"],
-                    accent["sage"], accent["coral"]]
+    slack_colors = [bg["base"], palette["highlight"]["background"],
+                    fg["muted"], accent["coral"]]
     slack = ROOT / "extras/slack" / f"{palette['slug']}.txt"
     slack.parent.mkdir(parents=True, exist_ok=True)
-    slack.write_text(",".join(slack_colors) + "\n")
+    slack.write_text(", ".join(color.removeprefix("#") for color in slack_colors) + "\n")
 
     linear_colors = [bg["base"], fg["text"], bg["mantle"], fg["text"],
                      palette["highlight"]["background"], palette["highlight"]["foreground"]]
