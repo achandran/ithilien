@@ -178,11 +178,10 @@ def generate_app_palettes(palette: dict) -> None:
     slack.parent.mkdir(parents=True, exist_ok=True)
     slack.write_text(", ".join(color.removeprefix("#") for color in slack_colors) + "\n")
 
-    linear_colors = [bg["base"], fg["text"], bg["mantle"], fg["text"],
-                     palette["highlight"]["background"], palette["highlight"]["foreground"]]
+    linear_colors = [bg["base"], palette["highlight"]["background"]]
     linear = ROOT / "extras/linear" / f"{palette['slug']}.txt"
     linear.parent.mkdir(parents=True, exist_ok=True)
-    linear.write_text(",".join(linear_colors) + "\n")
+    linear.write_text(", ".join(color.removeprefix("#") for color in linear_colors) + "\n")
 
 
 def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
