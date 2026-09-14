@@ -48,7 +48,27 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 Ithilien is self-contained and requires no other colorscheme. Neovim 0.12+ is recommended for exact character diffs. Use any terminal font you like. Python and build tools are only needed for development.
 
-Using LazyVim? See the [LazyVim configuration](docs/installation.md#lazyvim), including lualine integration.
+### LazyVim
+
+Save this as `~/.config/nvim/lua/plugins/ithilien.lua`, then run `:Lazy sync`:
+
+```lua
+return {
+  {
+    "achandran/ithilien",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "ithilien-dawn", -- or "ithilien-dusk"
+    },
+  },
+}
+```
+
+Lualine picks up the matching theme automatically.
 
 ## Usage
 
@@ -67,7 +87,7 @@ Added, deleted, and changed lines use green, red, and blue backgrounds. Exact ed
 
 ## Extras
 
-Matching themes are available for Ghostty, Codex, Claude Code, Firefox, Zsh, Slack, Linear, and macOS selection. See [available ports](extras/README.md) and [installation instructions](docs/installation.md).
+Matching themes are available for Ghostty, Codex, Claude Code, Firefox, Zsh, Slack, Linear, and macOS selection. See [available ports and setup instructions](extras/README.md).
 
 [Ithilien wallpapers](extras/wallpapers/README.md) include Dawn and Dusk for desktop, iPhone, and iPad, plus a macOS light/dark wallpaper.
 
