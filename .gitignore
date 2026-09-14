@@ -5,6 +5,7 @@ __pycache__/
 nvim.log
 extras/wallpapers/.*.heic-*
 
+# Legacy local evaluation captures and dependencies
 tests/evaluation/results/
 
 tests/evaluation/deps/
@@ -22,3 +23,6 @@ tests/evaluation/local.mk
 
 # Repository-local evaluation caches and toolchains.
 /.evaluation-runtime/
+
+# Palette audits and native colorscheme checks
+tests/results/

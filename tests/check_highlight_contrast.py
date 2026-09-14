@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from ithilienlib import ROOT, wcag
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--output', type=Path, default=ROOT/'tests/evaluation/results/highlight-checks')
+parser.add_argument('--output', type=Path, default=ROOT/'tests/results/highlight-checks')
 args = parser.parse_args()
 h=json.loads((args.output/'highlights.json').read_text())['highlights']
 # Structural lines/whitespace have a separate 3:1 target; the highlight helper is

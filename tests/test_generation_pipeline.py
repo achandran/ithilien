@@ -17,7 +17,7 @@ from ithilienlib import ROOT
 def test_generation_refreshes_previews_after_ports_and_charts(monkeypatch, preview_fails):
     events = []
     for name in (
-        'generate_tintprobe_palette', 'generate_ghostty', 'generate_neovim_palette', 'generate_codex_theme',
+        'generate_ghostty', 'generate_neovim_palette', 'generate_codex_theme',
         'generate_claude_theme', 'generate_app_palettes', 'generate_neovim_default',
         'generate_shared_highlights',
     ):

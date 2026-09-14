@@ -16,8 +16,8 @@
     "lua/ithilien/highlights/syntax.lua": "8d9c7ba6a382a219a2bc321da4451cde6f966c4b64880678f566cb76bf02de29",
     "lua/ithilien/highlights/treesitter.lua": "e6e7e83d9614dd70d072ab40e69ada356e8c2c68b82fbc8897da88ed129e2456",
     "lua/ithilien/init.lua": "a70a572c00a7cc233f89e1acd732934e0ce0266e012f5d874ee173a0a89ebeb7",
-    "lua/ithilien/ithilien-dawn.lua": "8431f4ec6ad73f7ccdc360aebe949924643aeb4398d18a65804a0701c45b7ae3",
-    "lua/ithilien/ithilien-dusk.lua": "da485f79e50a220c019389d7ba8f2b6ca34b72bb4e12a6fc4abe60fc3cccd867",
+    "lua/ithilien/ithilien-dawn.lua": "46662103072bee439f99204dad44dc9296221ce4b364c7c2f7e19fbd0c01a17e",
+    "lua/ithilien/ithilien-dusk.lua": "4797807acdc6e8e3850ffbbd33e52e3fe61fb799ab69973fd5a0996d1df66fb5",
     "lua/ithilien/plugin_palette.lua": "03978f38c24213bd6f15923e7734bdce88023b2df9ecd1b547377a793fb46454",
     "lua/ithilien/statusline.lua": "d910865968f2ce229e2752d7bce0fc397bbb52d399d4e800e72fd1fd9c1b1978"
   },

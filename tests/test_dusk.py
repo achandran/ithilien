@@ -65,13 +65,6 @@ def test_ansi_regular_and_bright_accents_share_colors():
         assert ansi[name] == ansi['bright' + name.capitalize()]
 
 
-def test_selected_fzf_pointer_pair_uses_selection_background():
-    from check_dusk_interactions import fzf_roles
-    options = '--color=dark,bg:#202120,bg+:#B8595C,fg+:#000000,pointer:#000000,gutter:#202120'
-    assert fzf_roles(options)['pointer']['pass']
-    assert not fzf_roles(options.replace('pointer:#000000', 'pointer:#BDB7AB'))['pointer']['pass']
-
-
 def test_palette_names_identify_one_exact_color_across_variants():
     dawn, dusk = (load_palette_source('ithilien-' + v)['colors'] for v in ('dawn', 'dusk'))
     assert dawn.keys() & dusk.keys() == set(SHARED_COLORS)

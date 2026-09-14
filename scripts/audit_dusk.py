@@ -46,7 +46,7 @@ def assess(source):
 
 def main():
     result = assess(load_palette_source('ithilien-dusk'))
-    output = ROOT / 'tests/evaluation/results/palette/ithilien-dusk-audit.json'
+    output = ROOT / 'tests/results/palette/ithilien-dusk-audit.json'
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2) + '\n')
     print(f"Dusk: {result['color_count']} colors, {len(result['checks'])} contrast checks, {result['status']}")

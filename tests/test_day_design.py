@@ -18,7 +18,7 @@ class DayDesign(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp, patch.object(audit_palette,'ROOT',Path(temp)), patch.object(audit_palette,'load_palette',return_value=palette), contextlib.redirect_stdout(io.StringIO()):
             try: audit_palette.main('ithilien-dawn')
             except SystemExit: pass
-            return json.loads((Path(temp)/'tests/evaluation/results/palette/ithilien-dawn-audit.json').read_text())
+            return json.loads((Path(temp)/'tests/results/palette/ithilien-dawn-audit.json').read_text())
 
     def test_rosehip_selection_does_not_change_diff_emphasis(self):
         p=load_palette('ithilien-dawn')

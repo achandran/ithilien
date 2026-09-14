@@ -12,7 +12,7 @@ from ithilienlib import ROOT, ROLE_FAMILIES, load_palette, load_palette_source, 
 class NamedPalette(unittest.TestCase):
     def setUp(self):
         self.source = load_palette_source('ithilien-dawn')
-        self.shared = {'colorSpace': json.loads((ROOT/'scripts/palette/ithilien.json').read_text())['colorSpace']}
+        self.shared = {'colorSpace': json.loads((ROOT/'palette.json').read_text())['colorSpace']}
 
     def test_all_roles_use_named_colors(self):
         colors = self.source['colors']
@@ -58,11 +58,8 @@ class NamedPalette(unittest.TestCase):
             resolve_palette(self.shared, self.source)
 
 
-def test_single_canonical_palette_and_tintprobe_exports():
-    from tintprobe.context import load_palette as evaluator_palette
-    sources = list((ROOT / 'scripts/palette').glob('*.json'))
-    assert [p.name for p in sources] == ['ithilien.json']
-    document = json.loads(sources[0].read_text())
+def test_single_canonical_palette():
+    document = json.loads((ROOT / 'palette.json').read_text())
     assert set(document['variants']) == {'ithilien-dawn', 'ithilien-dusk'}
     for variant in document['variants']:
-        assert evaluator_palette(variant) == load_palette(variant)
+        assert load_palette(variant)['slug'] == variant

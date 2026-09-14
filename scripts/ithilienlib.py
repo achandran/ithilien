@@ -10,8 +10,7 @@ from tintprobe.colors import Color
 
 
 ROOT = Path(__file__).resolve().parent.parent
-PALETTE_DIR = ROOT / "scripts/palette"
-PALETTE_PATH = PALETTE_DIR / "ithilien.json"
+PALETTE_PATH = ROOT / "palette.json"
 
 
 ROLE_FAMILIES = ('backgrounds', 'foregrounds', 'accents', 'ansi', 'diff', 'highlight')

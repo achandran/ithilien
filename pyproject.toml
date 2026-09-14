@@ -11,8 +11,6 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "basedpyright==1.40.1",
-    "debugpy==1.8.21",
     "pytest==9.1.1",
 ]
 

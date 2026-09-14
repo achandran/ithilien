@@ -24,7 +24,7 @@ class ANSIConsolidation(unittest.TestCase):
 
     def test_ansi_and_approved_diff_changes_preserve_other_semantics(self):
         baseline=json.loads((ROOT/'tests/fixtures/ansi-baseline.json').read_text())
-        shared={'colorSpace': json.loads((ROOT/'scripts/palette/ithilien.json').read_text())['colorSpace']}
+        shared={'colorSpace': json.loads((ROOT/'palette.json').read_text())['colorSpace']}
         before=resolve_palette(shared,baseline)
         after=load_palette('ithilien-dawn')
         self.assertNotEqual(before['ansi'],after['ansi'])

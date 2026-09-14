@@ -23,7 +23,7 @@ Update any custom scripts or symlinks that refer directly to checkout paths.
 Installed copies do not need to move. Neovim's `colors/` and `lua/` runtime directories remain at the root.
 Diff behavior initializes when the colorscheme loads.
 
-Contributors: edit `scripts/palette/` and the generators rather than generated exports.
+Contributors: edit `palette.json` and the generators rather than generated exports.
 See [development](../docs/development.md) for regeneration and evaluation.
 
 ## Ghostty
