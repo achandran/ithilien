@@ -70,6 +70,8 @@ Added, deleted, and changed lines use green, red, and blue backgrounds. Exact ed
 
 Matching themes are available for Ghostty, Codex, Claude Code, Firefox, Zsh, Slack, Linear, and macOS selection. See [available ports](extras/README.md) and [installation instructions](docs/installation.md).
 
+[Ithilien wallpapers](extras/wallpapers/README.md) include Dawn and Dusk for desktop, iPhone, and iPad, plus a macOS light/dark wallpaper.
+
 ## About
 
 Inspired by the Formex Reef GMT’s white dial, black ceramic bezel, and steel bracelet, with color names drawn from Tolkien’s world. Built on [Kansō](https://github.com/webhooked/kanso.nvim).
