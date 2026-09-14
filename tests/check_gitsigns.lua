@@ -1,5 +1,3 @@
--- KANSO_ROOT=../kanso GITSIGNS_ROOT=/path/to/gitsigns.nvim nvim --headless -u NONE -i NONE -l tests/check_gitsigns.lua
-vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT, 'Set KANSO_ROOT'))
 vim.opt.rtp:prepend(assert(vim.env.GITSIGNS_ROOT, 'Set GITSIGNS_ROOT'))
 vim.opt.rtp:prepend(vim.fn.getcwd())
 local p = require('ithilien.ithilien-dawn').raw

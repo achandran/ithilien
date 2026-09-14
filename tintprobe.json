@@ -18,8 +18,7 @@
   "default_adapter": {
     "id": "ithilien-dawn",
     "paths": [
-      ".",
-      "tests/evaluation/deps/kanso"
+      "."
     ],
     "setup": "require('ithilien').load('dawn')",
     "after_diff": "require('ithilien.diff').refresh()"

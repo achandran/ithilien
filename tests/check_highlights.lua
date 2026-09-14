@@ -1,5 +1,3 @@
--- KANSO_ROOT points to the pinned Kanso dependency checkout.
-for _,key in ipairs({'KANSO_ROOT'}) do vim.opt.rtp:prepend(assert(vim.env[key])) end
 vim.opt.rtp:prepend(vim.fn.getcwd())
 local theme=require('ithilien')
 local function snapshot()
@@ -9,7 +7,6 @@ local function snapshot()
 end
 theme.load('dawn')
 local raw=require('ithilien.ithilien-dawn').raw
-assert(require("kanso").config.theme == "pearl", "Dawn must use Kanso Pearl")
 assert(not package.loaded["zenbones.specs"], "Dawn must not load Zenbones")
 local expected=tonumber(raw.foregrounds.text:sub(2),16)
 -- Plain selection fixes the user-confirmed partial V-line rendering regression.

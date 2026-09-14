@@ -74,7 +74,7 @@ validation; the commands below reproduce them.
 ```sh
 make test
 uv run --locked python scripts/audit_dusk.py
-KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_dusk.lua
+nvim --headless -u NONE -i NONE -l tests/check_dusk.lua
 uv run --locked python -m tintprobe compare --themes ithilien-dusk --strict-gates --output tests/evaluation/results/dusk
 uv run --locked python scripts/check_dusk_interactions.py
 ```

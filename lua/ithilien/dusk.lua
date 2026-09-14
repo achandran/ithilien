@@ -18,6 +18,7 @@ function M.load(opts)
   local accent, diff, highlight = a, d, raw.highlight
   local theme = {
     ui = {
+      none = "NONE",
       fg = fg.text,
       fg_dim = fg.subtext,
       fg_reverse = bg.base,
@@ -99,16 +100,7 @@ function M.load(opts)
 
 
   local config = {italic_comments=opts.italics, italic_strings=false}
-  require('kanso').setup({
-  theme='ink', background={dark='ink',light='pearl'},
-  bold=opts.bold, italics=opts.italics, transparent=false, dimInactive=false,
-  terminalColors=true, compile=false,
-  commentStyle=opts.italics and {italic=true} or {},
-  keywordStyle={bold=opts.bold,italic=false}, statementStyle={bold=opts.bold},
-  colors={palette=palette.kanso,theme={all=theme,ink={},zen={},pearl={}}},
-  overrides=function() return {} end,
-  })
-  require('kanso').load('ink')
+  require('ithilien.highlights').apply(theme, opts)
   vim.g.colors_name='ithilien-dusk'
   local function hi(name, spec) vim.api.nvim_set_hl(0, name, spec) end
   local groups = {

@@ -1,4 +1,3 @@
-vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT))
 vim.opt.rtp:prepend(vim.fn.getcwd())
 local theme = require('ithilien')
 local function get(name) return vim.api.nvim_get_hl(0, {name=name,link=false}) end

@@ -2,6 +2,9 @@
 
 ## Neovim and LazyVim
 
+Ithilien has no external colorscheme dependency. Existing installations can remove
+the old colorscheme dependency from Ithilien's plugin specification.
+
 Dawn and Dusk are on `main`; pull the latest changes or set the plugin `dir` to this local checkout. Neovim 0.12+ is recommended for exact character diffs. Loading Ithilien requests `inline:char` on supported Neovim versions. Switching to another colorscheme restores the previous `diffopt` unless you changed it in the meantime.
 
 
@@ -16,7 +19,6 @@ It includes lualine integration.
 return {
   {
     "achandran/ithilien",
-    dependencies = { "webhooked/kanso.nvim" },
     lazy = false,
     priority = 1000,
     opts = {

@@ -1,4 +1,3 @@
-vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT,'Set KANSO_ROOT'))
 vim.opt.rtp:prepend(vim.fn.getcwd())
 require('ithilien').load('dawn')
 local function hl(n) return vim.api.nvim_get_hl(0,{name=n,link=false}) end

@@ -6,8 +6,8 @@ evaluation. The profiles below retain their own coverage and prerequisites.
 
 ## Git review
 
-The first compatibility profile loads pinned Diffview, Neogit, Gitsigns, Plenary,
-and Kanso checkouts, without loading or changing your personal Neovim setup.
+The first compatibility profile loads pinned Diffview, Neogit, Gitsigns, and Plenary
+checkouts, without loading or changing your personal Neovim setup.
 The Ithilien palette remains frozen.
 
 ```sh
@@ -201,7 +201,7 @@ backdrop uses an opaque palette surface instead of a blended gray.
 Run the portable semantic regression check from the repository:
 
 ```sh
-KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -n -l tests/check_plugin_semantics.lua
+nvim --headless -u NONE -i NONE -n -l tests/check_plugin_semantics.lua
 ```
 
 Audit your installed Lazy configuration:
@@ -230,7 +230,7 @@ The standalone Gitsigns check verifies staged sign cues and ordinary-weight
 inline spans before and after the plugin recreates its fallback highlights:
 
 ```sh
-KANSO_ROOT=tests/evaluation/deps/kanso GITSIGNS_ROOT=tests/evaluation/deps/gitsigns.nvim nvim --headless -u NONE -i NONE -l tests/check_gitsigns.lua
+GITSIGNS_ROOT=tests/evaluation/deps/gitsigns.nvim nvim --headless -u NONE -i NONE -l tests/check_gitsigns.lua
 ```
 
 This complements the live hunk captures in the Git review suite.

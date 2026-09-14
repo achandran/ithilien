@@ -1,6 +1,4 @@
 -- Exercise Neovim's real character-level diff engine, not hand-assigned spans.
--- KANSO_ROOT=/path/to/kanso.nvim nvim --headless -u NONE -i NONE -l tests/check_native_diff.lua
-vim.opt.rtp:prepend(assert(vim.env.KANSO_ROOT, 'Set KANSO_ROOT'))
 vim.opt.rtp:prepend(vim.fn.getcwd())
 require('ithilien').load('day')
 -- Check all supported plugin word-span groups, including virtual deletion lines.

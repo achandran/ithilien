@@ -17,6 +17,7 @@ local palette = require('ithilien.ithilien-dawn')
 local accent, diff, highlight, is_light = a, d, raw.highlight, true
   local theme = {
     ui = {
+      none = "NONE",
       fg = fg.text,
       fg_dim = fg.subtext,
       fg_reverse = bg.base,
@@ -98,16 +99,7 @@ local accent, diff, highlight, is_light = a, d, raw.highlight, true
 
 
 local config = {italic_comments=opts.italics, italic_strings=false}
-require('kanso').setup({
-  theme='pearl', background={dark='ink',light='pearl'},
-  bold=opts.bold, italics=opts.italics, transparent=false, dimInactive=false,
-  terminalColors=true, compile=false,
-  commentStyle=opts.italics and {italic=true} or {},
-  keywordStyle={bold=opts.bold,italic=false}, statementStyle={bold=opts.bold},
-  colors={palette=palette.kanso,theme={all=theme,ink={},zen={},pearl={}}},
-  overrides=function() return {} end,
-})
-require('kanso').load('pearl')
+require('ithilien.highlights').apply(theme, opts)
 vim.g.colors_name='ithilien-dawn'
 local function hi(name, spec) vim.api.nvim_set_hl(0, name, spec) end
 local groups = {
@@ -148,7 +140,7 @@ local groups = {
   DiagnosticUnnecessary={fg=p.muted,underline=true},
 }
 for group, spec in pairs(groups) do hi(group,spec) end
--- Kanso structural/plugin defaults need readable Dawn foregrounds.
+-- Structural/plugin defaults need readable Dawn foregrounds.
 for _,name in ipairs({'NvimTreeWinSeparator','NeoTreeIndentMarker','CmpDocumentationBorder',
  'BlinkCmpDocBorder','BlinkCmpSignatureHelpBorder','MiniClueBorder','MiniNotifyBorder',
  'MiniPickBorder','MiniFilesBorder','LspInlayHint','Ignore'}) do
@@ -186,7 +178,7 @@ hi('Title',{fg=p.fg,bold=true})
 hi('Underlined',{fg=p.blue,underline=true})
 for i,color in ipairs(p.ansi) do vim.g['terminal_color_'..(i-1)]=color end
 
--- Kanso's plugin inventory includes reversed labels. Dawn never uses
+-- The plugin inventory includes reversed labels. Dawn never uses
 -- light foregrounds except explicit palette interaction pairs: normalize reverse groups and
 -- pale foregrounds, while retaining explicit dark semantic colors.
 local function luminance(hex)

@@ -1,4 +1,3 @@
-vim.opt.rtp:prepend(vim.env.KANSO_ROOT)
 vim.opt.rtp:prepend(vim.fn.getcwd())
 local initial_diffopt=vim.o.diffopt
 assert(not package.loaded['ithilien.diff'], 'Diff setup ran before colorscheme selection')

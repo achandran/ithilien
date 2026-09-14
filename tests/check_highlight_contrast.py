@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', type=Path, default=ROOT/'tests/evaluation/results/highlight-checks')
 args = parser.parse_args()
 h=json.loads((args.output/'highlights.json').read_text())['highlights']
-# Structural lines/whitespace have a separate 3:1 target; the Kanso helper is
+# Structural lines/whitespace have a separate 3:1 target; the highlight helper is
 # a synthetic workaround group that is never used to render user text.
 structural={'IthilienDiffFiller','FloatBorder','WinSeparator','TelescopeBorder','Whitespace','EndOfBuffer','VertSplit','NonText'}
 # Decorative indent guides are palette-role assertions, not ordinary text.

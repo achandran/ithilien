@@ -4,11 +4,6 @@
     "revision": "74b06c6c75e4eeb3108ec01852001636d85a932b",
     "url": "https://github.com/nvim-lua/plenary.nvim.git"
   },
-  "kanso": {
-    "path": "tests/evaluation/deps/kanso",
-    "revision": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
-    "url": "https://github.com/webhooked/kanso.nvim.git"
-  },
   "neotest": {
     "path": "tests/evaluation/deps/neotest",
     "url": "https://github.com/nvim-neotest/neotest.git",

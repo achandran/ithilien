@@ -5,6 +5,14 @@ checks. The shared measurement and capture engine is
 [Tintprobe](https://github.com/achandran/tintprobe), pinned to an exact Git revision
 in `pyproject.toml` and `uv.lock`.
 
+Neovim highlights are self-contained in `lua/ithilien/highlights/`. See `THIRD_PARTY_NOTICES` for the adapted highlight inventory’s attribution.
+
+`make test` includes native standalone tests when Neovim is available. They reject
+external theme imports, compare representative editor, syntax, LSP, plugin, and terminal
+highlights against the pre-removal baseline across both variants and all style
+options, and exercise repeated theme switching. Without Neovim these tests skip;
+run the native checks below before releasing Neovim changes.
+
 | Command | Purpose |
 | --- | --- |
 | `make build` | Audit both palettes and regenerate ports, palette chart, and the Neovim preview. |
@@ -51,8 +59,8 @@ Codex instrumentation, and engine tests live in Tintprobe's package/repository.
 The ANSI approval baseline and native diff-presentation pair remain in
 `tests/fixtures/` because they support Ithilien's own regression contracts.
 
-Neovim and the pinned Kanso checkout are required for previews. Rendering preview
-PNGs also needs macOS Swift/AppKit and Berkeley Mono Medium. Tests and headless
+Neovim is required for previews. Rendering preview PNGs also needs macOS
+Swift/AppKit and Berkeley Mono Medium and Retina. Tests and headless
 comparison do not require the desktop. Python TS/LSP checks need the pinned grammar
 and BasedPyright; Codex replay needs its pinned Rust source/toolchain, `just`, and
 `cargo-nextest`. See Tintprobe's guides for capture-specific prerequisites.
@@ -67,11 +75,11 @@ these are project heuristics, not a universal theme ranking.
 These do not open desktop windows:
 
 ```sh
-KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_highlights.lua
+nvim --headless -u NONE -i NONE -l tests/check_highlights.lua
 uv run --locked python tests/check_highlight_contrast.py
-KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_dusk.lua
-KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_native_diff.lua
-KANSO_ROOT=tests/evaluation/deps/kanso nvim --headless -u NONE -i NONE -l tests/check_diff_presentation.lua
+nvim --headless -u NONE -i NONE -l tests/check_dusk.lua
+nvim --headless -u NONE -i NONE -l tests/check_native_diff.lua
+nvim --headless -u NONE -i NONE -l tests/check_diff_presentation.lua
 ```
 
 Outputs go to ignored `tests/evaluation/results/highlight-checks/`. Override using
@@ -141,7 +149,7 @@ To refresh just the native preview, run:
 uv run --locked python scripts/generate_preview.py
 ```
 
-The preview requires macOS Swift/AppKit, Neovim, the pinned Kanso checkout, and
+The preview requires macOS Swift/AppKit, Neovim, and
 Berkeley Mono Medium and Retina regular/oblique OTF files, plus Bold and
 Bold Oblique, in `~/Library/Fonts`. Missing
 dependencies fail the build. The source pair lives in this repository’s
@@ -149,7 +157,7 @@ dependencies fail the build. The source pair lives in this repository’s
 a comprehension, validation, and formatted f-strings. The image rasterizes actual
 Neovim UI cells with built-in Python syntax, preserving foreground/background colors and text styles. It is
 not a terminal screenshot or Tree-sitter/LSP capture. Its JSON records the fixture
-and palette hashes, Neovim version, and Kanso revision.
+and palette hashes, Neovim version, and Ithilien Lua source hashes.
 
 ## Shared evaluator guides
 

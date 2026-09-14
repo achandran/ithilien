@@ -1,0 +1,1997 @@
+{
+  "source": "Pre-removal Ithilien; native Neovim highlight definitions across style options. Upstream attribution is recorded in THIRD_PARTY_NOTICES.",
+  "variants": {
+    "dawn-0-0": {
+      "highlights": {
+        "Normal": {
+          "bg": 16448248,
+          "fg": 0
+        },
+        "NormalNC": {
+          "bg": 16448248,
+          "fg": 0
+        },
+        "Comment": {
+          "fg": 5264470
+        },
+        "String": {
+          "fg": 5264470
+        },
+        "Function": {
+          "fg": 0
+        },
+        "Type": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 0
+        },
+        "Statement": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 0
+        },
+        "Number": {
+          "fg": 0
+        },
+        "Boolean": {
+          "fg": 0
+        },
+        "Keyword": {
+          "fg": 0
+        },
+        "Operator": {
+          "fg": 0
+        },
+        "PreProc": {
+          "fg": 7360877
+        },
+        "Special": {
+          "fg": 3432055
+        },
+        "SpellBad": {
+          "undercurl": true,
+          "sp": 9121847,
+          "cterm": {
+            "undercurl": true
+          }
+        },
+        "Visual": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "Search": {
+          "bg": 14075614,
+          "fg": 0
+        },
+        "DiffText": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "DiffTextAdd": {
+          "link": "DiffText"
+        },
+        "DiagnosticError": {
+          "fg": 9121847
+        },
+        "DiagnosticUnderlineWarn": {
+          "undercurl": true,
+          "sp": 7952674,
+          "cterm": {
+            "undercurl": true
+          }
+        },
+        "LspInlayHint": {
+          "fg": 5264470
+        },
+        "@variable.builtin": {
+          "fg": 7360877
+        },
+        "@variable.parameter": {
+          "fg": 5264470
+        },
+        "@function": {
+          "link": "Function"
+        },
+        "@keyword": {
+          "link": "Keyword"
+        },
+        "@keyword.return": {
+          "fg": 3432055
+        },
+        "@keyword.exception": {
+          "fg": 3432055
+        },
+        "@type.builtin": {
+          "fg": 2446164
+        },
+        "@markup.heading": {
+          "link": "Title"
+        },
+        "@markup.strong": {},
+        "@string.regexp": {
+          "fg": 9121847
+        },
+        "@lsp.type.class": {
+          "link": "@type"
+        },
+        "@lsp.type.parameter": {
+          "link": "@variable.parameter"
+        },
+        "TelescopeBorder": {
+          "bg": 16448248,
+          "fg": 5264470
+        },
+        "TelescopeSelection": {
+          "link": "CursorLine"
+        },
+        "CmpItemAbbrMatch": {
+          "fg": 0
+        },
+        "CmpItemKindFunction": {
+          "link": "Function"
+        },
+        "BlinkCmpLabelMatch": {
+          "bold": true,
+          "fg": 0,
+          "cterm": {
+            "bold": true
+          }
+        },
+        "BlinkCmpMenuSelection": {
+          "link": "PmenuSel"
+        },
+        "NeoTreeGitAdded": {
+          "fg": 3235654
+        },
+        "NeoTreeGitModified": {
+          "fg": 3432055
+        },
+        "NeoTreeGitDeleted": {
+          "fg": 9121847
+        },
+        "NeoTreeGitStaged": {
+          "fg": 3235654,
+          "cterm": {
+            "underline": true
+          },
+          "underline": true
+        },
+        "BufferLineWarningSelected": {
+          "fg": 7952674
+        },
+        "BufferLineBufferSelected": {
+          "bg": 14606559,
+          "fg": 0
+        },
+        "SnacksIndent": {
+          "nocombine": true,
+          "fg": 13225675,
+          "cterm": {
+            "nocombine": true
+          }
+        },
+        "SnacksIndentScope": {
+          "nocombine": true,
+          "fg": 5264470,
+          "cterm": {
+            "nocombine": true
+          }
+        },
+        "SnacksDashboardDesc": {
+          "fg": 0
+        },
+        "GitSignsStagedAdd": {
+          "fg": 3235654,
+          "cterm": {
+            "underline": true
+          },
+          "underline": true
+        },
+        "GitSignsDeleteInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "NeogitDiffAddInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "TodoBgFIX": {
+          "bold": true,
+          "fg": 9121847,
+          "cterm": {
+            "bold": true
+          },
+          "bg": 14606559
+        },
+        "FzfLuaCursorLine": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "StatusLine": {
+          "bg": 14606559,
+          "fg": 0
+        }
+      },
+      "terminal": {
+        "1": "#8B3037",
+        "0": "#000000",
+        "2": "#315F46",
+        "3": "#795922",
+        "4": "#345E77",
+        "5": "#70516D",
+        "6": "#255354",
+        "7": "#FAFAF8",
+        "8": "#505456",
+        "9": "#8B3037",
+        "10": "#315F46",
+        "11": "#795922",
+        "12": "#345E77",
+        "13": "#70516D",
+        "14": "#255354",
+        "15": "#FAFAF8",
+        "16": "#795922",
+        "17": "#8B3037"
+      }
+    },
+    "dawn-0-1": {
+      "highlights": {
+        "Normal": {
+          "bg": 16448248,
+          "fg": 0
+        },
+        "NormalNC": {
+          "bg": 16448248,
+          "fg": 0
+        },
+        "Comment": {
+          "cterm": {
+            "italic": true
+          },
+          "fg": 5264470,
+          "italic": true
+        },
+        "String": {
+          "fg": 5264470
+        },
+        "Function": {
+          "fg": 0
+        },
+        "Type": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 0
+        },
+        "Statement": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 0
+        },
+        "Number": {
+          "fg": 0
+        },
+        "Boolean": {
+          "fg": 0
+        },
+        "Keyword": {
+          "fg": 0
+        },
+        "Operator": {
+          "fg": 0
+        },
+        "PreProc": {
+          "fg": 7360877
+        },
+        "Special": {
+          "fg": 3432055
+        },
+        "SpellBad": {
+          "undercurl": true,
+          "sp": 9121847,
+          "cterm": {
+            "undercurl": true
+          }
+        },
+        "Visual": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "Search": {
+          "bg": 14075614,
+          "fg": 0
+        },
+        "DiffText": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "DiffTextAdd": {
+          "link": "DiffText"
+        },
+        "DiagnosticError": {
+          "fg": 9121847
+        },
+        "DiagnosticUnderlineWarn": {
+          "undercurl": true,
+          "sp": 7952674,
+          "cterm": {
+            "undercurl": true
+          }
+        },
+        "LspInlayHint": {
+          "fg": 5264470
+        },
+        "@variable.builtin": {
+          "cterm": {
+            "italic": true
+          },
+          "fg": 7360877,
+          "italic": true
+        },
+        "@variable.parameter": {
+          "fg": 5264470
+        },
+        "@function": {
+          "link": "Function"
+        },
+        "@keyword": {
+          "link": "Keyword"
+        },
+        "@keyword.return": {
+          "fg": 3432055
+        },
+        "@keyword.exception": {
+          "fg": 3432055
+        },
+        "@type.builtin": {
+          "fg": 2446164
+        },
+        "@markup.heading": {
+          "link": "Title"
+        },
+        "@markup.strong": {},
+        "@string.regexp": {
+          "fg": 9121847
+        },
+        "@lsp.type.class": {
+          "link": "@type"
+        },
+        "@lsp.type.parameter": {
+          "link": "@variable.parameter"
+        },
+        "TelescopeBorder": {
+          "bg": 16448248,
+          "fg": 5264470
+        },
+        "TelescopeSelection": {
+          "link": "CursorLine"
+        },
+        "CmpItemAbbrMatch": {
+          "fg": 0
+        },
+        "CmpItemKindFunction": {
+          "link": "Function"
+        },
+        "BlinkCmpLabelMatch": {
+          "bold": true,
+          "fg": 0,
+          "cterm": {
+            "bold": true
+          }
+        },
+        "BlinkCmpMenuSelection": {
+          "link": "PmenuSel"
+        },
+        "NeoTreeGitAdded": {
+          "fg": 3235654
+        },
+        "NeoTreeGitModified": {
+          "fg": 3432055
+        },
+        "NeoTreeGitDeleted": {
+          "fg": 9121847
+        },
+        "NeoTreeGitStaged": {
+          "cterm": {
+            "underline": true
+          },
+          "fg": 3235654,
+          "underline": true
+        },
+        "BufferLineWarningSelected": {
+          "fg": 7952674
+        },
+        "BufferLineBufferSelected": {
+          "bg": 14606559,
+          "fg": 0
+        },
+        "SnacksIndent": {
+          "nocombine": true,
+          "fg": 13225675,
+          "cterm": {
+            "nocombine": true
+          }
+        },
+        "SnacksIndentScope": {
+          "nocombine": true,
+          "fg": 5264470,
+          "cterm": {
+            "nocombine": true
+          }
+        },
+        "SnacksDashboardDesc": {
+          "fg": 0
+        },
+        "GitSignsStagedAdd": {
+          "cterm": {
+            "underline": true
+          },
+          "fg": 3235654,
+          "underline": true
+        },
+        "GitSignsDeleteInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "NeogitDiffAddInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "TodoBgFIX": {
+          "bold": true,
+          "fg": 9121847,
+          "cterm": {
+            "bold": true
+          },
+          "bg": 14606559
+        },
+        "FzfLuaCursorLine": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "StatusLine": {
+          "bg": 14606559,
+          "fg": 0
+        }
+      },
+      "terminal": {
+        "2": "#315F46",
+        "3": "#795922",
+        "4": "#345E77",
+        "5": "#70516D",
+        "6": "#255354",
+        "7": "#FAFAF8",
+        "8": "#505456",
+        "9": "#8B3037",
+        "10": "#315F46",
+        "11": "#795922",
+        "12": "#345E77",
+        "13": "#70516D",
+        "14": "#255354",
+        "15": "#FAFAF8",
+        "16": "#795922",
+        "17": "#8B3037",
+        "1": "#8B3037",
+        "0": "#000000"
+      }
+    },
+    "dawn-1-0": {
+      "highlights": {
+        "Normal": {
+          "bg": 16448248,
+          "fg": 0
+        },
+        "NormalNC": {
+          "bg": 16448248,
+          "fg": 0
+        },
+        "Comment": {
+          "fg": 5264470
+        },
+        "String": {
+          "fg": 5264470
+        },
+        "Function": {
+          "fg": 0
+        },
+        "Type": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true,
+          "fg": 0
+        },
+        "Statement": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true,
+          "fg": 0
+        },
+        "Number": {
+          "fg": 0
+        },
+        "Boolean": {
+          "fg": 0
+        },
+        "Keyword": {
+          "fg": 0
+        },
+        "Operator": {
+          "fg": 0
+        },
+        "PreProc": {
+          "fg": 7360877
+        },
+        "Special": {
+          "fg": 3432055
+        },
+        "SpellBad": {
+          "undercurl": true,
+          "cterm": {
+            "undercurl": true
+          },
+          "sp": 9121847
+        },
+        "Visual": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "Search": {
+          "bg": 14075614,
+          "fg": 0
+        },
+        "DiffText": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "DiffTextAdd": {
+          "link": "DiffText"
+        },
+        "DiagnosticError": {
+          "fg": 9121847
+        },
+        "DiagnosticUnderlineWarn": {
+          "undercurl": true,
+          "cterm": {
+            "undercurl": true
+          },
+          "sp": 7952674
+        },
+        "LspInlayHint": {
+          "fg": 5264470
+        },
+        "@variable.builtin": {
+          "fg": 7360877
+        },
+        "@variable.parameter": {
+          "fg": 5264470
+        },
+        "@function": {
+          "link": "Function"
+        },
+        "@keyword": {
+          "link": "Keyword"
+        },
+        "@keyword.return": {
+          "fg": 3432055
+        },
+        "@keyword.exception": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true,
+          "fg": 3432055
+        },
+        "@type.builtin": {
+          "fg": 2446164
+        },
+        "@markup.heading": {
+          "link": "Title"
+        },
+        "@markup.strong": {
+          "bold": true,
+          "cterm": {
+            "bold": true
+          }
+        },
+        "@string.regexp": {
+          "fg": 9121847
+        },
+        "@lsp.type.class": {
+          "link": "@type"
+        },
+        "@lsp.type.parameter": {
+          "link": "@variable.parameter"
+        },
+        "TelescopeBorder": {
+          "bg": 16448248,
+          "fg": 5264470
+        },
+        "TelescopeSelection": {
+          "link": "CursorLine"
+        },
+        "CmpItemAbbrMatch": {
+          "fg": 0
+        },
+        "CmpItemKindFunction": {
+          "link": "Function"
+        },
+        "BlinkCmpLabelMatch": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true,
+          "fg": 0
+        },
+        "BlinkCmpMenuSelection": {
+          "link": "PmenuSel"
+        },
+        "NeoTreeGitAdded": {
+          "fg": 3235654
+        },
+        "NeoTreeGitModified": {
+          "fg": 3432055
+        },
+        "NeoTreeGitDeleted": {
+          "fg": 9121847
+        },
+        "NeoTreeGitStaged": {
+          "underline": true,
+          "cterm": {
+            "underline": true
+          },
+          "fg": 3235654
+        },
+        "BufferLineWarningSelected": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true,
+          "fg": 7952674
+        },
+        "BufferLineBufferSelected": {
+          "cterm": {
+            "bold": true
+          },
+          "bg": 14606559,
+          "bold": true,
+          "fg": 0
+        },
+        "SnacksIndent": {
+          "nocombine": true,
+          "cterm": {
+            "nocombine": true
+          },
+          "fg": 13225675
+        },
+        "SnacksIndentScope": {
+          "nocombine": true,
+          "cterm": {
+            "nocombine": true
+          },
+          "fg": 5264470
+        },
+        "SnacksDashboardDesc": {
+          "fg": 0
+        },
+        "GitSignsStagedAdd": {
+          "underline": true,
+          "cterm": {
+            "underline": true
+          },
+          "fg": 3235654
+        },
+        "GitSignsDeleteInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "NeogitDiffAddInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "TodoBgFIX": {
+          "cterm": {
+            "bold": true
+          },
+          "bg": 14606559,
+          "bold": true,
+          "fg": 9121847
+        },
+        "FzfLuaCursorLine": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "StatusLine": {
+          "bg": 14606559,
+          "fg": 0
+        }
+      },
+      "terminal": {
+        "2": "#315F46",
+        "3": "#795922",
+        "4": "#345E77",
+        "5": "#70516D",
+        "6": "#255354",
+        "7": "#FAFAF8",
+        "8": "#505456",
+        "9": "#8B3037",
+        "10": "#315F46",
+        "11": "#795922",
+        "12": "#345E77",
+        "13": "#70516D",
+        "14": "#255354",
+        "15": "#FAFAF8",
+        "16": "#795922",
+        "17": "#8B3037",
+        "1": "#8B3037",
+        "0": "#000000"
+      }
+    },
+    "dawn-1-1": {
+      "highlights": {
+        "Normal": {
+          "fg": 0,
+          "bg": 16448248
+        },
+        "NormalNC": {
+          "fg": 0,
+          "bg": 16448248
+        },
+        "Comment": {
+          "fg": 5264470,
+          "cterm": {
+            "italic": true
+          },
+          "italic": true
+        },
+        "String": {
+          "fg": 5264470
+        },
+        "Function": {
+          "fg": 0
+        },
+        "Type": {
+          "fg": 0,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "Statement": {
+          "fg": 0,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "Number": {
+          "fg": 0
+        },
+        "Boolean": {
+          "fg": 0
+        },
+        "Keyword": {
+          "fg": 0,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "Operator": {
+          "fg": 0
+        },
+        "PreProc": {
+          "fg": 7360877
+        },
+        "Special": {
+          "fg": 3432055
+        },
+        "SpellBad": {
+          "sp": 9121847,
+          "undercurl": true,
+          "cterm": {
+            "undercurl": true
+          }
+        },
+        "Visual": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "Search": {
+          "fg": 0,
+          "bg": 14075614
+        },
+        "DiffText": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "DiffTextAdd": {
+          "link": "DiffText"
+        },
+        "DiagnosticError": {
+          "fg": 9121847
+        },
+        "DiagnosticUnderlineWarn": {
+          "sp": 7952674,
+          "undercurl": true,
+          "cterm": {
+            "undercurl": true
+          }
+        },
+        "LspInlayHint": {
+          "fg": 5264470
+        },
+        "@variable.builtin": {
+          "fg": 7360877,
+          "cterm": {
+            "italic": true
+          },
+          "italic": true
+        },
+        "@variable.parameter": {
+          "fg": 5264470
+        },
+        "@function": {
+          "link": "Function"
+        },
+        "@keyword": {
+          "link": "Keyword"
+        },
+        "@keyword.return": {
+          "fg": 3432055,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "@keyword.exception": {
+          "fg": 3432055,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "@type.builtin": {
+          "fg": 2446164
+        },
+        "@markup.heading": {
+          "link": "Title"
+        },
+        "@markup.strong": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "@string.regexp": {
+          "fg": 9121847
+        },
+        "@lsp.type.class": {
+          "link": "@type"
+        },
+        "@lsp.type.parameter": {
+          "link": "@variable.parameter"
+        },
+        "TelescopeBorder": {
+          "fg": 5264470,
+          "bg": 16448248
+        },
+        "TelescopeSelection": {
+          "link": "CursorLine"
+        },
+        "CmpItemAbbrMatch": {
+          "fg": 0
+        },
+        "CmpItemKindFunction": {
+          "link": "Function"
+        },
+        "BlinkCmpLabelMatch": {
+          "fg": 0,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "BlinkCmpMenuSelection": {
+          "link": "PmenuSel"
+        },
+        "NeoTreeGitAdded": {
+          "fg": 3235654
+        },
+        "NeoTreeGitModified": {
+          "fg": 3432055
+        },
+        "NeoTreeGitDeleted": {
+          "fg": 9121847
+        },
+        "NeoTreeGitStaged": {
+          "fg": 3235654,
+          "cterm": {
+            "underline": true
+          },
+          "underline": true
+        },
+        "BufferLineWarningSelected": {
+          "fg": 7952674,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "BufferLineBufferSelected": {
+          "fg": 0,
+          "cterm": {
+            "bold": true
+          },
+          "bg": 14606559,
+          "bold": true
+        },
+        "SnacksIndent": {
+          "fg": 13225675,
+          "nocombine": true,
+          "cterm": {
+            "nocombine": true
+          }
+        },
+        "SnacksIndentScope": {
+          "fg": 5264470,
+          "nocombine": true,
+          "cterm": {
+            "nocombine": true
+          }
+        },
+        "SnacksDashboardDesc": {
+          "fg": 0
+        },
+        "GitSignsStagedAdd": {
+          "fg": 3235654,
+          "cterm": {
+            "underline": true
+          },
+          "underline": true
+        },
+        "GitSignsDeleteInline": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "NeogitDiffAddInline": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "TodoBgFIX": {
+          "fg": 9121847,
+          "cterm": {
+            "bold": true
+          },
+          "bg": 14606559,
+          "bold": true
+        },
+        "FzfLuaCursorLine": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "StatusLine": {
+          "fg": 0,
+          "bg": 14606559
+        }
+      },
+      "terminal": {
+        "1": "#8B3037",
+        "0": "#000000",
+        "2": "#315F46",
+        "3": "#795922",
+        "4": "#345E77",
+        "5": "#70516D",
+        "6": "#255354",
+        "7": "#FAFAF8",
+        "8": "#505456",
+        "9": "#8B3037",
+        "10": "#315F46",
+        "11": "#795922",
+        "12": "#345E77",
+        "13": "#70516D",
+        "14": "#255354",
+        "15": "#FAFAF8",
+        "16": "#795922",
+        "17": "#8B3037"
+      }
+    },
+    "dusk-0-0": {
+      "highlights": {
+        "Normal": {
+          "bg": 2105632,
+          "fg": 12433323
+        },
+        "NormalNC": {
+          "bg": 2105632,
+          "fg": 12433323
+        },
+        "Comment": {
+          "fg": 11183255
+        },
+        "String": {
+          "fg": 11183255
+        },
+        "Function": {
+          "fg": 12433323
+        },
+        "Type": {
+          "fg": 12433323
+        },
+        "Statement": {
+          "fg": 12433323
+        },
+        "Number": {
+          "fg": 12433323
+        },
+        "Boolean": {
+          "fg": 12433323
+        },
+        "Keyword": {
+          "fg": 12433323
+        },
+        "Operator": {
+          "fg": 12433323
+        },
+        "PreProc": {
+          "fg": 12693710
+        },
+        "Special": {
+          "fg": 10337760
+        },
+        "SpellBad": {
+          "sp": 14719645,
+          "cterm": {
+            "undercurl": true
+          },
+          "undercurl": true
+        },
+        "Visual": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "Search": {
+          "bg": 14075614,
+          "fg": 0
+        },
+        "DiffText": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "DiffTextAdd": {
+          "link": "DiffText"
+        },
+        "DiagnosticError": {
+          "fg": 14719645
+        },
+        "DiagnosticUnderlineWarn": {
+          "sp": 13680017,
+          "cterm": {
+            "undercurl": true
+          },
+          "undercurl": true
+        },
+        "LspInlayHint": {
+          "fg": 11183255
+        },
+        "@variable.builtin": {
+          "fg": 12693710
+        },
+        "@variable.parameter": {
+          "fg": 11183255
+        },
+        "@function": {
+          "link": "Function"
+        },
+        "@keyword": {
+          "link": "Keyword"
+        },
+        "@keyword.return": {
+          "fg": 10337760
+        },
+        "@keyword.exception": {
+          "fg": 10337760
+        },
+        "@type.builtin": {
+          "fg": 12433323
+        },
+        "@markup.heading": {
+          "link": "Title"
+        },
+        "@markup.strong": {},
+        "@string.regexp": {
+          "fg": 14719645
+        },
+        "@lsp.type.class": {
+          "link": "@type"
+        },
+        "@lsp.type.parameter": {
+          "link": "@variable.parameter"
+        },
+        "TelescopeBorder": {
+          "bg": 2105632,
+          "fg": 11183255
+        },
+        "TelescopeSelection": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "CmpItemAbbrMatch": {
+          "fg": 12433323
+        },
+        "CmpItemKindFunction": {
+          "link": "Function"
+        },
+        "BlinkCmpLabelMatch": {
+          "bold": true,
+          "cterm": {
+            "bold": true
+          },
+          "fg": 12433323
+        },
+        "BlinkCmpMenuSelection": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "NeoTreeGitAdded": {
+          "fg": 10930581
+        },
+        "NeoTreeGitModified": {
+          "fg": 10337760
+        },
+        "NeoTreeGitDeleted": {
+          "fg": 14719645
+        },
+        "NeoTreeGitStaged": {
+          "underline": true,
+          "cterm": {
+            "underline": true
+          },
+          "fg": 10930581
+        },
+        "BufferLineWarningSelected": {
+          "fg": 13680017
+        },
+        "BufferLineBufferSelected": {
+          "bg": 3159095,
+          "fg": 12433323
+        },
+        "SnacksIndent": {
+          "cterm": {
+            "nocombine": true
+          },
+          "nocombine": true,
+          "fg": 3159095
+        },
+        "SnacksIndentScope": {
+          "cterm": {
+            "nocombine": true
+          },
+          "nocombine": true,
+          "fg": 11183255
+        },
+        "SnacksDashboardDesc": {
+          "fg": 12433323
+        },
+        "GitSignsStagedAdd": {
+          "underline": true,
+          "cterm": {
+            "underline": true
+          },
+          "fg": 10930581
+        },
+        "GitSignsDeleteInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "NeogitDiffAddInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "TodoBgFIX": {
+          "bold": true,
+          "cterm": {
+            "bold": true
+          },
+          "bg": 3159095,
+          "fg": 14719645
+        },
+        "FzfLuaCursorLine": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "StatusLine": {
+          "bg": 3159095,
+          "fg": 12433323
+        }
+      },
+      "terminal": {
+        "10": "#A6C995",
+        "11": "#D0BD91",
+        "12": "#9DBDE0",
+        "13": "#C1B0CE",
+        "14": "#83C9BE",
+        "15": "#BDB7AB",
+        "16": "#D0BD91",
+        "17": "#E09A9D",
+        "0": "#000000",
+        "2": "#A6C995",
+        "3": "#D0BD91",
+        "4": "#9DBDE0",
+        "5": "#C1B0CE",
+        "1": "#E09A9D",
+        "6": "#83C9BE",
+        "7": "#BDB7AB",
+        "8": "#AAA497",
+        "9": "#E09A9D"
+      }
+    },
+    "dusk-0-1": {
+      "highlights": {
+        "Normal": {
+          "bg": 2105632,
+          "fg": 12433323
+        },
+        "NormalNC": {
+          "bg": 2105632,
+          "fg": 12433323
+        },
+        "Comment": {
+          "italic": true,
+          "cterm": {
+            "italic": true
+          },
+          "fg": 11183255
+        },
+        "String": {
+          "fg": 11183255
+        },
+        "Function": {
+          "fg": 12433323
+        },
+        "Type": {
+          "fg": 12433323
+        },
+        "Statement": {
+          "fg": 12433323
+        },
+        "Number": {
+          "fg": 12433323
+        },
+        "Boolean": {
+          "fg": 12433323
+        },
+        "Keyword": {
+          "fg": 12433323
+        },
+        "Operator": {
+          "fg": 12433323
+        },
+        "PreProc": {
+          "fg": 12693710
+        },
+        "Special": {
+          "fg": 10337760
+        },
+        "SpellBad": {
+          "sp": 14719645,
+          "cterm": {
+            "undercurl": true
+          },
+          "undercurl": true
+        },
+        "Visual": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "Search": {
+          "bg": 14075614,
+          "fg": 0
+        },
+        "DiffText": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "DiffTextAdd": {
+          "link": "DiffText"
+        },
+        "DiagnosticError": {
+          "fg": 14719645
+        },
+        "DiagnosticUnderlineWarn": {
+          "sp": 13680017,
+          "cterm": {
+            "undercurl": true
+          },
+          "undercurl": true
+        },
+        "LspInlayHint": {
+          "fg": 11183255
+        },
+        "@variable.builtin": {
+          "italic": true,
+          "cterm": {
+            "italic": true
+          },
+          "fg": 12693710
+        },
+        "@variable.parameter": {
+          "fg": 11183255
+        },
+        "@function": {
+          "link": "Function"
+        },
+        "@keyword": {
+          "link": "Keyword"
+        },
+        "@keyword.return": {
+          "fg": 10337760
+        },
+        "@keyword.exception": {
+          "fg": 10337760
+        },
+        "@type.builtin": {
+          "fg": 12433323
+        },
+        "@markup.heading": {
+          "link": "Title"
+        },
+        "@markup.strong": {},
+        "@string.regexp": {
+          "fg": 14719645
+        },
+        "@lsp.type.class": {
+          "link": "@type"
+        },
+        "@lsp.type.parameter": {
+          "link": "@variable.parameter"
+        },
+        "TelescopeBorder": {
+          "bg": 2105632,
+          "fg": 11183255
+        },
+        "TelescopeSelection": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "CmpItemAbbrMatch": {
+          "fg": 12433323
+        },
+        "CmpItemKindFunction": {
+          "link": "Function"
+        },
+        "BlinkCmpLabelMatch": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true,
+          "fg": 12433323
+        },
+        "BlinkCmpMenuSelection": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "NeoTreeGitAdded": {
+          "fg": 10930581
+        },
+        "NeoTreeGitModified": {
+          "fg": 10337760
+        },
+        "NeoTreeGitDeleted": {
+          "fg": 14719645
+        },
+        "NeoTreeGitStaged": {
+          "underline": true,
+          "cterm": {
+            "underline": true
+          },
+          "fg": 10930581
+        },
+        "BufferLineWarningSelected": {
+          "fg": 13680017
+        },
+        "BufferLineBufferSelected": {
+          "bg": 3159095,
+          "fg": 12433323
+        },
+        "SnacksIndent": {
+          "cterm": {
+            "nocombine": true
+          },
+          "fg": 3159095,
+          "nocombine": true
+        },
+        "SnacksIndentScope": {
+          "cterm": {
+            "nocombine": true
+          },
+          "fg": 11183255,
+          "nocombine": true
+        },
+        "SnacksDashboardDesc": {
+          "fg": 12433323
+        },
+        "GitSignsStagedAdd": {
+          "underline": true,
+          "cterm": {
+            "underline": true
+          },
+          "fg": 10930581
+        },
+        "GitSignsDeleteInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "NeogitDiffAddInline": {
+          "bg": 14201962,
+          "fg": 0
+        },
+        "TodoBgFIX": {
+          "bg": 3159095,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true,
+          "fg": 14719645
+        },
+        "FzfLuaCursorLine": {
+          "bg": 12081500,
+          "fg": 0
+        },
+        "StatusLine": {
+          "bg": 3159095,
+          "fg": 12433323
+        }
+      },
+      "terminal": {
+        "2": "#A6C995",
+        "3": "#D0BD91",
+        "4": "#9DBDE0",
+        "5": "#C1B0CE",
+        "6": "#83C9BE",
+        "7": "#BDB7AB",
+        "8": "#AAA497",
+        "9": "#E09A9D",
+        "10": "#A6C995",
+        "11": "#D0BD91",
+        "12": "#9DBDE0",
+        "13": "#C1B0CE",
+        "14": "#83C9BE",
+        "1": "#E09A9D",
+        "0": "#000000",
+        "17": "#E09A9D",
+        "16": "#D0BD91",
+        "15": "#BDB7AB"
+      }
+    },
+    "dusk-1-0": {
+      "highlights": {
+        "Normal": {
+          "fg": 12433323,
+          "bg": 2105632
+        },
+        "NormalNC": {
+          "fg": 12433323,
+          "bg": 2105632
+        },
+        "Comment": {
+          "fg": 11183255
+        },
+        "String": {
+          "fg": 11183255
+        },
+        "Function": {
+          "fg": 12433323
+        },
+        "Type": {
+          "fg": 12433323,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "Statement": {
+          "fg": 12433323,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "Number": {
+          "fg": 12433323
+        },
+        "Boolean": {
+          "fg": 12433323
+        },
+        "Keyword": {
+          "fg": 12433323
+        },
+        "Operator": {
+          "fg": 12433323
+        },
+        "PreProc": {
+          "fg": 12693710
+        },
+        "Special": {
+          "fg": 10337760
+        },
+        "SpellBad": {
+          "undercurl": true,
+          "cterm": {
+            "undercurl": true
+          },
+          "sp": 14719645
+        },
+        "Visual": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "Search": {
+          "fg": 0,
+          "bg": 14075614
+        },
+        "DiffText": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "DiffTextAdd": {
+          "link": "DiffText"
+        },
+        "DiagnosticError": {
+          "fg": 14719645
+        },
+        "DiagnosticUnderlineWarn": {
+          "undercurl": true,
+          "cterm": {
+            "undercurl": true
+          },
+          "sp": 13680017
+        },
+        "LspInlayHint": {
+          "fg": 11183255
+        },
+        "@variable.builtin": {
+          "fg": 12693710
+        },
+        "@variable.parameter": {
+          "fg": 11183255
+        },
+        "@function": {
+          "link": "Function"
+        },
+        "@keyword": {
+          "link": "Keyword"
+        },
+        "@keyword.return": {
+          "fg": 10337760
+        },
+        "@keyword.exception": {
+          "fg": 10337760,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "@type.builtin": {
+          "fg": 12433323
+        },
+        "@markup.heading": {
+          "link": "Title"
+        },
+        "@markup.strong": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "@string.regexp": {
+          "fg": 14719645
+        },
+        "@lsp.type.class": {
+          "link": "@type"
+        },
+        "@lsp.type.parameter": {
+          "link": "@variable.parameter"
+        },
+        "TelescopeBorder": {
+          "fg": 11183255,
+          "bg": 2105632
+        },
+        "TelescopeSelection": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "CmpItemAbbrMatch": {
+          "fg": 12433323
+        },
+        "CmpItemKindFunction": {
+          "link": "Function"
+        },
+        "BlinkCmpLabelMatch": {
+          "fg": 12433323,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "BlinkCmpMenuSelection": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "NeoTreeGitAdded": {
+          "fg": 10930581
+        },
+        "NeoTreeGitModified": {
+          "fg": 10337760
+        },
+        "NeoTreeGitDeleted": {
+          "fg": 14719645
+        },
+        "NeoTreeGitStaged": {
+          "underline": true,
+          "cterm": {
+            "underline": true
+          },
+          "fg": 10930581
+        },
+        "BufferLineWarningSelected": {
+          "fg": 13680017,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "BufferLineBufferSelected": {
+          "fg": 12433323,
+          "bg": 3159095,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "SnacksIndent": {
+          "nocombine": true,
+          "cterm": {
+            "nocombine": true
+          },
+          "fg": 3159095
+        },
+        "SnacksIndentScope": {
+          "nocombine": true,
+          "cterm": {
+            "nocombine": true
+          },
+          "fg": 11183255
+        },
+        "SnacksDashboardDesc": {
+          "fg": 12433323
+        },
+        "GitSignsStagedAdd": {
+          "underline": true,
+          "cterm": {
+            "underline": true
+          },
+          "fg": 10930581
+        },
+        "GitSignsDeleteInline": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "NeogitDiffAddInline": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "TodoBgFIX": {
+          "fg": 14719645,
+          "bg": 3159095,
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "FzfLuaCursorLine": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "StatusLine": {
+          "fg": 12433323,
+          "bg": 3159095
+        }
+      },
+      "terminal": {
+        "2": "#A6C995",
+        "3": "#D0BD91",
+        "4": "#9DBDE0",
+        "5": "#C1B0CE",
+        "0": "#000000",
+        "7": "#BDB7AB",
+        "8": "#AAA497",
+        "9": "#E09A9D",
+        "10": "#A6C995",
+        "11": "#D0BD91",
+        "12": "#9DBDE0",
+        "13": "#C1B0CE",
+        "14": "#83C9BE",
+        "15": "#BDB7AB",
+        "16": "#D0BD91",
+        "17": "#E09A9D",
+        "6": "#83C9BE",
+        "1": "#E09A9D"
+      }
+    },
+    "dusk-1-1": {
+      "highlights": {
+        "Normal": {
+          "fg": 12433323,
+          "bg": 2105632
+        },
+        "NormalNC": {
+          "fg": 12433323,
+          "bg": 2105632
+        },
+        "Comment": {
+          "cterm": {
+            "italic": true
+          },
+          "fg": 11183255,
+          "italic": true
+        },
+        "String": {
+          "fg": 11183255
+        },
+        "Function": {
+          "fg": 12433323
+        },
+        "Type": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 12433323,
+          "bold": true
+        },
+        "Statement": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 12433323,
+          "bold": true
+        },
+        "Number": {
+          "fg": 12433323
+        },
+        "Boolean": {
+          "fg": 12433323
+        },
+        "Keyword": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 12433323,
+          "bold": true
+        },
+        "Operator": {
+          "fg": 12433323
+        },
+        "PreProc": {
+          "fg": 12693710
+        },
+        "Special": {
+          "fg": 10337760
+        },
+        "SpellBad": {
+          "cterm": {
+            "undercurl": true
+          },
+          "sp": 14719645,
+          "undercurl": true
+        },
+        "Visual": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "Search": {
+          "fg": 0,
+          "bg": 14075614
+        },
+        "DiffText": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "DiffTextAdd": {
+          "link": "DiffText"
+        },
+        "DiagnosticError": {
+          "fg": 14719645
+        },
+        "DiagnosticUnderlineWarn": {
+          "cterm": {
+            "undercurl": true
+          },
+          "sp": 13680017,
+          "undercurl": true
+        },
+        "LspInlayHint": {
+          "fg": 11183255
+        },
+        "@variable.builtin": {
+          "cterm": {
+            "italic": true
+          },
+          "fg": 12693710,
+          "italic": true
+        },
+        "@variable.parameter": {
+          "fg": 11183255
+        },
+        "@function": {
+          "link": "Function"
+        },
+        "@keyword": {
+          "link": "Keyword"
+        },
+        "@keyword.return": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 10337760,
+          "bold": true
+        },
+        "@keyword.exception": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 10337760,
+          "bold": true
+        },
+        "@type.builtin": {
+          "fg": 12433323
+        },
+        "@markup.heading": {
+          "link": "Title"
+        },
+        "@markup.strong": {
+          "cterm": {
+            "bold": true
+          },
+          "bold": true
+        },
+        "@string.regexp": {
+          "fg": 14719645
+        },
+        "@lsp.type.class": {
+          "link": "@type"
+        },
+        "@lsp.type.parameter": {
+          "link": "@variable.parameter"
+        },
+        "TelescopeBorder": {
+          "fg": 11183255,
+          "bg": 2105632
+        },
+        "TelescopeSelection": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "CmpItemAbbrMatch": {
+          "fg": 12433323
+        },
+        "CmpItemKindFunction": {
+          "link": "Function"
+        },
+        "BlinkCmpLabelMatch": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 12433323,
+          "bold": true
+        },
+        "BlinkCmpMenuSelection": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "NeoTreeGitAdded": {
+          "fg": 10930581
+        },
+        "NeoTreeGitModified": {
+          "fg": 10337760
+        },
+        "NeoTreeGitDeleted": {
+          "fg": 14719645
+        },
+        "NeoTreeGitStaged": {
+          "cterm": {
+            "underline": true
+          },
+          "fg": 10930581,
+          "underline": true
+        },
+        "BufferLineWarningSelected": {
+          "cterm": {
+            "bold": true
+          },
+          "fg": 13680017,
+          "bold": true
+        },
+        "BufferLineBufferSelected": {
+          "cterm": {
+            "bold": true
+          },
+          "bg": 3159095,
+          "fg": 12433323,
+          "bold": true
+        },
+        "SnacksIndent": {
+          "nocombine": true,
+          "fg": 3159095,
+          "cterm": {
+            "nocombine": true
+          }
+        },
+        "SnacksIndentScope": {
+          "nocombine": true,
+          "fg": 11183255,
+          "cterm": {
+            "nocombine": true
+          }
+        },
+        "SnacksDashboardDesc": {
+          "fg": 12433323
+        },
+        "GitSignsStagedAdd": {
+          "cterm": {
+            "underline": true
+          },
+          "fg": 10930581,
+          "underline": true
+        },
+        "GitSignsDeleteInline": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "NeogitDiffAddInline": {
+          "fg": 0,
+          "bg": 14201962
+        },
+        "TodoBgFIX": {
+          "cterm": {
+            "bold": true
+          },
+          "bg": 3159095,
+          "fg": 14719645,
+          "bold": true
+        },
+        "FzfLuaCursorLine": {
+          "fg": 0,
+          "bg": 12081500
+        },
+        "StatusLine": {
+          "fg": 12433323,
+          "bg": 3159095
+        }
+      },
+      "terminal": {
+        "2": "#A6C995",
+        "3": "#D0BD91",
+        "4": "#9DBDE0",
+        "5": "#C1B0CE",
+        "6": "#83C9BE",
+        "7": "#BDB7AB",
+        "8": "#AAA497",
+        "9": "#E09A9D",
+        "10": "#A6C995",
+        "11": "#D0BD91",
+        "12": "#9DBDE0",
+        "13": "#C1B0CE",
+        "14": "#83C9BE",
+        "15": "#BDB7AB",
+        "16": "#D0BD91",
+        "17": "#E09A9D",
+        "1": "#E09A9D",
+        "0": "#000000"
+      }
+    }
+  }
+}

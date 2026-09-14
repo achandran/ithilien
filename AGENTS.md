@@ -16,7 +16,7 @@ Use Python 3.12+, uv, and Make. Bare `make` prints help.
 
 - `make test`: run pytest unit and regression tests.
 - `make build`: audit palettes, regenerate ports and palette chart, and capture
-  the Neovim preview. Preview generation requires Neovim, Kanso, Swift/AppKit,
+  the Neovim preview. Preview generation requires Neovim, Swift/AppKit,
   and Berkeley Mono fonts; see `docs/development.md`.
 - `make setup-evaluation`: fetch pinned evaluation source dependencies.
 - `make evaluate`: run tests, Neovim/workflow checks, and saved Codex-cell checks.

@@ -55,30 +55,6 @@ def generate_ghostty(palette: dict) -> None:
 
 
 def generate_neovim_palette(palette: dict) -> None:
-    bg, fg, accent, diff = (
-        palette["backgrounds"], palette["foregrounds"], palette["accents"], palette["diff"]
-    )
-    kanso = {
-        "inkBg0": bg["base"], "inkBg1": bg["surface0"], "inkBg2": bg["surface1"],
-        "inkBg3": bg["surface2"], "inkBg4": palette["highlight"]["background"],
-        "zenBg0": bg["crust"], "zenBg1": bg["surface0"], "zenBg2": bg["surface1"],
-        "zenBg3": bg["surface2"], "altBlue1": diff["hunkBackground"],
-        "altBlue2": palette["highlight"]["background"], "diffGreen": diff["addBackground"],
-        "diffRed": diff["deleteBackground"], "diffYellow": diff["changeEmphasis"],
-        "diffBlue": diff["changeBackground"], "gitGreen": diff["addForeground"],
-        "gitRed": diff["deleteForeground"], "gitYellow": diff["changeForeground"],
-        "red": accent["coral"], "red2": diff["deleteForeground"], "red3": accent["coral"],
-        "yellow": accent["gold"], "yellow2": diff["changeForeground"], "yellow3": accent["gold"],
-        "green": accent["sage"], "green2": diff["addForeground"], "green3": accent["sage"],
-        "green4": accent["olive"], "green5": accent["aqua"],
-        "blue": accent["blue"], "blue2": accent["aqua"], "blue3": accent["blue"],
-        "blue4": accent["aqua"], "violet": accent["mauve"], "violet2": accent["mauve"],
-        "violet3": accent["mauve"], "pink": accent["mauve"],
-        "orange": accent["ochre"], "orange2": accent["clay"], "aqua": accent["aqua"],
-        "fg": fg["text"], "fg2": fg["bright"], "gray": fg["muted"],
-        "gray2": fg["subtext"], "gray3": fg["subtext"], "gray4": fg["comment"],
-        "gray5": fg["muted"],
-    }
     term = list(palette["ansi"].values())
     named_colors = load_palette_source(palette["slug"]).get("colors", {})
     rendered = (
@@ -86,7 +62,6 @@ def generate_neovim_palette(palette: dict) -> None:
         "return {\n"
         + (f"  colors = {lua_table(named_colors, 2)},\n" if named_colors else "")
         + f"  raw = {lua_table(palette, 2)},\n"
-        f"  kanso = {lua_table(kanso, 2)},\n"
         f"  terminal = {lua_table(term, 2)},\n"
         "}\n"
     )

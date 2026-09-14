@@ -18,10 +18,5 @@
     "path": "tests/evaluation/deps/gitsigns.nvim",
     "revision": "f2421c550618d257048afa650413d9e542ddbe67",
     "url": "https://github.com/lewis6991/gitsigns.nvim.git"
-  },
-  "kanso": {
-    "path": "tests/evaluation/deps/kanso",
-    "revision": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
-    "url": "https://github.com/webhooked/kanso.nvim.git"
   }
 }

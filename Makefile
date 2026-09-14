@@ -81,7 +81,7 @@ evaluate-headless:
 
 evaluate-offline: test evaluate-ghostty-images
 
-# Live Neovim cases require Neovim/Kanso; targeted --cases can isolate terminal checks.
+# Live Neovim cases require Neovim; targeted --cases can isolate terminal checks.
 # Native execution requires authorized Ghostty access and Screen Recording.
 GHOSTTY_OUTPUT ?= tests/evaluation/results/ghostty
 GHOSTTY_CAPTURE ?= --capture

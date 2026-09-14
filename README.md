@@ -37,7 +37,6 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 {
   "achandran/ithilien",
-  dependencies = { "webhooked/kanso.nvim" },
   lazy = false,
   priority = 1000,
   config = function()
@@ -47,7 +46,7 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
 }
 ```
 
-Requires Neovim and Kansō; Neovim 0.12+ is recommended for exact character diffs. Use any terminal font you like. Python and build tools are only needed for development.
+Ithilien is self-contained and requires no other colorscheme. Neovim 0.12+ is recommended for exact character diffs. Use any terminal font you like. Python and build tools are only needed for development.
 
 Using LazyVim? See the [LazyVim configuration](docs/installation.md#lazyvim), including lualine integration.
 
@@ -74,6 +73,6 @@ Matching themes are available for Ghostty, Codex, Claude Code, Firefox, Zsh, Sla
 
 ## About
 
-Inspired by the Formex Reef GMT’s white dial, black ceramic bezel, and steel bracelet, with color names drawn from Tolkien’s world. Built on [Kansō](https://github.com/webhooked/kanso.nvim).
+Inspired by the Formex Reef GMT’s white dial, black ceramic bezel, and steel bracelet, with color names drawn from Tolkien’s world. See [third-party notices](THIRD_PARTY_NOTICES) for highlight integration attribution.
 
 See [development and preview details](docs/development.md) and [Dusk design and validation](docs/dusk-design.md). Native Codex and Claude Code validation for Dusk remains pending.
