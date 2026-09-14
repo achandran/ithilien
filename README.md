@@ -48,28 +48,6 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 Ithilien is self-contained and requires no other colorscheme. Neovim 0.12+ is recommended for exact character diffs. Use any terminal font you like. Python and build tools are only needed for development.
 
-### LazyVim
-
-Save this as `~/.config/nvim/lua/plugins/ithilien.lua`, then run `:Lazy sync`:
-
-```lua
-return {
-  {
-    "achandran/ithilien",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "ithilien-dawn", -- or "ithilien-dusk"
-    },
-  },
-}
-```
-
-Lualine picks up the matching theme automatically.
-
 ## Usage
 
 ```lua

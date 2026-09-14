@@ -219,8 +219,6 @@ for _,name in ipairs({'BufferLineBufferSelected','BufferLineNumbersSelected',
  local h=vim.api.nvim_get_hl(0,{name=name,link=false});h.bg=tonumber(bg.mantle:sub(2),16);hi(name,h)
 end
 require('ithilien.plugin_palette').setup()
-local lualine=package.loaded['lualine']
-if lualine then local c=lualine.get_config();require('ithilien.statusline').configure(c);lualine.setup(c) end
 
 end
 return M

@@ -6,9 +6,9 @@
   "palette_sha256": "84d061a037953065adb49cb0efbd5b87ebccfdd9a787ae07df7d4fc3ac16b889",
   "nvim": "NVIM v0.12.5",
   "theme_source_sha256": {
-    "lua/ithilien/dawn.lua": "c41576bed5a07e09ec6ff473ab6949a5f98816abd5256c29afc226c066c1bc40",
+    "lua/ithilien/dawn.lua": "de6c6050e21abfcd305f1490fdfaba6730048e0b6d68f88ea1324c9696cfbd11",
     "lua/ithilien/diff.lua": "1e368309b799d1a168b4972de9e75fb52c73236a642b853ee2852ee68afcfcc2",
-    "lua/ithilien/dusk.lua": "15d316a67a8923961da81189605d451826dcef2ccad85bb30e43c1bff5dbcddc",
+    "lua/ithilien/dusk.lua": "2bbca5c096ab21f9f321b9c426f7a1cab600d6ce1909056e3c5d086eb1b57077",
     "lua/ithilien/highlights/editor.lua": "b4e8ad1a8c8fd01ebf30088a3cae4fe201bdc4364451997d942dffcedb939eec",
     "lua/ithilien/highlights/init.lua": "79c10cc8f5e67ac40c52a33c4bf79838b34781c0534a3c8fd86860d2994df47c",
     "lua/ithilien/highlights/lsp.lua": "12255dd7cdd5603a9920e4a314b682d841f6ca7dd7a1081bb0224d22521c892d",
@@ -18,8 +18,7 @@
     "lua/ithilien/init.lua": "a70a572c00a7cc233f89e1acd732934e0ce0266e012f5d874ee173a0a89ebeb7",
     "lua/ithilien/ithilien-dawn.lua": "46662103072bee439f99204dad44dc9296221ce4b364c7c2f7e19fbd0c01a17e",
     "lua/ithilien/ithilien-dusk.lua": "4797807acdc6e8e3850ffbbd33e52e3fe61fb799ab69973fd5a0996d1df66fb5",
-    "lua/ithilien/plugin_palette.lua": "03978f38c24213bd6f15923e7734bdce88023b2df9ecd1b547377a793fb46454",
-    "lua/ithilien/statusline.lua": "d910865968f2ce229e2752d7bce0fc397bbb52d399d4e800e72fd1fd9c1b1978"
+    "lua/ithilien/plugin_palette.lua": "03978f38c24213bd6f15923e7734bdce88023b2df9ecd1b547377a793fb46454"
   },
   "kind": "Native Neovim UI cells rasterized using Berkeley Mono Retina 16pt; not a terminal screenshot"
 }

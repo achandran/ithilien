@@ -31,6 +31,11 @@ table.insert(package.loaders, 1, function(name)
   assert(name == 'ithilien' or name:match('^ithilien%.') or name:match('^vim%.'),
     'Unexpected dependency: ' .. name)
 end)
+-- A loaded statusline keeps its own components and configuration on every load.
+package.loaded.lualine = {
+  get_config = function() error('Colorscheme must not read lualine configuration') end,
+  setup = function() error('Colorscheme must not replace lualine components') end,
+}
 local theme = require('ithilien')
 theme.setup({bold=input.bold, italics=input.italics})
 local function check()
