@@ -80,6 +80,16 @@ Optionally source `/absolute/path/to/ithilien/extras/shell/prompt.zsh` after the
 
 ### fzf history search
 
+With Ithilien configured in Ghostty, source
+`/absolute/path/to/ithilien/extras/shell/auto.zsh` after fzf and plugin setup
+instead of a fixed Dawn/Dusk script (or an inline copy of one). It uses terminal
+foreground/background and ANSI colors, so fzf follows Ghostty's actual palette
+without polling macOS preferences. Briar selection and black selected text are
+shared by both variants. Existing prompt hooks and non-color fzf options are
+preserved; inherited copies of the generated fixed palettes are removed.
+Source `prompt.zsh` afterward if desired. Re-source `auto.zsh` in existing shells
+to upgrade from the former appearance-polling script, then reopen fzf.
+
 The sourced Zsh theme also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Briar for the current row, underlined matching characters, and a Briar prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
 
 ### macOS system selection

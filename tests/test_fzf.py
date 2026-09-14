@@ -8,6 +8,40 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @unittest.skipUnless(shutil.which('zsh'), 'zsh required')
 class FzfColors(unittest.TestCase):
+    def test_terminal_relative_colors_and_inherited_options(self):
+        script = r'''
+        export FZF_DEFAULT_OPTS='--height=40%'
+        export FZF_CTRL_R_OPTS='--preview "echo {}"'
+        source extras/shell/ithilien-dawn.zsh
+        unset _ITHILIEN_FZF_COLORS
+        source extras/shell/ithilien-dawn.zsh
+        unset _ITHILIEN_FZF_COLORS
+        source extras/shell/ithilien-dusk.zsh
+        unset _ITHILIEN_FZF_COLORS
+        existing_hook() { :; }
+        _ithilien_update_appearance() { return 1; }
+        precmd_functions=(existing_hook _ithilien_update_appearance)
+        zle_highlight=('paste:standout')
+        source extras/shell/auto.zsh
+        [[ $precmd_functions == existing_hook ]] || exit 1
+        [[ $FZF_DEFAULT_OPTS != *'--color=light,'* ]] || exit 2
+        [[ $FZF_DEFAULT_OPTS != *'--color=dark,'* ]] || exit 3
+        [[ $FZF_DEFAULT_OPTS == *'bg:-1,fg:-1,'* ]] || exit 4
+        [[ $FZF_DEFAULT_OPTS == *'border:8,prompt:1,'* ]] || exit 5
+        [[ $FZF_CTRL_R_OPTS == *'--preview "echo {}"'* ]] || exit 6
+        [[ $FZF_DEFAULT_OPTS == *'--height=40%'* ]] || exit 7
+        [[ ${zle_highlight[1]} == paste:standout ]] || exit 8
+        # A nested shell inherits both options and the cleanup marker.
+        first=$FZF_DEFAULT_OPTS
+        zsh -f -c 'source extras/shell/auto.zsh; [[ $FZF_DEFAULT_OPTS == "$1" ]]' zsh "$first" || exit 9
+        source extras/shell/auto.zsh
+        [[ $FZF_DEFAULT_OPTS == $first ]] || exit 10
+        if (( $+commands[fzf] )); then
+            print test | fzf --filter=test >/dev/null || exit 11
+        fi
+        '''
+        subprocess.run(['zsh', '-f', '-c', script], cwd=ROOT, check=True)
+
     def test_preserve_options_and_replace_colors(self):
         script = r'''
         export FZF_DEFAULT_OPTS='--height=40%'

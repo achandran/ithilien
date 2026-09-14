@@ -184,6 +184,19 @@ def generate_app_palettes(palette: dict) -> None:
     linear.write_text(", ".join(color.removeprefix("#") for color in linear_colors) + "\n")
 
 
+def fzf_colors(palette: dict) -> str:
+    highlight = palette["highlight"]
+    bg, fg = palette["backgrounds"], palette["foregrounds"]
+    prompt_color = palette['ansi']['red']
+    return (f"--color={palette['polarity']},bg:{bg['base']},fg:{fg['text']},"
+              f"bg+:{highlight['background']},fg+:{highlight['foreground']},"
+              f"hl:{fg['text']}:underline,hl+:{highlight['foreground']}:underline,"
+              f"info:{fg['text']},header:{fg['text']},border:{fg['comment']},"
+              f"prompt:{prompt_color},pointer:{highlight['foreground']},"
+              f"marker:{fg['text']},spinner:{prompt_color},"
+              f"gutter:{bg['base']},query:{fg['text']}")
+
+
 def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
     highlight = palette["highlight"]
 
@@ -196,15 +209,7 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
     )
 
     # Append explicit colors after user options; preserve bindings and previews.
-    bg, fg = palette["backgrounds"], palette["foregrounds"]
-    prompt_color = palette['ansi']['red']
-    colors = (f"--color={palette['polarity']},bg:{bg['base']},fg:{fg['text']},"
-              f"bg+:{highlight['background']},fg+:{highlight['foreground']},"
-              f"hl:{fg['text']}:underline,hl+:{highlight['foreground']}:underline,"
-              f"info:{fg['text']},header:{fg['text']},border:{fg['comment']},"
-              f"prompt:{prompt_color},pointer:{highlight['foreground']},"
-              f"marker:{fg['text']},spinner:{prompt_color},"
-              f"gutter:{bg['base']},query:{fg['text']}")
+    colors = fzf_colors(palette)
     with shell.open("a") as output:
         output.write(
             "\n# fzf, including Ctrl-R history; safe to source repeatedly.\n"
@@ -266,6 +271,34 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
     )
 
 
+def generate_auto_shell(palettes: dict) -> None:
+    highlight = palettes["day"]["highlight"]
+    colors = (
+        f"--color=16,bg:-1,fg:-1,bg+:{highlight['background']},fg+:{highlight['foreground']},"
+        f"hl:-1:underline,hl+:{highlight['foreground']}:underline,"
+        "info:-1,header:-1,border:8,prompt:1,"
+        f"pointer:{highlight['foreground']},marker:-1,spinner:1,gutter:-1,query:-1"
+    )
+    old_colors = " ".join("'" + fzf_colors(p) + "'" for p in palettes.values())
+    (ROOT / "extras/shell/ithilien-auto.zsh").write_text(
+        "# Generated terminal-relative Ithilien colors; requires the Ithilien terminal palette.\n"
+        f'zle_highlight=("${{(@)zle_highlight:#region:*}}" "region:bg={highlight["background"]},fg={highlight["foreground"]}")\n'
+        "# Remove inherited fixed palettes too, including shells without the old marker.\n"
+        "() {\n"
+        "    local previous\n"
+        f'    for previous in "${{_ITHILIEN_FZF_COLORS-}}" {old_colors} '
+        f"'{colors}'; do\n"
+        '        [[ -n $previous ]] || continue\n'
+        '        FZF_DEFAULT_OPTS=${FZF_DEFAULT_OPTS//"$previous"/}\n'
+        '        FZF_CTRL_R_OPTS=${FZF_CTRL_R_OPTS//"$previous"/}\n'
+        '    done\n'
+        "}\n"
+        f"export _ITHILIEN_FZF_COLORS='{colors}'\n"
+        'export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS% } $_ITHILIEN_FZF_COLORS"\n'
+        'export FZF_CTRL_R_OPTS="${FZF_CTRL_R_OPTS% } $_ITHILIEN_FZF_COLORS"\n'
+    )
+
+
 def main() -> None:
     palettes = {"day": load_palette("ithilien-dawn"), "night": load_palette("ithilien-dusk")}
     for palette in palettes.values():
@@ -278,6 +311,7 @@ def main() -> None:
     generate_shared_highlights(palettes["day"])
     for palette in palettes.values():
         generate_shared_highlights(palette, variant=True)
+    generate_auto_shell(palettes)
     from palette_chart import generate_chart
     generate_chart()
     generate_chart("ithilien-dusk")
