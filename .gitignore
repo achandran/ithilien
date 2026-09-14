@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 .DS_Store
 nvim.log
-extras/wallpapers/.ithilien_dynamic_desktop.heic-*
+extras/wallpapers/.*.heic-*
 
 tests/evaluation/results/
 
