@@ -15,7 +15,7 @@ Expand a theme to see its Neovim preview and full palette.
 
 ![Ithilien Dawn — 18-color palette](docs/assets/ithilien-dawn-palette.svg)
 
-Shown in Berkeley Mono Medium, 16 pt. [Named colors and roles](docs/palette-names.md).
+Shown in Berkeley Mono Medium, 16 pt.
 
 </details>
 
@@ -26,7 +26,7 @@ Shown in Berkeley Mono Medium, 16 pt. [Named colors and roles](docs/palette-name
 
 ![Ithilien Dusk — 18-color palette](docs/assets/ithilien-dusk-palette.svg)
 
-Shown in Berkeley Mono Retina, 16 pt. [Named colors and roles](docs/dusk-palette.md).
+Shown in Berkeley Mono Retina, 16 pt.
 
 </details>
 
@@ -95,6 +95,6 @@ Matching themes are available for Ghostty, Codex, Claude Code, Firefox, Zsh, Sla
 
 Inspired by the Formex Reef GMT’s white dial, black ceramic bezel, and steel bracelet, with color names drawn from Tolkien’s world. Also inspired by [Kansō](https://github.com/webhooked/kanso.nvim).
 
-See [development and preview details](docs/development.md) and [Dusk design and validation](docs/dusk-design.md). Native Codex and Claude Code validation for Dusk remains pending.
+See [development](docs/development.md) for building and testing.
 
 Licensed under the [MIT License](LICENSE).

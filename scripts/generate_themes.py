@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import plistlib
 
-from ithilienlib import ROOT, load_palette, load_palette_source, ROLE_FAMILIES
+from ithilienlib import ROOT, load_palette, load_palette_source
 
 
 def lua_table(value, indent: int = 0) -> str:
@@ -268,54 +268,6 @@ def generate_shared_highlights(palette: dict, variant: bool = False) -> None:
     )
 
 
-def generate_color_reference() -> None:
-    source = load_palette_source('ithilien-dawn')
-    roles = {name: [] for name in source['colors']}
-    for family in ROLE_FAMILIES:
-        for role, name in source[family].items():
-            roles[name].append(f'`{family}.{role}`')
-    lines = [
-        '# Ithilien Dawn: named colors', '',
-        '<!-- Generated from scripts/palette/ithilien.json (ithilien-dawn); do not edit by hand. -->', '',
-        f'All **{len(source["colors"])} named sRGB colors** define the Formex-inspired Dawn palette. '
-        'Each color has one single-word name and a documented connection to Tolkien’s work. '
-        'The exact shades are design interpretations, not colors measured from the books.', '',
-        'Names draw from Ithilien’s plants, waters, materials and people, poetic landscape associations, and its '
-        'Gondorian neighbors and the wider Anduin landscape. Gondor is its realm; Osgiliath and Pelennor '
-        'are directly connected across Anduin. Plant names refer to species mentioned in '
-        'Ithilien, except Mallorn, which draws on Lórien’s golden trees, and Nimloth, the White Tree of Númenor. Material names evoke the regional landscape. The sources establish those '
-        'connections; botanical shades and the exact hex values are our interpretation.', '',
-        '| Name | Exact hex | Tolkien connection / color association | Roles |',
-        '| --- | --- | --- | --- |',
-    ]
-    for name, color in source['colors'].items():
-        note = source['colorNotes'][name]
-        lines.append(f"| {note.get('displayName', name)} | `{color}` | {note['meaning']} [Source]({note['source']}) | {', '.join(roles[name])} |")
-    lines.extend(['', '## Authoring and integration', '',
-        'Edit hex values only in `colors`. Functional roles reference those names: '
-        '`backgrounds.base` → `Nimloth`, `foregrounds.text` → `Lebethron`, '
-        '`accents.blue` → `Anduin`. The loader resolves those references to the same '
-        'role-to-hex mappings used by existing ports and audits.', '',
-        'Neovim also exposes the named palette through '
-        '`require("ithilien.ithilien-dawn").colors.Anduin`. '
-        'Dawn uses Briar selection and block cursors with black text.', ''])
-    (ROOT/'docs/palette-names.md').write_text('\n'.join(lines))
-
-
-def generate_dusk_reference():
-    source = load_palette_source('ithilien-dusk')
-    lines = ['# Ithilien Dusk: Warm Graphite', '',
-             '<!-- Generated from scripts/palette/ithilien.json (ithilien-dusk); do not edit by hand. -->', '',
-             '18 named sRGB colors. Briar, Celandine, Heather, and Lebethron are shared exactly with Dawn.', '',
-             '| Name | Hex | Roles | Interpretation |', '| --- | --- | --- | --- |']
-    for name, color in source['colors'].items():
-        roles = [f'`{family}.{role}`' for family in ROLE_FAMILIES
-                 for role, value in source[family].items() if value == name]
-        note = source['colorNotes'][name]
-        lines.append(f"| {note.get('displayName', name)} | `{color}` | {', '.join(roles)} | {note['meaning']} [Source]({note['source']}) |")
-    (ROOT / 'docs/dusk-palette.md').write_text('\n'.join(lines) + '\n')
-
-
 def generate_tintprobe_palette(palette: dict) -> None:
     """Export resolved roles for the pinned evaluator's per-variant API."""
     destination = ROOT / 'extras/tintprobe'
@@ -336,8 +288,6 @@ def main() -> None:
     generate_shared_highlights(palettes["day"])
     for palette in palettes.values():
         generate_shared_highlights(palette, variant=True)
-    generate_color_reference()
-    generate_dusk_reference()
     from palette_chart import generate_chart
     generate_chart()
     generate_chart("ithilien-dusk")

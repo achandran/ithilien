@@ -1,78 +1,56 @@
 # Development
 
-Ithilien owns its palettes, ports, asset generators, and theme-specific regression
-checks. The shared measurement and capture engine is
-[Tintprobe](https://github.com/achandran/tintprobe), pinned to an exact Git revision
-in `pyproject.toml` and `uv.lock`.
+Use Python 3.12+, uv, and Make. Run Python tools through `uv run --locked` from
+this repository so they use its pinned environment. Neovim users need none of
+these development tools.
 
-Neovim highlights are self-contained in `lua/ithilien/highlights/`. The repository is MIT licensed; `LICENSE` preserves the adapted highlight inventory’s upstream copyright.
-
-`make test` includes native standalone tests when Neovim is available. They reject
-external theme imports, compare representative editor, syntax, LSP, plugin, and terminal
-highlights against the pre-removal baseline across both variants and all style
-options, and exercise repeated theme switching. Without Neovim these tests skip;
-run the native checks below before releasing Neovim changes.
+## Commands
 
 | Command | Purpose |
 | --- | --- |
-| `make build` | Audit both palettes and regenerate ports, palette chart, and the Neovim preview. |
-| `make test` | Run Ithilien's palette, export, and project-workflow policy tests. |
-| `make evaluate` | Run tests, Neovim/workflow evaluation, and saved Codex-cell checks without compiling Rust. |
-| `make evaluate-full` | Opt-in full suite, compiling the pinned Codex test harness. |
-| `make evaluate-codex-recording` | Recheck saved Codex cells; no compiler or desktop required. |
-| `make evaluate-ghostty` | Explicitly capture native Ghostty windows; requires an idle authorized desktop. |
-| `make evaluate-offline GHOSTTY_OUTPUT=PATH` | Run tests and reanalyze saved screenshots without desktop interaction. |
+| `make test` | Unit and regression tests, including native standalone checks when Neovim is available. |
+| `make build` | Audit palettes, regenerate ports and palette charts, and render both Neovim previews. |
+| `make setup-evaluation` | Fetch pinned evaluation sources into the ignored dependency cache. |
+| `make evaluate THEMES="ithilien-dawn ithilien-dusk"` | Tests, native comparisons, workflow checks, and saved Codex checks. |
+| `make evaluate-full` | Opt into source-built Codex evaluation; requires its Rust toolchain. |
+| `make evaluate-offline GHOSTTY_OUTPUT=PATH` | Tests and analysis of saved Ghostty screenshots. |
 
-Bare `make` only prints help. `make evaluate-headless` remains an alias for the
-headless path. To include native Ghostty capture in the combined suite, explicitly
-use `make evaluate-full GHOSTTY_ARGS=--ghostty-capture`. Never run that while using the computer.
-Missing tools and unavailable captures remain blocked or unverified, not passes.
+Bare `make` shows help. The shared evaluator is
+[Tintprobe](https://github.com/achandran/tintprobe), pinned in `pyproject.toml` and
+`uv.lock`. Project configuration belongs in tracked `tintprobe.json`; captures,
+dependencies, and optional `tests/evaluation/local.mk` remain untracked.
 
-## Dependencies and project inputs
+## Editing and building
 
-Install uv and Make. Python 3.12+ is required. `uv run --locked` installs the
-pinned evaluator and Python dependencies; normal evaluation does not fetch Git
-theme/plugin sources. Prepare missing pinned source checkouts once:
+The canonical palette is [`scripts/palette/ithilien.json`](../scripts/palette/ithilien.json).
+It contains both variants' named colors, role mappings, and naming sources.
+Edit this file and the generators, not generated application ports. Neovim
+highlight logic lives in `lua/ithilien/`; statusline themes live in `lua/lualine/`.
+
+Palette changes require an explicit new palette decision. Preserve the approved
+18-color palettes, shared interaction colors, consolidated chromatic ANSI pairs,
+and ordinary-weight amber exact edits. Both variants use black text on shared
+interaction fills. Interpret colors as sRGB. The palette fingerprint and fixtures
+in `tests/` enforce the approved values; do not update them merely to make a
+changed palette pass. Primary reading text targets 7:1 contrast; ordinary and
+interaction text require at least 4.5:1 on their actual backgrounds.
+
+Preview generation requires Neovim, macOS Swift/AppKit, and Berkeley Mono Medium
+and Retina regular/oblique OTF files, plus Bold and Bold Oblique, in
+`~/Library/Fonts`. Dawn uses Medium at 16 pt; Dusk uses Retina at 16 pt.
+Refresh only the previews with:
 
 ```sh
-make setup-evaluation
+uv run --locked python scripts/generate_preview.py
 ```
 
-This uses Tintprobe's source manifests plus `tests/evaluation/themes.json` and the
-project plugin manifests. Sources live in ignored `tests/evaluation/deps/`. Dirty or
-mismatched checkouts are rejected rather than reset. It does not install system
-tools or request desktop permissions.
+The PNGs rasterize native Neovim cells from `tests/fixtures/readme/`. They are not
+terminal screenshots or Tree-sitter/LSP captures. Adjacent JSON files record
+source hashes and the Neovim version. The README itself is edited manually.
 
-`tintprobe.json` declares Ithilien's palette inputs, native ports, default adapter,
-the `tests/workflows/` directory, and `evaluation_dir: "tests/evaluation"`.
-The single editable palette source is `scripts/palette/ithilien.json`. It contains
-shared color-space metadata and the `ithilien-dawn` and `ithilien-dusk` entries
-under `variants`, each with named colors and functional role mappings. The
-loader preserves the existing per-variant API.
+## Native checks
 
-The pinned Tintprobe release requires separate variant files, so generation
-writes resolved compatibility exports to `extras/tintprobe/`. These are generated
-outputs, not additional palette sources; never edit them by hand. Native
-regression entry points live in `tests/`. Pytest excludes evaluation inputs and cached dependencies. `tests/evaluation/` retains project rubrics, aesthetic
-preferences, workflow scripts, and dependency declarations. Shared fixtures,
-Codex instrumentation, and engine tests live in Tintprobe's package/repository.
-The ANSI approval baseline and native diff-presentation pair remain in
-`tests/fixtures/` because they support Ithilien's own regression contracts.
-
-Neovim is required for previews. Rendering preview PNGs also needs macOS
-Swift/AppKit and Berkeley Mono Medium and Retina. Tests and headless
-comparison do not require the desktop. Python TS/LSP checks need the pinned grammar
-and BasedPyright; Codex replay needs its pinned Rust source/toolchain, `just`, and
-`cargo-nextest`. See Tintprobe's guides for capture-specific prerequisites.
-
-The rendering profile comes from the pinned Tintprobe package. Add a local
-`tests/evaluation/render-profile.json` only when Ithilien needs an explicit override.
-The rubric retains experimental weighted totals with `legacy_weighted_score: true`;
-these are project heuristics, not a universal theme ranking.
-
-## Native project checks
-
-These do not open desktop windows:
+These checks do not open desktop windows:
 
 ```sh
 nvim --headless -u NONE -i NONE -l tests/check_highlights.lua
@@ -80,108 +58,35 @@ uv run --locked python tests/check_highlight_contrast.py
 nvim --headless -u NONE -i NONE -l tests/check_dusk.lua
 nvim --headless -u NONE -i NONE -l tests/check_native_diff.lua
 nvim --headless -u NONE -i NONE -l tests/check_diff_presentation.lua
+nvim --headless -u NONE -i NONE -l tests/check_plugin_semantics.lua
 ```
 
-Outputs go to ignored `tests/evaluation/results/highlight-checks/`. Override using
-`ITHILIEN_CHECK_OUTPUT` for Lua checks and `--output` for the contrast reader.
+Workflow adapters run with `uv run --locked python -m tintprobe workflow NAME`:
+`evaluate_git_review`, `evaluate_pickers`, `evaluate_python_tools`, and
+`evaluate_installed_workflows`. The last loads your installed LazyVim configuration;
+the others use isolated fixtures. Plugin pins live in `tests/evaluation/`.
+Python tooling requires a compiled parser at
+`$ITHILIEN_PYTHON_PARSER_ROOT/parser/python.so` (default root:
+`~/.local/share/nvim/site`). Debugpy and fzf require local socket/terminal permissions.
+Dusk interaction checks use `uv run --locked python scripts/check_dusk_interactions.py`.
 
-Project-specific workflow adapters are explicit:
+Native Ghostty capture requires explicit desktop authorization and an idle desktop:
+`make evaluate-ghostty`. Use saved-image analysis while the computer is in use.
+Tests and cell captures do not establish terminal pixel quality or long-session comfort.
 
-```sh
-uv run --locked python -m tintprobe --project-root . workflow evaluate_git_review
-uv run --locked python -m tintprobe --project-root . workflow evaluate_python_tools
-uv run --locked python -m tintprobe --project-root . workflow evaluate_pickers
-```
+## Evidence and limitations
 
-The installed-workflows adapter loads your installed LazyVim configuration; its
-coverage differs from isolated fixtures. No pipeline installs themes or changes
-the canonical palette. See [testing](testing.md) for profile commands and coverage limits.
+Inspect reports under `tests/evaluation/results/`; missing tools or failed captures
+are not passes. Standalone Neovim tests skip when Neovim is unavailable. Palette
+changes require rendering evidence beyond unit tests.
 
-## Builds and evidence
+Saved Codex checks require matching recordings and do not validate the installed
+CLI. Select a recording with `make evaluate-codex-recording CODEX_THEME=THEME
+CODEX_RECORDING=PATH`. Source-built replay uses the pinned Rust tools; build output
+defaults to `~/Library/Caches/ithilien/codex-target`. Do not run concurrent replays
+against the same source checkout.
 
-`make build` writes palette audit JSON/Markdown to ignored
-`tests/evaluation/results/palette/` before regenerating all ports, both palette
-charts, and both Python code previews. The standalone theme generator also
-regenerates all of these assets, so color changes cannot silently leave the code
-previews behind. Both commands require the preview dependencies listed below.
-To regenerate without running palette audits:
-
-```sh
-uv run --locked python scripts/generate_themes.py
-```
-
-Routine runs reuse `tests/evaluation/results/routine/`. The opt-in full suite creates
-fresh timestamped subdirectories beneath `FULL_OUTPUT` (default
-`tests/evaluation/results/full/`). A successful capture
-is not a quality pass: inspect stage execution, findings, and missing coverage.
-Native renderer cells, terminal pixels, and human comfort are distinct evidence.
-Saved screenshots and cell recordings are retained; rebuildable compiler caches can
-be deleted. Rust output for optional source-built checks defaults to
-`~/Library/Caches/ithilien/codex-target`, with debug symbols and incremental
-compilation disabled. Override `CARGO_TARGET_DIR` if needed.
-
-`make evaluate-codex-recording` reads ignored local evidence from
-`tests/evaluation/results/codex-recording/{codex-cells.json,report.json}`. Override
-`CODEX_RECORDING` with another flow recording (its sibling `report.json` is required).
-Missing evidence or a changed exported theme blocks the check rather than reporting
-stale cells as a pass. Refresh with an explicit source-built run and use its
-`codex/ithilien-dawn/flows/codex-cells.json`. Saved cells do not validate the current
-installed CLI or live interactions. An installed-CLI capture adapter is not yet
-implemented; the source-built harness remains the opt-in way to refresh scenes.
-
-An optional ignored `tests/evaluation/local.mk` may set `RUST_RUNTIME` to an isolated
-rustup directory with `cargo/` and `rustup/` children. Codex replay temporarily
-instruments its dedicated source checkout and restores it; do not run concurrent
-replays on that checkout.
-
-To update Tintprobe, change its Git revision deliberately, regenerate `uv.lock`,
-then run both Tintprobe's tests and Ithilien's tests plus affected native checks.
-A palette change still requires native evaluation; unit tests alone do not prove
-rendering quality. Historical decisions are indexed in [palette policy and history](palette-policy.md).
-
-## Preview assets
-
-Edit `README.md` directly. `make build` does not rewrite it; it regenerates the
-palette chart and `docs/assets/ithilien-dawn-neovim.png` with its provenance JSON.
-To refresh just the native preview, run:
-
-```sh
-uv run --locked python scripts/generate_preview.py
-```
-
-The preview requires macOS Swift/AppKit, Neovim, and
-Berkeley Mono Medium and Retina regular/oblique OTF files, plus Bold and
-Bold Oblique, in `~/Library/Fonts`. Missing
-dependencies fail the build. The source pair lives in this repository’s
-`tests/fixtures/readme/` and includes type annotations, a multiline docstring,
-a comprehension, validation, and formatted f-strings. The image rasterizes actual
-Neovim UI cells with built-in Python syntax, preserving foreground/background colors and text styles. It is
-not a terminal screenshot or Tree-sitter/LSP capture. Its JSON records the fixture
-and palette hashes, Neovim version, and Ithilien Lua source hashes.
-
-## Shared evaluator guides
-
-Tintprobe owns the documentation for [Codex UI replay](https://github.com/achandran/tintprobe/blob/main/docs/codex-ui-validation.md),
-[Ghostty capture](https://github.com/achandran/tintprobe/blob/main/docs/ghostty-validation.md),
-[evaluator validation](https://github.com/achandran/tintprobe/blob/main/docs/evaluator-validation.md),
-and [interaction checks](https://github.com/achandran/tintprobe/blob/main/docs/interaction-evaluation.md).
-Use this checkout’s pinned commands above; upstream documentation may describe a
-newer evaluator revision. `tests/evaluation/deps/`, `tests/evaluation/results/`, and
-`tests/evaluation/local.mk` remain ignored local state.
-
-## Dusk validation
-
-Dusk uses 18 named colors and shares four exact colors with Dawn. `make test`
-checks that contract and the exported interaction pairs. `make build` runs the
-Dusk-specific authored-pair audit alongside Dawn's existing audit.
-
-```sh
-uv run --locked python scripts/audit_dusk.py
-uv run --locked python scripts/check_dusk_interactions.py
-uv run --locked python -m tintprobe compare --themes ithilien-dusk --strict-gates --output tests/evaluation/results/dusk
-```
-
-The preview generator renders Dawn with Berkeley Mono Medium and Dusk with
-Berkeley Mono Retina, both at 16 pt. Native terminal pixels and Dusk Codex replay
-remain separate validation steps. The pinned Codex diff adapter assumes light
-polarity; it must be adapted and verified before claiming Dusk native coverage.
+Dusk's native Codex/Claude Code, Ghostty pixel, Rust Tree-sitter/LSP, and extended
+comfort coverage remains incomplete. The [historical Dusk validation snapshot](assets/ithilien-dusk-validation.json)
+records its original validation scope; it is not certification of current sources.
+Detailed design history is preserved in Git.
