@@ -1,8 +1,6 @@
-Highlight modules in lua/ithilien/highlights/ are adapted from
-webhooked/kanso.nvim, revision 1afbbb449aa0254823dbe1932e3cbb51886ff9fe.
-
 MIT License
 
+Copyright (c) 2026 Anand Chandran
 Copyright (c) 2025 Webhooked
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

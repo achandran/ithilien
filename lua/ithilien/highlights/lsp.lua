@@ -1,4 +1,4 @@
--- See THIRD_PARTY_NOTICES for attribution and license.
+-- Adapted from Kansō. See LICENSE for copyright and license.
 local M = {}
 ---@param colors table
 ---@param config table

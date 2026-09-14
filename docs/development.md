@@ -5,7 +5,7 @@ checks. The shared measurement and capture engine is
 [Tintprobe](https://github.com/achandran/tintprobe), pinned to an exact Git revision
 in `pyproject.toml` and `uv.lock`.
 
-Neovim highlights are self-contained in `lua/ithilien/highlights/`. See `THIRD_PARTY_NOTICES` for the adapted highlight inventory’s attribution.
+Neovim highlights are self-contained in `lua/ithilien/highlights/`. The repository is MIT licensed; `LICENSE` preserves the adapted highlight inventory’s upstream copyright.
 
 `make test` includes native standalone tests when Neovim is available. They reject
 external theme imports, compare representative editor, syntax, LSP, plugin, and terminal

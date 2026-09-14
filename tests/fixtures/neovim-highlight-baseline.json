@@ -1,5 +1,5 @@
 {
-  "source": "Pre-removal Ithilien; native Neovim highlight definitions across style options. Upstream attribution is recorded in THIRD_PARTY_NOTICES.",
+  "source": "Pre-removal Ithilien; native Neovim highlight definitions across style options. Upstream copyright is preserved in LICENSE.",
   "variants": {
     "dawn-0-0": {
       "highlights": {

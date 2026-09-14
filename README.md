@@ -73,6 +73,8 @@ Matching themes are available for Ghostty, Codex, Claude Code, Firefox, Zsh, Sla
 
 ## About
 
-Inspired by the Formex Reef GMT’s white dial, black ceramic bezel, and steel bracelet, with color names drawn from Tolkien’s world. See [third-party notices](THIRD_PARTY_NOTICES) for highlight integration attribution.
+Inspired by the Formex Reef GMT’s white dial, black ceramic bezel, and steel bracelet, with color names drawn from Tolkien’s world. Also inspired by [Kansō](https://github.com/webhooked/kanso.nvim).
 
 See [development and preview details](docs/development.md) and [Dusk design and validation](docs/dusk-design.md). Native Codex and Claude Code validation for Dusk remains pending.
+
+Licensed under the [MIT License](LICENSE).
