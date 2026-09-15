@@ -50,6 +50,15 @@ config unchanged. Appearance changes take effect on the next launch.
 
 For Claude Code 2.1.118 or newer, copy the JSON files from `extras/claude-code/themes/` into `~/.claude/themes/`, then choose one with `/theme`. The generated themes define full-line, dimmed-context, and word-level diff colors.
 
+On macOS, source `/absolute/path/to/ithilien/extras/shell/claude.zsh` in `.zshrc`
+to use `ai` for Claude Code instead. Source only one of `claude.zsh` and
+`codex.zsh`; both define the same command. Both Claude Code themes must be
+installed. The wrapper queries System Events for the current appearance and
+passes the matching custom theme through `--settings`, forwarding arguments
+without changing saved settings. macOS may request Automation permission on
+first use. If the appearance query fails, Claude Code is not launched.
+Appearance changes take effect on the next launch.
+
 ## Slack and Linear
 
 Slack exposes only a subset of its interface colors. In Preferences → Appearance → Custom theme, choose Import theme and paste the appropriate line from `extras/slack/`. Keep window gradients off for the closest Ithilien result.
