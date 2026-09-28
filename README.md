@@ -1,6 +1,6 @@
 # Ithilien
 
-Two Neovim colorschemes for clear code and precise diffs: **Dawn**, porcelain and black, and **Dusk**, cream on warm olive charcoal.
+Two Neovim colorschemes for clear code and precise diffs: **Dawn**, black on warm paper, and **Dusk**, cream on warm olive charcoal.
 
 Restrained syntax, 18 colors per theme, and amber highlights for exact edited characters. Both themes share an olive selection and cursor, search, and diff-emphasis colors.
 
@@ -9,7 +9,7 @@ Restrained syntax, 18 colors per theme, and amber highlights for exact edited ch
 Expand a theme to see its Neovim preview and full palette.
 
 <details>
-<summary><strong>Ithilien Dawn</strong> — light · porcelain and black</summary>
+<summary><strong>Ithilien Dawn</strong> — light · black on warm paper</summary>
 
 ![Ithilien Dawn — Python code and character-level diffs in Neovim](docs/assets/ithilien-dawn-neovim.png)
 

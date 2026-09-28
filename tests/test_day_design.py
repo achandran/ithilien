@@ -64,9 +64,9 @@ class DayDesign(unittest.TestCase):
         for state in ('add', 'delete', 'change'):
             self.assertGreaterEqual(wcag('#000000',p['diff'][state+'Emphasis']),7.0)
 
-    def test_pure_black_main_text_on_neutral_white(self):
+    def test_pure_black_main_text_on_warm_paper(self):
         p=load_palette('ithilien-dawn')
-        self.assertEqual(p['backgrounds']['base'], '#FAFAF8')
+        self.assertEqual(p['backgrounds']['base'], '#FAF7F0')
         self.assertEqual(p['foregrounds']['text'], '#000000')
         self.assertEqual(p['foregrounds']['bright'], '#000000')
         self.assertNotEqual(p['foregrounds']['comment'],p['foregrounds']['text'])

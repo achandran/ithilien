@@ -7,21 +7,21 @@
       "polarity": "light",
       "colors": {
         "Lebethron": "#000000",
-        "Ash": "#545350",
+        "Ash": "#59534C",
         "Terebinth": "#8D9563",
         "Ilex": "#315F46",
         "Anduin": "#345E77",
         "Mallorn": "#795922",
         "Iris": "#70516D",
-        "Pelennor": "#E2EDDF",
-        "Eglantine": "#F1E2DF",
-        "Henneth": "#D7E3EA",
+        "Pelennor": "#E4ECD3",
+        "Eglantine": "#FADFDB",
+        "Henneth": "#D5E6EC",
         "Celandine": "#D8B46A",
         "Heather": "#D6C6DE",
-        "Nimloth": "#FAFAF8",
-        "Gondor": "#E0E0DD",
-        "Anemone": "#F1F1EF",
-        "Osgiliath": "#CDCDC9",
+        "Nimloth": "#FAF7F0",
+        "Gondor": "#E4DFD5",
+        "Anemone": "#F3EFE6",
+        "Osgiliath": "#D3CDC2",
         "Annun": "#8B3037",
         "Rauros": "#255354"
       },
@@ -31,7 +31,7 @@
           "source": "https://tolkiengateway.net/wiki/Lebethron"
         },
         "Ash": {
-          "meaning": "Ithilien ash trees; gray bark, interpreted as the shaded steel of a brushed bracelet.",
+          "meaning": "Ithilien ash trees; warm gray-brown bark.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Terebinth": {
@@ -55,11 +55,11 @@
           "source": "https://tolkiengateway.net/wiki/Iris"
         },
         "Pelennor": {
-          "meaning": "Pale field green inspired by the cultivated lands of Gondor across Anduin from Ithilien.",
+          "meaning": "Pale olive-green inspired by the cultivated fields of Gondor across Anduin from Ithilien.",
           "source": "https://tolkiengateway.net/wiki/Pelennor_Fields"
         },
         "Eglantine": {
-          "meaning": "Pale blush inspired by the petals of Ithilien\u2019s sweet-briar.",
+          "meaning": "Pale rose blush inspired by the petals of Ithilien\u2019s sweet-briar.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Henneth": {
@@ -75,19 +75,19 @@
           "source": "https://encyclopedia-of-arda.com/h/heather.php"
         },
         "Nimloth": {
-          "meaning": "Soft white inspired by Nimloth, the White Tree of N\u00famenor and ancestor of Gondor\u2019s White Trees; its name means \u201cWhite Blossom\u201d. The shade is a poetic interpretation.",
+          "meaning": "Warm paper white inspired by the blossom of Nimloth, the White Tree of N\u00famenor and ancestor of Gondor\u2019s White Trees; its name means \u201cWhite Blossom\u201d. The shade is a poetic interpretation.",
           "source": "https://tolkiengateway.net/wiki/Nimloth_(tree)"
         },
         "Gondor": {
-          "meaning": "The realm containing Ithilien; pale steel gray interpreted from Gondorian stone architecture.",
+          "meaning": "The realm containing Ithilien; pale warm gray interpreted from sunlit Gondorian stone.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Anemone": {
-          "meaning": "White anemones in Ithilien; interpreted as a near-white neutral.",
+          "meaning": "White anemones in Ithilien; interpreted as a warm near-white petal.",
           "source": "https://tolkiengateway.net/wiki/Anemones"
         },
         "Osgiliath": {
-          "meaning": "City straddling Anduin at Ithilien\u2019s western edge; weathered stone, interpreted as brushed steel.",
+          "meaning": "City straddling Anduin at Ithilien\u2019s western edge; weathered warm stone.",
           "source": "https://tolkiengateway.net/wiki/Osgiliath"
         },
         "Annun": {

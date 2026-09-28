@@ -6,6 +6,6 @@ if [[ -n ${_ITHILIEN_FZF_COLORS-} ]]; then
   FZF_DEFAULT_OPTS=${FZF_DEFAULT_OPTS//"$_ITHILIEN_FZF_COLORS"/}
   FZF_CTRL_R_OPTS=${FZF_CTRL_R_OPTS//"$_ITHILIEN_FZF_COLORS"/}
 fi
-_ITHILIEN_FZF_COLORS='--color=light,bg:#FAFAF8,fg:#000000,bg+:#8D9563,fg+:#000000,hl:#000000:underline,hl+:#000000:underline,info:#000000,header:#000000,border:#545350,prompt:#8B3037,pointer:#000000,marker:#000000,spinner:#8B3037,gutter:#FAFAF8,query:#000000'
+_ITHILIEN_FZF_COLORS='--color=light,bg:#FAF7F0,fg:#000000,bg+:#8D9563,fg+:#000000,hl:#000000:underline,hl+:#000000:underline,info:#000000,header:#000000,border:#59534C,prompt:#8B3037,pointer:#000000,marker:#000000,spinner:#8B3037,gutter:#FAF7F0,query:#000000'
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS% } $_ITHILIEN_FZF_COLORS"
 export FZF_CTRL_R_OPTS="${FZF_CTRL_R_OPTS% } $_ITHILIEN_FZF_COLORS"

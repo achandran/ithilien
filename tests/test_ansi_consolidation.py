@@ -41,11 +41,13 @@ class ANSIConsolidation(unittest.TestCase):
         # Approved Stonecrop -> Ash structural foreground consolidation.
         before['backgrounds']['border']=before['foregrounds']['muted']
         before['diff']['addEmphasis']=before['diff']['deleteEmphasis']=before['diff']['changeEmphasis']
-        # Approved Reef Green: bezel-olive interactions and bracelet-steel neutrals.
+        # Approved Reef Green: bezel-olive interactions, then warm paper
+        # surfaces and diff fills; black text and syntax colors are unchanged.
         for role in ('background','cursor','cursorBlock'):
             before['highlight'][role]='#8D9563'
-        steel={'#505456':'#545350','#DEE0DF':'#E0E0DD','#F0F1EF':'#F1F1EF','#C9CECB':'#CDCDC9'}
-        for family in ('highlight','backgrounds','foregrounds','accents'):
-            before[family]={k:steel.get(v,v) for k,v in before[family].items()}
+        warm={'#505456':'#59534C','#DEE0DF':'#E4DFD5','#F0F1EF':'#F3EFE6','#C9CECB':'#D3CDC2',
+              '#FAFAF8':'#FAF7F0','#E2EDDF':'#E4ECD3','#F1E2DF':'#FADFDB','#D7E3EA':'#D5E6EC'}
+        for family in ('highlight','backgrounds','foregrounds','accents','diff'):
+            before[family]={k:warm.get(v,v) for k,v in before[family].items()}
         self.assertEqual({k:v for k,v in before.items() if k!='ansi'},
                          {k:v for k,v in after.items() if k!='ansi'})
