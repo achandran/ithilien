@@ -19,7 +19,7 @@ def test_dusk_matches_dawn_color_budget_and_shared_interactions():
         assert dusk['colors'][name] == dawn['colors'][name]
     p = load_palette('ithilien-dusk')
     assert p['highlight']['foreground'] == p['diff']['inlineForeground'] == '#000000'
-    assert p['highlight']['background'] == p['highlight']['cursorBlock'] == '#B8595C'
+    assert p['highlight']['background'] == p['highlight']['cursorBlock'] == '#8D9563'
     assert p['backgrounds']['search'] == '#D6C6DE'
     for kind in ('add', 'delete', 'change'):
         assert p['diff'][kind + 'Emphasis'] == '#D8B46A'
@@ -34,15 +34,15 @@ def test_audit_rejects_unreadable_comments_and_changed_shared_color():
     source['colors'][source['foregrounds']['comment']] = '#353535'
     assert 'comment on base' in assess(source)['failures']
     source = copy.deepcopy(load_palette_source('ithilien-dusk'))
-    source['colors']['Briar'] = '#B95A5D'
-    assert 'Shared color changed: Briar' in assess(source)['failures']
+    source['colors']['Terebinth'] = '#8E9664'
+    assert 'Shared color changed: Terebinth' in assess(source)['failures']
 
 
 def test_dusk_exports_preserve_interactions_and_diff_roles():
     p = load_palette('ithilien-dusk')
     ghostty = (ROOT / 'extras/ghostty/themes/ithilien_dusk.conf').read_text()
-    assert 'cursor-color = #B8595C\ncursor-text = #000000' in ghostty
-    assert 'selection-background = #B8595C\nselection-foreground = #000000' in ghostty
+    assert 'cursor-color = #8D9563\ncursor-text = #000000' in ghostty
+    assert 'selection-background = #8D9563\nselection-foreground = #000000' in ghostty
     assert 'minimum-contrast = 1' in ghostty
     assert 'font-family = Berkeley Mono Retina' in ghostty
     assert 'font-size = 16' in ghostty

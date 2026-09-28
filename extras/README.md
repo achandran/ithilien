@@ -82,7 +82,7 @@ With Dawn loaded, use zsh `bindkey -v`, type a command without executing it, pre
 
 `extras/firefox/manifest.json` now defaults to Dawn. The `extras/firefox/ithilien-dawn/` and `extras/firefox/ithilien-dusk/` exports set the matching appearance, browser surfaces, and address-field selection. Load the desired manifest through `about:debugging` > This Firefox > Load Temporary Add-on. This expires on restart; permanent extension distribution requires signing.
 
-Each Firefox export also includes optional `userContent.css` for website `::selection`: Dawn uses Briar `#B8595C` with black text `#000000`. To use it, merge the rule into the active profile's `chrome/userContent.css`, enable `toolkit.legacyUserProfileCustomizations.stylesheets` in about:config, and restart Firefox. Browser theme colors alone do not control website selection.
+Each Firefox export also includes optional `userContent.css` for website `::selection`: both variants use Terebinth `#8D9563` with black text `#000000`. To use it, merge the rule into the active profile's `chrome/userContent.css`, enable `toolkit.legacyUserProfileCustomizations.stylesheets` in about:config, and restart Firefox. Browser theme colors alone do not control website selection.
 
 For Zsh, add `source /absolute/path/to/ithilien/extras/shell/ithilien-dawn.zsh`
 to `.zshrc` and start a new session. Use `ithilien-dusk.zsh` for Dusk.
@@ -99,13 +99,13 @@ With Ithilien configured in Ghostty, source
 `/absolute/path/to/ithilien/extras/shell/auto.zsh` after fzf and plugin setup
 instead of a fixed Dawn/Dusk script (or an inline copy of one). It uses terminal
 foreground/background and ANSI colors, so fzf follows Ghostty's actual palette
-without polling macOS preferences. Briar selection and black selected text are
+without polling macOS preferences. Terebinth selection and black selected text are
 shared by both variants. Existing prompt hooks and non-color fzf options are
 preserved; inherited copies of the generated fixed palettes are removed.
 Source `prompt.zsh` afterward if desired. Re-source `auto.zsh` in existing shells
 to upgrade from the former appearance-polling script, then reopen fzf.
 
-The sourced Zsh theme also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Briar for the current row, underlined matching characters, and a Briar prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
+The sourced Zsh theme also sets generated fzf colors in `FZF_DEFAULT_OPTS` and `FZF_CTRL_R_OPTS`, preserving existing bindings and preview options. Dawn uses black text, Terebinth for the current row, underlined matching characters, and an Annûn prompt. Start a new shell after installation. Later fzf options or plugin configuration can override these colors. Sourcing the generated shell file repeatedly replaces its previous color option.
 
 ### macOS system selection
 

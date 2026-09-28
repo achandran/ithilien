@@ -54,7 +54,7 @@ class FzfColors(unittest.TestCase):
         source extras/shell/ithilien-dusk.zsh
         source extras/shell/ithilien-dawn.zsh
         [[ $first == $FZF_DEFAULT_OPTS ]] || exit 3
-        [[ $FZF_DEFAULT_OPTS == *'bg+:#B8595C,fg+:#000000'* ]] || exit 4
+        [[ $FZF_DEFAULT_OPTS == *'bg+:#8D9563,fg+:#000000'* ]] || exit 4
         [[ $FZF_CTRL_R_OPTS == *'hl+:#000000:underline'* ]] || exit 5
         '''
         subprocess.run(['zsh', '-f', '-c', script], cwd=ROOT, check=True)
@@ -69,4 +69,4 @@ def test_all_generated_dawn_fzf_foregrounds_meet_contrast_floor():
     assert roles['prompt']['foreground']=='#8B3037'
     assert roles['spinner']['foreground']=='#8B3037'
     assert all(role['pass'] for role in roles.values())
-    assert roles['fg+']['background']=='#B8595C'
+    assert roles['fg+']['background']=='#8D9563'

@@ -2,7 +2,7 @@
 import json
 from ithilienlib import ROOT, load_palette_source, resolve_palette, wcag, apca, delta_e
 
-SHARED_COLORS = ('Lebethron', 'Briar', 'Heather', 'Celandine')
+SHARED_COLORS = ('Lebethron', 'Terebinth', 'Heather', 'Celandine')
 
 
 def assess(source):

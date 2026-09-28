@@ -1,8 +1,8 @@
 # Ithilien
 
-Two Neovim colorschemes for clear code and precise diffs: **Dawn**, porcelain and black, and **Dusk**, warm gray on graphite.
+Two Neovim colorschemes for clear code and precise diffs: **Dawn**, porcelain and black, and **Dusk**, warm gray on olive charcoal.
 
-Restrained syntax, 18 colors per theme, and amber highlights for exact edited characters. Both themes share selection, cursor, search, and diff-emphasis colors.
+Restrained syntax, 18 colors per theme, and amber highlights for exact edited characters. Both themes share an olive selection and cursor, search, and diff-emphasis colors.
 
 ## Themes
 
@@ -20,7 +20,7 @@ Shown in Berkeley Mono Medium, 16 pt.
 </details>
 
 <details>
-<summary><strong>Ithilien Dusk</strong> — dark · warm graphite</summary>
+<summary><strong>Ithilien Dusk</strong> — dark · olive charcoal</summary>
 
 ![Ithilien Dusk — Python code and character-level diffs in Neovim](docs/assets/ithilien-dusk-neovim.png)
 
@@ -71,7 +71,7 @@ Matching themes are available for Ghostty, Codex, Claude Code, Firefox, Zsh, Sla
 
 ## About
 
-Inspired by the Formex Reef GMT’s white dial, black ceramic bezel, and steel bracelet, with color names drawn from Tolkien’s world. Also inspired by [Kansō](https://github.com/webhooked/kanso.nvim).
+Inspired by the green-dial Formex Reef: its olive sunburst dial, green ceramic bezel, and brushed steel bracelet, with color names drawn from Tolkien’s world. Also inspired by [Kansō](https://github.com/webhooked/kanso.nvim).
 
 See [development](docs/development.md) for building and testing.
 

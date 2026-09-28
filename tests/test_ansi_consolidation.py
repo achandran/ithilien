@@ -41,5 +41,11 @@ class ANSIConsolidation(unittest.TestCase):
         # Approved Stonecrop -> Ash structural foreground consolidation.
         before['backgrounds']['border']=before['foregrounds']['muted']
         before['diff']['addEmphasis']=before['diff']['deleteEmphasis']=before['diff']['changeEmphasis']
+        # Approved Reef Green: bezel-olive interactions and bracelet-steel neutrals.
+        for role in ('background','cursor','cursorBlock'):
+            before['highlight'][role]='#8D9563'
+        steel={'#505456':'#545350','#DEE0DF':'#E0E0DD','#F0F1EF':'#F1F1EF','#C9CECB':'#CDCDC9'}
+        for family in ('highlight','backgrounds','foregrounds','accents'):
+            before[family]={k:steel.get(v,v) for k,v in before[family].items()}
         self.assertEqual({k:v for k,v in before.items() if k!='ansi'},
                          {k:v for k,v in after.items() if k!='ansi'})

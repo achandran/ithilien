@@ -12,8 +12,14 @@ func color(_ hex: String) -> NSColor {
 }
 let weight = data["fontWeight"] as? String ?? "Medium"
 precondition(["Medium", "Retina"].contains(weight))
-let image = NSImage(size: NSSize(width: width, height: height))
-image.lockFocusFlipped(true)
+// Draw at 1x into an sRGB bitmap so output is independent of display scale.
+let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: width, pixelsHigh: height,
+  bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false,
+  colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!.retagging(with: .sRGB)!
+let context = NSGraphicsContext(bitmapImageRep: bitmap)!.cgContext
+context.translateBy(x: 0, y: CGFloat(height))
+context.scaleBy(x: 1, y: -1)
+NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: true)
 for c in data["commands"] as! [[String: Any]] {
   let x = c["x"] as! Double, y = c["y"] as! Double
   let ink = color(c["color"] as! String)
@@ -29,6 +35,5 @@ for c in data["commands"] as! [[String: Any]] {
     NSRect(x: x, y: y, width: c["w"] as! Double, height: c["h"] as! Double).fill()
   }
 }
-image.unlockFocus()
-let bitmap = NSBitmapImageRep(data: image.tiffRepresentation!)!
+NSGraphicsContext.current = nil
 try bitmap.representation(using: .png, properties: [:])!.write(to: output)

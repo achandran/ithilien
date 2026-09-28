@@ -1,4 +1,4 @@
--- Warm Graphite: stone-gray reading text and shared Dawn interactions.
+-- Olive charcoal: stone-gray reading text and shared Dawn interactions.
 local M = {}
 function M.load(opts)
   vim.g.colors_name = nil

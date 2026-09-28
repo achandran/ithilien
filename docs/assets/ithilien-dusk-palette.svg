@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="966" height="1128" viewBox="0 0 966 1128">
 <style>text{font-family:"Berkeley Mono Retina",monospace;font-size:16pt}</style>
-<rect x="0" y="0" width="966" height="1128" fill="#202120"/>
+<rect x="0" y="0" width="966" height="1128" fill="#1E1F19"/>
 <text x="24" y="33" fill="#BDB7AB" font-weight="700">Ithilien Dusk</text>
 <text x="24" y="81" fill="#BDB7AB" font-weight="700">Surfaces and Text</text>
 <rect x="24" y="100" width="216" height="48" fill="#AAA497"/>
-<rect x="25" y="101" width="214" height="46" fill="#202120"/>
+<rect x="25" y="101" width="214" height="46" fill="#1E1F19"/>
 <text x="24" y="171" fill="#BDB7AB" font-weight="700">Dúath</text>
 <text x="24" y="195" fill="#AAA497" >Canvas / inset</text>
-<text x="24" y="219" fill="#AAA497" >#202120</text>
+<text x="24" y="219" fill="#AAA497" >#1E1F19</text>
 <rect x="258" y="100" width="216" height="48" fill="#AAA497"/>
-<rect x="259" y="101" width="214" height="46" fill="#2C2E2C"/>
+<rect x="259" y="101" width="214" height="46" fill="#2A2B24"/>
 <text x="258" y="171" fill="#BDB7AB" font-weight="700">Arnen</text>
 <text x="258" y="195" fill="#AAA497" >Soft surface</text>
-<text x="258" y="219" fill="#AAA497" >#2C2E2C</text>
+<text x="258" y="219" fill="#AAA497" >#2A2B24</text>
 <rect x="492" y="100" width="216" height="48" fill="#AAA497"/>
-<rect x="493" y="101" width="214" height="46" fill="#303437"/>
+<rect x="493" y="101" width="214" height="46" fill="#363534"/>
 <text x="492" y="171" fill="#BDB7AB" font-weight="700">Morgai</text>
 <text x="492" y="195" fill="#AAA497" >Muted surface</text>
-<text x="492" y="219" fill="#AAA497" >#303437</text>
+<text x="492" y="219" fill="#AAA497" >#363534</text>
 <rect x="726" y="100" width="216" height="48" fill="#AAA497"/>
 <rect x="727" y="101" width="214" height="46" fill="#BDB7AB"/>
 <text x="726" y="171" fill="#BDB7AB" font-weight="700">Ithil</text>
@@ -82,10 +82,10 @@
 <text x="726" y="899" fill="#AAA497" >#D8B46A</text>
 <text x="24" y="955" fill="#BDB7AB" font-weight="700">Interaction</text>
 <rect x="24" y="974" width="216" height="48" fill="#AAA497"/>
-<rect x="25" y="975" width="214" height="46" fill="#B8595C"/>
-<text x="24" y="1045" fill="#BDB7AB" font-weight="700">Briar</text>
+<rect x="25" y="975" width="214" height="46" fill="#8D9563"/>
+<text x="24" y="1045" fill="#BDB7AB" font-weight="700">Terebinth</text>
 <text x="24" y="1069" fill="#AAA497" >Selection / cursor</text>
-<text x="24" y="1093" fill="#AAA497" >#B8595C</text>
+<text x="24" y="1093" fill="#AAA497" >#8D9563</text>
 <rect x="258" y="974" width="216" height="48" fill="#AAA497"/>
 <rect x="259" y="975" width="214" height="46" fill="#D6C6DE"/>
 <text x="258" y="1045" fill="#BDB7AB" font-weight="700">Heather</text>

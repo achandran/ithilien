@@ -8,14 +8,14 @@ assert(hl('NeoTreeGitStaged').fg==0x315F46 and hl('NeoTreeGitStaged').underline)
 assert(hl('BufferLineWarningSelected').fg==0x795922)
 assert(hl('BlinkCmpLabelMatch').bold and hl('BlinkCmpLabelMatch').fg==0)
 assert(hl('BlinkCmpSignatureHelpActiveParameter').bg==0xD6C6DE)
-assert(hl('SnacksIndent').fg==0xC9CECB)
-assert(hl('SnacksIndentScope').fg==0x505456)
-assert(hl('BufferLineBufferSelected').bg==0xDEE0DF)
+assert(hl('SnacksIndent').fg==0xCDCDC9)
+assert(hl('SnacksIndentScope').fg==0x545350)
+assert(hl('BufferLineBufferSelected').bg==0xE0E0DD)
 assert(hl('DiffText').bg==0xD8B46A and not hl('DiffText').bold)
 assert(hl('SnacksDashboardDesc').fg==0)
 assert(hl('SnacksDashboardIcon').fg==0x345E77)
 for _,name in ipairs({'SnacksDashboardFooter','SnacksDashboardSpecial'}) do
- assert(hl(name).fg==0x505456 and not hl(name).bold)
+ assert(hl(name).fg==0x545350 and not hl(name).bold)
 end
 -- Reproduce Bufferline's cached default icon after a colorscheme reload.
 local old_config=package.loaded['bufferline.config']
@@ -27,9 +27,9 @@ assert(hl('BufferLineMiniIconsRegressionInactive').bg==0xFAFAF8)
 assert(parents.buffer_visible.bg=='#FAFAF8')
 package.loaded['bufferline.config']=old_config
 assert(hl('TodoFgTODO').fg~=hl('TodoBgTODO').bg)
-assert(hl('TodoBgTODO').bg==0xDEE0DF)
+assert(hl('TodoBgTODO').bg==0xE0E0DD)
 assert(hl('FzfLuaFzfMatch').fg==0)
-assert(hl('NeoTreeRootName_35').fg==0x505456)
+assert(hl('NeoTreeRootName_35').fg==0x545350)
 local palette=vim.json.decode(table.concat(vim.fn.readfile('palette.json'),'\n')).variants['ithilien-dawn'].colors
 local allowed={}
 for _,value in pairs(palette) do allowed[tonumber(value:sub(2),16)]=true end

@@ -7,8 +7,8 @@
       "polarity": "light",
       "colors": {
         "Lebethron": "#000000",
-        "Ash": "#505456",
-        "Briar": "#B8595C",
+        "Ash": "#545350",
+        "Terebinth": "#8D9563",
         "Ilex": "#315F46",
         "Anduin": "#345E77",
         "Mallorn": "#795922",
@@ -19,9 +19,9 @@
         "Celandine": "#D8B46A",
         "Heather": "#D6C6DE",
         "Nimloth": "#FAFAF8",
-        "Gondor": "#DEE0DF",
-        "Anemone": "#F0F1EF",
-        "Osgiliath": "#C9CECB",
+        "Gondor": "#E0E0DD",
+        "Anemone": "#F1F1EF",
+        "Osgiliath": "#CDCDC9",
         "Annun": "#8B3037",
         "Rauros": "#255354"
       },
@@ -31,12 +31,12 @@
           "source": "https://tolkiengateway.net/wiki/Lebethron"
         },
         "Ash": {
-          "meaning": "Ithilien ash trees; gray bark.",
+          "meaning": "Ithilien ash trees; gray bark, interpreted as the shaded steel of a brushed bracelet.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
-        "Briar": {
-          "meaning": "Muted rose red inspired by the hips of Ithilien briars; a botanical interpretation, not a shade specified by Tolkien.",
-          "source": "https://tolkiengateway.net/wiki/Eglantine"
+        "Terebinth": {
+          "meaning": "Olive green inspired by the green ceramic bezel of the Formex Reef, named for the pungent terebinth trees Frodo and Sam found among the tamarisk, olive, and bay of Ithilien; the shade is a design interpretation, not a color specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Ilex": {
           "meaning": "Deep green inspired by the evergreen foliage of the great ilexes of Ithilien; the exact shade is a design interpretation.",
@@ -79,7 +79,7 @@
           "source": "https://tolkiengateway.net/wiki/Nimloth_(tree)"
         },
         "Gondor": {
-          "meaning": "The realm containing Ithilien; pale gray interpreted from Gondorian stone architecture.",
+          "meaning": "The realm containing Ithilien; pale steel gray interpreted from Gondorian stone architecture.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Anemone": {
@@ -87,7 +87,7 @@
           "source": "https://tolkiengateway.net/wiki/Anemones"
         },
         "Osgiliath": {
-          "meaning": "City straddling Anduin at Ithilien\u2019s western edge; weathered stone.",
+          "meaning": "City straddling Anduin at Ithilien\u2019s western edge; weathered stone, interpreted as brushed steel.",
           "source": "https://tolkiengateway.net/wiki/Osgiliath"
         },
         "Annun": {
@@ -101,11 +101,11 @@
         }
       },
       "highlight": {
-        "background": "Briar",
+        "background": "Terebinth",
         "foreground": "Lebethron",
         "border": "Ash",
-        "cursor": "Briar",
-        "cursorBlock": "Briar"
+        "cursor": "Terebinth",
+        "cursorBlock": "Terebinth"
       },
       "backgrounds": {
         "crust": "Osgiliath",
@@ -180,7 +180,7 @@
       "colors": {
         "Lebethron": "#000000",
         "Cedar": "#AAA497",
-        "Briar": "#B8595C",
+        "Terebinth": "#8D9563",
         "Juniper": "#A6C995",
         "Hyacinth": "#9DBDE0",
         "Elanor": "#D0BD91",
@@ -191,9 +191,9 @@
         "Celandine": "#D8B46A",
         "Heather": "#D6C6DE",
         "Ithil": "#BDB7AB",
-        "Arnen": "#2C2E2C",
-        "Morgai": "#303437",
-        "Duath": "#202120",
+        "Arnen": "#2A2B24",
+        "Morgai": "#363534",
+        "Duath": "#1E1F19",
         "Rose": "#E09A9D",
         "Poros": "#83C9BE"
       },
@@ -206,9 +206,9 @@
           "meaning": "Warm gray inspired by weathered cedar bark. Cedars grow in Ithilien; the exact shade is a botanical interpretation, not a color specified by Tolkien.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
-        "Briar": {
-          "meaning": "Muted rose red inspired by the hips of Ithilien briars; a botanical interpretation, not a shade specified by Tolkien.",
-          "source": "https://tolkiengateway.net/wiki/Eglantine"
+        "Terebinth": {
+          "meaning": "Olive green inspired by the green ceramic bezel of the Formex Reef, named for the pungent terebinth trees Frodo and Sam found among the tamarisk, olive, and bay of Ithilien; the shade is a design interpretation, not a color specified by Tolkien.",
+          "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Juniper": {
           "meaning": "Junipers grow in Ithilien; pale green is a botanical foliage interpretation evoking evergreen scrub.",
@@ -251,15 +251,15 @@
           "source": "https://tolkiengateway.net/wiki/Ithil"
         },
         "Arnen": {
-          "meaning": "Emyn Arnen, hills in South Ithilien associated with Faramir; dark gray interpreted from the shaded landscape. The exact shade is a poetic interpretation.",
+          "meaning": "Emyn Arnen, hills in South Ithilien associated with Faramir; dark olive gray interpreted from the shaded, wooded landscape. The exact shade is a poetic interpretation.",
           "source": "https://tolkiengateway.net/wiki/Emyn_Arnen"
         },
         "Morgai": {
-          "meaning": "The dark inner ridge east of Ephel D\u00faath, beyond Ithilien in the adjoining Mordor borderlands; cool gray is a shaded-stone interpretation.",
+          "meaning": "The dark inner ridge east of Ephel D\u00faath, beyond Ithilien in the adjoining Mordor borderlands; neutral steel gray is a shaded-stone interpretation.",
           "source": "https://www.encyclopedia-of-arda.com/m/morgai.php"
         },
         "Duath": {
-          "meaning": "Drawn from Ephel D\u00faath, the Mountains of Shadow along Ithilien\u2019s eastern border; deep canvas gray is a poetic shadow interpretation. Uses Duath in code.",
+          "meaning": "Drawn from Ephel D\u00faath, the Mountains of Shadow along Ithilien\u2019s eastern border; deep olive charcoal is a poetic shadow interpretation. Uses Duath in code.",
           "source": "https://tolkiengateway.net/wiki/Ephel_D%C3%BAath",
           "displayName": "D\u00faath"
         },
@@ -273,11 +273,11 @@
         }
       },
       "highlight": {
-        "background": "Briar",
+        "background": "Terebinth",
         "foreground": "Lebethron",
         "border": "Cedar",
-        "cursor": "Briar",
-        "cursorBlock": "Briar"
+        "cursor": "Terebinth",
+        "cursorBlock": "Terebinth"
       },
       "backgrounds": {
         "crust": "Duath",
