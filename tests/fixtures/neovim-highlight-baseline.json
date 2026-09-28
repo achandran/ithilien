@@ -1002,45 +1002,45 @@
     "dusk-0-0": {
       "highlights": {
         "Normal": {
-          "bg": 1974041,
-          "fg": 12433323
+          "bg": 2236443,
+          "fg": 13417630
         },
         "NormalNC": {
-          "bg": 1974041,
-          "fg": 12433323
+          "bg": 2236443,
+          "fg": 13417630
         },
         "Comment": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "String": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "Function": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Type": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Statement": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Number": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Boolean": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Keyword": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Operator": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "PreProc": {
-          "fg": 12693710
+          "fg": 12953795
         },
         "Special": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "SpellBad": {
           "sp": 14719645,
@@ -1075,13 +1075,13 @@
           "undercurl": true
         },
         "LspInlayHint": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "@variable.builtin": {
-          "fg": 12693710
+          "fg": 12953795
         },
         "@variable.parameter": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "@function": {
           "link": "Function"
@@ -1090,13 +1090,13 @@
           "link": "Keyword"
         },
         "@keyword.return": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "@keyword.exception": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "@type.builtin": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "@markup.heading": {
           "link": "Title"
@@ -1112,15 +1112,15 @@
           "link": "@variable.parameter"
         },
         "TelescopeBorder": {
-          "bg": 1974041,
-          "fg": 11183255
+          "bg": 2236443,
+          "fg": 11509903
         },
         "TelescopeSelection": {
           "bg": 9278819,
           "fg": 0
         },
         "CmpItemAbbrMatch": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "CmpItemKindFunction": {
           "link": "Function"
@@ -1130,7 +1130,7 @@
           "cterm": {
             "bold": true
           },
-          "fg": 12433323
+          "fg": 13417630
         },
         "BlinkCmpMenuSelection": {
           "bg": 9278819,
@@ -1140,7 +1140,7 @@
           "fg": 10930581
         },
         "NeoTreeGitModified": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "NeoTreeGitDeleted": {
           "fg": 14719645
@@ -1156,25 +1156,25 @@
           "fg": 13680017
         },
         "BufferLineBufferSelected": {
-          "bg": 3552564,
-          "fg": 12433323
+          "bg": 3683891,
+          "fg": 13417630
         },
         "SnacksIndent": {
           "cterm": {
             "nocombine": true
           },
           "nocombine": true,
-          "fg": 3552564
+          "fg": 3683891
         },
         "SnacksIndentScope": {
           "cterm": {
             "nocombine": true
           },
           "nocombine": true,
-          "fg": 11183255
+          "fg": 11509903
         },
         "SnacksDashboardDesc": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "GitSignsStagedAdd": {
           "underline": true,
@@ -1196,7 +1196,7 @@
           "cterm": {
             "bold": true
           },
-          "bg": 3552564,
+          "bg": 3683891,
           "fg": 14719645
         },
         "FzfLuaCursorLine": {
@@ -1204,77 +1204,77 @@
           "fg": 0
         },
         "StatusLine": {
-          "bg": 3552564,
-          "fg": 12433323
+          "bg": 3683891,
+          "fg": 13417630
         }
       },
       "terminal": {
         "10": "#A6C995",
         "11": "#D0BD91",
-        "12": "#9DBDE0",
-        "13": "#C1B0CE",
+        "12": "#99BBD2",
+        "13": "#C5A8C3",
         "14": "#83C9BE",
-        "15": "#BDB7AB",
+        "15": "#CCBC9E",
         "16": "#D0BD91",
         "17": "#E09A9D",
         "0": "#000000",
         "2": "#A6C995",
         "3": "#D0BD91",
-        "4": "#9DBDE0",
-        "5": "#C1B0CE",
+        "4": "#99BBD2",
+        "5": "#C5A8C3",
         "1": "#E09A9D",
         "6": "#83C9BE",
-        "7": "#BDB7AB",
-        "8": "#AAA497",
+        "7": "#CCBC9E",
+        "8": "#AFA08F",
         "9": "#E09A9D"
       }
     },
     "dusk-0-1": {
       "highlights": {
         "Normal": {
-          "bg": 1974041,
-          "fg": 12433323
+          "bg": 2236443,
+          "fg": 13417630
         },
         "NormalNC": {
-          "bg": 1974041,
-          "fg": 12433323
+          "bg": 2236443,
+          "fg": 13417630
         },
         "Comment": {
           "italic": true,
           "cterm": {
             "italic": true
           },
-          "fg": 11183255
+          "fg": 11509903
         },
         "String": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "Function": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Type": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Statement": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Number": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Boolean": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Keyword": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Operator": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "PreProc": {
-          "fg": 12693710
+          "fg": 12953795
         },
         "Special": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "SpellBad": {
           "sp": 14719645,
@@ -1309,17 +1309,17 @@
           "undercurl": true
         },
         "LspInlayHint": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "@variable.builtin": {
           "italic": true,
           "cterm": {
             "italic": true
           },
-          "fg": 12693710
+          "fg": 12953795
         },
         "@variable.parameter": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "@function": {
           "link": "Function"
@@ -1328,13 +1328,13 @@
           "link": "Keyword"
         },
         "@keyword.return": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "@keyword.exception": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "@type.builtin": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "@markup.heading": {
           "link": "Title"
@@ -1350,15 +1350,15 @@
           "link": "@variable.parameter"
         },
         "TelescopeBorder": {
-          "bg": 1974041,
-          "fg": 11183255
+          "bg": 2236443,
+          "fg": 11509903
         },
         "TelescopeSelection": {
           "bg": 9278819,
           "fg": 0
         },
         "CmpItemAbbrMatch": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "CmpItemKindFunction": {
           "link": "Function"
@@ -1368,7 +1368,7 @@
             "bold": true
           },
           "bold": true,
-          "fg": 12433323
+          "fg": 13417630
         },
         "BlinkCmpMenuSelection": {
           "bg": 9278819,
@@ -1378,7 +1378,7 @@
           "fg": 10930581
         },
         "NeoTreeGitModified": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "NeoTreeGitDeleted": {
           "fg": 14719645
@@ -1394,25 +1394,25 @@
           "fg": 13680017
         },
         "BufferLineBufferSelected": {
-          "bg": 3552564,
-          "fg": 12433323
+          "bg": 3683891,
+          "fg": 13417630
         },
         "SnacksIndent": {
           "cterm": {
             "nocombine": true
           },
-          "fg": 3552564,
+          "fg": 3683891,
           "nocombine": true
         },
         "SnacksIndentScope": {
           "cterm": {
             "nocombine": true
           },
-          "fg": 11183255,
+          "fg": 11509903,
           "nocombine": true
         },
         "SnacksDashboardDesc": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "GitSignsStagedAdd": {
           "underline": true,
@@ -1430,7 +1430,7 @@
           "fg": 0
         },
         "TodoBgFIX": {
-          "bg": 3552564,
+          "bg": 3683891,
           "cterm": {
             "bold": true
           },
@@ -1442,81 +1442,81 @@
           "fg": 0
         },
         "StatusLine": {
-          "bg": 3552564,
-          "fg": 12433323
+          "bg": 3683891,
+          "fg": 13417630
         }
       },
       "terminal": {
         "2": "#A6C995",
         "3": "#D0BD91",
-        "4": "#9DBDE0",
-        "5": "#C1B0CE",
+        "4": "#99BBD2",
+        "5": "#C5A8C3",
         "6": "#83C9BE",
-        "7": "#BDB7AB",
-        "8": "#AAA497",
+        "7": "#CCBC9E",
+        "8": "#AFA08F",
         "9": "#E09A9D",
         "10": "#A6C995",
         "11": "#D0BD91",
-        "12": "#9DBDE0",
-        "13": "#C1B0CE",
+        "12": "#99BBD2",
+        "13": "#C5A8C3",
         "14": "#83C9BE",
         "1": "#E09A9D",
         "0": "#000000",
         "17": "#E09A9D",
         "16": "#D0BD91",
-        "15": "#BDB7AB"
+        "15": "#CCBC9E"
       }
     },
     "dusk-1-0": {
       "highlights": {
         "Normal": {
-          "fg": 12433323,
-          "bg": 1974041
+          "fg": 13417630,
+          "bg": 2236443
         },
         "NormalNC": {
-          "fg": 12433323,
-          "bg": 1974041
+          "fg": 13417630,
+          "bg": 2236443
         },
         "Comment": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "String": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "Function": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Type": {
-          "fg": 12433323,
+          "fg": 13417630,
           "cterm": {
             "bold": true
           },
           "bold": true
         },
         "Statement": {
-          "fg": 12433323,
+          "fg": 13417630,
           "cterm": {
             "bold": true
           },
           "bold": true
         },
         "Number": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Boolean": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Keyword": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Operator": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "PreProc": {
-          "fg": 12693710
+          "fg": 12953795
         },
         "Special": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "SpellBad": {
           "undercurl": true,
@@ -1551,13 +1551,13 @@
           "sp": 13680017
         },
         "LspInlayHint": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "@variable.builtin": {
-          "fg": 12693710
+          "fg": 12953795
         },
         "@variable.parameter": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "@function": {
           "link": "Function"
@@ -1566,17 +1566,17 @@
           "link": "Keyword"
         },
         "@keyword.return": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "@keyword.exception": {
-          "fg": 10337760,
+          "fg": 10075090,
           "cterm": {
             "bold": true
           },
           "bold": true
         },
         "@type.builtin": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "@markup.heading": {
           "link": "Title"
@@ -1597,21 +1597,21 @@
           "link": "@variable.parameter"
         },
         "TelescopeBorder": {
-          "fg": 11183255,
-          "bg": 1974041
+          "fg": 11509903,
+          "bg": 2236443
         },
         "TelescopeSelection": {
           "fg": 0,
           "bg": 9278819
         },
         "CmpItemAbbrMatch": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "CmpItemKindFunction": {
           "link": "Function"
         },
         "BlinkCmpLabelMatch": {
-          "fg": 12433323,
+          "fg": 13417630,
           "cterm": {
             "bold": true
           },
@@ -1625,7 +1625,7 @@
           "fg": 10930581
         },
         "NeoTreeGitModified": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "NeoTreeGitDeleted": {
           "fg": 14719645
@@ -1645,8 +1645,8 @@
           "bold": true
         },
         "BufferLineBufferSelected": {
-          "fg": 12433323,
-          "bg": 3552564,
+          "fg": 13417630,
+          "bg": 3683891,
           "cterm": {
             "bold": true
           },
@@ -1657,17 +1657,17 @@
           "cterm": {
             "nocombine": true
           },
-          "fg": 3552564
+          "fg": 3683891
         },
         "SnacksIndentScope": {
           "nocombine": true,
           "cterm": {
             "nocombine": true
           },
-          "fg": 11183255
+          "fg": 11509903
         },
         "SnacksDashboardDesc": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "GitSignsStagedAdd": {
           "underline": true,
@@ -1686,7 +1686,7 @@
         },
         "TodoBgFIX": {
           "fg": 14719645,
-          "bg": 3552564,
+          "bg": 3683891,
           "cterm": {
             "bold": true
           },
@@ -1697,25 +1697,25 @@
           "bg": 9278819
         },
         "StatusLine": {
-          "fg": 12433323,
-          "bg": 3552564
+          "fg": 13417630,
+          "bg": 3683891
         }
       },
       "terminal": {
         "2": "#A6C995",
         "3": "#D0BD91",
-        "4": "#9DBDE0",
-        "5": "#C1B0CE",
+        "4": "#99BBD2",
+        "5": "#C5A8C3",
         "0": "#000000",
-        "7": "#BDB7AB",
-        "8": "#AAA497",
+        "7": "#CCBC9E",
+        "8": "#AFA08F",
         "9": "#E09A9D",
         "10": "#A6C995",
         "11": "#D0BD91",
-        "12": "#9DBDE0",
-        "13": "#C1B0CE",
+        "12": "#99BBD2",
+        "13": "#C5A8C3",
         "14": "#83C9BE",
-        "15": "#BDB7AB",
+        "15": "#CCBC9E",
         "16": "#D0BD91",
         "17": "#E09A9D",
         "6": "#83C9BE",
@@ -1725,61 +1725,61 @@
     "dusk-1-1": {
       "highlights": {
         "Normal": {
-          "fg": 12433323,
-          "bg": 1974041
+          "fg": 13417630,
+          "bg": 2236443
         },
         "NormalNC": {
-          "fg": 12433323,
-          "bg": 1974041
+          "fg": 13417630,
+          "bg": 2236443
         },
         "Comment": {
           "cterm": {
             "italic": true
           },
-          "fg": 11183255,
+          "fg": 11509903,
           "italic": true
         },
         "String": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "Function": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Type": {
           "cterm": {
             "bold": true
           },
-          "fg": 12433323,
+          "fg": 13417630,
           "bold": true
         },
         "Statement": {
           "cterm": {
             "bold": true
           },
-          "fg": 12433323,
+          "fg": 13417630,
           "bold": true
         },
         "Number": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Boolean": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "Keyword": {
           "cterm": {
             "bold": true
           },
-          "fg": 12433323,
+          "fg": 13417630,
           "bold": true
         },
         "Operator": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "PreProc": {
-          "fg": 12693710
+          "fg": 12953795
         },
         "Special": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "SpellBad": {
           "cterm": {
@@ -1814,17 +1814,17 @@
           "undercurl": true
         },
         "LspInlayHint": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "@variable.builtin": {
           "cterm": {
             "italic": true
           },
-          "fg": 12693710,
+          "fg": 12953795,
           "italic": true
         },
         "@variable.parameter": {
-          "fg": 11183255
+          "fg": 11509903
         },
         "@function": {
           "link": "Function"
@@ -1836,18 +1836,18 @@
           "cterm": {
             "bold": true
           },
-          "fg": 10337760,
+          "fg": 10075090,
           "bold": true
         },
         "@keyword.exception": {
           "cterm": {
             "bold": true
           },
-          "fg": 10337760,
+          "fg": 10075090,
           "bold": true
         },
         "@type.builtin": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "@markup.heading": {
           "link": "Title"
@@ -1868,15 +1868,15 @@
           "link": "@variable.parameter"
         },
         "TelescopeBorder": {
-          "fg": 11183255,
-          "bg": 1974041
+          "fg": 11509903,
+          "bg": 2236443
         },
         "TelescopeSelection": {
           "fg": 0,
           "bg": 9278819
         },
         "CmpItemAbbrMatch": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "CmpItemKindFunction": {
           "link": "Function"
@@ -1885,7 +1885,7 @@
           "cterm": {
             "bold": true
           },
-          "fg": 12433323,
+          "fg": 13417630,
           "bold": true
         },
         "BlinkCmpMenuSelection": {
@@ -1896,7 +1896,7 @@
           "fg": 10930581
         },
         "NeoTreeGitModified": {
-          "fg": 10337760
+          "fg": 10075090
         },
         "NeoTreeGitDeleted": {
           "fg": 14719645
@@ -1919,26 +1919,26 @@
           "cterm": {
             "bold": true
           },
-          "bg": 3552564,
-          "fg": 12433323,
+          "bg": 3683891,
+          "fg": 13417630,
           "bold": true
         },
         "SnacksIndent": {
           "nocombine": true,
-          "fg": 3552564,
+          "fg": 3683891,
           "cterm": {
             "nocombine": true
           }
         },
         "SnacksIndentScope": {
           "nocombine": true,
-          "fg": 11183255,
+          "fg": 11509903,
           "cterm": {
             "nocombine": true
           }
         },
         "SnacksDashboardDesc": {
-          "fg": 12433323
+          "fg": 13417630
         },
         "GitSignsStagedAdd": {
           "cterm": {
@@ -1959,7 +1959,7 @@
           "cterm": {
             "bold": true
           },
-          "bg": 3552564,
+          "bg": 3683891,
           "fg": 14719645,
           "bold": true
         },
@@ -1968,25 +1968,25 @@
           "bg": 9278819
         },
         "StatusLine": {
-          "fg": 12433323,
-          "bg": 3552564
+          "fg": 13417630,
+          "bg": 3683891
         }
       },
       "terminal": {
         "2": "#A6C995",
         "3": "#D0BD91",
-        "4": "#9DBDE0",
-        "5": "#C1B0CE",
+        "4": "#99BBD2",
+        "5": "#C5A8C3",
         "6": "#83C9BE",
-        "7": "#BDB7AB",
-        "8": "#AAA497",
+        "7": "#CCBC9E",
+        "8": "#AFA08F",
         "9": "#E09A9D",
         "10": "#A6C995",
         "11": "#D0BD91",
-        "12": "#9DBDE0",
-        "13": "#C1B0CE",
+        "12": "#99BBD2",
+        "13": "#C5A8C3",
         "14": "#83C9BE",
-        "15": "#BDB7AB",
+        "15": "#CCBC9E",
         "16": "#D0BD91",
         "17": "#E09A9D",
         "1": "#E09A9D",

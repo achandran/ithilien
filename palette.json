@@ -179,21 +179,21 @@
       "polarity": "dark",
       "colors": {
         "Lebethron": "#000000",
-        "Cedar": "#AAA497",
+        "Cedar": "#AFA08F",
         "Terebinth": "#8D9563",
         "Juniper": "#A6C995",
-        "Hyacinth": "#9DBDE0",
+        "Hyacinth": "#99BBD2",
         "Elanor": "#D0BD91",
-        "Tamarisk": "#C1B0CE",
-        "Cypress": "#273B31",
-        "Bramble": "#402E33",
-        "Morgulduin": "#293847",
+        "Tamarisk": "#C5A8C3",
+        "Cypress": "#2B361D",
+        "Bramble": "#432526",
+        "Morgulduin": "#1E3540",
         "Celandine": "#D8B46A",
         "Heather": "#D6C6DE",
-        "Ithil": "#BDB7AB",
-        "Arnen": "#2A2B24",
-        "Morgai": "#363534",
-        "Duath": "#1E1F19",
+        "Ithil": "#CCBC9E",
+        "Arnen": "#2D2B25",
+        "Morgai": "#383633",
+        "Duath": "#22201B",
         "Rose": "#E09A9D",
         "Poros": "#83C9BE"
       },
@@ -203,7 +203,7 @@
           "source": "https://tolkiengateway.net/wiki/Lebethron"
         },
         "Cedar": {
-          "meaning": "Warm gray inspired by weathered cedar bark. Cedars grow in Ithilien; the exact shade is a botanical interpretation, not a color specified by Tolkien.",
+          "meaning": "Warm brown-gray inspired by weathered cedar bark. Cedars grow in Ithilien; the exact shade is a botanical interpretation, not a color specified by Tolkien.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Terebinth": {
@@ -215,7 +215,7 @@
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Hyacinth": {
-          "meaning": "Soft blue inspired by woodland hyacinth flowers. Tolkien describes their leaves in Ithilien; the floral shade is a botanical interpretation, not a color specified in that passage.",
+          "meaning": "Soft steel blue inspired by woodland hyacinth flowers. Tolkien describes their leaves in Ithilien; the floral shade is a botanical interpretation, not a color specified in that passage.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Elanor": {
@@ -223,19 +223,19 @@
           "source": "https://tolkiengateway.net/wiki/Elanor"
         },
         "Tamarisk": {
-          "meaning": "Tamarisk thickets grow in Ithilien; muted mauve is a botanical interpretation inspired by their pink-lilac flowers.",
+          "meaning": "Tamarisk thickets grow in Ithilien; dusty mauve is a botanical interpretation inspired by their pink flowers.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Cypress": {
-          "meaning": "Deep green inspired by the cypresses of Ithilien; a shaded botanical interpretation.",
+          "meaning": "Deep olive green inspired by the cypresses of Ithilien; a shaded botanical interpretation.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Bramble": {
-          "meaning": "Deep rose-brown inspired by tangled briar stems in Ithilien; a shaded botanical interpretation.",
+          "meaning": "Deep brick red inspired by tangled briar stems in Ithilien; a shaded botanical interpretation.",
           "source": "https://tolkiengateway.net/wiki/Ithilien"
         },
         "Morgulduin": {
-          "meaning": "The cold, corrupted river flowing from the Morgul Vale through Ithilien; deep blue is a poetic water interpretation, not a color specified by Tolkien.",
+          "meaning": "The cold, corrupted river flowing from the Morgul Vale through Ithilien; deep teal-blue is a poetic water interpretation, not a color specified by Tolkien.",
           "source": "https://tolkiengateway.net/wiki/Morgulduin"
         },
         "Celandine": {
@@ -247,19 +247,19 @@
           "source": "https://encyclopedia-of-arda.com/h/heather.php"
         },
         "Ithil": {
-          "meaning": "Ithil, the Moon; warm pale gray interpreted as softened moonlight for reading text. The exact shade is a poetic interpretation.",
+          "meaning": "Ithil, the Moon; warm cream interpreted as candlelit moonlight for reading text. The exact shade is a poetic interpretation.",
           "source": "https://tolkiengateway.net/wiki/Ithil"
         },
         "Arnen": {
-          "meaning": "Emyn Arnen, hills in South Ithilien associated with Faramir; dark olive gray interpreted from the shaded, wooded landscape. The exact shade is a poetic interpretation.",
+          "meaning": "Emyn Arnen, hills in South Ithilien associated with Faramir; dark warm gray interpreted from the shaded, wooded landscape. The exact shade is a poetic interpretation.",
           "source": "https://tolkiengateway.net/wiki/Emyn_Arnen"
         },
         "Morgai": {
-          "meaning": "The dark inner ridge east of Ephel D\u00faath, beyond Ithilien in the adjoining Mordor borderlands; neutral steel gray is a shaded-stone interpretation.",
+          "meaning": "The dark inner ridge east of Ephel D\u00faath, beyond Ithilien in the adjoining Mordor borderlands; warm steel gray is a shaded-stone interpretation.",
           "source": "https://www.encyclopedia-of-arda.com/m/morgai.php"
         },
         "Duath": {
-          "meaning": "Drawn from Ephel D\u00faath, the Mountains of Shadow along Ithilien\u2019s eastern border; deep olive charcoal is a poetic shadow interpretation. Uses Duath in code.",
+          "meaning": "Drawn from Ephel D\u00faath, the Mountains of Shadow along Ithilien\u2019s eastern border; warm olive-brown charcoal is a poetic shadow interpretation. Uses Duath in code.",
           "source": "https://tolkiengateway.net/wiki/Ephel_D%C3%BAath",
           "displayName": "D\u00faath"
         },

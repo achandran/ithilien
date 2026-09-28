@@ -3,7 +3,7 @@
     "before": "57e54009c25b58b1711bcdc3314ca180f5acec7e8453eeec6e6986ec256490fd",
     "after": "f06dfde3ac94fd66687da08ff7ee707785a2a0a1191e345a4b20670fd3f7fa44"
   },
-  "palette_sha256": "07a0398dcaff87b5180cd71e5e7089eb0b2c7dfee2aa38d8bb99126683455d3a",
+  "palette_sha256": "e2b088da51e10bebf2c02d071bcb6f0bfe1d45cf6d62c1246864a7e58ef65217",
   "nvim": "NVIM v0.12.5",
   "theme_source_sha256": {
     "lua/ithilien/dawn.lua": "de6c6050e21abfcd305f1490fdfaba6730048e0b6d68f88ea1324c9696cfbd11",
@@ -17,7 +17,7 @@
     "lua/ithilien/highlights/treesitter.lua": "e6e7e83d9614dd70d072ab40e69ada356e8c2c68b82fbc8897da88ed129e2456",
     "lua/ithilien/init.lua": "a70a572c00a7cc233f89e1acd732934e0ce0266e012f5d874ee173a0a89ebeb7",
     "lua/ithilien/ithilien-dawn.lua": "0353fb5493e1850ab87bb00cf0fbf1000d6a77d9bbf88a1a71d897c9fd6a4815",
-    "lua/ithilien/ithilien-dusk.lua": "8ea6b1ee0e515aca7528dd91202bfb90ed3ca3439a7a8adcf2d48de95f17d387",
+    "lua/ithilien/ithilien-dusk.lua": "174e21f5605139e08919a03b4ef6d1c106acacc09e2093045d6c1714369bbaa3",
     "lua/ithilien/plugin_palette.lua": "03978f38c24213bd6f15923e7734bdce88023b2df9ecd1b547377a793fb46454"
   },
   "kind": "Native Neovim UI cells rasterized using Berkeley Mono Retina 16pt; not a terminal screenshot"
